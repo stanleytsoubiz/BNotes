@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>所有文章 | BNotes 焙學·原豆誌</title>
+  <meta name="description" content="BNotes 全站文章一覽，涵蓋手沖技法、產地風土、器材評測、義式咖啡等精品咖啡知識。">
+  <link rel="canonical" href="https://bnotescoffee.com/articles/">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+
+/* ── Reset & Tokens ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#faf8f4;--fg:#1a0a00;--muted:#f0ebe2;--muted-fg:#7a6050;
+  --border:#e4d9cc;--card:#fff;
+  --gold:#c8922a;--gold-light:#f5e6c0;
+  --brown:#5c2d00;--dark:#1a0a00;
+  --serif:'Noto Serif TC',Georgia,serif;
+  --sans:'Noto Sans TC',-apple-system,sans-serif;
+  --r:.75rem;--r-sm:.5rem;
+}
+body{font-family:var(--sans);background:var(--bg);color:var(--fg);line-height:1.7;-webkit-text-size-adjust:100%}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block;height:auto}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);padding:.75rem 1.25rem;}
+.nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:1.15rem;font-weight:900;color:var(--dark);letter-spacing:.02em}
+.nav-logo b{color:var(--gold)}
+.nav-sub{font-family:var(--sans);font-size:.65rem;color:var(--muted-fg);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+.nav-cta{background:var(--dark);color:#fff;padding:.45rem 1.1rem;border-radius:2rem;font-size:.8rem;font-weight:600;transition:background .2s}
+.nav-cta:hover{background:var(--brown)}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:60vw;max-height:520px;overflow:hidden;display:flex;align-items:flex-end;background:var(--dark)}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,10,0,.9) 0%,rgba(26,10,0,.3) 60%,transparent 100%)}
+.hero-body{position:relative;z-index:2;padding:2rem 1.25rem 2.5rem;max-width:960px;width:100%;margin:0 auto}
+.hero-tag{display:inline-block;border:1px solid rgba(184,130,10,.6);color:var(--gold);font-size:.7rem;font-weight:700;
+  letter-spacing:.1em;padding:.25rem .75rem;border-radius:2rem;margin-bottom:.75rem;text-transform:uppercase}
+.hero-h1{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.6rem);font-weight:900;color:#fff;line-height:1.25;margin-bottom:.75rem}
+.hero-h1 em{color:var(--gold);font-style:normal}
+.hero-desc{color:rgba(255,255,255,.75);font-size:clamp(.85rem,2.5vw,.95rem);max-width:500px;margin-bottom:1.5rem;line-height:1.7}
+.hero-btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:var(--dark);padding:.65rem 1.6rem;border-radius:2rem;font-weight:700;font-size:.9rem;transition:opacity .2s}
+.btn-gold:hover{opacity:.85}
+.btn-outline{border:1.5px solid rgba(255,255,255,.5);color:#fff;padding:.65rem 1.6rem;border-radius:2rem;font-weight:600;font-size:.9rem;transition:border-color .2s}
+.btn-outline:hover{border-color:#fff}
+
+/* ── SECTION ── */
+.section{padding:2.5rem 1.25rem}
+.section-inner{max-width:960px;margin:0 auto}
+.sec-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1.5rem}
+.sec-title{font-family:var(--serif);font-size:1.4rem;font-weight:900;color:var(--dark)}
+.sec-title em{color:var(--gold);font-style:normal}
+.sec-more{font-size:.8rem;color:var(--muted-fg);font-weight:600;display:flex;align-items:center;gap:.2rem;transition:color .2s}
+.sec-more:hover{color:var(--gold)}
+
+/* ── CARD (統一) ── */
+.grid{display:grid;gap:1.25rem;grid-template-columns:1fr}
+@media(min-width:480px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:768px){.grid{grid-template-columns:repeat(3,1fr)}}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;
+  transition:box-shadow .25s,transform .25s;display:flex;flex-direction:column}
+.card:hover{box-shadow:0 8px 28px rgba(92,45,0,.13);transform:translateY(-2px)}
+.card a{display:flex;flex-direction:column;height:100%;color:inherit}
+.card-img-wrap{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--muted)}
+.card-img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.card:hover .card-img{transform:scale(1.04)}
+.card-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,var(--muted) 0%,var(--border) 100%)}
+.card-cat{position:absolute;top:.6rem;left:.6rem;background:rgba(26,10,0,.8);color:var(--gold);
+  font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:.2rem .55rem;border-radius:2rem;text-transform:uppercase}
+.card-body{padding:1rem;flex:1;display:flex;flex-direction:column;gap:.4rem}
+.card-meta{font-size:.7rem;color:var(--muted-fg);display:flex;gap:.6rem}
+.card-title{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--dark);line-height:1.45;flex:1;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-desc{font-size:.78rem;color:var(--muted-fg);line-height:1.55;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:var(--border);margin:0 1.25rem}
+
+/* ── NEWSLETTER ── */
+.newsletter{background:linear-gradient(135deg,var(--dark) 0%,var(--brown) 100%);padding:3rem 1.25rem;text-align:center}
+.newsletter-inner{max-width:520px;margin:0 auto}
+.nl-title{font-family:var(--serif);font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:.6rem}
+.nl-title em{color:var(--gold);font-style:normal}
+.nl-desc{color:rgba(255,255,255,.75);font-size:.88rem;margin-bottom:1.5rem;line-height:1.6}
+.nl-form{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.nl-input{flex:1;min-width:200px;padding:.7rem 1.1rem;border-radius:2rem;border:1.5px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.1);color:#fff;font-size:.9rem;outline:none;transition:border-color .2s}
+.nl-input::placeholder{color:rgba(255,255,255,.45)}
+.nl-input:focus{border-color:var(--gold)}
+.nl-btn{background:var(--gold);color:var(--dark);padding:.7rem 1.5rem;border-radius:2rem;border:none;
+  font-weight:700;font-size:.9rem;cursor:pointer;font-family:var(--sans);transition:opacity .2s}
+.nl-btn:hover{opacity:.85}
+.nl-note{font-size:.7rem;color:rgba(255,255,255,.45);margin-top:.75rem}
+
+/* ── FOOTER ── */
+.footer{background:var(--dark);color:rgba(255,255,255,.55);padding:1.75rem 1.25rem;text-align:center;font-size:.78rem;line-height:2}
+.footer a{color:rgba(255,255,255,.65);text-decoration:none}
+.footer a:hover{color:var(--gold)}
+.footer-links{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;margin-bottom:.5rem}
+
+
+/* ── NAV LINKS & BURGER ── */
+.nav-links{display:flex;align-items:center;gap:1.25rem}
+.nav-links a{font-size:.8rem;font-weight:600;color:var(--muted-fg);transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-actions{display:flex;align-items:center;gap:.75rem}
+.nav-search-btn{background:none;border:none;cursor:pointer;font-size:1rem;color:var(--muted-fg);padding:.2rem .4rem;border-radius:.4rem;transition:color .2s}
+.nav-search-btn:hover{color:var(--gold)}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;font-size:1.2rem;color:var(--dark);padding:.2rem .4rem}
+@media(max-width:700px){
+  .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(26,10,0,.97);
+    flex-direction:column;align-items:center;justify-content:center;gap:2rem;z-index:99}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:1.2rem;color:#fff}
+  .nav-burger{display:block;z-index:100}
+}
+/* ── SEARCH OVERLAY ── */
+.search-overlay{display:none;position:fixed;inset:0;background:rgba(26,10,0,.92);z-index:500;
+  align-items:flex-start;justify-content:center;padding-top:10vh}
+.search-overlay.open{display:flex}
+.search-box{background:#fff;border-radius:1rem;padding:1.5rem;width:min(560px,92vw);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.search-box h3{font-family:var(--serif);font-size:1.1rem;margin-bottom:1rem;color:var(--dark)}
+.search-input-wrap{display:flex;gap:.5rem}
+.search-input{flex:1;padding:.75rem 1rem;border:1.5px solid var(--border);border-radius:.5rem;
+  font-size:.95rem;outline:none;font-family:var(--sans)}
+.search-input:focus{border-color:var(--gold)}
+.search-close{background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--muted-fg);padding:.2rem .5rem}
+#search-results{margin-top:1rem;max-height:360px;overflow-y:auto}
+.search-result-item{padding:.75rem;border-radius:.5rem;cursor:pointer;transition:background .2s;border-bottom:1px solid var(--border)}
+.search-result-item:hover{background:var(--muted)}
+.search-result-item:last-child{border-bottom:none}
+.search-result-title{font-weight:700;font-size:.88rem;color:var(--dark);margin-bottom:.2rem}
+.search-result-cat{font-size:.72rem;color:var(--gold);font-weight:600}
+.search-result-desc{font-size:.78rem;color:var(--muted-fg);line-height:1.5;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.search-no-result{text-align:center;color:var(--muted-fg);padding:2rem;font-size:.9rem}
+/* ── SCROLL TOP ── */
+.scroll-top{position:fixed;bottom:1.25rem;right:1.25rem;background:var(--gold);color:var(--dark);
+  width:2.25rem;height:2.25rem;border-radius:50%;border:none;font-size:1rem;cursor:pointer;
+  opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;z-index:200;font-family:var(--sans)}
+.scroll-top.show{opacity:1;pointer-events:auto}
+.scroll-top:hover{transform:translateY(-2px)}
+
+    /* ── 文章列表頁專屬 ── */
+    .articles-page{padding:4rem 0 6rem}
+    .articles-inner{max-width:1200px;margin:0 auto;padding:0 1.25rem}
+    .breadcrumb{font-size:.85rem;color:var(--muted,#888);margin-bottom:1.5rem}
+    .breadcrumb a{color:var(--gold,#c9a84c);text-decoration:none}
+    .breadcrumb a:hover{text-decoration:underline}
+    .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.75rem;margin-top:2rem}
+    .articles-page .sec-title{font-size:2rem;margin-bottom:.4rem}
+    .articles-page .sec-subtitle{color:var(--muted,#888);font-size:.95rem;margin-bottom:0}
+  </style>
+</head>
+<body>
+<nav class="nav" role="navigation" aria-label="主導覽">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/"><b>B</b>Notes<span class="nav-sub">焙學·原豆誌</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="/category/pour-over.html">手沖技法</a>
+      <a href="/category/espresso.html">義式咖啡</a>
+      <a href="/category/equipment.html">器材評測</a>
+      <a href="/category/terroir.html">產地風土</a>
+      <a href="/category/science.html">冲泡科學</a>
+      <a href="/about.html">關於我們</a>
+    </div>
+    <div class="nav-actions">
+      <button class="nav-search-btn" id="nav-search-btn" aria-label="搜尋" onclick="document.getElementById('search-overlay').classList.add('open')">🔍</button>
+      <a class="nav-cta" href="#newsletter">免費訂閱</a>
+      <button class="nav-burger" id="nav-burger" aria-label="選單" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</nav>
+
+  <main class="articles-page">
+    <div class="articles-inner">
+      <div class="breadcrumb"><a href="/">首頁</a> › 所有文章</div>
+      <h1 class="sec-title">📚 所有<em>文章</em></h1>
+      <p class="sec-subtitle">共 44 篇精品咖啡深度知識</p>
+      <div class="articles-grid">
+      <article class="card">
+        <a href="/articles/arabica-vs-robusta-complete-guide.html" aria-label="Arabica vs. Robusta 完整攻略：你每天喝的咖啡，你真的選對豆種了嗎？">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/arabica-vs-robusta-complete-guide-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="Arabica vs. Robusta 完整攻略：你每天喝的咖啡，你真的選對豆種了嗎？" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">咖啡知識</span>
+          <h2 class="card-title"><a href="/articles/arabica-vs-robusta-complete-guide.html">Arabica vs. Robusta 完整攻略：你每天喝的咖啡，你真的選對豆種了嗎？</a></h2>
+          <p class="card-desc">Arabica 就一定比 Robusta 好嗎？從基因組成、咖啡因含量到適合的沖煮方式，這篇文章會顛覆你對這兩大豆種的既有認知。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/chiayi-coffee-festival-2026-guide.html" aria-label="2026 嘉義咖啡節完全攻略：必喝×必買×必拍地圖">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/chiayi-coffee-festival-2026-guide-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="2026 嘉義咖啡節完全攻略：必喝×必買×必拍地圖" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">咖啡知識</span>
+          <h2 class="card-title"><a href="/articles/chiayi-coffee-festival-2026-guide.html">2026 嘉義咖啡節完全攻略：必喝×必買×必拍地圖</a></h2>
+          <p class="card-desc">嘉義咖啡節是台灣每年最重要的咖啡產業盛事之一，從展場攤位地圖、必買在地豆清單，到嘉義在地咖啡農的故事，完整導覽。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/coffee-dessert-pairing-science.html" aria-label="咖啡與甜點的風味化學：情人節在家咖啡約會的科學食譜">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/coffee-dessert-pairing-science-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="咖啡與甜點的風味化學：情人節在家咖啡約會的科學食譜" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">咖啡知識</span>
+          <h2 class="card-title"><a href="/articles/coffee-dessert-pairing-science.html">咖啡與甜點的風味化學：情人節在家咖啡約會的科學食譜</a></h2>
+          <p class="card-desc">揮發性芳香物質的共鳴原理告訴我們：當咖啡與甜點含有相同關鍵氣味分子時，風味體驗遠超過各自單獨存在。為你設計 8 組情人節在家咖啡約會的完美配對。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/colombia-mitaca-second-harvest.html" aria-label="哥倫比亞 Mitaca 次產季完全指南：南美高地的「第二春」你知道嗎？">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/colombia-mitaca-second-harvest-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="哥倫比亞 Mitaca 次產季完全指南：南美高地的「第二春」你知道嗎？" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">咖啡知識</span>
+          <h2 class="card-title"><a href="/articles/colombia-mitaca-second-harvest.html">哥倫比亞 Mitaca 次產季完全指南：南美高地的「第二春」你知道嗎？</a></h2>
+          <p class="card-desc">哥倫比亞是少數一年有兩次產季的咖啡產國，橫跨赤道的地形造就獨特的 Mitaca 次產季。了解為何某些微產區在 3–5 月反而能孕育出更精彩的批次。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/competition-recipe-homebrew-guide.html" aria-label="把 WBC 賽事冠軍配方帶回家：你真的能重現嗎？一次誠實的實驗報告">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/competition-recipe-homebrew-guide-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="把 WBC 賽事冠軍配方帶回家：你真的能重現嗎？一次誠實的實驗報告" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">沖泡科學</span>
+          <h2 class="card-title"><a href="/articles/competition-recipe-homebrew-guide.html">把 WBC 賽事冠軍配方帶回家：你真的能重現嗎？一次誠實的實驗報告</a></h2>
+          <p class="card-desc">看了世界咖啡師大賽的冠軍配方，你是否也想在家複製？本文誠實記錄了用家用設備重現賽事配方的完整過程與關鍵心得。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/cup-tasters-palate-training-guide.html" aria-label="世界盲飲賽的秘密：冠軍如何訓練能辨識 24 支咖啡的神奇味覺？">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/cup-tasters-palate-training-guide-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="世界盲飲賽的秘密：冠軍如何訓練能辨識 24 支咖啡的神奇味覺？" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">咖啡知識</span>
+          <h2 class="card-title"><a href="/articles/cup-tasters-palate-training-guide.html">世界盲飲賽的秘密：冠軍如何訓練能辨識 24 支咖啡的神奇味覺？</a></h2>
+          <p class="card-desc">WCC 世界盲飲賽的選手能在 8 分鐘內從 24 組咖啡中找出所有不同的那一杯，這種超級感官能力是如何訓練出來的？</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/espresso-ratio-science.html" aria-label="Espresso 粉液比完全解析：1:2 黃金比例的科學根據">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/espresso-ratio-science-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="Espresso 粉液比完全解析：1:2 黃金比例的科學根據" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">義式咖啡</span>
+          <h2 class="card-title"><a href="/articles/espresso-ratio-science.html">Espresso 粉液比完全解析：1:2 黃金比例的科學根據</a></h2>
+          <p class="card-desc">義式咖啡的 1:2 粉液比（18g 粉萃出 36g 液）被奉為黃金標準，但世界頂尖咖啡師正在挑戰這個數字。了解背後的科學，找。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/ethiopia-natural-process-deep-dive.html" aria-label="衣索比亞日曬豆深度解析：花果香背後的微生物發酵科學">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/ethiopia-natural-process-deep-dive-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="衣索比亞日曬豆深度解析：花果香背後的微生物發酵科學" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">咖啡知識</span>
+          <h2 class="card-title"><a href="/articles/ethiopia-natural-process-deep-dive.html">衣索比亞日曬豆深度解析：花果香背後的微生物發酵科學</a></h2>
+          <p class="card-desc">一杯耶加雪菲的茉莉花香，其實是微生物發酵的傑作。深入解析衣索比亞日曬處理的完整科學，以及如何分辨「好的發酵。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/light-roast-beginners-guide.html" aria-label="春日淺焙入門：酸的咖啡不是壞咖啡，而是最誠實的咖啡">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/light-roast-beginners-guide-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="春日淺焙入門：酸的咖啡不是壞咖啡，而是最誠實的咖啡" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">咖啡知識</span>
+          <h2 class="card-title"><a href="/articles/light-roast-beginners-guide.html">春日淺焙入門：酸的咖啡不是壞咖啡，而是最誠實的咖啡</a></h2>
+          <p class="card-desc">如果你喝到一杯「很酸」的咖啡就覺得不好，你可能錯過了精品咖啡中最精彩的部分。這篇文章將幫你重新認識酸質，學。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/nitro-cold-brew-home-guide.html" aria-label="Nitro Cold Brew 氮氣冷萃在家製作：奶油般口感的科學與可能性">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/nitro-cold-brew-home-guide-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="Nitro Cold Brew 氮氣冷萃在家製作：奶油般口感的科學與可能性" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">沖泡科學</span>
+          <h2 class="card-title"><a href="/articles/nitro-cold-brew-home-guide.html">Nitro Cold Brew 氮氣冷萃在家製作：奶油般口感的科學與可能性</a></h2>
+          <p class="card-desc">星巴克讓 Nitro Cold Brew 成為全球現象，那個奶油般絲滑的口感究竟從何而來？氮氣在咖啡中如何作用，以及在家複製的現。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/plant-milk-barista-complete-guide.html" aria-label="燕麥奶、杏仁奶、豆漿：咖啡師視角的植物奶完全指南 2026">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/plant-milk-barista-complete-guide-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="燕麥奶、杏仁奶、豆漿：咖啡師視角的植物奶完全指南 2026" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">咖啡知識</span>
+          <h2 class="card-title"><a href="/articles/plant-milk-barista-complete-guide.html">燕麥奶、杏仁奶、豆漿：咖啡師視角的植物奶完全指南 2026</a></h2>
+          <p class="card-desc">燕麥奶已經統治全球精品咖啡館，但它真的比其他植物奶更好嗎？從脂肪含量、蛋白質結構到發泡穩定性，咖啡師視角帶。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/sca-tasting-vocabulary-guide.html" aria-label="SCA 咖啡品飲語言完全入門：風味輪與感官術語">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/sca-tasting-vocabulary-guide-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="SCA 咖啡品飲語言完全入門：風味輪與感官術語" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">咖啡知識</span>
+          <h2 class="card-title"><a href="/articles/sca-tasting-vocabulary-guide.html">SCA 咖啡品飲語言完全入門：風味輪與感官術語</a></h2>
+          <p class="card-desc">當你的咖啡師說「這支豆有明亮的蘋果酸質和黑醋栗尾韻」，你是否也想用同樣的語言回應？SCA 官方咖啡風味輪的 100+ 個。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/solo-brewing-valentines.html" aria-label="為自己沖一杯：獨飲美學與單人手沖的完整哲學">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/solo-brewing-valentines-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="為自己沖一杯：獨飲美學與單人手沖的完整哲學" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">手沖技法</span>
+          <h2 class="card-title"><a href="/articles/solo-brewing-valentines.html">為自己沖一杯：獨飲美學與單人手沖的完整哲學</a></h2>
+          <p class="card-desc">情人節最迷人的咖啡時刻，往往是一個人獨享的。了解最適合單人份的手沖器具與豆款選擇，把每一杯獨飲時光變成感官專注練習。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/taiwan-specialty-coffee-whitepaper-2026.html" aria-label="2026 台灣精品咖啡玩家入門白皮書：建立完整知識體系">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/taiwan-specialty-coffee-whitepaper-2026-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="2026 台灣精品咖啡玩家入門白皮書：建立完整知識體系" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">產地風土</span>
+          <h2 class="card-title"><a href="/articles/taiwan-specialty-coffee-whitepaper-2026.html">2026 台灣精品咖啡玩家入門白皮書：建立完整知識體系</a></h2>
+          <p class="card-desc">這是 BNotes 為 2026 年台灣咖啡愛好者特別企劃的完整入門白皮書。涵蓋精品咖啡定義、台灣在地產業生態、從購豆到沖煮。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/winter-brewing-w04.html" aria-label="冬季手沖節奏：慢下來的早晨儀式與感官覺醒">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/winter-brewing-w04-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="冬季手沖節奏：慢下來的早晨儀式與感官覺醒" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">手沖技法</span>
+          <h2 class="card-title"><a href="/articles/winter-brewing-w04.html">冬季手沖節奏：慢下來的早晨儀式與感官覺醒</a></h2>
+          <p class="card-desc">低溫下嗅覺感知（Olfactory Perception）的科學，三段注水法節奏調整，讓冬日每一杯都成為感官儀式。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/wlac-2026-champion-technique.html" aria-label="WCC 世界拉花藝術賽 2026 聖地牙哥：冠軍技術全程拆解">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/wlac-2026-champion-technique-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="WCC 世界拉花藝術賽 2026 聖地牙哥：冠軍技術全程拆解" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">義式咖啡</span>
+          <h2 class="card-title"><a href="/articles/wlac-2026-champion-technique.html">WCC 世界拉花藝術賽 2026 聖地牙哥：冠軍技術全程拆解</a></h2>
+          <p class="card-desc">2026 年 WCC 世界拉花藝術賽在聖地牙哥落幕，這屆冠軍的作品挑戰了傳統對稱美學，引入了非對稱流體動力學。解析冠軍技。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/coffee-acidity-complete-science.html" aria-label="咖啡酸質的完整科學：為什麼有人愛，有人怕，以及如何找到你的「對的酸」">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/coffee-acidity-complete-science-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="咖啡酸質的完整科學：為什麼有人愛，有人怕，以及如何找到你的「對的酸」" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">冲泡科學</span>
+          <h2 class="card-title"><a href="/articles/coffee-acidity-complete-science.html">咖啡酸質的完整科學：為什麼有人愛，有人怕，以及如何找到你的「對的酸」</a></h2>
+          <p class="card-desc">「這杯咖啡太酸了」——但你說的「酸」是蘋果酸的清爽，還是醋酸的刺激？理解咖啡中30多種有機酸的差異，讓你從此不再盲目抗拒或追求酸質。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/cold-brew-advanced-science.html" aria-label="冷萃進階：12小時冷泡vs急速冷卻的科學差異，以及你一直在犯的錯誤">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/cold-brew-advanced-science-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="冷萃進階：12小時冷泡vs急速冷卻的科學差異，以及你一直在犯的錯誤" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">手沖技法</span>
+          <h2 class="card-title"><a href="/articles/cold-brew-advanced-science.html">冷萃進階：12小時冷泡vs急速冷卻的科學差異，以及你一直在犯的錯誤</a></h2>
+          <p class="card-desc">你已經會做冷萃了，但你的冷萃是否達到最高水準？這篇進階指南針對常見錯誤進行診斷，同時解析慢冷萃與快冷萃兩大流派的科學根據。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/cold-brew-complete-101.html" aria-label="冷萃咖啡 101：時間、比例、研磨度的黃金三角，以及台灣夏天的最佳實踐">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/cold-brew-complete-101-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="冷萃咖啡 101：時間、比例、研磨度的黃金三角，以及台灣夏天的最佳實踐" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">手沖技法</span>
+          <h2 class="card-title"><a href="/articles/cold-brew-complete-101.html">冷萃咖啡 101：時間、比例、研磨度的黃金三角，以及台灣夏天的最佳實踐</a></h2>
+          <p class="card-desc">冷萃不是把手沖咖啡冰起來——它是一種完全不同的萃取哲學。深入了解低溫萃取的化學原理，以及如何在台灣夏天高溫環境中製作完美冷萃。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/ethiopia-vs-colombia-natural-showdown.html" aria-label="衣索比亞日曬 vs 哥倫比亞日曬：兩款頂級產地的風味哲學大對決">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/ethiopia-vs-colombia-natural-showdown-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="衣索比亞日曬 vs 哥倫比亞日曬：兩款頂級產地的風味哲學大對決" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">產地風土</span>
+          <h2 class="card-title"><a href="/articles/ethiopia-vs-colombia-natural-showdown.html">衣索比亞日曬 vs 哥倫比亞日曬：兩款頂級產地的風味哲學大對決</a></h2>
+          <p class="card-desc">同樣是日曬處理，衣索比亞帶來的是熱帶水果炸彈，哥倫比亞帶來的是圓潤葡萄乾與可可。這不只是口感的差異，而是兩片土地截然不同的生命哲學。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/green-bean-sourcing-complete-guide.html" aria-label="生豆選購完全指南：從產地認證到杯測分數，你必須看的8個關鍵指標">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/green-bean-sourcing-complete-guide-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="生豆選購完全指南：從產地認證到杯測分數，你必須看的8個關鍵指標" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">產地風土</span>
+          <h2 class="card-title"><a href="/articles/green-bean-sourcing-complete-guide.html">生豆選購完全指南：從產地認證到杯測分數，你必須看的8個關鍵指標</a></h2>
+          <p class="card-desc">如果你想開始自家烘焙，或想更了解手上這包豆子從何而來，這篇生豆完全指南將帶你讀懂每一張生豆資訊卡上的所有數字與符號。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/grinder-6models-comparison-2026.html" aria-label="2026入門磨豆機橫向對比：六款從NT$2,000到NT$12,000的完整實測報告">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/grinder-6models-comparison-2026-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="2026入門磨豆機橫向對比：六款從NT$2,000到NT$12,000的完整實測報告" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">器材評測</span>
+          <h2 class="card-title"><a href="/articles/grinder-6models-comparison-2026.html">2026入門磨豆機橫向對比：六款從NT$2,000到NT$12,000的完整實測報告</a></h2>
+          <p class="card-desc">不是最貴的磨豆機就最好。這篇評測從均勻度、細粉率、結塊率、握持感到性價比，完整比較六款市場主流入門磨豆機，幫你在2026年做出最正確的選擇。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/home-roasting-beginners-complete.html" aria-label="自家烘焙完整入門：從爆米花機到熱風烘豆機，你的第一批100g實驗">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/home-roasting-beginners-complete-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="自家烘焙完整入門：從爆米花機到熱風烘豆機，你的第一批100g實驗" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">器材評測</span>
+          <h2 class="card-title"><a href="/articles/home-roasting-beginners-complete.html">自家烘焙完整入門：從爆米花機到熱風烘豆機，你的第一批100g實驗</a></h2>
+          <p class="card-desc">咖啡在烘焙後14天風味開始明顯衰退，自家烘焙是追求極致鮮度的唯一方式。從最便宜的爆米花機開始，讓你的第一批生豆成功轉化。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/kenya-aa-flavor-profile-deep.html" aria-label="肯亞AA的黑醋栗密碼：非洲紅土高地的土壤科學與SL28的傳奇">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/kenya-aa-flavor-profile-deep-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="肯亞AA的黑醋栗密碼：非洲紅土高地的土壤科學與SL28的傳奇" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">產地風土</span>
+          <h2 class="card-title"><a href="/articles/kenya-aa-flavor-profile-deep.html">肯亞AA的黑醋栗密碼：非洲紅土高地的土壤科學與SL28的傳奇</a></h2>
+          <p class="card-desc">為什麼肯亞咖啡有著如此獨特的黑醋栗與莓果風味？這不是偶然，而是紅土火山土壤、SL28品種與水洗雙重發酵的三重奏作。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/summer-iced-coffee-three-recipes.html" aria-label="夏至三款冰咖啡配方大公開：冷萃、急速冷卻法、咖啡冰磚完整食譜">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/summer-iced-coffee-three-recipes-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="夏至三款冰咖啡配方大公開：冷萃、急速冷卻法、咖啡冰磚完整食譜" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">手沖技法</span>
+          <h2 class="card-title"><a href="/articles/summer-iced-coffee-three-recipes.html">夏至三款冰咖啡配方大公開：冷萃、急速冷卻法、咖啡冰磚完整食譜</a></h2>
+          <p class="card-desc">夏至到了，三款適合台灣夏天的冰咖啡配方，從最懶人的咖啡冰磚到精品感十足的日式急速冷卻，全程步驟，讓你的夏天每天都有一杯完美冰咖啡。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/taiwan-coffee-farmer-summer-story.html" aria-label="台灣咖啡小農的夏日庫存哲學：一個家庭農場如何在旺季存活">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/taiwan-coffee-farmer-summer-story-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="台灣咖啡小農的夏日庫存哲學：一個家庭農場如何在旺季存活" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">產地風土</span>
+          <h2 class="card-title"><a href="/articles/taiwan-coffee-farmer-summer-story.html">台灣咖啡小農的夏日庫存哲學：一個家庭農場如何在旺季存活</a></h2>
+          <p class="card-desc">台灣有超過200個咖啡農場，其中70%是面積不到1公頃的家庭農場。夏天對他們來說不是旺季，而是存貨管理、下一季規劃，以及與自然搏鬥的季節。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/wbrc-2026-roasting-analysis.html" aria-label="WBrC 世界烘豆賽 2026（布魯塞爾）：冠軍烘焙曲線全程解析與背後哲學">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/wbrc-2026-roasting-analysis-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="WBrC 世界烘豆賽 2026（布魯塞爾）：冠軍烘焙曲線全程解析與背後哲學" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">冲泡科學</span>
+          <h2 class="card-title"><a href="/articles/wbrc-2026-roasting-analysis.html">WBrC 世界烘豆賽 2026（布魯塞爾）：冠軍烘焙曲線全程解析與背後哲學</a></h2>
+          <p class="card-desc">2026 年 WBrC 在比利時布魯塞爾揭曉年度最佳烘豆師。這屆冠軍的烘焙曲線打破了業界對中段升溫速率的傳統共識，我們完整解析它的技術邏輯。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/brewing-diagnosis-w01.html" aria-label="澀感苦感沖煮失敗診斷：拯救你的第一杯咖啡">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/brewing-diagnosis-w01-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="澀感苦感沖煮失敗診斷：拯救你的第一杯咖啡" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">手沖技法</span>
+          <h2 class="card-title"><a href="/articles/brewing-diagnosis-w01.html">澀感苦感沖煮失敗診斷：拯救你的第一杯咖啡</a></h2>
+          <p class="card-desc">從萃取率（Extraction Yield）與 TDS 科學角度解析，結合台灣自來水質特性，系統化排除手沖失敗的每一個原因。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/alishan-new-crop-w02.html" aria-label="阿里山新豆開箱：台灣視角下的感官科學實驗">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="阿里山新豆開箱：台灣視角下的感官科學實驗" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">冲泡科學</span>
+          <h2 class="card-title"><a href="/articles/alishan-new-crop-w02.html">阿里山新豆開箱：台灣視角下的感官科學實驗</a></h2>
+          <p class="card-desc">海拔 800–1,200m 的 2026 新產季咖啡豆。以梅納反應解析「山頭氣」，科學評測感官六維度。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/pour-over-guide.html" aria-label="手沖咖啡完全指南：從選豆到沖煮的 10 個關鍵步驟">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/pour-over-guide-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="手沖咖啡完全指南：從選豆到沖煮的 10 個關鍵步驟" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">手沖技法</span>
+          <h2 class="card-title"><a href="/articles/pour-over-guide.html">手沖咖啡完全指南：從選豆到沖煮的 10 個關鍵步驟</a></h2>
+          <p class="card-desc">掌握研磨度、水溫、注水節奏，以 SCA 標準科學化解析手沖咖啡每一個關鍵變數。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/flavor-pairing-w03.html" aria-label="12 款咖啡風味配對指南：從堅果調到熱帶果香">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/flavor-pairing-w03-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="12 款咖啡風味配對指南：從堅果調到熱帶果香" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">咖啡生活</span>
+          <h2 class="card-title"><a href="/articles/flavor-pairing-w03.html">12 款咖啡風味配對指南：從堅果調到熱帶果香</a></h2>
+          <p class="card-desc">以風味共鳴（Flavor Resonance）原理，結合 12 款台灣在地點心，打造你不知道的咖啡配對新地圖。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/alishan-terroir.html" aria-label="台灣精品咖啡產地巡禮：阿里山咖啡的風土與風味">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/alishan-terroir-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="台灣精品咖啡產地巡禮：阿里山咖啡的風土與風味" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">產地風土</span>
+          <h2 class="card-title"><a href="/articles/alishan-terroir.html">台灣精品咖啡產地巡禮：阿里山咖啡的風土與風味</a></h2>
+          <p class="card-desc">海拔 800–1,200m 的種植環境、終年雲霧繚繞的氣候，以及台灣咖啡農的精湛技術，造就阿里山咖啡獨特的花香、果酸與甜感。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/latte-art.html" aria-label="義式咖啡拉花藝術：從心形到鬱金香的完整教學">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/latte-art-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="義式咖啡拉花藝術：從心形到鬱金香的完整教學" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">義式咖啡</span>
+          <h2 class="card-title"><a href="/articles/latte-art.html">義式咖啡拉花藝術：從心形到鬱金香的完整教學</a></h2>
+          <p class="card-desc">微奶泡（Microfoam）製作原理、表面張力控制，系統化掌握心形、鬱金香等拉花技術。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/grinder-guide-2026.html" aria-label="2026 年度咖啡磨豆機推薦：從入門到專業的完整評測">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/grinder-guide-2026-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="2026 年度咖啡磨豆機推薦：從入門到專業的完整評測" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">器材評測</span>
+          <h2 class="card-title"><a href="/articles/grinder-guide-2026.html">2026 年度咖啡磨豆機推薦：從入門到專業的完整評測</a></h2>
+          <p class="card-desc">平刀 vs. 錐刀，粒徑分佈（PSD）怎麼影響風味？評測 2026 最值得購買的 15 款磨豆機，從入門到專業完整分析。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/taipei-specialty-cafes.html" aria-label="台北精品咖啡廳探店：5 間必訪的單品咖啡專門店">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/taipei-specialty-cafes-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="台北精品咖啡廳探店：5 間必訪的單品咖啡專門店" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">咖啡生活</span>
+          <h2 class="card-title"><a href="/articles/taipei-specialty-cafes.html">台北精品咖啡廳探店：5 間必訪的單品咖啡專門店</a></h2>
+          <p class="card-desc">台北精品咖啡文化蓬勃發展，精選 5 間以單品咖啡為主的專門店，深度介紹招牌豆款與空間美學。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/processing-methods.html" aria-label="咖啡處理法全解析：日曬、水洗、蜜處理的風味差異">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/processing-methods-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="咖啡處理法全解析：日曬、水洗、蜜處理的風味差異" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">產地風土</span>
+          <h2 class="card-title"><a href="/articles/processing-methods.html">咖啡處理法全解析：日曬、水洗、蜜處理的風味差異</a></h2>
+          <p class="card-desc">日曬、水洗、蜜處理三種製程的科學比較，解析黏膜含量如何決定咖啡豆的風味走向。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/water-quality.html" aria-label="手沖咖啡的水質科學：如何選擇最適合的沖煮用水">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/water-quality-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="手沖咖啡的水質科學：如何選擇最適合的沖煮用水" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">手沖技法</span>
+          <h2 class="card-title"><a href="/articles/water-quality.html">手沖咖啡的水質科學：如何選擇最適合的沖煮用水</a></h2>
+          <p class="card-desc">水中的鎂離子擷取果香酸質，鈣離子強化醇厚度，TDS 介於 75–175 mg/L 是 SCA 黃金標準。台灣水質調整完整方案。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/espresso-parameters.html" aria-label="義式咖啡萃取參數調整指南：壓力、溫度、時間的黃金比例">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/espresso-parameters-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="義式咖啡萃取參數調整指南：壓力、溫度、時間的黃金比例" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">義式咖啡</span>
+          <h2 class="card-title"><a href="/articles/espresso-parameters.html">義式咖啡萃取參數調整指南：壓力、溫度、時間的黃金比例</a></h2>
+          <p class="card-desc">9 Bar 萃取壓力、90–96°C 水溫、25–30 秒萃取時間的科學依據。Pre-infusion 預浸如何提升 Crema 品質，系統化調參邏輯完整解析。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/roast-level-guide.html" aria-label="咖啡烘焙度指南：從淺焙到深焙的風味變化">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/roast-level-guide-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="咖啡烘焙度指南：從淺焙到深焙的風味變化" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">冲泡科學</span>
+          <h2 class="card-title"><a href="/articles/roast-level-guide.html">咖啡烘焙度指南：從淺焙到深焙的風味變化</a></h2>
+          <p class="card-desc">梅納反應生成堅果焦糖香，焦糖化帶來甜感，一爆後的決策影響整體風味輪廓。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/home-coffee-corner.html" aria-label="居家咖啡角佈置指南：打造你的專屬咖啡空間">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/home-coffee-corner-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="居家咖啡角佈置指南：打造你的專屬咖啡空間" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">器材評測</span>
+          <h2 class="card-title"><a href="/articles/home-coffee-corner.html">居家咖啡角佈置指南：打造你的專屬咖啡空間</a></h2>
+          <p class="card-desc">從器材收納、空間規劃到氛圍營造，10 個居家咖啡角佈置靈感，打造既實用又美觀的沖煮基地。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/milk-steaming-science.html" aria-label="牛奶打發完全解析：全脂、低脂、植物奶的科學差異與拿鐵新境界">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/milk-steaming-science-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="牛奶打發完全解析：全脂、低脂、植物奶的科學差異與拿鐵新境界" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">冲泡科學</span>
+          <h2 class="card-title"><a href="/articles/milk-steaming-science.html">牛奶打發完全解析：全脂、低脂、植物奶的科學差異與拿鐵新境界</a></h2>
+          <p class="card-desc">同樣是打奶，為什麼有人的奶泡如絲，有人的卻是粗泡沫？從牛奶脂肪球、蛋白質結構到打發溫度，全面解析奶泡科學，以及燕麥奶為何成為咖啡師的新寵。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/morning-coffee-ritual-science.html" aria-label="建立屬於你的晨間咖啡儀式：神經科學與禪意的交匯點">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/morning-coffee-ritual-science-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="建立屬於你的晨間咖啡儀式：神經科學與禪意的交匯點" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">冲泡科學</span>
+          <h2 class="card-title"><a href="/articles/morning-coffee-ritual-science.html">建立屬於你的晨間咖啡儀式：神經科學與禪意的交匯點</a></h2>
+          <p class="card-desc">早晨的咖啡不只是提神——從神經科學角度，一個正確的晨間咖啡儀式能重新校準你的大腦節律，讓整天的專注力顯著提升。了解皮質醇與咖啡因的最佳攝取時間，建立屬於自己的儀式感。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/single-origin-terroir-science.html" aria-label="單一產地的秘密：風土 Terroir 如何決定你杯中的每一個味道？">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/single-origin-terroir-science-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="單一產地的秘密：風土 Terroir 如何決定你杯中的每一個味道？" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">產地風土</span>
+          <h2 class="card-title"><a href="/articles/single-origin-terroir-science.html">單一產地的秘密：風土 Terroir 如何決定你杯中的每一個味道？</a></h2>
+          <p class="card-desc">為什麼同樣是衣索比亞的豆子，來自 Yirgacheffe 的花香和來自 Sidama 的醇厚截然不同？深入解析土壤礦物質、海拔、微氣候三要素如何共同塑造你杯中的獨特風味。</p>
+        </div>
+      </article>
+      <article class="card">
+        <a href="/articles/turkish-coffee-ibrik.html" aria-label="土耳其咖啡 Ibrik 完全解析：WCC 世界冠軍用的古老煮法為何再度崛起？">
+          <div class="card-img-wrap">
+            <img class="card-img" src="/images/ai/turkish-coffee-ibrik-hero.jpg"
+                 data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg"
+                 alt="土耳其咖啡 Ibrik 完全解析：WCC 世界冠軍用的古老煮法為何再度崛起？" loading="lazy">
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-cat">咖啡生活</span>
+          <h2 class="card-title"><a href="/articles/turkish-coffee-ibrik.html">土耳其咖啡 Ibrik 完全解析：WCC 世界冠軍用的古老煮法為何再度崛起？</a></h2>
+          <p class="card-desc">從 WCC 世界 Cezve/Ibrik 錦標賽的賽場到你家廚房，深入解析這個擁有 500 年歷史的咖啡煮法，以及它如何用細如塵的咖啡粉創造出最濃郁的風味體驗。</p>
+        </div>
+      </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 <strong>BNotes</strong> 焙學·原豆誌 · 台灣精品咖啡知識媒體</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll("img[data-fallback]").forEach(function(img){
+      img.onerror=function(){this.onerror=null;this.src=this.dataset.fallback;};
+    });
+    var burger=document.getElementById("nav-burger");
+    var navLinks=document.getElementById("nav-links");
+    if(burger&&navLinks){
+      burger.addEventListener("click",function(){
+        var open=navLinks.classList.toggle("open");
+        burger.setAttribute("aria-expanded",open);
+        burger.textContent=open?"✕":"☰";
+      });
+    }
+  </script>
+</body>
+</html>
