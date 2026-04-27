@@ -29,7 +29,10 @@ let count = 0;
 const articlesMeta = [];  // for index rebuild
 const articlesDir = path.join(DIST, 'articles');
 
-for (const fname of fs.readdirSync(articlesDir)) {
+if (!fs.existsSync(articlesDir)) {
+  console.log('⚠️  dist/articles/ not found — skipping article strip step');
+}
+for (const fname of (fs.existsSync(articlesDir) ? fs.readdirSync(articlesDir) : [])) {
   if (!fname.endsWith('.html')) continue;
   const fpath = path.join(articlesDir, fname);
   let content = fs.readFileSync(fpath, 'utf-8');
