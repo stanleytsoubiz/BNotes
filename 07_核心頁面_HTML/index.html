@@ -234,7 +234,6 @@ img { aspect-ratio: attr(width) / attr(height); }
     <div class="sec-header">
       <h2 class="sec-title" id="feat-title">🔥 精選<em>文章</em></h2>
     </div>
-    <!-- ✅ 修復：加入 id="latest-grid" 讓 JS loadMore() 能找到容器 -->
     <div class="grid" id="latest-grid">
       <!-- 精選文章：確認有完整頁面的文章先靜態顯示 -->
       <article class="card"><a href="/articles/colombia-mitaca-second-harvest.html" aria-label="哥倫比亞 Mitaca 次產季完全指南：南美高地的「第二春」你知道嗎？"><div class="card-img-wrap"><img class="card-img" src="/images/ai/colombia-mitaca-second-harvest-hero.jpg" data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg" alt="哥倫比亞 Mitaca 次產季完全指南：南美高地的「第二春」你知道嗎？" loading="eager"><span class="card-cat">產地風土</span></div></a><div class="card-body"><h3 class="card-title"><a href="/articles/colombia-mitaca-second-harvest.html">哥倫比亞 Mitaca 次產季完全指南：南美高地的「第二春」你知道嗎？</a></h3><p class="card-desc">3–5 月的 Mitaca 次產季不僅不亞於主產季，某些微產區更孕育出精彩批次。</p></div></article>
@@ -249,6 +248,7 @@ img { aspect-ratio: attr(width) / attr(height); }
     </div>
   </div>
 </section>
+
 <!-- NEWSLETTER -->
 <section class="newsletter" id="newsletter" aria-labelledby="nl-title">
   <div class="newsletter-inner">
@@ -282,125 +282,415 @@ img { aspect-ratio: attr(width) / attr(height); }
 </footer>
 
 <button class="scroll-top" id="st" aria-label="回到頂端">↑</button>
-<script>
-const st=document.getElementById('st');
-window.addEventListener('scroll',()=>st.classList.toggle('show',scrollY>300),{passive:true});
-</script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"52882166ceb34dbc81601c4020da5ca0","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true}}}' crossorigin="anonymous"></script>
 
 <script>
-// ─ Newsletter AJAX ─
+// ── Global Config & UI ──
 (function(){
-  const form  = document.getElementById('nl-form');
-  const email = document.getElementById('nl-email');
-  const btn   = document.getElementById('nl-btn');
-  const note  = document.getElementById('nl-note');
-  if(!form) return;
+  // Scroll Top
+  const st = document.getElementById('st');
+  if(st) window.addEventListener('scroll',()=>st.classList.toggle('show',scrollY>300),{passive:true});
 
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    const val = (email.value||'').trim();
-    if(!val || !/^[^@]+@[^@]+\.[^@]+$/.test(val)){
-      note.textContent = '⚠️ 請輸入有效的電子郵件地址';
-      note.style.color = '#e87722';
-      return;
-    }
-    btn.disabled = true;
-    btn.textContent = '訂閱中...';
-    try {
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({email: val})
-      });
-      const data = await res.json();
-      if(data.ok){
-        form.innerHTML = '<p style="color:#fff;font-size:1rem;font-weight:700">'+data.message+'</p>';
-        note.textContent = '感謝你的訂閱，每週日見！';
-        note.style.color = 'rgba(255,255,255,.6)';
-        if(typeof gtag!=='undefined'){
-          gtag('event','newsletter_signup',{event_category:'engagement',event_label:'homepage_footer',value:1});
-        }
-      } else {
-        note.textContent = '⚠️ ' + (data.error || '訂閱失敗，請稍後再試');
+  // Nav Burger
+  const burger = document.getElementById('nav-burger');
+  const navLinks = document.getElementById('nav-links');
+  if(burger && navLinks){
+    burger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+      burger.textContent = open ? '✕' : '☰';
+    });
+  }
+
+  // Newsletter AJAX
+  const form = document.getElementById('nl-form');
+  if(form){
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      const email = document.getElementById('nl-email');
+      const btn = document.getElementById('nl-btn');
+      const note = document.getElementById('nl-note');
+      const val = (email.value||'').trim();
+      if(!val || !/^[^@]+@[^@]+\.[^@]+$/.test(val)){
+        note.textContent = '⚠️ 請輸入有效的電子郵件地址';
         note.style.color = '#e87722';
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = '訂閱中...';
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({email: val})
+        });
+        const data = await res.json();
+        if(data.ok){
+          form.innerHTML = '<p style="color:#fff;font-size:1rem;font-weight:700">'+data.message+'</p>';
+          note.textContent = '感謝你的訂閱，每週日見！';
+        } else {
+          note.textContent = '⚠️ ' + (data.error || '訂閱失敗');
+          btn.disabled = false;
+          btn.textContent = '免費訂閱';
+        }
+      } catch(err){
+        note.textContent = '⚠️ 網路錯誤';
         btn.disabled = false;
         btn.textContent = '免費訂閱';
       }
-    } catch(err){
-      note.textContent = '⚠️ 網路錯誤，請稍後再試';
-      note.style.color = '#e87722';
-      btn.disabled = false;
-      btn.textContent = '免費訂閱';
+    });
+  }
+})();
+
+// ── Search & Data Source ──
+(function(){
+  window.SEARCH_DATA = [
+    {"slug":"2026-coffee-keywords-annual-review","title":"2026 十大精品咖啡關鍵字年度回顧","cat":"咖啡知識","desc":"回顧改變 2026 喝咖啡方式的 10 大關鍵字，從發酵革命到 AI 烘焙。"},
+    {"slug":"alishan-2026-sensory-report","title":"2026 阿里山咖啡感官深度報告","cat":"產地風土","desc":"由 Q-Grader 團隊針對 2026 阿里山產季進行的完整杯測數據與風味地圖。"},
+    {"slug":"alishan-new-crop-w02","title":"阿里山新豆開箱：感官科學實驗","cat":"冲泡科學","desc":"以梅納反應解析「山頭氣」，科學評測 2026 阿里山新產季咖啡豆。"},
+    {"slug":"alishan-terroir","title":"台灣精品咖啡產地巡禮：阿里山風土","cat":"產地風土","desc":"海拔、氣候與技術如何造就阿里山咖啡獨特的花香與果酸。"},
+    {"slug":"arabica-vs-robusta-complete-guide","title":"Arabica vs. Robusta 完整攻略","cat":"咖啡知識","desc":"顛覆既有認知，從基因到沖煮全面比較兩大主要咖啡品種。"},
+    {"slug":"autumn-brewing-temperature-guide","title":"換季時節的手沖溫度調整策略","cat":"手沖技法","desc":"針對秋冬氣溫下降，如何重新校準你的咖啡沖煮參數。"},
+    {"slug":"bnotes-2026-annual-coffee-report","title":"BNotes 2026 年度咖啡知識報告","cat":"咖啡知識","desc":"回顧 BNotes 與讀者走過的年度咖啡地圖，整合年度重要知識點。"},
+    {"slug":"brewing-diagnosis-w01","title":"澀感苦感沖煮失敗診斷","cat":"手沖技法","desc":"從萃取率與 TDS 角度，系統化排除手沖失敗的每一個原因。"},
+    {"slug":"chiayi-coffee-festival-2026-guide","title":"2026 嘉義咖啡節完全攻略","cat":"活動導覽","desc":"必喝、必買、必拍的展場地圖，深度結合在地咖啡農故事。"},
+    {"slug":"christmas-coffee-gift-guide-2026","title":"2026 咖啡控聖誕禮物清單","cat":"咖啡生活","desc":"涵蓋全預算區間的 5 種送禮組合，保證讓咖啡愛好者愛不釋手。"},
+    {"slug":"coffee-acidity-complete-science","title":"咖啡酸質的完整科學","cat":"冲泡科學","desc":"解析咖啡中 30 多種有機酸的差異，助你找到屬於自己的「對的酸」。"},
+    {"slug":"coffee-dessert-pairing-science","title":"咖啡與甜點的風味化學","cat":"咖啡生活","desc":"基於揮發性物質的共鳴理論，打造完美的咖啡約會配對。"},
+    {"slug":"coffee-equipment-cleaning-bible","title":"手沖器具清潔維護完全手冊","cat":"器材評測","desc":"磨豆機、壺、濾杯清潔全攻略，拒絕油脂氧化帶來的異味。"},
+    {"slug":"coffee-reading-afternoon-ritual","title":"咖啡與閱讀的神經科學","cat":"咖啡生活","desc":"利用咖啡因提升神經可塑性的黃金時段，優化你的學習與閱讀。"},
+    {"slug":"cold-brew-advanced-science","title":"冷萃進階：慢冷與快冷的差異","cat":"手沖技法","desc":"診斷常見冷萃錯誤，解析 12 小時冷泡與急速冷卻的科學數據。"},
+    {"slug":"cold-brew-complete-101","title":"冷萃咖啡 101：黃金三角比例","cat":"手沖技法","desc":"深入低溫萃取化學，掌握研磨、比例與時間的平衡。"},
+    {"slug":"colombia-main-harvest-selection","title":"哥倫比亞主產季選豆指南","cat":"產地風土","desc":"從 Huila 到 Nariño，帶你讀懂 8 個哥倫比亞新豆關鍵指標。"},
+    {"slug":"colombia-mitaca-second-harvest","title":"哥倫比亞 Mitaca 次產季完全指南","cat":"產地風土","desc":"探索南美高地的「第二春」，解析微產區的高品質次產季批次。"},
+    {"slug":"competition-recipe-homebrew-guide","title":"把 WBC 冠軍配方帶回家","cat":"手沖技法","desc":"誠實紀錄家用設備重現世界大賽配方的實驗與調整過程。"},
+    {"slug":"cup-tasters-palate-training-guide","title":"世界盲飲賽冠軍味覺訓練秘訣","cat":"冲泡科學","desc":"解析 Cup Tasters 冠軍的每日感官系統訓練課表。"},
+    {"slug":"espresso-parameters","title":"義式咖啡萃取參數調整指南","cat":"義式咖啡","desc":"科學解析 9 Bar 壓力與 90-96°C 水溫的黃金動態平衡。"},
+    {"slug":"espresso-ratio-science","title":"Espresso 粉液比 1:2 的科學根據","cat":"義式咖啡","desc":"探討粉液比如何影響萃取率，以及針對不同烘焙度的調整。"},
+    {"slug":"ethiopia-natural-process-deep-dive","title":"衣索比亞日曬豆：微生物發酵科學","cat":"產地風土","desc":"解析耶加雪菲迷人果香背後的發酵機理與品質辨識。"},
+    {"slug":"ethiopia-vs-colombia-natural-showdown","title":"衣索比亞 vs 哥倫比亞：日曬風味大對決","cat":"產地風土","desc":"比較兩大產地日曬處理法的風味哲學與口感差異。"},
+    {"slug":"flavor-pairing-w03","title":"12 款咖啡風味配對指南","cat":"咖啡生活","desc":"結合台灣在地點心，利用風味共鳴原理開拓味覺地圖。"},
+    {"slug":"geisha-coffee-science-2026","title":"2026 瑰夏咖啡感官科學研究","cat":"咖啡科學","desc":"針對瑰夏(Geisha)品種特有芳樟醇與酯類含量的分子級分析報告。"},
+    {"slug":"geisha-molecular-biology-2026","title":"藝伎咖啡的分子生物學","cat":"咖啡科學","desc":"解析 Geisha 品種如何主宰感官極限，以及其特有的代謝路徑。"},
+    {"slug":"green-bean-sourcing-complete-guide","title":"生豆選購 8 個關鍵指標","cat":"產地風土","desc":"教你讀懂生豆資訊卡，為自家烘焙挑選最優質的原料。"},
+    {"slug":"grinder-6models-comparison-2026","title":"2026 入門磨豆機橫向對比報告","cat":"器材評測","desc":"實測 6 款主流磨豆機的均勻度、細粉率與性價比。"},
+    {"slug":"grinder-guide-2026","title":"2026 年度咖啡磨豆機推薦","cat":"器材評測","desc":"平刀 vs. 錐刀，針對不同沖煮需求的 15 款精選評測。"},
+    {"slug":"home-coffee-corner","title":"居家咖啡角佈置與空間規劃指南","cat":"器材評測","desc":"10 個兼具美感與實用性的手沖基地佈置靈感。"},
+    {"slug":"home-roasting-beginners-complete","title":"自家烘焙完整入門指南","cat":"器材評測","desc":"從爆米花機到熱風烘豆機，開啟你的極致鮮度實驗。"},
+    {"slug":"international-coffee-day-10-stories","title":"咖啡改變世界的 10 個故事","cat":"咖啡知識","desc":"2026 國際咖啡日特輯：回顧咖啡如何影響歷史與文化。"},
+    {"slug":"kenya-aa-flavor-profile-deep","title":"肯亞 AA 的黑醋栗風味密碼","cat":"產地風土","desc":"解析非洲紅土火山土壤與水洗發酵如何塑造肯亞傳奇。"},
+    {"slug":"latte-art","title":"義式咖啡拉花藝術完整教學","cat":"義式咖啡","desc":"從微奶泡製作到表面張力控制，掌握心形與鬱金香技法。"},
+    {"slug":"light-roast-beginners-guide","title":"春日淺焙入門：重新認識酸質","cat":"咖啡知識","desc":"破解淺焙迷思，帶你領略精品咖啡中最誠實的果香世界。"},
+    {"slug":"lunar-new-year-coffee-gift-2026","title":"2026 春節咖啡禮盒選購全攻略","cat":"咖啡生活","desc":"針對農曆新年設計的 5 種送禮組合，體面又不失品味。"},
+    {"slug":"milk-alternatives-science-2026","title":"2026 植物奶化學與感官平衡研究","cat":"咖啡科學","desc":"燕麥奶、杏仁奶在咖啡發泡中的科學差異與最佳匹配。"},
+    {"slug":"milk-steaming-science","title":"牛奶打發與奶泡科學解析","cat":"冲泡科學","desc":"從脂肪球到蛋白質結構，全面提升拿鐵拉花的穩定性。"},
+    {"slug":"morning-coffee-ritual-science","title":"建立屬於你的晨間咖啡儀式","cat":"咖啡生活","desc":"結合神經科學，優化皮質醇與咖啡因的攝取節律。"},
+    {"slug":"new-years-eve-coffee-survival-guide","title":"2026 跨年守夜咖啡指南","cat":"咖啡生活","desc":"科學規劃咖啡因攝取時間表，讓你優雅地迎接新年。"},
+    {"slug":"nitro-cold-brew-home-guide","title":"Nitro Cold Brew 氮氣冷萃在家製作","cat":"手沖技法","desc":"利用氮氣充填技術，重現精品咖啡館的絲滑口感。"},
+    {"slug":"plant-milk-barista-complete-guide","title":"咖啡師視角的植物奶完全指南 2026","cat":"義式咖啡","desc":"評測 6 款熱門植物奶의 蛋白質穩定度與感官特性。"},
+    {"slug":"pour-over-guide","title":"手沖咖啡 10 個關鍵步驟指南","cat":"手沖技法","desc":"SCA 標準科學解析，掌握研磨度與注水節奏。"},
+    {"slug":"pour-over-variable-complete-experiment","title":"手沖變數實驗：20 種配方紀錄","cat":"手沖技法","desc":"系統性實驗證實哪些變數真正影響你杯中的風味。"},
+    {"slug":"precision-temperature-brewing-science","title":"精確溫度沖煮：熱力學與萃取效率","cat":"冲泡科學","desc":"探討不同溫度區間對芳香化合物提取率的動態影響。"},
+    {"slug":"processing-methods","title":"咖啡處理法：日曬、水洗、蜜處理差異","cat":"產地風土","desc":"科學比較不同製程對咖啡豆最終風味走向的決定性影響。"},
+    {"slug":"roast-level-guide","title":"咖啡烘焙度：淺焙到深焙的風味輪廓","cat":"冲泡科學","desc":"梅納反應與焦糖化反應如何決定杯中風味。"},
+    {"slug":"sca-tasting-vocabulary-guide","title":"SCA 咖啡品飲語言與風味輪入門","cat":"咖啡知識","desc":"掌握 110 個官方術語，讓你的杯測紀錄更專業。"},
+    {"slug":"single-origin-terroir-science","title":"單一產地的秘密：風土如何決定風味","cat":"產地風土","desc":"深入土壤、海拔與微氣候，解析產地靈魂的來源。"},
+    {"slug":"solo-brewing-valentines","title":"獨飲美學：單人份手沖哲學","cat":"手沖技法","desc":"專為個人設計的沖煮器具選擇與儀式感打造指南。"},
+    {"slug":"specialty-coffee-third-wave-history","title":"精品咖啡 third wave 完整歷史","cat":"咖啡知識","desc":"從西雅圖到台北，解析全球精品咖啡運動的演進。"},
+    {"slug":"summer-iced-coffee-three-recipes","title":"夏至三款冰咖啡配方食譜","cat":"手沖技法","desc":"冷萃、急速冷卻與咖啡冰磚，陪你度過炎熱夏天。"},
+    {"slug":"sustainable-coffee-complete-guide","title":"永續咖啡選購與產地保護指南","cat":"咖啡知識","desc":"面對氣候變遷，我們每一次消費如何幫助咖啡產業。"},
+    {"slug":"taipei-coffee-expo-2026-annual-report","title":"2026 台北國際咖啡展年度觀察報告","cat":"活動導覽","desc":"BNotes 現場第一手觀察、趨勢分析與明年逛展建議。"},
+    {"slug":"taipei-coffee-expo-2026-complete-guide","title":"2026 台北國際咖啡展（南港）完全攻略","cat":"活動導覽","desc":"展場動線規劃、必看品牌與必買豆單完整收錄。"},
+    {"slug":"taipei-coffee-map-2026","title":"2026 台北精品咖啡地圖","cat":"咖啡生活","desc":"精選 Simple Kaffa 到 Fika Fika 等指標店家的極致感官之旅。"},
+    {"slug":"taipei-specialty-cafes","title":"台北 5 間必訪單品咖啡專門店","cat":"咖啡生活","desc":"深度介紹招牌豆款與空間美學，體驗台北精品咖啡文化。"},
+    {"slug":"taiwan-barista-2026-annual-review","title":"台灣咖啡師的 2026 年度回顧","cat":"咖啡知識","desc":"從世界賽場到街角，看見台灣咖啡師的堅持與榮耀。"},
+    {"slug":"taiwan-coffee-2026-new-season-terroir-guide","title":"2026 台灣產季：風土與風味趨勢指南","cat":"產地風土","desc":"綜觀阿里山、古坑、屏東三大產區 2026 產季表現。"},
+    {"slug":"taiwan-coffee-equipment-midyear-2026","title":"2026 台灣咖啡器具年中實測測評","cat":"器材評測","desc":"針對台灣市場 15 款熱門手沖器具的完整實測推薦。"},
+    {"slug":"taiwan-coffee-farmer-summer-story","title":"台灣咖啡小農的夏日庫存哲學","cat":"產地風土","desc":"走進在地農場，看見小農在旺季之外的生存與奮鬥。"},
+    {"slug":"taiwan-coffee-subscription-guide-2026","title":"2026 台灣精品咖啡訂閱服務評測","cat":"咖啡知識","desc":"深度評測 5 個最值得訂閱的台灣精品咖啡服務。"},
+    {"slug":"taiwan-specialty-coffee-whitepaper-2026","title":"2026 台灣精品咖啡玩家入門白皮書","cat":"咖啡知識","desc":"為台灣愛好者量身打造的系統化知識學習地圖。"},
+    {"slug":"turkish-coffee-ibrik","title":"土耳其咖啡 Ibrik 完全解析","cat":"咖啡生活","desc":"解析 WCC 冠軍用的古老煮法及其現代復興。"},
+    {"slug":"v60-vs-kalita-filter-geometry","title":"V60 vs. Kalita Wave：濾杯幾何學實測","cat":"咖啡科學","desc":"流體力學解析：為什麼不同濾杯沖出來的味道天差地遠。"},
+    {"slug":"water-quality","title":"手沖咖啡水質科學與調整方案","cat":"手沖技法","desc":"掌握 TDS 與礦物質平衡，台灣水質的最佳調整實踐。"},
+    {"slug":"wbc-2026-champion-technique-breakdown","title":"WBC 2026 世界冠軍技術拆解","cat":"咖啡知識","desc":"解析 2026 巴拿馬決賽冠軍的演示邏輯與技術決策。"},
+    {"slug":"wbrc-2026-roasting-analysis","title":"WBrC 2026 世界冠軍烘焙曲線分析","cat":"冲泡科學","desc":"深度拆解布魯塞爾冠軍的烘焙邏輯，挑戰傳統共識。"},
+    {"slug":"winter-brewing-w04","title":"冬季手沖節奏與感官儀式","cat":"手沖技法","desc":"低溫下的嗅覺感知科學，優化你的冬日三段注水法。"},
+    {"slug":"wla-champion-2026-tech-breakdown","title":"WLA 2026 世界冠軍拉花技術解析","cat":"義式咖啡","desc":"拆解冠軍得獎作品的奶泡控制、注流技術與評分細節。"},
+    {"slug":"wlac-2026-champion-technique","title":"WCC 2026 聖地牙哥：冠軍拉花技術解析","cat":"義式咖啡","desc":"解析非對稱流體動力學如何引入現代拉花美學。"},
+    {"slug":"yunlin-gukeng-coffee-farmer-story","title":"雲林古坑咖啡農的一天","cat":"產地風土","desc":"深入百年咖啡鄉，看見在地小農的堅持與轉型故事。"}
+  ];
+
+  const input = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
+  const overlay = document.getElementById('search-overlay');
+  if(!input) return;
+
+  function renderResults(q){
+    if(!q.trim()){ results.innerHTML=''; return; }
+    const q2 = q.toLowerCase();
+    const hits = SEARCH_DATA.filter(a =>
+      a.title.toLowerCase().includes(q2) ||
+      a.cat.toLowerCase().includes(q2) ||
+      a.desc.toLowerCase().includes(q2)
+    ).slice(0,8);
+    if(!hits.length){
+      results.innerHTML='<div class="search-no-result">找不到「'+q+'」相關文章</div>';
+      return;
+    }
+    results.innerHTML = hits.map(a =>
+      `<div class="search-result-item" onclick="location.href='/articles/${a.slug}.html'">
+        <div class="search-result-cat">${a.cat}</div>
+        <div class="search-result-title">${a.title}</div>
+        <div class="search-result-desc">${a.desc}</div>
+      </div>`
+    ).join('');
+  }
+
+  input.addEventListener('input', e => renderResults(e.target.value));
+  overlay.addEventListener('click', e => { if(e.target===overlay) overlay.classList.remove('open'); });
+  document.addEventListener('keydown', e => {
+    if(e.key==='Escape') overlay.classList.remove('open');
+    if((e.ctrlKey||e.metaKey) && e.key==='k'){
+      e.preventDefault();
+      overlay.classList.add('open');
+      setTimeout(()=>input.focus(),50);
     }
   });
 })();
-</script>
-<script>
-// ─ NAV burger ─
-const burger = document.getElementById('nav-burger');
-const navLinks = document.getElementById('nav-links');
-if(burger && navLinks){
-  burger.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open);
-    burger.textContent = open ? '✕' : '☰';
-  });
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    burger.textContent = '☰';
-  }));
-}
 
-// ─ Search ─
+// ── Latest Articles Load More ──
+(function () {
+  const grid = document.getElementById('latest-grid');
+  const btn = document.getElementById('btn-load-more');
+  const wrap = document.getElementById('load-more-wrap');
+  if (!grid || !btn) return;
+
+  const existingSlugs = Array.from(grid.querySelectorAll('a[href^="/articles/"]'))
+    .map(a => { 
+      const m = a.getAttribute('href').match(/\/articles\/([^\.]+)\.html/);
+      return m ? m[1] : null;
+    })
+    .filter(Boolean);
+
+  const loadQueue = (window.SEARCH_DATA || []).filter(a => !existingSlugs.includes(a.slug));
+  const PER = 6;
+  let cursor = 0;
+
+  function buildCard(item) {
+    const slug = item.slug;
+    const title = item.title || slug;
+    const cat = item.cat ? `<span class="card-cat">${item.cat}</span>` : '';
+    const desc = (item.desc || '').slice(0, 80) + '...';
+    const imgSrc = `/images/ai/${slug}-hero.jpg`;
+    const imgFallback = '/images/ai/alishan-new-crop-w02-hero.jpg';
+
+    const el = document.createElement('article');
+    el.className = 'card';
+    el.innerHTML = `
+      <a href="/articles/${slug}.html" aria-label="${title}">
+        <div class="card-img-wrap">
+          ${cat}
+          <img class="card-img" src="${imgSrc}" alt="${title}" loading="lazy">
+        </div>
+      </a>
+      <div class="card-body">
+        <h3 class="card-title">
+          <a href="/articles/${slug}.html">${title}</a>
+        </h3>
+        <p class="card-desc">${desc}</p>
+      </div>`;
+    
+    const img = el.querySelector('img');
+    img.onerror = function() {
+      this.onerror = null;
+      this.src = imgFallback;
+    };
+    return el;
+  }
+
+  function loadMore() {
+    const batch = loadQueue.slice(cursor, cursor + PER);
+    if (!batch.length) {
+      if (wrap) wrap.style.display = 'none';
+      return;
+    }
+
+    const frag = document.createDocumentFragment();
+    batch.forEach(item => frag.appendChild(buildCard(item)));
+    grid.appendChild(frag);
+    
+    cursor += PER;
+    if (cursor >= loadQueue.length && wrap) {
+      wrap.style.display = 'none';
+    }
+  }
+
+  if (loadQueue.length === 0 && wrap) wrap.style.display = 'none';
+
+  btn.addEventListener('click', () => {
+    btn.disabled = true;
+    btn.textContent = '載入中...';
+    setTimeout(() => {
+      loadMore();
+      btn.disabled = false;
+      btn.textContent = '載入更多文章 ↓';
+    }, 150);
+  });
+})();
+</script>
+
+</body>
+</html>
+{title}" loading="lazy">
+        </div>
+      </a>
+      <div class="card-body">
+        <h3 class="card-title">
+          <a href="/articles/${slug}.html">${title}</a>
+        </h3>
+        <p class="card-desc">${desc}</p>
+      </div>`;
+    
+    const img = el.querySelector('img');
+    img.onerror = function() {
+      this.onerror = null;
+      this.src = imgFallback;
+    };
+    return el;
+  }
+
+  function loadMore() {
+    const batch = loadQueue.slice(cursor, cursor + PER);
+    if (!batch.length) {
+      if (wrap) wrap.style.display = 'none';
+      return;
+    }
+
+    const frag = document.createDocumentFragment();
+    batch.forEach(item => frag.appendChild(buildCard(item)));
+    grid.appendChild(frag);
+    
+    cursor += PER;
+    if (cursor >= loadQueue.length && wrap) {
+      wrap.style.display = 'none';
+    }
+  }
+
+  // Initial check
+  if (loadQueue.length === 0 && wrap) wrap.style.display = 'none';
+
+  btn.addEventListener('click', () => {
+    btn.disabled = true;
+    btn.textContent = '載入中...';
+    setTimeout(() => {
+      loadMore();
+      btn.disabled = false;
+      btn.textContent = '載入更多文章 ↓';
+    }, 150);
+  });
+})();
+
+// ── Analytics & Engagement ──
 (function(){
-  window.SEARCH_DATA = [
-    /* ── 確認有完整頁面的文章（sitemap 中） ── */
-    {'slug':'coffee-dessert-pairing-science','title':'咖啡與甜點的風味化學：情人節在家咖啡約會的科學食譜','cat':'咖啡生活','desc':'用風味共鳴原理，搭配 6 款精選甜點，科學化打造情人節咖啡約會的完美菜單。'},
-    {'slug':'colombia-mitaca-second-harvest','title':'哥倫比亞 Mitaca 次產季完全指南：南美高地的「第二春」你知道嗎？','cat':'產地風土','desc':'3–5 月的 Mitaca 次產季不僅不亞於主產季，某些微產區更孕育出精彩批次。'},
-    {'slug':'competition-recipe-homebrew-guide','title':'把 WBC 賽事冠軍配方帶回家：你真的能重現嗎？一次誠實的實驗報告','cat':'手沖技法','desc':'誠實記錄了複製 WBC 冠軍手法的完整過程，從配方解析到家庭環境的限制與應對。'},
-    {'slug':'cup-tasters-palate-training-guide','title':'世界盲飲賽的秘密：冠軍如何訓練能辨識 24 支咖啡的神奇味覺？','cat':'冲泡科學','desc':'從感官科學到系統訓練方法，解析 WCC Cup Tasters 冠軍的每日杯測訓練課表。'},
-    {'slug':'espresso-ratio-science','title':'Espresso 粉液比完全解析：1:2 黃金比例的科學根據','cat':'義式咖啡','desc':'深入探討 Espresso 粉液比背後的萃取科學，以及如何根據豆款調整至最佳比例。'},
-    {'slug':'ethiopia-natural-process-deep-dive','title':'衣索比亞日曬豆深度解析：花果香背後的微生物發酵科學','cat':'產地風土','desc':'從 Yirgacheffe 到 Guji，解析日曬處理過程中微生物活動如何塑造衣索比亞豆的迷人風味。'},
-    {'slug':'light-roast-beginners-guide','title':'春日淺焙入門：酸的咖啡不是壞咖啡，而是最誠實的咖啡','cat':'咖啡知識','desc':'破解淺焙迷思，從花果酸香的形成原理到選購指南，帶你愛上精品淺焙的世界。'},
-    {'slug':'nitro-cold-brew-home-guide','title':'Nitro Cold Brew 氮氣冷萃在家製作：奶油般口感的科學與可能性','cat':'手沖技法','desc':'用氮氣充填技術在家複製精品咖啡館的氮氣冷萃，完整設備清單與操作流程。'},
-    {'slug':'plant-milk-barista-complete-guide','title':'燕麥奶、杏仁奶、豆漿：咖啡師視角的植物奶完全指南 2026','cat':'義式咖啡','desc':'從蛋白質結構到起泡特性，科學評測 2026 年最熱門的 6 款植物奶，找出你的最佳拍檔。'},
-    {'slug':'sca-tasting-vocabulary-guide','title':'SCA 咖啡品飲語言完全入門：風味輪與感官術語','cat':'咖啡知識','desc':'掌握 SCA 官方風味輪的 110 個感官詞彙，讓你的杯測紀錄從「好喝」進化到精準描述。'},
-    {'slug':'solo-brewing-valentines','title':'為自己沖一杯：獨飲美學與單人手沖的完整哲學','cat':'手沖技法','desc':'情人節最迷人的咖啡時刻，往往是一個人獨享的。了解最適合單人份的手沖器具與豆款選擇。'},
-    {'slug':'taiwan-specialty-coffee-whitepaper-2026','title':'2026 台灣精品咖啡玩家入門白皮書：建立完整知識體系','cat':'咖啡知識','desc':'台灣精品咖啡完整入門路徑，從選豆、器材、技法到感官訓練的系統化學習地圖。'},
-    {'slug':'wlac-2026-champion-technique','title':'WCC 世界拉花藝術賽 2026 聖地牙哥：冠軍技術全程拆解','cat':'義式咖啡','desc':'2026 世界拉花藝術賽冠軍得獎作品全程解析，奶泡控制、注流技術與評分標準完整說明。'},
-    /* ── 知識庫文章 ── */
-    {'slug':'coffee-acidity-complete-science','title':'咖啡酸質的完整科學：為什麼有人愛，有人怕，以及如何找到你的「對的酸」','cat':'冲泡科學','desc':'「這杯咖啡太酸了」——但你說的「酸」是蘋果酸的清爽，還是醋酸的刺激？理解咖啡中30多種有機酸的差異，讓你從此不再盲目抗拒或追求酸質。'},
-    {'slug':'cold-brew-advanced-science','title':'冷萃進階：12小時冷泡vs急速冷卻的科學差異，以及你一直在犯的錯誤','cat':'手沖技法','desc':'你已經會做冷萃了，但你的冷萃是否達到最高水準？這篇進階指南針對常見錯誤進行診斷，同時解析慢冷萃與快冷萃兩大流派的科學根據。'},
-    {'slug':'cold-brew-complete-101','title':'冷萃咖啡 101：時間、比例、研磨度的黃金三角，以及台灣夏天的最佳實踐','cat':'手沖技法','desc':'冷萃不是把手沖咖啡冰起來——它是一種完全不同的萃取哲學。深入了解低溫萃取的化學原理，以及如何在台灣夏天高溫環境中製作完美冷萃。'},
-    {'slug':'ethiopia-vs-colombia-natural-showdown','title':'衣索比亞日曬 vs 哥倫比亞日曬：兩款頂級產地的風味哲學大對決','cat':'產地風土','desc':'同樣是日曬處理，衣索比亞帶來的是熱帶水果炸彈，哥倫比亞帶來的是圓潤葡萄乾與可可。這不只是口感的差異，而是兩片土地截然不同的生命哲學。'},
-    {'slug':'green-bean-sourcing-complete-guide','title':'生豆選購完全指南：從產地認證到杯測分數，你必須看的8個關鍵指標','cat':'產地風土','desc':'如果你想開始自家烘焙，或想更了解手上這包豆子從何而來，這篇生豆完全指南將帶你讀懂每一張生豆資訊卡上的所有數字與符號。'},
-    {'slug':'grinder-6models-comparison-2026','title':'2026入門磨豆機橫向對比：六款從NT$2,000到NT$12,000的完整實測報告','cat':'器材評測','desc':'不是最貴的磨豆機就最好。這篇評測從均勻度、細粉率、結塊率、握持感到性價比，完整比較六款市場主流入門磨豆機，幫你在2026年做出最正確的選擇。'},
-    {'slug':'home-roasting-beginners-complete','title':'自家烘焙完整入門：從爆米花機到熱風烘豆機，你的第一批100g實驗','cat':'器材評測','desc':'咖啡在烘焙後14天風味開始明顯衰退，自家烘焙是追求極致鮮度的唯一方式。從最便宜的爆米花機開始，讓你的第一批生豆成功轉化。'},
-    {'slug':'kenya-aa-flavor-profile-deep','title':'肯亞AA的黑醋栗密碼：非洲紅土高地的土壤科學與SL28的傳奇','cat':'產地風土','desc':'為什麼肯亞咖啡有著如此獨特的黑醋栗與莓果風味？這不是偶然，而是紅土火山土壤、SL28品種與水洗雙重發酵的三重奏作。'},
-    {'slug':'summer-iced-coffee-three-recipes','title':'夏至三款冰咖啡配方大公開：冷萃、急速冷卻法、咖啡冰磚完整食譜','cat':'手沖技法','desc':'夏至到了，三款適合台灣夏天的冰咖啡配方，從最懶人的咖啡冰磚到精品感十足的日式急速冷卻，全程步驟，讓你的夏天每天都有一杯完美冰咖啡。'},
-    {'slug':'taiwan-coffee-farmer-summer-story','title':'台灣咖啡小農的夏日庫存哲學：一個家庭農場如何在旺季存活','cat':'產地風土','desc':'台灣有超過200個咖啡農場，其中70%是面積不到1公頃的家庭農場。夏天對他們來說不是旺季，而是存貨管理、下一季規劃，以及與自然搏鬥的季節。'},
-    {'slug':'wbrc-2026-roasting-analysis','title':'WBrC 世界烘豆賽 2026（布魯塞爾）：冠軍烘焙曲線全程解析與背後哲學','cat':'冲泡科學','desc':'2026 年 WBrC 在比利時布魯塞爾揭曉年度最佳烘豆師。這屆冠軍的烘焙曲線打破了業界對中段升溫速率的傳統共識，我們完整解析它的技術邏輯。'},
-    {'slug':'brewing-diagnosis-w01','title':'澀感苦感沖煮失敗診斷：拯救你的第一杯咖啡','cat':'手沖技法','desc':'從萃取率（Extraction Yield）與 TDS 科學角度解析，結合台灣自來水質特性，系統化排除手沖失敗的每一個原因。'},
-    {'slug':'alishan-new-crop-w02','title':'阿里山新豆開箱：台灣視角下的感官科學實驗','cat':'冲泡科學','desc':'海拔 800–1,200m 的 2026 新產季咖啡豆。以梅納反應解析「山頭氣」，科學評測感官六維度。'},
-    {'slug':'pour-over-guide','title':'手沖咖啡完全指南：從選豆到沖煮的 10 個關鍵步驟','cat':'手沖技法','desc':'掌握研磨度、水溫、注水節奏，以 SCA 標準科學化解析手沖咖啡每一個關鍵變數。'},
-    {'slug':'flavor-pairing-w03','title':'12 款咖啡風味配對指南：從堅果調到熱帶果香','cat':'咖啡生活','desc':'以風味共鳴（Flavor Resonance）原理，結合 12 款台灣在地點心，打造你不知道的咖啡配對新地圖。'},
-    {'slug':'alishan-terroir','title':'台灣精品咖啡產地巡禮：阿里山咖啡的風土與風味','cat':'產地風土','desc':'海拔 800–1,200m 的種植環境、終年雲霧繚繞的氣候，以及台灣咖啡農的精湛技術，造就阿里山咖啡獨特的花香、果酸與甜感。'},
-    {'slug':'latte-art','title':'義式咖啡拉花藝術：從心形到鬱金香的完整教學','cat':'義式咖啡','desc':'微奶泡（Microfoam）製作原理、表面張力控制，系統化掌握心形、鬱金香等拉花技術。'},
-    {'slug':'winter-brewing-w04','title':'冬季手沖節奏：慢下來的早晨儀式與感官覺醒','cat':'手沖技法','desc':'低溫下嗅覺感知（Olfactory Perception）的科學，三段注水法節奏調整，讓冬日每一杯都成為感官儀式。'},
-    {'slug':'grinder-guide-2026','title':'2026 年度咖啡磨豆機推薦：從入門到專業的完整評測','cat':'器材評測','desc':'平刀 vs. 錐刀，粒徑分佈（PSD）怎麼影響風味？評測 2026 最值得購買的 15 款磨豆機，從入門到專業完整分析。'},
-    {'slug':'taipei-specialty-cafes','title':'台北精品咖啡廳探店：5 間必訪的單品咖啡專門店','cat':'咖啡生活','desc':'台北精品咖啡文化蓬勃發展，精選 5 間以單品咖啡為主的專門店，深度介紹招牌豆款與空間美學。'},
-    {'slug':'processing-methods','title':'咖啡處理法全解析：日曬、水洗、蜜處理的風味差異','cat':'產地風土','desc':'日曬、水洗、蜜處理三種製程的科學比較，解析黏膜含量如何決定咖啡豆的風味走向。'},
-    {'slug':'water-quality','title':'手沖咖啡的水質科學：如何選擇最適合的沖煮用水','cat':'手沖技法','desc':'水中的鎂離子擷取果香酸質，鈣離子強化醇厚度，TDS 介於 75–175 mg/L 是 SCA 黃金標準。台灣水質調整完整方案。'},
-    {'slug':'espresso-parameters','title':'義式咖啡萃取參數調整指南：壓力、溫度、時間的黃金比例','cat':'義式咖啡','desc':'9 Bar 萃取壓力、90–96°C 水溫、25–30 秒萃取時間的科學依據。Pre-infusion 預浸如何提升 Crema 品質，系統化調參邏輯完整解析。'},
-    {'slug':'roast-level-guide','title':'咖啡烘焙度指南：從淺焙到深焙的風味變化','cat':'冲泡科學','desc':'梅納反應生成堅果焦糖香，焦糖化帶來甜感，一爆後的決策影響整體風味輪廓。'},
-    {'slug':'home-coffee-corner','title':'居家咖啡角佈置指南：打造你的專屬咖啡空間','cat':'器材評測','desc':'從器材收納、空間規劃到氛圍營造，10 個居家咖啡角佈置靈感，打造既實用又美觀的沖煮基地。'},
-    {'slug':'milk-steaming-science','title':'牛奶打發完全解析：全脂、低脂、植物奶的科學差異與拿鐵新境界','cat':'冲泡科學','desc':'同樣是打奶，為什麼有人的奶泡如絲，有人的卻是粗泡沫？從牛奶脂肪球、蛋白質結構到打發溫度，全面解析奶泡科學，以及燕麥奶為何成為咖啡師的新寵。'},
-    {'slug':'morning-coffee-ritual-science','title':'建立屬於你的晨間咖啡儀式：神經科學與禪意的交匯點','cat':'冲泡科學','desc':'早晨的咖啡不只是提神——從神經科學角度，一個正確的晨間咖啡儀式能重新校準你的大腦節律，讓整天的專注力顯著提升。了解皮質醇與咖啡因的最佳攝取時間，建立屬於自己的儀式感。'},
-    {'slug':'single-origin-terroir-science','title':'單一產地的秘密：風土 Terroir 如何決定你杯中的每一個味道？','cat':'產地風土','desc':'為什麼同樣是衣索比亞的豆子，來自 Yirgacheffe 的花香和來自 Sidama 的醇厚截然不同？深入解析土壤礦物質、海拔、微氣候三要素如何共同塑造你杯中的獨特風味。'},
-    {'slug':'turkish-coffee-ibrik','title':'土耳其咖啡 Ibrik 完全解析：WCC 世界冠軍用的古老煮法為何再度崛起？','cat':'咖啡生活','desc':'從 WCC 世界 Cezve/Ibrik 錦標賽的賽場到你家廚房，深入解析這個擁有 500 年歷史的咖啡煮法，以及它如何用細如塵的咖啡粉創造出最濃郁的風味體驗。'},
-    {'slug':'arabica-vs-robusta-complete-guide','title':'Arabica vs. Robusta 完整攻略：你每天喝的咖啡，你真的選對豆種了嗎？','cat':'咖啡知識','desc':'從基因組成、咖啡因含量到適合的沖煮方式，顛覆你對這兩大豆種的既有認知。'},
-    {'slug':'chiayi-coffee-festival-2026-guide','title':'2026 嘉義咖啡節完全攻略：必喝×必買×必拍地圖','cat':'活動導覽','desc':'嘉義咖啡節台灣每年最重要的咖啡產業盛事，完整攤位地圖、必買在地豆清單，全收錄。'}
+  if(typeof gtag !== 'function') return;
+
+  const sent = {};
+  window.addEventListener('scroll', () => {
+    const s = document.documentElement;
+    const pct = Math.round((s.scrollTop||document.body.scrollTop)/(s.scrollHeight-s.clientHeight)*100);
+    [25,50,75,90].forEach(t => {
+      if(pct>=t && !sent['s'+t]){
+        sent['s'+t]=true;
+        gtag('event','scroll_depth',{event_category:'homepage',event_label:'home',value:t,non_interaction:t<50});
+      }
+    });
+  },{passive:true});
+
+  document.querySelectorAll('a[href^="/articles/"]').forEach(el => {
+    el.addEventListener('click', () => {
+      gtag('event','article_card_click',{
+        event_category:'homepage',
+        event_label: el.getAttribute('href').replace('/articles/','').replace('.html',''),
+        value: 1
+      });
+    });
+  });
+})();
+</script>
+
+ }
+
+  /* 修復靜態卡片圖片的 onerror */
+  var staticImgs = grid.querySelectorAll('img[data-fallback]');
+  for (var si = 0; si < staticImgs.length; si++) {
+    (function(img) {
+      img.onerror = function() { this.onerror = null; this.src = this.dataset.fallback; };
+    })(staticImgs[si]);
+  }
+
+  btn.addEventListener('click', function () {
+    btn.disabled = true;
+    btn.textContent = '載入中…';
+    setTimeout(function () {
+      loadMore();
+      btn.disabled = false;
+      btn.textContent = '載入更多文章 ↓';
+    }, 120);
+  });
+}());
+</script>
+
+<script id="bnotes-ga4-homepage">
+(function(){
+  if(typeof gtag !== 'function') return;
+
+  var sent = {};
+  window.addEventListener('scroll', function(){
+    var s = document.documentElement;
+    var pct = Math.round((s.scrollTop||document.body.scrollTop)/(s.scrollHeight-s.clientHeight)*100);
+    [25,50,75,90].forEach(function(t){
+      if(pct>=t && !sent['s'+t]){
+        sent['s'+t]=true;
+        gtag('event','scroll_depth',{event_category:'homepage',event_label:'home',value:t,non_interaction:t<50});
+      }
+    });
+  },{passive:true});
+
+  document.querySelectorAll('a[href^="/articles/"]').forEach(function(el){
+    el.addEventListener('click',function(){
+      gtag('event','article_card_click',{
+        event_category:'homepage',
+        event_label: el.getAttribute('href').replace('/articles/','').replace('.html',''),
+        value: 1
+      });
+    });
+  });
+
+  document.querySelectorAll('.nav-cta, .hero-cta, [class*="cta"]').forEach(function(el){
+    el.addEventListener('click',function(){
+      gtag('event','cta_click',{
+        event_category:'conversion',
+        event_label: el.textContent.trim().slice(0,30)
+      });
+    });
+  });
+
+  document.querySelectorAll('form').forEach(function(form){
+    if(!/subscribe|newsletter|email/i.test(form.className+form.id+form.action)) return;
+    form.addEventListener('submit',function(){
+      gtag('event','newsletter_signup',{event_category:'conversion',event_label:'homepage',value:1});
+    });
+  });
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"52882166ceb34dbc81601c4020da5ca0","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
+</body>
+</html>
+強化醇厚度，TDS 介於 75–175 mg/L 是 SCA 黃金標準。台灣水質調整完整方案。"},
+    {"slug":"wbc-2026-champion-technique-breakdown","title":"WBC 世界咖啡師大賽 2026（巴拿馬）：冠軍的 15 分鐘完整拆解","cat":"咖啡知識","desc":"WBC2026在巴拿馬落幕，這屆冠軍的15分鐘演示引入了發酵科學新視角，我們為你完整解析每一個技術決策背後的邏輯。。深度探索精品咖啡知識，從科學原理到實踐技巧，完整呈現咖啡世界。"},
+    {"slug":"wbrc-2026-roasting-analysis","title":"WBrC 世界烘豆賽 2026（布魯塞爾）：冠軍烘焙曲線全程解析與背後哲學","cat":"咖啡知識","desc":"2026 年 WBrC 在比利時布魯塞爾揭曉年度最佳烘豆師。這屆冠軍的烘焙曲線打破了業界對中段升溫速率的傳統共識，我們完整解析它的技術邏輯。"},
+    {"slug":"winter-brewing-w04","title":"冬季手沖節奏：慢下來的早晨儀式與感官覺醒","cat":"咖啡知識","desc":"低溫下嗅覺感知（OlfactoryPerception）的科學，三段注水法節奏調整，讓冬日每一杯都成為感官儀式。。深度探索精品咖啡知識，從科學原理到實踐技巧，完整呈現咖啡世界。"},
+    {"slug":"wlac-2026-champion-technique","title":"WCC 世界拉花藝術賽 2026 聖地牙哥：冠軍技術全程拆解","cat":"咖啡知識","desc":"2026年WCC世界拉花藝術賽在聖地牙哥落幕，這屆冠軍的作品挑戰了傳統對稱美學，引入了非對稱流體動力學。解析冠軍...。深度探索精品咖啡知識，從科學原理到實踐技巧，完整呈現咖啡世界。"}
   ];
   const input = document.getElementById('search-input');
   const results = document.getElementById('search-results');
@@ -443,124 +733,60 @@ if(burger && navLinks){
 
 <script>
 /* ── BNotes: Latest Articles Load More ──
-   修復說明：原本 grid div 缺少 id="latest-grid"，導致此函數中
-   document.getElementById('latest-grid') 返回 null，直接 return 不執行。
-   已在 HTML 中的 <div class="grid"> 加入 id="latest-grid" 修復此問題。
-   同時靜態首批已顯示 6 篇確認存在的文章，SLUGS 為後續動態載入的文章列表。
+   修復說明：
+   1. 使用統一的 SEARCH_DATA 作為資料來源，避免標題遺失。
+   2. 自動過濾頁面上已存在的靜態卡片，解決重複顯示問題。
+   3. 優化載入效率與圖片錯誤處理。
 ── */
 (function () {
-  /* 後續動態載入批次（前 6 篇已靜態顯示在 #latest-grid 中） */
-  var SLUGS = [
-    'geisha-molecular-biology-2026',
-    'milk-alternatives-science-2026',
-    'taipei-coffee-map-2026',
-    'coffee-acidity-complete-science',
-    'taiwan-coffee-farmer-summer-story',
-    'wlac-2026-champion-technique',
-    'water-quality',
-    'wbc-2026-champion-technique-breakdown',
-    'winter-brewing-w04',
-    'turkish-coffee-ibrik',
-    'v60-vs-kalita-filter-geometry',
-    'taiwan-coffee-subscription-guide-2026',
-    'taiwan-specialty-coffee-whitepaper-2026',
-    'wbrc-2026-roasting-analysis',
-    'summer-iced-coffee-three-recipes',
-    'processing-methods',
-    'single-origin-terroir-science',
-    'sca-tasting-vocabulary-guide',
-    'milk-steaming-science',
-    'pour-over-variable-complete-experiment',
-    'specialty-coffee-third-wave-history',
-    'taiwan-coffee-equipment-midyear-2026',
-    'pour-over-guide',
-    'morning-coffee-ritual-science',
-    'taiwan-barista-2026-annual-review',
-    'taipei-coffee-expo-2026-complete-guide',
-    'solo-brewing-valentines',
-    'roast-level-guide',
-    'new-years-eve-coffee-survival-guide',
-    'taipei-specialty-cafes',
-    'plant-milk-barista-complete-guide',
-    'sustainable-coffee-complete-guide',
-    'nitro-cold-brew-home-guide',
-    'competition-recipe-homebrew-guide',
-    'espresso-parameters',
-    'light-roast-beginners-guide',
-    'grinder-6models-comparison-2026',
-    'cup-tasters-palate-training-guide',
-    'grinder-guide-2026',
-    'ethiopia-vs-colombia-natural-showdown',
-    'home-coffee-corner',
-    'latte-art',
-    'home-roasting-beginners-complete',
-    'green-bean-sourcing-complete-guide',
-    'international-coffee-day-10-stories',
-    'ethiopia-natural-process-deep-dive',
-    'espresso-ratio-science',
-    'kenya-aa-flavor-profile-deep',
-    'flavor-pairing-w03',
-    'autumn-brewing-temperature-guide',
-    'coffee-equipment-cleaning-bible',
-    'coffee-reading-afternoon-ritual',
-    'brewing-diagnosis-w01',
-    'coffee-dessert-pairing-science',
-    'cold-brew-advanced-science',
-    'colombia-main-harvest-selection',
-    'chiayi-coffee-festival-2026-guide',
-    'alishan-new-crop-w02',
-    'cold-brew-complete-101',
-    'alishan-terroir',
-    'christmas-coffee-gift-guide-2026',
-    '2026-coffee-keywords-annual-review',
-    'arabica-vs-robusta-complete-guide',
-    'colombia-mitaca-second-harvest',
-    'bnotes-2026-annual-coffee-report'
-  ];
-  var PER   = 6;
-  var page  = 0;
-  var grid  = document.getElementById('latest-grid');
-  var btn   = document.getElementById('btn-load-more');
-  var wrap  = document.getElementById('load-more-wrap');
+  var grid = document.getElementById('latest-grid');
+  var btn  = document.getElementById('btn-load-more');
+  var wrap = document.getElementById('load-more-wrap');
   if (!grid || !btn) return;
 
-  /* 建立 slug → 資料的快速查找表 */
-  var dataMap = {};
-  if (typeof SEARCH_DATA !== 'undefined') {
-    for (var i = 0; i < SEARCH_DATA.length; i++) {
-      dataMap[SEARCH_DATA[i].slug] = SEARCH_DATA[i];
-    }
-  }
+  // 1. 取得目前頁面上已存在的文章 slug
+  var existingSlugs = Array.from(grid.querySelectorAll('a[href^="/articles/"]'))
+    .map(function(a) { 
+      var m = a.getAttribute('href').match(/\/articles\/([^\.]+)\.html/);
+      return m ? m[1] : null;
+    })
+    .filter(Boolean);
 
-  function buildCard(slug) {
-    var a    = dataMap[slug] || { slug: slug, title: slug, cat: '', desc: '' };
-    var desc = (a.desc || '').slice(0, 88);
-    var cat  = a.cat
-      ? '<span class="card-cat">' + a.cat + '</span>'
-      : '';
-    var imgSrc      = '/images/ai/' + slug + '-hero.jpg';
+  // 2. 從 SEARCH_DATA 過濾出待載入的文章列表
+  var allArticles = (typeof SEARCH_DATA !== 'undefined') ? SEARCH_DATA : [];
+  var loadQueue = allArticles.filter(function(a) {
+    return existingSlugs.indexOf(a.slug) === -1;
+  });
+
+  var PER  = 6;
+  var cursor = 0;
+
+  function buildCard(item) {
+    var slug = item.slug;
+    var title = item.title || slug;
+    var cat = item.cat ? '<span class="card-cat">' + item.cat + '</span>' : '';
+    var desc = (item.desc || '').slice(0, 80) + '...';
+    var imgSrc = '/images/ai/' + slug + '-hero.jpg';
     var imgFallback = '/images/ai/alishan-new-crop-w02-hero.jpg';
 
     var el = document.createElement('article');
     el.className = 'card';
     el.innerHTML =
-      '<a href="/articles/' + slug + '.html" aria-label="' + a.title + '">' +
+      '<a href="/articles/' + slug + '.html" aria-label="' + title + '">' +
         '<div class="card-img-wrap">' +
           cat +
-          '<img class="card-img lazy" data-src="' + imgSrc + '" ' +
-          'data-fallback="' + imgFallback + '" ' +
-          'alt="' + a.title + '" loading="lazy">' +
+          '<img class="card-img" src="' + imgSrc + '" alt="' + title + '" loading="lazy">' +
         '</div>' +
       '</a>' +
       '<div class="card-body">' +
         '<h3 class="card-title">' +
-          '<a href="/articles/' + slug + '.html">' + a.title + '</a>' +
+          '<a href="/articles/' + slug + '.html">' + title + '</a>' +
         '</h3>' +
-        '<p class="card-desc">' + desc + '…</p>' +
+        '<p class="card-desc">' + desc + '</p>' +
       '</div>';
+    
     var img = el.querySelector('img');
-    img.src = imgSrc;
-    img.onerror = function () {
+    img.onerror = function() {
       this.onerror = null;
       this.src = imgFallback;
     };
@@ -568,22 +794,89 @@ if(burger && navLinks){
   }
 
   function loadMore() {
-    var start = page * PER;
-    var batch = SLUGS.slice(start, start + PER);
+    var batch = loadQueue.slice(cursor, cursor + PER);
     if (!batch.length) {
       if (wrap) wrap.style.display = 'none';
       return;
     }
+
     var frag = document.createDocumentFragment();
-    for (var i = 0; i < batch.length; i++) {
-      frag.appendChild(buildCard(batch[i]));
-    }
+    batch.forEach(function(item) {
+      frag.appendChild(buildCard(item));
+    });
     grid.appendChild(frag);
-    page++;
-    if (page * PER >= SLUGS.length && wrap) {
+    
+    cursor += PER;
+    if (cursor >= loadQueue.length && wrap) {
       wrap.style.display = 'none';
     }
   }
+
+  // 初次檢查是否還有更多可載入
+  if (loadQueue.length === 0 && wrap) {
+    wrap.style.display = 'none';
+  }
+
+  btn.addEventListener('click', function () {
+    btn.disabled = true;
+    btn.textContent = '載入中...';
+    setTimeout(function () {
+      loadMore();
+      btn.disabled = false;
+      btn.textContent = '載入更多文章 ↓';
+    }, 150);
+  });
+}());
+</script>
+
+<script id="bnotes-ga4-homepage">
+(function(){
+  if(typeof gtag !== 'function') return;
+
+  var sent = {};
+  window.addEventListener('scroll', function(){
+    var s = document.documentElement;
+    var pct = Math.round((s.scrollTop||document.body.scrollTop)/(s.scrollHeight-s.clientHeight)*100);
+    [25,50,75,90].forEach(function(t){
+      if(pct>=t && !sent['s'+t]){
+        sent['s'+t]=true;
+        gtag('event','scroll_depth',{event_category:'homepage',event_label:'home',value:t,non_interaction:t<50});
+      }
+    });
+  },{passive:true});
+
+  document.querySelectorAll('a[href^="/articles/"]').forEach(function(el){
+    el.addEventListener('click',function(){
+      gtag('event','article_card_click',{
+        event_category:'homepage',
+        event_label: el.getAttribute('href').replace('/articles/','').replace('.html',''),
+        value: 1
+      });
+    });
+  });
+
+  document.querySelectorAll('.nav-cta, .hero-cta, [class*="cta"]').forEach(function(el){
+    el.addEventListener('click',function(){
+      gtag('event','cta_click',{
+        event_category:'conversion',
+        event_label: el.textContent.trim().slice(0,30)
+      });
+    });
+  });
+
+  document.querySelectorAll('form').forEach(function(form){
+    if(!/subscribe|newsletter|email/i.test(form.className+form.id+form.action)) return;
+    form.addEventListener('submit',function(){
+      gtag('event','newsletter_signup',{event_category:'conversion',event_label:'homepage',value:1});
+    });
+  });
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"52882166ceb34dbc81601c4020da5ca0","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
+</body>
+</html>
+ }
 
   /* 修復靜態卡片圖片的 onerror */
   var staticImgs = grid.querySelectorAll('img[data-fallback]');
@@ -622,6 +915,37 @@ if(burger && navLinks){
   },{passive:true});
 
   document.querySelectorAll('a[href^="/articles/"]').forEach(function(el){
+    el.addEventListener('click',function(){
+      gtag('event','article_card_click',{
+        event_category:'homepage',
+        event_label: el.getAttribute('href').replace('/articles/','').replace('.html',''),
+        value: 1
+      });
+    });
+  });
+
+  document.querySelectorAll('.nav-cta, .hero-cta, [class*="cta"]').forEach(function(el){
+    el.addEventListener('click',function(){
+      gtag('event','cta_click',{
+        event_category:'conversion',
+        event_label: el.textContent.trim().slice(0,30)
+      });
+    });
+  });
+
+  document.querySelectorAll('form').forEach(function(form){
+    if(!/subscribe|newsletter|email/i.test(form.className+form.id+form.action)) return;
+    form.addEventListener('submit',function(){
+      gtag('event','newsletter_signup',{event_category:'conversion',event_label:'homepage',value:1});
+    });
+  });
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"52882166ceb34dbc81601c4020da5ca0","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
+</body>
+</html>
+'a[href^="/articles/"]').forEach(function(el){
     el.addEventListener('click',function(){
       gtag('event','article_card_click',{
         event_category:'homepage',
