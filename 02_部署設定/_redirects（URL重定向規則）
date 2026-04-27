@@ -5,10 +5,19 @@
 /re/amazon-v60  https://www.amazon.com/Hario-V60-Ceramic-Coffee-Dripper/dp/B000P4962E?tag=bnotes-20  302
 /re/shopee-grinder https://shopee.tw/search?keyword=timemore+c3  302
 
-# SPA fallback：只適用非 admin、非 api 路徑
-# Admin 和 API 由 Cloudflare Pages 靜態檔案和 Functions 直接處理
+# ⚠️ IMPORTANT: /admin/* routes handled by Cloudflare Functions
+# DO NOT add /admin/* redirects here - they must be processed by functions/admin/
+# If you add SPA fallback for /admin, it will block the backend system!
+
+# API routes preserved for clarity
 /api/*  /api/:splat  200
 
-# 前台 SPA fallback（排除 admin/ 和 api/）
-/*  /index.html  200
-# Deploy: 2026-04-14 revert to minimal redirects
+# 前台 SPA fallback (for everything EXCEPT /admin and /api)
+# This is critical: the order matters - more specific rules above, general rules below
+/articles/*  /index.html  200
+/category/*  /index.html  200
+/search/*    /index.html  200
+/tag/*       /index.html  200
+/*           /index.html  200
+
+# Deploy: 2026-04-27 ensure /admin routes bypass this redirect rule
