@@ -24,7 +24,7 @@ jobs:
           # IMPORTANT: Deploy from repo root so wrangler.toml + functions/ are included
           # wrangler.toml sets pages_build_output_dir = "./dist"
           # functions/ directory at repo root is auto-detected for Cloudflare Pages Functions
-          npx wrangler pages deploy \
+          npx wrangler pages deploy ./dist \
             --project-name=bnotes \
             --branch=main \
             --commit-dirty=true \
