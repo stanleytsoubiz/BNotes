@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>BNotes 焙學·原豆誌</title>
+    <link>https://bnotescoffee.com</link>
+    <description>台灣首個以精品咖啡生活化知識為核心的自媒體品牌。SCA 標準手沖教學、產地風土、器材評測，每週深度內容。</description>
+    <language>zh-TW</language>
+    <copyright>Copyright 2026 BNotes 焙學·原豆誌</copyright>
+    <managingEditor>hello@bnotescoffee.com (BNotes)</managingEditor>
+    <webMaster>hello@bnotescoffee.com (BNotes)</webMaster>
+    <lastBuildDate>Mon, 14 Apr 2026 20:00:00 +0800</lastBuildDate>
+    <atom:link href="https://bnotescoffee.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=144&h=144&fit=crop</url>
+      <title>BNotes 焙學·原豆誌</title>
+      <link>https://bnotescoffee.com</link>
+    </image>
+    <ttl>60</ttl>
+  </channel>
+</rss>

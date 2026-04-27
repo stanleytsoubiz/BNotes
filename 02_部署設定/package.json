@@ -1,0 +1,10 @@
+{
+  "name": "bnotes",
+  "version": "1.0.0",
+  "description": "BNotes - 品味的知識，知識的品味",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "wrangler pages deploy ./dist --project-name=bnotes"
+  }
+}

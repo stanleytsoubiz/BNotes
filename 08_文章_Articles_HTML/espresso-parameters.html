@@ -1,0 +1,623 @@
+---
+title: 義式咖啡萃取參數調整指南：壓力、溫度、時間的黃金比例
+date: 2026-02-05
+category: espresso
+description: 9 Bar 萃取壓力、90–96°C 水溫、25–30 秒萃取時間的科學依據。Pre-infusion 預浸如何提升 Crema 品質，系統化調參邏輯完整解析。
+cover_image: "/images/ai/espresso-parameters-hero.jpg"
+reading_time: 3
+featured: false
+---
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>義式咖啡萃取參數調整指南：壓力、溫度、時間的黃金比例 | BNotes 焙學·原豆誌</title>
+<meta name="description" content="9 Bar 萃取壓力、90–96°C 水溫、25–30 秒萃取時間的科學依據。Pre-infusion 預浸如何提升 Crema 品質，系統化調參邏輯完整解析。">
+<meta name="keywords" content="義式咖啡, Espresso, 萃取參數, 9 Bar, 水溫, 萃取時間, Pre-infusion, Crema, 調參">
+<meta property="og:title" content="義式咖啡萃取參數調整指南：壓力、溫度、時間的黃金比例">
+    <meta property="og:description" content="9 Bar 萃取壓力、90–96°C 水溫、25–30 秒萃取時間的科學依據。Pre-infusion 預浸如何提升 Crema 品質，系統化調參邏輯完整解析。" />
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://bnotescoffee.com/images/ai/espresso-parameters-hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap">
+<noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"></noscript></noscript>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:oklch(98% .005 30);--fg:oklch(20% .02 30);--primary:oklch(45% .1 30);
+  --accent:oklch(88% .05 45);--muted:oklch(95% .008 30);--muted-fg:oklch(50% .02 30);
+  --border:oklch(88% .01 30);--card:oklch(99% .003 30);
+  --gold:#c8922a;--coffee-dark:#1a0a00;--coffee-warm:#5c2d00;--coffee-mid:#8b4513;
+  --coffee-light:#d4a96a;--cream:#f5f0e8;
+  --font-serif:'Noto Serif TC',Georgia,serif;
+  --font-sans:'Noto Sans TC',-apple-system,sans-serif;
+  --radius:.75rem;
+}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--fg);line-height:1.8}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:.75rem}
+.nav-logo{font-size:1.5rem}
+.nav-name{font-family:var(--font-serif);font-weight:700;font-size:1rem;color:var(--coffee-dark);line-height:1.2}
+.nav-en{font-size:.6rem;letter-spacing:.3em;color:var(--coffee-mid)}
+.nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
+.nav-back:hover{color:var(--coffee-dark)}
+.article-hero{position:relative;height:min(480px,55vw);overflow:hidden;background:var(--coffee-dark)}
+.article-hero-img{width:100%;height:100%;object-fit:cover;opacity:.75}
+.article-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(26,10,0,.85))}
+.article-hero-content{position:absolute;bottom:2rem;left:0;right:0;padding:0 1.5rem;max-width:900px;margin:0 auto}
+.article-cat{display:inline-flex;align-items:center;gap:.4rem;background:var(--gold);color:white;padding:.25rem .875rem;border-radius:9999px;font-size:.75rem;font-weight:700;margin-bottom:.875rem}
+.article-h1{font-family:var(--font-serif);font-size:clamp(1.5rem,4vw,2.25rem);font-weight:900;color:white;line-height:1.25;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.article-meta-bar{background:white;border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
+.article-meta-inner{max-width:900px;margin:0 auto;display:flex;gap:1.5rem;font-size:.8rem;color:var(--muted-fg);flex-wrap:wrap}
+.article-wrap{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem}
+.article-body h2{font-family:var(--font-serif);font-size:1.4rem;font-weight:700;color:var(--coffee-dark);margin:2rem 0 .875rem;padding-bottom:.5rem;border-bottom:2px solid var(--accent)}
+.article-body h3{font-family:var(--font-serif);font-size:1.15rem;font-weight:700;color:var(--coffee-warm);margin:1.5rem 0 .625rem}
+.article-body p{margin-bottom:1.25rem;color:var(--fg);line-height:1.9}
+.article-body ul,ol{margin:0 0 1.25rem 1.5rem;color:var(--fg)}
+.article-body li{margin-bottom:.5rem;line-height:1.8}
+.article-body strong{color:var(--coffee-warm);font-weight:700}
+.article-sidebar{display:grid;grid-template-columns:2fr 1fr;gap:3rem;max-width:900px;margin:0 auto;padding:0 1.5rem 3rem}
+@media(max-width:768px){.article-sidebar{grid-template-columns:1fr}}
+.toc{position:sticky;top:5rem;background:var(--muted);border-radius:var(--radius);padding:1.25rem;height:fit-content}
+.toc-title{font-weight:700;font-size:.9rem;color:var(--coffee-dark);margin-bottom:.875rem}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.toc-list a{font-size:.825rem;color:var(--coffee-mid);transition:color .2s;padding:.25rem 0;border-left:2px solid transparent;padding-left:.75rem}
+.toc-list a:hover{color:var(--coffee-dark);border-left-color:var(--gold)}
+.cta-box{background:linear-gradient(135deg,var(--coffee-dark),var(--coffee-warm));color:white;border-radius:var(--radius);padding:2rem;text-align:center;margin-top:2rem}
+.cta-box h3{font-family:var(--font-serif);font-size:1.25rem;margin-bottom:.75rem}
+.cta-box p{color:var(--coffee-light);font-size:.9rem;margin-bottom:1.25rem}
+.cta-form{display:flex;gap:.5rem;max-width:380px;margin:0 auto}
+.cta-input{flex:1;padding:.75rem 1rem;border-radius:9999px;border:none;font-size:.875rem}
+.cta-btn{padding:.75rem 1.25rem;background:var(--gold);color:white;border:none;border-radius:9999px;font-weight:700;cursor:pointer;font-size:.875rem}
+footer{background:var(--coffee-dark);color:oklch(65% .02 30);padding:2rem 1.5rem;text-align:center;font-size:.85rem}
+footer a{color:var(--coffee-light)}
+</style>
+<link rel="canonical" href="https://bnotescoffee.com/articles/espresso-parameters.html">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:url" content="https://bnotescoffee.com/articles/espresso-parameters.html">
+<meta property="og:site_name" content="BNotes 焙學·原豆誌">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="義式咖啡萃取參數調整指南：壓力、溫度、時間的黃金比例 | BNotes 焙學·原豆誌">
+<meta name="twitter:description" content="9 Bar 萃取壓力、90–96°C 水溫、25–30 秒萃取時間的科學依據。Pre-infusion 預浸如何提升 Crema 品質，系統化調參邏輯完整解析。">
+<meta name="twitter:image" content="https://bnotescoffee.com/images/ai/espresso-parameters-hero.jpg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1a0a00">
+<link rel="preconnect" href="https://images.unsplash.com">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "義式咖啡萃取參數調整指南：壓力、溫度、時間的黃金比例", "description": "9 Bar 萃取壓力、90–96°C 水溫、25–30 秒萃取時間的科學依據。Pre-infusion 預浸如何提升 Crema 品質，系統化調參邏輯完整解析。", "url": "https://bnotescoffee.com/articles/espresso-parameters.html", "datePublished": "2026-02-05T00:00:00+08:00", "dateModified": "2026-02-05T00:00:00+08:00", "inLanguage": "zh-TW", "author": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com"}, "publisher": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com", "logo": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/bnotes-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bnotescoffee.com/articles/espresso-parameters.html"}, "keywords": "精品咖啡,咖啡知識,台灣咖啡", "image": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/ai/espresso-parameters-hero.jpg", "width": 1200, "height": 630}}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://bnotescoffee.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "義式咖啡",
+      "item": "https://bnotescoffee.com/#categories"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "義式咖啡萃取參數調整指南：壓力、溫度、時間的黃金比例",
+      "item": "https://bnotescoffee.com/articles/espresso-parameters.html"
+    }
+  ]
+}
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2WXMBSHDSB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2WXMBSHDSB', {
+    'page_title': document.title,
+    'page_location': window.location.href,
+    'send_page_view': true
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.newsletter-form, .cta-form').forEach(function(form) {
+      form.addEventListener('submit', function(e) {
+        gtag('event', 'newsletter_signup', {
+          'event_category': 'engagement',
+          'event_label': 'newsletter_subscribe',
+          'value': 1
+        });
+      });
+    });
+    if (document.querySelector('.article-body')) {
+      var tracked = false;
+      window.addEventListener('scroll', function() {
+        if (!tracked) {
+          var scrollPct = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
+          if (scrollPct > 0.8) {
+            tracked = true;
+            gtag('event', 'article_read_complete', {
+              'event_category': 'content',
+              'event_label': document.title,
+              'value': 1
+            });
+          }
+        }
+      });
+    }
+  });
+</script>
+  <meta property="article:published_time" content="2026-02-05T00:00:00+08:00" />
+  <meta property="article:modified_time" content="2026-02-05T00:00:00+08:00" />
+  <meta property="article:author" content="https://bnotescoffee.com" />
+  <meta property="article:section" content="義式咖啡" />
+  <meta property="article:tag" content="精品咖啡" />
+  <meta name="twitter:label1" content="閱讀時間" />
+  <meta name="twitter:data1" content="3 分鐘閱讀" />
+  <meta name="twitter:label2" content="分類" />
+  <meta name="twitter:data2" content="義式咖啡" />
+<style id="bnotes-v3">
+/* ===== BNotes Unified Article Style v3.1 ===== */
+
+/* 1. 強制隱藏所有舊 hero 結構（含背景色塊與空白佔位） */
+.article-hero,
+.article-hero-overlay,
+.article-hero-content,
+.article-hero-img,
+.bnotes-hero-image,
+.typo-hero,
+.typo-hero-bg,
+.typo-hero-content,
+.hero-image,
+.post-hero,
+.entry-hero,
+.feature-image,
+[class*="hero-img"],
+.bnotes-thumb {
+  display: none !important;
+}
+
+/* 2. 統一 HEADER 區塊 */
+.bnotes-header {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 48px 24px 0;
+  text-align: center;
+}
+.bnotes-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: .78rem; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--coffee-mid,#8b4513);
+  background: oklch(93% .04 45 / .4);
+  padding: 4px 14px; border-radius: 99px;
+  margin-bottom: 20px;
+}
+.bnotes-title {
+  font-family: var(--font-serif,'Noto Serif TC',Georgia,serif);
+  font-size: clamp(1.6rem,4vw,2.4rem);
+  font-weight: 900; line-height: 1.35;
+  color: var(--coffee-dark,#1a0a00);
+  margin-bottom: 20px; letter-spacing: -.01em;
+}
+.bnotes-meta {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 6px 16px;
+  font-size: .83rem; color: oklch(45% .02 30);
+  margin-bottom: 32px;
+}
+.bnotes-meta span { display: flex; align-items: center; gap: 4px }
+.bnotes-divider {
+  width: 56px; height: 3px;
+  background: linear-gradient(90deg,var(--gold,#c8922a),transparent);
+  border-radius: 2px; margin: 0 auto 40px;
+}
+
+/* 3. 文章主體排版 */
+.article-body, .article-content, main.article-wrap article,
+.article-wrap .article-body {
+  max-width: 740px !important;
+  margin: 0 auto !important;
+  padding: 0 24px 80px !important;
+  font-family: var(--font-sans,'Noto Sans TC',sans-serif);
+  font-size: 1.05rem; line-height: 1.85;
+  color: oklch(22% .02 30);
+}
+.article-body p, .article-body li { margin-bottom: 1.3em }
+.article-body h2 {
+  font-family: var(--font-serif,'Noto Serif TC',serif);
+  font-size: 1.45rem; font-weight: 700;
+  color: var(--coffee-dark,#1a0a00);
+  margin: 2.4em 0 .8em;
+  padding-bottom: .4em;
+  border-bottom: 2px solid oklch(90% .04 45);
+}
+.article-body h3 {
+  font-size: 1.18rem; font-weight: 600;
+  color: oklch(30% .06 35);
+  margin: 1.8em 0 .6em;
+}
+.article-body blockquote {
+  border-left: 4px solid var(--gold,#c8922a);
+  padding: .8em 1.2em; margin: 1.6em 0;
+  background: oklch(97% .015 45);
+  border-radius: 0 .5rem .5rem 0;
+  font-style: italic; color: oklch(35% .04 35);
+}
+.article-body table {
+  width: 100%; border-collapse: collapse;
+  margin: 1.6em 0; font-size: .9rem;
+  border-radius: .5rem; overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,.07);
+}
+.article-body th {
+  background: var(--coffee-warm,#5c2d00); color: #fff;
+  padding: .7em 1em; text-align: left; font-weight: 600;
+}
+.article-body td {
+  padding: .65em 1em;
+  border-bottom: 1px solid oklch(90% .01 30);
+}
+.article-body tr:nth-child(even) td { background: oklch(97% .006 30) }
+
+/* 4. Key Takeaway 卡片 */
+.key-takeaway, .takeaway-box, [class*="key-take"] {
+  background: linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));
+  border: 1px solid oklch(88% .05 45);
+  border-left: 4px solid var(--gold,#c8922a);
+  border-radius: .75rem; padding: 1.2em 1.4em;
+  margin: 1.8em 0;
+}
+
+/* 5. TOC 面板 */
+#bnotes-toc-panel {
+  position: fixed; right: max(2vw,16px);
+  width: 220px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid oklch(88% .01 30);
+  border-radius: .75rem;
+  padding: 14px 16px;
+  font-size: .78rem; line-height: 1.6;
+  box-shadow: 0 4px 20px rgba(0,0,0,.08);
+  scrollbar-width: none;
+  z-index: 30;
+  display: none;
+}
+#bnotes-toc-panel::-webkit-scrollbar { display: none }
+#bnotes-toc-panel h4 {
+  font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: oklch(55% .02 30);
+  margin-bottom: 10px; border-bottom: 1px solid oklch(90% .01 30);
+  padding-bottom: 8px;
+}
+#bnotes-toc-panel a {
+  display: block; padding: 3px 0 3px 10px;
+  color: oklch(42% .02 30);
+  border-left: 2px solid transparent;
+  transition: all .15s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+#bnotes-toc-panel a:hover { color: var(--coffee-mid,#8b4513); border-left-color: var(--gold,#c8922a) }
+#bnotes-toc-panel a.active { color: var(--coffee-warm,#5c2d00); font-weight: 600; border-left-color: var(--gold,#c8922a) }
+#bnotes-toc-panel a[data-level="3"] { padding-left: 20px; font-size: .74rem }
+
+/* 6. 閱讀進度條 */
+#bnotes-progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: linear-gradient(90deg,var(--gold,#c8922a),var(--coffee-mid,#8b4513));
+  z-index: 100; transition: width .1s linear;
+}
+
+/* 7. 分享列 */
+.share-bar, .article-share {
+  max-width: 740px; margin: 0 auto;
+  padding: 24px 24px 0;
+  border-top: 1px solid oklch(90% .01 30);
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+}
+
+/* 8. 相關文章 */
+.related-articles, .related-posts {
+  max-width: 740px; margin: 40px auto 0;
+  padding: 0 24px;
+}
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 12px }
+.related-card {
+  border: 1px solid oklch(89% .01 30); border-radius: .6rem;
+  padding: 14px; font-size: .85rem;
+  background: var(--card,#fff);
+  transition: box-shadow .15s;
+}
+.related-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.09) }
+
+/* 9. 麵包屑保留 */
+.breadcrumb, nav[aria-label="breadcrumb"] {
+  max-width: 740px; margin: 12px auto 0; padding: 0 24px;
+  font-size: .8rem; color: oklch(55% .02 30);
+}
+
+/* 10. 隱藏舊的重複 meta-bar */
+.article-meta-bar, .article-meta-inner { display: none !important; }
+
+/* 11. Mobile */
+@media(max-width:767px) {
+  .bnotes-header { padding: 28px 16px 0 }
+  .bnotes-title { font-size: 1.45rem }
+  .article-body, .article-content, main.article-wrap article,
+  .article-wrap .article-body { padding: 0 16px 60px !important }
+  .article-body h2 { font-size: 1.2rem }
+  .share-bar, .article-share, .related-articles, .related-posts { padding: 16px }
+  .related-grid { grid-template-columns: 1fr }
+  .breadcrumb { padding: 0 16px }
+}
+</style>
+</head>
+<body>
+
+<button id="back-to-top" aria-label="返回頂部" title="返回頂部">↑</button>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <span class="nav-logo">☕</span>
+      <div><div class="nav-name">焙學・原豆誌</div><div class="nav-en">BEAN NOTES</div></div>
+    </a>
+    <a href="/" class="nav-back">← 回首頁</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <img class="article-hero-img" src="https://bnotescoffee.com/images/ai/espresso-parameters-hero.jpg" alt="義式咖啡萃取參數調整指南：壓力、溫度、時間的黃金比例" fetchpriority="high" loading="eager" decoding="async">
+  <div class="article-hero-overlay"></div>
+  <div class="article-hero-content" style="max-width:900px;width:100%;left:50%;transform:translateX(-50%)">
+    <div class="article-cat">🎨 義式咖啡</div>
+    <h1 class="article-h1">義式咖啡萃取參數調整指南：壓力、溫度、時間的黃金比例</h1>
+  </div>
+</div>
+
+<div class="article-meta-bar">
+  <div class="article-meta-inner">
+    <span>📅 2026-02-05</span>
+    <span>⏱ 3 分鐘閱讀</span>
+    <span>📝 約 3,120 字</span>
+    <span>✍️ BNotes 編輯部</span>
+  </div>
+</div>
+
+<nav aria-label="breadcrumb" style="max-width:900px;margin:.75rem auto;padding:0 1.5rem;font-size:.8rem;color:var(--muted-fg)">
+  <a href="/">首頁</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
+  <a href="/#categories">義式咖啡</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
+  <span style="color:var(--coffee-mid)">義式咖啡萃取參數調整指南：壓力、溫度、時間的黃金比例</span>
+</nav>
+
+<main class="article-wrap">
+
+<article class="article-body">
+    
+<p>義式濃縮咖啡（<strong>Espresso</strong>）是一門精密科學。在 25–30 秒內，以 9 Bar 壓力將熱水強迫通過緊壓咖啡粉，萃取出 25–35mL 濃縮液體，這個過程中任何參數的微小偏差都會顯著改變最終風味。</p>
+<div class="key-box"><strong>☕ Key Takeaways</strong><br>
+• 萃取壓力：9 Bar（傳統義式），近年精品圈趨向 6–8 Bar 低壓萃取<br>
+• 水溫：90–96°C，淺焙豆偏高，深焙豆偏低<br>
+• 萃取時間：25–30 秒（Double Shot，約 35–40mL）<br>
+• 粉液比（Brew Ratio）：1:2（義式傳統） 到 1:2.5（當代精品）<br>
+• Pre-infusion 預浸：3–8 秒，讓咖啡粉均勻浸濕，減少水道（Channeling）</div>
+
+<h2>壓力的科學</h2>
+<p>傳統義式機使用 <strong>9 Bar（約 130 PSI）</strong>的萃取壓力，這個數值來自 1940 年代 Gaggia 的機械設計，並非基於嚴謹的科學研究。近年研究顯示，6–8 Bar「溫和萃取」可以提升甜感，同時減少苦澀感，越來越多世界冠軍選手在競賽中採用。</p>
+
+<div class="data-table"><strong>📊 Espresso 萃取參數黃金比例</strong>
+<table><thead><tr><th>參數</th><th>傳統義式標準</th><th>當代精品標準</th><th>台灣推薦</th></tr></thead>
+<tbody>
+<tr><td>萃取壓力</td><td>9 Bar</td><td>6–8 Bar</td><td>7–9 Bar</td></tr>
+<tr><td>水溫</td><td>90–95°C</td><td>91–96°C（豆深度調整）</td><td>92–94°C</td></tr>
+<tr><td>萃取時間</td><td>25–30 秒</td><td>28–35 秒</td><td>28–32 秒</td></tr>
+<tr><td>粉量（Double）</td><td>14–18g</td><td>18–22g</td><td>18–20g</td></tr>
+<tr><td>液量輸出</td><td>25–35mL</td><td>35–50mL</td><td>35–42mL</td></tr>
+<tr><td>Brew Ratio</td><td>1:2</td><td>1:2–1:2.5</td><td>1:2.2</td></tr>
+</tbody></table></div>
+
+<h2>Pre-infusion（預浸）的重要性</h2>
+<p>預浸（<strong>Pre-infusion</strong>）是在全壓萃取開始前，先以低壓（1–4 Bar）或自然滲透方式讓水分均勻浸濕咖啡粉床的過程。這樣可以：</p>
+<ul>
+<li>讓咖啡粉中的 CO₂ 充分排出（新鮮豆尤其重要）</li>
+<li>均勻浸濕咖啡粉，避免乾粉導致水道效應（<strong>Channeling</strong>）</li>
+<li>提升萃取均勻度，減少萃取率差異</li>
+</ul>
+
+<h2>Crema 的秘密</h2>
+<p>Crema 是義式咖啡最具辨識度的特徵。它由咖啡油脂、蛋白質和 CO₂ 氣泡共同構成。理想 Crema 厚度：<strong>3–5mm</strong>，顏色呈榛子棕色，持續時間超過 2 分鐘。Crema 過薄通常代表咖啡豆不夠新鮮或研磨過粗；過厚過白則代表萃取不足。</p>
+
+<div class="geo-box"><h3 style="font-size:1rem;color:#5c2d00;margin-bottom:.75rem">🔬 常見問題</h3>
+<p><strong>Q：Espresso 萃取太快（&lt;20 秒）怎麼辦？</strong><br>A：研磨過粗或填壓（Tamping）力度不足，導致水流速度過快。解決方式：調細研磨度 1–2 格，或加強填壓力度至 15–20 kg。</p>
+<p style="margin-top:.75rem"><strong>Q：如何判斷 Espresso 是否萃取過度？</strong><br>A：超過 35 秒的萃取通常為過度萃取，風味空洞、苦澀刺舌，Crema 呈深棕色並帶有白色中心斑點。</p></div>
+  
+  <div class="share-section">
+    <span class="share-label">📤 分享這篇文章</span>
+    <div class="share-btns">
+      <a class="share-btn share-btn-line" href="#" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+' '+location.href));return false;" target="_blank" rel="noopener">LINE</a>
+      <a class="share-btn share-btn-fb" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false;">Facebook</a>
+      <button class="share-btn share-btn-copy" onclick="(function(b){navigator.clipboard.writeText(location.href).then(function(){b.textContent='✅ 已複製';setTimeout(function(){b.textContent='🔗 複製連結'},2000)})})(this)">🔗 複製連結</button>
+    </div>
+  </div>
+
+<h2>壓力曲線（Pressure Profiling）的革命：9bar 迷思破解</h2>
+<p>在傳統義式咖啡的教條中，9bar 一直被視為不可撼動的黃金標準，這項數值最早起源於 20 世紀中葉 Gaggia 與 Faema 等義大利設備廠商對機械泵浦與彈簧壓力的設定限制。然而，隨著現代流體力學研究的深入與 Decent 或 Slayer 等變壓機台的普及，職人們開始意識到恆定 9bar 往往並非萃取的終點。高壓在萃取初期雖能強行擠壓出油脂（Crema），卻也極易造成粉餅內部的「微通道效應」（Micro-channeling），導致水流在阻力最小處形成破口，產生局部過度萃取與焦苦味。現代變壓技術的核心在於「預浸泡」與「遞減壓力」，透過初期 3bar 的低壓潤濕，讓咖啡粉顆粒充分吸水膨脹並建立穩固的結構，隨後再攀升至峰值壓力，這能有效提高萃取均勻度並大幅降低苦澀感。</p>
+<p>更進一步的技術研究指出，降低峰值壓力至 6bar 甚至更低，在特定條件下反而能獲得更高的萃取率（Extraction Yield）。這是因為較低的壓力能減少粉餅被過度壓縮的程度，維持粉層整體的孔隙率，讓水流能更均勻地滲透每一顆咖啡粉末。這種「低壓萃取」模式特別適合處理淺烘焙的高海拔豆款，能夠在不帶出尖銳酸質的前提下，充分挖掘出豆款本身的甜感與複雜的風味層次。事實上，壓力曲線的革命本質上是對「阻力控制」的重新定義：壓力不再是死板的數據，而是用來補償萃取過程中因粉餅結構流失而導致的阻力下降，從而確保每一滴咖啡液都能維持一致的濃度與飽滿度。</p>
+<h2>粉量、粉餅密度與流速的三角關係</h2>
+<p>義式濃縮的萃取過程在本質上是受達西定律（Darcy's Law）支配的流體滲透行為，其中粉量（Dose）、粉餅密度與流速之間存在著嚴密的連動邏輯。粉量決定了粉層的初始厚度，這直接影響了水流穿過粉餅所需的總時間；而粉餅密度則由研磨刻度與佈粉均勻度共同決定。職人在調整參數時，必須理解「粉頭空間」（Headspace）的重要性，即濾籃上緣與分水網之間的間隙。若粉量過多導致粉餅直接頂住分水網，會阻礙咖啡粉吸水膨脹的物理空間，導致水流受阻並產生明顯的乾澀感；反之，過少的粉量則會產生「泥濘粉餅」，使萃取壓力無法有效建立。因此，精確的粉量秤重與分毫不差的佈粉操作，是建立穩定阻力的第一步。</p>
+<p>在流速的動態控制上，我們必須正視「細粉遷移」（Fines Migration）現象。隨著萃取時間推移，極細小的咖啡粉顆粒會隨水流向濾籃底部移動，這會導致粉餅底部的阻力隨時間增加，進而使流速在萃取末段變慢。這解釋了為何許多職人會採用「遞減壓力」或「流量控制」來補償這種現象。理想的三角關係應是在確定的粉量下，透過調整研磨細度來尋找最適合該豆款的流速曲線。<table><thead><tr><th>模式名稱</th><th>壓力 (bar)</th><th>粉量 (g)</th><th>萃取時間 (sec)</th><th>預估 TDS (%)</th></tr></thead><tbody><tr><td>經典義式 (Classic)</td><td>9.0</td><td>18.0-18.5</td><td>25-30</td><td>8.5-9.5</td></tr><tr><td>低壓長預浸 (Modern Low)</td><td>6.0</td><td>19.5-20.0</td><td>22-28</td><td>10.0-11.5</td></tr><tr><td>遞減壓力曲線 (Profiling)</td><td>3.0→9.0→4.5</td><td>18.5-19.0</td><td>35-45</td><td>11.0-12.5</td></tr><tr><td>在地深焙模式 (Taiwan)</td><td>7.0-8.0</td><td>18.0</td><td>18-22</td><td>9.0-10.5</td></tr></tbody></table></p>
+<h2>台灣職人的在地調整：軟水與深焙豆的參數適配</h2>
+<p>台灣各地的水質條件差異顯著，但整體而言，許多都會區如台北、宜蘭等地的自來水質偏向軟水，這對於義式萃取提出了獨特的挑戰。軟水中缺乏鈣、鎂等能有效「抓取」咖啡風味物質的礦物質離子，這常導致萃取出的咖啡體感較為單薄、酸度偏高且缺乏甜感的支撐。為此，台灣在地職人發展出了一套補償機制：透過微幅調高萃取溫度（例如設定在 93°C 至 95°C 之間）來彌補水質動能的不足，或者採取更細的研磨度以增加水粉接觸的總表面積。這種針對水化學特性的調整，能讓原本可能顯得空洞的濃縮咖啡，展現出更為醇厚且持久的餘韻。</p>
+<p>面對台灣市場主流仍偏好的中深烘焙豆款，參數的邏輯則需轉向「減法」。深焙豆的細胞壁較為脆弱且孔隙度高，極易在標準壓力與溫度下釋放出碳化纖維的焦苦味。針對此類豆款，在地職人傾向縮短萃取比例（Yield Ratio），從傳統的 1:2 調整為 1:1.5 甚至更短的 Ristretto 模式，並將水溫下修至 88°C 至 90°C，以避開末段的不良風味。這種結合地域水質觀測與市場烘焙偏好的參數調整，體現了台灣咖啡文化的細膩度，將科學理論與在地實務完美融合，創造出符合本土味蕾的黃金比例。</p>
+<section class="further-reading"><h2>延伸閱讀</h2><ul>
+<li><a href="/articles/latte-art.html">義式咖啡拉花藝術：從心形到鬱金香的完整教學</a></li>
+<li><a href="/articles/pour-over-variable-complete-experiment.html">手沖變數完全實驗：水溫與研磨度的科學數據</a></li>
+</ul></section>
+</article>
+
+  <div class="cta-box" style="margin-top:3rem">
+    <h3>📬 喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
+    <p>每週日收到精選咖啡知識，與 2,400+ 咖啡愛好者一起深入咖啡世界。</p>
+    <form class="cta-form" onsubmit="return false">
+      <input class="cta-input" type="email" placeholder="your@email.com" required>
+      <button class="cta-btn">免費訂閱</button>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 BNotes 焙學·原豆誌 · <a href="https://bnotescoffee.com">bnotescoffee.com</a></p>
+</footer>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"52882166ceb34dbc81601c4020da5ca0","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
+
+<script id="bnotes-v3-js">
+(function(){
+  /* ── 1. 進度條 ── */
+  var pb=document.createElement('div');
+  pb.id='bnotes-progress';
+  document.body.prepend(pb);
+  function updateProgress(){
+    var s=document.documentElement;
+    var pct=(s.scrollTop||document.body.scrollTop)/(s.scrollHeight-s.clientHeight)*100;
+    pb.style.width=Math.min(pct,100)+'%';
+  }
+  window.addEventListener('scroll',updateProgress,{passive:true});
+
+  /* ── 2. 統一 Header 注入 ── */
+  (function injectHeader(){
+    /* 從現有 DOM 抓 meta 資訊 */
+    var titleEl=document.querySelector('h1,.article-title,.typo-hero-title');
+    if(!titleEl)return;
+
+    /* 不重複注入 */
+    if(document.getElementById('bnotes-unified-header'))return;
+
+    var title=titleEl.textContent.trim();
+
+    /* category / eyebrow */
+    var eyebrow='';
+    var catEl=document.querySelector('.article-cat,.article-category,.typo-hero-eyebrow,.article-tag-badge');
+    if(catEl) eyebrow=catEl.textContent.trim();
+
+    /* date */
+    var dateEl=document.querySelector('[datetime],[data-date]');
+    var dateStr='';
+    if(dateEl) dateStr=dateEl.getAttribute('datetime')||dateEl.getAttribute('data-date')||'';
+    if(!dateStr){
+      /* 從 meta og:article:published_time 抓 */
+      var ogDate=document.querySelector('meta[property="article:published_time"]');
+      if(ogDate) dateStr=ogDate.content.slice(0,10);
+    }
+    if(!dateStr){
+      /* 從 ld+json 抓 */
+      var ldJson=document.querySelector('script[type="application/ld+json"]');
+      if(ldJson){try{var d=JSON.parse(ldJson.textContent);dateStr=(d.datePublished||'').slice(0,10);}catch(e){}}
+    }
+
+    /* reading time */
+    var rtEl=document.querySelector('.reading-time,[data-reading-time]');
+    var rt=rtEl?rtEl.textContent.trim():'';
+    if(!rt){
+      /* 從頁面文字估算 */
+      var bodyEl=document.querySelector('.article-body,.article-content,article');
+      if(bodyEl){
+        var words=(bodyEl.textContent||'').replace(/\s+/g,' ').trim().length;
+        rt=Math.ceil(words/350)+' 分鐘閱讀';
+      }
+    }
+
+    /* 組合 header */
+    var headerHtml='<header id="bnotes-unified-header" class="bnotes-header">';
+    if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
+    headerHtml+='<h2 class="bnotes-title">'+title+'</h2>';
+    headerHtml+='<div class="bnotes-meta">';
+    if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
+    headerHtml+='<span>✍️ BNotes 編輯部</span>';
+    if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
+    headerHtml+='</div><div class="bnotes-divider"></div></header>';
+
+    /* 隱藏舊 hero / title 區塊 */
+    var oldHeroes=document.querySelectorAll(
+      '.article-hero,.typo-hero,.article-meta-bar,.article-meta,.article-header'
+    );
+    oldHeroes.forEach(function(el){el.style.display='none';});
+    /* 隱藏舊 H1（避免重複顯示） */
+    titleEl.style.display='none';
+
+    /* 插入在 <body> 最前，導覽列之後 */
+    var nav=document.querySelector('nav,.nav,header:not(#bnotes-unified-header)');
+    var ref=nav?nav.nextSibling:document.body.firstChild;
+    var tmp=document.createElement('div');
+    tmp.innerHTML=headerHtml;
+    document.body.insertBefore(tmp.firstElementChild,ref&&ref.parentNode===document.body?ref:null);
+  })();
+
+  /* ── 3. TOC 目錄 ── */
+  (function buildTOC(){
+    if(window.innerWidth<1300)return;
+
+    var body=document.querySelector('.article-body,.article-content,article');
+    if(!body)return;
+    var headings=body.querySelectorAll('h2,h3');
+    if(headings.length<3)return;
+
+    /* 給每個標題加 id */
+    headings.forEach(function(h,i){
+      if(!h.id)h.id='bnotes-s'+i;
+    });
+
+    /* 建立面板 */
+    var panel=document.createElement('div');
+    panel.id='bnotes-toc-panel';
+    panel.innerHTML='<h4>目　錄</h4>';
+    var list=document.createElement('div');
+    headings.forEach(function(h){
+      var a=document.createElement('a');
+      a.href='#'+h.id;
+      a.setAttribute('data-level',h.tagName==='H2'?'2':'3');
+      a.textContent=h.textContent.trim().replace(/^[#\s]+/,'');
+      list.appendChild(a);
+    });
+    panel.appendChild(list);
+    document.body.appendChild(panel);
+
+    /* 定位 */
+    function positionTOC(){
+      var art=document.querySelector('main,.article-wrap,.container');
+      if(!art)return;
+      var rect=art.getBoundingClientRect();
+      var rightEdge=rect.right+document.documentElement.scrollLeft;
+      var left=rightEdge+24;
+      if(left+240>window.innerWidth){panel.style.display='none';return;}
+      panel.style.display='block';
+      panel.style.left=left+'px';
+      panel.style.top='80px';
+    }
+    positionTOC();
+    window.addEventListener('resize',positionTOC);
+
+    /* scroll 高亮 */
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var link=panel.querySelector('a[href="#'+e.target.id+'"]');
+        if(link)link.classList.toggle('active',e.isIntersecting);
+      });
+    },{rootMargin:'-10% 0px -80% 0px'});
+    headings.forEach(function(h){io.observe(h);});
+  })();
+})();
+</script>
+</body>
+</html>

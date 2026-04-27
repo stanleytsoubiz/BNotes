@@ -1,0 +1,64 @@
+name: "BNotes Skywork AI Weekly Pipeline"
+
+on:
+  schedule:
+    - cron: "0 1 * * 1"
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "Article count (1-5)"
+        required: false
+        default: "3"
+        type: choice
+        options: ["1","2","3","5"]
+      category:
+        description: "Category (empty=auto)"
+        required: false
+        default: ""
+      force_topic:
+        description: "Topic override (empty=auto)"
+        required: false
+        default: ""
+
+concurrency:
+  group: skywork-ai-pipeline
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: "Generate AI Articles"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install requests PyYAML
+
+      - name: Generate and submit articles
+        env:
+          SUBMIT_AI_KEY: ${{ secrets.SUBMIT_AI_KEY }}
+          SKYWORK_API_KEY: ${{ secrets.SKYWORK_API_KEY }}
+          BNOTESCOFFEE_URL: "https://bnotescoffee.com"
+          COUNT: ${{ github.event.inputs.count || '3' }}
+          CATEGORY: ${{ github.event.inputs.category || '' }}
+          FORCE_TOPIC: ${{ github.event.inputs.force_topic || '' }}
+        run: python3 .github/scripts/skywork_pipeline.py
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## BNotes AI Pipeline Result" >> $GITHUB_STEP_SUMMARY
+          echo "- Time: $(date -u '+%Y-%m-%d %H:%M UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "- Event: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "Articles submitted to AI review queue. Login admin to approve." >> $GITHUB_STEP_SUMMARY

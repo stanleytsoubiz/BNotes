@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>找不到頁面 | BNotes 焙學·原豆誌</title>
+  <meta name="robots" content="noindex, follow">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background: #fdf8f2;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #c47e2b;
+      margin-bottom: 48px;
+      letter-spacing: 0.02em;
+    }
+    .logo span { color: #1a1a1a; }
+    .coffee-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      animation: steam 2s ease-in-out infinite alternate;
+    }
+    @keyframes steam {
+      from { transform: translateY(0px); opacity: 0.8; }
+      to   { transform: translateY(-6px); opacity: 1; }
+    }
+    h1 {
+      font-size: 5rem;
+      font-weight: 800;
+      color: #c47e2b;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #2e2e2e;
+      margin-bottom: 16px;
+    }
+    p {
+      font-size: 1rem;
+      color: #666;
+      max-width: 400px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .btn-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn-primary {
+      background: #c47e2b;
+      color: #fff;
+      text-decoration: none;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #a66520; }
+    .btn-secondary {
+      background: transparent;
+      color: #c47e2b;
+      text-decoration: none;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 2px solid #c47e2b;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: #fff7ed; }
+    .divider { width: 48px; height: 3px; background: #c47e2b; border-radius: 2px; margin: 40px auto 28px; }
+    .suggest-title { font-size: 0.85rem; font-weight: 700; color: #888; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+    .articles-list { list-style: none; text-align: left; max-width: 360px; }
+    .articles-list li { margin-bottom: 10px; }
+    .articles-list a {
+      color: #7a4f10;
+      text-decoration: none;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .articles-list a::before { content: "→"; color: #c47e2b; font-weight: 700; }
+    .articles-list a:hover { text-decoration: underline; }
+    footer {
+      position: fixed;
+      bottom: 20px;
+      font-size: 0.78rem;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">BNotes <span>焙學·原豆誌</span></div>
+
+  <div class="coffee-icon">&#9749;</div>
+  <h1>404</h1>
+  <h2>這杯咖啡跑哪去了？</h2>
+  <p>
+    您要找的頁面可能已移除、更名，<br>
+    或者這個 URL 根本還沒沖泡出來。<br>
+    讓我們一起回到首頁，重新開始。
+  </p>
+
+  <div class="btn-group">
+    <a href="/" class="btn-primary">回到首頁</a>
+    <a href="/articles/pour-over-guide.html" class="btn-secondary">看精選文章</a>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="suggest-title">熱門文章</p>
+  <ul class="articles-list">
+    <li><a href="/articles/pour-over-guide.html">手沖咖啡完全指南：10 個關鍵步驟</a></li>
+    <li><a href="/articles/espresso-parameters.html">義式濃縮：9 Bar 萃取科學解析</a></li>
+    <li><a href="/articles/alishan-terroir.html">阿里山咖啡風土：花香、果酸與甜感</a></li>
+    <li><a href="/articles/grinder-guide-2026.html">2026 磨豆機完整分析</a></li>
+    <li><a href="/articles/taiwan-specialty-coffee-whitepaper-2026.html">台灣精品咖啡玩家入門白皮書</a></li>
+  </ul>
+
+  <footer>BNotes 焙學·原豆誌 &copy; 2026 &nbsp;|&nbsp; bnotescoffee.com</footer>
+</body>
+</html>

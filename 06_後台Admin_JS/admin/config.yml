@@ -1,0 +1,219 @@
+backend:
+  name: github
+  repo: stanleytsoubiz/BNotes
+  branch: main
+  base_url: https://bnotescoffee-oauth.stanley-tsou-biz.workers.dev
+
+# ═══════════════════════════════════════════════════════════════
+# ✅ Editorial Workflow — 啟用草稿 / 審核 / 發布 三階段流程
+#    讓 Drafts 與 Scheduled 文章可在後台「直接預覽」
+# ═══════════════════════════════════════════════════════════════
+publish_mode: editorial_workflow
+
+locale: zh_TW
+site_url: https://bnotescoffee.com
+display_url: https://bnotescoffee.com
+show_preview_links: true
+
+media_folder: "dist/images/uploads"
+public_folder: "/images/uploads"
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  # ──────────────────────────────────────────────────────────────
+  # 📗 已發布文章
+  # ──────────────────────────────────────────────────────────────
+  - name: "articles"
+    label: "📗 已發布文章"
+    label_singular: "文章"
+    folder: "dist/articles"
+    create: true
+    delete: true
+    extension: "html"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    preview_path: "articles/{{slug}}.html"
+    summary: "【{{category}}】{{title}} ({{date}})"
+    identifier_field: "title"
+    sortable_fields: ["date", "title", "category", "reading_time"]
+    view_filters:
+      - label: "手沖技法"
+        field: category
+        pattern: "pour-over"
+      - label: "義式咖啡"
+        field: category
+        pattern: "espresso"
+      - label: "器材評測"
+        field: category
+        pattern: "equipment"
+      - label: "產地風土"
+        field: category
+        pattern: "terroir"
+      - label: "冲泡科學"
+        field: category
+        pattern: "science"
+      - label: "咖啡生活"
+        field: category
+        pattern: "lifestyle"
+      - label: "精選文章"
+        field: featured
+        pattern: true
+    view_groups:
+      - label: "依分類"
+        field: category
+      - label: "依月份"
+        field: date
+        pattern: "\\d{4}-\\d{2}"
+    fields:
+      - { label: "文章標題", name: "title", widget: "string", hint: "建議 15-30 字，含關鍵字" }
+      - label: "發布日期"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        default: ""
+      - label: "分類"
+        name: "category"
+        widget: "select"
+        default: "lifestyle"
+        options:
+          - { label: "手沖技法", value: "pour-over" }
+          - { label: "義式咖啡", value: "espresso" }
+          - { label: "器材評測", value: "equipment" }
+          - { label: "產地風土", value: "terroir" }
+          - { label: "冲泡科學", value: "science" }
+          - { label: "咖啡生活", value: "lifestyle" }
+      - label: "SEO 描述"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "120-160 字，Google 搜尋結果顯示"
+        pattern: [".{0,200}", "最多 200 字"]
+      - label: "封面圖"
+        name: "cover_image"
+        widget: "image"
+        required: false
+        allow_multiple: false
+        hint: "上傳後自動同步至文章 Hero 大圖（支援拖放、URL 輸入）"
+        media_library:
+          config:
+            multiple: false
+      - label: "閱讀時間（分鐘）"
+        name: "reading_time"
+        widget: "number"
+        default: 8
+        value_type: "int"
+        min: 1
+        max: 30
+      - label: "精選文章"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "設為精選後會在首頁顯示"
+      - label: "標籤"
+        name: "tags"
+        widget: "list"
+        required: false
+        field: { label: "標籤", name: "tag", widget: "string" }
+        hint: "新增文章標籤（如：手沖、V60、淺焙）"
+      - label: "內文"
+        name: "body"
+        widget: "markdown"
+        hint: "文章正文（HTML 格式亦可）"
+
+  # ──────────────────────────────────────────────────────────────
+  # 📅 排程待發布文章
+  #    ✅ preview_path 指向前台路徑，點擊眼睛圖示可預覽
+  #    ✅ 編輯器預覽面板開啟，可在後台即時預覽排版
+  # ──────────────────────────────────────────────────────────────
+  - name: "scheduled"
+    label: "📅 排程文章（待發布）"
+    label_singular: "排程文章"
+    folder: "dist/_scheduled"
+    create: true
+    delete: true
+    extension: "html"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    # ▼ 預覽連結：指向前台預覽路由（需前台支援 ?preview=1 或 _preview 路徑）
+    preview_path: "articles/{{slug}}.html"
+    summary: "【{{category}}】{{title}} → 發布日: {{date}}"
+    identifier_field: "title"
+    sortable_fields: ["date", "title", "category"]
+    view_groups:
+      - label: "依月份"
+        field: date
+        pattern: "\\d{4}-\\d{2}"
+    view_filters:
+      - label: "🔴 逾期（1-3月）"
+        field: date
+        pattern: "2026-0[123]"
+      - label: "🟡 近期（4-6月）"
+        field: date
+        pattern: "2026-0[456]"
+      - label: "⏳ 下半年（7-9月）"
+        field: date
+        pattern: "2026-0[789]"
+      - label: "📆 年末（10-12月）"
+        field: date
+        pattern: "2026-1[012]"
+    fields:
+      - { label: "文章標題", name: "title", widget: "string", hint: "建議 15-30 字，含關鍵字" }
+      - label: "排程發布日期"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        default: ""
+        hint: "⚠️ 修改此日期可重新安排發布時間。設為今天或過去日期 → 下次 08:00 自動發布"
+      - label: "分類"
+        name: "category"
+        widget: "select"
+        default: "lifestyle"
+        options:
+          - { label: "手沖技法", value: "pour-over" }
+          - { label: "義式咖啡", value: "espresso" }
+          - { label: "器材評測", value: "equipment" }
+          - { label: "產地風土", value: "terroir" }
+          - { label: "冲泡科學", value: "science" }
+          - { label: "咖啡生活", value: "lifestyle" }
+      - label: "SEO 描述"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "120-160 字，Google 搜尋結果顯示"
+      - label: "封面圖"
+        name: "cover_image"
+        widget: "image"
+        required: false
+        allow_multiple: false
+        hint: "封面圖片"
+        media_library:
+          config:
+            multiple: false
+      - label: "閱讀時間（分鐘）"
+        name: "reading_time"
+        widget: "number"
+        default: 8
+        value_type: "int"
+        min: 1
+        max: 30
+      - label: "精選文章"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "設為精選後會在首頁顯示"
+      - label: "標籤"
+        name: "tags"
+        widget: "list"
+        required: false
+        field: { label: "標籤", name: "tag", widget: "string" }
+        hint: "新增文章標籤（如：手沖、V60、淺焙）"
+      - label: "內文"
+        name: "body"
+        widget: "markdown"
+        hint: "文章正文（HTML 格式亦可）"

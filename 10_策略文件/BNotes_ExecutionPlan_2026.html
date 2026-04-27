@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>焙學·原豆誌 | BNotes — 完整落地執行計畫 2026</title>
+<style>
+:root{
+  --e:#0D0804;--r:#1C0A00;--d:#2C1500;--b:#3D1F0A;--m:#7B4828;
+  --w:#C07835;--g:#D4A030;--a:#E8B840;--c:#F7EDD8;--l:#EDD5A8;
+  --f:#F9F4EC;--wh:#FEFCF8;--gr:#2D6A3F;--tl:#1B6B7A;--bl:#1E4B7A;
+  --rd:#B52828;--or:#C84A10;--tx:#180C04;--mt:#7A5A3A;--bd:#D8C4A0;
+  --sh:0 4px 24px rgba(28,10,0,.12);--shl:0 12px 48px rgba(28,10,0,.18);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'PingFang TC','Noto Sans TC','Segoe UI',sans-serif;background:var(--f);color:var(--tx);line-height:1.75;}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(150deg,var(--e) 0%,var(--r) 40%,#0A0500 100%);padding:80px 40px 60px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(212,160,48,.18),transparent 65%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--g),transparent);}
+.hero-badge{display:inline-block;border:1px solid rgba(212,160,48,.5);color:var(--g);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;padding:5px 20px;border-radius:100px;margin-bottom:24px;font-family:'Helvetica Neue',sans-serif;background:rgba(212,160,48,.06);position:relative;}
+.hero-cn{font-size:clamp(1.2rem,2.5vw,1.6rem);color:var(--l);font-weight:400;letter-spacing:.1em;margin-bottom:6px;position:relative;}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;color:#fff;line-height:1.15;position:relative;margin-bottom:14px;}
+.hero h1 span{color:var(--g);}
+.hero-sub{color:rgba(255,255,255,.55);font-size:.88rem;font-family:'Helvetica Neue',sans-serif;letter-spacing:.06em;position:relative;margin-bottom:36px;}
+.hero-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;position:relative;}
+.hero-tag{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);font-size:.72rem;padding:5px 14px;border-radius:100px;font-family:'Helvetica Neue',sans-serif;letter-spacing:.06em;}
+.hero-tag.hl{background:rgba(212,160,48,.15);border-color:rgba(212,160,48,.4);color:var(--g);}
+
+/* ── NAV ── */
+.nav{background:var(--r);border-bottom:1px solid rgba(255,255,255,.05);position:sticky;top:0;z-index:100;}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;overflow-x:auto;scrollbar-width:none;}
+.nav-inner::-webkit-scrollbar{display:none;}
+.nav a{display:block;padding:13px 16px;color:rgba(255,255,255,.45);text-decoration:none;font-size:.72rem;font-weight:600;white-space:nowrap;letter-spacing:.06em;border-bottom:3px solid transparent;font-family:'Helvetica Neue',sans-serif;transition:all .2s;}
+.nav a:hover{color:var(--g);border-bottom-color:var(--g);}
+
+/* ── LAYOUT ── */
+.container{max-width:1280px;margin:0 auto;padding:0 24px;}
+.section{padding:72px 24px 48px;max-width:1280px;margin:0 auto;}
+.section+.section{border-top:1px solid var(--bd);}
+.eyebrow{font-family:'Helvetica Neue',sans-serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--w);margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+.eyebrow::before{content:'';display:block;width:20px;height:1px;background:var(--w);}
+.section-h{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:var(--r);margin-bottom:8px;line-height:1.25;}
+.section-desc{color:var(--mt);font-size:.88rem;font-family:'Helvetica Neue',sans-serif;margin-bottom:32px;max-width:700px;line-height:1.7;}
+
+/* ── CARDS ── */
+.card{background:#fff;border-radius:16px;padding:24px;border:1px solid var(--bd);box-shadow:var(--sh);}
+.card-top{position:relative;overflow:hidden;}
+.card-top::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--w),var(--g));}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
+.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+
+/* ── TABLE ── */
+.tbl-wrap{overflow-x:auto;border-radius:14px;box-shadow:var(--sh);margin-top:20px;}
+table{width:100%;border-collapse:collapse;background:#fff;font-family:'Helvetica Neue',sans-serif;font-size:.8rem;}
+thead th{background:var(--r);color:var(--l);padding:12px 16px;text-align:left;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;}
+tbody td{padding:11px 16px;border-bottom:1px solid rgba(200,160,80,.1);vertical-align:top;color:var(--tx);}
+tbody tr:hover td{background:var(--f);}
+tbody tr:last-child td{border-bottom:none;}
+
+/* ── BADGES ── */
+.badge{display:inline-block;padding:2px 9px;border-radius:100px;font-size:.65rem;font-weight:700;letter-spacing:.04em;white-space:nowrap;}
+.b-danger{background:#FEE2E2;color:#B91C1C;}
+.b-warn{background:#FEF3C7;color:#92400E;}
+.b-ok{background:#D1FAE5;color:#065F46;}
+.b-info{background:#DBEAFE;color:#1E40AF;}
+.b-neut{background:var(--f);color:var(--mt);border:1px solid var(--bd);}
+.b-gold{background:rgba(212,160,48,.15);color:#7A5000;border:1px solid rgba(212,160,48,.35);}
+
+/* ── CODE BLOCK ── */
+.code-block{background:#0A0604;border-radius:14px;padding:22px 24px;color:#E8D5A8;font-family:'Consolas','SF Mono',monospace;font-size:.76rem;line-height:1.8;overflow-x:auto;position:relative;margin-top:12px;}
+.code-block::before{content:attr(data-label);position:absolute;top:8px;right:12px;font-size:.58rem;letter-spacing:.15em;color:rgba(212,160,48,.4);font-family:'Helvetica Neue',sans-serif;font-weight:700;}
+.cm{color:#5A7040;}.ph{color:var(--g);font-weight:700;}.hl{color:#90C860;}.str{color:#E08060;}.kw{color:#60A8E0;}.num{color:#C080E0;}
+
+/* ── PHASE BLOCKS ── */
+.phase-block{border-radius:20px;overflow:hidden;box-shadow:var(--sh);margin-bottom:24px;}
+.phase-header{display:flex;align-items:center;gap:20px;padding:24px 32px;background:linear-gradient(135deg,var(--r),var(--d));}
+.phase-num{min-width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--w),var(--g));color:#fff;font-weight:900;font-size:1.2rem;display:flex;align-items:center;justify-content:center;font-family:'Helvetica Neue',sans-serif;flex-shrink:0;box-shadow:0 4px 16px rgba(192,120,53,.35);}
+.phase-title{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:3px;}
+.phase-sub{font-size:.78rem;color:rgba(255,255,255,.55);font-family:'Helvetica Neue',sans-serif;}
+.phase-duration{margin-left:auto;text-align:right;}
+.phase-duration .dur{font-size:1rem;font-weight:800;color:var(--g);font-family:'Helvetica Neue',sans-serif;}
+.phase-duration .dlab{font-size:.65rem;color:rgba(255,255,255,.45);font-family:'Helvetica Neue',sans-serif;letter-spacing:.08em;}
+.phase-body{background:#fff;border:1px solid var(--bd);border-top:none;padding:24px 32px;}
+.step-list{display:flex;flex-direction:column;gap:10px;}
+.step-item{display:flex;gap:14px;align-items:flex-start;padding:12px 16px;background:var(--f);border-radius:10px;border:1px solid var(--bd);}
+.step-icon{min-width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--w),var(--g));color:#fff;font-size:.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:'Helvetica Neue',sans-serif;flex-shrink:0;}
+.step-content{flex:1;}
+.step-title{font-size:.88rem;font-weight:700;color:var(--r);margin-bottom:3px;}
+.step-desc{font-size:.78rem;color:var(--mt);font-family:'Helvetica Neue',sans-serif;line-height:1.65;}
+.step-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px;}
+
+/* ── WEEKLY RHYTHM ── */
+.week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:20px;}
+.week-day{background:#fff;border-radius:12px;padding:14px 10px;border:1px solid var(--bd);text-align:center;}
+.day-name{font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mt);font-family:'Helvetica Neue',sans-serif;margin-bottom:6px;}
+.day-task{font-size:.75rem;color:var(--tx);font-weight:600;line-height:1.45;margin-bottom:4px;}
+.day-sub{font-size:.68rem;color:var(--mt);font-family:'Helvetica Neue',sans-serif;line-height:1.4;}
+.day-badge{display:inline-block;padding:2px 7px;border-radius:100px;font-size:.6rem;font-weight:700;margin-top:4px;}
+.db-ig{background:#FAD7EA;color:#9C1A5A;}
+.db-yt{background:#FFD7D7;color:#B52828;}
+.db-nl{background:#D7E8FF;color:#1A3A7A;}
+.db-th{background:#E7D7FF;color:#5A1A9C;}
+.db-pd{background:#D7F5E8;color:#0A5A30;}
+.db-bg{background:#FFF3D7;color:#7A4A0A;}
+.db-rev{background:#F5F5F5;color:#5A5A5A;}
+@media(max-width:900px){.week-grid{grid-template-columns:repeat(4,1fr);}}
+@media(max-width:500px){.week-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ── STACK DIAGRAM ── */
+.stack-layer{display:flex;gap:14px;align-items:stretch;margin-bottom:10px;}
+.stack-label{min-width:90px;background:linear-gradient(135deg,var(--r),var(--d));color:var(--l);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-align:center;padding:10px 6px;font-family:'Helvetica Neue',sans-serif;}
+.stack-items{display:flex;gap:8px;flex-wrap:wrap;flex:1;}
+.stack-item{background:#fff;border:1px solid var(--bd);border-radius:10px;padding:10px 14px;flex:1;min-width:140px;}
+.si-name{font-size:.82rem;font-weight:800;color:var(--r);margin-bottom:2px;}
+.si-desc{font-size:.72rem;color:var(--mt);font-family:'Helvetica Neue',sans-serif;line-height:1.5;}
+.si-free{font-size:.62rem;color:var(--gr);font-weight:700;font-family:'Helvetica Neue',sans-serif;margin-top:4px;}
+
+/* ── TIMELINE ── */
+.tl-wrap{position:relative;padding-left:40px;}
+.tl-wrap::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--w),var(--l));}
+.tl-item{position:relative;margin-bottom:28px;}
+.tl-dot{position:absolute;left:-40px;top:2px;width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--w),var(--g));display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:#fff;font-family:'Helvetica Neue',sans-serif;box-shadow:0 3px 12px rgba(192,120,53,.3);z-index:1;}
+.tl-card{background:#fff;border-radius:14px;padding:18px 20px;border:1px solid var(--bd);}
+.tl-wk{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--w);font-family:'Helvetica Neue',sans-serif;font-weight:700;margin-bottom:4px;}
+.tl-t{font-size:.9rem;font-weight:800;color:var(--r);margin-bottom:6px;}
+.tl-d{font-size:.78rem;color:var(--mt);font-family:'Helvetica Neue',sans-serif;line-height:1.65;}
+.tl-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;}
+
+/* ── TOOL MATRIX ── */
+.tool-cat{margin-bottom:28px;}
+.tool-cat-title{font-size:.72rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--w);font-family:'Helvetica Neue',sans-serif;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.tool-cat-title::after{content:'';flex:1;height:1px;background:var(--bd);}
+.tools-row{display:flex;gap:10px;flex-wrap:wrap;}
+.tool-chip{background:#fff;border:1px solid var(--bd);border-radius:10px;padding:10px 14px;min-width:160px;}
+.tc-name{font-size:.85rem;font-weight:700;color:var(--r);margin-bottom:2px;}
+.tc-role{font-size:.72rem;color:var(--mt);font-family:'Helvetica Neue',sans-serif;margin-bottom:4px;}
+.tc-price{font-size:.65rem;font-weight:700;font-family:'Helvetica Neue',sans-serif;}
+.price-free{color:var(--gr);}
+.price-paid{color:var(--w);}
+
+/* ── ENV VAR TABLE ── */
+.env-block{background:#0A0604;border-radius:14px;padding:24px;margin-top:20px;}
+.env-row{display:flex;gap:12px;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.env-row:last-child{border-bottom:none;}
+.env-key{color:var(--g);font-weight:700;font-size:.78rem;font-family:'Consolas',monospace;min-width:220px;flex-shrink:0;}
+.env-desc{color:rgba(255,255,255,.55);font-size:.75rem;font-family:'Helvetica Neue',sans-serif;line-height:1.55;}
+.env-where{color:rgba(255,255,255,.3);font-size:.65rem;font-family:'Helvetica Neue',sans-serif;margin-top:2px;}
+
+/* ── INFO / WARN / OK BOXES ── */
+.info-box{background:var(--f);border-left:4px solid var(--w);border-radius:0 12px 12px 0;padding:14px 18px;margin-top:14px;font-size:.82rem;font-family:'Helvetica Neue',sans-serif;color:var(--tx);line-height:1.7;}
+.info-box strong{color:var(--w);}
+.warn-box{background:#FEF9E7;border-left:4px solid #F59E0B;border-radius:0 12px 12px 0;padding:14px 18px;margin-top:14px;font-size:.82rem;font-family:'Helvetica Neue',sans-serif;color:var(--tx);line-height:1.7;}
+.warn-box strong{color:#92400E;}
+.ok-box{background:#F0FDF4;border-left:4px solid var(--gr);border-radius:0 12px 12px 0;padding:14px 18px;margin-top:14px;font-size:.82rem;font-family:'Helvetica Neue',sans-serif;color:var(--tx);line-height:1.7;}
+.ok-box strong{color:var(--gr);}
+
+/* ── KPI MINI DASH ── */
+.kpi-dash{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;}
+.kpi-mini{background:linear-gradient(135deg,var(--r),var(--d));border-radius:12px;padding:16px 20px;flex:1;min-width:140px;text-align:center;}
+.km-num{font-size:1.5rem;font-weight:900;color:var(--g);font-family:'Helvetica Neue',sans-serif;}
+.km-lbl{font-size:.62rem;color:rgba(255,255,255,.45);font-family:'Helvetica Neue',sans-serif;letter-spacing:.08em;text-transform:uppercase;margin-top:2px;}
+.km-sub{font-size:.65rem;color:var(--w);font-family:'Helvetica Neue',sans-serif;}
+
+/* ── QUICK START ── */
+.qs-item{display:flex;gap:14px;align-items:flex-start;padding:14px;background:#fff;border-radius:12px;border:1px solid var(--bd);margin-bottom:8px;}
+.qs-num{min-width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--w),var(--g));color:#fff;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;font-family:'Helvetica Neue',sans-serif;flex-shrink:0;}
+.qs-t{font-size:.88rem;font-weight:700;color:var(--r);margin-bottom:3px;}
+.qs-d{font-size:.78rem;color:var(--mt);font-family:'Helvetica Neue',sans-serif;line-height:1.6;}
+.qs-est{font-size:.65rem;font-weight:700;color:var(--w);font-family:'Helvetica Neue',sans-serif;margin-top:4px;}
+
+/* ── ACTION BOX ── */
+.action-box{background:linear-gradient(135deg,var(--r),var(--d));border-radius:20px;padding:32px 36px;color:#fff;margin-top:24px;}
+.action-box h3{font-size:1.05rem;font-weight:800;color:var(--g);margin-bottom:18px;}
+
+/* ── FOOTER ── */
+.footer{background:var(--e);padding:52px 40px;text-align:center;margin-top:80px;}
+.footer-brand{font-size:1.4rem;font-weight:800;color:var(--g);letter-spacing:.06em;margin-bottom:4px;}
+.footer-cn{font-size:.9rem;color:var(--l);letter-spacing:.15em;margin-bottom:10px;}
+.footer-sub{font-size:.72rem;color:rgba(255,255,255,.25);font-family:'Helvetica Neue',sans-serif;letter-spacing:.06em;line-height:1.8;}
+
+/* ── MISC ── */
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--bd),transparent);margin:0 24px;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
+@media(max-width:768px){.two-col,.three-col{grid-template-columns:1fr;}.phase-header{flex-wrap:wrap;}.phase-duration{margin-left:0;text-align:left;}}
+.back-top{position:fixed;bottom:24px;right:24px;background:var(--r);color:var(--g);border:none;border-radius:50%;width:42px;height:42px;font-size:1.1rem;cursor:pointer;box-shadow:var(--shl);z-index:99;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform .2s;}
+.back-top:hover{transform:translateY(-3px);}
+.highlight-strip{background:linear-gradient(135deg,rgba(192,120,53,.08),rgba(212,160,48,.04));border:1px solid rgba(192,120,53,.2);border-radius:14px;padding:18px 22px;margin-top:18px;}
+.highlight-strip h4{font-size:.88rem;font-weight:800;color:var(--r);margin-bottom:10px;}
+.highlight-strip ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:5px;}
+.highlight-strip li{display:flex;gap:8px;font-size:.8rem;color:var(--mt);font-family:'Helvetica Neue',sans-serif;line-height:1.6;}
+.highlight-strip li::before{content:'→';color:var(--w);font-weight:700;flex-shrink:0;}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Complete Execution Master Plan · 2026 · All-In-One</div>
+  <div class="hero-cn">焙學 · 原豆誌</div>
+  <h1>B<span>Notes</span><br>落地執行全計畫</h1>
+  <p class="hero-sub">技術架構 × 雲端部署 × 內容生產 × 平台運營 × 商業變現 × 逐週節奏</p>
+  <div class="hero-tags">
+    <span class="hero-tag hl">React + Vite + TypeScript</span>
+    <span class="hero-tag hl">GitHub Actions CI/CD</span>
+    <span class="hero-tag hl">Supabase PostgreSQL</span>
+    <span class="hero-tag hl">Cloudflare Pages + CDN</span>
+    <span class="hero-tag">Beehiiv Newsletter</span>
+    <span class="hero-tag">ManyChat 自動化</span>
+    <span class="hero-tag">Skywork AI 工作流</span>
+    <span class="hero-tag">52 週排程系統</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#stack">技術棧選型</a>
+    <a href="#deploy">雲端部署</a>
+    <a href="#supabase">Supabase設置</a>
+    <a href="#github">GitHub CI/CD</a>
+    <a href="#content">內容生產流</a>
+    <a href="#platforms">平台運營</a>
+    <a href="#growth">增長引擎</a>
+    <a href="#monetize">變現啟動</a>
+    <a href="#weekly">逐週節奏</a>
+    <a href="#90days">90天路線圖</a>
+    <a href="#tools">工具矩陣</a>
+  </div>
+</nav>
+
+<!-- ══════ SECTION 0：執行總覽 ══════ -->
+<div class="section">
+  <div class="eyebrow">Executive Overview</div>
+  <div class="section-h">BNotes 落地執行計畫 — 三專家聯合出品</div>
+  <div class="section-desc">整合 AI 驅動部落格建站全書技術架構 × BNotes 品牌策略資料庫 × 台灣精品咖啡市場洞察，產出可立即執行的完整落地手冊。</div>
+
+  <div class="kpi-dash">
+    <div class="kpi-mini"><div class="km-num">14hr</div><div class="km-lbl">首版部署時間</div><div class="km-sub">從零到上線</div></div>
+    <div class="kpi-mini"><div class="km-num">$0</div><div class="km-lbl">初期月度技術成本</div><div class="km-sub">全部免費方案</div></div>
+    <div class="kpi-mini"><div class="km-num">6</div><div class="km-lbl">核心雲端服務</div><div class="km-sub">GitHub/CF/SB/Resend/GA4/Beehiiv</div></div>
+    <div class="kpi-mini"><div class="km-num">52</div><div class="km-lbl">週排程發佈計畫</div><div class="km-sub">Skywork AI 輔助生成</div></div>
+    <div class="kpi-mini"><div class="km-num">90</div><div class="km-lbl">首階段執行天數</div><div class="km-sub">完整甘特計畫</div></div>
+    <div class="kpi-mini"><div class="km-num">NT$30萬+</div><div class="km-lbl">Year 1 收益目標</div><div class="km-sub">多元變現路徑</div></div>
+  </div>
+
+  <div class="warn-box" style="margin-top:20px;">
+    <strong>⚡ 本文件使用方式：</strong>
+    按章節順序執行；技術部署（Section 1–4）應在內容生產前完成；每個 Section 末尾有「立即執行清單」。
+    所有程式碼可直接複製使用，環境變數請參考 Section 4。
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ SECTION 1：技術棧選型 ══════ -->
+<div class="section" id="stack">
+  <div class="eyebrow">Module 01 · Tech Stack</div>
+  <div class="section-h">技術棧選型：BNotes 最優解架構</div>
+  <div class="section-desc">基於 Blog Deployment Playbook v2.0 技術審查，為 BNotes 精品咖啡知識媒體定制的完整技術棧。</div>
+
+  <!-- Stack Diagram -->
+  <div class="stack-layer">
+    <div class="stack-label">前端框架</div>
+    <div class="stack-items">
+      <div class="stack-item"><div class="si-name">React 18 + TypeScript</div><div class="si-desc">Skywork AI 對 TSX 生成品質最高、型別安全降低 bug</div><div class="si-free">✅ 免費 OSS</div></div>
+      <div class="stack-item"><div class="si-name">Vite 5</div><div class="si-desc">極速熱重載、靜態匯出原生支援、build 時間 &lt;30s</div><div class="si-free">✅ 免費 OSS</div></div>
+      <div class="stack-item"><div class="si-name">shadcn/ui + Tailwind CSS</div><div class="si-desc">美觀開箱即用、Skywork AI 生成相容性最佳，BNotes 棕金色系配置</div><div class="si-free">✅ 免費 OSS</div></div>
+    </div>
+  </div>
+  <div class="stack-layer">
+    <div class="stack-label">路由 / SEO</div>
+    <div class="stack-items">
+      <div class="stack-item"><div class="si-name">React Router v6</div><div class="si-desc">Hash Router 無需伺服器設定，靜態部署完全相容</div><div class="si-free">✅ 免費 OSS</div></div>
+      <div class="stack-item"><div class="si-name">React Helmet Async</div><div class="si-desc">SPA 動態 meta tag 管理，每篇文章獨立 title/description/OG</div><div class="si-free">✅ 免費 OSS</div></div>
+      <div class="stack-item"><div class="si-name">Lucide React（SVG）</div><div class="si-desc">Tree-shaking 友好，無 CSS filter 風險，任何解析度清晰</div><div class="si-free">✅ 免費 OSS</div></div>
+    </div>
+  </div>
+  <div class="stack-layer">
+    <div class="stack-label">字型 / UI</div>
+    <div class="stack-items">
+      <div class="stack-item"><div class="si-name">Noto Serif TC</div><div class="si-desc">繁體中文最佳顯示品質，Google Fonts 免費商用，知識媒體權威感</div><div class="si-free">✅ 免費商用</div></div>
+      <div class="stack-item"><div class="si-name">Noto Sans TC</div><div class="si-desc">UI 元件用無襯線字體，提升可讀性，與 Noto Serif 搭配和諧</div><div class="si-free">✅ 免費商用</div></div>
+    </div>
+  </div>
+  <div class="stack-layer">
+    <div class="stack-label">後端服務</div>
+    <div class="stack-items">
+      <div class="stack-item"><div class="si-name">Supabase</div><div class="si-desc">PostgreSQL 訂閱者資料庫 + Edge Functions（Deno）+ RLS 安全</div><div class="si-free">✅ 免費：500MB / 50,000 MAU</div></div>
+      <div class="stack-item"><div class="si-name">Resend API</div><div class="si-desc">Welcome Email / 取消訂閱自動化，台灣送達率高</div><div class="si-free">✅ 免費：3,000封/月</div></div>
+      <div class="stack-item"><div class="si-name">Beehiiv</div><div class="si-desc">Newsletter 主平台，推薦系統 + A/B 測試 + 付費訂閱</div><div class="si-free">✅ 免費：2,500 訂閱者</div></div>
+    </div>
+  </div>
+  <div class="stack-layer">
+    <div class="stack-label">部署 / CDN</div>
+    <div class="stack-items">
+      <div class="stack-item"><div class="si-name">Cloudflare Pages ⭐</div><div class="si-desc">全球 CDN、免費方案慷慨、台灣節點快速、Edge Functions、ZIP 上傳</div><div class="si-free">✅ 免費：無限頁面瀏覽</div></div>
+      <div class="stack-item"><div class="si-name">GitHub + Actions</div><div class="si-desc">版本控制 + 自動化 CI/CD，push 即部署，內容排程管理</div><div class="si-free">✅ 免費：公開 / 私有倉庫</div></div>
+    </div>
+  </div>
+  <div class="stack-layer">
+    <div class="stack-label">分析追蹤</div>
+    <div class="stack-items">
+      <div class="stack-item"><div class="si-name">GA4</div><div class="si-desc">流量分析、事件追蹤（訂閱 / 聯盟點擊）、受眾洞察</div><div class="si-free">✅ 完全免費</div></div>
+      <div class="stack-item"><div class="si-name">Microsoft Clarity</div><div class="si-desc">熱圖 + 錄屏分析，找出用戶行為異常，免費無限量</div><div class="si-free">✅ 完全免費</div></div>
+      <div class="stack-item"><div class="si-name">Google Search Console</div><div class="si-desc">SEO 索引監控、關鍵詞排名追蹤、Core Web Vitals 報告</div><div class="si-free">✅ 完全免費</div></div>
+    </div>
+  </div>
+
+  <div class="ok-box">
+    <strong>💰 Year 1 技術月費用預估：NT$0</strong>
+    — 上述所有服務在 BNotes 初期規模內均可使用免費方案。
+    成長後（Newsletter &gt;2,500 / 月流量 &gt;500萬）才需升級：Beehiiv Scale NT$840/月、Supabase Pro NT$750/月。
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ SECTION 2：Cloudflare 部署 ══════ -->
+<div class="section" id="deploy">
+  <div class="eyebrow">Module 02 · Cloudflare Pages Deployment</div>
+  <div class="section-h">Cloudflare Pages 完整部署指南</div>
+  <div class="section-desc">BNotes 首選部署平台。掌握以下 4 個關鍵設定，確保靜態部署正確無誤。</div>
+
+  <!-- Step by Step -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <div class="phase-num">CF</div>
+      <div>
+        <div class="phase-title">Cloudflare Pages 初始設定流程</div>
+        <div class="phase-sub">預計時間 30 分鐘 · 完成後 BNotes Blog 正式上線</div>
+      </div>
+      <div class="phase-duration"><div class="dur">30min</div><div class="dlab">SETUP TIME</div></div>
+    </div>
+    <div class="phase-body">
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-icon">1</div>
+          <div class="step-content">
+            <div class="step-title">建立 Cloudflare 帳號 + 新增 Pages 專案</div>
+            <div class="step-desc">前往 dash.cloudflare.com → Pages → Create a project → 選「Direct Upload」（不依賴 GitHub，可手動部署）或「Connect to Git」（自動部署）。Project name 建議：<code>bnotes</code></div>
+            <div class="step-tags"><span class="badge b-ok">必做</span></div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">2</div>
+          <div class="step-content">
+            <div class="step-title">設定 public/_redirects（SPA 必要）</div>
+            <div class="step-desc">在專案根目錄的 <code>public/</code> 資料夾中建立 <code>_redirects</code> 檔案，內容如下。沒有這個設定，重新整理任何非首頁路由都會出現 404。</div>
+            <div class="code-block" data-label="_redirects">/* /index.html 200</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">3</div>
+          <div class="step-content">
+            <div class="step-title">設定 robots.txt + sitemap.xml</div>
+            <div class="step-desc">在 <code>public/</code> 建立以下兩個 SEO 必要文件。</div>
+            <div class="code-block" data-label="public/robots.txt">User-agent: *
+Disallow:
+Sitemap: https://bnotes.tw/sitemap.xml</div>
+            <div class="code-block" data-label="public/sitemap.xml 範例">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+  &lt;url&gt;&lt;loc&gt;https://bnotes.tw/&lt;/loc&gt;&lt;priority&gt;1.0&lt;/priority&gt;&lt;/url&gt;
+  &lt;url&gt;&lt;loc&gt;https://bnotes.tw/#/articles/v60-extraction-science&lt;/loc&gt;&lt;priority&gt;0.9&lt;/priority&gt;&lt;/url&gt;
+  <span class="cm">&lt;!-- 每篇文章加一筆 --&gt;</span>
+&lt;/urlset&gt;</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">4</div>
+          <div class="step-content">
+            <div class="step-title">打包 ZIP 正確格式（關鍵陷阱）</div>
+            <div class="step-desc">Cloudflare 要求 ZIP 根層直接是 <code>index.html</code>，不能有額外資料夾層次。使用以下 Python 腳本打包：</div>
+            <div class="code-block" data-label="build_zip.py">import os, zipfile
+
+dist_dir = "/workspace/bnotes-blog/dist"
+zip_path = "/workspace/bnotes_deploy.zip"
+
+with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
+    for root, dirs, files in os.walk(dist_dir):
+        for file in files:
+            full_path = os.path.join(root, file)
+            <span class="hl">arc_name = os.path.relpath(full_path, dist_dir)</span>  <span class="cm"># 關鍵：相對於 dist_dir</span>
+            zf.write(full_path, arc_name)
+
+print(f"✅ ZIP 打包完成: {zip_path}")
+print(f"   根目錄文件: {[f for f in os.listdir(dist_dir) if os.path.isfile(os.path.join(dist_dir,f))]}")
+</div>
+            <div class="warn-box"><strong>⚠️ 陷阱警示：</strong>不能用 <code>shutil.make_archive</code> 或系統 zip，否則路徑會變 <code>dist/index.html</code>，Cloudflare 找不到根層 index.html。</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">5</div>
+          <div class="step-content">
+            <div class="step-title">部署後必做：Purge CDN 快取</div>
+            <div class="step-desc">每次部署後，前往 Cloudflare Dashboard → 選擇你的網域 → Caching → Configuration → Purge Everything。然後用<strong>無痕瀏覽器視窗</strong>測試，避免本地快取干擾測試結果。</div>
+            <div class="step-tags"><span class="badge b-danger">每次部署必做</span></div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">6</div>
+          <div class="step-content">
+            <div class="step-title">自訂網域設定（bnotes.tw）</div>
+            <div class="step-desc">Pages → Custom domains → Add domain → 輸入 <code>bnotes.tw</code> → Cloudflare 自動設定 DNS（若網域在 Cloudflare 管理）或提供 CNAME 記錄（其他 DNS 商）。SSL 憑證自動部署。</div>
+            <div class="step-tags"><span class="badge b-ok">自動 HTTPS</span><span class="badge b-info">全球 CDN</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article directory structure -->
+  <h3 style="font-size:.95rem;font-weight:800;color:var(--r);margin:24px 0 12px;">📁 BNotes 靜態文章目錄結構（避免 308 重定向）</h3>
+  <div class="code-block" data-label="公開部署目錄結構">bnotes-blog/
+├── dist/                       <span class="cm"># Build 輸出（上傳 Cloudflare）</span>
+│   ├── index.html              <span class="cm"># SPA 入口（根層必須直接有）</span>
+│   ├── assets/                 <span class="cm"># JS / CSS bundles</span>
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   ├── _redirects              <span class="cm"># /* /index.html 200</span>
+│   └── articles/               <span class="cm"># 靜態 HTML 文章</span>
+│       ├── v60-extraction-science/
+│       │   └── index.html      <span class="cm"># Cloudflare 對目錄回應 200 ✅</span>
+│       ├── taiwan-coe-guide/
+│       │   └── index.html
+│       └── ...
+└── src/
+    ├── lib/index.ts            <span class="cm"># 文章 metadata + 自動發布邏輯</span>
+    └── pages/ArticleDetail.tsx <span class="cm"># STATIC_ARTICLE_MAP + 跳轉邏輯</span></div>
+
+  <div class="warn-box">
+    <strong>⚠️ 重要：</strong>靜態 HTML 文章必須存為 <code>/articles/slug/index.html</code> 目錄格式，<strong>不能</strong>用 <code>/articles/slug.html</code>。
+    Cloudflare 對 <code>.html</code> 結尾路徑會回應 308 重定向，iframe 無法載入，瀏覽器直連也會異常。
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ SECTION 3：Supabase 設置 ══════ -->
+<div class="section" id="supabase">
+  <div class="eyebrow">Module 03 · Supabase Setup</div>
+  <div class="section-h">Supabase 完整設置：訂閱者資料庫 + Email 自動化</div>
+  <div class="section-desc">BNotes 後端核心：訂閱者管理 + Welcome Email 自動觸發 + 閱讀行為追蹤，全部用 Supabase 免費方案搞定。</div>
+
+  <div class="two-col">
+    <div>
+      <h3 style="font-size:.9rem;font-weight:800;color:var(--r);margin-bottom:12px;">🗄️ Step 1：建立資料庫 Schema</h3>
+      <div class="code-block" data-label="supabase/schema.sql"><span class="cm">-- === BNotes 訂閱者資料表 ===</span>
+CREATE TABLE subscribers (
+  id         UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  email      TEXT UNIQUE NOT NULL,
+  name       TEXT,
+  segment    TEXT DEFAULT 'beginner'
+             CHECK (segment IN ('beginner','enthusiast','pro')),
+  source     TEXT,          <span class="cm">-- 'ig_manychat' | 'blog_cta' | 'yt_desc'</span>
+  lead_magnet TEXT,         <span class="cm">-- 下載的 Lead Magnet 名稱</span>
+  status     TEXT DEFAULT 'active'
+             CHECK (status IN ('active','unsubscribed')),
+  token      UUID DEFAULT gen_random_uuid(),
+  subscribed_at   TIMESTAMPTZ DEFAULT NOW(),
+  unsubscribed_at TIMESTAMPTZ
+);
+
+<span class="cm">-- Row Level Security</span>
+ALTER TABLE subscribers ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "allow_insert_only" ON subscribers
+  FOR INSERT WITH CHECK (true);
+
+<span class="cm">-- === 文章閱讀行為追蹤 ===</span>
+CREATE TABLE reading_events (
+  id           UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  article_slug TEXT NOT NULL,
+  session_id   TEXT,
+  scroll_depth INTEGER,
+  reading_secs INTEGER,
+  referrer     TEXT,
+  created_at   TIMESTAMPTZ DEFAULT NOW()
+);
+
+ALTER TABLE reading_events ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "allow_insert_events" ON reading_events
+  FOR INSERT WITH CHECK (true);
+
+<span class="cm">-- === 聯盟連結點擊追蹤 ===</span>
+CREATE TABLE affiliate_clicks (
+  id           UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  article_slug TEXT,
+  affiliate_id TEXT,
+  clicked_at   TIMESTAMPTZ DEFAULT NOW()
+);
+ALTER TABLE affiliate_clicks ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "allow_insert_clicks" ON affiliate_clicks
+  FOR INSERT WITH CHECK (true);</div>
+    </div>
+    <div>
+      <h3 style="font-size:.9rem;font-weight:800;color:var(--r);margin-bottom:12px;">⚡ Step 2：Edge Function — Welcome Email</h3>
+      <div class="code-block" data-label="supabase/functions/send-welcome-email/index.ts"><span class="kw">import</span> { serve } from "https://deno.land/std/http/server.ts";
+<span class="kw">import</span> { createClient } from "https://esm.sh/@supabase/supabase-js";
+
+<span class="kw">const</span> corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers":
+    "authorization, x-client-info, apikey, content-type",
+};
+
+serve(<span class="kw">async</span> (req) => {
+  if (req.method === "OPTIONS")
+    return new Response("ok", { headers: corsHeaders });
+
+  <span class="kw">try</span> {
+    <span class="kw">const</span> { email, name, leadMagnet } = await req.json();
+    <span class="kw">const</span> res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${Deno.env.get("RESEND_API_KEY")}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: `${Deno.env.get("FROM_NAME")} &lt;${Deno.env.get("FROM_EMAIL")}&gt;`,
+        to: [email],
+        subject: `☕ 歡迎來到 BNotes 實驗室，${name || "咖啡愛好者"}！`,
+        html: buildWelcomeHtml(name, leadMagnet),
+      }),
+    });
+    <span class="kw">if</span> (!res.ok) throw new Error(await res.text());
+    return new Response(JSON.stringify({ ok: true }), {
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  } <span class="kw">catch</span> (e) {
+    return new Response(
+      JSON.stringify({ error: (e as Error).message || String(e) }),
+      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+    );
+  }
+});</div>
+      <div class="info-box"><strong>部署指令：</strong><br>
+        <code>supabase functions deploy send-welcome-email --no-verify-jwt</code><br>
+        設定密鑰：<code>supabase secrets set RESEND_API_KEY=re_xxx FROM_EMAIL=hello@bnotes.tw FROM_NAME=焙學BNotes</code>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frontend subscription form -->
+  <h3 style="font-size:.9rem;font-weight:800;color:var(--r);margin:24px 0 12px;">🖥️ Step 3：前端訂閱表單整合</h3>
+  <div class="code-block" data-label="src/components/SubscribeForm.tsx"><span class="kw">import</span> { createClient } from '@supabase/supabase-js';
+
+<span class="kw">const</span> supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+);
+
+<span class="kw">export async function</span> handleSubscribe(email: string, name: string, source: string) {
+  <span class="cm">// 1. 寫入 Supabase</span>
+  <span class="kw">const</span> { error } = await supabase.from('subscribers').insert({
+    email, name, source,
+    segment: 'beginner',  <span class="cm">// 初始分群，ManyChat 問卷後更新</span>
+    lead_magnet: 'brew-parameters-pdf'
+  });
+  if (error && error.code !== '23505') throw error; <span class="cm">// 23505 = 重複訂閱，靜默處理</span>
+
+  <span class="cm">// 2. 觸發 Welcome Email Edge Function</span>
+  await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-welcome-email`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`
+    },
+    body: JSON.stringify({ email, name })
+  });
+
+  <span class="cm">// 3. 同步至 Beehiiv（可選，透過 Zapier 自動化）</span>
+  <span class="cm">// GA4 事件追蹤</span>
+  window.gtag?.('event', 'newsletter_subscribe', { source });
+}</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ SECTION 4：GitHub CI/CD ══════ -->
+<div class="section" id="github">
+  <div class="eyebrow">Module 04 · GitHub CI/CD + Environment</div>
+  <div class="section-h">GitHub + Actions：自動化部署流水線</div>
+  <div class="section-desc">push 到 main 自動觸發 build → 部署 → 通知，並透過 IndexNow 即時告知搜索引擎有新內容。</div>
+
+  <div class="code-block" data-label=".github/workflows/deploy.yml">name: BNotes — Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:             <span class="cm"># 手動觸發按鈕</span>
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci               <span class="cm"># 必須 install，不能跳過</span>
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_SUPABASE_URL:      ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_GA4_ID:            ${{ secrets.VITE_GA4_ID }}
+          VITE_SITE_URL:          https://bnotes.tw
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken:    ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId:   ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: bnotes
+          directory:   dist
+          wranglerVersion: '3'
+
+      - name: Purge Cloudflare Cache
+        run: |
+          curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CF_ZONE_ID }}/purge_cache" \
+            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}'
+
+      - name: IndexNow — 通知搜索引擎新內容
+        if: contains(github.event.commits[0].modified, 'src/lib/index.ts')
+        run: |
+          curl -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json" \
+            -d '{"host":"bnotes.tw","key":"${{ secrets.INDEXNOW_KEY }}",
+                 "urlList":["https://bnotes.tw/sitemap.xml"]}'
+
+      - name: Notify — 部署完成訊息
+        run: echo "✅ BNotes 部署完成 | $(date '+%Y-%m-%d %H:%M')"</div>
+
+  <!-- Environment Variables -->
+  <h3 style="font-size:.9rem;font-weight:800;color:var(--r);margin:24px 0 12px;">🔐 所有環境變數完整清單</h3>
+  <div class="env-block">
+    <div class="env-row"><div class="env-key">VITE_SUPABASE_URL</div><div><div class="env-desc">Supabase 專案 URL（可放前端）</div><div class="env-where">📍 .env + Cloudflare Pages + GitHub Secrets</div></div></div>
+    <div class="env-row"><div class="env-key">VITE_SUPABASE_ANON_KEY</div><div><div class="env-desc">Supabase 公開匿名金鑰（可放前端）</div><div class="env-where">📍 .env + Cloudflare Pages + GitHub Secrets</div></div></div>
+    <div class="env-row"><div class="env-key">VITE_GA4_ID</div><div><div class="env-desc">Google Analytics 4 Measurement ID（G-XXXXXXXX）</div><div class="env-where">📍 .env + Cloudflare Pages + GitHub Secrets</div></div></div>
+    <div class="env-row"><div class="env-key">VITE_SITE_URL</div><div><div class="env-desc">正式網域 https://bnotes.tw（用於 sitemap / canonical）</div><div class="env-where">📍 .env + GitHub Secrets</div></div></div>
+    <div class="env-row"><div class="env-key">RESEND_API_KEY</div><div><div class="env-desc">Resend Email 服務金鑰（⚠️ 絕對不可放前端）</div><div class="env-where">📍 Supabase Edge Function Secrets 專用</div></div></div>
+    <div class="env-row"><div class="env-key">SUPABASE_SERVICE_ROLE_KEY</div><div><div class="env-desc">後端操作金鑰，繞過 RLS（⚠️ 絕對不可放前端）</div><div class="env-where">📍 Supabase Edge Function Secrets 專用</div></div></div>
+    <div class="env-row"><div class="env-key">FROM_EMAIL / FROM_NAME</div><div><div class="env-desc">發件人：hello@bnotes.tw / 焙學BNotes</div><div class="env-where">📍 Supabase Edge Function Secrets</div></div></div>
+    <div class="env-row"><div class="env-key">CLOUDFLARE_API_TOKEN</div><div><div class="env-desc">Cloudflare API Token（需有 Pages 編輯 + Cache 清除權限）</div><div class="env-where">📍 GitHub Repository Secrets</div></div></div>
+    <div class="env-row"><div class="env-key">CLOUDFLARE_ACCOUNT_ID</div><div><div class="env-desc">Cloudflare 帳號 ID（在 Cloudflare Dashboard 右側欄）</div><div class="env-where">📍 GitHub Repository Secrets</div></div></div>
+    <div class="env-row"><div class="env-key">CF_ZONE_ID</div><div><div class="env-desc">Cloudflare Zone ID（在域名 Overview 頁右側欄）</div><div class="env-where">📍 GitHub Repository Secrets</div></div></div>
+    <div class="env-row"><div class="env-key">INDEXNOW_KEY</div><div><div class="env-desc">IndexNow 金鑰（在 bnotes.tw 根目錄放置對應 txt 文件）</div><div class="env-where">📍 GitHub Repository Secrets</div></div></div>
+    <div class="env-row"><div class="env-key">VITE_MANYCHAT_TOKEN</div><div><div class="env-desc">ManyChat API Token（IG 自動化整合用）</div><div class="env-where">📍 .env + GitHub Secrets（若 SSG 使用）</div></div></div>
+  </div>
+
+  <div class="ok-box"><strong>🔒 安全守則：</strong>含 <code>SERVICE_ROLE</code>、<code>RESEND</code>、<code>CLOUDFLARE_API_TOKEN</code> 的密鑰絕對不能出現在 <code>VITE_</code> 前綴的變數中（VITE_ 變數會打包進前端 JS，任何人都能看到）。</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ SECTION 5：Skywork AI 內容生產流 ══════ -->
+<div class="section" id="content">
+  <div class="eyebrow">Module 05 · Skywork AI Content Pipeline</div>
+  <div class="section-h">Skywork AI 驅動的內容生產完整流程</div>
+  <div class="section-desc">從選題到發佈，利用 Skywork AI 三角協作模型將單篇深度文章的產出時間壓縮至 90 分鐘以內。</div>
+
+  <!-- Triange model -->
+  <div class="card card-top" style="margin-bottom:20px;">
+    <div style="padding-top:16px;">
+      <h3 style="font-size:.9rem;font-weight:800;color:var(--r);margin-bottom:16px;">⚡ BNotes 三角協作模型</h3>
+      <div class="three-col">
+        <div style="background:linear-gradient(135deg,var(--r),var(--d));border-radius:12px;padding:20px;color:#fff;">
+          <div style="font-size:.62rem;letter-spacing:.15em;color:var(--g);font-family:'Helvetica Neue',sans-serif;margin-bottom:6px;">YOUR ROLE</div>
+          <div style="font-size:.95rem;font-weight:800;margin-bottom:8px;">品牌主（您）</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.65);font-family:'Helvetica Neue',sans-serif;line-height:1.65;">主題確認 → 最終審稿 → 部署 → 讀者互動 → 商業決策</div>
+          <div style="margin-top:10px;font-size:.68rem;color:var(--g);font-family:'Helvetica Neue',sans-serif;">⏱ 每週約 3–4hr</div>
+        </div>
+        <div style="background:linear-gradient(135deg,var(--tl),#0D4A5A);border-radius:12px;padding:20px;color:#fff;">
+          <div style="font-size:.62rem;letter-spacing:.15em;color:rgba(255,255,255,.5);font-family:'Helvetica Neue',sans-serif;margin-bottom:6px;">AI ROLE</div>
+          <div style="font-size:.95rem;font-weight:800;margin-bottom:8px;">Skywork AI</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.65);font-family:'Helvetica Neue',sans-serif;line-height:1.65;">學術搜尋 → 文章草稿 → SEO 優化 → HTML 生成 → ZIP 打包 → KPI 分析</div>
+          <div style="margin-top:10px;font-size:.68rem;color:rgba(255,255,255,.5);font-family:'Helvetica Neue',sans-serif;">⏱ 自動執行，15–20min/篇</div>
+        </div>
+        <div style="background:linear-gradient(135deg,var(--gr),#1A4A2A);border-radius:12px;padding:20px;color:#fff;">
+          <div style="font-size:.62rem;letter-spacing:.15em;color:rgba(255,255,255,.5);font-family:'Helvetica Neue',sans-serif;margin-bottom:6px;">QUALITY GATE</div>
+          <div style="font-size:.95rem;font-weight:800;margin-bottom:8px;">TOV 校驗層</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.65);font-family:'Helvetica Neue',sans-serif;line-height:1.65;">事實查核 → 品牌聲音校驗 → SEO Checklist → 技術審查</div>
+          <div style="margin-top:10px;font-size:.68rem;color:rgba(255,255,255,.5);font-family:'Helvetica Neue',sans-serif;">⏱ 每篇 30–45min 人工審閱</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Weekly SOP -->
+  <h3 style="font-size:.9rem;font-weight:800;color:var(--r);margin-bottom:14px;">📋 每週內容 SOP（5步驟，單人可執行）</h3>
+  <div class="phase-block">
+    <div class="phase-header">
+      <div class="phase-num">W</div>
+      <div>
+        <div class="phase-title">Weekly Content Production SOP</div>
+        <div class="phase-sub">目標：每週 1 篇深度文章 + 1 封 Newsletter + 5 則社群短貼</div>
+      </div>
+      <div class="phase-duration"><div class="dur">4–5hr</div><div class="dlab">TOTAL / WEEK</div></div>
+    </div>
+    <div class="phase-body">
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-icon">一</div>
+          <div class="step-content">
+            <div class="step-title">週一：選題確認 + Skywork 學術研究（30min）</div>
+            <div class="step-desc">從 BNotes Content Matrix「選題庫」選本週主題 → 在 Skywork AI 輸入研究指令 → 搜集 3 篇可查驗學術來源（SCA / PubMed / Google Scholar）。確認主題無重複（grep 已發佈 slug 清單）。</div>
+            <div class="step-tags"><span class="badge b-gold">Skywork DeepResearch</span></div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">二</div>
+          <div class="step-content">
+            <div class="step-title">週二：Skywork AI 生成文章 HTML 草稿（45min AI / 30min 人工）</div>
+            <div class="step-desc">使用黃金提示詞框架（見下方 Prompt）生成 1,800–2,500 字繁體中文 HTML 文章，含 Unsplash 圖片、數據視覺化（CSS/ECharts）、參考文獻、TOC。生成後執行 TOV 校驗 Prompt。</div>
+            <div class="step-tags"><span class="badge b-gold">Skywork Writing</span><span class="badge b-info">TOV Checker</span></div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">三</div>
+          <div class="step-content">
+            <div class="step-title">週三：IG 輪播 + Newsletter 草稿生成（60min）</div>
+            <div class="step-desc">Skywork AI 將文章拆解為：5 張 IG 輪播文案 + Reels 腳本 + 1 封 Newsletter（含摘要 + 「閱讀全文」CTA）+ 3 則 Threads 貼文。同步準備 Beehiiv 草稿。</div>
+            <div class="step-tags"><span class="badge b-gold">1+4 再利用</span><span class="badge b-info">Beehiiv</span></div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">四</div>
+          <div class="step-content">
+            <div class="step-title">週四：最終審稿 → build → 部署（45min）</div>
+            <div class="step-desc">人工審閱 HTML 文章（事實準確 + TOV 符合 + SEO Checklist）→ 執行技術流程：<code>tsc --noEmit</code> → <code>npm run build</code> → Python 打包 ZIP → 上傳 Cloudflare Pages 或 push 觸發 GitHub Actions。</div>
+            <div class="step-tags"><span class="badge b-ok">Build + Deploy</span><span class="badge b-danger">Purge Cache</span></div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">五</div>
+          <div class="step-content">
+            <div class="step-title">週五：發佈社群 + Newsletter + 數據追蹤（60min）</div>
+            <div class="step-desc">發佈 IG 輪播（設定 ManyChat 關鍵詞觸發）→ 發佈 YouTube Shorts（複用 IG Reels 素材）→ 發送 Beehiiv Newsletter → 發 Threads 貼文 → 回覆前週貼文評論。記錄本週 KPI 到 Dashboard。</div>
+            <div class="step-tags"><span class="badge b-info">全平台發佈</span><span class="badge b-neut">KPI 記錄</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prompts -->
+  <h3 style="font-size:.9rem;font-weight:800;color:var(--r);margin:24px 0 12px;">📝 BNotes 專用 Skywork Prompt 模板庫</h3>
+  <div class="grid-2">
+    <div>
+      <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--w);font-family:'Helvetica Neue',sans-serif;margin-bottom:8px;">PROMPT A · 深度文章生成</div>
+      <div class="code-block" data-label="BNotes 深度文章 Prompt">請以 BNotes（焙學·原豆誌）資深咖啡知識作者身份，
+撰寫一篇主題為「<span class="ph">[文章標題]</span>」的深度文章。
+
+<span class="hl">品牌聲音要求（TOV）：</span>
+- 嚴謹：每個數據有可查來源，不捏造
+- 清晰：複雜科學用日常語言比喻說明
+- 溫暖：讀者是正在學習的朋友
+- 在地：以台灣咖啡生態為敘事起點
+- 前瞻：反映產業最新趨勢（2026）
+
+<span class="hl">文章規格：</span>
+- 字數：1,800–2,500 字（繁體中文）
+- 來源：≥3 篇可驗證學術論文（SCA/PubMed）
+- 格式：完整 HTML5，含 hero 圖片（Unsplash）
+- 色系：主色 #1C0A00 / 強調 #D4A030 / 背景 #F9F4EC
+- 字型：Noto Serif TC（標題）/ Noto Sans TC（內文）
+- 結構：引言→核心數據→深度分析（3段）→實用建議→結語→參考文獻
+- 末尾：今天就能做的一個小實驗
+- 禁止：虛構數字、未經查證的說法
+
+文章 slug：<span class="ph">[slug-name]</span>
+分類：<span class="ph">[science/origin/culture/brewing]</span>
+發布日期：<span class="ph">[YYYY-MM-DD]</span></div>
+    </div>
+    <div>
+      <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--w);font-family:'Helvetica Neue',sans-serif;margin-bottom:8px;">PROMPT B · Newsletter 週報生成</div>
+      <div class="code-block" data-label="BNotes Newsletter Prompt">請為 BNotes 本週 Newsletter 撰寫完整郵件。
+
+<span class="hl">本週主要文章：</span><span class="ph">[貼上文章摘要]</span>
+
+<span class="hl">郵件結構：</span>
+1. 主旨行（55字元以內，含主關鍵詞，避免標題黨）
+2. 預覽文字（90字元，對主旨補充說明）
+3. 開場白（2行，以第一人稱「這週我在實驗...」）
+4. 本週精選：文章摘要 250 字 + 「閱讀全文 →」CTA
+5. 咖啡冷知識（1段，100字，可分享的科學事實）
+6. 本週產業動態（2–3則，各50字，含來源）
+7. Lab 成員的問題回覆（若有）
+8. 下週預告（30字）
+9. 結語 + 取消訂閱連結
+
+<span class="hl">格式：</span>完整 HTML Email（可直接貼入 Beehiiv）
+<span class="hl">語氣：</span>嚴謹但溫暖，像給咖啡研究所朋友的週報</div>
+
+      <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--w);font-family:'Helvetica Neue',sans-serif;margin:16px 0 8px;">PROMPT C · 1+4 多平台再利用</div>
+      <div class="code-block" data-label="BNotes 1+4 再利用 Prompt">請將以下 BNotes 文章拆解為 4 種社群格式：
+
+<span class="ph">[貼上文章全文]</span>
+
+<span class="hl">請輸出：</span>
+① IG 輪播圖文（5張）：標題 + 每張核心要點 + CTA
+② Reels 腳本（30–60秒）：Hook（3秒）→ 正文 → CTA
+③ Threads 知識貼文（3則）：各≤280字，結尾附互動問題
+④ YouTube Shorts 腳本：同 Reels 但加入字幕建議
+
+<span class="hl">要求：</span>
+- 每種格式保持 BNotes TOV（嚴謹/清晰/溫暖/在地/前瞻）
+- IG CTA：「留言『<span class="ph">[關鍵詞]</span>』取得完整指南」（ManyChat 觸發）
+- Threads CTA：引導至 Newsletter 訂閱或 Blog 閱讀全文</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ SECTION 6：平台運營 ══════ -->
+<div class="section" id="platforms">
+  <div class="eyebrow">Module 06 · Platform Operations</div>
+  <div class="section-h">6 平台運營落地細節</div>
+  <div class="section-desc">各平台從帳號設定到日常發佈的完整操作指南，含 ManyChat 自動化設定細節。</div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>平台</th>
+          <th>帳號設定要點</th>
+          <th>內容格式 × 頻率</th>
+          <th>核心工具</th>
+          <th>Q4 年度目標</th>
+          <th>啟動優先序</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge b-danger">📸 Instagram</span></td>
+          <td>用戶名：@bnotes.tw<br>Bio：「☕ 用科學解析咖啡 | 台灣精品咖啡知識媒體 | 每週深度報告 → 連結」<br>精選限動：5個分類（萃取科學/產地/器材/實驗/Newsletter）</td>
+          <td>Reels 3支/週（7–15秒）<br>輪播圖文 2篇/週（5–8張）<br>限時動態 每日1–3則</td>
+          <td>ManyChat（DM 自動化）<br>Later / Buffer（排程）<br>Canva / Figma（設計）</td>
+          <td>15,000 追蹤<br>Reels 觸及率 ≥8%</td>
+          <td><span class="badge b-danger">🔴 立即</span></td>
+        </tr>
+        <tr>
+          <td><span class="badge b-info">▶️ YouTube</span></td>
+          <td>頻道名：BNotes 焙學<br>Banner：品牌深棕+金色配色<br>頻道 About：含訂閱 Link<br>關鍵字：精品咖啡/手沖/萃取/台灣</td>
+          <td>長影片 2支/月（8–15min）<br>Shorts 每週2支（30–60秒）<br>Podcast 影音版 每月1集</td>
+          <td>CapCut / DaVinci Resolve<br>TubeBuddy（SEO分析）<br>vidIQ（縮圖 A/B）</td>
+          <td>10,000 訂閱<br>完播率 ≥45%</td>
+          <td><span class="badge b-warn">🟡 月1</span></td>
+        </tr>
+        <tr>
+          <td><span class="badge" style="background:#E8D5F5;color:#5A1A9A;">📧 Newsletter</span></td>
+          <td>平台：Beehiiv<br>發件人：hello@bnotes.tw<br>列表名：BNotes Lab<br>自訂網域郵件需 DNS 驗證</td>
+          <td>週報 每週一封（週三 AM9）<br>Deep Dive 每月1篇（付費限定）<br>Welcome Sequence 5封自動化</td>
+          <td>Beehiiv（主平台）<br>Resend（備援 / 自建）<br>Zapier（ManyChat → Beehiiv 同步）</td>
+          <td>3,000 訂閱<br>開信率 ≥35%</td>
+          <td><span class="badge b-danger">🔴 立即</span></td>
+        </tr>
+        <tr>
+          <td><span class="badge b-ok">🔍 Blog</span></td>
+          <td>網域：bnotes.tw<br>架構：React + Vite SPA on Cloudflare<br>分析：GA4 + Search Console + Clarity</td>
+          <td>深度文章 4篇/月（≥1500字）<br>比較型文章 2篇/季<br>工具頁/計算機 1個/季</td>
+          <td>Cloudflare Pages（部署）<br>Supabase（訂閱者）<br>Google Search Console</td>
+          <td>月均 5,000 UV<br>關鍵詞排名 ≥20個</td>
+          <td><span class="badge b-warn">🟡 週1</span></td>
+        </tr>
+        <tr>
+          <td><span class="badge" style="background:#FFF3D7;color:#7A4A0A;">🎙️ Podcast</span></td>
+          <td>平台：Spotify（Video Podcast）+ Apple<br>節目名：BNotes Radio — 焙學實驗室<br>封面：品牌 VI 深棕+金色，1400×1400px</td>
+          <td>月度深度訪談 1集/月（30–45min）<br>迷你集（5–10min科學解析）2集/月<br>影音版同步 YouTube</td>
+          <td>Firstory（台灣發行）<br>Spotify for Podcasters<br>Descript（錄音剪輯）</td>
+          <td>月播放 5,000次<br>完聽率 ≥65%</td>
+          <td><span class="badge b-neut">⬜ Q2</span></td>
+        </tr>
+        <tr>
+          <td><span class="badge" style="background:#E7D7FF;color:#5A1A9C;">🧵 Threads</span></td>
+          <td>用戶名：@bnotes.tw<br>Bio：同 IG<br>連結：bnotes.tw<br>自動同步 IG 帳號</td>
+          <td>咖啡知識貼文 每日1則<br>互動問題 每週2則<br>產業觀點 每週1則</td>
+          <td>Meta Business Suite（跨平台管理）<br>手機隨手發文</td>
+          <td>3,000 追蹤<br>互動率 ≥5%</td>
+          <td><span class="badge b-warn">🟡 立即</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ManyChat 詳細設定 -->
+  <div class="phase-block" style="margin-top:28px;">
+    <div class="phase-header">
+      <div class="phase-num">MC</div>
+      <div>
+        <div class="phase-title">ManyChat IG 自動化完整設定（3個流程）</div>
+        <div class="phase-sub">設定一次，永久自動運轉 · 每個觸發 = 潛在 Newsletter 訂閱者</div>
+      </div>
+      <div class="phase-duration"><div class="dur">2hr</div><div class="dlab">SETUP</div></div>
+    </div>
+    <div class="phase-body">
+      <div class="grid-3">
+        <div class="card" style="border-top:3px solid var(--g);">
+          <div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;color:var(--w);font-family:'Helvetica Neue',sans-serif;margin-bottom:6px;">FLOW 01</div>
+          <div style="font-weight:800;color:var(--r);margin-bottom:10px;">關鍵詞觸發 → Lead Magnet DM</div>
+          <div style="font-size:.78rem;color:var(--mt);font-family:'Helvetica Neue',sans-serif;line-height:1.7;">
+            <strong>觸發詞：</strong>「手沖表」「下載」「參數」「FREE」「秘笈」「風味輪」<br><br>
+            <strong>流程：</strong><br>
+            1. 自動公開回覆「已私訊你！查看 DM 📬」<br>
+            2. DM：「嗨 [名字]！☕ 這是你要的[資源]👇」<br>
+            3. PDF in DM（2026新功能：直接傳送 PDF）<br>
+            4. CTA 按鈕：[加入 BNotes Newsletter]<br>
+            5. Zapier 同步 Email 至 Beehiiv<br>
+            6. Beehiiv 自動觸發 Welcome Sequence
+          </div>
+          <div class="step-tags" style="margin-top:12px;"><span class="badge b-danger">最高轉化</span></div>
+        </div>
+        <div class="card" style="border-top:3px solid var(--bl);">
+          <div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;color:var(--tl);font-family:'Helvetica Neue',sans-serif;margin-bottom:6px;">FLOW 02</div>
+          <div style="font-weight:800;color:var(--r);margin-bottom:10px;">限動回覆 → 分眾問卷</div>
+          <div style="font-size:.78rem;color:var(--mt);font-family:'Helvetica Neue',sans-serif;line-height:1.7;">
+            <strong>觸發：</strong>回覆特定限時動態<br><br>
+            <strong>AI SetSmart 回覆：</strong>根據回覆內容智能判斷<br><br>
+            <strong>流程：</strong><br>
+            1. 分眾問卷：「你用什麼器具？A.手沖 B.義式 C.探索中」<br>
+            2. 根據答案打「segment」標籤<br>
+            3. 個人化推薦對應 Lead Magnet<br>
+            4. Newsletter CTA（帶分眾標籤）<br>
+            5. Beehiiv 帶標籤訂閱，觸發對應分眾序列
+          </div>
+          <div class="step-tags" style="margin-top:12px;"><span class="badge b-info">精準分眾</span></div>
+        </div>
+        <div class="card" style="border-top:3px solid var(--gr);">
+          <div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;color:var(--gr);font-family:'Helvetica Neue',sans-serif;margin-bottom:6px;">FLOW 03</div>
+          <div style="font-weight:800;color:var(--r);margin-bottom:10px;">新追蹤者 → 歡迎序列</div>
+          <div style="font-size:.78rem;color:var(--mt);font-family:'Helvetica Neue',sans-serif;line-height:1.7;">
+            <strong>觸發：</strong>追蹤 @bnotes 後首次互動<br><br>
+            <strong>流程：</strong><br>
+            1. 歡迎訊息（24hr內）：「嗨 [名字]！歡迎來到 BNotes 實驗室 🔬」<br>
+            2. 品牌一句話介紹<br>
+            3. 互動問題（分眾入口）<br>
+            4. 根據答案給對應 Lead Magnet<br>
+            5. Newsletter 邀請（說明週報節奏）<br>
+            6. 記錄觸發來源 → Supabase source 欄位
+          </div>
+          <div class="step-tags" style="margin-top:12px;"><span class="badge b-ok">品牌第一印象</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ SECTION 7：增長引擎 ══════ -->
+<div class="section" id="growth">
+  <div class="eyebrow">Module 07 · Growth Engine</div>
+  <div class="section-h">增長引擎：SEO × Lead Magnet × 社群放大</div>
+  <div class="section-desc">三個互相強化的增長飛輪：SEO 帶來新訪客，Lead Magnet 轉化訂閱者，社群放大傳播觸及。</div>
+
+  <!-- Growth flywheel -->
+  <div class="card card-top" style="margin-bottom:24px;">
+    <div style="padding-top:16px;">
+      <h3 style="font-size:.9rem;font-weight:800;color:var(--r);margin-bottom:16px;">🌀 BNotes 增長飛輪（自我強化循環）</h3>
+      <div style="display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0;">
+        <div style="text-align:center;flex:1;min-width:140px;">
+          <div style="background:linear-gradient(135deg,var(--r),var(--d));border-radius:50%;width:80px;height:80px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 10px;">🔍</div>
+          <div style="font-size:.88rem;font-weight:800;color:var(--r);">SEO 搜索流量</div>
+          <div style="font-size:.72rem;color:var(--mt);font-family:'Helvetica Neue',sans-serif;">長尾關鍵詞帶來新讀者</div>
+        </div>
+        <div style="font-size:1.5rem;color:var(--g);">→</div>
+        <div style="text-align:center;flex:1;min-width:140px;">
+          <div style="background:linear-gradient(135deg,var(--tl),#0D4A5A);border-radius:50%;width:80px;height:80px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 10px;">🧲</div>
+          <div style="font-size:.88rem;font-weight:800;color:var(--r);">Lead Magnet</div>
+          <div style="font-size:.72rem;color:var(--mt);font-family:'Helvetica Neue',sans-serif;">訪客轉化為訂閱者</div>
+        </div>
+        <div style="font-size:1.5rem;color:var(--g);">→</div>
+        <div style="text-align:center;flex:1;min-width:140px;">
+          <div style="background:linear-gradient(135deg,var(--gr),#1A4A2A);border-radius:50%;width:80px;height:80px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 10px;">📧</div>
+          <div style="font-size:.88rem;font-weight:800;color:var(--r);">Newsletter 培育</div>
+          <div style="font-size:.72rem;color:var(--mt);font-family:'Helvetica Neue',sans-serif;">高質量內容建立信任</div>
+        </div>
+        <div style="font-size:1.5rem;color:var(--g);">→</div>
+        <div style="text-align:center;flex:1;min-width:140px;">
+          <div style="background:linear-gradient(135deg,var(--w),var(--g));border-radius:50%;width:80px;height:80px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 10px;">🔗</div>
+          <div style="font-size:.88rem;font-weight:800;color:var(--r);">社群分享放大</div>
+          <div style="font-size:.72rem;color:var(--mt);font-family:'Helvetica Neue',sans-serif;">讀者分享帶來更多新流量</div>
+        </div>
+        <div style="font-size:1.5rem;color:var(--g);">→ 🔁</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEO Pillar Architecture -->
+  <h3 style="font-size:.9rem;font-weight:800;color:var(--r);margin-bottom:14px;">🏗️ BNotes Topic Cluster SEO 架構（Pillar + Cluster）</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Pillar Topic</th><th>Cluster 長尾關鍵詞（高優先）</th><th>Cluster 長尾關鍵詞（藍海）</th><th>目標 Featured Snippet</th><th>內容格式</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>手沖咖啡</strong></td>
+          <td>手沖咖啡比例1:15 / V60怎麼用 / 手沖水溫幾度</td>
+          <td>手沖咖啡TDS測量 / 手沖咖啡萃取率計算</td>
+          <td>「手沖咖啡比例」問題</td>
+          <td>教學型 + 計算工具頁</td>
+        </tr>
+        <tr>
+          <td><strong>精品咖啡豆</strong></td>
+          <td>耶加雪菲風味 / 衣索比亞咖啡豆 / 咖啡豆養豆</td>
+          <td>台灣COE競標2026 / 藝妓咖啡品種起源</td>
+          <td>「耶加雪菲是什麼」問題</td>
+          <td>完全指南 + 年度更新</td>
+        </tr>
+        <tr>
+          <td><strong>義式咖啡</strong></td>
+          <td>義式咖啡萃取比例 / 拿鐵咖啡比例 / 義式機推薦</td>
+          <td>義式咖啡壓力萃取曲線 / Ristretto萃取</td>
+          <td>「義式咖啡比例」問題</td>
+          <td>比較型 + 教學型</td>
+        </tr>
+        <tr>
+          <td><strong>咖啡器材</strong></td>
+          <td>V60 vs波浪濾杯比較 / 磨豆機推薦手沖 / 咖啡秤推薦</td>
+          <td>磨豆機粒徑分布影響 / 磨豆機EK43 vs Niche</td>
+          <td>「手沖濾杯推薦」問題</td>
+          <td>比較型（含測量數據）</td>
+        </tr>
+        <tr>
+          <td><strong>咖啡科學</strong></td>
+          <td>金杯理論是什麼 / 咖啡TDS / 咖啡水質影響</td>
+          <td>SCA CVA評估系統 / 咖啡萃取均勻度科學</td>
+          <td>「金杯理論」定義問題</td>
+          <td>深度科普 + FAQ Schema</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="highlight-strip">
+    <h4>🤖 GEO 優化（AI 搜索引擎）重點</h4>
+    <ul>
+      <li>每篇文章開頭 150 字直接給出完整答案（Google AI Overview / Perplexity 最優先引用）</li>
+      <li>使用定義式句型：「X 是指…，其特徵為…，常見的有…」——AI 最易解析結構</li>
+      <li>每篇加入 FAQ 區塊（3–5 問），並加入 FAQPage Schema，ChatGPT 引用率↑</li>
+      <li>數據必須有來源引用（格式：「根據 SCA 2025 報告…」）——AI 信任度+權威性↑</li>
+      <li>每月監測：向 ChatGPT/Perplexity 輸入 10 個核心問題，確認 BNotes 是否被引用</li>
+    </ul>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ SECTION 8：變現啟動 ══════ -->
+<div class="section" id="monetize">
+  <div class="eyebrow">Module 08 · Monetization Activation</div>
+  <div class="section-h">商業變現啟動：首單達成條件 × 路徑優先序</div>
+  <div class="section-desc">6 大變現路徑的具體啟動條件、預期收益、執行動作。按優先序排列，確保最快達到第一個 NT$10,000/月。</div>
+
+  <div class="phase-block">
+    <div class="phase-header">
+      <div class="phase-num">$</div>
+      <div><div class="phase-title">6 大變現路徑啟動計畫（按優先序）</div><div class="phase-sub">聯盟行銷 → 品牌業配 → 付費訂閱 → 線上課程 → 月訂盒 → B2B</div></div>
+      <div class="phase-duration"><div class="dur">NT$300萬+</div><div class="dlab">3年潛力</div></div>
+    </div>
+    <div class="phase-body">
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-icon">1</div>
+          <div class="step-content">
+            <div class="step-title">💰 聯盟行銷——本週立即啟動（零成本）</div>
+            <div class="step-desc">
+              <strong>啟動條件：</strong>任何文章發佈即可 | <strong>預期 Month 3 月收：</strong>NT$5,000–15,000<br>
+              <strong>執行：</strong>① 申請 Aroma 精品咖啡聯盟（20% 佣金）② 申請蝦皮聯盟（咖啡器材 3–8%）③ 申請 momo 聯盟（食品類）<br>
+              <strong>部署：</strong>在「器材評測」類文章末尾加入推薦購買按鈕，用 Supabase 追蹤點擊
+            </div>
+            <div class="step-tags"><span class="badge b-danger">本週執行</span><span class="badge b-ok">零成本</span></div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">2</div>
+          <div class="step-content">
+            <div class="step-title">🤝 品牌業配——月1啟動（準備媒體工具包）</div>
+            <div class="step-desc">
+              <strong>啟動條件：</strong>IG ≥1,000 追蹤 + Newsletter ≥200 訂閱 | <strong>目標 Q2 第一案：</strong>NT$15,000–25,000/案<br>
+              <strong>執行：</strong>① 建立 Media Kit PDF（含讀者畫像 / 平台數據 / 合作形式 / 報價單）② 主動聯繫台灣咖啡器材品牌（Hario / Kalita / Comandante 代理商）③ 透過 LinkedIn 聯繫精品豆品牌行銷主管<br>
+              <strong>合作標準：</strong>只接精品咖啡相關品牌（拒絕速溶 / 連鎖咖啡廣告），需符合 BNotes TOV 嚴謹標準
+            </div>
+            <div class="step-tags"><span class="badge b-warn">月1準備</span><span class="badge b-info">需 Media Kit</span></div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">3</div>
+          <div class="step-content">
+            <div class="step-title">💎 付費訂閱（BNotes Lab）——Q3 啟動</div>
+            <div class="step-desc">
+              <strong>啟動條件：</strong>Free 訂閱者 ≥500 人 | <strong>早鳥定價：</strong>NT$99/月（前50名）→ NT$149/月<br>
+              <strong>年繳：</strong>NT$1,490（= 省 NT$298）<br>
+              <strong>Lab 方案包含：</strong>每週 Deep Dive 深度報告 + 所有工具 PDF + 月度線上杯測活動優先報名 + BNotes Lab Member 身份 + 課程 9 折碼<br>
+              <strong>Beehiiv 設定：</strong>Paid Subscriptions → Stripe 連接 → 付費訂閱者自動進入「Lab」分群
+            </div>
+            <div class="step-tags"><span class="badge b-neut">Q3 啟動</span><span class="badge b-gold">高 LTV</span></div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">4</div>
+          <div class="step-content">
+            <div class="step-title">📚 線上課程——Q4 發佈</div>
+            <div class="step-desc">
+              <strong>首課主題：</strong>《台灣精品咖啡萃取科學》（Hahow 為主）<br>
+              <strong>課程規格：</strong>8–10 課、每課 15–20 分鐘、定價 NT$4,980（對標市場中位數）<br>
+              <strong>Q3 執行：</strong>建立 Blog 前導文章（萃取科學系列）→ 收集 Email 預購名單 → 製作課程影片<br>
+              <strong>市場驗證：</strong>Hahow《手沖咖啡入門課》6,596 學員 × NT$4,980 = NT$3,200萬 — 市場已確認存在
+            </div>
+            <div class="step-tags"><span class="badge b-neut">Q4 發佈</span><span class="badge b-gold">單次高收益</span></div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">5</div>
+          <div class="step-content">
+            <div class="step-title">📦 精品咖啡月訂盒——2027 啟動</div>
+            <div class="step-desc">
+              <strong>啟動條件：</strong>Email 名單 ≥1,000 + 確認物流合作夥伴<br>
+              <strong>模式：</strong>「教育型訂閱盒」——月訂 NT$1,200 含精品豆（一種產地）+ 莊園故事卡 + 沖煮參數卡 + 線上杯測會邀請<br>
+              <strong>差異化：</strong>不只是豆，而是每月一堂「可喝的咖啡課」<br>
+              <strong>合作夥伴：</strong>接洽台灣精品生豆進口商（圓石/守成/聯傑）合作分潤
+            </div>
+            <div class="step-tags"><span class="badge b-neut">2027 啟動</span><span class="badge b-ok">最高月收益</span></div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-icon">6</div>
+          <div class="step-content">
+            <div class="step-title">🏢 B2B 企業咖啡顧問——2027 啟動</div>
+            <div class="step-desc">
+              <strong>目標客戶：</strong>台北科技業 / 金融業 / 設計公司辦公室（注重品味的企業）<br>
+              <strong>服務方案：</strong>企業精品咖啡月訂 NT$5,000–15,000/客戶（含豆 + 知識卡 + 線上諮詢）<br>
+              <strong>10 個客戶 = NT$50,000–150,000/月</strong>（高利潤且可預測）<br>
+              <strong>切入點：</strong>透過 LinkedIn 觸達人資 / 辦公室管理人員
+            </div>
+            <div class="step-tags"><span class="badge b-neut">2027 啟動</span><span class="badge b-gold">穩定被動收入</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ SECTION 9：逐週執行節奏 ══════ -->
+<div class="section" id="weekly">
+  <div class="eyebrow">Module 09 · Weekly Rhythm</div>
+  <div class="section-h">完整逐週執行節奏表</div>
+  <div class="section-desc">把每週 4–5 小時的工作，精確分配到 7 天的最優節點，確保既有深度又有一致性。</div>
+
+  <div class="week-grid">
+    <div class="week-day">
+      <div class="day-name">Mon 週一</div>
+      <div class="day-task">📋 選題 + 研究</div>
+      <div class="day-sub">確認本週主題<br>Skywork 學術研究<br>確認 3 個可引用來源</div>
+      <div class="day-badge db-bg">⏱ 30min</div>
+    </div>
+    <div class="week-day">
+      <div class="day-name">Tue 週二</div>
+      <div class="day-task">✍️ 文章生成</div>
+      <div class="day-sub">Skywork 生成 HTML 草稿<br>TOV 校驗 Prompt 審查<br>圖片 / 數據圖確認</div>
+      <div class="day-badge db-bg">⏱ 75min</div>
+    </div>
+    <div class="week-day">
+      <div class="day-name">Wed 週三</div>
+      <div class="day-task">📧 Newsletter 製作</div>
+      <div class="day-sub">Skywork 生成週報<br>Beehiiv 草稿設定<br>1+4 拆解：IG + Threads</div>
+      <div class="day-badge db-nl">⏱ 60min</div>
+    </div>
+    <div class="week-day">
+      <div class="day-name">Thu 週四</div>
+      <div class="day-task">🚀 Build + 部署</div>
+      <div class="day-sub">最終人工審閱<br>tsc + npm run build<br>Git push / ZIP 上傳<br>Purge Cache 確認</div>
+      <div class="day-badge db-bg">⏱ 45min</div>
+    </div>
+    <div class="week-day">
+      <div class="day-name">Fri 週五</div>
+      <div class="day-task">📱 全平台發佈</div>
+      <div class="day-sub">IG 輪播排程<br>發送 Newsletter<br>Threads 貼文<br>YouTube Shorts 上傳</div>
+      <div class="day-badge db-ig">⏱ 60min</div>
+    </div>
+    <div class="week-day">
+      <div class="day-name">Sat 週六</div>
+      <div class="day-task">💬 社群互動</div>
+      <div class="day-sub">回覆 IG 留言評論<br>Threads 互動<br>Newsletter 回信</div>
+      <div class="day-badge db-th">⏱ 30min</div>
+    </div>
+    <div class="week-day">
+      <div class="day-name">Sun 週日</div>
+      <div class="day-task">📊 數據 + 規劃</div>
+      <div class="day-sub">記錄本週 KPI<br>下週選題初步確認<br>月底：OKR 復盤</div>
+      <div class="day-badge db-rev">⏱ 20min</div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <strong>📊 每月第一個週日：月度 KPI 深度復盤（額外 60 分鐘）</strong><br>
+    查看 GA4（自然流量）→ GSC（關鍵詞排名）→ Beehiiv（開信率/取消率）→ Clarity（熱圖）→ 聯盟後台（點擊/轉換）→ Supabase（訂閱者成長曲線）→ 記錄到 KPI Dashboard。
+  </div>
+
+  <!-- Auto publishing logic -->
+  <h3 style="font-size:.9rem;font-weight:800;color:var(--r);margin:24px 0 12px;">⚡ 52 週自動排程發布邏輯</h3>
+  <div class="code-block" data-label="src/lib/index.ts — 自動發布篩選">// BNotes 自動發布核心邏輯
+// 提前寫好 52 篇文章 metadata，設定未來日期，自動到時顯示
+
+const now = new Date();
+
+// ✅ 列表頁：只顯示已到期文章
+export const getPublishedArticles = () =&gt;
+  ARTICLES.filter(a =&gt; new Date(a.date) &lt;= now)
+          .sort((a, b) =&gt; new Date(b.date).getTime() - new Date(a.date).getTime());
+
+// ✅ 精選文章（首頁顯示）
+export const getFeaturedArticles = () =&gt;
+  ARTICLES.filter(a =&gt; a.featured &amp;&amp; new Date(a.date) &lt;= now);
+
+// ⚠️ 文章詳情頁：絕對不加日期過濾！
+// 加了日期過濾 = 排程中文章 URL 顯示 404 白屏 = 分享連結失效
+export const getArticleBySlug = (slug: string) =&gt;
+  ARTICLES.find(a =&gt; a.slug === slug);  <span class="cm">// 直接 find，無日期判斷</span>
+
+// 各平台 KPI 追蹤（可選）
+export const trackEvent = (event: string, props?: Record&lt;string, unknown&gt;) =&gt; {
+  window.gtag?.('event', event, props);  <span class="cm">// GA4 事件</span>
+};</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ SECTION 10：90 天路線圖 ══════ -->
+<div class="section" id="90days">
+  <div class="eyebrow">Module 10 · 90-Day Launch Roadmap</div>
+  <div class="section-h">90 天啟動路線圖：從技術部署到第一筆收益</div>
+  <div class="section-desc">精確到週的執行計畫，涵蓋技術、內容、平台、變現四條主線並行推進。</div>
+
+  <div class="tl-wrap">
+
+    <div class="tl-item">
+      <div class="tl-dot">W1</div>
+      <div class="tl-card">
+        <div class="tl-wk">Week 1 · Day 1–7 · 技術基礎建設</div>
+        <div class="tl-t">🔧 核心技術棧部署完成</div>
+        <div class="tl-d">
+          ① 建立 GitHub 私有倉庫（bnotes-blog），初始化 React + Vite + TypeScript + Tailwind 專案<br>
+          ② 建立 Supabase 專案，執行完整 Schema SQL（subscribers / reading_events / affiliate_clicks）<br>
+          ③ 建立 Cloudflare Pages 專案（bnotes），設定 _redirects<br>
+          ④ 設定 GitHub Actions 自動部署流水線（deploy.yml），完成首次自動部署<br>
+          ⑤ 連接 bnotes.tw 自訂網域，設定 DNS → SSL 自動部署<br>
+          ⑥ 設定 GA4 + Search Console + Microsoft Clarity
+        </div>
+        <div class="tl-tags"><span class="badge b-danger">技術必做</span><span class="badge b-ok">一次設定</span></div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">W2</div>
+      <div class="tl-card">
+        <div class="tl-wk">Week 2 · Day 8–14 · 品牌視覺 + Lead Magnet</div>
+        <div class="tl-t">🎨 VI 落地 + 首個 Lead Magnet 發佈</div>
+        <div class="tl-d">
+          ① 用 Skywork AI 生成 BNotes Logo（主版 + Icon 版 + 黑白版），建立 VI Guideline 文件<br>
+          ② Skywork AI 生成「手沖參數完整對照表」PDF（A4 可列印，V60/Origami/波浪/Kono 4款）<br>
+          ③ 設定 Beehiiv Newsletter（發件人 hello@bnotes.tw，網域 DNS 驗證，訂閱頁設計）<br>
+          ④ 部署 Welcome Email Sequence（5封）至 Beehiiv + Supabase Edge Function<br>
+          ⑤ 申請聯盟帳號：Aroma 精品咖啡聯盟 + 蝦皮聯盟<br>
+          ⑥ 建立 Threads @bnotes.tw 帳號，發佈第一則咖啡科學知識貼文
+        </div>
+        <div class="tl-tags"><span class="badge b-warn">品牌必做</span><span class="badge b-info">Lead Magnet 核心</span></div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">W3–4</div>
+      <div class="tl-card">
+        <div class="tl-wk">Week 3–4 · Day 15–28 · 內容奠基 + IG 啟動</div>
+        <div class="tl-t">📝 16 篇奠基文章 + ManyChat 啟動</div>
+        <div class="tl-d">
+          ① Skywork AI 生成 16 篇奠基 Blog 文章（每 Pillar 各 3 篇，含 HTML 生成、Schema Markup、目錄結構部署）<br>
+          ② 完成 STATIC_ARTICLE_MAP 設定，所有文章 URL 上線確認<br>
+          ③ 提交 sitemap.xml 至 Google Search Console，確認索引啟動<br>
+          ④ IG 帳號啟動：發佈 9 宮格開場鋪排，確立品牌視覺一致性<br>
+          ⑤ ManyChat 三個自動化流程上線測試（關鍵詞觸發 / 限動互動 / 新追蹤者歡迎）<br>
+          ⑥ 完成第一封 Newsletter（週報格式），發送給初始訂閱者
+        </div>
+        <div class="tl-tags"><span class="badge b-ok">內容基礎</span><span class="badge b-danger">ManyChat 啟動</span></div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">M2</div>
+      <div class="tl-card">
+        <div class="tl-wk">Month 2 · Day 29–60 · 增長引擎全速運轉</div>
+        <div class="tl-t">🚀 SEO 開始發芽 + 第一筆聯盟收益</div>
+        <div class="tl-d">
+          ① 持續週 SOP：每週 1 深度文章 + 1 Newsletter + 5 社群貼文<br>
+          ② YouTube 頻道啟動：首支長影片（8–12分鐘「V60 萃取科學完全指南」）<br>
+          ③ YouTube Shorts 每週 2 支（複用 IG Reels 素材）<br>
+          ④ Blog SEO 開始顯現效果：監測 Google Search Console 關鍵詞爬取狀況<br>
+          ⑤ 準備 Media Kit（含截至目前的讀者數據），主動接洽 2–3 個咖啡器材品牌<br>
+          ⑥ Skywork AI 生成「風味輪 36 味快速指南」第二個 Lead Magnet<br>
+          ⑦ 第一筆聯盟行銷收益入帳（預期 NT$2,000–5,000）
+        </div>
+        <div class="tl-tags"><span class="badge b-info">YouTube 啟動</span><span class="badge b-ok">第一筆收益</span></div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot">M3</div>
+      <div class="tl-card">
+        <div class="tl-wk">Month 3 · Day 61–90 · 商業轉化 + Podcast 準備</div>
+        <div class="tl-t">💰 月收入達 NT$10,000+ + Podcast 錄製啟動</div>
+        <div class="tl-d">
+          ① Q1 OKR 復盤（Instagram 應達 2,000 追蹤 / Newsletter ≥400 訂閱 / Blog ≥200 UV/月）<br>
+          ② 第一個品牌業配案完成（IG 限時 + Reels，NT$15,000–25,000）<br>
+          ③ 啟動 Podcast 錄製：「BNotes Radio — 焙學實驗室」首集台灣咖啡職人訪談<br>
+          ④ Skywork AI 生成「台灣精品咖啡館地圖 2026」第三個 Lead Magnet<br>
+          ⑤ 建立 LINE 官方帳號「BNotes 精品咖啡研究所」（週五分享精選）<br>
+          ⑥ 月收入預估：聯盟 NT$5,000 + 業配 NT$15,000 = NT$20,000+
+        </div>
+        <div class="tl-tags"><span class="badge b-gold">第一個月 NT$20K+</span><span class="badge b-warn">Podcast 啟動</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════ SECTION 11：工具矩陣 ══════ -->
+<div class="section" id="tools">
+  <div class="eyebrow">Module 11 · Tool Stack Matrix</div>
+  <div class="section-h">完整工具矩陣：分類 × 用途 × 費用</div>
+  <div class="section-desc">BNotes 所需的每一個工具，按類別整理，優先選用免費方案。</div>
+
+  <div class="tool-cat">
+    <div class="tool-cat-title">🛠️ 技術開發</div>
+    <div class="tools-row">
+      <div class="tool-chip"><div class="tc-name">VS Code / Cursor</div><div class="tc-role">程式碼編輯器（Cursor = AI 輔助）</div><div class="tc-price price-free">✅ 免費</div></div>
+      <div class="tool-chip"><div class="tc-name">Node.js 20 LTS</div><div class="tc-role">JavaScript 執行環境</div><div class="tc-price price-free">✅ 免費</div></div>
+      <div class="tool-chip"><div class="tc-name">Git + GitHub</div><div class="tc-role">版本控制 + CI/CD + 協作</div><div class="tc-price price-free">✅ 免費</div></div>
+      <div class="tool-chip"><div class="tc-name">Supabase CLI</div><div class="tc-role">本地開發 + Edge Function 部署</div><div class="tc-price price-free">✅ 免費</div></div>
+      <div class="tool-chip"><div class="tc-name">Postman / Thunder</div><div class="tc-role">API 測試（Edge Function 開發用）</div><div class="tc-price price-free">✅ 免費</div></div>
+    </div>
+  </div>
+
+  <div class="tool-cat">
+    <div class="tool-cat-title">☁️ 雲端服務</div>
+    <div class="tools-row">
+      <div class="tool-chip"><div class="tc-name">Cloudflare Pages ⭐</div><div class="tc-role">Blog 靜態部署 + 全球 CDN</div><div class="tc-price price-free">✅ 免費（無限瀏覽）</div></div>
+      <div class="tool-chip"><div class="tc-name">Supabase ⭐</div><div class="tc-role">訂閱者 DB + Edge Functions</div><div class="tc-price price-free">✅ 免費 500MB/50K MAU</div></div>
+      <div class="tool-chip"><div class="tc-name">Resend</div><div class="tc-role">Email 自動化觸發（Welcome）</div><div class="tc-price price-free">✅ 免費 3,000封/月</div></div>
+      <div class="tool-chip"><div class="tc-name">Beehiiv</div><div class="tc-role">Newsletter 主平台</div><div class="tc-price price-free">✅ 免費 2,500訂閱</div></div>
+      <div class="tool-chip"><div class="tc-name">Zapier</div><div class="tc-role">ManyChat → Beehiiv 同步</div><div class="tc-price price-paid">💰 免費 100任務/月</div></div>
+    </div>
+  </div>
+
+  <div class="tool-cat">
+    <div class="tool-cat-title">🤖 AI 生產力</div>
+    <div class="tools-row">
+      <div class="tool-chip"><div class="tc-name">Skywork AI ⭐</div><div class="tc-role">文章生成 / 研究 / KPI 分析 / 圖像</div><div class="tc-price price-paid">💰 核心工具</div></div>
+      <div class="tool-chip"><div class="tc-name">Canva AI</div><div class="tc-role">IG 輪播設計 / PDF 製作</div><div class="tc-price price-free">✅ 免費版夠用</div></div>
+      <div class="tool-chip"><div class="tc-name">Descript</div><div class="tc-role">Podcast 錄製 / 影片剪輯 / 字幕</div><div class="tc-price price-free">✅ 免費 1hr/月</div></div>
+      <div class="tool-chip"><div class="tc-name">CapCut</div><div class="tc-role">Reels / Shorts 剪輯</div><div class="tc-price price-free">✅ 免費</div></div>
+      <div class="tool-chip"><div class="tc-name">Midjourney / Ideogram</div><div class="tc-role">自訂封面圖 / 品牌圖像</div><div class="tc-price price-paid">💰 或用 Unsplash 免費</div></div>
+    </div>
+  </div>
+
+  <div class="tool-cat">
+    <div class="tool-cat-title">📱 社群自動化</div>
+    <div class="tools-row">
+      <div class="tool-chip"><div class="tc-name">ManyChat ⭐</div><div class="tc-role">IG DM 自動化 / Lead Magnet 投遞</div><div class="tc-price price-free">✅ 免費 1,000聯絡人</div></div>
+      <div class="tool-chip"><div class="tc-name">Later</div><div class="tc-role">IG / Threads 排程發佈</div><div class="tc-price price-free">✅ 免費 10貼/月</div></div>
+      <div class="tool-chip"><div class="tc-name">Meta Business Suite</div><div class="tc-role">IG + Threads 管理、數據分析</div><div class="tc-price price-free">✅ 完全免費</div></div>
+      <div class="tool-chip"><div class="tc-name">TubeBuddy</div><div class="tc-role">YouTube SEO 關鍵詞分析</div><div class="tc-price price-free">✅ 免費版基礎功能</div></div>
+    </div>
+  </div>
+
+  <div class="tool-cat">
+    <div class="tool-cat-title">📊 分析追蹤</div>
+    <div class="tools-row">
+      <div class="tool-chip"><div class="tc-name">Google Analytics 4</div><div class="tc-role">流量 / 事件 / 轉化追蹤</div><div class="tc-price price-free">✅ 完全免費</div></div>
+      <div class="tool-chip"><div class="tc-name">Google Search Console</div><div class="tc-role">SEO 索引 / 關鍵詞排名監控</div><div class="tc-price price-free">✅ 完全免費</div></div>
+      <div class="tool-chip"><div class="tc-name">Microsoft Clarity</div><div class="tc-role">熱圖 / 錄屏 / 行為分析</div><div class="tc-price price-free">✅ 無限量免費</div></div>
+      <div class="tool-chip"><div class="tc-name">Ahrefs Webmaster</div><div class="tc-role">反向連結監控（免費版）</div><div class="tc-price price-free">✅ 免費（限自有網站）</div></div>
+    </div>
+  </div>
+
+  <div class="tool-cat">
+    <div class="tool-cat-title">💰 商業變現</div>
+    <div class="tools-row">
+      <div class="tool-chip"><div class="tc-name">Aroma 聯盟</div><div class="tc-role">精品咖啡聯盟行銷（20% 佣金）</div><div class="tc-price price-free">✅ 免費申請</div></div>
+      <div class="tool-chip"><div class="tc-name">蝦皮聯盟</div><div class="tc-role">咖啡器材聯盟（3–8%）</div><div class="tc-price price-free">✅ 免費申請</div></div>
+      <div class="tool-chip"><div class="tc-name">Stripe（via Beehiiv）</div><div class="tc-role">付費訂閱收款</div><div class="tc-price price-paid">💰 2.9% + $0.30/筆</div></div>
+      <div class="tool-chip"><div class="tc-name">Hahow / PressPlay</div><div class="tc-role">線上課程平台</div><div class="tc-price price-paid">💰 平台分潤 30–40%</div></div>
+    </div>
+  </div>
+
+  <!-- Monthly tech cost table -->
+  <h3 style="font-size:.9rem;font-weight:800;color:var(--r);margin:24px 0 12px;">💰 月度技術成本預估</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>服務</th><th>免費方案限制</th><th>升級條件</th><th>升級費用</th><th>Year 1 建議</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Cloudflare Pages</td><td>無限頁面瀏覽、500 builds/月</td><td>極少需要升級</td><td>Cloudflare Pro $20/月</td><td><span class="badge b-ok">維持免費</span></td></tr>
+        <tr><td>Supabase</td><td>500MB / 50,000 MAU</td><td>訂閱者 &gt;50,000 或數據 &gt;500MB</td><td>Pro $25/月</td><td><span class="badge b-ok">維持免費</span></td></tr>
+        <tr><td>Resend</td><td>3,000封/月（Welcome Email）</td><td>月發送 &gt;3,000 封</td><td>$20/月</td><td><span class="badge b-ok">維持免費</span></td></tr>
+        <tr><td>Beehiiv</td><td>2,500 訂閱者</td><td>訂閱者 &gt;2,500（約 Q3）</td><td>Scale $42/月</td><td><span class="badge b-warn">Q3 升級</span></td></tr>
+        <tr><td>ManyChat</td><td>1,000 IG 聯絡人</td><td>聯絡人 &gt;1,000</td><td>$15/月</td><td><span class="badge b-warn">月3 升級</span></td></tr>
+        <tr><td>GitHub</td><td>無限私有倉庫 + 2,000 Actions 分鐘</td><td>極少需要升級</td><td>Team $4/月</td><td><span class="badge b-ok">維持免費</span></td></tr>
+        <tr><td><strong>合計</strong></td><td><strong>Year 1 前 6 個月</strong></td><td></td><td></td><td><span class="badge b-ok"><strong>NT$0 – NT$1,500/月</strong></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════ QUICK ACTION ══════ -->
+<div class="section">
+  <div class="eyebrow">Immediate Action Plan</div>
+  <div class="section-h">⚡ 今天開始：前 10 個行動（按序執行）</div>
+
+  <div class="qs-item"><div class="qs-num">1</div><div><div class="qs-t">建立 GitHub 倉庫 + 初始化 React + Vite + TypeScript 專案</div><div class="qs-d"><code>npm create vite@latest bnotes-blog -- --template react-ts</code>，安裝 Tailwind + shadcn/ui，確認 Vite dev server 正常運行</div><div class="qs-est">⏱ 30min</div></div></div>
+
+  <div class="qs-item"><div class="qs-num">2</div><div><div class="qs-t">建立 Supabase 專案 + 執行 Schema SQL</div><div class="qs-d">前往 supabase.com → New Project → 在 SQL Editor 執行本文件 Section 3 的完整 schema.sql → 取得 URL 和 ANON_KEY</div><div class="qs-est">⏱ 20min</div></div></div>
+
+  <div class="qs-item"><div class="qs-num">3</div><div><div class="qs-t">建立 Cloudflare Pages 專案 + 設定 _redirects</div><div class="qs-d">dash.cloudflare.com → Pages → Create project → 建立 <code>public/_redirects</code>（內容：<code>/* /index.html 200</code>）→ 首次部署確認正常</div><div class="qs-est">⏱ 20min</div></div></div>
+
+  <div class="qs-item"><div class="qs-num">4</div><div><div class="qs-t">設定 GitHub Actions 自動部署（deploy.yml）</div><div class="qs-d">按 Section 4 完整 YAML 建立 <code>.github/workflows/deploy.yml</code> → 在 GitHub Secrets 設定所有環境變數 → push 測試自動部署</div><div class="qs-est">⏱ 30min</div></div></div>
+
+  <div class="qs-item"><div class="qs-num">5</div><div><div class="qs-t">Beehiiv 設定 + Welcome Email Sequence</div><div class="qs-d">建立 Beehiiv 帳號 → 驗證 hello@bnotes.tw 網域 → 建立 5 封 Welcome Sequence → 設定 Resend Edge Function → 測試訂閱流程</div><div class="qs-est">⏱ 60min</div></div></div>
+
+  <div class="qs-item"><div class="qs-num">6</div><div><div class="qs-t">Skywork AI 生成首個 Lead Magnet PDF</div><div class="qs-d">使用 Prompt D：「為 BNotes 設計手沖咖啡參數對照表 PDF，V60/Origami/波浪/Kono 四款，A4 格式，品牌色 #1C0A00 + #D4A030」</div><div class="qs-est">⏱ 20min</div></div></div>
+
+  <div class="qs-item"><div class="qs-num">7</div><div><div class="qs-t">申請聯盟行銷帳號</div><div class="qs-d">① Aroma 精品咖啡聯盟（aroma.coffee，20% 佣金）② 蝦皮聯盟（affiliate.shopee.tw，食品類 2–10%）③ momo 聯盟（mamber.momoshop.com.tw）</div><div class="qs-est">⏱ 30min</div></div></div>
+
+  <div class="qs-item"><div class="qs-num">8</div><div><div class="qs-t">建立 Threads @bnotes.tw 並發佈首則貼文</div><div class="qs-d">首則：「你知道耶加雪菲的茉莉花香來自 Linalool 化合物嗎？這也是真正茉莉花精油的主香氣。下次喝花香咖啡時，你聞到的是真實化學 ☕ #精品咖啡 #咖啡科學」</div><div class="qs-est">⏱ 15min</div></div></div>
+
+  <div class="qs-item"><div class="qs-num">9</div><div><div class="qs-t">Skywork AI 生成首批 5 篇 Blog 文章（奠基）</div><div class="qs-d">使用 Prompt A，主題：① V60萃取科學完全指南 ② 耶加雪菲風味來源解析 ③ 手沖咖啡比例計算 ④ 金杯理論是什麼 ⑤ 台灣精品咖啡市場2026 — 按目錄結構部署</div><div class="qs-est">⏱ 2hr（AI生成）+ 1hr（審閱）</div></div></div>
+
+  <div class="qs-item"><div class="qs-num">10</div><div><div class="qs-t">設定 ManyChat + GA4 + Google Search Console</div><div class="qs-d">ManyChat 三個流程上線測試 → GA4 嵌入 Blog 確認事件追蹤 → Search Console 提交 sitemap.xml → 確認首批文章開始被索引</div><div class="qs-est">⏱ 60min</div></div></div>
+
+  <div class="action-box">
+    <h3>🎯 完成前 10 個行動 = BNotes 技術基礎完全就位</h3>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:.82rem;color:rgba(255,255,255,.75);font-family:'Helvetica Neue',sans-serif;">
+      <div>✅ Blog 上線（bnotes.tw）、CI/CD 自動部署運作</div>
+      <div>✅ 訂閱系統（Beehiiv + Supabase + Resend）完整串聯</div>
+      <div>✅ Lead Magnet 就位、ManyChat 自動化運轉</div>
+      <div>✅ 聯盟行銷啟動、第一篇有推薦連結的文章上線</div>
+      <div>✅ 分析追蹤全開：GA4 + GSC + Clarity</div>
+      <div style="margin-top:8px;color:var(--g);font-weight:700;">→ 接下來只需執行週 SOP：每週 4–5 小時，複利增長。</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">B Notes</div>
+  <div class="footer-cn">焙學 · 原豆誌</div>
+  <p style="font-size:.95rem;color:var(--g);font-weight:600;margin:10px 0 8px;letter-spacing:.04em;">"React + Vite × GitHub Actions × Supabase × Cloudflare Pages × Beehiiv × Skywork AI"</p>
+  <div class="footer-sub">
+    完整落地執行計畫 · 2026.04.07 · 三專家聯合出品<br>
+    資深國際自媒體專家 × Skywork AI 平台專家 × 行銷計畫專案專家<br>
+    Based on Blog Deployment Playbook v2.0 · BNotes Brand Strategy · Taiwan Specialty Coffee Market Research
+  </div>
+</div>
+
+<a href="#" class="back-top">↑</a>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+</body>
+</html>

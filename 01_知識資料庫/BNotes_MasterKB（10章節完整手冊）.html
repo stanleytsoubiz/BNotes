@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BNotes 焙學·原豆誌 — 完整知識庫與移植手冊 v1.0</title>
+<style>
+  :root {
+    --accent: #c8922a;
+    --dark: #1a0a00;
+    --body: #2d2d2d;
+    --muted: #6b5740;
+    --bg: #ffffff;
+    --bg2: #fdf8f2;
+    --border: #e8d5b0;
+    --code-bg: #f4f1ec;
+    --serif: "Noto Serif TC", "Georgia", serif;
+    --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--body);
+    line-height: 1.8;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+  }
+
+  /* Cover */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 0 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .cover-label {
+    font-size: .75rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+  }
+  .cover-title {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: var(--dark);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+  .cover-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 580px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+  .cover-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: .85rem;
+    color: var(--muted);
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .cover-meta span strong { color: var(--dark); }
+
+  /* TOC */
+  .toc { padding: 3rem 0; border-bottom: 1px solid var(--border); }
+  .toc h2 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+    letter-spacing: .04em;
+  }
+  .toc ol { padding-left: 1.5rem; counter-reset: none; }
+  .toc > ol { padding-left: 0; list-style: none; }
+  .toc > ol > li {
+    margin-bottom: .75rem;
+    font-weight: 700;
+    color: var(--dark);
+    font-size: .95rem;
+  }
+  .toc > ol > li > a {
+    color: var(--dark);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .toc > ol > li > a:hover { border-color: var(--accent); }
+  .toc > ol > li > ol {
+    padding-left: 1.25rem;
+    margin-top: .4rem;
+    list-style: decimal;
+  }
+  .toc > ol > li > ol > li {
+    font-weight: 400;
+    color: var(--muted);
+    font-size: .88rem;
+    margin-bottom: .25rem;
+  }
+  .toc > ol > li > ol > li a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .toc > ol > li > ol > li a:hover { color: var(--accent); }
+
+  /* Sections */
+  section { padding: 3.5rem 0; border-bottom: 1px solid var(--border); }
+  section:last-child { border-bottom: none; }
+  h1 { font-family: var(--serif); font-size: 1.9rem; font-weight: 900; color: var(--dark); margin-bottom: 1rem; }
+  h2 {
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    font-weight: 900;
+    color: var(--dark);
+    margin-bottom: 1.25rem;
+    padding-top: .5rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 1.75rem 0 .75rem;
+  }
+  h4 {
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    margin: 1.5rem 0 .5rem;
+  }
+  p { margin-bottom: 1rem; color: var(--body); }
+  ul, ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+  li { margin-bottom: .3rem; }
+  strong { color: var(--dark); }
+  em { color: var(--accent); font-style: normal; font-weight: 600; }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    padding: .75rem 1.25rem;
+    background: var(--bg2);
+    margin: 1.25rem 0;
+    font-size: .92rem;
+    color: var(--muted);
+    border-radius: 0 .5rem .5rem 0;
+  }
+
+  /* Code */
+  code {
+    font-family: "SFMono-Regular", "Consolas", "Courier New", monospace;
+    font-size: .84rem;
+    background: var(--code-bg);
+    padding: .15rem .4rem;
+    border-radius: .3rem;
+    color: #b44b00;
+    border: 1px solid #e8d5b0;
+  }
+  pre {
+    background: #1e1a16;
+    color: #e8d5b0;
+    padding: 1.25rem 1.5rem;
+    border-radius: .75rem;
+    overflow-x: auto;
+    font-size: .83rem;
+    line-height: 1.65;
+    margin: 1.25rem 0;
+  }
+  pre code {
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+  }
+  .comment { color: #7a7060; }
+  .key { color: #c8922a; }
+  .val { color: #8ec07c; }
+  .str { color: #b5d49e; }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .88rem;
+    margin: 1.25rem 0;
+  }
+  th {
+    background: var(--dark);
+    color: #fff;
+    padding: .7rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: .82rem;
+    letter-spacing: .03em;
+  }
+  td {
+    padding: .65rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--body);
+  }
+  tr:nth-child(even) td { background: var(--bg2); }
+
+  /* Callout */
+  .callout {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    background: var(--bg2);
+    padding: 1rem 1.25rem;
+    border-radius: 0 .5rem .5rem 0;
+    margin: 1.25rem 0;
+    font-size: .9rem;
+  }
+  .callout-title {
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: .35rem;
+    font-size: .88rem;
+  }
+
+  /* Section anchor */
+  .sec-num {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: .7rem;
+    font-weight: 700;
+    padding: .15rem .55rem;
+    border-radius: .25rem;
+    letter-spacing: .05em;
+    margin-right: .5rem;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+  }
+
+  /* Portable note */
+  .portable {
+    background: #f0f9f0;
+    border: 1px solid #b8dab8;
+    border-left: 3px solid #2d7d32;
+    padding: 1rem 1.25rem;
+    border-radius: 0 .5rem .5rem 0;
+    margin: 1.25rem 0;
+    font-size: .9rem;
+  }
+  .portable .callout-title { color: #1b5e20; }
+
+  /* Dir tree */
+  .tree {
+    font-family: "SFMono-Regular", monospace;
+    font-size: .84rem;
+    background: #1e1a16;
+    color: #e8d5b0;
+    padding: 1.25rem 1.5rem;
+    border-radius: .75rem;
+    line-height: 1.75;
+    margin: 1rem 0;
+    overflow-x: auto;
+  }
+  .tree .dir { color: #c8922a; font-weight: 700; }
+  .tree .file { color: #8ec07c; }
+  .tree .note { color: #7a7060; }
+
+  @media (max-width: 600px) {
+    body { padding: 0 1rem 4rem; }
+    .cover { padding: 3rem 0 2.5rem; }
+    pre { font-size: .78rem; }
+    table { font-size: .8rem; }
+    th, td { padding: .5rem .65rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════
+     COVER
+════════════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-label">完整知識庫 v1.0</div>
+  <h1 class="cover-title">BNotes 焙學·原豆誌<br>部落格完整建置手冊</h1>
+  <p class="cover-sub">
+    涵蓋前後台架構、設計系統、自動化流程、SEO 體系、品質管控、內容管理到移植指南的完整技術文件。
+    本文件可作為任何垂直領域知識型部落格的部署範本。
+  </p>
+  <div class="cover-meta">
+    <span><strong>站點：</strong>bnotescoffee.com</span>
+    <span><strong>倉庫：</strong>github.com/stanleytsoubiz/BNotes</span>
+    <span><strong>建立日期：</strong>2026-04-21</span>
+    <span><strong>版本：</strong>v1.0</span>
+    <span><strong>技術棧：</strong>靜態 HTML + Cloudflare Pages + GitHub Actions</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     TOC
+════════════════════════════════════════════════════════════ -->
+<nav class="toc">
+  <h2>目錄</h2>
+  <ol>
+    <li><a href="#s1">專案總覽與核心理念</a>
+      <ol>
+        <li><a href="#s1-1">定位與目標</a></li>
+        <li><a href="#s1-2">技術選型原則</a></li>
+        <li><a href="#s1-3">整體架構圖</a></li>
+      </ol>
+    </li>
+    <li><a href="#s2">技術架構規格</a>
+      <ol>
+        <li><a href="#s2-1">目錄結構全覽</a></li>
+        <li><a href="#s2-2">前端技術棧</a></li>
+        <li><a href="#s2-3">後端技術棧</a></li>
+        <li><a href="#s2-4">第三方服務清單</a></li>
+      </ol>
+    </li>
+    <li><a href="#s3">前端設計系統</a>
+      <ol>
+        <li><a href="#s3-1">CSS 變數（Design Tokens）</a></li>
+        <li><a href="#s3-2">版面結構規格</a></li>
+        <li><a href="#s3-3">導覽列與頁尾</a></li>
+        <li><a href="#s3-4">文章卡片與排版</a></li>
+        <li><a href="#s3-5">Pillar Page 模板</a></li>
+      </ol>
+    </li>
+    <li><a href="#s4">內容管理架構</a>
+      <ol>
+        <li><a href="#s4-1">文章生命週期</a></li>
+        <li><a href="#s4-2">YAML Frontmatter 規格</a></li>
+        <li><a href="#s4-3">文章 HTML 模板</a></li>
+        <li><a href="#s4-4">目錄與分類系統</a></li>
+      </ol>
+    </li>
+    <li><a href="#s5">後台管理系統</a>
+      <ol>
+        <li><a href="#s5-1">認證機制</a></li>
+        <li><a href="#s5-2">三 Tab 管理介面</a></li>
+        <li><a href="#s5-3">完整 API 清單</a></li>
+        <li><a href="#s5-4">品質掃描評分系統</a></li>
+      </ol>
+    </li>
+    <li><a href="#s6">自動化系統</a>
+      <ol>
+        <li><a href="#s6-1">CI/CD 部署流程</a></li>
+        <li><a href="#s6-2">每日自動發布排程</a></li>
+        <li><a href="#s6-3">AI 內容生成管線</a></li>
+        <li><a href="#s6-4">封面圖自動生成</a></li>
+      </ol>
+    </li>
+    <li><a href="#s7">SEO 與 E-E-A-T 架構</a>
+      <ol>
+        <li><a href="#s7-1">Schema.org 結構化資料</a></li>
+        <li><a href="#s7-2">Sitemap 與 robots.txt</a></li>
+        <li><a href="#s7-3">Pillar Page 集群策略</a></li>
+        <li><a href="#s7-4">Core Web Vitals 優化</a></li>
+      </ol>
+    </li>
+    <li><a href="#s8">部署與環境設定</a>
+      <ol>
+        <li><a href="#s8-1">環境變數總表</a></li>
+        <li><a href="#s8-2">Cloudflare Pages 設定</a></li>
+        <li><a href="#s8-3">GitHub Secrets 設定</a></li>
+        <li><a href="#s8-4">首次部署步驟</a></li>
+      </ol>
+    </li>
+    <li><a href="#s9">移植指南（其他產業）</a>
+      <ol>
+        <li><a href="#s9-1">移植準備與評估</a></li>
+        <li><a href="#s9-2">品牌與設計替換清單</a></li>
+        <li><a href="#s9-3">內容分類重新設計</a></li>
+        <li><a href="#s9-4">移植範例：三個產業</a></li>
+      </ol>
+    </li>
+    <li><a href="#s10">維護與監控</a>
+      <ol>
+        <li><a href="#s10-1">日常維護清單</a></li>
+        <li><a href="#s10-2">品質評分解讀</a></li>
+        <li><a href="#s10-3">流量增長策略</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 1：專案總覽
+════════════════════════════════════════════════════════════ -->
+<section id="s1">
+  <h2><span class="sec-num">1</span>專案總覽與核心理念</h2>
+
+  <h3 id="s1-1">1.1 定位與目標</h3>
+  <p>
+    BNotes 焙學·原豆誌是一個以<strong>精品咖啡知識</strong>為核心的台灣自媒體部落格，
+    建立於 2024 年，採用「靜態優先、函數輔助」的混合架構，
+    同時滿足高效能 SEO 呈現與動態後台管理的需求。
+  </p>
+  <table>
+    <thead><tr><th>面向</th><th>規格</th></tr></thead>
+    <tbody>
+      <tr><td>站點網域</td><td>bnotescoffee.com</td></tr>
+      <tr><td>定位</td><td>台灣精品咖啡知識媒體，SCA 標準 + 在地視角</td></tr>
+      <tr><td>內容量</td><td>50+ 篇已發布文章，24+ 篇排程中</td></tr>
+      <tr><td>平均品質分</td><td>90 分（自建評分系統 0–100）</td></tr>
+      <tr><td>分類數</td><td>6 個主分類（手沖技法、義式咖啡、器材評測、產地風土、沖泡科學、咖啡生活）</td></tr>
+      <tr><td>Pillar Pages</td><td>2 個（手沖咖啡完全指南、台灣咖啡產地風土）</td></tr>
+      <tr><td>Google Search Console</td><td>45 次點擊 / 657 次曝光 / 6.8% CTR（建站 2 週內）</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="s1-2">1.2 技術選型原則</h3>
+  <p>本專案遵循以下三項核心原則選型，確保低成本、高效能且易於維護：</p>
+  <ol>
+    <li><strong>零基礎建設成本：</strong>使用 Cloudflare Pages 免費方案 + GitHub 免費倉庫，月費 0 元（除非流量超出免費額度）。</li>
+    <li><strong>靜態優先、函數輔助：</strong>前台完全靜態（HTML/CSS/JS），CDN 邊緣節點快取。後台管理功能透過 Cloudflare Pages Functions（Serverless）實現，無需維護伺服器。</li>
+    <li><strong>Git 即資料庫：</strong>所有文章以 HTML 檔案儲存於 GitHub 倉庫，版本控制 = 備份系統，部署 = git push。</li>
+  </ol>
+  <div class="callout">
+    <div class="callout-title">選型理由：為什麼不用 WordPress / Next.js / Hugo？</div>
+    WordPress 需要 PHP 伺服器與資料庫，月費至少 NT$300+，攻擊面大。
+    Next.js 需要 Node.js 伺服器，SSR 成本高。Hugo/Jekyll 無法做動態後台。
+    本方案兼顧零成本、SEO 完整控制權與動態後台，是垂直媒體的最佳解。
+  </div>
+
+  <h3 id="s1-3">1.3 整體架構圖</h3>
+  <pre><code><span class="comment">// BNotes 系統架構概覽</span>
+┌─────────────────────────────────────────────────────┐
+│                   GitHub 倉庫（主資料庫）              │
+│  ┌─────────────┐  ┌──────────────┐  ┌────────────┐  │
+│  │ dist/        │  │ functions/   │  │ .github/   │  │
+│  │ (靜態檔案)   │  │ (CF Functions│  │ (CI/CD)    │  │
+│  │ articles/    │  │  /api/*      │  │ workflows/ │  │
+│  │ _scheduled/  │  │  /admin/*    │  │ scripts/   │  │
+│  │ pillar/      │  │  /articles/* │  │            │  │
+│  └─────────────┘  └──────────────┘  └────────────┘  │
+└──────────────┬──────────────────────────┬────────────┘
+               │ git push                  │ GitHub Actions
+               ▼                           ▼
+┌─────────────────────────┐    ┌─────────────────────┐
+│  Cloudflare Pages CDN   │    │  每日發布排程 (cron) │
+│  - 全球靜態快取          │    │  每週 AI 生成文章    │
+│  - Functions 邊緣計算   │    │  deploy pipeline     │
+│  - HTTPS / HSTS         │    └─────────────────────┘
+└─────────────────────────┘
+               │
+    ┌──────────┴──────────┐
+    ▼                     ▼
+前台訪客               後台管理員
+bnotescoffee.com  bnotescoffee.com/admin
+                  (密碼保護 + HMAC 認證)
+</code></pre>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 2：技術架構規格
+════════════════════════════════════════════════════════════ -->
+<section id="s2">
+  <h2><span class="sec-num">2</span>技術架構規格</h2>
+
+  <h3 id="s2-1">2.1 目錄結構全覽</h3>
+  <div class="tree">
+<span class="dir">BNotes/</span>  (GitHub 倉庫根目錄)
+├── <span class="dir">dist/</span>  <span class="note"># Cloudflare Pages 輸出目錄（靜態前台）</span>
+│   ├── <span class="dir">articles/</span>  <span class="note"># 已發布文章 HTML（每篇一個檔案）</span>
+│   ├── <span class="dir">_scheduled/</span>  <span class="note"># 排程待發布文章（YAML frontmatter + 完整 HTML）</span>
+│   ├── <span class="dir">_pending-ai-review/</span>  <span class="note"># AI 生成待審核文章</span>
+│   ├── <span class="dir">category/</span>  <span class="note"># 分類列表頁（靜態生成）</span>
+│   ├── <span class="dir">pillar/</span>  <span class="note"># Pillar Page 深度指南</span>
+│   ├── <span class="dir">images/ai/</span>  <span class="note"># AI 生成封面圖（{slug}-hero.jpg）</span>
+│   ├── <span class="dir">admin/</span>  <span class="note"># 後台管理介面入口（由 CF Function 渲染）</span>
+│   ├── <span class="file">index.html</span>  <span class="note"># 首頁（含 JS 動態載入文章）</span>
+│   ├── <span class="file">about.html</span>  <span class="note"># 關於我們</span>
+│   ├── <span class="file">sitemap.xml</span>  <span class="note"># 動態生成的 Sitemap</span>
+│   ├── <span class="file">feed.xml</span>  <span class="note"># RSS Feed</span>
+│   ├── <span class="file">robots.txt</span>
+│   ├── <span class="file">_headers</span>  <span class="note"># Cloudflare Pages 快取規則</span>
+│   ├── <span class="file">_redirects</span>  <span class="note"># URL 重導向規則</span>
+│   └── <span class="file">_scheduled-meta.json</span>  <span class="note"># 排程文章索引（供後台快速讀取）</span>
+│
+├── <span class="dir">functions/</span>  <span class="note"># Cloudflare Pages Functions（後端 API）</span>
+│   ├── <span class="dir">admin/</span>
+│   │   ├── <span class="file">_middleware.js</span>  <span class="note"># 密碼認證中介層（所有 /admin/* 請求）</span>
+│   │   ├── <span class="file">articles.js</span>  <span class="note"># 後台管理頁面 HTML（三 Tab 完整介面）</span>
+│   │   ├── <span class="file">articles-data.js</span>  <span class="note"># GET /admin/articles-data API</span>
+│   │   ├── <span class="file">scheduled-data.js</span>  <span class="note"># GET /admin/scheduled-data API</span>
+│   │   ├── <span class="file">ai-pending-data.js</span>  <span class="note"># GET /admin/ai-pending-data API</span>
+│   │   └── <span class="file">login.js</span>  <span class="note"># GET /admin/login（無密碼模式 fallback）</span>
+│   ├── <span class="dir">api/</span>
+│   │   ├── <span class="file">quality-scan.js</span>  <span class="note"># GET /api/quality-scan?slug=xxx</span>
+│   │   ├── <span class="file">fix-article.js</span>  <span class="note"># POST /api/fix-article（AI 自動修復）</span>
+│   │   ├── <span class="file">generate-image.js</span>  <span class="note"># POST /api/generate-image（Unsplash API）</span>
+│   │   ├── <span class="file">publish-now.js</span>  <span class="note"># POST /api/publish-now（立即發布）</span>
+│   │   ├── <span class="file">submit-ai-article.js</span>  <span class="note"># POST /api/submit-ai-article（AI 投稿）</span>
+│   │   ├── <span class="file">approve-ai-article.js</span>  <span class="note"># POST /api/approve-ai-article（審核通過）</span>
+│   │   ├── <span class="file">edit-article.js</span>  <span class="note"># POST /api/edit-article（後台編輯）</span>
+│   │   ├── <span class="file">delete-article.js</span>  <span class="note"># POST /api/delete-article</span>
+│   │   ├── <span class="file">reschedule.js</span>  <span class="note"># POST /api/reschedule（調整發布日期）</span>
+│   │   ├── <span class="file">copy-article.js</span>  <span class="note"># POST /api/copy-article（複製文章）</span>
+│   │   ├── <span class="file">batch-scan.js</span>  <span class="note"># POST /api/batch-scan（批次品質掃描）</span>
+│   │   └── <span class="file">subscribe.js</span>  <span class="note"># POST /api/subscribe（電子報訂閱）</span>
+│   └── <span class="dir">articles/</span>
+│       └── <span class="file">[slug].js</span>  <span class="note"># 文章動態路由（slug → 靜態 HTML）</span>
+│
+├── <span class="dir">.github/</span>
+│   ├── <span class="dir">workflows/</span>
+│   │   ├── <span class="file">deploy.yml</span>  <span class="note"># 主部署（push main → CF Pages）</span>
+│   │   ├── <span class="file">publish-scheduled.yml</span>  <span class="note"># 每日 UTC 00:00 發布排程文章</span>
+│   │   ├── <span class="file">skywork-ai-pipeline.yml</span>  <span class="note"># 每週一 AI 生成文章</span>
+│   │   ├── <span class="file">sync-index.yml</span>
+│   │   └── <span class="file">sync-cover-image.yml</span>
+│   └── <span class="dir">scripts/</span>
+│       ├── <span class="file">publish_scheduled.py</span>  <span class="note"># 排程發布邏輯（Python）</span>
+│       ├── <span class="file">skywork_pipeline.py</span>  <span class="note"># AI 文章生成 + 投稿（Python）</span>
+│       └── <span class="file">deploy_pipeline.py</span>
+│
+└── <span class="dir">scripts/</span>
+    └── <span class="file">strip-frontmatter.js</span>  <span class="note"># 部署前剝除 YAML frontmatter</span>
+  </div>
+
+  <h3 id="s2-2">2.2 前端技術棧</h3>
+  <table>
+    <thead><tr><th>元件</th><th>技術</th><th>說明</th></tr></thead>
+    <tbody>
+      <tr><td>HTML 框架</td><td>純 HTML5</td><td>無框架，零建置步驟，直接部署</td></tr>
+      <tr><td>CSS 系統</td><td>原生 CSS 變數（Custom Properties）</td><td>Design Tokens 集中管理色彩、字型、間距</td></tr>
+      <tr><td>字型</td><td>Google Fonts（Noto Serif TC + Noto Sans TC）</td><td>繁體中文優化，serif 用於標題，sans 用於正文</td></tr>
+      <tr><td>JavaScript</td><td>Vanilla JS（無框架）</td><td>搜尋功能、Nav burger、TOC 目錄、閱讀進度條</td></tr>
+      <tr><td>圖片格式</td><td>JPG（Unsplash 原圖）</td><td>封面圖統一命名：{slug}-hero.jpg</td></tr>
+      <tr><td>SEO</td><td>Schema.org JSON-LD + Open Graph + Twitter Card</td><td>每篇文章獨立結構化資料</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="s2-3">2.3 後端技術棧</h3>
+  <table>
+    <thead><tr><th>元件</th><th>技術</th><th>說明</th></tr></thead>
+    <tbody>
+      <tr><td>伺服器運算</td><td>Cloudflare Pages Functions (Workers)</td><td>Edge 運算，全球 &lt;10ms 延遲，免費額度 10 萬請求/天</td></tr>
+      <tr><td>執行環境</td><td>JavaScript (ES Module)</td><td>每個 API 是獨立 .js 檔，export <code>onRequestGet/Post</code></td></tr>
+      <tr><td>資料庫</td><td>GitHub API（Git 即資料庫）</td><td>CRUD 操作 = GitHub Contents API，無需獨立 DB</td></tr>
+      <tr><td>認證</td><td>HMAC-SHA256 Cookie（HttpOnly, Secure, SameSite=Strict）</td><td>密碼 → HMAC token，8 小時有效期</td></tr>
+      <tr><td>環境變數</td><td>Cloudflare Pages Secrets + GitHub Secrets</td><td>敏感 Key 從不進 Git</td></tr>
+      <tr><td>圖片 API</td><td>Unsplash API（免費 50 req/hour）</td><td>依分類搜尋關鍵字，自動選圖並 commit</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="s2-4">2.4 第三方服務清單</h3>
+  <table>
+    <thead><tr><th>服務</th><th>用途</th><th>費用</th><th>必要性</th></tr></thead>
+    <tbody>
+      <tr><td>Cloudflare Pages</td><td>靜態部署 + Functions + CDN</td><td>免費</td><td>必要</td></tr>
+      <tr><td>GitHub</td><td>版本控制 + CI/CD + 資料庫</td><td>免費（公開倉庫）</td><td>必要</td></tr>
+      <tr><td>Google Fonts</td><td>繁體中文字型（Noto Serif/Sans TC）</td><td>免費</td><td>建議</td></tr>
+      <tr><td>Google Analytics (GA4)</td><td>流量分析（GA Measurement ID: G-2WXMBSHDSB）</td><td>免費</td><td>建議</td></tr>
+      <tr><td>Google Search Console</td><td>SEO 監控 + Sitemap 提交</td><td>免費</td><td>建議</td></tr>
+      <tr><td>Cloudflare Web Analytics</td><td>隱私優先的補充分析</td><td>免費</td><td>可選</td></tr>
+      <tr><td>Unsplash API</td><td>封面圖自動取得（50 req/hr）</td><td>免費</td><td>建議（有 fallback）</td></tr>
+      <tr><td>Skywork AI API</td><td>每週自動生成文章草稿</td><td>依使用量</td><td>可選（有模板 fallback）</td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 3：前端設計系統
+════════════════════════════════════════════════════════════ -->
+<section id="s3">
+  <h2><span class="sec-num">3</span>前端設計系統</h2>
+
+  <h3 id="s3-1">3.1 CSS 變數（Design Tokens）</h3>
+  <p>所有色彩、字型、間距均集中定義在首頁 <code>&lt;style&gt;</code> 中的 <code>:root</code>，Pillar Pages 和其他頁面透過複製此 style 區塊維持一致性。</p>
+  <pre><code><span class="comment">/* ── BNotes CSS Design Tokens ── */</span>
+:root {
+  <span class="comment">/* 色彩 */</span>
+  <span class="key">--gold</span>: <span class="val">#c8922a</span>;        <span class="comment">/* 主色：咖啡金，CTA / 強調 */</span>
+  <span class="key">--dark</span>: <span class="val">#1a0a00</span>;        <span class="comment">/* 最深：標題、Logo */</span>
+  <span class="key">--brown</span>: <span class="val">#5c2d00</span>;       <span class="comment">/* 深棕：hover 狀態 */</span>
+  <span class="key">--coffee-mid</span>: <span class="val">#8b4513</span>; <span class="comment">/* 中棕：次要強調 */</span>
+  <span class="key">--bg</span>: <span class="val">#fdf6ee</span>;          <span class="comment">/* 背景：暖白 */</span>
+  <span class="key">--card</span>: <span class="val">#ffffff</span>;        <span class="comment">/* 卡片背景 */</span>
+  <span class="key">--border</span>: <span class="val">#e8d5b0</span>;      <span class="comment">/* 邊框：淡金棕 */</span>
+  <span class="key">--muted-fg</span>: <span class="val">#6b4c2e</span>;   <span class="comment">/* 輔助文字：中棕 */</span>
+
+  <span class="comment">/* 字型 */</span>
+  <span class="key">--serif</span>: "Noto Serif TC", "Georgia", serif;   <span class="comment">/* 標題 */</span>
+  <span class="key">--sans</span>: "Noto Sans TC", "PingFang TC", sans-serif;  <span class="comment">/* 正文 */</span>
+
+  <span class="comment">/* 間距與形狀 */</span>
+  <span class="key">--r</span>: <span class="val">1rem</span>;               <span class="comment">/* 通用圓角 */</span>
+  <span class="key">--max-w</span>: <span class="val">960px</span>;         <span class="comment">/* 最大寬度 */</span>
+}</code></pre>
+
+  <div class="portable">
+    <div class="callout-title">移植指南：色彩替換</div>
+    移植到其他產業時，只需替換 <code>--gold</code>（主色）和 <code>--dark</code>（深色）兩個變數。
+    例如：葡萄酒部落格可改為 <code>--gold: #8b1a4a</code>（深紫紅）；
+    科技部落格可改為 <code>--gold: #0066cc</code>（科技藍）。
+  </div>
+
+  <h3 id="s3-2">3.2 版面結構規格</h3>
+  <table>
+    <thead><tr><th>元件</th><th>CSS Class</th><th>規格</th></tr></thead>
+    <tbody>
+      <tr><td>Hero 主視覺</td><td><code>.hero</code></td><td>min-height: 60vw, max-height: 520px，底部漸層覆蓋，文字在左下</td></tr>
+      <tr><td>內容區塊</td><td><code>.section</code></td><td>max-width: 960px，水平置中，padding: 3rem 1.25rem</td></tr>
+      <tr><td>文章卡片格</td><td><code>.grid</code></td><td>repeat(auto-fill, minmax(280px, 1fr))，gap: 1.5rem</td></tr>
+      <tr><td>文章卡片</td><td><code>.card</code></td><td>白底、圓角 1rem、hover 浮起陰影</td></tr>
+      <tr><td>導覽列</td><td><code>.nav</code></td><td>sticky top: 0，backdrop-filter blur，高度約 56px</td></tr>
+      <tr><td>Footer</td><td><code>.footer</code></td><td>深棕背景，兩行連結 + 版權文字</td></tr>
+      <tr><td>文章正文</td><td><code>.article-body</code></td><td>max-width: 740px，serif 字型，line-height: 1.9</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="s3-3">3.3 導覽列與頁尾規格</h3>
+  <p>導覽列結構固定，所有頁面共用相同 HTML。主要元件：</p>
+  <pre><code>&lt;nav class="nav"&gt;
+  &lt;div class="nav-inner"&gt;
+    &lt;a class="nav-logo" href="/"&gt;&lt;b&gt;B&lt;/b&gt;Notes&lt;span class="nav-sub"&gt;焙學·原豆誌&lt;/span&gt;&lt;/a&gt;
+    &lt;div class="nav-links"&gt;
+      &lt;a href="/category/pour-over.html"&gt;手沖技法&lt;/a&gt;
+      &lt;a href="/category/espresso.html"&gt;義式咖啡&lt;/a&gt;
+      &lt;a href="/category/equipment.html"&gt;器材評測&lt;/a&gt;
+      &lt;a href="/category/terroir.html"&gt;產地風土&lt;/a&gt;
+      &lt;a href="/category/science.html"&gt;冲泡科學&lt;/a&gt;
+      &lt;a href="/about.html"&gt;關於我們&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="nav-actions"&gt;
+      &lt;button class="nav-search-btn"&gt;搜尋&lt;/button&gt;
+      &lt;a class="nav-cta" href="#pillar-guides"&gt;深度指南&lt;/a&gt;
+      &lt;button class="nav-burger"&gt;☰&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+  <p>頁尾分兩行：第一行為分類連結，第二行為關於 / Sitemap / 聯絡 / RSS。</p>
+
+  <h3 id="s3-4">3.4 文章卡片規格</h3>
+  <p>每張卡片包含：封面圖（16:9，object-fit: cover）、分類標籤、日期 + 閱讀時間、標題、摘要前 2 行。</p>
+  <pre><code>&lt;article class="card"&gt;
+  &lt;a href="/articles/{slug}.html"&gt;
+    &lt;div class="card-img-wrap"&gt;
+      &lt;img class="card-img" data-src="#" alt="{title}"&gt;
+      &lt;span class="card-cat"&gt;{分類}&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="card-body"&gt;
+      &lt;div class="card-meta"&gt;{日期} · {N 分鐘}&lt;/div&gt;
+      &lt;h3 class="card-title"&gt;{標題}&lt;/h3&gt;
+      &lt;p class="card-desc"&gt;{摘要}&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+&lt;/article&gt;</code></pre>
+
+  <h3 id="s3-5">3.5 Pillar Page 模板</h3>
+  <p>Pillar Page 是針對高競爭核心關鍵字設計的長篇知識彙整頁，包含：Hero Banner、學習路線圖（三欄卡片）、FAQ（含 Schema.org FAQPage）、推薦器材 / 延伸閱讀、Newsletter CTA。</p>
+  <p>位置：<code>dist/pillar/{slug}.html</code>，URL 格式：<code>/pillar/{slug}.html</code>。</p>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 4：內容管理架構
+════════════════════════════════════════════════════════════ -->
+<section id="s4">
+  <h2><span class="sec-num">4</span>內容管理架構</h2>
+
+  <h3 id="s4-1">4.1 文章生命週期</h3>
+  <pre><code><span class="comment">// 文章狀態流轉</span>
+
+1. [生成]  AI 自動生成 / 人工撰寫
+        ↓
+2. [待審]  dist/_pending-ai-review/{slug}.html
+        ↓ (後台審核 → POST /api/approve-ai-article)
+3. [排程]  dist/_scheduled/{slug}.html
+           └─ frontmatter 含 date: YYYY-MM-DD
+        ↓ (GitHub Actions 每日 08:00 台灣時間)
+4. [發布]  dist/articles/{slug}.html
+           └─ frontmatter 被 strip-frontmatter.js 剝除
+        ↓ (Cloudflare Pages 重新部署)
+5. [線上]  https://bnotescoffee.com/articles/{slug}.html</code></pre>
+
+  <h3 id="s4-2">4.2 YAML Frontmatter 規格（完整）</h3>
+  <p>所有排程文章的 HTML 檔案頂部必須包含 YAML frontmatter，在部署時由 <code>strip-frontmatter.js</code> 自動剝除。</p>
+  <pre><code><span class="comment">---</span>
+<span class="key">title</span>: <span class="str">"文章完整標題（SEO 最佳長度 30–70 字元）"</span>
+<span class="key">date</span>: <span class="val">2026-05-01</span>                <span class="comment"># 預定發布日，YYYY-MM-DD 格式（不加引號）</span>
+<span class="key">category</span>: <span class="str">pour-over</span>             <span class="comment"># pour-over | espresso | equipment | terroir | science | lifestyle</span>
+<span class="key">description</span>: <span class="str">"SEO meta description，70–160 字元，含目標關鍵字"</span>
+<span class="key">cover_image</span>: <span class="str">"images/ai/{slug}-hero.jpg"</span>
+<span class="key">reading_time</span>: <span class="val">8</span>                 <span class="comment"># 預估分鐘數（整數）</span>
+<span class="key">focusKeyword</span>: <span class="str">"主要 SEO 關鍵字"</span>   <span class="comment"># 用於品質掃描</span>
+<span class="key">coverAlt</span>: <span class="str">"封面圖 alt 文字"</span>      <span class="comment"># 圖片無障礙 + SEO</span>
+<span class="key">status</span>: <span class="str">draft</span>                   <span class="comment"># draft | approved（AI 文章審核流程使用）</span>
+<span class="comment">---</span>
+
+&lt;!-- 文章 HTML 正文從此開始 --&gt;</code></pre>
+
+  <div class="callout">
+    <div class="callout-title">關鍵注意：date 格式</div>
+    <code>date</code> 欄位不可加引號，必須是裸值 <code>2026-05-01</code>。
+    加引號（<code>"2026-05-01"</code>）會導致 <code>publish_scheduled.py</code> 解析失敗，
+    文章永遠不會被自動發布（已修復：v2 版本加入 <code>.strip('"').strip("'")</code> 容錯處理）。
+  </div>
+
+  <h3 id="s4-3">4.3 文章 HTML 模板</h3>
+  <p>每篇文章 HTML 的必要區塊（順序固定）：</p>
+  <pre><code><span class="comment">&lt;!-- 1. YAML Frontmatter（排程文章才有，發布後被剝除）--&gt;</span>
+---
+title: "..."
+date: 2026-05-01
+...
+---
+
+<span class="comment">&lt;!-- 2. HTML Head（全站一致）--&gt;</span>
+&lt;!DOCTYPE html&gt;&lt;html lang="zh-TW"&gt;&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;{文章標題} | BNotes 焙學·原豆誌&lt;/title&gt;
+&lt;meta name="description" content="..."&gt;
+&lt;meta property="og:..." /&gt;   <span class="comment">&lt;!-- Open Graph 完整 6 項 --&gt;</span>
+&lt;link rel="canonical" data-href="#"&gt;
+&lt;script type="application/ld+json"&gt;{ Article Schema }&lt;/script&gt;
+&lt;style&gt;{全站 CSS 9000+ chars}&lt;/style&gt;
+&lt;/head&gt;
+
+<span class="comment">&lt;!-- 3. 閱讀進度條 --&gt;</span>
+&lt;div id="bnotes-progress"&gt;&lt;/div&gt;
+
+<span class="comment">&lt;!-- 4. Nav（全站共用）--&gt;</span>
+&lt;nav class="nav"&gt;...&lt;/nav&gt;
+
+<span class="comment">&lt;!-- 5. 文章主體 --&gt;</span>
+&lt;article class="article-wrap"&gt;
+  &lt;!-- Hero 圖片 --&gt;
+  &lt;!-- 文章 Header（標題、分類、日期、閱讀時間）--&gt;
+  &lt;!-- 正文（H2/H3 結構、段落、列表、表格）--&gt;
+  &lt;div class="references"&gt;&lt;!-- 參考資料 --&gt;&lt;/div&gt;
+  &lt;!-- 延伸閱讀（3 篇靜態內部連結）--&gt;
+  &lt;div class="share-section"&gt;&lt;!-- LINE/FB/複製 --&gt;&lt;/div&gt;
+&lt;/article&gt;
+
+<span class="comment">&lt;!-- 6. CTA（訂閱 / 深度指南）--&gt;</span>
+&lt;div class="cta-box"&gt;...&lt;/div&gt;
+
+<span class="comment">&lt;!-- 7. Footer --&gt;</span>
+&lt;footer class="footer"&gt;...&lt;/footer&gt;
+
+<span class="comment">&lt;!-- 8. JS（TOC 目錄 + 閱讀進度 + 分享按鈕）--&gt;</span>
+&lt;script&gt;...&lt;/script&gt;</code></pre>
+
+  <h3 id="s4-4">4.4 目錄與分類系統</h3>
+  <table>
+    <thead><tr><th>英文 slug</th><th>中文標籤</th><th>URL</th><th>說明</th></tr></thead>
+    <tbody>
+      <tr><td>pour-over</td><td>手沖技法</td><td>/category/pour-over.html</td><td>V60、Chemex、Kalita、冷萃</td></tr>
+      <tr><td>espresso</td><td>義式咖啡</td><td>/category/espresso.html</td><td>拉花、萃取參數、粉液比</td></tr>
+      <tr><td>equipment</td><td>器材評測</td><td>/category/equipment.html</td><td>磨豆機、手沖壺、濾杯</td></tr>
+      <tr><td>terroir</td><td>產地風土</td><td>/category/terroir.html</td><td>台灣、衣索比亞、哥倫比亞</td></tr>
+      <tr><td>science</td><td>沖泡科學</td><td>/category/science.html</td><td>萃取率、水質、研磨均勻度</td></tr>
+      <tr><td>lifestyle</td><td>咖啡生活</td><td>/category/lifestyle.html</td><td>配對、咖啡角落、晨間儀式</td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 5：後台管理系統
+════════════════════════════════════════════════════════════ -->
+<section id="s5">
+  <h2><span class="sec-num">5</span>後台管理系統</h2>
+
+  <h3 id="s5-1">5.1 認證機制</h3>
+  <p>後台位於 <code>/admin/</code>，所有請求經 <code>functions/admin/_middleware.js</code> 攔截驗證：</p>
+  <pre><code><span class="comment">// 認證流程（HMAC-SHA256）</span>
+1. POST /admin/login { password }
+   → deriveToken(password) = HMAC-SHA256(password, "bnotes-admin-gate-2026")
+   → 設定 HttpOnly Cookie: bnotes_adm={token}
+   → Max-Age: 8 小時, Secure, SameSite=Strict
+
+2. 後續所有 /admin/* 請求
+   → 讀取 Cookie → 驗證 HMAC token
+   → 無效 → 302 redirect /admin/login
+   → 有效 → 繼續處理
+
+環境變數: ADMIN_PASSWORD (Cloudflare Pages Secret)
+未設定時: 跳過認證（開發模式向下相容）</code></pre>
+
+  <h3 id="s5-2">5.2 三 Tab 管理介面</h3>
+  <table>
+    <thead><tr><th>Tab</th><th>API 來源</th><th>功能</th></tr></thead>
+    <tbody>
+      <tr><td>已發布</td><td>GET /admin/articles-data</td><td>列出 dist/articles/ 所有文章，可品質掃描、編輯、刪除、複製</td></tr>
+      <tr><td>排程文章</td><td>GET /admin/scheduled-data</td><td>列出 dist/_scheduled/ 文章，可調整日期、立即發布、品質修復、補圖</td></tr>
+      <tr><td>AI 待審</td><td>GET /admin/ai-pending-data</td><td>列出 dist/_pending-ai-review/ AI 草稿，可審核通過、拒絕、編輯後通過</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="s5-3">5.3 完整 API 清單</h3>
+  <table>
+    <thead><tr><th>Endpoint</th><th>Method</th><th>功能</th><th>認證</th></tr></thead>
+    <tbody>
+      <tr><td>/admin/articles-data</td><td>GET</td><td>取得已發布文章列表（slug/title/date/category/cover_image）</td><td>Admin cookie</td></tr>
+      <tr><td>/admin/scheduled-data</td><td>GET</td><td>取得排程文章列表（含 frontmatter 解析）</td><td>Admin cookie</td></tr>
+      <tr><td>/admin/ai-pending-data</td><td>GET</td><td>取得 AI 待審文章列表</td><td>Admin cookie</td></tr>
+      <tr><td>/api/quality-scan</td><td>GET</td><td>對單篇文章進行 100 分多維度品質掃描</td><td>Admin cookie</td></tr>
+      <tr><td>/api/batch-scan</td><td>POST</td><td>批次掃描多篇文章品質分數</td><td>Admin cookie</td></tr>
+      <tr><td>/api/fix-article</td><td>POST</td><td>AI 自動修復 11 項品質問題（meta / schema / H2 / 內部連結）</td><td>Admin cookie</td></tr>
+      <tr><td>/api/generate-image</td><td>POST</td><td>依 slug/title/category 自動從 Unsplash 取圖並 commit</td><td>Admin cookie</td></tr>
+      <tr><td>/api/publish-now</td><td>POST</td><td>立即將排程文章發布至 articles/</td><td>Admin cookie</td></tr>
+      <tr><td>/api/edit-article</td><td>POST</td><td>後台直接編輯文章 HTML 並 commit</td><td>Admin cookie</td></tr>
+      <tr><td>/api/delete-article</td><td>POST</td><td>刪除文章並 commit</td><td>Admin cookie</td></tr>
+      <tr><td>/api/reschedule</td><td>POST</td><td>調整排程文章發布日期</td><td>Admin cookie</td></tr>
+      <tr><td>/api/copy-article</td><td>POST</td><td>複製文章並改 slug</td><td>Admin cookie</td></tr>
+      <tr><td>/api/submit-ai-article</td><td>POST</td><td>AI Agent 投稿端點（需 SUBMIT_AI_KEY）</td><td>API Key</td></tr>
+      <tr><td>/api/approve-ai-article</td><td>POST</td><td>審核通過 AI 文章，移至排程</td><td>Admin cookie</td></tr>
+      <tr><td>/api/subscribe</td><td>POST</td><td>電子報訂閱（預留，待接 Email 服務）</td><td>無</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="s5-4">5.4 品質掃描評分系統</h3>
+  <p>位於 <code>functions/api/quality-scan.js</code>，對文章 HTML 進行五維度自動評分：</p>
+  <table>
+    <thead><tr><th>維度</th><th>滿分</th><th>評估項目</th></tr></thead>
+    <tbody>
+      <tr><td>A. SEO 完整性</td><td>25 分</td><td>title 長度（+3）、meta description（+5）、OG tags（+5）、Schema JSON-LD（+5）、canonical（+3）、frontmatter 完整（+4）</td></tr>
+      <tr><td>B. 內文質量</td><td>30 分</td><td>中文字數（+8，目標 2000+）、閱讀時間（+4，目標 6 分鐘+）、外部參考連結（+3）、內部連結（+3，需 2+ 篇）、作者/來源標示（+3）、深度分析關鍵詞（+2）、CTA 或延伸閱讀（+2）、AI 收錄適性（+5）</td></tr>
+      <tr><td>C. 圖片規範</td><td>20 分</td><td>Hero 圖片（+6）、OG:image（+4）、全部 img 有 alt（+6）、圖片使用 BNotes AI 圖庫（+4）</td></tr>
+      <tr><td>D. 結構可讀性</td><td>15 分</td><td>H1 唯一性（+3）、H2 數量 3+（+6）、段落/列表豐富性（+3）、表格/引用等專業元素（+3）</td></tr>
+      <tr><td>E. AI 知識收錄</td><td>10 分</td><td>結構化資料完整（+5）、深度分析詞彙（+5）</td></tr>
+    </tbody>
+  </table>
+  <blockquote>
+    燈號：90+ 分為綠燈可立即發布；60–89 分為黃燈建議修正；60 分以下為紅燈需大幅修改。
+    目前全站平均：90 分，47/50 篇綠燈。
+  </blockquote>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 6：自動化系統
+════════════════════════════════════════════════════════════ -->
+<section id="s6">
+  <h2><span class="sec-num">6</span>自動化系統</h2>
+
+  <h3 id="s6-1">6.1 CI/CD 部署流程（deploy.yml）</h3>
+  <p>每次 push 到 main 分支自動觸發：</p>
+  <pre><code><span class="comment">// 部署步驟</span>
+git push origin main
+   ↓
+GitHub Actions: deploy.yml
+   ↓ Step 1: strip-frontmatter.js
+      - 剝除 dist/articles/ 所有 HTML 的 YAML frontmatter
+      - 同步重建 index.html 的精選文章 grid
+      - 更新 SEARCH_DATA（前台搜尋索引）
+   ↓ Step 2: wrangler pages deploy
+      - npx wrangler pages deploy --project-name=bnotes
+      - 從倉庫根目錄部署（自動偵測 functions/ 目錄）
+      - wrangler.toml: pages_build_output_dir = "./dist"
+      - commit message 使用 SHORT_SHA 避免 CJK 字元觸發 API 錯誤
+
+環境需求: CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID</code></pre>
+
+  <h3 id="s6-2">6.2 每日自動發布排程（publish-scheduled.yml）</h3>
+  <p>每天 UTC 00:00（台灣時間 08:00）自動執行，支援四種模式：</p>
+  <pre><code><span class="comment">// GitHub Actions cron: "0 0 * * *"</span>
+
+模式 1: auto（預設）
+   python3 .github/scripts/publish_scheduled.py
+   → 掃描 dist/_scheduled/ 所有 HTML
+   → 解析 frontmatter date（容錯：移除引號）
+   → date &lt;= 今天 → shutil.copy2 到 dist/articles/
+   → 寫出 /tmp/published_articles.txt
+   → git add → git commit → git push → 觸發 CF 重新部署
+
+模式 2: dry_run
+   只列出到期文章，不實際移動
+
+模式 3: force_slug {slug}
+   強制立即發布指定文章
+
+模式 4: force_all
+   將所有排程文章全部立即發布</code></pre>
+
+  <h3 id="s6-3">6.3 AI 內容生成管線（skywork-ai-pipeline.yml）</h3>
+  <pre><code><span class="comment">// GitHub Actions cron: "0 1 * * 1"（每週一 UTC 01:00 = 台灣 09:00）</span>
+
+執行流程（skywork_pipeline.py）：
+1. 從 TOPIC_POOL 抽選未用過的主題（或使用 FORCE_TOPIC）
+2. 呼叫 Skywork AI API 生成繁體中文文章 HTML（1500–2500 字）
+   → 模型：skywork-o3-turbo
+   → Prompt 包含：分類、字數、H2 結構、CTA 要求
+3. 組裝完整 frontmatter + HTML（含 OG / Schema / canonical）
+4. POST /api/submit-ai-article
+   → 文章存入 dist/_pending-ai-review/{slug}.html
+   → 觸發 Cloudflare Pages 重新部署
+5. 後台「AI 待審」Tab 顯示新文章，管理員手動審核
+
+Fallback：SKYWORK_API_KEY 未設定時，使用高品質模板生成
+
+所需 Secrets：
+  SUBMIT_AI_KEY   - CF Pages Secret（必要）
+  SKYWORK_API_KEY - Skywork API Key（選填）</code></pre>
+
+  <h3 id="s6-4">6.4 封面圖自動生成（/api/generate-image）</h3>
+  <pre><code><span class="comment">// 後台「補圖」按鈕觸發 POST /api/generate-image</span>
+
+流程：
+1. 依 category 對應 Unsplash 搜尋關鍵字
+   pour-over → "pour over coffee brewing barista"
+   espresso  → "espresso coffee machine barista"
+   terroir   → "coffee farm origin beans harvest"
+   ...
+
+2. 呼叫 Unsplash API
+   GET https://api.unsplash.com/search/photos
+   → 取第一張高品質圖片的 raw URL
+   → 加入 ?w=1200&q=80&fm=jpg&fit=crop 參數
+
+3. Fallback（UNSPLASH_ACCESS_KEY 未設定）
+   8 張精選咖啡圖 URL，根據 slug hash 決定選哪張
+
+4. 下載圖片 → base64 → GitHub API commit
+   路徑：distimages/ai/{slug}-hero.jpg
+   同步更新文章 HTML 的 og:image + hero img src
+
+所需 Secrets：
+  GITHUB_PAT            - GitHub Personal Access Token（必要）
+  UNSPLASH_ACCESS_KEY   - Unsplash API Key（選填）</code></pre>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 7：SEO 與 E-E-A-T 架構
+════════════════════════════════════════════════════════════ -->
+<section id="s7">
+  <h2><span class="sec-num">7</span>SEO 與 E-E-A-T 架構</h2>
+
+  <h3 id="s7-1">7.1 Schema.org 結構化資料總表</h3>
+  <table>
+    <thead><tr><th>頁面</th><th>Schema 類型</th><th>主要欄位</th></tr></thead>
+    <tbody>
+      <tr><td>首頁</td><td>WebSite + Blog</td><td>name, url, SearchAction（Sitelinks Searchbox）, blogPost（最新 6 篇）</td></tr>
+      <tr><td>文章頁</td><td>Article + BreadcrumbList</td><td>headline, author, datePublished, image, inLanguage: zh-TW</td></tr>
+      <tr><td>Pillar Page</td><td>Article + FAQPage</td><td>headline + mainEntity（問答對）</td></tr>
+      <tr><td>關於我們</td><td>NewsMediaOrganization + Person</td><td>name, url, foundingDate, employee（主編）</td></tr>
+      <tr><td>分類頁</td><td>CollectionPage</td><td>name, description, url</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="s7-2">7.2 Sitemap 與 robots.txt</h3>
+  <pre><code><span class="comment">// robots.txt 關鍵設定</span>
+User-agent: *
+Allow: /
+
+<span class="comment"># 排除管理後台</span>
+Disallow: /admin/
+
+<span class="comment"># 排除隱藏頁面</span>
+Disallow: /newsletter.html
+Disallow: /collab.html
+
+<span class="comment"># 封鎖 AI 爬蟲（可選，保護原創內容）</span>
+User-agent: GPTBot
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+
+Sitemap: https://bnotescoffee.com/sitemap.xml</code></pre>
+  <p>
+    <code>sitemap.xml</code> 包含：已發布文章（priority 0.8）、分類頁（0.7）、Pillar Pages（0.9）、
+    關於我們（0.6）。newsletter / collab 不列入 sitemap（noindex 頁面）。
+  </p>
+
+  <h3 id="s7-3">7.3 Pillar Page 集群策略</h3>
+  <p>Pillar Page 是針對競爭性核心關鍵字的高優先度頁面，架構如下：</p>
+  <pre><code><span class="comment">// Topic Cluster 結構</span>
+Pillar Page: 手沖咖啡完全指南（/pillar/pour-over-complete-guide.html）
+   ├── 子文章: pour-over-guide.html（基礎）
+   ├── 子文章: brewing-diagnosis-w01.html（進階）
+   ├── 子文章: water-quality.html（專題）
+   ├── 子文章: cold-brew-complete-101.html（延伸）
+   └── 子文章: cold-brew-advanced-science.html（深度）
+
+Pillar Page: 台灣咖啡產地風土（/pillar/taiwan-coffee-terroir-guide.html）
+   ├── 子文章: alishan-terroir.html
+   ├── 子文章: taiwan-specialty-coffee-whitepaper-2026.html
+   ├── 子文章: single-origin-terroir-science.html
+   └── 子文章: processing-methods.html</code></pre>
+  <p>
+    每篇子文章底部的「延伸閱讀」區塊包含指向 Pillar Page 和其他子文章的靜態 <code>href="/articles/..."</code> 連結，
+    使 quality-scan 的內部連結計分可以偵測到（靜態 HTML，非 JS 動態注入）。
+  </p>
+
+  <h3 id="s7-4">7.4 Core Web Vitals 優化項目</h3>
+  <table>
+    <thead><tr><th>指標</th><th>優化措施</th></tr></thead>
+    <tbody>
+      <tr><td>LCP（最大內容繪製）</td><td>Hero 圖加 fetchpriority="high" + loading="eager"；preconnect fonts.googleapis.com；圖片 ?w=1200&amp;q=80</td></tr>
+      <tr><td>INP（互動延遲）</td><td>所有按鈕加 touch-action: manipulation；nav links min-height: 44px；preconnect GTM / Cloudflare</td></tr>
+      <tr><td>CLS（佈局偏移）</td><td>所有 img 設定 width/height 屬性；字型 preload；Hero 高度固定（max-height: 520px）</td></tr>
+      <tr><td>快取控制</td><td>_headers：圖片/JS/CSS → max-age=31536000 immutable；HTML → max-age=3600 must-revalidate；API → no-store</td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 8：部署與環境設定
+════════════════════════════════════════════════════════════ -->
+<section id="s8">
+  <h2><span class="sec-num">8</span>部署與環境設定</h2>
+
+  <h3 id="s8-1">8.1 環境變數總表</h3>
+  <table>
+    <thead><tr><th>變數名稱</th><th>設定位置</th><th>用途</th><th>必要性</th></tr></thead>
+    <tbody>
+      <tr><td>ADMIN_PASSWORD</td><td>Cloudflare Pages Secret</td><td>後台管理密碼（任意字串）</td><td>必要</td></tr>
+      <tr><td>GITHUB_PAT</td><td>Cloudflare Pages Secret</td><td>GitHub Personal Access Token（repo 讀寫權限）</td><td>必要</td></tr>
+      <tr><td>SUBMIT_AI_KEY</td><td>Cloudflare Pages Secret + GitHub Secret</td><td>AI Agent 投稿驗證 Key（任意隨機字串）</td><td>必要（AI 管線）</td></tr>
+      <tr><td>CLOUDFLARE_API_TOKEN</td><td>GitHub Secret</td><td>Cloudflare Pages 部署 Token（需 Pages 部署權限）</td><td>必要</td></tr>
+      <tr><td>CLOUDFLARE_ACCOUNT_ID</td><td>GitHub Secret</td><td>Cloudflare 帳號 ID（在 Cloudflare Dashboard 右側邊欄）</td><td>必要</td></tr>
+      <tr><td>UNSPLASH_ACCESS_KEY</td><td>Cloudflare Pages Secret</td><td>Unsplash API Key（封面圖自動取圖）</td><td>選填（有 fallback）</td></tr>
+      <tr><td>SKYWORK_API_KEY</td><td>GitHub Secret</td><td>Skywork AI API Key（AI 文章生成）</td><td>選填（有模板 fallback）</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="s8-2">8.2 Cloudflare Pages 設定</h3>
+  <pre><code><span class="comment">// wrangler.toml（倉庫根目錄）</span>
+<span class="key">name</span> = <span class="str">"bnotes"</span>
+<span class="key">pages_build_output_dir</span> = <span class="str">"./dist"</span>
+
+<span class="comment">// 重要：wrangler pages deploy 需從倉庫根目錄執行</span>
+<span class="comment">// 這樣 functions/ 目錄才會被自動偵測</span>
+<span class="comment">// 不可從 dist/ 目錄執行</span></code></pre>
+
+  <h3 id="s8-3">8.3 GitHub Secrets 設定步驟</h3>
+  <ol>
+    <li>前往 GitHub 倉庫 → Settings → Secrets and variables → Actions</li>
+    <li>點擊「New repository secret」，依序新增以下 Secrets：<br>
+      <code>CLOUDFLARE_API_TOKEN</code>、<code>CLOUDFLARE_ACCOUNT_ID</code>、<code>SUBMIT_AI_KEY</code>、<code>SKYWORK_API_KEY</code>（選填）</li>
+    <li>Cloudflare API Token 建立方式：<br>
+      Cloudflare Dashboard → My Profile → API Tokens → Create Token → 選 Edit Cloudflare Pages 模板</li>
+  </ol>
+
+  <h3 id="s8-4">8.4 首次部署步驟（全新移植）</h3>
+  <pre><code><span class="comment"># Step 1：Fork / Clone 倉庫</span>
+git clone https://github.com/stanleytsoubiz/BNotes.git my-blog
+cd my-blog
+
+<span class="comment"># Step 2：建立 Cloudflare Pages 專案</span>
+npx wrangler pages project create my-blog-name
+<span class="comment"># 取得 CLOUDFLARE_ACCOUNT_ID（Dashboard 右側欄）</span>
+
+<span class="comment"># Step 3：設定 GitHub Secrets（見 8.3）</span>
+
+<span class="comment"># Step 4：設定 Cloudflare Pages Secrets（後台 + API）</span>
+npx wrangler pages secret put ADMIN_PASSWORD --project-name=my-blog-name
+npx wrangler pages secret put GITHUB_PAT --project-name=my-blog-name
+npx wrangler pages secret put SUBMIT_AI_KEY --project-name=my-blog-name
+
+<span class="comment"># Step 5：修改品牌設定（見 Section 9）</span>
+
+<span class="comment"># Step 6：Push 觸發首次部署</span>
+git add -A && git commit -m "init: deploy my-blog"
+git push origin main
+<span class="comment"># 等待 GitHub Actions deploy.yml 完成</span></code></pre>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 9：移植指南（其他產業）
+════════════════════════════════════════════════════════════ -->
+<section id="s9">
+  <h2><span class="sec-num">9</span>移植指南（其他產業）</h2>
+
+  <h3 id="s9-1">9.1 移植準備與評估</h3>
+  <p>本架構適合任何以下特徵的知識型部落格：</p>
+  <ul>
+    <li>以文字 + 圖片為主的知識媒體（不需要即時資料庫查詢）</li>
+    <li>需要 SEO 友好的靜態頁面（靜態 HTML 對 Google 最友好）</li>
+    <li>有後台管理需求但預算有限</li>
+    <li>需要 AI 輔助內容生成</li>
+    <li>月流量在 100 萬 PV 以下（Cloudflare 免費方案足用）</li>
+  </ul>
+
+  <div class="portable">
+    <div class="callout-title">適合移植的產業範例</div>
+    葡萄酒 / 威士忌 / 美食 / 親子育兒 / 健身 / 投資理財 / 旅行 / 設計 / 程式開發 /
+    寵物 / 植物 / 電影評論 / 音樂 / 時尚 / 美妝
+  </div>
+
+  <h3 id="s9-2">9.2 品牌與設計替換清單</h3>
+  <p>移植只需修改以下 15 處固定設定，其餘架構完全通用：</p>
+  <table>
+    <thead><tr><th>項目</th><th>BNotes 現值</th><th>替換方式</th></tr></thead>
+    <tbody>
+      <tr><td>品牌名稱</td><td>BNotes 焙學·原豆誌</td><td>全域搜尋替換</td></tr>
+      <tr><td>Logo 文字</td><td>&lt;b&gt;B&lt;/b&gt;Notes</td><td>index.html nav-logo</td></tr>
+      <tr><td>副標題</td><td>焙學·原豆誌</td><td>.nav-sub</td></tr>
+      <tr><td>Tagline</td><td>品味的知識，知識的品味</td><td>hero-h1</td></tr>
+      <tr><td>主色</td><td>#c8922a（咖啡金）</td><td>CSS --gold 變數</td></tr>
+      <tr><td>深色</td><td>#1a0a00（深咖啡）</td><td>CSS --dark 變數</td></tr>
+      <tr><td>網域</td><td>bnotescoffee.com</td><td>全域替換（sitemap / canonical / Schema）</td></tr>
+      <tr><td>聯絡 Email</td><td>hello@bnotescoffee.com</td><td>about.html / footer</td></tr>
+      <tr><td>GA 追蹤 ID</td><td>G-2WXMBSHDSB</td><td>index.html head script</td></tr>
+      <tr><td>倉庫名稱</td><td>stanleytsoubiz/BNotes</td><td>所有 functions/ 中的 REPO 常數</td></tr>
+      <tr><td>分類系統</td><td>6 個咖啡分類</td><td>見 9.3</td></tr>
+      <tr><td>CF 專案名稱</td><td>bnotes</td><td>wrangler.toml + deploy.yml</td></tr>
+      <tr><td>AI 主題庫</td><td>TOPIC_POOL（咖啡主題）</td><td>skywork_pipeline.py</td></tr>
+      <tr><td>Unsplash 搜尋詞</td><td>CAT_KEYWORDS（咖啡關鍵字）</td><td>generate-image.js</td></tr>
+      <tr><td>品質評分關鍵字</td><td>咖啡相關深度詞彙</td><td>quality-scan.js 的 AI 評分區塊</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="s9-3">9.3 內容分類重新設計</h3>
+  <p>分類系統的核心設定位於三處，需同步修改：</p>
+  <pre><code><span class="comment">// 1. functions/admin/articles.js（後台顯示）</span>
+const CAT_LABELS = {
+  'category-1': '分類一',
+  'category-2': '分類二',
+  ...
+};
+
+<span class="comment">// 2. functions/admin/articles-data.js（預設分類 fallback）</span>
+category: fm.category || 'category-1',
+
+<span class="comment">// 3. functions/api/quality-scan.js（分類驗證）</span>
+const VALID_CATS = ['category-1','category-2','category-3',...];
+
+<span class="comment">// 4. .github/scripts/skywork_pipeline.py（AI 生成分類）</span>
+CATEGORIES = ["分類一", "分類二", ...]
+CAT_MAP = {"分類一": "category-1", ...}
+
+<span class="comment">// 5. dist/ 建立對應的 category/category-N.html</span>
+<span class="comment">// 6. dist/index.html nav-links 更新分類連結</span></code></pre>
+
+  <h3 id="s9-4">9.4 移植範例：三個產業</h3>
+
+  <h4>範例 A：葡萄酒知識部落格</h4>
+  <table>
+    <thead><tr><th>設定項目</th><th>替換值</th></tr></thead>
+    <tbody>
+      <tr><td>品牌名稱</td><td>VineNotes 酒知識誌</td></tr>
+      <tr><td>主色</td><td>#8b1a4a（深紫紅）</td></tr>
+      <tr><td>分類</td><td>red（紅葡萄酒）、white（白葡萄酒）、sparkling（氣泡酒）、region（產區）、pairing（餐搭）、cellar（收藏）</td></tr>
+      <tr><td>AI 主題庫</td><td>波爾多品飲指南、布根地風土科學、香檳製作工藝…</td></tr>
+      <tr><td>Unsplash 搜尋詞</td><td>red-wine: "red wine glass vineyard"，region: "wine region vineyard scenic"</td></tr>
+      <tr><td>Pillar Pages</td><td>葡萄酒入門完全指南 / 法國主要產區風土地圖</td></tr>
+    </tbody>
+  </table>
+
+  <h4>範例 B：健身訓練部落格</h4>
+  <table>
+    <thead><tr><th>設定項目</th><th>替換值</th></tr></thead>
+    <tbody>
+      <tr><td>品牌名稱</td><td>GainNotes 增肌筆記</td></tr>
+      <tr><td>主色</td><td>#1565c0（深藍）</td></tr>
+      <tr><td>分類</td><td>strength（肌力訓練）、cardio（有氧）、nutrition（營養）、recovery（恢復）、beginner（新手入門）、program（訓練計畫）</td></tr>
+      <tr><td>AI 主題庫</td><td>複合動作訓練科學、TDEE 計算與熱量管理、睡眠與肌肉修復…</td></tr>
+      <tr><td>Pillar Pages</td><td>新手健身完全指南 / 增肌飲食科學地圖</td></tr>
+    </tbody>
+  </table>
+
+  <h4>範例 C：親子育兒部落格</h4>
+  <table>
+    <thead><tr><th>設定項目</th><th>替換值</th></tr></thead>
+    <tbody>
+      <tr><td>品牌名稱</td><td>MomNotes 育兒筆記</td></tr>
+      <tr><td>主色</td><td>#e67e22（溫暖橙）</td></tr>
+      <tr><td>分類</td><td>newborn（新生兒）、toddler（1-3 歲）、education（學習）、health（健康）、activities（活動）、parenting（教養）</td></tr>
+      <tr><td>AI 主題庫</td><td>嬰兒睡眠訓練科學、語言發展黃金期、蒙特梭利居家實踐…</td></tr>
+      <tr><td>Pillar Pages</td><td>新手父母完全指南 / 0-6歲發展里程碑地圖</td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     SECTION 10：維護與監控
+════════════════════════════════════════════════════════════ -->
+<section id="s10">
+  <h2><span class="sec-num">10</span>維護與監控</h2>
+
+  <h3 id="s10-1">10.1 日常維護清單</h3>
+  <table>
+    <thead><tr><th>頻率</th><th>任務</th><th>工具 / 方式</th></tr></thead>
+    <tbody>
+      <tr><td>每週</td><td>審核 AI 待審文章（後台 Tab 3）</td><td>/admin/articles → AI 待審 Tab</td></tr>
+      <tr><td>每週</td><td>確認排程文章正確發布</td><td>GitHub Actions publish-scheduled.yml 執行記錄</td></tr>
+      <tr><td>每月</td><td>批次品質掃描全站文章</td><td>後台 → 批次掃描 → 低分文章補修</td></tr>
+      <tr><td>每月</td><td>Google Search Console 檢視</td><td>查看點擊率偏低的文章 → 優化 title/description</td></tr>
+      <tr><td>每月</td><td>Sitemap 重新提交</td><td>Google Search Console → Sitemaps → 提交</td></tr>
+      <tr><td>每季</td><td>GitHub PAT 有效期確認</td><td>GitHub Settings → Developer settings → Tokens</td></tr>
+      <tr><td>每季</td><td>Cloudflare API Token 有效期</td><td>Cloudflare Dashboard → API Tokens</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="s10-2">10.2 品質評分解讀與行動建議</h3>
+  <table>
+    <thead><tr><th>分數區間</th><th>燈號</th><th>建議行動</th></tr></thead>
+    <tbody>
+      <tr><td>90–100</td><td>綠燈（可立即發布）</td><td>無需操作，直接排程發布</td></tr>
+      <tr><td>80–89</td><td>綠燈（建議小修）</td><td>補充中文字數到 2000+，或加強內部連結</td></tr>
+      <tr><td>60–79</td><td>黃燈（修正後發布）</td><td>使用後台「AI 自動修復」按鈕，修復 meta/Schema/封面圖</td></tr>
+      <tr><td>0–59</td><td>紅燈（需大幅改寫）</td><td>手動編輯補充內容，重新掃描確認達 80 分再發布</td></tr>
+    </tbody>
+  </table>
+
+  <h3 id="s10-3">10.3 流量增長策略</h3>
+  <p>基於 BNotes 實際案例（建站 2 週 45 次點擊 / 657 次曝光），整理出最有效的三個策略：</p>
+  <ol>
+    <li>
+      <strong>Pillar Page 策略：</strong>每個核心主題建立一個 Pillar Page，
+      以 FAQPage Schema 抓取 Google Featured Snippet 流量。
+      目標：每個 Pillar Page 月流量 500-2000 次。
+    </li>
+    <li>
+      <strong>Topic Cluster 內部連結：</strong>每篇子文章底部加入 3 條靜態內部連結，
+      指向 Pillar Page + 2 篇相關子文章，強化整個集群的 PageRank 傳遞。
+    </li>
+    <li>
+      <strong>每週定期更新：</strong>Google 對定期更新的站點給予更高爬取頻率。
+      利用 AI 管線每週生成 3 篇草稿，人工審核後排程發布，
+      維持「每週 2-3 篇新文章」的更新節奏。
+    </li>
+  </ol>
+
+  <blockquote>
+    當月流量穩定達到 10,000 PV 時，可考慮啟用：電子報訂閱（newsletter.html 解除隱藏）、
+    品牌合作頁面（collab.html 解除隱藏）、加入 Affiliate 連結（申請 Amazon Associates / 露天聯盟）。
+    達到 50,000 PV/月 可申請 Google AdSense；達到 100,000 PV/月 可申請 Mediavine 等高 RPM 廣告聯盟。
+  </blockquote>
+</section>
+
+<footer style="padding:3rem 0 2rem;border-top:2px solid var(--border);margin-top:2rem;text-align:center">
+  <p style="color:var(--muted);font-size:.82rem;line-height:1.7">
+    BNotes 焙學·原豆誌 完整知識庫 v1.0<br>
+    文件建立日期：2026-04-21<br>
+    倉庫：github.com/stanleytsoubiz/BNotes<br>
+    本文件依 CC BY-SA 4.0 授權，可自由移植應用於其他產業部落格
+  </p>
+</footer>
+
+</body>
+</html>

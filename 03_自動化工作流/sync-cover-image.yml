@@ -1,0 +1,47 @@
+name: BNotes Auto Deploy Pipeline
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'dist/articles/**.html'
+
+concurrency:
+  group: article-deploy-${{ github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  auto-deploy:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[img-sync]')"
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install requests Pillow PyYAML
+
+      - name: Process articles
+        run: python3 .github/scripts/deploy_pipeline.py
+
+      - name: Commit & push
+        run: |
+          if [ -f /tmp/changed.txt ]; then
+            git config user.name  "BNotes Deploy Bot"
+            git config user.email "bot@bnotescoffee.com"
+            while IFS= read -r f; do [ -f "$f" ] && git add "$f"; done < /tmp/changed.txt
+            git add dist/images/ai/ 2>/dev/null || true
+            if ! git diff --cached --quiet; then
+              git commit -m "chore: auto sync image + hero img [img-sync]"
+              git push
+              echo "deployed"
+            fi
+          fi

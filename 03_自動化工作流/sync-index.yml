@@ -1,0 +1,73 @@
+name: 🔄 Sync Index / Feed / Sitemap after Article Change
+
+on:
+  push:
+    branches: [main]
+    paths:
+      # 觸發條件：articles 或 _scheduled 目錄有變動（新增、刪除、移動）
+      - 'dist/articles/**'
+      - 'dist/_scheduled/**'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: '手動觸發原因'
+        required: false
+        default: '手動同步'
+
+# 避免同時有多個 sync 跑，排隊等候
+concurrency:
+  group: sync-index
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Sync index.html / feed.xml / sitemap.xml
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # 需要寫入 repo（commit + push）
+
+    steps:
+      - name: ⬇️ Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2    # 需要 2 個 commit 才能比較變動
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 🔍 確認變動的文章（diagnostic）
+        run: |
+          echo "=== 前一個 commit 的 articles/ 變動 ==="
+          git diff HEAD~1 --name-status -- dist/articles/ dist/_scheduled/ || echo "(無法比較，可能是首次 push)"
+          echo "=== 目前 dist/articles/ 文章數 ==="
+          ls dist/articles/*.html 2>/dev/null | wc -l
+
+      - name: 🔄 執行同步腳本
+        id: sync
+        run: node scripts/sync-index.js
+
+      - name: 📝 Commit 同步結果（若有變動）
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          git config user.name  "BNotes Sync Bot"
+          git config user.email "sync-bot@bnotescoffee.com"
+          git add dist/index.html dist/feed.xml dist/sitemap.xml
+          # 取得最新刪除的 slug 名稱（供 commit message 使用）
+          DELETED=$(git diff HEAD --name-only -- dist/articles/ dist/_scheduled/ 2>/dev/null | grep "dist/articles" | sed 's|dist/articles/||;s|\.html||' | head -5 | tr '\n' ' ')
+          git commit -m "sync: remove orphan references${DELETED:+ [$DELETED]}
+
+          Triggered by: ${{ github.event.head_commit.message }}
+          Auto-synced by sync-index workflow" || echo "Nothing to commit"
+
+      - name: ⬆️ Push 同步 commit
+        if: steps.sync.outputs.changed == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+
+      - name: ✅ 無變動（跳過 commit）
+        if: steps.sync.outputs.changed != 'true'
+        run: echo "index.html / feed.xml / sitemap.xml 與 articles/ 一致，無需更新。"

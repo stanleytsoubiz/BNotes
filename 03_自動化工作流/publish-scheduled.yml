@@ -1,0 +1,138 @@
+name: "📅 BNotes Publish Scheduler v2"
+
+# ── 觸發條件 ─────────────────────────────────────────────────────────────
+on:
+  schedule:
+    - cron: "0 0 * * *"   # 每天 UTC 00:00（台灣時間 08:00）自動執行
+
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: |
+          執行模式：
+          auto        → 自動發布今天到期 + 逾期文章（預設）
+          dry_run     → 只預覽，不實際發布
+          force_slug  → 指定單篇立刻發布（填入下方 slug）
+          force_all   → 將所有排程文章立刻全部發布
+        required: true
+        default: "auto"
+        type: choice
+        options:
+          - auto
+          - dry_run
+          - force_slug
+          - force_all
+
+      slug:
+        description: |
+          【force_slug 模式專用】輸入文章 slug（不含 .html）
+          範例：espresso-ratio-science
+        required: false
+        default: ""
+
+concurrency:
+  group: publish-scheduled
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: "Publish Articles"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: ⬇️ Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # ── Dry-run 模式：只列出，不移動 ────────────────────────────────────
+      - name: 📋 Dry-run 預覽
+        if: github.event.inputs.mode == 'dry_run'
+        run: |
+          python3 << 'PYEOF'
+          import re
+          from datetime import date
+          from pathlib import Path
+          today = date.today()
+          print(f"📅 今天：{today}")
+          print("─" * 60)
+          files = sorted(Path("dist/_scheduled").glob("*.html"))
+          for f in files:
+              m = re.search(r"^date:\s*(.+)$", f.read_text()[:600], re.MULTILINE)
+              if m:
+                  try:
+                      d = date.fromisoformat(m.group(1).strip().strip('"').strip("'")[:10])
+                      diff = (d - today).days
+                      if diff <= 0:
+                          label = f"🔴 逾期 {abs(diff)} 天"
+                      else:
+                          label = f"⏳ 還有 {diff} 天"
+                      print(f"  {label:20} | {d} | {f.name}")
+                  except: pass
+          print(f"\n共 {len(files)} 篇排程文章")
+          PYEOF
+
+      # ── auto 模式：自動發布到期 + 逾期 ──────────────────────────────────
+      - name: 🚀 自動發布到期文章
+        if: github.event.inputs.mode == 'auto' || github.event_name == 'schedule'
+        run: python3 .github/scripts/publish_scheduled.py
+
+      # ── force_slug 模式：指定單篇立刻發布 ───────────────────────────────
+      - name: ⚡ 強制發布指定文章
+        if: github.event.inputs.mode == 'force_slug'
+        run: |
+          SLUG="${{ github.event.inputs.slug }}"
+          if [ -z "$SLUG" ]; then
+            echo "❌ 請輸入 slug！"
+            exit 1
+          fi
+          echo "⚡ 強制發布: $SLUG"
+          python3 .github/scripts/publish_scheduled.py --force-slug "$SLUG"
+
+      # ── force_all 模式：全部排程文章立刻發布 ────────────────────────────
+      - name: 🔥 強制發布全部排程文章
+        if: github.event.inputs.mode == 'force_all'
+        run: python3 .github/scripts/publish_scheduled.py --force-all
+
+      # ── 同步 index / feed / sitemap（非 dry_run 模式才執行）────────────
+      - name: 🔄 Sync index / feed / sitemap
+        if: github.event.inputs.mode != 'dry_run'
+        run: |
+          if [ -f /tmp/published_articles.txt ]; then
+            node scripts/sync-index.js
+          else
+            echo "ℹ️ 沒有新文章發布，跳過 sync"
+          fi
+
+      # ── Commit & Push ────────────────────────────────────────────────
+      - name: 📝 Commit & push
+        if: github.event.inputs.mode != 'dry_run'
+        run: |
+          if [ -f /tmp/published_articles.txt ]; then
+            git config user.name  "BNotes Publish Bot"
+            git config user.email "bot@bnotescoffee.com"
+            while IFS= read -r fname; do
+              [ -f "dist/articles/$fname" ] && git add "dist/articles/$fname"
+              git rm --ignore-unmatch "dist/_scheduled/$fname" 2>/dev/null || true
+            done < /tmp/published_articles.txt
+            git add dist/index.html dist/feed.xml dist/sitemap.xml 2>/dev/null || true
+            COUNT=$(wc -l < /tmp/published_articles.txt | tr -d " ")
+            NAMES=$(cat /tmp/published_articles.txt | tr "\n" "," | sed "s/,$//")
+            git commit -m "publish: auto-release ${COUNT} articles [${NAMES}]"
+            git push
+            echo "✅ 成功發布 ${COUNT} 篇文章"
+          else
+            echo "ℹ️ 沒有文章需要發布"
+          fi

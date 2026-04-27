@@ -1,0 +1,1 @@
+{ "name": "BNotes 焙學·原豆誌", "short_name": "BNotes", "description": "台灣精品咖啡知識媒體，科學嚴謹 x 台灣視角", "start_url": "/", "display": "standalone", "background_color": "#1a0f05", "theme_color": "#c8922a", "lang": "zh-TW", "icons": [ { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" } ], "categories": ["food", "lifestyle", "education"] }

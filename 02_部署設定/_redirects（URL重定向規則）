@@ -1,0 +1,14 @@
+/favicon.ico  /favicon.svg  301
+/assets/*     /assets/:splat  200
+
+# Affiliate Redirects (Internal Link Shortener)
+/re/amazon-v60  https://www.amazon.com/Hario-V60-Ceramic-Coffee-Dripper/dp/B000P4962E?tag=bnotes-20  302
+/re/shopee-grinder https://shopee.tw/search?keyword=timemore+c3  302
+
+# SPA fallback：只適用非 admin、非 api 路徑
+# Admin 和 API 由 Cloudflare Pages 靜態檔案和 Functions 直接處理
+/api/*  /api/:splat  200
+
+# 前台 SPA fallback（排除 admin/ 和 api/）
+/*  /index.html  200
+# Deploy: 2026-04-14 revert to minimal redirects

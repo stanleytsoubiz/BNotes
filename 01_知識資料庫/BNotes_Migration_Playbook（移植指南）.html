@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BNotes 產業移植實戰手冊 — 從零到上線完整 Playbook</title>
+<style>
+:root{
+  --accent:#2c6e49;
+  --accent2:#1b4332;
+  --gold:#c8922a;
+  --dark:#111827;
+  --body:#374151;
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --bg2:#f9fafb;
+  --bg3:#f0fdf4;
+  --border:#e5e7eb;
+  --border2:#d1fae5;
+  --warn:#92400e;
+  --warn-bg:#fffbeb;
+  --warn-border:#fde68a;
+  --danger:#991b1b;
+  --danger-bg:#fef2f2;
+  --code-bg:#1e293b;
+  --code-fg:#e2e8f0;
+  --serif:"Noto Serif TC","Georgia",serif;
+  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --mono:"SFMono-Regular","Consolas","Courier New",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--body);
+  line-height:1.85;
+  max-width:880px;
+  margin:0 auto;
+  padding:0 2rem 8rem;
+}
+
+/* ── Cover ── */
+.cover{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:5rem 0 4rem;
+  border-bottom:3px solid var(--accent);
+}
+.cover-tag{
+  display:inline-block;
+  font-size:.72rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:800;
+  border:1.5px solid var(--accent);
+  padding:.25rem .75rem;
+  border-radius:2rem;
+  margin-bottom:1.5rem;
+}
+.cover-title{
+  font-family:var(--serif);
+  font-size:clamp(1.9rem,4.5vw,3rem);
+  font-weight:900;
+  color:var(--dark);
+  line-height:1.2;
+  margin-bottom:.75rem;
+}
+.cover-sub{
+  font-size:1.1rem;
+  color:var(--muted);
+  max-width:600px;
+  margin-bottom:2.5rem;
+  line-height:1.75;
+}
+.cover-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+  margin-bottom:2rem;
+}
+.chip{
+  background:var(--bg3);
+  border:1px solid var(--border2);
+  color:var(--accent2);
+  font-size:.8rem;
+  font-weight:700;
+  padding:.3rem .85rem;
+  border-radius:2rem;
+}
+.cover-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:2rem;
+  font-size:.82rem;
+  color:var(--muted);
+  padding-top:1.5rem;
+  border-top:1px solid var(--border);
+}
+.cover-meta strong{color:var(--dark)}
+
+/* ── Progress bar ── */
+.progress-bar{
+  display:flex;
+  gap:0;
+  margin:3rem 0 0;
+  border-radius:.5rem;
+  overflow:hidden;
+  height:6px;
+}
+.pb-seg{height:6px;flex:1}
+
+/* ── TOC ── */
+.toc{
+  padding:2.5rem 0;
+  border-bottom:1px solid var(--border);
+}
+.toc-title{
+  font-size:.75rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:800;
+  margin-bottom:1rem;
+}
+.toc-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.25rem .5rem;
+}
+.toc-item{
+  display:flex;
+  align-items:baseline;
+  gap:.5rem;
+  text-decoration:none;
+  color:var(--body);
+  font-size:.88rem;
+  padding:.35rem .5rem;
+  border-radius:.4rem;
+  transition:background .15s;
+}
+.toc-item:hover{background:var(--bg2)}
+.toc-num{
+  flex-shrink:0;
+  font-size:.72rem;
+  font-weight:800;
+  color:var(--accent);
+  background:var(--bg3);
+  border:1px solid var(--border2);
+  width:1.6rem;
+  height:1.6rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:.3rem;
+}
+
+/* ── Sections ── */
+section{padding:3.5rem 0;border-bottom:1px solid var(--border)}
+section:last-child{border-bottom:none}
+h2{
+  font-family:var(--serif);
+  font-size:1.55rem;
+  font-weight:900;
+  color:var(--dark);
+  margin-bottom:1.25rem;
+}
+h3{
+  font-size:1.05rem;
+  font-weight:700;
+  color:var(--dark);
+  margin:2rem 0 .75rem;
+  padding-left:.75rem;
+  border-left:3px solid var(--accent);
+}
+h4{
+  font-size:.88rem;
+  font-weight:700;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin:1.5rem 0 .5rem;
+}
+p{margin-bottom:1rem;color:var(--body)}
+ul,ol{padding-left:1.5rem;margin-bottom:1rem}
+li{margin-bottom:.35rem}
+strong{color:var(--dark)}
+
+/* ── Step header ── */
+.step-header{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  margin-bottom:1.25rem;
+}
+.step-num{
+  flex-shrink:0;
+  width:2.75rem;
+  height:2.75rem;
+  background:var(--accent);
+  color:#fff;
+  font-family:var(--serif);
+  font-size:1.2rem;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:.6rem;
+}
+.step-title{
+  font-family:var(--serif);
+  font-size:1.45rem;
+  font-weight:900;
+  color:var(--dark);
+  line-height:1.2;
+}
+.step-sub{
+  font-size:.82rem;
+  color:var(--muted);
+  margin-top:.2rem;
+}
+.step-time{
+  margin-left:auto;
+  flex-shrink:0;
+  font-size:.75rem;
+  font-weight:700;
+  color:var(--accent);
+  background:var(--bg3);
+  border:1px solid var(--border2);
+  padding:.2rem .65rem;
+  border-radius:2rem;
+}
+
+/* ── Code ── */
+code{
+  font-family:var(--mono);
+  font-size:.83rem;
+  background:#f1f5f9;
+  padding:.15rem .4rem;
+  border-radius:.3rem;
+  color:#b44b00;
+  border:1px solid #e2e8f0;
+}
+pre{
+  background:var(--code-bg);
+  color:var(--code-fg);
+  padding:1.25rem 1.5rem;
+  border-radius:.75rem;
+  overflow-x:auto;
+  font-size:.82rem;
+  line-height:1.7;
+  margin:1rem 0;
+  position:relative;
+}
+pre code{background:none;border:none;color:inherit;padding:0;font-size:inherit}
+.pre-label{
+  position:absolute;
+  top:.6rem;
+  right:.75rem;
+  font-size:.68rem;
+  font-weight:700;
+  color:#64748b;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.c{color:#64748b}
+.k{color:#f59e0b}
+.s{color:#86efac}
+.v{color:#7dd3fc}
+.fn{color:#c084fc}
+
+/* ── Tables ── */
+table{width:100%;border-collapse:collapse;font-size:.86rem;margin:1rem 0}
+th{
+  background:var(--dark);
+  color:#fff;
+  padding:.65rem 1rem;
+  text-align:left;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.03em;
+}
+td{
+  padding:.6rem 1rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+tr:nth-child(even) td{background:var(--bg2)}
+td code{font-size:.78rem}
+
+/* ── Callout variants ── */
+.callout,.warn,.danger,.tip{
+  padding:1rem 1.25rem;
+  border-radius:0 .6rem .6rem 0;
+  margin:1.25rem 0;
+  font-size:.9rem;
+}
+.callout{background:var(--bg3);border-left:3px solid var(--accent);color:var(--accent2)}
+.warn{background:var(--warn-bg);border-left:3px solid #d97706;color:var(--warn)}
+.danger{background:var(--danger-bg);border-left:3px solid #dc2626;color:var(--danger)}
+.tip{background:#eff6ff;border-left:3px solid #3b82f6;color:#1e40af}
+.callout-title,.warn-title,.danger-title,.tip-title{
+  font-weight:800;
+  font-size:.84rem;
+  margin-bottom:.4rem;
+  letter-spacing:.03em;
+}
+
+/* ── Checklist ── */
+.checklist{list-style:none;padding-left:0}
+.checklist li{
+  display:flex;
+  align-items:flex-start;
+  gap:.75rem;
+  padding:.5rem .75rem;
+  border-radius:.4rem;
+  margin-bottom:.25rem;
+  font-size:.88rem;
+}
+.checklist li:hover{background:var(--bg2)}
+.check-box{
+  flex-shrink:0;
+  width:1.1rem;
+  height:1.1rem;
+  border:1.5px solid var(--border);
+  border-radius:.25rem;
+  margin-top:.15rem;
+  background:#fff;
+}
+
+/* ── File path ── */
+.fpath{
+  display:inline-block;
+  font-family:var(--mono);
+  font-size:.8rem;
+  background:#f8fafc;
+  color:#0f172a;
+  border:1px solid var(--border);
+  padding:.1rem .5rem;
+  border-radius:.3rem;
+}
+
+/* ── Phase badge ── */
+.phase{
+  display:inline-block;
+  font-size:.7rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  padding:.2rem .6rem;
+  border-radius:.25rem;
+  margin-right:.5rem;
+}
+.phase-a{background:#dcfce7;color:#166534}
+.phase-b{background:#dbeafe;color:#1e3a8a}
+.phase-c{background:#fef9c3;color:#713f12}
+
+/* ── Timeline ── */
+.timeline{padding-left:1.5rem;border-left:2px solid var(--border);margin:1rem 0}
+.tl-item{
+  position:relative;
+  padding:.75rem 0 .75rem 1.5rem;
+  font-size:.9rem;
+}
+.tl-item::before{
+  content:'';
+  position:absolute;
+  left:-0.55rem;
+  top:1.1rem;
+  width:.65rem;
+  height:.65rem;
+  background:var(--accent);
+  border-radius:50%;
+  border:2px solid #fff;
+  box-shadow:0 0 0 1.5px var(--accent);
+}
+.tl-day{
+  font-size:.72rem;
+  font-weight:800;
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  margin-bottom:.2rem;
+}
+
+/* ── Comparison blocks ── */
+.compare{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+  margin:1rem 0;
+}
+.cmp-box{
+  padding:1rem 1.1rem;
+  border-radius:.6rem;
+  font-size:.86rem;
+}
+.cmp-from{background:#fff7ed;border:1px solid #fed7aa}
+.cmp-to{background:var(--bg3);border:1px solid var(--border2)}
+.cmp-title{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem}
+.cmp-from .cmp-title{color:#c2410c}
+.cmp-to .cmp-title{color:var(--accent2)}
+
+@media(max-width:640px){
+  body{padding:0 1rem 5rem}
+  .toc-grid{grid-template-columns:1fr}
+  .compare{grid-template-columns:1fr}
+  .step-time{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ COVER ═══ -->
+<div class="cover">
+  <span class="cover-tag">BNotes 架構 — 產業移植實戰手冊</span>
+  <h1 class="cover-title">從 BNotes 到任何產業<br>垂直部落格完整移植指南</h1>
+  <p class="cover-sub">
+    本手冊假設你已取得 BNotes 倉庫，目標是在最短時間內
+    將整套架構（技術、設計、自動化）移植至你選定的新產業垂直領域，
+    並成功部署上線。
+  </p>
+  <div class="cover-chips">
+    <span class="chip">總工時約 6–8 小時</span>
+    <span class="chip">不需要改底層架構</span>
+    <span class="chip">最少 15 處品牌替換</span>
+    <span class="chip">D+1 可上線</span>
+    <span class="chip">適用任何知識型垂直媒體</span>
+  </div>
+  <div class="cover-meta">
+    <span><strong>依據：</strong>BNotes_MasterKB v1.0</span>
+    <span><strong>倉庫：</strong>github.com/stanleytsoubiz/BNotes</span>
+    <span><strong>文件版本：</strong>v1.0 &nbsp;·&nbsp; 2026-04-21</span>
+  </div>
+  <div class="progress-bar" style="margin-top:2rem">
+    <div class="pb-seg" style="background:#2c6e49;flex:1"></div>
+    <div class="pb-seg" style="background:#3b9d6e;flex:1"></div>
+    <div class="pb-seg" style="background:#52b788;flex:1"></div>
+    <div class="pb-seg" style="background:#74c69d;flex:1"></div>
+    <div class="pb-seg" style="background:#95d5b2;flex:1"></div>
+    <div class="pb-seg" style="background:#b7e4c7;flex:1"></div>
+    <div class="pb-seg" style="background:#d8f3dc;flex:1"></div>
+  </div>
+</div>
+
+<!-- ═══ 總覽說明 ═══ -->
+<section style="padding:2rem 0">
+  <h3 style="border-left-color:var(--gold)">移植前你需要確認的三件事</h3>
+  <table>
+    <thead><tr><th>確認項目</th><th>評估標準</th><th>不符合怎麼辦</th></tr></thead>
+    <tbody>
+      <tr><td><strong>產業是否以文字為核心？</strong></td><td>以知識、觀點、教學為主要內容形態（非影片、商品、即時資訊）</td><td>考慮改用有資料庫的架構（WordPress / Notion）</td></tr>
+      <tr><td><strong>每月是否能產出 8–12 篇文章？</strong></td><td>自寫 2–4 篇 + AI 輔助 4–8 篇，維持每週 2 篇節奏</td><td>縮減 AI 管線間距為兩週一次，降低品質門檻</td></tr>
+      <tr><td><strong>目標讀者是否有搜尋習慣？</strong></td><td>核心主題在 Google Keyword Planner 月搜尋量 &gt; 500</td><td>先做關鍵字驗證再決定是否投入</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══ TOC ═══ -->
+<nav class="toc">
+  <div class="toc-title">移植步驟總覽</div>
+  <div class="toc-grid">
+    <a class="toc-item" href="#s1"><span class="toc-num">1</span>準備工作與產業決策（30 分鐘）</a>
+    <a class="toc-item" href="#s2"><span class="toc-num">2</span>Fork 倉庫 + 建立新專案（30 分鐘）</a>
+    <a class="toc-item" href="#s3"><span class="toc-num">3</span>品牌核心替換：15 項逐一操作（60 分鐘）</a>
+    <a class="toc-item" href="#s4"><span class="toc-num">4</span>分類系統重設計（30 分鐘）</a>
+    <a class="toc-item" href="#s5"><span class="toc-num">5</span>AI 管線重新設定（30 分鐘）</a>
+    <a class="toc-item" href="#s6"><span class="toc-num">6</span>首批種子內容建立（120 分鐘）</a>
+    <a class="toc-item" href="#s7"><span class="toc-num">7</span>SEO 初始設定與驗證（30 分鐘）</a>
+    <a class="toc-item" href="#s8"><span class="toc-num">8</span>環境變數與部署設定（30 分鐘）</a>
+    <a class="toc-item" href="#s9"><span class="toc-num">9</span>上線前完整驗收清單</a>
+    <a class="toc-item" href="#s10"><span class="toc-num">10</span>上線後 30 天增長計畫</a>
+  </div>
+</nav>
+
+
+<!-- ═══ STEP 1 ═══ -->
+<section id="s1">
+  <div class="step-header">
+    <div class="step-num">1</div>
+    <div>
+      <div class="step-title">準備工作與產業決策</div>
+      <div class="step-sub">決定主題、定義 6 個分類、確認品牌名稱</div>
+    </div>
+    <div class="step-time">約 30 分鐘</div>
+  </div>
+
+  <h3>1.1 填寫產業規劃表（移植前必做）</h3>
+  <p>在開始任何程式碼操作之前，先把以下資料填齊。這份表格決定後續所有替換操作的內容。</p>
+  <table>
+    <thead><tr><th>規劃項目</th><th>說明</th><th>你的填寫</th></tr></thead>
+    <tbody>
+      <tr><td><strong>產業垂直</strong></td><td>例：精品葡萄酒、個人健身、親子育兒</td><td>＿＿＿＿＿＿＿</td></tr>
+      <tr><td><strong>品牌英文名</strong></td><td>不含空格，用於 slug / GitHub 倉庫名稱（例 VineNotes）</td><td>＿＿＿＿＿＿＿</td></tr>
+      <tr><td><strong>品牌中文名</strong></td><td>全站中文品牌名（例 VineNotes 酒知識誌）</td><td>＿＿＿＿＿＿＿</td></tr>
+      <tr><td><strong>品牌副標題</strong></td><td>Nav 旁小字（例 酒知識誌）</td><td>＿＿＿＿＿＿＿</td></tr>
+      <tr><td><strong>Tagline</strong></td><td>首頁 Hero 大標題（例 品飲的知識，知識的品味）</td><td>＿＿＿＿＿＿＿</td></tr>
+      <tr><td><strong>網域</strong></td><td>目標網域（例 vinenotes.com）</td><td>＿＿＿＿＿＿＿</td></tr>
+      <tr><td><strong>主色</strong></td><td>品牌主色 Hex（例 #8b1a4a），用於按鈕/強調</td><td>＿＿＿＿＿＿＿</td></tr>
+      <tr><td><strong>深色</strong></td><td>深色調 Hex（例 #2d0012），用於標題/背景</td><td>＿＿＿＿＿＿＿</td></tr>
+      <tr><td><strong>聯絡 Email</strong></td><td>公開顯示的聯絡信箱</td><td>＿＿＿＿＿＿＿</td></tr>
+    </tbody>
+  </table>
+
+  <h3>1.2 定義 6 個分類（直接對應 BNotes 的 6 個分類）</h3>
+  <p>BNotes 使用固定 6 個分類，移植時以相同數量做置換最省力（之後可調整）。為每個分類決定：英文 slug + 中文名稱。</p>
+  <table>
+    <thead><tr><th>#</th><th>BNotes 原分類</th><th>英文 slug（新）</th><th>中文名稱（新）</th><th>涵蓋主題</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>pour-over／手沖技法</td><td>＿＿＿</td><td>＿＿＿</td><td>＿＿＿＿＿＿</td></tr>
+      <tr><td>2</td><td>espresso／義式咖啡</td><td>＿＿＿</td><td>＿＿＿</td><td>＿＿＿＿＿＿</td></tr>
+      <tr><td>3</td><td>equipment／器材評測</td><td>＿＿＿</td><td>＿＿＿</td><td>＿＿＿＿＿＿</td></tr>
+      <tr><td>4</td><td>terroir／產地風土</td><td>＿＿＿</td><td>＿＿＿</td><td>＿＿＿＿＿＿</td></tr>
+      <tr><td>5</td><td>science／沖泡科學</td><td>＿＿＿</td><td>＿＿＿</td><td>＿＿＿＿＿＿</td></tr>
+      <tr><td>6</td><td>lifestyle／咖啡生活</td><td>＿＿＿</td><td>＿＿＿</td><td>＿＿＿＿＿＿</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn">
+    <div class="warn-title">命名規範</div>
+    英文 slug 只能使用小寫英文字母、數字和連字號（<code>a-z 0-9 -</code>），
+    不可使用中文、空格或底線。這個 slug 會出現在 URL、檔案名稱、程式碼中，
+    移植後幾乎不能再改，請謹慎決定。
+  </div>
+</section>
+
+
+<!-- ═══ STEP 2 ═══ -->
+<section id="s2">
+  <div class="step-header">
+    <div class="step-num">2</div>
+    <div>
+      <div class="step-title">Fork 倉庫 + 建立新專案</div>
+      <div class="step-sub">複製 BNotes 程式碼，建立獨立 GitHub 倉庫與 Cloudflare 專案</div>
+    </div>
+    <div class="step-time">約 30 分鐘</div>
+  </div>
+
+  <h3>2.1 Fork 或複製倉庫</h3>
+  <p>有兩種方式，選一種即可：</p>
+
+  <h4>方式 A：GitHub Fork（推薦）</h4>
+  <ol>
+    <li>前往 <code>github.com/stanleytsoubiz/BNotes</code></li>
+    <li>點擊右上角「Fork」按鈕</li>
+    <li>Repository name 改為新品牌名稱（例 <code>VineNotes</code>）</li>
+    <li>取消勾選「Copy the main branch only」（保留所有 branches）</li>
+    <li>點擊「Create fork」</li>
+  </ol>
+
+  <h4>方式 B：本地複製並推送至新倉庫</h4>
+  <pre><code><span class="c"># 1. 複製 BNotes 倉庫</span>
+git clone https://github.com/stanleytsoubiz/BNotes.git VineNotes
+cd VineNotes
+
+<span class="c"># 2. 移除原來的遠端連線</span>
+git remote remove origin
+
+<span class="c"># 3. 在 GitHub 建立新的空倉庫（請先在 github.com 手動建立），然後連接</span>
+git remote add origin https://github.com/你的帳號/VineNotes.git
+
+<span class="c"># 4. 推送</span>
+git push -u origin main
+<span class="pre-label">bash</span></code></pre>
+
+  <h3>2.2 建立 Cloudflare Pages 專案</h3>
+  <pre><code><span class="c"># 在本地倉庫根目錄執行</span>
+npx wrangler pages project create vinenotes
+<span class="c"># 注意：此處的 vinenotes 是 CF 專案名稱，小寫，用連字號</span>
+<span class="c"># 執行後記下 account_id（顯示在 Dashboard 右側欄）</span>
+<span class="pre-label">bash</span></code></pre>
+
+  <h3>2.3 更新 wrangler.toml</h3>
+  <p>打開倉庫根目錄的 <span class="fpath">wrangler.toml</span>，修改兩處：</p>
+  <pre><code><span class="c"># 修改前（BNotes 原設定）</span>
+name = <span class="s">"bnotes"</span>
+pages_build_output_dir = <span class="s">"./dist"</span>
+
+<span class="c"># 修改後（換成你的新專案名）</span>
+name = <span class="s">"vinenotes"</span>        <span class="c"># ← 與 CF Pages 專案名稱一致</span>
+pages_build_output_dir = <span class="s">"./dist"</span>  <span class="c"># ← 保持不變</span>
+<span class="pre-label">wrangler.toml</span></code></pre>
+
+  <h3>2.4 更新 GitHub Actions 部署設定</h3>
+  <p>打開 <span class="fpath">.github/workflows/deploy.yml</span>，找到以下行並修改：</p>
+  <pre><code><span class="c"># 修改前</span>
+run: npx wrangler pages deploy --project-name=bnotes
+
+<span class="c"># 修改後</span>
+run: npx wrangler pages deploy --project-name=<span class="k">vinenotes</span>
+<span class="pre-label">.github/workflows/deploy.yml</span></code></pre>
+
+  <div class="callout">
+    <div class="callout-title">此時先不要 git push</div>
+    等 Step 3（品牌替換）完成後統一推送，避免 Cloudflare 部署失敗多次。
+  </div>
+</section>
+
+
+<!-- ═══ STEP 3 ═══ -->
+<section id="s3">
+  <div class="step-header">
+    <div class="step-num">3</div>
+    <div>
+      <div class="step-title">品牌核心替換：15 項逐一操作</div>
+      <div class="step-sub">每一項列出具體檔案路徑、搜尋字串和替換方式</div>
+    </div>
+    <div class="step-time">約 60 分鐘</div>
+  </div>
+
+  <div class="tip">
+    <div class="tip-title">建議作業方式</div>
+    使用 VS Code「全域搜尋取代」（Ctrl+Shift+H）可加速操作。
+    下列 15 項依優先順序排列，前 5 項影響範圍最廣，務必最先完成。
+  </div>
+
+  <h3>項目 01：網域（影響範圍最廣，先做）</h3>
+  <p>需要全域替換，影響 sitemap / canonical / Schema / functions/ 中的 SITE 常數。</p>
+  <pre><code><span class="c"># 全域搜尋（影響檔案約 50+ 處）</span>
+搜尋：<span class="k">bnotescoffee.com</span>
+取代：<span class="s">vinenotes.com</span>
+
+<span class="c"># 特別確認以下四個 functions/ 檔案中的 SITE 常數：</span>
+<span class="c"># functions/api/fix-article.js    → const SITE = '...'</span>
+<span class="c"># functions/api/generate-image.js → const SITE = '...'</span>
+<span class="c"># functions/api/approve-ai-article.js → Access-Control-Allow-Origin</span>
+<span class="c"># functions/api/submit-ai-article.js  → Access-Control-Allow-Origin</span>
+<span class="pre-label">全域替換</span></code></pre>
+
+  <h3>項目 02：GitHub 倉庫名稱（影響所有 GitHub API 呼叫）</h3>
+  <pre><code><span class="c"># 全域搜尋</span>
+搜尋：<span class="k">stanleytsoubiz/BNotes</span>
+取代：<span class="s">你的帳號/VineNotes</span>
+
+<span class="c"># 影響檔案（每個 functions/ API 檔案頂部都有此常數）：</span>
+<span class="c"># const REPO = 'stanleytsoubiz/BNotes';</span>
+<span class="pre-label">全域替換</span></code></pre>
+
+  <h3>項目 03：品牌名稱（中文）</h3>
+  <pre><code><span class="c"># 全域搜尋</span>
+搜尋：<span class="k">BNotes 焙學·原豆誌</span>
+取代：<span class="s">VineNotes 酒知識誌</span>
+
+搜尋：<span class="k">焙學·原豆誌</span>
+取代：<span class="s">酒知識誌</span>
+
+<span class="c"># 影響頁面：dist/index.html / about.html / pillar/*.html / category/*.html</span>
+<span class="pre-label">全域替換</span></code></pre>
+
+  <h3>項目 04：Logo 文字（Nav 左上角）</h3>
+  <p>打開 <span class="fpath">dist/index.html</span>，搜尋 <code>nav-logo</code> 所在段落並修改：</p>
+  <div class="compare">
+    <div class="cmp-box cmp-from">
+      <div class="cmp-title">BNotes 原始碼</div>
+      <code>&lt;a class="nav-logo" href="/"&gt;&lt;b&gt;B&lt;/b&gt;Notes&lt;span class="nav-sub"&gt;焙學·原豆誌&lt;/span&gt;&lt;/a&gt;</code>
+    </div>
+    <div class="cmp-box cmp-to">
+      <div class="cmp-title">替換後（範例）</div>
+      <code>&lt;a class="nav-logo" href="/"&gt;&lt;b&gt;V&lt;/b&gt;ine&lt;b&gt;N&lt;/b&gt;otes&lt;span class="nav-sub"&gt;酒知識誌&lt;/span&gt;&lt;/a&gt;</code>
+    </div>
+  </div>
+  <p>同樣修改所有 <span class="fpath">dist/pillar/*.html</span> 和 <span class="fpath">dist/category/*.html</span> 中的 nav-logo。</p>
+
+  <h3>項目 05：主色與深色（CSS 變數）</h3>
+  <p>
+    在 <span class="fpath">dist/index.html</span> 中找到 <code>:root</code> 區塊，修改以下兩個 CSS 變數。
+    同樣操作需在所有文章 HTML、pillar 頁面、category 頁面重複（可用全域搜尋）。
+  </p>
+  <pre><code><span class="c">/* 搜尋（BNotes 咖啡色）*/</span>
+--gold: <span class="k">#c8922a</span>;
+--dark: <span class="k">#1a0a00</span>;
+
+<span class="c">/* 取代（葡萄酒深紫紅範例）*/</span>
+--gold: <span class="s">#8b1a4a</span>;
+--dark: <span class="s">#2d0012</span>;
+
+<span class="c">/* 同時更新背景暖色調（選做，讓整體更一致）*/</span>
+--bg:   <span class="k">#fdf6ee</span>  →  <span class="s">#fdf6f9</span>  <span class="c"># 淡紫白</span>
+--border: <span class="k">#e8d5b0</span> → <span class="s">#e8d0d8</span>  <span class="c"># 淡玫瑰色邊框</span>
+<span class="pre-label">CSS 變數替換</span></code></pre>
+
+  <h3>項目 06：Hero Tagline（首頁英雄區標題）</h3>
+  <p>在 <span class="fpath">dist/index.html</span> 搜尋 Hero 區塊中的大標題文字：</p>
+  <pre><code><span class="c">&lt;!-- 搜尋以下字串 --&gt;</span>
+品味的知識，知識的品味
+
+<span class="c">&lt;!-- 取代為你的 Tagline --&gt;</span>
+品飲的深度，知識的溫度
+<span class="pre-label">dist/index.html</span></code></pre>
+
+  <h3>項目 07：Google Analytics Measurement ID</h3>
+  <pre><code><span class="c">// 在 dist/index.html &lt;head&gt; 中找到 GA snippet</span>
+搜尋：<span class="k">G-2WXMBSHDSB</span>
+取代：<span class="s">G-XXXXXXXXXX</span>  <span class="c">// 你在 GA4 建立的新資源 Measurement ID</span>
+<span class="pre-label">dist/index.html（全域）</span></code></pre>
+
+  <h3>項目 08：Cloudflare Pages 專案名稱（在 Functions 中）</h3>
+  <pre><code><span class="c">// 已在 Step 2.4 更新 deploy.yml，此處確認另一處</span>
+<span class="c">// 打開 .github/workflows/publish-scheduled.yml</span>
+<span class="c">// 確認 project-name 是否需要更新（通常不需要，但請檢查）</span>
+<span class="pre-label">確認即可</span></code></pre>
+
+  <h3>項目 09：聯絡 Email</h3>
+  <pre><code>搜尋：<span class="k">hello@bnotescoffee.com</span>
+取代：<span class="s">hello@vinenotes.com</span>
+<span class="c"># 影響：dist/about.html / dist/index.html footer</span>
+<span class="pre-label">全域替換</span></code></pre>
+
+  <h3>項目 10：品牌 title 標籤格式</h3>
+  <pre><code><span class="c">&lt;!-- 全域搜尋文章頁 title 格式 --&gt;</span>
+搜尋：<span class="k">| BNotes 焙學·原豆誌</span>
+取代：<span class="s">| VineNotes 酒知識誌</span>
+
+<span class="c">&lt;!-- 影響所有文章 HTML（dist/articles/*.html）--&gt;</span>
+<span class="pre-label">全域替換</span></code></pre>
+
+  <h3>項目 11：OG Site Name</h3>
+  <pre><code><span class="c">&lt;!-- 文章頁 Open Graph meta tag --&gt;</span>
+搜尋：<span class="k">content="BNotes 焙學·原豆誌"</span>
+取代：<span class="s">content="VineNotes 酒知識誌"</span>
+<span class="pre-label">全域替換（dist/articles/*.html）</span></code></pre>
+
+  <h3>項目 12：Organization Schema（首頁 JSON-LD）</h3>
+  <p>在 <span class="fpath">dist/index.html</span> 找到 <code>application/ld+json</code> Script，更新：</p>
+  <pre><code>{
+  "@type": "Organization",
+  "name": <span class="s">"VineNotes 酒知識誌"</span>,       <span class="c">// 修改</span>
+  "url": <span class="s">"https://vinenotes.com"</span>,     <span class="c">// 修改（已被項目01涵蓋）</span>
+  "logo": <span class="s">"https://vinenotes.com/logo.png"</span>  <span class="c">// 修改</span>
+}
+<span class="pre-label">dist/index.html JSON-LD</span></code></pre>
+
+  <h3>項目 13：footer 版權文字</h3>
+  <pre><code><span class="c">&lt;!-- 搜尋 --&gt;</span>
+© 2024–2026 BNotes 焙學·原豆誌
+
+<span class="c">&lt;!-- 取代 --&gt;</span>
+© 2026 VineNotes 酒知識誌
+<span class="pre-label">全域替換</span></code></pre>
+
+  <h3>項目 14：sitemap.xml（已發布文章 URL）</h3>
+  <p>如果 sitemap.xml 是靜態的，需要全域替換其中所有 URL。如果是動態生成的（由 Function），只需確認項目 01 的網域替換即可。</p>
+  <pre><code><span class="c"># 確認 sitemap.xml 是靜態還是動態</span>
+grep "bnotescoffee" dist/sitemap.xml | wc -l
+<span class="c"># 如果數量 > 0，表示靜態，需要全域替換</span>
+<span class="pre-label">bash 確認</span></code></pre>
+
+  <h3>項目 15：robots.txt</h3>
+  <pre><code><span class="c"># dist/robots.txt — 確認 Sitemap URL</span>
+Sitemap: https://<span class="k">bnotescoffee.com</span>/sitemap.xml
+<span class="c"># → 取代為</span>
+Sitemap: https://<span class="s">vinenotes.com</span>/sitemap.xml
+<span class="pre-label">dist/robots.txt</span></code></pre>
+
+  <div class="callout">
+    <div class="callout-title">15 項完成後的自我檢查</div>
+    執行以下指令確認沒有遺漏的舊網域：
+    <pre style="margin:.5rem 0 0"><code>grep -r "bnotescoffee" dist/ --include="*.html" | wc -l
+<span class="c"># 目標：回傳 0，若有剩餘，繼續搜尋替換</span></code></pre>
+  </div>
+</section>
+
+
+<!-- ═══ STEP 4 ═══ -->
+<section id="s4">
+  <div class="step-header">
+    <div class="step-num">4</div>
+    <div>
+      <div class="step-title">分類系統重設計</div>
+      <div class="step-sub">替換 6 個分類的英文 slug + 中文名稱，需同步更新 5 個位置</div>
+    </div>
+    <div class="step-time">約 30 分鐘</div>
+  </div>
+
+  <p>分類系統的設定散佈在以下 5 個位置，必須全部同步更新：</p>
+
+  <h3>位置 A：導覽列連結（dist/index.html）</h3>
+  <pre><code><span class="c">&lt;!-- 找到 nav-links 區塊 --&gt;</span>
+&lt;div class="nav-links"&gt;
+  &lt;a href="/category/<span class="k">pour-over</span>.html"&gt;<span class="k">手沖技法</span>&lt;/a&gt;
+  &lt;a href="/category/<span class="k">espresso</span>.html"&gt;<span class="k">義式咖啡</span>&lt;/a&gt;
+  &lt;a href="/category/<span class="k">equipment</span>.html"&gt;<span class="k">器材評測</span>&lt;/a&gt;
+  &lt;a href="/category/<span class="k">terroir</span>.html"&gt;<span class="k">產地風土</span>&lt;/a&gt;
+  &lt;a href="/category/<span class="k">science</span>.html"&gt;<span class="k">沖泡科學</span>&lt;/a&gt;
+  &lt;a href="/about.html"&gt;關於我們&lt;/a&gt;
+&lt;/div&gt;
+
+<span class="c">&lt;!-- 取代為新分類（範例：葡萄酒）--&gt;</span>
+&lt;div class="nav-links"&gt;
+  &lt;a href="/category/<span class="s">red</span>.html"&gt;<span class="s">紅葡萄酒</span>&lt;/a&gt;
+  &lt;a href="/category/<span class="s">white</span>.html"&gt;<span class="s">白葡萄酒</span>&lt;/a&gt;
+  &lt;a href="/category/<span class="s">sparkling</span>.html"&gt;<span class="s">氣泡酒</span>&lt;/a&gt;
+  &lt;a href="/category/<span class="s">region</span>.html"&gt;<span class="s">產區風土</span>&lt;/a&gt;
+  &lt;a href="/category/<span class="s">pairing</span>.html"&gt;<span class="s">餐酒搭配</span>&lt;/a&gt;
+  &lt;a href="/about.html"&gt;關於我們&lt;/a&gt;
+&lt;/div&gt;
+<span class="pre-label">dist/index.html</span></code></pre>
+  <p>同樣的修改需複製到所有 <span class="fpath">dist/category/*.html</span>、<span class="fpath">dist/pillar/*.html</span>、<span class="fpath">dist/about.html</span> 的 nav-links 區塊。</p>
+
+  <h3>位置 B：後台分類對照表（functions/admin/articles.js）</h3>
+  <pre><code><span class="c">// 搜尋 CAT_LABELS 或 catLabel 函數，大約在檔案前 50 行</span>
+const CAT_LABELS = {
+  <span class="k">'pour-over'</span>: <span class="k">'手沖技法'</span>,
+  <span class="k">'espresso'</span>:  <span class="k">'義式咖啡'</span>,
+  <span class="k">'equipment'</span>: <span class="k">'器材評測'</span>,
+  <span class="k">'terroir'</span>:   <span class="k">'產地風土'</span>,
+  <span class="k">'science'</span>:   <span class="k">'沖泡科學'</span>,
+  <span class="k">'lifestyle'</span>: <span class="k">'咖啡生活'</span>,
+};
+
+<span class="c">// 取代為新分類</span>
+const CAT_LABELS = {
+  <span class="s">'red'</span>:       <span class="s">'紅葡萄酒'</span>,
+  <span class="s">'white'</span>:     <span class="s">'白葡萄酒'</span>,
+  <span class="s">'sparkling'</span>: <span class="s">'氣泡酒'</span>,
+  <span class="s">'region'</span>:    <span class="s">'產區風土'</span>,
+  <span class="s">'pairing'</span>:   <span class="s">'餐酒搭配'</span>,
+  <span class="s">'cellar'</span>:    <span class="s">'收藏品飲'</span>,
+};
+<span class="pre-label">functions/admin/articles.js</span></code></pre>
+
+  <h3>位置 C：品質掃描有效分類驗證（functions/api/quality-scan.js）</h3>
+  <pre><code><span class="c">// 搜尋 VALID_CATS 陣列</span>
+const VALID_CATS = [<span class="k">'pour-over','espresso','equipment','terroir','science','lifestyle'</span>];
+
+<span class="c">// 取代</span>
+const VALID_CATS = [<span class="s">'red','white','sparkling','region','pairing','cellar'</span>];
+<span class="pre-label">functions/api/quality-scan.js</span></code></pre>
+
+  <h3>位置 D：AI 管線分類設定（.github/scripts/skywork_pipeline.py）</h3>
+  <pre><code><span class="c"># 搜尋 CATEGORIES 和 CAT_MAP</span>
+CATEGORIES = [<span class="k">"手沖技法","義式咖啡","器材評測","產地風土","沖泡科學","咖啡生活"</span>]
+CAT_MAP = {
+    <span class="k">"手沖技法"</span>: <span class="k">"pour-over"</span>,
+    <span class="k">"義式咖啡"</span>: <span class="k">"espresso"</span>,
+    ...
+}
+
+<span class="c"># 取代</span>
+CATEGORIES = [<span class="s">"紅葡萄酒","白葡萄酒","氣泡酒","產區風土","餐酒搭配","收藏品飲"</span>]
+CAT_MAP = {
+    <span class="s">"紅葡萄酒"</span>: <span class="s">"red"</span>,
+    <span class="s">"白葡萄酒"</span>: <span class="s">"white"</span>,
+    <span class="s">"氣泡酒"</span>:   <span class="s">"sparkling"</span>,
+    <span class="s">"產區風土"</span>: <span class="s">"region"</span>,
+    <span class="s">"餐酒搭配"</span>: <span class="s">"pairing"</span>,
+    <span class="s">"收藏品飲"</span>: <span class="s">"cellar"</span>,
+}
+<span class="pre-label">.github/scripts/skywork_pipeline.py</span></code></pre>
+
+  <h3>位置 E：Unsplash 分類圖片搜尋詞（functions/api/generate-image.js）</h3>
+  <pre><code><span class="c">// 搜尋 CAT_KEYWORDS 物件</span>
+const CAT_KEYWORDS = {
+  <span class="k">'pour-over'</span>:  <span class="k">'pour over coffee brewing barista'</span>,
+  <span class="k">'espresso'</span>:   <span class="k">'espresso coffee machine barista'</span>,
+  ...
+};
+
+<span class="c">// 取代（每個分類對應 Unsplash 搜尋關鍵字）</span>
+const CAT_KEYWORDS = {
+  <span class="s">'red'</span>:       <span class="s">'red wine glass vineyard elegant'</span>,
+  <span class="s">'white'</span>:     <span class="s">'white wine glass chardonnay bright'</span>,
+  <span class="s">'sparkling'</span>: <span class="s">'champagne sparkling wine bubbles'</span>,
+  <span class="s">'region'</span>:    <span class="s">'wine region vineyard landscape scenic'</span>,
+  <span class="s">'pairing'</span>:   <span class="s">'wine food pairing dinner restaurant'</span>,
+  <span class="s">'cellar'</span>:    <span class="s">'wine cellar collection bottles storage'</span>,
+};
+<span class="pre-label">functions/api/generate-image.js</span></code></pre>
+
+  <h3>位置 F：建立新的分類頁面 HTML</h3>
+  <p>刪除舊的 6 個分類 HTML，用現有的 <span class="fpath">dist/category/pour-over.html</span> 作為模板複製 6 份：</p>
+  <pre><code><span class="c"># 刪除舊分類頁面</span>
+rm dist/category/pour-over.html dist/category/espresso.html
+rm dist/category/equipment.html dist/category/terroir.html
+rm dist/category/science.html   dist/category/lifestyle.html
+
+<span class="c"># 複製模板並重新命名</span>
+cp dist/category/pour-over.html dist/category/red.html
+cp dist/category/pour-over.html dist/category/white.html
+cp dist/category/pour-over.html dist/category/sparkling.html
+cp dist/category/pour-over.html dist/category/region.html
+cp dist/category/pour-over.html dist/category/pairing.html
+cp dist/category/pour-over.html dist/category/cellar.html
+
+<span class="c"># 然後逐一修改每個新 HTML 中的分類名稱、標題、描述</span>
+<span class="pre-label">bash</span></code></pre>
+</section>
+
+
+<!-- ═══ STEP 5 ═══ -->
+<section id="s5">
+  <div class="step-header">
+    <div class="step-num">5</div>
+    <div>
+      <div class="step-title">AI 管線重新設定</div>
+      <div class="step-sub">替換主題庫、調整 Prompt 指令、設定產業知識背景</div>
+    </div>
+    <div class="step-time">約 30 分鐘</div>
+  </div>
+
+  <h3>5.1 替換 AI 文章主題庫</h3>
+  <p>打開 <span class="fpath">.github/scripts/skywork_pipeline.py</span>，找到 <code>TOPIC_POOL</code> 陣列，用你的產業主題完整取代：</p>
+  <pre><code><span class="c"># BNotes 原始（咖啡主題，保留結構，替換內容）</span>
+TOPIC_POOL = [
+    {"title": "手沖水溫科學指南", "category": "手沖技法", ...},
+    ...
+]
+
+<span class="c"># 取代為你的產業主題（葡萄酒範例）</span>
+TOPIC_POOL = [
+    {<span class="s">"title"</span>: <span class="s">"波爾多 vs 勃根地：入門完全比較"</span>, <span class="s">"category"</span>: <span class="s">"紅葡萄酒"</span>,
+     <span class="s">"focus_keyword"</span>: <span class="s">"波爾多勃根地差異"</span>, <span class="s">"outline_hint"</span>: <span class="s">"葡萄品種/風格/定價/適飲場景"</span>},
+    {<span class="s">"title"</span>: <span class="s">"2026 入門白葡萄酒推薦：7支性價比之選"</span>, <span class="s">"category"</span>: <span class="s">"白葡萄酒"</span>,
+     <span class="s">"focus_keyword"</span>: <span class="s">"入門白葡萄酒推薦"</span>, <span class="s">"outline_hint"</span>: <span class="s">"各款特色/適合場合/參考價位"</span>},
+    {<span class="s">"title"</span>: <span class="s">"香檳 vs 普羅賽克：氣泡酒全面解析"</span>, <span class="s">"category"</span>: <span class="s">"氣泡酒"</span>,
+     <span class="s">"focus_keyword"</span>: <span class="s">"香檳普羅賽克差異"</span>, <span class="s">"outline_hint"</span>: <span class="s">"產區/製法/風味/場合"</span>},
+    <span class="c"># ... 建議準備至少 30 個主題，AI 每週選一個</span>
+]
+<span class="pre-label">.github/scripts/skywork_pipeline.py</span></code></pre>
+
+  <h3>5.2 替換 AI 撰文 Prompt（最重要）</h3>
+  <p>同一個檔案中，找到 <code>SYSTEM_PROMPT</code> 或 <code>build_prompt()</code> 函數，更新產業背景知識描述：</p>
+  <pre><code><span class="c"># 搜尋舊的 System Prompt 中的咖啡相關描述</span>
+<span class="c"># 通常包含：「你是一位專業咖啡師/咖啡評測師」之類的描述</span>
+
+<span class="c"># 修改為你的產業（葡萄酒範例）：</span>
+SYSTEM_PROMPT = """
+你是一位資深侍酒師與葡萄酒評論家，擁有 WSET Level 3 認證，
+專精台灣市場的葡萄酒教育與推廣。
+撰寫風格：知識型、中文繁體、條理清晰、引用產區與品種數據、
+適合品味入門到進階的台灣讀者。
+每篇文章需符合以下規格：
+- 標題明確含有主要關鍵字
+- H2 標題至少 4 個
+- 中文字數 1800–2500 字
+- 結尾包含「延伸閱讀」區塊（3 個內部連結佔位符）
+- 語調：專業但親切，避免過度學術化
+"""
+<span class="pre-label">.github/scripts/skywork_pipeline.py</span></code></pre>
+
+  <h3>5.3 調整排程頻率（選做）</h3>
+  <p>打開 <span class="fpath">.github/workflows/skywork-ai-pipeline.yml</span> 調整執行時間：</p>
+  <pre><code>on:
+  schedule:
+    <span class="c"># 原設定：每週一 UTC 01:00（台灣 09:00）</span>
+    - cron: <span class="k">'0 1 * * 1'</span>
+
+    <span class="c"># 若要每週三篇，改為每週一三五：</span>
+    - cron: <span class="s">'0 1 * * 1,3,5'</span>
+
+    <span class="c"># 若要每兩週一次（起步期建議）：</span>
+    - cron: <span class="s">'0 1 */14 * *'</span>
+<span class="pre-label">.github/workflows/skywork-ai-pipeline.yml</span></code></pre>
+</section>
+
+
+<!-- ═══ STEP 6 ═══ -->
+<section id="s6">
+  <div class="step-header">
+    <div class="step-num">6</div>
+    <div>
+      <div class="step-title">首批種子內容建立</div>
+      <div class="step-sub">上線前需準備最少 10 篇文章，含 1 個 Pillar Page</div>
+    </div>
+    <div class="step-time">約 120 分鐘</div>
+  </div>
+
+  <div class="warn">
+    <div class="warn-title">為什麼首批內容是關鍵？</div>
+    Google 會在首次爬取時判斷站點的「內容深度」。
+    空站或少於 5 篇文章的站點難以被收錄。
+    建議上線時至少準備 10 篇 + 1 個 Pillar Page，
+    讓 Google 第一眼就判斷你是有深度的主題媒體。
+  </div>
+
+  <h3>6.1 清除 BNotes 舊文章</h3>
+  <pre><code><span class="c"># 刪除所有 BNotes 咖啡舊文章</span>
+rm dist/articles/*.html
+
+<span class="c"># 清空排程文章</span>
+rm -f dist/_scheduled/*.html
+rm -f dist/_scheduled-meta.json
+
+<span class="c"># 清空 AI 待審</span>
+rm -f dist/_pending-ai-review/*.html
+
+<span class="c"># 清空 AI 封面圖</span>
+rm -f dist/images/ai/*.jpg
+<span class="pre-label">bash</span></code></pre>
+
+  <h3>6.2 首批 10 篇文章的建議結構</h3>
+  <table>
+    <thead><tr><th>#</th><th>文章類型</th><th>說明</th><th>品質目標</th></tr></thead>
+    <tbody>
+      <tr><td>1–2</td><td>入門指南（新手向）</td><td>每個主題的 101 入門文，搜尋量大、競爭低</td><td>85 分以上</td></tr>
+      <tr><td>3–4</td><td>比較評測</td><td>「A vs B 完全比較」格式，吸引決策性搜尋流量</td><td>88 分以上</td></tr>
+      <tr><td>5–6</td><td>深度科學</td><td>有數據、有原理，建立 E-E-A-T 可信度</td><td>90 分以上</td></tr>
+      <tr><td>7–8</td><td>年度推薦</td><td>「2026 年最推薦 XX」格式，長尾關鍵字多</td><td>82 分以上</td></tr>
+      <tr><td>9</td><td>本地化深度</td><td>台灣 / 本地視角，降低與國際站點的競爭</td><td>88 分以上</td></tr>
+      <tr><td>10</td><td>FAQ 彙整</td><td>收集常見問題，適合抓 Featured Snippet</td><td>85 分以上</td></tr>
+    </tbody>
+  </table>
+
+  <h3>6.3 文章 HTML 最簡範本（複製後填入內容）</h3>
+  <pre><code><span class="c">---
+title: "你的文章標題（40-65字元）"
+date: 2026-05-01
+category: red
+description: "SEO描述，80-160字元，含主關鍵字"
+cover_image: "images/ai/你的slug-hero.jpg"
+reading_time: 8
+focusKeyword: "主要關鍵字"
+coverAlt: "封面圖描述文字"
+---</span>
+&lt;!DOCTYPE html&gt;&lt;html lang="zh-TW"&gt;&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;你的標題 | VineNotes 酒知識誌&lt;/title&gt;
+&lt;meta name="description" content="SEO 描述..."&gt;
+&lt;meta property="og:title" content="你的標題"&gt;
+&lt;meta property="og:description" content="SEO 描述"&gt;
+&lt;meta property="og:image" content="https://vinenotes.com/images/ai/slug-hero.jpg"&gt;
+&lt;meta property="og:type" content="article"&gt;
+&lt;meta property="og:url" content="https://vinenotes.com/articles/slug.html"&gt;
+&lt;meta property="og:site_name" content="VineNotes 酒知識誌"&gt;
+&lt;link rel="canonical" href="https://vinenotes.com/articles/slug.html"&gt;
+&lt;style&gt;<span class="c">{從 index.html 複製完整 CSS 區塊，約 9000 字元}</span>&lt;/style&gt;
+&lt;/head&gt;
+<span class="c">&lt;!-- Nav（從 index.html 複製）--&gt;</span>
+&lt;article&gt;
+  &lt;h1&gt;你的文章標題&lt;/h1&gt;
+  &lt;h2&gt;第一個 H2 標題&lt;/h2&gt;
+  &lt;p&gt;內文段落...&lt;/p&gt;
+  <span class="c">&lt;!-- 至少 4 個 H2，2000+ 中文字 --&gt;</span>
+  &lt;div class="further-reading"&gt;
+    &lt;h3&gt;延伸閱讀&lt;/h3&gt;
+    &lt;a href="/articles/related-article-1.html"&gt;相關文章標題 1&lt;/a&gt;
+    &lt;a href="/articles/related-article-2.html"&gt;相關文章標題 2&lt;/a&gt;
+    &lt;a href="/articles/related-article-3.html"&gt;相關文章標題 3&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+<span class="c">&lt;!-- Footer（從 index.html 複製）--&gt;</span>
+<span class="pre-label">文章模板</span></code></pre>
+
+  <h3>6.4 修改首頁精選文章區塊</h3>
+  <p>首頁 <code>FEATURED</code> 區塊的文章卡片目前是 BNotes 舊文章，需要手動更新為你的首批文章。找到 <span class="fpath">dist/index.html</span> 中的 <code>FEATURED</code> 或 <code>.grid.featured</code> 區塊，替換 3–6 張文章卡片的 slug / 標題 / 分類 / 描述。</p>
+
+  <h3>6.5 Pillar Page 建立（至少一個）</h3>
+  <p>
+    用現有的 <span class="fpath">dist/pillar/pour-over-complete-guide.html</span> 作為模板，
+    複製並重新命名：
+  </p>
+  <pre><code>cp dist/pillar/pour-over-complete-guide.html dist/pillar/beginner-wine-guide.html
+<span class="c"># 然後手動修改標題、內容、FAQ 問答、連結到你的分類文章</span>
+<span class="pre-label">bash</span></code></pre>
+</section>
+
+
+<!-- ═══ STEP 7 ═══ -->
+<section id="s7">
+  <div class="step-header">
+    <div class="step-num">7</div>
+    <div>
+      <div class="step-title">SEO 初始設定與驗證</div>
+      <div class="step-sub">更新 Schema、提交 Sitemap、設定 Google Search Console</div>
+    </div>
+    <div class="step-time">約 30 分鐘</div>
+  </div>
+
+  <h3>7.1 更新首頁 Schema</h3>
+  <p>打開 <span class="fpath">dist/index.html</span> 中的 <code>application/ld+json</code> Script，確認以下欄位：</p>
+  <pre><code>{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": <span class="s">"VineNotes 酒知識誌"</span>,
+  "url": <span class="s">"https://vinenotes.com"</span>,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": <span class="s">"https://vinenotes.com/?q={search_term_string}"</span>,
+    "query-input": "required name=search_term_string"
+  }
+}
+<span class="pre-label">dist/index.html JSON-LD</span></code></pre>
+
+  <h3>7.2 更新 sitemap.xml（靜態版）</h3>
+  <p>用文字編輯器打開 <span class="fpath">dist/sitemap.xml</span>，確保包含：</p>
+  <ul>
+    <li>所有已發布文章 URL（<code>/articles/*.html</code>）</li>
+    <li>6 個分類頁 URL（<code>/category/*.html</code>）</li>
+    <li>Pillar Page URL（<code>/pillar/*.html</code>，priority 0.9）</li>
+    <li>關於我們（<code>/about.html</code>，priority 0.6）</li>
+  </ul>
+
+  <h3>7.3 Google Search Console 設定（3 步完成）</h3>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-day">步驟 1</div>
+      前往 <code>search.google.com/search-console</code> → 新增資源 → 選「網址前置字元」→ 輸入你的新網域
+    </div>
+    <div class="tl-item">
+      <div class="tl-day">步驟 2</div>
+      選擇「HTML 標記」驗證方式 → 複製 <code>&lt;meta name="google-site-verification" content="XXX"&gt;</code>
+      → 貼入 <span class="fpath">dist/index.html</span> 的 <code>&lt;head&gt;</code> 區塊 → push 部署後回 GSC 點驗證
+    </div>
+    <div class="tl-item">
+      <div class="tl-day">步驟 3</div>
+      驗證成功後 → Sitemaps → 輸入 <code>sitemap.xml</code> → 提交
+    </div>
+  </div>
+
+  <h3>7.4 關於我們頁面 E-E-A-T 設定</h3>
+  <p>打開 <span class="fpath">dist/about.html</span>，確保包含：</p>
+  <ul>
+    <li>主編/作者的真實姓名與專業背景描述</li>
+    <li>創立時間、媒體定位說明</li>
+    <li><code>NewsMediaOrganization</code> 和 <code>Person</code> Schema.org 結構化資料</li>
+    <li>聯絡方式（Email）</li>
+  </ul>
+</section>
+
+
+<!-- ═══ STEP 8 ═══ -->
+<section id="s8">
+  <div class="step-header">
+    <div class="step-num">8</div>
+    <div>
+      <div class="step-title">環境變數與部署設定</div>
+      <div class="step-sub">設定 7 個必要的 Secrets，觸發首次部署</div>
+    </div>
+    <div class="step-time">約 30 分鐘</div>
+  </div>
+
+  <h3>8.1 GitHub Secrets 設定</h3>
+  <p>前往新倉庫 → Settings → Secrets and variables → Actions → New repository secret，依序新增：</p>
+  <table>
+    <thead><tr><th>Secret 名稱</th><th>取得方式</th><th>必要性</th></tr></thead>
+    <tbody>
+      <tr><td><code>CLOUDFLARE_API_TOKEN</code></td><td>Cloudflare Dashboard → My Profile → API Tokens → Create Token（選 Edit Cloudflare Pages 模板）</td><td>必要</td></tr>
+      <tr><td><code>CLOUDFLARE_ACCOUNT_ID</code></td><td>Cloudflare Dashboard 右側欄 Account ID</td><td>必要</td></tr>
+      <tr><td><code>SUBMIT_AI_KEY</code></td><td>自訂任意隨機字串（例：<code>openssl rand -hex 32</code>）</td><td>必要</td></tr>
+      <tr><td><code>SKYWORK_API_KEY</code></td><td>Skywork 平台取得 API Key</td><td>選填（有模板 fallback）</td></tr>
+    </tbody>
+  </table>
+
+  <h3>8.2 Cloudflare Pages Secrets 設定</h3>
+  <pre><code><span class="c"># 使用 wrangler CLI（在本地倉庫根目錄執行）</span>
+npx wrangler pages secret put ADMIN_PASSWORD --project-name=vinenotes
+<span class="c"># 輸入你設定的後台密碼</span>
+
+npx wrangler pages secret put GITHUB_PAT --project-name=vinenotes
+<span class="c"># 輸入 GitHub Personal Access Token（需有 repo 讀寫權限）</span>
+<span class="c"># 建立方式：GitHub → Settings → Developer settings → PAT → Fine-grained → repo 權限</span>
+
+npx wrangler pages secret put SUBMIT_AI_KEY --project-name=vinenotes
+<span class="c"># 與 GitHub Secret 中的 SUBMIT_AI_KEY 相同值</span>
+
+npx wrangler pages secret put UNSPLASH_ACCESS_KEY --project-name=vinenotes
+<span class="c"># 在 unsplash.com/developers 申請（免費，50 req/hr）</span>
+<span class="pre-label">bash</span></code></pre>
+
+  <h3>8.3 觸發首次部署</h3>
+  <pre><code><span class="c"># 確認所有修改都已儲存後</span>
+git add -A
+git status  <span class="c"># 確認修改的檔案清單</span>
+git commit -m "init: migrate to VineNotes wine blog"
+git push origin main
+
+<span class="c"># 前往 GitHub Actions tab 確認 deploy.yml 執行狀況</span>
+<span class="c"># 約 2-3 分鐘完成，Cloudflare Pages 會自動更新</span>
+<span class="pre-label">bash</span></code></pre>
+</section>
+
+
+<!-- ═══ STEP 9 ═══ -->
+<section id="s9">
+  <div class="step-header">
+    <div class="step-num">9</div>
+    <div>
+      <div class="step-title">上線前完整驗收清單</div>
+      <div class="step-sub">部署成功後逐項確認，確保沒有遺留 BNotes 資訊</div>
+    </div>
+  </div>
+
+  <h3>前台視覺檢查</h3>
+  <ul class="checklist">
+    <li><span class="check-box"></span>首頁 Logo、品牌名稱、副標題正確顯示新品牌</li>
+    <li><span class="check-box"></span>導覽列 6 個分類連結正確，點擊後可進入正確分類頁</li>
+    <li><span class="check-box"></span>主色、深色已替換為新品牌色彩（按鈕、標題、邊框）</li>
+    <li><span class="check-box"></span>Hero 區域 Tagline 已更新</li>
+    <li><span class="check-box"></span>首頁至少顯示 3 篇文章卡片，圖片、標題、分類正確</li>
+    <li><span class="check-box"></span>footer 版權、Email、連結均為新品牌資訊</li>
+    <li><span class="check-box"></span>「關於我們」頁面內容已更新，無咖啡相關描述</li>
+  </ul>
+
+  <h3>技術 / SEO 檢查</h3>
+  <ul class="checklist">
+    <li><span class="check-box"></span>瀏覽器 console 無 404 錯誤</li>
+    <li><span class="check-box"></span>在瀏覽器「檢視原始碼」確認 <code>&lt;title&gt;</code> 包含新品牌名</li>
+    <li><span class="check-box"></span>在原始碼確認 <code>og:site_name</code> 為新品牌</li>
+    <li><span class="check-box"></span><code>vinenotes.com/sitemap.xml</code> 可正常訪問，包含正確 URL</li>
+    <li><span class="check-box"></span><code>vinenotes.com/robots.txt</code> Sitemap 指向正確網域</li>
+    <li><span class="check-box"></span>任一文章頁 canonical URL 為新網域</li>
+    <li><span class="check-box"></span>後台 <code>/admin/articles</code> 可正常登入並顯示文章列表</li>
+    <li><span class="check-box"></span>對任一文章執行品質掃描，確認分類名稱為新分類</li>
+    <li><span class="check-box"></span>執行 <code>grep -r "bnotescoffee" dist/ | wc -l</code>，結果為 0</li>
+    <li><span class="check-box"></span>執行 <code>grep -r "焙學" dist/ | wc -l</code>，結果為 0</li>
+  </ul>
+
+  <h3>功能測試</h3>
+  <ul class="checklist">
+    <li><span class="check-box"></span>後台登入 → 已發布 Tab 可顯示文章列表</li>
+    <li><span class="check-box"></span>點「品質掃描」對一篇文章執行，有回傳分數</li>
+    <li><span class="check-box"></span>點「補圖」按鈕，確認 generate-image API 有回應（即使無 Unsplash Key，應回傳 fallback 圖片）</li>
+    <li><span class="check-box"></span>GitHub Actions → publish-scheduled.yml 最近一次執行狀態 Success</li>
+    <li><span class="check-box"></span>搜尋框可正常輸入關鍵字並過濾文章</li>
+  </ul>
+
+  <div class="danger">
+    <div class="danger-title">最容易遺漏的兩個地方</div>
+    1. <strong>functions/ 中的 REPO 常數</strong>：每個 API 檔案頂部都有 <code>const REPO = '...'</code>，
+    如果還是 <code>stanleytsoubiz/BNotes</code>，所有 GitHub API 操作（發布、修復、補圖）都會寫入舊倉庫。<br>
+    2. <strong>Access-Control-Allow-Origin</strong>：approve-ai-article.js 和 submit-ai-article.js 中有此 header，
+    需改為新網域，否則後台 API 會被 CORS 攔截。
+  </div>
+</section>
+
+
+<!-- ═══ STEP 10 ═══ -->
+<section id="s10">
+  <div class="step-header">
+    <div class="step-num">10</div>
+    <div>
+      <div class="step-title">上線後 30 天增長計畫</div>
+      <div class="step-sub">按節奏執行，讓 Google 快速認識你的新站</div>
+    </div>
+  </div>
+
+  <h3>內容節奏規劃</h3>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-day">第 1–3 天</div>
+      <strong>種子內容衝刺：</strong>手動撰寫或使用 AI 草稿快速補齊至 15 篇。
+      重點放在「高搜尋量 + 低競爭」的長尾關鍵字，善用品質掃描工具確保每篇 80 分以上再發布。
+    </div>
+    <div class="tl-item">
+      <div class="tl-day">第 4–7 天</div>
+      <strong>Pillar Page 完善：</strong>第一個 Pillar Page 補充至 3000 字以上，
+      加入 5+ 個 FAQ（Schema.org FAQPage），並確保有 5 篇子文章從延伸閱讀指向它。
+    </div>
+    <div class="tl-item">
+      <div class="tl-day">第 1–2 週</div>
+      <strong>Google 收錄監控：</strong>每天到 Search Console 查看「覆蓋率」，
+      確認文章開始被收錄（通常 7–14 天開始出現）。若有「排除」錯誤立即修復。
+    </div>
+    <div class="tl-item">
+      <div class="tl-day">第 2–4 週</div>
+      <strong>AI 管線節奏：</strong>每週 AI 自動生成 1–2 篇草稿，
+      管理員後台審核後排程發布。人工每週至少補充 1 篇有個人觀點的深度文章。
+    </div>
+    <div class="tl-item">
+      <div class="tl-day">第 30 天</div>
+      <strong>首次復盤：</strong>查看 GSC 流量報告，找出「曝光多但點擊少」（CTR &lt; 3%）的文章，
+      優化 title 和 meta description 提升 CTR。
+    </div>
+  </div>
+
+  <h3>關鍵成長指標（30 天目標）</h3>
+  <table>
+    <thead><tr><th>指標</th><th>基準（BNotes 第 14 天）</th><th>30 天目標</th></tr></thead>
+    <tbody>
+      <tr><td>Google 收錄文章數</td><td>45 篇</td><td>15+ 篇</td></tr>
+      <tr><td>月總曝光次數</td><td>657 次（2 週）</td><td>500–2000 次</td></tr>
+      <tr><td>平均點擊率</td><td>6.8%</td><td>3–8%</td></tr>
+      <tr><td>站內文章總數</td><td>50+ 篇</td><td>20–30 篇</td></tr>
+      <tr><td>平均品質分數</td><td>90 分</td><td>85 分以上</td></tr>
+    </tbody>
+  </table>
+
+  <h3>何時啟用隱藏功能？</h3>
+  <table>
+    <thead><tr><th>功能</th><th>啟用條件</th><th>操作</th></tr></thead>
+    <tbody>
+      <tr><td>電子報訂閱（newsletter.html）</td><td>月流量穩定 &gt; 3,000 PV</td><td>移除 noindex meta + 恢復 Nav 連結 + 接 Mailchimp / ConvertKit</td></tr>
+      <tr><td>品牌合作頁（collab.html）</td><td>月流量 &gt; 10,000 PV 或有廠商詢問</td><td>同上，更新合作條件與聯絡方式</td></tr>
+      <tr><td>Affiliate 連結</td><td>月流量 &gt; 5,000 PV</td><td>在文章中加入露天聯盟 / 博客來 / 酒商 Affiliate 連結</td></tr>
+      <tr><td>Google AdSense</td><td>月流量 &gt; 50,000 PV</td><td>申請 AdSense，在 index.html head 加入 script</td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ═══ 快速索引 ═══ -->
+<section style="padding:2.5rem 0;background:var(--bg2);border-radius:1rem;padding-left:1.5rem;padding-right:1.5rem;margin-top:1rem">
+  <h3 style="border-left-color:var(--gold);margin-top:0">移植全流程時間總覽</h3>
+  <table>
+    <thead><tr><th>步驟</th><th>工作項目</th><th>估計工時</th><th>階段</th></tr></thead>
+    <tbody>
+      <tr><td>Step 1</td><td>產業決策 + 分類規劃</td><td>30 分鐘</td><td><span class="phase phase-a">規劃</span></td></tr>
+      <tr><td>Step 2</td><td>Fork 倉庫 + 建立 CF 專案</td><td>30 分鐘</td><td><span class="phase phase-a">規劃</span></td></tr>
+      <tr><td>Step 3</td><td>15 項品牌替換</td><td>60 分鐘</td><td><span class="phase phase-b">替換</span></td></tr>
+      <tr><td>Step 4</td><td>分類系統重設計（5 個位置）</td><td>30 分鐘</td><td><span class="phase phase-b">替換</span></td></tr>
+      <tr><td>Step 5</td><td>AI 管線重設定</td><td>30 分鐘</td><td><span class="phase phase-b">替換</span></td></tr>
+      <tr><td>Step 6</td><td>首批種子內容（10 篇 + 1 Pillar）</td><td>120 分鐘</td><td><span class="phase phase-c">內容</span></td></tr>
+      <tr><td>Step 7</td><td>SEO 設定 + GSC 驗證</td><td>30 分鐘</td><td><span class="phase phase-c">內容</span></td></tr>
+      <tr><td>Step 8</td><td>環境變數 + 首次部署</td><td>30 分鐘</td><td><span class="phase phase-b">替換</span></td></tr>
+      <tr><td>Step 9</td><td>上線驗收清單</td><td>30 分鐘</td><td><span class="phase phase-a">規劃</span></td></tr>
+      <tr><td>Step 10</td><td>30 天增長執行</td><td>持續進行</td><td><span class="phase phase-c">內容</span></td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td colspan="2"><strong>總計（Steps 1-9）</strong></td><td><strong>約 6–8 小時</strong></td><td>D+1 可上線</td></tr>
+    </tfoot>
+  </table>
+</section>
+
+<footer style="padding:3rem 0 2rem;border-top:2px solid var(--border);margin-top:2rem;text-align:center">
+  <p style="color:var(--muted);font-size:.82rem;line-height:1.85">
+    BNotes 產業移植實戰手冊 v1.0<br>
+    依據：BNotes_MasterKB v1.0 &nbsp;·&nbsp; 建立日期：2026-04-21<br>
+    本手冊僅適用於 BNotes 架構（Cloudflare Pages + GitHub + Vanilla HTML）<br>
+    移植其他框架請另行規劃
+  </p>
+</footer>
+
+</body>
+</html>

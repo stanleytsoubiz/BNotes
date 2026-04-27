@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BNotes — Phase 1 品牌定位深化 + 年度目標設定</title>
+<style>
+  :root {
+    --cream:    #F7F3EE;
+    --espresso: #1C1007;
+    --roast:    #3D1F0A;
+    --caramel:  #C0813A;
+    --gold:     #D4A847;
+    --latte:    #E8D5B7;
+    --fog:      #F0EAE0;
+    --accent1:  #6B3A1F;
+    --accent2:  #9B5E2A;
+    --green:    #4A7C59;
+    --red:      #C0392B;
+    --blue:     #2C5F8A;
+    --text:     #2A1A0A;
+    --muted:    #7A6555;
+    --border:   #D4C4A8;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Georgia', 'Noto Serif TC', serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--roast) 0%, var(--espresso) 60%, #0D0704 100%);
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(192,129,58,.25) 0%, transparent 65%);
+  }
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: .7rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    padding: 5px 18px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+    font-family: 'Helvetica Neue', sans-serif;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: .02em;
+    position: relative;
+    line-height: 1.25;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    margin-top: 16px;
+    color: var(--latte);
+    font-size: 1rem;
+    position: relative;
+    opacity: .85;
+    font-family: 'Helvetica Neue', sans-serif;
+    letter-spacing: .04em;
+  }
+  .hero-meta {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .hero-meta-item {
+    text-align: center;
+    color: var(--latte);
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+  .hero-meta-item strong {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .hero-meta-item span { font-size: .72rem; letter-spacing: .08em; opacity: .8; }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── TOC ── */
+  .toc-wrap {
+    background: var(--fog);
+    border-left: 4px solid var(--caramel);
+    border-radius: 0 12px 12px 0;
+    padding: 28px 32px;
+    margin: 48px auto;
+    max-width: 1080px;
+  }
+  .toc-wrap h3 {
+    font-size: .72rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-bottom: 14px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 8px 24px;
+  }
+  .toc-grid a {
+    color: var(--accent1);
+    text-decoration: none;
+    font-size: .88rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    padding: 4px 0;
+    border-bottom: 1px dashed var(--border);
+    transition: color .2s;
+  }
+  .toc-grid a:hover { color: var(--caramel); }
+
+  /* ── SECTION WRAPPER ── */
+  .section {
+    padding: 64px 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .section + .section { border-top: 1px solid var(--border); }
+
+  /* ── SECTION HEADER ── */
+  .section-label {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: .68rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--caramel);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--roast);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .section-desc {
+    color: var(--muted);
+    font-size: .92rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-bottom: 36px;
+    max-width: 640px;
+  }
+
+  /* ── RESEARCH CARDS ── */
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 28px;
+  }
+  .r-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .r-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--caramel), var(--gold));
+  }
+  .r-card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .r-card h4 {
+    font-size: 1rem;
+    color: var(--roast);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .r-card p, .r-card li {
+    font-size: .85rem;
+    color: var(--muted);
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.65;
+  }
+  .r-card ul { padding-left: 16px; }
+  .r-card li { margin-bottom: 4px; }
+  .stat-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .stat-chip {
+    background: var(--fog);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 4px 12px;
+    font-size: .75rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: var(--accent1);
+    font-weight: 600;
+  }
+
+  /* ── KOL TABLE ── */
+  .table-wrap { overflow-x: auto; margin-top: 28px; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-family: 'Helvetica Neue', sans-serif; font-size: .83rem; }
+  th {
+    background: var(--roast);
+    color: var(--latte);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: .05em;
+    font-size: .78rem;
+  }
+  td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: var(--fog); }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+  }
+  .tag-sci { background: #EAF2FB; color: var(--blue); }
+  .tag-edu { background: #EAF7EC; color: var(--green); }
+  .tag-life { background: #FEF9E7; color: #A04000; }
+  .tag-gap { background: #FDFEFE; color: var(--red); border: 1px solid #F1948A; }
+
+  /* ── PLATFORM BAR ── */
+  .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .platform-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .platform-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(60,30,10,.08); }
+  .platform-icon { font-size: 1.6rem; margin-bottom: 8px; }
+  .platform-name { font-weight: 700; color: var(--roast); font-size: .95rem; margin-bottom: 4px; }
+  .platform-role {
+    font-size: .72rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  .role-awareness { background: #EBF5FB; color: var(--blue); }
+  .role-convert  { background: #E9F7EF; color: var(--green); }
+  .role-loyalty  { background: #FEF5E7; color: #A04000; }
+  .platform-stat { font-size: .82rem; font-family: 'Helvetica Neue', sans-serif; color: var(--muted); line-height: 1.6; }
+  .platform-stat strong { color: var(--caramel); }
+
+  /* ── POSITIONING ── */
+  .brand-statement {
+    background: linear-gradient(135deg, var(--roast), var(--accent1));
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .brand-statement .en {
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: .03em;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+  .brand-statement .zh {
+    font-size: clamp(1rem, 2.2vw, 1.35rem);
+    color: var(--latte);
+    line-height: 1.6;
+  }
+
+  /* ── DIFF CARDS ── */
+  .diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .diff-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+  }
+  .diff-num {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--latte);
+    position: absolute;
+    top: 16px; right: 20px;
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1;
+  }
+  .diff-card h4 { font-size: 1.05rem; color: var(--roast); margin-bottom: 8px; font-weight: 700; }
+  .diff-card p { font-size: .85rem; color: var(--muted); font-family: 'Helvetica Neue', sans-serif; line-height: 1.65; }
+  .vs-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  .vs-them {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: .76rem;
+    color: var(--red);
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+  .vs-us {
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: .76rem;
+    color: #166534;
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+  .vs-label { font-weight: 700; display: block; margin-bottom: 2px; font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; }
+
+  /* ── TOV GRID ── */
+  .tov-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media(max-width:600px){ .tov-grid { grid-template-columns: 1fr; } }
+  .tov-box {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .tov-box h5 {
+    font-size: .72rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+  }
+  .adj-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--roast), var(--accent1));
+    color: #fff;
+    border-radius: 100px;
+    padding: 8px 16px;
+    font-size: .88rem;
+    margin: 4px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+  }
+  .adj-pill .adj-sub { font-size: .72rem; opacity: .75; font-weight: 400; }
+  .neg-pill {
+    display: inline-flex;
+    align-items: center;
+    background: #FEF2F2;
+    color: var(--red);
+    border: 1px solid #FECACA;
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: .85rem;
+    margin: 4px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+  }
+  .neg-pill::before { content: '✕'; margin-right: 6px; font-size: .75rem; }
+
+  /* ── TRIANGLE ── */
+  .triangle-wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+  @media(max-width:600px){ .triangle-wrap { grid-template-columns: 1fr; } }
+  .tri-card {
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tri-talk { background: var(--roast); color: #fff; }
+  .tri-no   { background: #FEF2F2; border: 2px dashed #FECACA; }
+  .tri-how  { background: linear-gradient(135deg, var(--accent1), var(--caramel)); color: #fff; }
+  .tri-card h4 {
+    font-size: .68rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-bottom: 14px;
+    opacity: .7;
+  }
+  .tri-talk h4, .tri-how h4 { color: var(--latte); }
+  .tri-no h4 { color: var(--red); }
+  .tri-card ul { list-style: none; padding: 0; }
+  .tri-talk li, .tri-how li { color: var(--latte); font-size: .85rem; font-family: 'Helvetica Neue', sans-serif; padding: 4px 0; line-height: 1.55; }
+  .tri-talk li::before, .tri-how li::before { content: '→ '; color: var(--gold); }
+  .tri-no li { color: var(--red); font-size: .85rem; font-family: 'Helvetica Neue', sans-serif; padding: 4px 0; line-height: 1.55; }
+  .tri-no li::before { content: '✕ '; }
+
+  /* ── OKR ── */
+  .okr-block { margin-bottom: 36px; }
+  .okr-obj {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: linear-gradient(135deg, var(--roast), var(--espresso));
+    border-radius: 16px 16px 0 0;
+    padding: 22px 28px;
+    color: #fff;
+  }
+  .okr-obj-num {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--gold);
+    font-family: 'Helvetica Neue', sans-serif;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .okr-obj h4 { font-size: 1.1rem; line-height: 1.4; }
+  .okr-obj p { font-size: .82rem; color: var(--latte); margin-top: 4px; font-family: 'Helvetica Neue', sans-serif; opacity: .8; }
+  .okr-krs { background: #fff; border: 1px solid var(--border); border-top: none; border-radius: 0 0 16px 16px; overflow: hidden; }
+  .okr-kr {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    align-items: start;
+    gap: 16px;
+    padding: 18px 28px;
+    border-bottom: 1px solid var(--border);
+    transition: background .15s;
+  }
+  .okr-kr:last-child { border-bottom: none; }
+  .okr-kr:hover { background: var(--fog); }
+  .kr-label {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--caramel);
+    padding-top: 3px;
+  }
+  .kr-text { font-size: .9rem; color: var(--text); line-height: 1.55; }
+  .kr-text strong { color: var(--roast); }
+  .kr-target {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: .8rem;
+    font-weight: 700;
+    background: var(--fog);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 12px;
+    color: var(--accent1);
+    white-space: nowrap;
+    text-align: right;
+  }
+  @media(max-width:600px){
+    .okr-kr { grid-template-columns: 1fr; }
+    .kr-target { text-align: left; }
+  }
+
+  /* ── SKYWORK ── */
+  .sky-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 24px; }
+  .sky-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .sky-card-head {
+    background: linear-gradient(135deg, var(--blue), #1A3A5C);
+    padding: 16px 20px;
+    color: #fff;
+    font-weight: 700;
+    font-size: .92rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sky-card-head .icon { font-size: 1.2rem; }
+  .sky-card-body { padding: 20px; }
+  .sky-card-body p { font-size: .83rem; color: var(--muted); font-family: 'Helvetica Neue', sans-serif; line-height: 1.65; margin-bottom: 10px; }
+  .sky-card-body ol, .sky-card-body ul { padding-left: 18px; }
+  .sky-card-body li { font-size: .82rem; color: var(--text); font-family: 'Helvetica Neue', sans-serif; line-height: 1.65; margin-bottom: 4px; }
+
+  /* ── PROMPT BOX ── */
+  .prompt-box {
+    background: #1E1E1E;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 16px;
+    font-family: 'Courier New', monospace;
+    font-size: .8rem;
+    line-height: 1.7;
+    color: #E0E0E0;
+    position: relative;
+    overflow-x: auto;
+  }
+  .prompt-box .comment { color: #6A9955; }
+  .prompt-box .key { color: #9CDCFE; }
+  .prompt-box .val { color: #CE9178; }
+  .prompt-box .bracket { color: #FFD700; }
+
+  /* ── QUARTER TABLE ── */
+  .quarter-table { margin-top: 24px; }
+  .q-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  .q-label {
+    background: var(--roast);
+    color: var(--gold);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-size: .85rem;
+    padding: 12px;
+    text-align: center;
+    line-height: 1.3;
+  }
+  .q-content {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+  .q-content h5 { font-size: .88rem; color: var(--roast); margin-bottom: 6px; font-weight: 700; }
+  .q-content ul { padding-left: 16px; }
+  .q-content li { font-size: .82rem; color: var(--muted); font-family: 'Helvetica Neue', sans-serif; line-height: 1.65; margin-bottom: 2px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--espresso);
+    color: var(--muted);
+    text-align: center;
+    padding: 32px 24px;
+    font-size: .78rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    letter-spacing: .05em;
+    margin-top: 48px;
+  }
+  .footer strong { color: var(--latte); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 0 24px;
+  }
+
+  /* ── SOURCE BADGE ── */
+  .source-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .source-badge {
+    background: var(--fog);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: .68rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: var(--muted);
+  }
+  .source-badge::before { content: '↗ '; }
+
+  /* ── INFO BOX ── */
+  .info-box {
+    background: var(--fog);
+    border-left: 4px solid var(--caramel);
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: .84rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: var(--text);
+    line-height: 1.65;
+  }
+  .info-box strong { color: var(--caramel); }
+
+  /* ── SCROLL TOP ── */
+  .back-top {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    background: var(--roast);
+    color: var(--gold);
+    border: none;
+    border-radius: 50%;
+    width: 44px; height: 44px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,.3);
+    z-index: 99;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    transition: transform .2s;
+  }
+  .back-top:hover { transform: translateY(-3px); }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════ -->
+<div class="hero">
+  <div class="hero-badge">Phase 1 · 品牌定位深化 + 年度目標設定</div>
+  <h1>BNotes <span>策略報告</span><br>2026</h1>
+  <p class="hero-sub">Brand Positioning · Competitive Analysis · OKR · AI Workflow · Skywork Execution Plan</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><strong>NT$1,050億+</strong><span>台灣咖啡市場規模</span></div>
+    <div class="hero-meta-item"><strong>5–8%</strong><span>年增長率</span></div>
+    <div class="hero-meta-item"><strong>3個</strong><span>核心競爭差異</span></div>
+    <div class="hero-meta-item"><strong>3大OKR</strong><span>2026年度目標</span></div>
+    <div class="hero-meta-item"><strong>2026.04</strong><span>報告版本</span></div>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc-wrap container" style="max-width:1080px; margin: 40px auto 0; padding: 0 24px;">
+  <div class="toc-wrap">
+    <h3>📋 報告目錄</h3>
+    <div class="toc-grid">
+      <a href="#research">一、市場調研摘要</a>
+      <a href="#kol">二、標竿 KOL 分析</a>
+      <a href="#platform">三、平台使用數據</a>
+      <a href="#positioning">四、品牌定位聲明</a>
+      <a href="#diff">五、差異化競爭優勢</a>
+      <a href="#tov">六、品牌人格 · TOV</a>
+      <a href="#triangle">七、內容定位三角形</a>
+      <a href="#okr">八、2026 年度 OKR</a>
+      <a href="#skywork">九、Skywork 執行方案</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 1: 市場調研
+══════════════════════════════════════════════ -->
+<div class="section" id="research">
+  <div class="section-label">Research · 01</div>
+  <div class="section-title">台灣精品咖啡市場調研摘要</div>
+  <div class="section-desc">基於 食力FoodNext、Shopping Design、C³offee 咖啡誌、DataReportal 等權威來源，彙整 2025–2026 年最新市場數據。</div>
+
+  <div class="research-grid">
+    <div class="r-card">
+      <span class="r-card-icon">📊</span>
+      <h4>市場規模與增長</h4>
+      <p>2025年台灣咖啡市場突破 <strong>1,000億新台幣</strong>，其中咖啡服務產業超過400億元。以 5–8% 年增率計算，2026年預測規模達 <strong>1,050–1,080億元</strong>。</p>
+      <div class="stat-row">
+        <span class="stat-chip">CAGR 5–8%</span>
+        <span class="stat-chip">人均200杯/年</span>
+        <span class="stat-chip">亞洲第3位</span>
+      </div>
+    </div>
+
+    <div class="r-card">
+      <span class="r-card-icon">🌊</span>
+      <h4>第四波浪潮趨勢</h4>
+      <ul>
+        <li>「科技驅動」+ 永續供應鏈意識崛起</li>
+        <li>可追溯性（Traceability）成必備訴求</li>
+        <li>植物奶替代品需求持續攀升</li>
+        <li>2026年世界百大咖啡館台灣4間入選</li>
+        <li>SCA CVA 新評估系統掀起咖啡教育革命</li>
+      </ul>
+    </div>
+
+    <div class="r-card">
+      <span class="r-card-icon">👤</span>
+      <h4>核心受眾畫像</h4>
+      <ul>
+        <li><strong>年齡層：</strong>25–39歲為精品咖啡主力（66%滲透率）</li>
+        <li><strong>知識需求：</strong>從感覺型→分析型轉變</li>
+        <li><strong>消費動機：</strong>透明度、健康、產地故事</li>
+        <li><strong>訂閱行為：</strong>從CP值導向→風味探索導向</li>
+      </ul>
+    </div>
+
+    <div class="r-card">
+      <span class="r-card-icon">🏫</span>
+      <h4>咖啡教育市場</h4>
+      <ul>
+        <li>Hahow、PressPlay、知識衛星三強鼎立</li>
+        <li>SCA認證課程需求快速增長</li>
+        <li>感官訓練、金杯理論、烘豆科學為熱門主題</li>
+        <li>CVA（Coffee Value Assessment）為2026新興議題</li>
+      </ul>
+      <div class="stat-row">
+        <span class="stat-chip">線上課程市場高速增長</span>
+      </div>
+    </div>
+
+    <div class="r-card">
+      <span class="r-card-icon">🏆</span>
+      <h4>2026台灣百大咖啡館</h4>
+      <ul>
+        <li><strong>#36</strong> Coffee Sind</li>
+        <li><strong>#46</strong> Keep Coffee Roastery</li>
+        <li><strong>#57</strong> Tomorrow Coffee Roasters</li>
+        <li><strong>#78</strong> Coffee Stopover Black</li>
+      </ul>
+      <p style="margin-top:8px;">台灣精品咖啡國際能見度持續提升，在地烘豆師進入全球視野。</p>
+    </div>
+
+    <div class="r-card">
+      <span class="r-card-icon">⚠️</span>
+      <h4>市場空缺機會</h4>
+      <ul>
+        <li>繁體中文高階咖啡科學內容嚴重不足</li>
+        <li>咖啡宏觀經濟（期貨/氣候/供應鏈）幾乎無人深耕</li>
+        <li>ESG 與永續發展專題尚無標竿媒體</li>
+        <li>國際賽事與本地脈絡橋接的知識內容空缺</li>
+      </ul>
+      <div class="stat-row">
+        <span class="stat-chip" style="color:var(--red); background:#FEF2F2; border-color:#FECACA;">BNotes 藍海機會</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="source-row">
+    <span class="source-badge">食力 FoodNext 2025/09</span>
+    <span class="source-badge">Shopping Design 2026/02</span>
+    <span class="source-badge">C³offee 咖啡誌</span>
+    <span class="source-badge">Hsin Coffee 2025趨勢報告</span>
+    <span class="source-badge">ACE卓越咖啡聯盟</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 2: KOL 分析
+══════════════════════════════════════════════ -->
+<div class="section" id="kol">
+  <div class="section-label">Research · 02</div>
+  <div class="section-title">咖啡知識型自媒體標竿分析</div>
+  <div class="section-desc">從全球到在地，拆解 5 個標竿的定位邏輯，識別 BNotes 的差異化切入點。</div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>創作者</th>
+          <th>規模</th>
+          <th>核心定位</th>
+          <th>差異化優勢</th>
+          <th>內容風格</th>
+          <th>受眾群</th>
+          <th>缺口</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>James Hoffmann</strong><br><span style="font-size:.72rem; color:var(--muted); font-family:sans-serif;">YouTube 全球</span></td>
+          <td><strong>250萬</strong><br><span style="font-size:.72rem; color:var(--muted); font-family:sans-serif;">訂閱</span></td>
+          <td>精品咖啡百科全書<br>科學 × 器材 × 產業</td>
+          <td>2007世界冠軍背景；電影級製作；嚴密邏輯敘事</td>
+          <td><span class="tag tag-sci">科學派</span></td>
+          <td>全球愛好者至專業咖啡師</td>
+          <td>無繁中版本；不聚焦台灣/亞洲市場</td>
+        </tr>
+        <tr>
+          <td><strong>Lance Hedrick</strong><br><span style="font-size:.72rem; color:var(--muted); font-family:sans-serif;">YouTube 全球</span></td>
+          <td><strong>41.1萬</strong><br><span style="font-size:.72rem; color:var(--muted); font-family:sans-serif;">訂閱</span></td>
+          <td>咖啡科學極客<br>萃取物理 × 水質化學</td>
+          <td>深度技術拆解；發燒友社群；互動感強</td>
+          <td><span class="tag tag-sci">科學派</span></td>
+          <td>Prosumer、職業從業者</td>
+          <td>無在地化；中文受眾無法取用</td>
+        </tr>
+        <tr>
+          <td><strong>虎記商行</strong><br><span style="font-size:.72rem; color:var(--muted); font-family:sans-serif;">YouTube 台灣</span></td>
+          <td><strong>13.4萬</strong><br><span style="font-size:.72rem; color:var(--muted); font-family:sans-serif;">訂閱</span></td>
+          <td>娛樂實務派<br>烘豆 × 店面經營</td>
+          <td>VLOG親和力；降低精品門檻；本土品牌忠誠度</td>
+          <td><span class="tag tag-life">生活派</span></td>
+          <td>對咖啡有興趣的一般大眾</td>
+          <td>知識深度不足；科學層次淺</td>
+        </tr>
+        <tr>
+          <td><strong>VVcafe（學長帶你喝咖啡）</strong><br><span style="font-size:.72rem; color:var(--muted); font-family:sans-serif;">YouTube 台灣</span></td>
+          <td><strong>3.4萬</strong><br><span style="font-size:.72rem; color:var(--muted); font-family:sans-serif;">訂閱</span></td>
+          <td>系統教學派<br>手沖基礎 × 濾杯評測</td>
+          <td>結構化教學；線上課程商業閉環</td>
+          <td><span class="tag tag-edu">教育派</span></td>
+          <td>初學者到中階愛好者</td>
+          <td>深度不足；宏觀視角缺失</td>
+        </tr>
+        <tr>
+          <td><strong>咖啡空少（Jerry）</strong><br><span style="font-size:.72rem; color:var(--muted); font-family:sans-serif;">Instagram 台灣</span></td>
+          <td><strong>10萬+</strong><br><span style="font-size:.72rem; color:var(--muted); font-family:sans-serif;">追蹤</span></td>
+          <td>生活美學 × 旅遊探店<br>全球咖啡館巡禮</td>
+          <td>高質感攝影；空間美學；品牌故事敘事</td>
+          <td><span class="tag tag-life">生活派</span></td>
+          <td>喜歡咖啡生活美學的25-35歲女性</td>
+          <td>知識深度幾乎為零</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box" style="margin-top:20px;">
+    <strong>🎯 市場空缺結論：</strong>
+    台灣目前缺乏一個能將「全球咖啡科學深度」與「台灣在地視角」結合的繁體中文知識媒體。歐美標竿已進入「基礎科學研究」階段，台灣標竿多停留在「器材心得」與「店面 VLOG」。<strong>BNotes 的機會在於：成為台灣版的「有在地洞察的 James Hoffmann」</strong>——深度、嚴謹、但用台灣人熟悉的語境說話。
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 3: 平台數據
+══════════════════════════════════════════════ -->
+<div class="section" id="platform">
+  <div class="section-label">Research · 03</div>
+  <div class="section-title">台灣咖啡受眾平台使用數據</div>
+  <div class="section-desc">基於 DataReportal 2025、Firstory 2026 Podcast 趨勢報告等，整理三大平台在台灣精品咖啡受眾中的角色定位。</div>
+
+  <div class="platform-grid">
+    <div class="platform-card">
+      <div class="platform-icon">📸</div>
+      <div class="platform-name">Instagram</div>
+      <span class="platform-role role-awareness">曝光首選</span>
+      <div class="platform-stat">
+        <strong>1,130萬</strong>台灣使用者（占總人口48.8%）<br>
+        <strong>Reels 觸及率</strong>為靜態圖文的 <strong>2.5倍</strong>（↑ vs 2025年的2.25倍）<br>
+        演算法核心指標：觀看時間 + 分享數<br>
+        Reels 最佳長度縮短至 <strong>7-12秒</strong>，前3秒決定40%留存<br><br>
+        <em>→ BNotes 策略：視覺化咖啡知識卡片 + 短Reels知識鉤子</em>
+      </div>
+    </div>
+
+    <div class="platform-card">
+      <div class="platform-icon">▶️</div>
+      <div class="platform-name">YouTube</div>
+      <span class="platform-role role-convert">轉化與信任</span>
+      <div class="platform-stat">
+        18–44歲核心族群滲透率接近 <strong>90%</strong><br>
+        Video Podcast 成主流，60%週活躍聽眾偏好影音格式<br>
+        教學類（10–15分鐘）建立深度信任；Shorts快速曝光<br><br>
+        <strong>咖啡教育類影片</strong>為知識型創作者最強轉化工具<br><br>
+        <em>→ BNotes 策略：長影片建立知識權威，Shorts作為IG引流漏斗</em>
+      </div>
+    </div>
+
+    <div class="platform-card">
+      <div class="platform-icon">📧</div>
+      <div class="platform-name">Newsletter 電子報</div>
+      <span class="platform-role role-convert">高價值轉化</span>
+      <div class="platform-stat">
+        台灣零售/餐飲業平均開信率 <strong>22–31%</strong><br>
+        Substack 與 Beehiiv 為2026主要成長平台<br>
+        分眾化（Segmentation）可提升點擊率約 <strong>23%</strong><br>
+        精品咖啡受眾的長文字需求 + 高開信率組合<br><br>
+        <em>→ BNotes 策略：每週Deep Dive電子報，作為付費訂閱前哨站</em>
+      </div>
+    </div>
+
+    <div class="platform-card">
+      <div class="platform-icon">🎙️</div>
+      <div class="platform-name">Podcast</div>
+      <span class="platform-role role-loyalty">忠誠度培養</span>
+      <div class="platform-stat">
+        核心聽眾 <strong>28–44歲</strong>，消費力最高<br>
+        35–44歲女性增長最快（+8.9%，Firstory 2026）<br>
+        咖啡職人訪談 + 產地故事為熱門主題<br><br>
+        <em>→ BNotes 策略：月度深度訪談節目，鞏固品牌深度認同</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box" style="margin-top:20px;">
+    <strong>📡 BNotes 全平台佈局建議：</strong>
+    Instagram（曝光獲客）→ YouTube（深度信任轉化）→ Newsletter（高黏著訂閱）→ Podcast（忠誠社群培育）。
+    各平台角色明確，形成完整受眾漏斗。<strong>Threads</strong>作為2026年新興補充，適合文字型知識互動與即時討論。
+  </div>
+
+  <div class="source-row">
+    <span class="source-badge">DataReportal Digital 2025 Taiwan</span>
+    <span class="source-badge">Firstory 2026 Podcast趨勢報告</span>
+    <span class="source-badge">Meta 廣告工具 2025 Q1</span>
+    <span class="source-badge">MailerLite 2025-2026產業基準</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 4: 品牌定位聲明
+══════════════════════════════════════════════ -->
+<div class="section" id="positioning">
+  <div class="section-label">Output 01-A · 品牌定位精修</div>
+  <div class="section-title">品牌核心定位聲明</div>
+  <div class="section-desc">基於市場空缺與受眾洞察，為 BNotes 建立唯一且可防禦的品牌定位。</div>
+
+  <div class="brand-statement">
+    <div class="en">"BNotes is the definitive Mandarin-language guide to specialty coffee — where scientific rigor meets Taiwanese terroir, transforming curious drinkers into confident connoisseurs."</div>
+    <div class="zh">「BNotes 是最具深度的繁體中文精品咖啡知識媒體——以科學嚴謹度剖析每一杯咖啡的本質，以台灣視角連結全球咖啡文化，將好奇的飲者培育成自信的鑑賞者。」</div>
+  </div>
+
+  <div class="info-box">
+    <strong>定位聲明解構：</strong>「科學嚴謹度（Scientific Rigor）」對標 James Hoffmann 的全球權威定位；「台灣視角（Taiwanese Terroir）」建立在地不可複製性；「飲者→鑑賞者（Drinker→Connoisseur）」明確受眾轉化旅程，也是 BNotes 的核心價值主張。
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 5: 差異化競爭優勢
+══════════════════════════════════════════════ -->
+<div class="section" id="diff">
+  <div class="section-label">Output 01-B · 品牌定位精修</div>
+  <div class="section-title">差異化競爭優勢分析</div>
+  <div class="section-desc">BNotes vs. 現有競品的 3 個核心差異——不是「更好」，而是「唯一」。</div>
+
+  <div class="diff-grid">
+    <div class="diff-card">
+      <span class="diff-num">01</span>
+      <h4>科學深度 × 繁中首創</h4>
+      <p>台灣目前沒有任何自媒體能以「萃取物理學、水質化學、CVA評估系統」等深度科學框架，用繁體中文呈現精品咖啡。BNotes 填補這個語言層次的知識真空，成為台灣版本的嚴謹科普媒體。</p>
+      <div class="vs-row">
+        <div class="vs-them"><span class="vs-label">競品</span>器材開箱 + 沖煮SOP</div>
+        <div class="vs-us"><span class="vs-label">BNotes</span>萃取科學 + 風味機制拆解</div>
+      </div>
+    </div>
+
+    <div class="diff-card">
+      <span class="diff-num">02</span>
+      <h4>台灣視角 × 全球連結</h4>
+      <p>BNotes 擁有雙重視角：以台灣本地烘豆師、咖啡館生態、消費習慣為根基，同時連結 SCA、COE 等國際標準。這種「在地深耕、全球視野」的組合，是歐美標竿做不到、台灣競品沒有做到的。</p>
+      <div class="vs-row">
+        <div class="vs-them"><span class="vs-label">James Hoffmann</span>無台灣視角</div>
+        <div class="vs-us"><span class="vs-label">BNotes</span>台灣產地 + 國際框架</div>
+      </div>
+    </div>
+
+    <div class="diff-card">
+      <span class="diff-num">03</span>
+      <h4>知識媒體 × AI 生產系統</h4>
+      <p>BNotes 以 Skywork AI 工具建立可擴展的內容生產基礎設施：DeepResearch 追蹤產業動態、自動化報告生成、結構化知識庫管理。這讓 BNotes 在內容產出速度與深度上，能以一人團隊媲美多人編輯部。</p>
+      <div class="vs-row">
+        <div class="vs-them"><span class="vs-label">競品</span>人工生產，更新緩慢</div>
+        <div class="vs-us"><span class="vs-label">BNotes</span>AI 輔助，持續輸出</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 6: TOV
+══════════════════════════════════════════════ -->
+<div class="section" id="tov">
+  <div class="section-label">Output 01-C · 品牌人格設定</div>
+  <div class="section-title">Tone of Voice 指南</div>
+  <div class="section-desc">品牌說話的方式，決定受眾是否信任你。以下是 BNotes 的 5 個品牌形容詞與 3 個反例。</div>
+
+  <div class="tov-grid">
+    <div class="tov-box">
+      <h5>✅ BNotes 的聲音 — 5 個核心形容詞</h5>
+      <div>
+        <span class="adj-pill">嚴謹 <span class="adj-sub">Rigorous</span></span>
+        <span class="adj-pill">清晰 <span class="adj-sub">Lucid</span></span>
+        <span class="adj-pill">溫暖 <span class="adj-sub">Warm</span></span>
+        <span class="adj-pill">在地 <span class="adj-sub">Rooted</span></span>
+        <span class="adj-pill">前瞻 <span class="adj-sub">Forward-thinking</span></span>
+      </div>
+      <div class="info-box" style="margin-top:16px;">
+        <strong>嚴謹</strong>：每個數據有來源，每個主張有依據。<br>
+        <strong>清晰</strong>：複雜科學用比喻說清楚，不賣弄術語。<br>
+        <strong>溫暖</strong>：讀者是正在學習的人，不是考試的學生。<br>
+        <strong>在地</strong>：台灣咖啡生態是敘事的起點，不是附帶。<br>
+        <strong>前瞻</strong>：比市場早一步談論下一個咖啡浪潮。
+      </div>
+    </div>
+
+    <div class="tov-box">
+      <h5>❌ BNotes 不是這樣說話的 — 3 個反例</h5>
+      <div style="margin-bottom:12px;">
+        <span class="neg-pill">浮誇炒作型</span>
+        <p style="font-size:.8rem; color:var(--muted); font-family:sans-serif; margin-top:6px; padding-left:4px;">避免：「史上最驚人的咖啡知識！你一定不知道！」這種標題黨語氣，違背嚴謹形象。</p>
+      </div>
+      <div style="margin-bottom:12px;">
+        <span class="neg-pill">學術教條型</span>
+        <p style="font-size:.8rem; color:var(--muted); font-family:sans-serif; margin-top:6px; padding-left:4px;">避免：「根據萃取方程式，TDS值應落在1.15-1.45%以獲得最佳溶解固體率…」——不翻譯成人話就發出去。</p>
+      </div>
+      <div>
+        <span class="neg-pill">追熱點型</span>
+        <p style="font-size:.8rem; color:var(--muted); font-family:sans-serif; margin-top:6px; padding-left:4px;">避免：為了流量跟風做「十大IG打卡咖啡廳推薦」——這不是 BNotes 的核心競爭力。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box" style="margin-top:20px;">
+    <strong>📝 TOV 實際應用範例對比：</strong><br>
+    ❌ 不這樣說：「這款耶加雪菲喝起來超級清新！大推！」<br>
+    ✅ BNotes 這樣說：「這支耶加雪菲的茉莉花香來自咖啡豆在水洗後發酵過程中產生的 Linalool 化合物。高海拔日照差讓酸度更明顯——這正是埃塞俄比亞 Gedeo Zone 地區的風土特徵。」
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 7: 內容三角形
+══════════════════════════════════════════════ -->
+<div class="section" id="triangle">
+  <div class="section-label">Output 01-D · 內容定位三角形</div>
+  <div class="section-title">我們談什麼 · 我們不談什麼 · 我們如何談</div>
+  <div class="section-desc">內容定位三角形是品牌編輯決策的最終過濾器。每一篇內容都應能對應三角形中的位置。</div>
+
+  <div class="triangle-wrap">
+    <div class="tri-card tri-talk">
+      <h4>🟢 我們談什麼</h4>
+      <ul>
+        <li>咖啡萃取科學（溫度、時間、研磨度）</li>
+        <li>風味輪解構與感官訓練方法</li>
+        <li>台灣在地烘豆師與咖啡農的故事</li>
+        <li>SCA / CVA 國際認證與評鑑體系</li>
+        <li>全球咖啡產業趨勢（COE、期貨、氣候影響）</li>
+        <li>精品器材深度評測（含科學測量數據）</li>
+        <li>咖啡與健康的科學研究</li>
+        <li>AI 工具在咖啡學習中的應用</li>
+      </ul>
+    </div>
+
+    <div class="tri-card tri-no">
+      <h4>🔴 我們不談什麼</h4>
+      <ul>
+        <li>IG 打卡咖啡廳純粹美食推薦</li>
+        <li>未經驗證的「健康偏方」類咖啡內容</li>
+        <li>純商業廣告文宣（無知識價值包裝）</li>
+        <li>迎合演算法的標題黨內容</li>
+        <li>連鎖速食咖啡品牌話題（非精品領域）</li>
+        <li>與咖啡知識無關的生活風格泛娛樂內容</li>
+      </ul>
+    </div>
+
+    <div class="tri-card tri-how">
+      <h4>🔵 我們如何談</h4>
+      <ul>
+        <li>每個主張引用可驗證的數據或研究</li>
+        <li>複雜概念用「3步驟比喻法」翻譯成日常語言</li>
+        <li>在地故事作為開場，國際框架作為深度</li>
+        <li>不炒熱度，但永遠對讀者有實際幫助</li>
+        <li>固定欄目結構，建立讀者閱讀期待感</li>
+        <li>鼓勵讀者實作——每篇給一個「今天就能做的小實驗」</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 8: OKR
+══════════════════════════════════════════════ -->
+<div class="section" id="okr">
+  <div class="section-label">Output 02 · 2026 年度目標 OKR</div>
+  <div class="section-title">BNotes 2026 全年 OKR</div>
+  <div class="section-desc">三個 Objective 覆蓋品牌影響力、商業變現、AI 系統三條主線，每條設定 3 個量化關鍵結果。</div>
+
+  <!-- OBJ 1 -->
+  <div class="okr-block">
+    <div class="okr-obj">
+      <div class="okr-obj-num">OBJ 1</div>
+      <div>
+        <h4>成為台灣最具公信力的精品咖啡知識媒體</h4>
+        <p>建立品牌知名度與知識權威，使 BNotes 成為台灣精品咖啡愛好者的第一查詢來源</p>
+      </div>
+    </div>
+    <div class="okr-krs">
+      <div class="okr-kr">
+        <div class="kr-label">KR 1</div>
+        <div class="kr-text">YouTube 頻道訂閱數達到 <strong>10,000</strong>，單月影片平均觀看完成率 ≥ 40%</div>
+        <div class="kr-target">2026/12<br>10,000 subs</div>
+      </div>
+      <div class="okr-kr">
+        <div class="kr-label">KR 2</div>
+        <div class="kr-text">Instagram 帳號追蹤數達 <strong>15,000</strong>，Reels 平均觸及率 ≥ 8%（高於行業基準4%）</div>
+        <div class="kr-target">2026/12<br>15,000 followers</div>
+      </div>
+      <div class="okr-kr">
+        <div class="kr-label">KR 3</div>
+        <div class="kr-text">Newsletter 訂閱人數達 <strong>3,000</strong>，每期開信率穩定維持 ≥ 35%（高於產業基準31%）</div>
+        <div class="kr-target">2026/12<br>3,000 subs / 35% OR</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OBJ 2 -->
+  <div class="okr-block">
+    <div class="okr-obj">
+      <div class="okr-obj-num">OBJ 2</div>
+      <div>
+        <h4>建立可持續的自媒體變現系統</h4>
+        <p>從免費內容轉化為多元收入來源，建立知識付費 + 品牌合作 + 社群訂閱三角變現模式</p>
+      </div>
+    </div>
+    <div class="okr-krs">
+      <div class="okr-kr">
+        <div class="kr-label">KR 1</div>
+        <div class="kr-text"><strong>Newsletter 付費訂閱</strong>上線（Substack 或自建系統），年底達 <strong>200位</strong>付費訂閱者，月費 NT$250 → 月收入 NT$50,000</div>
+        <div class="kr-target">200 paid subs<br>NT$50K MRR</div>
+      </div>
+      <div class="okr-kr">
+        <div class="kr-label">KR 2</div>
+        <div class="kr-text">完成 <strong>2門線上課程</strong> 上架（平台：Hahow 或 PressPlay），課程收入年度累計達 <strong>NT$300,000</strong>；完成 <strong>3個以上</strong>精品器材或咖啡豆品牌的深度評測合作</div>
+        <div class="kr-target">2 courses<br>NT$300K revenue</div>
+      </div>
+      <div class="okr-kr">
+        <div class="kr-label">KR 3</div>
+        <div class="kr-text">建立 BNotes <strong>知識社群（Discord 或 LINE OA）</strong>，Q4 活躍成員 ≥ <strong>500人</strong>，社群月均互動次數 ≥ 200次，為付費訂閱轉化提供前哨站</div>
+        <div class="kr-target">500 active members<br>200 interactions/mo</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OBJ 3 -->
+  <div class="okr-block">
+    <div class="okr-obj">
+      <div class="okr-obj-num">OBJ 3</div>
+      <div>
+        <h4>完成 AI 自動化內容生產系統</h4>
+        <p>以 Skywork 工具為核心，建立可重複執行的 AI 輔助創作流水線，降低內容生產成本並提升輸出一致性</p>
+      </div>
+    </div>
+    <div class="okr-krs">
+      <div class="okr-kr">
+        <div class="kr-label">KR 1</div>
+        <div class="kr-text">建立 <strong>BNotes 內容 SOP 資料庫</strong>：完成 ≥ <strong>12個</strong>可重複使用的 Prompt 模板（涵蓋：市場調研 / 選題分析 / 文案撰寫 / 社群排程），並在 Skywork 平台完成測試驗證</div>
+        <div class="kr-target">12 Prompt SOP<br>Q2完成</div>
+      </div>
+      <div class="okr-kr">
+        <div class="kr-label">KR 2</div>
+        <div class="kr-text">每月自動生成 <strong>「BNotes 品牌健康度月報」</strong>：包含訂閱增長率、互動率趨勢、競品動態追蹤、內容表現TOP3，使用 Skywork DeepResearch 自動彙整，人工審核時間 ≤ <strong>30分鐘/月</strong></div>
+        <div class="kr-target">月報自動化<br>≤30分鐘人工</div>
+      </div>
+      <div class="okr-kr">
+        <div class="kr-label">KR 3</div>
+        <div class="kr-text">AI 輔助工作流使每週內容輸出量提升至 <strong>5件/週</strong>（現況基準：1–2件/週），單件內容製作時間壓縮 ≥ <strong>40%</strong>，且內容品質評分（讀者評分）不低於手工製作基準</div>
+        <div class="kr-target">5 pieces/week<br>↓40% production time</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 9: SKYWORK 執行方案
+══════════════════════════════════════════════ -->
+<div class="section" id="skywork">
+  <div class="section-label">Output 03 · Skywork 執行方案</div>
+  <div class="section-title">AI 自動化內容系統設計</div>
+  <div class="section-desc">三個模組構成 BNotes 的 AI 工作基礎設施：產業監測 · 品牌健康月報 · 季度品牌校準。</div>
+
+  <div class="sky-grid">
+    <div class="sky-card">
+      <div class="sky-card-head"><span class="icon">🔍</span>模組 1：DeepResearch 產業動態追蹤</div>
+      <div class="sky-card-body">
+        <p>每週使用 Skywork DeepResearch 對以下議題進行自動化搜尋與摘要，確保 BNotes 永遠是市場最前沿的知識聲音：</p>
+        <ol>
+          <li>全球 SCA / COE 競賽與評鑑最新動態</li>
+          <li>台灣本地烘豆師 × 咖啡農新進展</li>
+          <li>咖啡科學期刊新研究（氣候、育種、萃取）</li>
+          <li>精品咖啡器材市場新品發布</li>
+          <li>競品自媒體最近一週發布內容分析</li>
+        </ol>
+        <p style="margin-top:10px;"><strong>執行頻率：</strong>每週一 09:00 自動執行，生成5件選題候選</p>
+        <p><strong>輸出格式：</strong>標題 + 核心論點 + 3個可用素材來源 + BNotes 差異化角度建議</p>
+      </div>
+    </div>
+
+    <div class="sky-card">
+      <div class="sky-card-head"><span class="icon">📊</span>模組 2：每月品牌健康度報告</div>
+      <div class="sky-card-body">
+        <p>每月月底，使用以下 Prompt 模板自動生成品牌健康度報告（預計人工審核 ≤ 30分鐘）：</p>
+      </div>
+    </div>
+
+    <div class="sky-card">
+      <div class="sky-card-head"><span class="icon">🔄</span>模組 3：季度品牌定位校準</div>
+      <div class="sky-card-body">
+        <p>每季完成一次系統性品牌複盤，確保定位不偏移、OKR 按軌進行：</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROMPT BOX -->
+  <div style="margin-top:32px;">
+    <h4 style="font-size:.85rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-family:'Helvetica Neue',sans-serif; margin-bottom:12px;">📋 每月品牌健康度 Prompt 模板</h4>
+    <div class="prompt-box">
+<span class="comment"># BNotes 月度品牌健康度報告 Prompt — v2026.04</span>
+
+<span class="key">角色設定：</span>
+<span class="val">你是 BNotes 的品牌策略分析師，精通精品咖啡產業與內容自媒體領域。</span>
+
+<span class="key">任務：</span>
+<span class="val">生成本月（[YEAR-MONTH]）BNotes 品牌健康度分析報告，涵蓋：</span>
+
+<span class="bracket">【1. 數據回顧】</span>
+- YouTube：本月新增訂閱 [數字]，平均觀看時長 [分鐘]，表現TOP3影片
+- Instagram：本月觸及人數 [數字]，互動率 [%]，Reels vs 圖文表現差異
+- Newsletter：本期發送量 [數字]，開信率 [%]，點擊率 [%]，退訂率 [%]
+- 社群（Discord/LINE）：本月新增成員 [數字]，活躍討論話題TOP3
+
+<span class="bracket">【2. 競品動態摘要】</span>
+- 搜尋過去30天內以下關鍵詞：「台灣咖啡知識」「精品咖啡教學」「咖啡科學」
+- 識別有哪些新創作者或媒體出現，他們的定位與 BNotes 有何重疊？
+- James Hoffmann / Lance Hedrick 本月是否發布與台灣市場相關的內容？
+
+<span class="bracket">【3. 品牌定位健康度評估】</span>
+- 本月發布的內容，有幾篇符合「科學嚴謹 × 台灣視角」的定位標準？
+- 是否有偏離核心定位的內容？（如：純打卡推薦、未引用數據的主張）
+- 受眾留言/回饋中，最常出現的關鍵詞是什麼？（正向/負向各列3個）
+
+<span class="bracket">【4. 下月行動建議】</span>
+- 基於以上分析，提出3個最優先執行的內容選題
+- 提出1個需要修正的品牌行為（如：某類內容發布頻率需調整）
+- 提出1個值得測試的新內容格式或平台功能
+
+<span class="key">輸出格式：</span>
+<span class="val">Markdown 格式，含執行摘要（300字以內）+ 詳細分析 + 行動清單</span>
+    </div>
+  </div>
+
+  <!-- QUARTER -->
+  <div style="margin-top:36px;">
+    <h4 style="font-size:.85rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-family:'Helvetica Neue',sans-serif; margin-bottom:16px;">🗓️ 季度品牌定位校準流程</h4>
+    <div class="quarter-table">
+      <div class="q-row">
+        <div class="q-label">Q1<br>複盤</div>
+        <div class="q-content">
+          <h5>1月—3月 · 基礎建立期校準</h5>
+          <ul>
+            <li>DeepResearch 生成「台灣精品咖啡2026 Q1產業報告」</li>
+            <li>與年初品牌定位聲明進行逐條比對，確認是否出現偏移</li>
+            <li>審核 TOV 指南：本季發布內容是否符合5個形容詞標準？</li>
+            <li>KR 達成率追蹤：Q1 OKR 指標完成度 % 評估</li>
+            <li>輸出：Q2 內容日曆草案 + 1-3 個定位微調建議</li>
+          </ul>
+        </div>
+      </div>
+      <div class="q-row">
+        <div class="q-label">Q2<br>複盤</div>
+        <div class="q-content">
+          <h5>4月—6月 · 增長驗證期校準</h5>
+          <ul>
+            <li>DeepResearch 生成「競品定位地圖 2026 H1」——識別新進入者</li>
+            <li>受眾問卷：發送 10 題品牌認知調查（用 Google Form），樣本 ≥ 200人</li>
+            <li>付費訂閱轉化率分析：從哪個內容/平台來的受眾付費率最高？</li>
+            <li>AI 系統效能審核：Prompt SOP 是否需要更新？</li>
+            <li>輸出：H2 品牌戰略調整備忘錄（一頁版）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="q-row">
+        <div class="q-label">Q3<br>複盤</div>
+        <div class="q-content">
+          <h5>7月—9月 · 商業化深化期校準</h5>
+          <ul>
+            <li>線上課程 ROI 評估：Hahow/PressPlay 課程銷售數據與受眾回饋</li>
+            <li>DeepResearch 生成「2026 秋冬咖啡產業趨勢預測」作為 Q4 選題庫</li>
+            <li>評估是否需要引入合作作者或嘉賓擴充內容多樣性</li>
+            <li>品牌合作審核：已執行的評測合作是否符合 BNotes 定位標準？</li>
+            <li>輸出：Q4 年終衝刺計劃 + OKR 達成缺口應對策略</li>
+          </ul>
+        </div>
+      </div>
+      <div class="q-row">
+        <div class="q-label">Q4<br>年終</div>
+        <div class="q-content">
+          <h5>10月—12月 · 年度總結與2027定位</h5>
+          <ul>
+            <li>全年 OKR 達成率總報告（Skywork 自動生成 + 人工詮釋）</li>
+            <li>DeepResearch 生成「2027 台灣精品咖啡市場預測報告」</li>
+            <li>品牌定位聲明年度複核：是否需要調整？競爭格局如何變化？</li>
+            <li>2026 品牌資產盤點：訂閱者名單、內容庫、合作夥伴、品牌聲量</li>
+            <li>輸出：BNotes 2027 Phase 2 策略大綱</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>BNotes Phase 1 Strategy Report · 2026</strong><br>
+  市場數據來源：食力FoodNext · Shopping Design · DataReportal Digital 2025 · Firstory 2026 · MailerLite 2025-2026<br>
+  KOL數據來源：YouTube Official Channels · Social Blade · Instagram Business Profiles<br>
+  生成工具：Skywork AI · 版本：v2026.04.06
+</div>
+
+<a class="back-top" href="#" title="回到頂部">↑</a>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# Sitemap 宣告（讓所有搜尋引擎自動發現）
+Sitemap: https://bnotescoffee.com/sitemap.xml
+
+# 保護草稿與設定目錄（如有）
+Disallow: /drafts/
+Disallow: /admin/
+Disallow: /.well-known/
+
+# GPTBot（OpenAI）— 允許以利 GEO 引用
+User-agent: GPTBot
+Allow: /
+
+# PerplexityBot — 允許 AI 搜尋引擎索引
+User-agent: PerplexityBot
+Allow: /
+
+# Claude-Web — 允許 Anthropic AI 索引
+User-agent: Claude-Web
+Allow: /
+
+# Google Extended — 允許 Gemini 索引
+User-agent: Google-Extended
+Allow: /
+
+# RSS Feed
+Sitemap: https://bnotescoffee.com/feed.xml

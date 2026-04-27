@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BNotes 圖片語言手冊 v1.0</title>
+<style>
+  :root {
+    --gold:#c47e2b; --gold-light:#e8a84a; --coffee-dark:#1a0a00;
+    --coffee-warm:#5c2d00; --coffee-mid:#8b4513; --coffee-light:#d4a96a;
+    --cream:#f5f0e8; --bg:#faf8f5; --border:#e8ddd0;
+    --font-serif:'Georgia',serif; --font-sans:system-ui,-apple-system,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font-sans);background:var(--bg);color:#2a1a0a;line-height:1.75}
+  a{color:var(--gold);text-decoration:none}
+
+  /* === NAV === */
+  .nav{background:var(--coffee-dark);padding:1rem 2rem;position:sticky;top:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between}
+  .nav-brand{color:#fff;font-family:var(--font-serif);font-size:1.1rem;font-weight:700;letter-spacing:.05em}
+  .nav-brand span{color:var(--gold-light)}
+  .nav-ver{font-size:.7rem;color:rgba(255,255,255,.45);letter-spacing:.15em;text-transform:uppercase}
+
+  /* === HERO === */
+  .page-hero{background:linear-gradient(135deg,var(--coffee-dark) 0%,#2d1200 60%,#1a0800 100%);
+    padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}
+  .page-hero::before{content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse at 70% 40%,rgba(196,126,43,.2) 0%,transparent 60%)}
+  .page-hero h1{font-family:var(--font-serif);font-size:clamp(2rem,5vw,3.5rem);color:#fff;
+    font-weight:700;margin-bottom:1rem;position:relative}
+  .page-hero h1 em{color:var(--gold-light);font-style:normal}
+  .page-hero p{color:rgba(255,255,255,.7);max-width:560px;margin:0 auto 2rem;font-size:1.05rem}
+  .hero-tags{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;position:relative}
+  .hero-tag{background:rgba(196,126,43,.2);border:1px solid rgba(196,126,43,.4);
+    color:var(--gold-light);padding:.35rem .9rem;border-radius:20px;font-size:.8rem;letter-spacing:.05em}
+
+  /* === LAYOUT === */
+  .container{max-width:1080px;margin:0 auto;padding:0 2rem}
+  .section{padding:4rem 0 3rem}
+  .section-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:2rem;
+    padding-bottom:1rem;border-bottom:2px solid var(--border)}
+  .section-num{font-size:3rem;font-weight:900;color:var(--gold);opacity:.35;
+    font-family:var(--font-serif);line-height:1}
+  .section-title{font-family:var(--font-serif);font-size:1.5rem;color:var(--coffee-dark);font-weight:700}
+  .section-sub{font-size:.85rem;color:#888;margin-top:.25rem}
+
+  /* === CATEGORY CARDS === */
+  .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem}
+  .cat-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);
+    background:#fff;transition:box-shadow .2s,transform .2s}
+  .cat-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.1);transform:translateY(-3px)}
+  .cat-card-color{height:80px;display:flex;align-items:center;justify-content:center;
+    font-size:2rem;position:relative;overflow:hidden}
+  .cat-card-color::after{content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.15))}
+  .cat-card-body{padding:1.25rem}
+  .cat-name{font-weight:700;font-size:.95rem;color:var(--coffee-dark);margin-bottom:.4rem}
+  .cat-desc{font-size:.82rem;color:#666;line-height:1.5;margin-bottom:.75rem}
+  .cat-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+  .cat-tag{font-size:.72rem;padding:.2rem .6rem;border-radius:10px;font-weight:600}
+
+  /* === COLOR PALETTE === */
+  .palette-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem}
+  .palette-card{border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+  .palette-swatch{height:90px;position:relative}
+  .palette-swatch-split{height:90px;display:flex}
+  .palette-swatch-split>div{flex:1}
+  .palette-info{padding:1rem;background:#fff}
+  .palette-name{font-weight:700;font-size:.88rem;color:var(--coffee-dark);margin-bottom:.3rem}
+  .palette-hex{font-family:'Courier New',monospace;font-size:.75rem;color:#888}
+  .palette-use{font-size:.78rem;color:#555;margin-top:.4rem}
+
+  /* === RATIO DEMO === */
+  .ratio-showcase{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+  .ratio-demo{border-radius:10px;overflow:hidden;border:2px solid var(--border);
+    background:#fff;padding:1.5rem}
+  .ratio-demo-title{font-weight:700;font-size:1rem;color:var(--coffee-dark);margin-bottom:1rem;
+    display:flex;align-items:center;gap:.5rem}
+  .ratio-badge{background:var(--gold);color:#fff;font-size:.7rem;font-weight:700;
+    padding:.2rem .6rem;border-radius:6px}
+  .ratio-box{background:linear-gradient(135deg,#f5efe6,#e8d5b7);border-radius:8px;
+    display:flex;align-items:center;justify-content:center;color:var(--coffee-mid);
+    font-size:.9rem;font-weight:600;border:1px dashed var(--gold)}
+  .ratio-16-9{aspect-ratio:16/9}
+  .ratio-4-3{aspect-ratio:4/3}
+  .ratio-spec{margin-top:1rem;font-size:.82rem;color:#666}
+  .ratio-spec li{margin-bottom:.4rem;list-style:none;padding-left:1.2rem;position:relative}
+  .ratio-spec li::before{content:'→';position:absolute;left:0;color:var(--gold)}
+
+  /* === AI IMAGES GALLERY === */
+  .ai-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+  .ai-item{border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#fff}
+  .ai-img-wrap{aspect-ratio:16/9;overflow:hidden;background:#f0e8de;position:relative}
+  .ai-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .ai-item:hover .ai-img-wrap img{transform:scale(1.04)}
+  .ai-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(26,10,0,.6));
+    opacity:0;transition:opacity .3s}
+  .ai-item:hover .ai-overlay{opacity:1}
+  .ai-info{padding:1rem}
+  .ai-article{font-weight:700;font-size:.88rem;color:var(--coffee-dark);margin-bottom:.3rem}
+  .ai-mood{font-size:.78rem;color:#888}
+  .ai-style-tag{display:inline-block;margin-top:.5rem;font-size:.7rem;padding:.2rem .6rem;
+    border-radius:8px;font-weight:600}
+
+  /* === RULES TABLE === */
+  .rules-table{width:100%;border-collapse:collapse;font-size:.88rem}
+  .rules-table th{background:var(--coffee-dark);color:#fff;padding:.75rem 1rem;
+    text-align:left;font-weight:600}
+  .rules-table td{padding:.7rem 1rem;border-bottom:1px solid var(--border);vertical-align:top}
+  .rules-table tr:nth-child(even) td{background:rgba(245,240,232,.5)}
+  .rules-table tr:hover td{background:#fdf6ee}
+  .ok{color:#2d7d2d;font-weight:700}
+  .no{color:#c0392b;font-weight:700}
+
+  /* === CHECKLIST === */
+  .checklist{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.6rem}
+  .checklist li{display:flex;align-items:flex-start;gap:.7rem;padding:.75rem 1rem;
+    background:#fff;border-radius:8px;border:1px solid var(--border);font-size:.88rem}
+  .checklist li::before{content:'✓';color:var(--gold);font-weight:900;flex-shrink:0;margin-top:.05rem}
+
+  /* === FOOTER === */
+  .page-footer{background:var(--coffee-dark);color:rgba(255,255,255,.5);
+    text-align:center;padding:2rem;font-size:.82rem;margin-top:4rem}
+  .page-footer strong{color:var(--gold-light)}
+
+  @media(max-width:768px){
+    .ratio-showcase,.ai-gallery,.cat-grid,.palette-grid{grid-template-columns:1fr}
+    .page-hero{padding:3rem 1.5rem 2.5rem}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">☕ BNotes <span>圖片語言手冊</span></div>
+  <div class="nav-ver">Visual Language Guide · v1.0 · 2026</div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <h1>BNotes <em>圖片語言手冊</em></h1>
+    <p>讓每一張圖都說話——從選圖邏輯到 AI 生成規範，統一全站的視覺語言與品牌情感基調。</p>
+    <div class="hero-tags">
+      <span class="hero-tag">🎨 選圖規範</span>
+      <span class="hero-tag">📐 比例標準</span>
+      <span class="hero-tag">🎭 情緒分類</span>
+      <span class="hero-tag">🤖 AI 生成準則</span>
+      <span class="hero-tag">✅ 發布前檢查</span>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- ① 圖片情緒分類系統 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div>
+        <div class="section-title">圖片情緒分類系統</div>
+        <div class="section-sub">每篇文章 Hero 圖必須歸入以下四種情緒類型之一</div>
+      </div>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <div class="cat-card-color" style="background:linear-gradient(135deg,#1a0a00,#5c2d00)">🔬</div>
+        <div class="cat-card-body">
+          <div class="cat-name">精準型（Precision）</div>
+          <div class="cat-desc">強調技術、科學與工藝的精準度。高對比、冷色調偏移、器材特寫或萃取細節。</div>
+          <div class="cat-tags">
+            <span class="cat-tag" style="background:#f0e8de;color:#5c2d00">手沖技法</span>
+            <span class="cat-tag" style="background:#f0e8de;color:#5c2d00">義式萃取</span>
+            <span class="cat-tag" style="background:#f0e8de;color:#5c2d00">器材測評</span>
+            <span class="cat-tag" style="background:#f0e8de;color:#5c2d00">科學解析</span>
+          </div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-card-color" style="background:linear-gradient(135deg,#264026,#1a5c1a)">🌿</div>
+        <div class="cat-card-body">
+          <div class="cat-name">沉浸型（Immersive）</div>
+          <div class="cat-desc">廣角環境、自然風光、產地人物。讓讀者感受「置身其中」的空間感與故事性。</div>
+          <div class="cat-tags">
+            <span class="cat-tag" style="background:#e8f5e8;color:#264026">產地報導</span>
+            <span class="cat-tag" style="background:#e8f5e8;color:#264026">農場故事</span>
+            <span class="cat-tag" style="background:#e8f5e8;color:#264026">風土科學</span>
+            <span class="cat-tag" style="background:#e8f5e8;color:#264026">城市地圖</span>
+          </div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-card-color" style="background:linear-gradient(135deg,#c8922a,#8b4513)">☀️</div>
+        <div class="cat-card-body">
+          <div class="cat-name">溫暖型（Warmth）</div>
+          <div class="cat-desc">柔焦、暖色、生活場景。喚起閱讀咖啡的舒適與日常愉悅感。</div>
+          <div class="cat-tags">
+            <span class="cat-tag" style="background:#fef7e8;color:#8b4513">節氣/季節</span>
+            <span class="cat-tag" style="background:#fef7e8;color:#8b4513">生活儀式</span>
+            <span class="cat-tag" style="background:#fef7e8;color:#8b4513">禮品指南</span>
+            <span class="cat-tag" style="background:#fef7e8;color:#8b4513">閱讀配對</span>
+          </div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-card-color" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">🏆</div>
+        <div class="cat-card-body">
+          <div class="cat-name">探索型（Discovery）</div>
+          <div class="cat-desc">知識感強、層次豐富、對比明顯。適合年報、白皮書、競賽解析等重磅文章。</div>
+          <div class="cat-tags">
+            <span class="cat-tag" style="background:#e8eaf6;color:#1a1a2e">年度報告</span>
+            <span class="cat-tag" style="background:#e8eaf6;color:#1a1a2e">競賽解析</span>
+            <span class="cat-tag" style="background:#e8eaf6;color:#1a1a2e">白皮書</span>
+            <span class="cat-tag" style="background:#e8eaf6;color:#1a1a2e">歷史深探</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ② 品牌調色板 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div>
+        <div class="section-title">BNotes 圖片品牌調色板</div>
+        <div class="section-sub">所有圖片的主色調必須與此調色板和諧共存</div>
+      </div>
+    </div>
+    <div class="palette-grid">
+      <div class="palette-card">
+        <div class="palette-swatch" style="background:#c47e2b"></div>
+        <div class="palette-info">
+          <div class="palette-name">品牌金 Brand Gold</div>
+          <div class="palette-hex">#c47e2b · rgb(196,126,43)</div>
+          <div class="palette-use">品牌主色。圖片中需有此色系的暖金光感。</div>
+        </div>
+      </div>
+      <div class="palette-card">
+        <div class="palette-swatch" style="background:#1a0a00"></div>
+        <div class="palette-info">
+          <div class="palette-name">咖啡黑 Coffee Dark</div>
+          <div class="palette-hex">#1a0a00 · rgb(26,10,0)</div>
+          <div class="palette-use">排版 Hero 底色。深景咖啡的最深色。</div>
+        </div>
+      </div>
+      <div class="palette-card">
+        <div class="palette-swatch-split">
+          <div style="background:#8b4513"></div>
+          <div style="background:#d4a96a"></div>
+        </div>
+        <div class="palette-info">
+          <div class="palette-name">咖啡中調 Coffee Range</div>
+          <div class="palette-hex">#8b4513 — #d4a96a</div>
+          <div class="palette-use">咖啡豆、木質、皮革等材質色彩範圍。</div>
+        </div>
+      </div>
+      <div class="palette-card">
+        <div class="palette-swatch" style="background:#f5f0e8"></div>
+        <div class="palette-info">
+          <div class="palette-name">奶油白 Cream</div>
+          <div class="palette-hex">#f5f0e8 · rgb(245,240,232)</div>
+          <div class="palette-use">拿鐵泡沫、陶瓷器、背景布料的色感。</div>
+        </div>
+      </div>
+      <div class="palette-card">
+        <div class="palette-swatch-split">
+          <div style="background:#264026"></div>
+          <div style="background:#4a7c4a"></div>
+        </div>
+        <div class="palette-info">
+          <div class="palette-name">產地綠 Origin Green</div>
+          <div class="palette-hex">#264026 — #4a7c4a</div>
+          <div class="palette-use">產地文章專用。咖啡葉、山坡、雨林的色感。</div>
+        </div>
+      </div>
+      <div class="palette-card">
+        <div class="palette-swatch" style="background:linear-gradient(135deg,#c0a68c,#8b6347)"></div>
+        <div class="palette-info">
+          <div class="palette-name">大地漸層 Earth Gradient</div>
+          <div class="palette-hex">#c0a68c → #8b6347</div>
+          <div class="palette-use">生活風格類圖片的整體色溫基調。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ 圖片比例規範 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div>
+        <div class="section-title">圖片比例規範</div>
+        <div class="section-sub">嚴格執行統一比例，確保全站版面整潔一致</div>
+      </div>
+    </div>
+    <div class="ratio-showcase">
+      <div class="ratio-demo">
+        <div class="ratio-demo-title">Hero Banner <span class="ratio-badge">16 : 9</span></div>
+        <div class="ratio-box ratio-16-9">Hero 圖片區域（16:9）</div>
+        <ul class="ratio-spec">
+          <li>最小尺寸：1200 × 675px</li>
+          <li>建議尺寸：1920 × 1080px</li>
+          <li>AI 生成時指定 aspect_ratio: 16:9</li>
+          <li>CSS object-fit: cover，焦點置中</li>
+          <li>適用：所有文章的 .article-hero</li>
+        </ul>
+      </div>
+      <div class="ratio-demo">
+        <div class="ratio-demo-title">文中副圖 <span class="ratio-badge" style="background:#5c2d00">4 : 3</span></div>
+        <div class="ratio-box ratio-4-3">文中插圖區域（4:3）</div>
+        <ul class="ratio-spec">
+          <li>最小尺寸：800 × 600px</li>
+          <li>建議尺寸：1200 × 900px</li>
+          <li>AI 生成時指定 aspect_ratio: 4:3</li>
+          <li>CSS object-fit: cover，圓角 .5rem</li>
+          <li>適用：正文段落內所有 img 標籤</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ 10篇旗艦文章 AI 圖展示 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div>
+        <div class="section-title">旗艦文章 AI 專屬 Hero 圖</div>
+        <div class="section-sub">10 篇核心文章的 AI 定制圖——每張圖的情緒、構圖均為文章量身設計</div>
+      </div>
+    </div>
+    <div class="ai-gallery">
+      <div class="ai-item">
+        <div class="ai-img-wrap">
+          <img src="https://bnotescoffee.com/images/ai/pour-over-guide-hero.jpg" alt="手沖咖啡完全指南" loading="lazy">
+          <div class="ai-overlay"></div>
+        </div>
+        <div class="ai-info">
+          <div class="ai-article">手沖咖啡完全指南</div>
+          <div class="ai-mood">黑鵝頸壺 × V60 × 清晨金光 × 木質桌面</div>
+          <span class="ai-style-tag" style="background:#f0e8de;color:#5c2d00">精準型 · Precision</span>
+        </div>
+      </div>
+      <div class="ai-item">
+        <div class="ai-img-wrap">
+          <img src="https://bnotescoffee.com/images/ai/alishan-terroir-hero.jpg" alt="阿里山風土" loading="lazy">
+          <div class="ai-overlay"></div>
+        </div>
+        <div class="ai-info">
+          <div class="ai-article">阿里山高山咖啡風土</div>
+          <div class="ai-mood">梯田茶園 × 晨霧山嵐 × 雲海 × 台灣高山</div>
+          <span class="ai-style-tag" style="background:#e8f5e8;color:#264026">沉浸型 · Immersive</span>
+        </div>
+      </div>
+      <div class="ai-item">
+        <div class="ai-img-wrap">
+          <img src="https://bnotescoffee.com/images/ai/turkish-coffee-ibrik-hero.jpg" alt="土耳其咖啡" loading="lazy">
+          <div class="ai-overlay"></div>
+        </div>
+        <div class="ai-info">
+          <div class="ai-article">土耳其咖啡 Cezve/Ibrik</div>
+          <div class="ai-mood">銅製 Ibrik × 橙紅沙火 × 伊斯坦堡 × 燈籠光影</div>
+          <span class="ai-style-tag" style="background:#fef7e8;color:#8b4513">溫暖型 · Warmth</span>
+        </div>
+      </div>
+      <div class="ai-item">
+        <div class="ai-img-wrap">
+          <img src="https://bnotescoffee.com/images/ai/espresso-parameters-hero.jpg" alt="義式萃取參數" loading="lazy">
+          <div class="ai-overlay"></div>
+        </div>
+        <div class="ai-info">
+          <div class="ai-article">義式萃取參數完全解析</div>
+          <div class="ai-mood">雙流 Tiger Stripe × 微距特寫 × 金色 Crema</div>
+          <span class="ai-style-tag" style="background:#f0e8de;color:#5c2d00">精準型 · Precision</span>
+        </div>
+      </div>
+      <div class="ai-item">
+        <div class="ai-img-wrap">
+          <img src="https://bnotescoffee.com/images/ai/cold-brew-complete-101-hero.jpg" alt="冷萃咖啡101" loading="lazy">
+          <div class="ai-overlay"></div>
+        </div>
+        <div class="ai-info">
+          <div class="ai-article">冷萃咖啡完全入門 101</div>
+          <div class="ai-mood">透明瓶 × 冰球 × 透光琥珀 × 北歐廚台</div>
+          <span class="ai-style-tag" style="background:#e8f5ff;color:#1a3a5c">清涼型 · Fresh</span>
+        </div>
+      </div>
+      <div class="ai-item">
+        <div class="ai-img-wrap">
+          <img src="https://bnotescoffee.com/images/ai/grinder-6models-comparison-2026-hero.jpg" alt="磨豆機比較" loading="lazy">
+          <div class="ai-overlay"></div>
+        </div>
+        <div class="ai-info">
+          <div class="ai-article">2026 六款磨豆機橫向比較</div>
+          <div class="ai-mood">六款並排俯拍 × 工業平鋪 × 研磨粉粒對比</div>
+          <span class="ai-style-tag" style="background:#f0e8de;color:#5c2d00">精準型 · Precision</span>
+        </div>
+      </div>
+      <div class="ai-item">
+        <div class="ai-img-wrap">
+          <img src="https://bnotescoffee.com/images/ai/single-origin-terroir-science-hero.jpg" alt="單品風土科學" loading="lazy">
+          <div class="ai-overlay"></div>
+        </div>
+        <div class="ai-info">
+          <div class="ai-article">單品咖啡風土科學</div>
+          <div class="ai-mood">衣索比亞×哥倫比亞分割世界 × 光縫邊界</div>
+          <span class="ai-style-tag" style="background:#e8eaf6;color:#1a1a2e">探索型 · Discovery</span>
+        </div>
+      </div>
+      <div class="ai-item">
+        <div class="ai-img-wrap">
+          <img src="https://bnotescoffee.com/images/ai/milk-steaming-science-hero.jpg" alt="牛奶蒸煮科學" loading="lazy">
+          <div class="ai-overlay"></div>
+        </div>
+        <div class="ai-info">
+          <div class="ai-article">牛奶蒸煮科學</div>
+          <div class="ai-mood">高速快門 × 蒸汽棒漩渦 × 懸浮液滴</div>
+          <span class="ai-style-tag" style="background:#f0e8de;color:#5c2d00">精準型 · Precision</span>
+        </div>
+      </div>
+      <div class="ai-item">
+        <div class="ai-img-wrap">
+          <img src="https://bnotescoffee.com/images/ai/taiwan-coffee-farmer-summer-story-hero.jpg" alt="台灣咖啡農故事" loading="lazy">
+          <div class="ai-overlay"></div>
+        </div>
+        <div class="ai-info">
+          <div class="ai-article">台灣咖啡農夏日故事</div>
+          <div class="ai-mood">台灣農夫手摘紅果 × 高山梯田 × 晨光雲霧</div>
+          <span class="ai-style-tag" style="background:#e8f5e8;color:#264026">沉浸型 · Immersive</span>
+        </div>
+      </div>
+      <div class="ai-item">
+        <div class="ai-img-wrap">
+          <img src="https://bnotescoffee.com/images/ai/morning-coffee-ritual-science-hero.jpg" alt="晨間咖啡儀式" loading="lazy">
+          <div class="ai-overlay"></div>
+        </div>
+        <div class="ai-info">
+          <div class="ai-article">晨間咖啡儀式科學</div>
+          <div class="ai-mood">窗光塵粒 × 木桌陶瓷 × 筆記本 × 靜謐時光</div>
+          <span class="ai-style-tag" style="background:#fef7e8;color:#8b4513">溫暖型 · Warmth</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ 禁忌與規範 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <div>
+        <div class="section-title">圖片選用規則表</div>
+        <div class="section-sub">明確列出允許、謹慎、禁止的圖片選用行為</div>
+      </div>
+    </div>
+    <table class="rules-table">
+      <thead>
+        <tr><th>情境</th><th>判斷</th><th>說明</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>圖片主題與文章內容直接相關</td><td class="ok">✓ 允許</td><td>最佳狀態，無需修改</td></tr>
+        <tr><td>使用 AI 生成定制圖</td><td class="ok">✓ 優先</td><td>旗艦文章最佳選擇，確保獨特性</td></tr>
+        <tr><td>Unsplash 主題精選圖（非重複）</td><td class="ok">✓ 允許</td><td>一般文章的標準做法</td></tr>
+        <tr><td>排版型 Hero（年報/白皮書類）</td><td class="ok">✓ 優先</td><td>無圖時的最佳設計選項</td></tr>
+        <tr><td>圖片在全站出現超過 2 次</td><td style="color:#e67e22;font-weight:700">⚠ 謹慎</td><td>必須替換其中一篇的圖片</td></tr>
+        <tr><td>圖片色調與品牌調色板衝突（高飽和藍/紫）</td><td style="color:#e67e22;font-weight:700">⚠ 謹慎</td><td>需加品牌色疊加 CSS 調和</td></tr>
+        <tr><td>使用 og-default.jpg 佔位圖</td><td class="no">✗ 禁止</td><td>必須替換為主題圖或排版 Hero</td></tr>
+        <tr><td>Unsplash 咖啡豆特寫（已用超過 5 篇）</td><td class="no">✗ 禁止</td><td>視覺重複性已達飽和</td></tr>
+        <tr><td>圖片尺寸低於 800px 寬</td><td class="no">✗ 禁止</td><td>Retina 螢幕下會模糊</td></tr>
+        <tr><td>Hero 圖不符合 16:9 比例</td><td class="no">✗ 禁止</td><td>CSS 會強制裁切，可能影響構圖</td></tr>
+        <tr><td>圖片包含浮水印或文字覆蓋</td><td class="no">✗ 禁止</td><td>影響品牌專業度</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ⑥ AI 圖生成 Prompt 範本 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <div>
+        <div class="section-title">AI 圖片生成 Prompt 模板</div>
+        <div class="section-sub">複製以下模板，填入文章關鍵詞即可生成品牌一致的 Hero 圖</div>
+      </div>
+    </div>
+    <div style="display:grid;gap:1.5rem">
+      <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden">
+        <div style="background:var(--coffee-dark);color:var(--gold-light);padding:.75rem 1.25rem;font-size:.85rem;font-weight:700;display:flex;gap:.75rem;align-items:center">
+          <span>🔬</span> 精準型文章（技術/器材/萃取）
+        </div>
+        <pre style="background:#faf8f5;padding:1.5rem;font-size:.8rem;line-height:1.6;overflow-x:auto;color:#2a1a0a;white-space:pre-wrap">A cinematic macro photograph of [具體器材/動作，e.g. espresso extraction / V60 pour]. 
+Shot with extreme precision: [具體細節，e.g. tiger-stripe crema / water droplets]. 
+Shallow depth of field with razor-sharp [主焦點] dissolving into warm amber bokeh.
+Setting: [背景，e.g. dark espresso machine / minimalist white oak counter].
+Color palette: [深棕/鉻銀/琥珀金] tones.
+Mood: technical, precise, and intensely satisfying.
+Photorealistic commercial photography, professional studio lighting. No text, no watermarks.
+aspect_ratio: 16:9</pre>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden">
+        <div style="background:#264026;color:#a8d8a8;padding:.75rem 1.25rem;font-size:.85rem;font-weight:700;display:flex;gap:.75rem;align-items:center">
+          <span>🌿</span> 沉浸型文章（產地/農場/風土）
+        </div>
+        <pre style="background:#faf8f5;padding:1.5rem;font-size:.8rem;line-height:1.6;overflow-x:auto;color:#2a1a0a;white-space:pre-wrap">A breathtaking [aerial / ground-level] landscape photograph of [地名，e.g. Alishan mountain / Ethiopia highland].
+[主要視覺元素，e.g. terraced coffee rows / misty forest / farmer hand-picking].
+[光線條件，e.g. early morning golden hour / dramatic sunset].
+The atmosphere conveys [mood，e.g. majestic and wild / intimate and human].
+Color palette: [深綠/大地棕/晨光金] tones.
+[攝影風格，e.g. Documentary photography / Aerial drone shot], natural light, ultra-high-detail.
+No text, no watermarks.
+aspect_ratio: 16:9</pre>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden">
+        <div style="background:#8b4513;color:#fde8c0;padding:.75rem 1.25rem;font-size:.85rem;font-weight:700;display:flex;gap:.75rem;align-items:center">
+          <span>☀️</span> 溫暖型文章（生活/節慶/儀式）
+        </div>
+        <pre style="background:#faf8f5;padding:1.5rem;font-size:.8rem;line-height:1.6;overflow-x:auto;color:#2a1a0a;white-space:pre-wrap">A serene, cinematic [wide / intimate] shot of [場景，e.g. morning coffee ritual / holiday gift unboxing].
+[環境細節，e.g. soft diffused window light / warm candlelight / steaming mug].
+[氛圍補充，e.g. dust motes floating / linen cloth / open notebook].
+Everything conveys [情緒，e.g. unhurried intentional living / festive warmth].
+Color palette: warm cream, soft gold, [深棕/暖橘] — no harsh shadows.
+Lifestyle photography, [光線，e.g. soft natural window light / golden bokeh].
+No text, no watermarks.
+aspect_ratio: 16:9</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑦ 發布前核查清單 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">07</div>
+      <div>
+        <div class="section-title">圖片發布前核查清單</div>
+        <div class="section-sub">每篇新文章上線前，逐一確認以下項目</div>
+      </div>
+    </div>
+    <ul class="checklist">
+      <li>Hero 圖已替換，不使用 og-default.jpg</li>
+      <li>圖片尺寸 ≥ 1200px 寬，符合 16:9 比例</li>
+      <li>圖片主題與文章內容直接相關</li>
+      <li>圖片已歸入四種情緒類型之一</li>
+      <li>主色調與 BNotes 品牌調色板和諧</li>
+      <li>全站無重複使用同一張圖（超過 2 篇）</li>
+      <li>og:image meta tag 已更新為新圖 URL</li>
+      <li>品牌色疊加 CSS 已套用（mix-blend-mode）</li>
+      <li>文中副圖確認比例接近 4:3</li>
+      <li>圖片無浮水印、無外文文字覆蓋</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="page-footer">
+  <p>BNotes 焙學·原豆誌 · 圖片語言手冊 <strong>v1.0</strong> · 2026 · 內部使用文件</p>
+  <p style="margin-top:.5rem;font-size:.75rem">本手冊由 BNotes 視覺設計標準委員會維護，如需更新請聯繫編輯部。</p>
+</footer>
+
+</body>
+</html>
