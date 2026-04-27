@@ -109,9 +109,9 @@ const searchDataJS = `const SEARCH_DATA = [${searchEntries.join(',')}];`;
 const idxPath = path.join(DIST, 'index.html');
 let idx = fs.readFileSync(idxPath, 'utf-8');
 
-// Replace grid
-idx = idx.replace(/<div class="grid">[\s\S]*?<\/div>\s*(<\/div>\s*<\/section>\s*<div class="divider">)/,
-  `<div class="grid">\n${gridHTML}\n    </div>\n    $1`);
+// Replace grid (with id="latest-grid" for load-more JS to work)
+idx = idx.replace(/<div class="grid"[^>]*>[\s\S]*?<\/div>\s*(<\/div>\s*<\/section>\s*<div class="divider">)/,
+  `<div class="grid" id="latest-grid">\n${gridHTML}\n    </div>\n    $1`);
 
 // Replace SEARCH_DATA line
 idx = idx.replace(/const SEARCH_DATA = \[[\s\S]*?\];/, searchDataJS);
