@@ -9,9 +9,10 @@ routes = [
   { pattern = "bnotescoffee.com", zone_name = "bnotescoffee.com" }
 ]
 
-[env.production.env]
+[env.production.vars]
 ADMIN_PASSWORD = "BNotes2026"
 SITE_NAME = "BNotes 焙學·原豆誌"
+LOG_LEVEL = "info"
 
 # Functions configuration
 [functions]
