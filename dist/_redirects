@@ -1,0 +1,24 @@
+/favicon.ico  /favicon.svg  301
+/assets/*     /assets/:splat  200
+
+# Affiliate Redirects
+/re/amazon-v60  https://www.amazon.com/Hario-V60-Ceramic-Coffee-Dripper/dp/B000P4962E?tag=bnotes-20  302
+/re/shopee-grinder https://shopee.tw/search?keyword=timemore+c3  302
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# IMPORTANT: /admin/* and /api/* are handled by Cloudflare Functions
+# DO NOT add rules for these routes here - let Functions handle them
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Frontend SPA fallback - rewrite ONLY front-end routes to index.html
+# This preserves /admin and /api for Functions processing
+
+/articles/*  /index.html  200
+/category/*  /index.html  200
+/tag/*       /index.html  200
+/search/*    /index.html  200
+
+# Root level SPA fallback (last resort for homepage and unknown routes)
+/*           /index.html  200
+
+# Deployed: 2026-04-27 21:12 UTC - backend routes via Functions
