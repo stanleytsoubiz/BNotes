@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '20'
       - name: Strip YAML frontmatter from articles
-        run: node scripts/strip-frontmatter.js
+        run: node 05_Scripts/strip-frontmatter.js
 
       - name: Deploy to Cloudflare Pages
         run: |
