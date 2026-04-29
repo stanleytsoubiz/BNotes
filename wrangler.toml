@@ -1,26 +1,3 @@
 name = "bnotes"
 pages_build_output_dir = "./dist"
-account_id = ""
-env = "production"
 
-[env.production]
-name = "bnotes"
-routes = [
-  { pattern = "bnotescoffee.com", zone_name = "bnotescoffee.com" }
-]
-
-[env.production.vars]
-ADMIN_PASSWORD = "BNotes2026"
-SITE_NAME = "BNotes 焙學·原豆誌"
-LOG_LEVEL = "info"
-
-# Functions configuration
-[functions]
-directory = "./functions"
-main = ""
-
-# Build configuration
-[build]
-cwd = "."
-command = ""
-watch_paths = []

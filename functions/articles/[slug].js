@@ -35,7 +35,7 @@ export async function onRequestGet(context) {
     }
 
     // Always reconstruct Response
- — original body is already consumed by response.text()
+    // original body is already consumed by response.text()
     const h = new Headers(response.headers);
     h.set('Content-Type', 'text/html; charset=utf-8');
     h.delete('Content-Length');

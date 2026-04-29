@@ -364,24 +364,3 @@ function json(data, status = 200) {
     },
   });
 }
-:     Math.min(imgScore, 20),
-      structure: Math.min(structScore, 15),
-      ai:        Math.min(aiScore, 10),
-    },
-    passes,
-    warnings,
-    issues,
-    meta: { zhCount, h2Count, extLinks, readingTime, hasSchema },
-  };
-}
-
-function json(data, status = 200) {
-  return new Response(JSON.stringify(data), {
-    status,
-    headers: {
-      'Content-Type': 'application/json; charset=utf-8',
-      'Cache-Control': 'no-store, no-cache',
-      'Access-Control-Allow-Origin': 'https://bnotescoffee.com',
-    },
-  });
-}
