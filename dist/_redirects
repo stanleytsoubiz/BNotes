@@ -14,7 +14,7 @@
 # This preserves /admin and /api for Functions processing
 
 /articles/*  /index.html  200
-/category/*  /index.html  200
+# /category/* now served as real static HTML files in dist/category/ — DO NOT add SPA fallback here
 /tag/*       /index.html  200
 /search/*    /index.html  200
 

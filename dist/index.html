@@ -164,6 +164,8 @@ img{max-width:100%;display:block;height:auto}
 .scroll-top.show{opacity:1;pointer-events:auto}
 .scroll-top:hover{transform:translateY(-2px)}
 </style>
+<!-- 圖片 fallback：early capture，解決 onerror race condition -->
+<script>document.addEventListener('error',function(e){var t=e.target;if(t.tagName==='IMG'&&t.dataset.fallback&&t.src!==t.dataset.fallback){t.onerror=null;t.src=t.dataset.fallback;}},true);</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKX568GDNW"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-LKX568GDNW');</script>
 
