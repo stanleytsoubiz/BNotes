@@ -649,5 +649,32 @@ footer a{color:var(--coffee-light)}
   })();
 })();
 </script>
+<script>
+/* BNotes Affiliate & Outbound Click Tracker — GA4 */
+(function(){
+  function trackClick(el){
+    var href = el.getAttribute('href') || '';
+    var isAffiliate = href.startsWith('/re/');
+    var isOutbound = href.startsWith('http') && href.indexOf('bnotescoffee.com') === -1;
+    if(isAffiliate){
+      var product = href.replace('/re/','');
+      if(window.gtag) gtag('event','affiliate_click',{
+        'affiliate_product': product,
+        'page_title': document.title,
+        'link_url': href
+      });
+    } else if(isOutbound){
+      if(window.gtag) gtag('event','outbound_click',{
+        'link_url': href,
+        'page_title': document.title
+      });
+    }
+  }
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('a');
+    if(el) trackClick(el);
+  });
+})();
+</script>
 </body>
 </html>
