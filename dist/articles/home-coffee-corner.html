@@ -353,6 +353,8 @@ footer a{color:var(--coffee-light)}
   .related-grid { grid-template-columns: 1fr }
   .breadcrumb { padding: 0 16px }
 }
+
+.bnotes-cover{width:100%;max-height:420px;object-fit:cover;border-radius:.9rem;margin:2rem auto;display:block;box-shadow:0 4px 16px rgba(0,0,0,.12)}
 </style>
 </head>
 <body>
@@ -540,6 +542,7 @@ footer a{color:var(--coffee-light)}
     }
 
     /* 組合 header */
+    var ogImg=document.querySelector('meta[property="og:image"]');var heroSrc=ogImg?ogImg.getAttribute('content'):'';
     var headerHtml='<header id="bnotes-unified-header" class="bnotes-header">';
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
     headerHtml+='<h2 class="bnotes-title">'+title+'</h2>';
@@ -548,6 +551,7 @@ footer a{color:var(--coffee-light)}
     headerHtml+='<span>✍️ BNotes 編輯部</span>';
     if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
     headerHtml+='</div><div class="bnotes-divider"></div></header>';
+    if(heroSrc){headerHtml+='<img class="bnotes-cover" src="'+heroSrc+'" alt="'+title+'" loading="eager" decoding="async">';}
 
     /* 隱藏舊 hero / title 區塊 */
     var oldHeroes=document.querySelectorAll(
