@@ -402,7 +402,7 @@ if(burger && navLinks){
     {'slug':'single-origin-terroir-science','title':'單一產地的秘密：風土 Terroir 如何決定你杯中的每一個味道？','cat':'產地風土','desc':'為什麼同樣是衣索比亞的豆子，來自 Yirgacheffe 的花香和來自 Sidama 的醇厚截然不同？深入解析土壤礦物質、海拔、微氣候三要素如何共同塑造你杯中的獨特風味。'},
     {'slug':'turkish-coffee-ibrik','title':'土耳其咖啡 Ibrik 完全解析：WCC 世界冠軍用的古老煮法為何再度崛起？','cat':'咖啡生活','desc':'從 WCC 世界 Cezve/Ibrik 錦標賽的賽場到你家廚房，深入解析這個擁有 500 年歷史的咖啡煮法，以及它如何用細如塵的咖啡粉創造出最濃郁的風味體驗。'},
     {'slug':'arabica-vs-robusta-complete-guide','title':'Arabica vs. Robusta 完整攻略：你每天喝的咖啡，你真的選對豆種了嗎？','cat':'咖啡知識','desc':'從基因組成、咖啡因含量到適合的沖煮方式，顛覆你對這兩大豆種的既有認知。'},
-    {'slug':'chiayi-coffee-festival-2026-guide','title':'2026 嘉義咖啡節完全攻略：必喝×必買×必拍地圖','cat':'活動導覽','desc':'嘉義咖啡節台灣每年最重要的咖啡產業盛事，完整攤位地圖、必買在地豆清單，全收錄。'}
+    {'slug':'chiayi-coffee-festival-2026-guide','title':'2026 嘉義咖啡節完全攻略：必喝×必買×必拍地圖','cat':'活動導覽','desc':'嘉義咖啡節台灣每年最重要的咖啡產業盛事，完整攤位地圖、必買在地豆清單，全收錄。'},
 
     /* ── 補充條目 ── */
     {'slug':'2026-coffee-keywords-annual-review','title':'2026 十大精品咖啡關鍵字年度回顧：這一年，什麼改變了我們喝咖啡的方式','cat':'咖啡知識','desc':'2026年即將結束。這一年，哪些詞彙定義了全球精品咖啡的討論走向？從「發酵技術革命」到「AI烘焙輔助」，這份年度回顧帶你快速掌握最重要的10個轉折。。深度探索精品咖啡知識，從科學原理到實踐技巧，完整呈'},
@@ -477,6 +477,7 @@ if(burger && navLinks){
 (function () {
   /* 後續動態載入批次（前 6 篇已靜態顯示在 #latest-grid 中） */
   var SLUGS = [
+    'world-coffee-weekly-vol1',
     'geisha-molecular-biology-2026',
     'milk-alternatives-science-2026',
     'taipei-coffee-map-2026',
@@ -544,7 +545,7 @@ if(burger && navLinks){
     'bnotes-2026-annual-coffee-report'
   ];
   var PER   = 6;
-  var page  = 2;
+  var page  = 1;
   var grid  = document.getElementById('latest-grid');
   var btn   = document.getElementById('btn-load-more');
   var wrap  = document.getElementById('load-more-wrap');
