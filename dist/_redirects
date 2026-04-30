@@ -2,8 +2,18 @@
 /assets/*     /assets/:splat  200
 
 # Affiliate Redirects
-/re/amazon-v60  https://www.amazon.com/Hario-V60-Ceramic-Coffee-Dripper/dp/B000P4962E?tag=bnotes-20  302
-/re/shopee-grinder https://shopee.tw/search?keyword=timemore+c3  302
+# ── Hand-Drip ──────────────────────────────────────────────────────────────
+/re/amazon-v60            https://www.amazon.com/Hario-V60-Ceramic-Coffee-Dripper/dp/B000P4962E?tag=bnotes-20  302
+/re/amazon-fellow-stagg   https://www.amazon.com/Fellow-Stagg-EKG-Electric-Gooseneck/dp/B07DTMFXLQ?tag=bnotes-20  302
+/re/amazon-hario-scale    https://www.amazon.com/Hario-V60-Drip-Scale-Timer/dp/B009GPJMOU?tag=bnotes-20  302
+/re/amazon-kalita-wave    https://www.amazon.com/Kalita-185-Stainless-Wave-Dripper/dp/B009PXOH94?tag=bnotes-20  302
+# ── Grinder ────────────────────────────────────────────────────────────────
+/re/shopee-grinder        https://shopee.tw/search?keyword=timemore+c3  302
+/re/amazon-1zpresso-jx    https://www.amazon.com/1Zpresso-JX-Pro-Coffee-Grinder/dp/B08F4TW3GD?tag=bnotes-20  302
+/re/amazon-fellow-opus    https://www.amazon.com/Fellow-Opus-Conical-Coffee-Grinder/dp/B09YJ5HZPF?tag=bnotes-20  302
+/re/shopee-df64           https://shopee.tw/search?keyword=df64+gen2+磨豆機  302
+# ── Espresso ───────────────────────────────────────────────────────────────
+/re/amazon-espresso-machine  https://www.amazon.com/De-Longhi-Espresso-Machine-EC235BK/dp/B07NQMR5TQ?tag=bnotes-20  302
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # IMPORTANT: /admin/* and /api/* are handled by Cloudflare Functions
