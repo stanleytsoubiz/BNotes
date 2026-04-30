@@ -2,7 +2,11 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
+    <meta property="og:image" content="https://bnotescoffee.com/images/ai/milk-alternatives-science-2026-hero.jpg">
     <title>2026 植物奶化學：發泡科學、蛋白質穩定度與感官平衡</title>
+<style>
+.bnotes-cover{width:100%;max-height:420px;object-fit:cover;border-radius:.9rem;margin:2rem auto;display:block;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+</style>
 </head>
 <body>
     <article>
@@ -64,5 +68,23 @@
             <p><em>註：本站與各大植物奶品牌無商業利益關係。相關技術參數基於 Dr. Claw 實驗室 2026 年測評。</em></p>
         </section>
     </article>
+<script>
+(function(){
+  var ogImg=document.querySelector('meta[property="og:image"]');
+  var heroSrc=ogImg?ogImg.getAttribute('content'):'';
+  if(heroSrc){
+    var h1=document.querySelector('h1');
+    if(h1){
+      var img=document.createElement('img');
+      img.className='bnotes-cover';
+      img.src=heroSrc;
+      img.alt=h1.textContent;
+      img.loading='eager';
+      img.decoding='async';
+      h1.parentNode.insertBefore(img,h1.nextSibling);
+    }
+  }
+})();
+</script>
 </body>
 </html>

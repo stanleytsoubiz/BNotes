@@ -18,7 +18,8 @@
 /tag/*       /index.html  200
 /search/*    /index.html  200
 
-# Root level SPA fallback (last resort for homepage and unknown routes)
-/*           /index.html  200
+# Proper 404 for all unmatched routes (Cloudflare Pages serves static files first)
+/*           /404.html  404
 
 # Deployed: 2026-04-27 21:12 UTC - backend routes via Functions
+# Updated:  2026-04-30 — proper 404 + sitemap added

@@ -2,7 +2,11 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
+    <meta property="og:image" content="https://bnotescoffee.com/images/ai/geisha-molecular-biology-2026-hero.jpg">
     <title>2026 藝伎咖啡的分子生物學：為什麼瑰夏(Geisha)能主宰感官極限？</title>
+<style>
+.bnotes-cover{width:100%;max-height:420px;object-fit:cover;border-radius:.9rem;margin:2rem auto;display:block;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+</style>
 </head>
 <body>
     <article>
@@ -47,5 +51,23 @@
             <p><em>註：本文內容基於 2026 年分子感官實驗室數據。部分藝伎豆款推薦涉及聯盟行銷，營收將用於支持更深入的品種研究。</em></p>
         </section>
     </article>
+<script>
+(function(){
+  var ogImg=document.querySelector('meta[property="og:image"]');
+  var heroSrc=ogImg?ogImg.getAttribute('content'):'';
+  if(heroSrc){
+    var h1=document.querySelector('h1');
+    if(h1){
+      var img=document.createElement('img');
+      img.className='bnotes-cover';
+      img.src=heroSrc;
+      img.alt=h1.textContent;
+      img.loading='eager';
+      img.decoding='async';
+      h1.parentNode.insertBefore(img,h1.nextSibling);
+    }
+  }
+})();
+</script>
 </body>
 </html>
