@@ -712,5 +712,66 @@ if(burger && navLinks){
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"52882166ceb34dbc81601c4020da5ca0","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 
+
+  <!-- GA4 Conversion Events -->
+  <script>
+  (function(){
+    // 1. Newsletter signup tracking
+    var nlForm = document.getElementById('nl-form');
+    if(nlForm){
+      nlForm.addEventListener('submit', function(e){
+        if(typeof gtag !== 'undefined'){
+          gtag('event','newsletter_signup',{
+            'event_category':'engagement',
+            'event_label':'homepage_footer'
+          });
+        }
+      });
+    }
+
+    // 2. Scroll depth tracking (25 / 50 / 75 / 90%)
+    var scrollFired = {};
+    window.addEventListener('scroll', function(){
+      var pct = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+      [25,50,75,90].forEach(function(threshold){
+        if(pct >= threshold && !scrollFired[threshold]){
+          scrollFired[threshold] = true;
+          if(typeof gtag !== 'undefined'){
+            gtag('event','scroll_depth',{
+              'event_category':'engagement',
+              'event_label': threshold + '%',
+              'value': threshold
+            });
+          }
+        }
+      });
+    }, {passive:true});
+
+    // 3. Category card click tracking
+    document.querySelectorAll('.cat-card').forEach(function(el){
+      el.addEventListener('click', function(){
+        var cat = el.querySelector('[style*="font-weight:700"]');
+        if(typeof gtag !== 'undefined'){
+          gtag('event','category_click',{
+            'event_category':'navigation',
+            'event_label': cat ? cat.textContent : 'unknown'
+          });
+        }
+      });
+    });
+
+    // 4. Article card click tracking
+    document.querySelectorAll('.card-title a').forEach(function(el){
+      el.addEventListener('click', function(){
+        if(typeof gtag !== 'undefined'){
+          gtag('event','article_click',{
+            'event_category':'content',
+            'event_label': el.textContent.trim().substring(0,60)
+          });
+        }
+      });
+    });
+  })();
+  </script>
 </body>
 </html>

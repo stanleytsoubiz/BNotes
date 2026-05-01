@@ -718,5 +718,50 @@ footer a{color:var(--coffee-light)}
   })();
 })();
 </script>
+
+  <!-- GA4 Article Events -->
+  <script>
+  (function(){
+    // 1. Article scroll depth
+    var scrollFired = {};
+    window.addEventListener('scroll', function(){
+      var pct = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+      [25,50,75,90,100].forEach(function(t){
+        if(pct >= t && !scrollFired[t]){
+          scrollFired[t] = true;
+          if(typeof gtag !== 'undefined'){
+            gtag('event','scroll_depth',{
+              'event_category':'article_engagement',
+              'event_label': t + '%',
+              'value': t
+            });
+          }
+        }
+      });
+    }, {passive:true});
+
+    // 2. Outbound / affiliate link tracking
+    document.querySelectorAll('a[href^="http"]').forEach(function(el){
+      el.addEventListener('click', function(){
+        if(typeof gtag !== 'undefined'){
+          gtag('event','outbound_click',{
+            'event_category':'affiliate',
+            'event_label': el.href
+          });
+        }
+      });
+    });
+
+    // 3. Time on page (meaningful read = 60s+)
+    var readTimer = setTimeout(function(){
+      if(typeof gtag !== 'undefined'){
+        gtag('event','meaningful_read',{
+          'event_category':'article_engagement',
+          'event_label': document.title
+        });
+      }
+    }, 60000);
+  })();
+  </script>
 </body>
 </html>
