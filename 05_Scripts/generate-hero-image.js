@@ -114,6 +114,7 @@ const SLUG_SEARCH_TERMS = {
 
   // 賽事
   'wbc-2026-champion-technique-breakdown':   'world barista championship competition stage',
+  'wbc-2026-champion-philosophy':            'world barista championship stage spotlight philosophy coffee',
 
   // 生活風格 / 季節
   'morning-coffee-ritual-science':           'morning coffee ritual sunrise peaceful',
