@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於 BNotes｜我們是誰，我們為什麼做這件事</title>
+  <meta name="description" content="BNotes 是一群喜愛咖啡的人，想把世界最前沿的精品咖啡知識帶給每一個說中文的人。免費、公正、沒有業配。">
+  <link rel="canonical" href="https://bnotescoffee.com/about.html">
+  <meta property="og:title" content="關於 BNotes｜我們是誰，我們為什麼做這件事">
+  <meta property="og:description" content="BNotes 是一群喜愛咖啡的人，想把世界最前沿的精品咖啡知識帶給每一個說中文的人。免費、公正、沒有業配。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bnotescoffee.com/about.html">
+  <meta property="og:image" content="https://bnotescoffee.com/images/ai/pour-over-guide-hero.jpg">
+  <meta property="og:site_name" content="BNotes 焙學·原豆誌">
+  <meta property="og:locale" content="zh_TW">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="theme-color" content="#1a0a00">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2WXMBSHDSB"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2WXMBSHDSB');</script>
+
+  <style>
+    :root{
+      --bg:#0d0700;--fg:#f0e6d3;--muted-fg:#9a8878;
+      --gold:#c9a84c;--gold-dark:#a0782e;
+      --card-bg:#1a0f05;--border:#2e1f10;
+      --serif:'Noto Serif TC',serif;--sans:'Noto Sans TC',sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:17px;scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.75;-webkit-font-smoothing:antialiased}
+    a{color:var(--gold);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:100;background:rgba(13,7,0,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:960px;margin:0 auto;padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .nav-logo{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--gold);letter-spacing:.03em;text-decoration:none}
+    .nav-links{display:flex;gap:1.5rem;align-items:center;font-size:.88rem}
+    .nav-links a{color:var(--muted-fg);transition:color .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--fg);text-decoration:none}
+    .nav-cta{background:var(--gold);color:#0d0700 !important;padding:.35rem 1rem;border-radius:2rem;font-weight:700;font-size:.82rem;transition:background .2s}
+    .nav-cta:hover{background:var(--gold-dark)}
+
+    /* HERO */
+    .about-hero{padding:5rem 1.5rem 3.5rem;text-align:center;max-width:720px;margin:0 auto}
+    .about-hero .eyebrow{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+    .about-hero h1{font-family:var(--serif);font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.3;margin-bottom:1.4rem}
+    .about-hero h1 em{color:var(--gold);font-style:normal}
+    .about-hero .lead{font-size:1.05rem;color:var(--muted-fg);line-height:1.85;max-width:580px;margin:0 auto}
+
+    /* CONTENT */
+    .about-wrap{max-width:700px;margin:0 auto;padding:0 1.5rem 5rem}
+    .about-section{margin-bottom:3.5rem}
+    .about-section h2{font-family:var(--serif);font-size:1.45rem;color:var(--gold);margin-bottom:1.1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border)}
+    .about-section p{color:var(--fg);line-height:1.9;margin-bottom:1.1rem;font-size:.98rem}
+    .about-section p:last-child{margin-bottom:0}
+
+    /* PRINCIPLES */
+    .principles{display:grid;gap:1rem;margin-top:1.2rem}
+    .principle-card{background:var(--card-bg);border:1px solid var(--border);border-radius:.875rem;padding:1.25rem 1.4rem;display:flex;gap:1rem;align-items:flex-start}
+    .principle-card .icon{font-size:1.5rem;line-height:1;flex-shrink:0;margin-top:.1rem}
+    .principle-card .title{font-weight:700;color:var(--fg);margin-bottom:.3rem;font-size:.95rem}
+    .principle-card .desc{font-size:.85rem;color:var(--muted-fg);line-height:1.7}
+
+    /* TEAM */
+    .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.2rem}
+    .team-card{background:var(--card-bg);border:1px solid var(--border);border-radius:.875rem;padding:1.2rem 1.3rem}
+    .team-card .role{font-size:.72rem;letter-spacing:.08em;color:var(--gold);font-weight:700;text-transform:uppercase;margin-bottom:.4rem}
+    .team-card .name{font-weight:700;font-size:.95rem;margin-bottom:.4rem}
+    .team-card .bio{font-size:.82rem;color:var(--muted-fg);line-height:1.65}
+
+    /* CONTACT */
+    .contact-box{background:var(--card-bg);border:1px solid var(--gold);border-radius:.875rem;padding:2rem;text-align:center;margin-top:1.2rem}
+    .contact-box p{color:var(--muted-fg);margin-bottom:1rem;font-size:.93rem}
+    .contact-box a{display:inline-block;background:var(--gold);color:#0d0700;font-weight:700;padding:.65rem 2rem;border-radius:2rem;font-size:.9rem;transition:background .2s}
+    .contact-box a:hover{background:var(--gold-dark);text-decoration:none}
+
+    /* DIVIDER */
+    .divider{border:none;border-top:1px solid var(--border);margin:3rem 0}
+
+    /* FOOTER */
+    footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;color:var(--muted-fg);font-size:.82rem}
+    footer a{color:var(--muted-fg)}
+
+    @media(max-width:600px){
+      .team-grid{grid-template-columns:1fr}
+      .nav-links{gap:1rem}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" aria-label="主導航">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">BNotes 焙學·原豆誌</a>
+    <div class="nav-links">
+      <a href="/">所有文章</a>
+      <a href="/#categories">分類探索</a>
+      <a href="/about.html" class="active">關於我們</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="about-hero">
+  <div class="eyebrow">About BNotes</div>
+  <h1>做一個<em>真正有用</em>的<br>咖啡知識媒體</h1>
+  <p class="lead">沒有業配，沒有「完整攻略」農場文。只有我們真正相信的東西——讓每個喜歡喝咖啡的人，都能用中文讀到世界最前沿的知識。</p>
+</div>
+
+<!-- CONTENT -->
+<div class="about-wrap">
+
+  <!-- 為什麼做 -->
+  <div class="about-section">
+    <h2>為什麼有 BNotes？</h2>
+    <p>有一件事讓我們一直覺得奇怪：精品咖啡的知識，大部分在英文世界。SCA 的研究、WBC 選手的技術拆解、產地微氣候的變化、處理法對風味的影響——這些東西，台灣喜歡咖啡的人一樣想知道，卻一直找不到中文的好來源。</p>
+    <p>搜尋「手沖咖啡教學」，找到的幾乎都是同一套說法，複製來複製去。找「衣索比亞日曬」，多半是品牌的產品文案。找「WBC 冠軍技術」，幾乎什麼都沒有。</p>
+    <p>BNotes 就是為了填這個空缺而存在的。不是為了賣課、不是為了賣豆。只是覺得這件事值得做。</p>
+  </div>
+
+  <!-- 我們怎麼工作 -->
+  <div class="about-section">
+    <h2>我們怎麼工作</h2>
+    <p>每篇文章背後有一套流程——先找到世界正在討論但華文圈還沒有的知識點，再用多個英文來源交叉驗證，確認知識正確後才開始寫。寫完會再過一遍 SCA 術語的準確性檢查，確保沒有說錯的東西。</p>
+    <div class="principles">
+      <div class="principle-card">
+        <div class="icon">🔍</div>
+        <div>
+          <div class="title">知識正確第一</div>
+          <div class="desc">所有數字、術語、技術描述，都有英文來源佐證。發現錯誤會公開更正，不會悄悄刪文。</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="icon">🚫</div>
+        <div>
+          <div class="title">無業配聲明</div>
+          <div class="desc">我們不接受品牌付費的文章置入。器材推薦、豆款介紹，都是編輯自己的判斷，不是廠商給的稿。</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="icon">🌐</div>
+        <div>
+          <div class="title">對標世界標準</div>
+          <div class="desc">術語與分類對齊 SCA（精品咖啡協會）標準。不自創一套說法，也不跟著台灣市場的慣用語跑偏。</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="icon">🆓</div>
+        <div>
+          <div class="title">永遠免費</div>
+          <div class="desc">所有文章永久免費閱讀。知識不應該有付費牆。我們靠讀者自願支持與器材推薦連結維持運營。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 編輯團隊 -->
+  <div class="about-section">
+    <h2>編輯團隊</h2>
+    <p>BNotes 由一支小型編輯團隊運營。我們沒有豪華辦公室，沒有大型組織。就是幾個覺得「咖啡知識應該被認真對待」的人，每週在做這件事。</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="role">知識審核</div>
+        <div class="name">B1 知識架構師</div>
+        <div class="bio">負責所有文章的知識正確性稽核。對照 SCA 課綱、WBC 官方資料、同行評審文獻，發現問題就退稿修正。</div>
+      </div>
+      <div class="team-card">
+        <div class="role">內容生產</div>
+        <div class="name">B3 內容總監</div>
+        <div class="bio">負責從零到發布的寫作流程。最討厭的就是農場文和 AI 味。每篇文章念出來要像「啜飲」，不像「灌入」。</div>
+      </div>
+      <div class="team-card">
+        <div class="role">選題情報</div>
+        <div class="name">B4 選題情報官</div>
+        <div class="bio">每天掃描 Perfect Daily Grind、Barista Magazine、SCA News 等英文來源，把世界正在討論的咖啡知識帶回來。</div>
+      </div>
+      <div class="team-card">
+        <div class="role">技術 & 發布</div>
+        <div class="name">B9 平台工程師</div>
+        <div class="bio">負責網站運作、速度優化、SEO 結構。讓每篇好文章都能被正確地被找到。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 聯繫我們 -->
+  <div class="about-section">
+    <h2>聯繫我們</h2>
+    <p>有文章知識錯誤想回報？有合作提案？或者就是想聊咖啡？我們都在。</p>
+    <div class="contact-box">
+      <p>讀者回饋、知識錯誤回報、媒體合作洽詢</p>
+      <a href="mailto:hello@bnotescoffee.com">hello@bnotescoffee.com</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 BNotes 焙學·原豆誌 &nbsp;·&nbsp; <a href="/">回首頁</a> &nbsp;·&nbsp; <a href="/#categories">分類探索</a></p>
+  <p style="margin-top:.5rem;font-size:.75rem">知識正確，無業配，永久免費。</p>
+</footer>
+
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "your-token-here"}'></script>
+
+</body>
+</html>
