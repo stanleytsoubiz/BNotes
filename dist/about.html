@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>關於 BNotes｜我們是誰，我們為什麼做這件事</title>
+  <title>關於 BNotes｜做一個真正有用的咖啡知識媒體</title>
   <meta name="description" content="BNotes 是一群喜愛咖啡的人，想把世界最前沿的精品咖啡知識帶給每一個說中文的人。免費、公正、沒有業配。">
   <link rel="canonical" href="https://bnotescoffee.com/about.html">
-  <meta property="og:title" content="關於 BNotes｜我們是誰，我們為什麼做這件事">
+  <meta property="og:title" content="關於 BNotes｜做一個真正有用的咖啡知識媒體">
   <meta property="og:description" content="BNotes 是一群喜愛咖啡的人，想把世界最前沿的精品咖啡知識帶給每一個說中文的人。免費、公正、沒有業配。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bnotescoffee.com/about.html">
@@ -15,213 +15,273 @@
   <meta property="og:locale" content="zh_TW">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <meta name="theme-color" content="#1a0a00">
+  <meta name="theme-color" content="#faf8f4">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap"></noscript>
 
   <!-- GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2WXMBSHDSB"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2WXMBSHDSB');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKX568GDNW"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LKX568GDNW');</script>
 
   <style>
+    /* ── Reset & Tokens（與首頁一致） ── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --bg:#0d0700;--fg:#f0e6d3;--muted-fg:#9a8878;
-      --gold:#c9a84c;--gold-dark:#a0782e;
-      --card-bg:#1a0f05;--border:#2e1f10;
-      --serif:'Noto Serif TC',serif;--sans:'Noto Sans TC',sans-serif;
+      --bg:#faf8f4;--fg:#1a0a00;--muted:#f0ebe2;--muted-fg:#7a6050;
+      --border:#e4d9cc;--card:#fff;
+      --gold:#c8922a;--gold-light:#f5e6c0;
+      --brown:#5c2d00;--dark:#1a0a00;
+      --serif:'Noto Serif TC',Georgia,serif;
+      --sans:'Noto Sans TC',-apple-system,sans-serif;
+      --r:.75rem;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{font-size:17px;scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.75;-webkit-font-smoothing:antialiased}
-    a{color:var(--gold);text-decoration:none}
-    a:hover{text-decoration:underline}
+    body{font-family:var(--sans);background:var(--bg);color:var(--fg);line-height:1.75;-webkit-text-size-adjust:100%}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block;height:auto}
 
-    /* NAV */
-    .nav{position:sticky;top:0;z-index:100;background:rgba(13,7,0,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-    .nav-inner{max-width:960px;margin:0 auto;padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-    .nav-logo{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--gold);letter-spacing:.03em;text-decoration:none}
-    .nav-links{display:flex;gap:1.5rem;align-items:center;font-size:.88rem}
-    .nav-links a{color:var(--muted-fg);transition:color .2s}
-    .nav-links a:hover,.nav-links a.active{color:var(--fg);text-decoration:none}
-    .nav-cta{background:var(--gold);color:#0d0700 !important;padding:.35rem 1rem;border-radius:2rem;font-weight:700;font-size:.82rem;transition:background .2s}
-    .nav-cta:hover{background:var(--gold-dark)}
-
-    /* HERO */
-    .about-hero{padding:5rem 1.5rem 3.5rem;text-align:center;max-width:720px;margin:0 auto}
-    .about-hero .eyebrow{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
-    .about-hero h1{font-family:var(--serif);font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.3;margin-bottom:1.4rem}
-    .about-hero h1 em{color:var(--gold);font-style:normal}
-    .about-hero .lead{font-size:1.05rem;color:var(--muted-fg);line-height:1.85;max-width:580px;margin:0 auto}
-
-    /* CONTENT */
-    .about-wrap{max-width:700px;margin:0 auto;padding:0 1.5rem 5rem}
-    .about-section{margin-bottom:3.5rem}
-    .about-section h2{font-family:var(--serif);font-size:1.45rem;color:var(--gold);margin-bottom:1.1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border)}
-    .about-section p{color:var(--fg);line-height:1.9;margin-bottom:1.1rem;font-size:.98rem}
-    .about-section p:last-child{margin-bottom:0}
-
-    /* PRINCIPLES */
-    .principles{display:grid;gap:1rem;margin-top:1.2rem}
-    .principle-card{background:var(--card-bg);border:1px solid var(--border);border-radius:.875rem;padding:1.25rem 1.4rem;display:flex;gap:1rem;align-items:flex-start}
-    .principle-card .icon{font-size:1.5rem;line-height:1;flex-shrink:0;margin-top:.1rem}
-    .principle-card .title{font-weight:700;color:var(--fg);margin-bottom:.3rem;font-size:.95rem}
-    .principle-card .desc{font-size:.85rem;color:var(--muted-fg);line-height:1.7}
-
-    /* TEAM */
-    .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.2rem}
-    .team-card{background:var(--card-bg);border:1px solid var(--border);border-radius:.875rem;padding:1.2rem 1.3rem}
-    .team-card .role{font-size:.72rem;letter-spacing:.08em;color:var(--gold);font-weight:700;text-transform:uppercase;margin-bottom:.4rem}
-    .team-card .name{font-weight:700;font-size:.95rem;margin-bottom:.4rem}
-    .team-card .bio{font-size:.82rem;color:var(--muted-fg);line-height:1.65}
-
-    /* CONTACT */
-    .contact-box{background:var(--card-bg);border:1px solid var(--gold);border-radius:.875rem;padding:2rem;text-align:center;margin-top:1.2rem}
-    .contact-box p{color:var(--muted-fg);margin-bottom:1rem;font-size:.93rem}
-    .contact-box a{display:inline-block;background:var(--gold);color:#0d0700;font-weight:700;padding:.65rem 2rem;border-radius:2rem;font-size:.9rem;transition:background .2s}
-    .contact-box a:hover{background:var(--gold-dark);text-decoration:none}
-
-    /* DIVIDER */
-    .divider{border:none;border-top:1px solid var(--border);margin:3rem 0}
-
-    /* FOOTER */
-    footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;color:var(--muted-fg);font-size:.82rem}
-    footer a{color:var(--muted-fg)}
-
-    @media(max-width:600px){
-      .team-grid{grid-template-columns:1fr}
-      .nav-links{gap:1rem}
+    /* ── NAV（與首頁完全一致） ── */
+    .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);padding:.75rem 1.25rem}
+    .nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{font-family:var(--serif);font-size:1.15rem;font-weight:900;color:var(--dark);letter-spacing:.02em}
+    .nav-logo b{color:var(--gold)}
+    .nav-sub{font-family:var(--sans);font-size:.65rem;color:var(--muted-fg);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+    .nav-links{display:flex;align-items:center;gap:1.25rem}
+    .nav-links a{font-size:.8rem;font-weight:600;color:var(--muted-fg);transition:color .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+    .nav-actions{display:flex;align-items:center;gap:.75rem}
+    .nav-search-btn{background:none;border:none;cursor:pointer;font-size:1rem;color:var(--muted-fg);padding:.2rem .4rem;border-radius:.4rem;transition:color .2s}
+    .nav-search-btn:hover{color:var(--gold)}
+    .nav-burger{display:none;background:none;border:none;cursor:pointer;font-size:1.2rem;color:var(--dark);padding:.2rem .4rem}
+    @media(max-width:700px){
+      .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(26,10,0,.97);
+        flex-direction:column;align-items:center;justify-content:center;gap:2rem;z-index:99}
+      .nav-links.open{display:flex}
+      .nav-links a{font-size:1.2rem;color:#fff}
+      .nav-burger{display:block;z-index:100}
     }
+
+    /* ── PAGE HEADER ── */
+    .page-header{
+      background:linear-gradient(135deg, var(--dark) 0%, var(--brown) 100%);
+      padding:4rem 1.5rem 3.5rem;
+      text-align:center;
+    }
+    .page-header-inner{max-width:640px;margin:0 auto}
+    .page-tag{display:inline-block;border:1px solid rgba(200,146,42,.5);color:var(--gold);
+      font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+      padding:.25rem .9rem;border-radius:2rem;margin-bottom:1.2rem}
+    .page-h1{font-family:var(--serif);font-size:clamp(1.6rem,4.5vw,2.4rem);font-weight:900;
+      color:#fff;line-height:1.3;margin-bottom:1rem}
+    .page-h1 em{color:var(--gold);font-style:normal}
+    .page-lead{color:rgba(255,255,255,.72);font-size:.95rem;line-height:1.85;max-width:520px;margin:0 auto}
+
+    /* ── CONTENT WRAP ── */
+    .content{max-width:760px;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+
+    /* ── SECTION ── */
+    .section{margin-bottom:3.5rem}
+    .section-title{font-family:var(--serif);font-size:1.25rem;font-weight:900;color:var(--dark);
+      margin-bottom:1.25rem;padding-bottom:.7rem;
+      border-bottom:2px solid var(--gold-light);
+      display:flex;align-items:center;gap:.5rem}
+    .section-title::before{content:'';display:inline-block;width:3px;height:1.1rem;
+      background:var(--gold);border-radius:2px;flex-shrink:0}
+    .section-body{font-size:.95rem;color:var(--muted-fg);line-height:1.9}
+    .section-body p{margin-bottom:1rem}
+    .section-body p:last-child{margin-bottom:0}
+    .section-body strong{color:var(--fg)}
+
+    /* ── PRINCIPLE CARDS ── */
+    .principles{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.5rem}
+    @media(max-width:560px){.principles{grid-template-columns:1fr}}
+    .p-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+      padding:1.4rem 1.5rem;transition:box-shadow .2s,transform .2s}
+    .p-card:hover{box-shadow:0 6px 20px rgba(92,45,0,.1);transform:translateY(-2px)}
+    .p-card-icon{font-size:1.4rem;margin-bottom:.6rem;line-height:1}
+    .p-card-title{font-family:var(--serif);font-weight:900;font-size:.95rem;color:var(--dark);margin-bottom:.4rem}
+    .p-card-desc{font-size:.83rem;color:var(--muted-fg);line-height:1.7}
+
+    /* ── STATS STRIP ── */
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+      background:var(--border);border:1px solid var(--border);border-radius:var(--r);
+      overflow:hidden;margin:2rem 0}
+    .stat{background:var(--card);padding:1.5rem 1rem;text-align:center}
+    .stat-num{font-family:var(--serif);font-size:2rem;font-weight:900;color:var(--gold);line-height:1}
+    .stat-label{font-size:.75rem;color:var(--muted-fg);margin-top:.35rem;letter-spacing:.04em}
+
+    /* ── DIVIDER ── */
+    .divider{height:1px;background:var(--border);margin:2.5rem 0}
+
+    /* ── CONTACT BOX ── */
+    .contact-box{background:linear-gradient(135deg,var(--dark) 0%,var(--brown) 100%);
+      border-radius:var(--r);padding:2.5rem 2rem;text-align:center;margin-top:1.5rem}
+    .contact-box p{color:rgba(255,255,255,.72);font-size:.9rem;margin-bottom:1.25rem;line-height:1.7}
+    .contact-btn{display:inline-block;background:var(--gold);color:var(--dark);
+      font-weight:700;padding:.7rem 2.2rem;border-radius:2rem;font-size:.9rem;
+      transition:opacity .2s;font-family:var(--sans)}
+    .contact-btn:hover{opacity:.85}
+
+    /* ── FOOTER（與首頁一致） ── */
+    .footer{background:var(--dark);color:rgba(255,255,255,.55);padding:1.75rem 1.25rem;text-align:center;font-size:.78rem;line-height:2}
+    .footer a{color:rgba(255,255,255,.65);text-decoration:none}
+    .footer a:hover{color:var(--gold)}
+    .footer-links{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;margin-bottom:.5rem}
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav" aria-label="主導航">
+<!-- NAV（與首頁完全一致） -->
+<nav class="nav" role="navigation" aria-label="主導覽">
   <div class="nav-inner">
-    <a href="/" class="nav-logo">BNotes 焙學·原豆誌</a>
-    <div class="nav-links">
-      <a href="/">所有文章</a>
-      <a href="/#categories">分類探索</a>
+    <a class="nav-logo" href="/"><b>B</b>Notes<span class="nav-sub">焙學·原豆誌</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="/category/pour-over.html">手沖技法</a>
+      <a href="/category/espresso.html">義式咖啡</a>
+      <a href="/category/equipment.html">器材評測</a>
+      <a href="/category/terroir.html">產地風土</a>
+      <a href="/category/science.html">沖泡科學</a>
       <a href="/about.html" class="active">關於我們</a>
+    </div>
+    <div class="nav-actions">
+      <button class="nav-search-btn" aria-label="搜尋" onclick="window.location='/'">🔍</button>
+      <button class="nav-burger" id="nav-burger" aria-label="選單" aria-expanded="false">☰</button>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<div class="about-hero">
-  <div class="eyebrow">About BNotes</div>
-  <h1>做一個<em>真正有用</em>的<br>咖啡知識媒體</h1>
-  <p class="lead">沒有業配，沒有「完整攻略」農場文。只有我們真正相信的東西——讓每個喜歡喝咖啡的人，都能用中文讀到世界最前沿的知識。</p>
-</div>
+<!-- PAGE HEADER -->
+<header class="page-header" aria-label="頁面標題">
+  <div class="page-header-inner">
+    <div class="page-tag">About BNotes</div>
+    <h1 class="page-h1">做一個<em>真正有用</em>的<br>咖啡知識媒體</h1>
+    <p class="page-lead">沒有業配，沒有「完整攻略」農場文。只有我們真正相信的東西——讓每個喜歡喝咖啡的人，都能用中文讀到世界最前沿的知識。</p>
+  </div>
+</header>
 
 <!-- CONTENT -->
-<div class="about-wrap">
+<div class="content">
 
-  <!-- 為什麼做 -->
-  <div class="about-section">
-    <h2>為什麼有 BNotes？</h2>
-    <p>有一件事讓我們一直覺得奇怪：精品咖啡的知識，大部分在英文世界。SCA 的研究、WBC 選手的技術拆解、產地微氣候的變化、處理法對風味的影響——這些東西，台灣喜歡咖啡的人一樣想知道，卻一直找不到中文的好來源。</p>
-    <p>搜尋「手沖咖啡教學」，找到的幾乎都是同一套說法，複製來複製去。找「衣索比亞日曬」，多半是品牌的產品文案。找「WBC 冠軍技術」，幾乎什麼都沒有。</p>
-    <p>BNotes 就是為了填這個空缺而存在的。不是為了賣課、不是為了賣豆。只是覺得這件事值得做。</p>
+  <!-- 為什麼有 BNotes -->
+  <div class="section">
+    <h2 class="section-title">為什麼有 BNotes？</h2>
+    <div class="section-body">
+      <p>有一件事讓我們一直覺得奇怪：精品咖啡的知識，大部分在英文世界。SCA 的研究、WBC 選手的技術拆解、產地微氣候的變化、處理法對風味的影響——這些東西，台灣喜歡咖啡的人一樣想知道，卻一直找不到中文的好來源。</p>
+      <p>搜尋「手沖咖啡教學」，找到的幾乎都是同一套說法，複製來複製去。找「衣索比亞日曬」，多半是品牌的產品文案。找「WBC 冠軍技術」，幾乎什麼都沒有。</p>
+      <p><strong>BNotes 就是為了填這個空缺而存在的。</strong>不是為了賣課、不是為了賣豆。只是覺得這件事值得做。</p>
+    </div>
+
+    <!-- 數字條 -->
+    <div class="stats" aria-label="網站數據">
+      <div class="stat"><div class="stat-num">70+</div><div class="stat-label">深度文章</div></div>
+      <div class="stat"><div class="stat-num">5</div><div class="stat-label">知識分類</div></div>
+      <div class="stat"><div class="stat-num">免費</div><div class="stat-label">永久開放</div></div>
+    </div>
   </div>
 
-  <!-- 我們怎麼工作 -->
-  <div class="about-section">
-    <h2>我們怎麼工作</h2>
-    <p>每篇文章背後有一套流程——先找到世界正在討論但華文圈還沒有的知識點，再用多個英文來源交叉驗證，確認知識正確後才開始寫。寫完會再過一遍 SCA 術語的準確性檢查，確保沒有說錯的東西。</p>
+  <hr class="divider">
+
+  <!-- 四大原則 -->
+  <div class="section">
+    <h2 class="section-title">我們的四個堅持</h2>
     <div class="principles">
-      <div class="principle-card">
-        <div class="icon">🔍</div>
-        <div>
-          <div class="title">知識正確第一</div>
-          <div class="desc">所有數字、術語、技術描述，都有英文來源佐證。發現錯誤會公開更正，不會悄悄刪文。</div>
-        </div>
+      <div class="p-card">
+        <div class="p-card-icon">🔍</div>
+        <div class="p-card-title">知識正確第一</div>
+        <div class="p-card-desc">所有數字、術語、技術描述，都有英文一手來源佐證。發現錯誤會公開更正，不悄悄刪文。</div>
       </div>
-      <div class="principle-card">
-        <div class="icon">🚫</div>
-        <div>
-          <div class="title">無業配聲明</div>
-          <div class="desc">我們不接受品牌付費的文章置入。器材推薦、豆款介紹，都是編輯自己的判斷，不是廠商給的稿。</div>
-        </div>
+      <div class="p-card">
+        <div class="p-card-icon">🚫</div>
+        <div class="p-card-title">無業配聲明</div>
+        <div class="p-card-desc">不接受品牌付費置入。器材推薦、豆款介紹，都是編輯自己的判斷，不是廠商給的稿。</div>
       </div>
-      <div class="principle-card">
-        <div class="icon">🌐</div>
-        <div>
-          <div class="title">對標世界標準</div>
-          <div class="desc">術語與分類對齊 SCA（精品咖啡協會）標準。不自創一套說法，也不跟著台灣市場的慣用語跑偏。</div>
-        </div>
+      <div class="p-card">
+        <div class="p-card-icon">🌐</div>
+        <div class="p-card-title">對標世界標準</div>
+        <div class="p-card-desc">術語與分類對齊 SCA 精品咖啡協會標準。不自創說法，也不跟著市場慣用語跑偏。</div>
       </div>
-      <div class="principle-card">
-        <div class="icon">🆓</div>
-        <div>
-          <div class="title">永遠免費</div>
-          <div class="desc">所有文章永久免費閱讀。知識不應該有付費牆。我們靠讀者自願支持與器材推薦連結維持運營。</div>
-        </div>
+      <div class="p-card">
+        <div class="p-card-icon">🆓</div>
+        <div class="p-card-title">永遠免費</div>
+        <div class="p-card-desc">所有文章永久免費閱讀。知識不應該有付費牆。我們靠讀者自願支持與器材推薦連結維持運營。</div>
       </div>
     </div>
   </div>
 
   <hr class="divider">
 
-  <!-- 我們的編輯流程 -->
-  <div class="about-section">
-    <h2>我們怎麼確保品質</h2>
-    <p>每篇文章從選題到發布，都經過一套我們自己訂的流程。不是因為嚴格，是因為這是我們對讀者的基本承諾。</p>
+  <!-- 品質流程 -->
+  <div class="section">
+    <h2 class="section-title">我們怎麼確保品質</h2>
+    <div class="section-body">
+      <p>每篇文章從選題到發布，都經過一套我們自己訂的流程。不是因為嚴格，是因為這是我們對讀者的基本承諾。</p>
+    </div>
     <div class="principles">
-      <div class="principle-card">
-        <div class="icon">🔎</div>
-        <div>
-          <div class="title">選題有來源</div>
-          <div class="desc">每篇文章的選題，都來自英文世界的一手資料——Perfect Daily Grind、Barista Magazine、SCA 研究報告、WBC 官方公告。不寫已經被講爛的東西。</div>
-        </div>
+      <div class="p-card">
+        <div class="p-card-icon">🔎</div>
+        <div class="p-card-title">選題有來源</div>
+        <div class="p-card-desc">每篇文章的選題來自英文世界的一手資料——Perfect Daily Grind、SCA 研究報告、WBC 官方公告。不寫已經被講爛的東西。</div>
       </div>
-      <div class="principle-card">
-        <div class="icon">✏️</div>
-        <div>
-          <div class="title">知識先過關，才動筆</div>
-          <div class="desc">每個術語、每個數字，都要有出處。寫完之後，會再逐句對照 SCA 標準確認沒有說錯的地方。發現錯誤，公開更正，不悄悄刪文。</div>
-        </div>
+      <div class="p-card">
+        <div class="p-card-icon">✏️</div>
+        <div class="p-card-title">知識先過關，才動筆</div>
+        <div class="p-card-desc">每個術語、每個數字，都要有出處。寫完後逐句對照 SCA 標準確認。發現錯誤，公開更正，不悄悄刪文。</div>
       </div>
-      <div class="principle-card">
-        <div class="icon">📖</div>
-        <div>
-          <div class="title">寫給人讀，不是寫給搜尋引擎</div>
-          <div class="desc">我們有一套「編輯五律」：場景開頭、感官優先、術語翻譯、節奏呼吸、作者在場。每篇文章上線前，都會過一遍這五道關。不通過，不發。</div>
-        </div>
+      <div class="p-card">
+        <div class="p-card-icon">📖</div>
+        <div class="p-card-title">寫給人讀，不是寫給搜尋引擎</div>
+        <div class="p-card-desc">我們有一套「編輯五律」：場景開頭、感官優先、術語翻譯、節奏呼吸、作者在場。每篇上線前都過一遍。不通過，不發。</div>
       </div>
-      <div class="principle-card">
-        <div class="icon">🚫</div>
-        <div>
-          <div class="title">沒有業配，沒有置入</div>
-          <div class="desc">推薦一款磨豆機或一支豆，是因為我們自己覺得值得。不是因為廠商給了錢。這一條是底線，不談例外。</div>
-        </div>
+      <div class="p-card">
+        <div class="p-card-icon">🎯</div>
+        <div class="p-card-title">沒有業配，沒有置入</div>
+        <div class="p-card-desc">推薦一款磨豆機或一支豆，是因為我們自己覺得值得。不是因為廠商給了錢。這一條是底線，不談例外。</div>
       </div>
     </div>
   </div>
 
+  <hr class="divider">
+
   <!-- 聯繫我們 -->
-  <div class="about-section">
-    <h2>聯繫我們</h2>
-    <p>有文章知識錯誤想回報？有合作提案？或者就是想聊咖啡？我們都在。</p>
+  <div class="section">
+    <h2 class="section-title">聯繫我們</h2>
+    <div class="section-body">
+      <p>有文章知識錯誤想回報？有合作提案？或者就是想聊咖啡？我們都在。</p>
+    </div>
     <div class="contact-box">
-      <p>讀者回饋、知識錯誤回報、媒體合作洽詢</p>
-      <a href="mailto:hello@bnotescoffee.com">hello@bnotescoffee.com</a>
+      <p>讀者回饋・知識錯誤回報・媒體合作洽詢</p>
+      <a class="contact-btn" href="mailto:hello@bnotescoffee.com">hello@bnotescoffee.com</a>
     </div>
   </div>
 
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 BNotes 焙學·原豆誌 &nbsp;·&nbsp; <a href="/">回首頁</a> &nbsp;·&nbsp; <a href="/#categories">分類探索</a></p>
-  <p style="margin-top:.5rem;font-size:.75rem">知識正確，無業配，永久免費。</p>
+<!-- FOOTER（與首頁一致） -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="/">回首頁</a>
+    <a href="/category/pour-over.html">手沖技法</a>
+    <a href="/category/espresso.html">義式咖啡</a>
+    <a href="/category/equipment.html">器材評測</a>
+    <a href="/about.html">關於我們</a>
+  </div>
+  <div>© 2026 BNotes 焙學·原豆誌 &nbsp;·&nbsp; 知識正確，無業配，永久免費</div>
 </footer>
 
-<!-- Cloudflare Web Analytics -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "your-token-here"}'></script>
+<script>
+// 漢堡選單
+var burger = document.getElementById('nav-burger');
+var navLinks = document.getElementById('nav-links');
+if(burger && navLinks){
+  burger.addEventListener('click', function(){
+    var open = navLinks.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+}
+</script>
 
 </body>
 </html>
