@@ -1,26 +1,32 @@
 #!/usr/bin/env node
 /**
- * BNotes Hero Image Generator v2
+ * BNotes Hero Image Generator v3
  * ────────────────────────────────────────────────────────────────────────────
  * 優先順序（上到下自動降級）：
- *   1. Unsplash Search API（最準確 — 每篇文章精確搜尋詞）
+ *   1. Google Imagen 4（最佳品牌一致性 — AI 生成，統一風格）
+ *      需設定環境變數: GOOGLE_AI_KEY
+ *      取得方式: https://aistudio.google.com/apikey
+ *
+ *   2. Unsplash Search API（精確主題搜尋）
  *      需設定環境變數: UNSPLASH_ACCESS_KEY
  *      免費申請: https://unsplash.com/oauth/applications
  *
- *   2. 精選映射表 SLUG_MAP（高品質 curated IDs，無需 key）
+ *   3. 精選映射表 SLUG_MAP（高品質 curated IDs，無需 key）
  *
- *   3. Pexels API（類別關鍵字搜尋）
+ *   4. Pexels API（類別關鍵字搜尋）
  *      需設定環境變數: PEXELS_API_KEY
  *      免費申請: https://www.pexels.com/api/
  *
- *   4. Unsplash Source 隨機（最後備援，無需 key）
+ *   5. Unsplash Source 隨機（最後備援，無需 key）
  *
  * 使用方式：
- *   node generate-hero-image.js <slug>            # 單篇
- *   node generate-hero-image.js --all             # 全部文章
- *   node generate-hero-image.js --missing         # 只處理缺圖
+ *   node generate-hero-image.js <slug>              # 單篇（已有圖則跳過）
+ *   node generate-hero-image.js <slug> --force      # 單篇強制重新產圖
+ *   node generate-hero-image.js --all               # 全部（已有圖自動跳過）
+ *   node generate-hero-image.js --all --force       # 全部強制重新產圖
+ *   node generate-hero-image.js --missing           # 只處理缺圖文章
  *
- *   UNSPLASH_ACCESS_KEY=xxx node generate-hero-image.js --all   # 最佳品質
+ *   GOOGLE_AI_KEY=xxx node generate-hero-image.js --missing   # 最佳品牌一致性
  */
 
 const fs    = require('fs');
@@ -238,6 +244,17 @@ const CATEGORY_KEYWORDS = {
   'default':    'specialty coffee cafe',
 };
 
+// ── BNotes Brand Style Template（Imagen 4 固定風格）────────────────────────────
+// 所有 AI 生成圖片共用此風格描述，確保視覺一致性
+// 調整此 template 即可改變全站圖片風格
+const IMAGEN_STYLE_TEMPLATE =
+  'specialty coffee photography, warm natural light, shallow depth of field, ' +
+  'muted earth tones and warm browns, artisanal cafe aesthetic, ' +
+  'dark wooden surface or natural linen background, ' +
+  'film grain texture, professional editorial photography, ' +
+  'no text overlay, no people, no faces, ' +
+  '16:9 landscape orientation, high quality';
+
 // ── HTTP helpers ──────────────────────────────────────────────────────────────
 function httpsGet(url, headers = {}) {
   return new Promise((resolve, reject) => {
@@ -256,6 +273,65 @@ function httpsGet(url, headers = {}) {
 async function httpsJson(url, headers = {}) {
   const { body } = await httpsGet(url, headers);
   return JSON.parse(body.toString());
+}
+
+function httpsPost(url, bodyObj, headers = {}) {
+  return new Promise((resolve, reject) => {
+    const data    = JSON.stringify(bodyObj);
+    const urlObj  = new URL(url);
+    const options = {
+      hostname: urlObj.hostname,
+      path:     urlObj.pathname + urlObj.search,
+      method:   'POST',
+      headers: {
+        'Content-Type':   'application/json',
+        'Content-Length': Buffer.byteLength(data),
+        'User-Agent':     'BNotes/3.0',
+        ...headers,
+      },
+    };
+    const req = https.request(options, (res) => {
+      const chunks = [];
+      res.on('data',  c => chunks.push(c));
+      res.on('end',   () => resolve({ status: res.statusCode, body: Buffer.concat(chunks) }));
+      res.on('error', reject);
+    });
+    req.on('error', reject);
+    req.write(data);
+    req.end();
+  });
+}
+
+// ── Google Imagen 4（品牌一致性最佳）────────────────────────────────────────────
+// 返回 Buffer（圖片二進位），或 null（失敗時）
+async function imagenGenerate(slug) {
+  const key = process.env.GOOGLE_AI_KEY;
+  if (!key) return null;
+
+  const subject = SLUG_SEARCH_TERMS[slug] || (detectCategory(slug) + ' coffee equipment');
+  const prompt  = `${subject}, ${IMAGEN_STYLE_TEMPLATE}`;
+
+  try {
+    const res = await httpsPost(
+      `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${key}`,
+      {
+        instances:  [{ prompt }],
+        parameters: { sampleCount: 1, aspectRatio: '16:9', safetyFilterLevel: 'block_some' },
+      }
+    );
+
+    const result = JSON.parse(res.body.toString());
+    if (result.predictions && result.predictions[0] && result.predictions[0].bytesBase64Encoded) {
+      console.log(`  🎨 Imagen 4 → "${subject.substring(0, 60)}…"`);
+      return Buffer.from(result.predictions[0].bytesBase64Encoded, 'base64');
+    }
+    if (result.error) {
+      console.warn(`  ⚠ Imagen 4 API error: ${result.error.message}`);
+    }
+  } catch(e) {
+    console.warn(`  ⚠ Imagen 4 failed: ${e.message}`);
+  }
+  return null;
 }
 
 // ── Unsplash Search API ───────────────────────────────────────────────────────
@@ -336,8 +412,8 @@ function detectCategory(slug) {
   return 'default';
 }
 
-// ── Core: download image for one slug ────────────────────────────────────────
-async function generateHeroImage(slug) {
+// ── Core: generate image for one slug ────────────────────────────────────────
+async function generateHeroImage(slug, forceRegenerate = false) {
   const imgPath  = path.join(IMAGES_DIR, `${slug}-hero.jpg`);
   const htmlPath = path.join(ARTICLES,   `${slug}.html`);
 
@@ -346,8 +422,28 @@ async function generateHeroImage(slug) {
     return false;
   }
 
-  console.log(`\n📷 ${slug}`);
+  // ── Skip-if-exists：已有合適圖卡則跳過，不重新產圖 ─────────────────────────
+  if (!forceRegenerate && fs.existsSync(imgPath)) {
+    const stat = fs.statSync(imgPath);
+    if (stat.size > 5000) {
+      console.log(`  ⏭  ${slug} — 已有圖卡 (${Math.round(stat.size/1024)}KB)，跳過`);
+      return true;
+    }
+  }
 
+  console.log(`\n📷 ${slug}`);
+  fs.mkdirSync(IMAGES_DIR, { recursive: true });
+
+  // ── 優先：Imagen 4 AI 生成（品牌一致性最佳）──────────────────────────────────
+  const imagenBuffer = await imagenGenerate(slug);
+  if (imagenBuffer) {
+    fs.writeFileSync(imgPath, imagenBuffer);
+    console.log(`  ✓ Saved ${Math.round(imagenBuffer.length/1024)}KB → ${path.relative(ROOT, imgPath)}`);
+    updateOgImage(htmlPath, slug);
+    return true;
+  }
+
+  // ── 降級：URL 系列（Unsplash Search → SLUG_MAP → Pexels → Fallback）──────────
   const imgUrl = await resolveImageUrl(slug);
   console.log(`  → ${imgUrl.substring(0, 80)}…`);
 
@@ -357,11 +453,8 @@ async function generateHeroImage(slug) {
     return false;
   }
 
-  fs.mkdirSync(IMAGES_DIR, { recursive: true });
   fs.writeFileSync(imgPath, imgData);
   console.log(`  ✓ Saved ${Math.round(imgData.length/1024)}KB → ${path.relative(ROOT, imgPath)}`);
-
-  // Update og:image in HTML
   updateOgImage(htmlPath, slug);
   return true;
 }
@@ -388,16 +481,25 @@ function updateOgImage(htmlPath, slug) {
 
 // ── CLI entry ─────────────────────────────────────────────────────────────────
 async function main() {
-  const args = process.argv.slice(2);
+  const args    = process.argv.slice(2);
+  const force   = args.includes('--force');
+  const mainArg = args.find(a => !a.startsWith('--'));
 
   // Show API status
+  const hasGoogle   = !!process.env.GOOGLE_AI_KEY;
   const hasUnsplash = !!process.env.UNSPLASH_ACCESS_KEY;
   const hasPexels   = !!process.env.PEXELS_API_KEY;
-  console.log(`\n🔑 API Keys: Unsplash=${hasUnsplash ? '✅' : '❌'} Pexels=${hasPexels ? '✅' : '❌'}`);
-  if (!hasUnsplash) {
-    console.log(`   ⚡ 建議申請免費 Unsplash key → https://unsplash.com/oauth/applications`);
-    console.log(`   用法: UNSPLASH_ACCESS_KEY=xxx node generate-hero-image.js --all\n`);
+
+  console.log(`\n🔑 API Keys:`);
+  console.log(`   Imagen 4  (Google)   = ${hasGoogle   ? '✅ 品牌一致 AI 生成' : '❌ 未設定'}`);
+  console.log(`   Unsplash Search      = ${hasUnsplash ? '✅ 精確主題搜尋'    : '❌ 未設定'}`);
+  console.log(`   Pexels               = ${hasPexels   ? '✅'                : '❌ 未設定'}`);
+  if (!hasGoogle) {
+    console.log(`\n   ⚡ 建議設定 Imagen 4 key 以達最佳品牌一致性`);
+    console.log(`      取得: https://aistudio.google.com/apikey`);
+    console.log(`      用法: GOOGLE_AI_KEY=xxx node generate-hero-image.js --missing\n`);
   }
+  if (force) console.log(`   ⚡ --force 模式：強制重新產圖（忽略已有圖卡）\n`);
 
   if (args[0] === '--all' || args[0] === '--missing') {
     const slugs = fs.readdirSync(ARTICLES)
@@ -409,32 +511,41 @@ async function main() {
       : slugs;
 
     console.log(`🚀 Processing ${toProcess.length} articles…`);
-    let ok = 0, fail = 0;
+    let ok = 0, skipped = 0, fail = 0;
     for (const slug of toProcess) {
-      const result = await generateHeroImage(slug).catch(e => {
+      const before = fs.existsSync(path.join(IMAGES_DIR, `${slug}-hero.jpg`));
+      const result = await generateHeroImage(slug, force).catch(e => {
         console.error(`  ✗ Error: ${e.message}`);
         return false;
       });
-      result ? ok++ : fail++;
+      if (!result) { fail++; }
+      else if (!force && before) { skipped++; }
+      else { ok++; }
     }
-    console.log(`\n✅ Done — ${ok} OK, ${fail} failed`);
+    console.log(`\n✅ Done — ${ok} 新產圖, ${skipped} 跳過（已有）, ${fail} 失敗`);
 
-  } else if (args[0]) {
-    await generateHeroImage(args[0]).catch(e => {
+  } else if (mainArg) {
+    await generateHeroImage(mainArg, force).catch(e => {
       console.error(`Error: ${e.message}`);
       process.exit(1);
     });
 
   } else {
     console.log(`
-Usage:
-  node generate-hero-image.js <slug>           # 單篇文章
-  node generate-hero-image.js --all            # 全部文章
-  node generate-hero-image.js --missing        # 只處理缺圖文章
+使用方式：
+  node generate-hero-image.js <slug>              # 單篇（已有圖自動跳過）
+  node generate-hero-image.js <slug> --force      # 單篇強制重新產圖
+  node generate-hero-image.js --all               # 全部（已有圖自動跳過）
+  node generate-hero-image.js --all --force       # 全部強制重新產圖
+  node generate-hero-image.js --missing           # 只處理缺圖文章
 
-環境變數（可選，建議設定）:
-  UNSPLASH_ACCESS_KEY=xxx   免費申請: https://unsplash.com/oauth/applications
-  PEXELS_API_KEY=xxx        免費申請: https://www.pexels.com/api/
+環境變數（優先順序）：
+  GOOGLE_AI_KEY=xxx         Google AI Studio API key（Imagen 4，品牌一致性最佳）
+                            取得: https://aistudio.google.com/apikey
+  UNSPLASH_ACCESS_KEY=xxx   Unsplash 精確搜尋
+                            申請: https://unsplash.com/oauth/applications
+  PEXELS_API_KEY=xxx        Pexels 備援
+                            申請: https://www.pexels.com/api/
 `);
   }
 }
