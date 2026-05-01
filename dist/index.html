@@ -50,16 +50,15 @@ img{max-width:100%;display:block;height:auto}
 .nav-cta:hover{background:var(--brown)}
 
 /* ── HERO ── */
-.hero{position:relative;min-height:60vw;max-height:520px;overflow:hidden;display:flex;align-items:flex-end;background:var(--dark)}
-.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
-.hero-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,10,0,.9) 0%,rgba(26,10,0,.3) 60%,transparent 100%)}
-.hero-body{position:relative;z-index:2;padding:2rem 1.25rem 2.5rem;max-width:960px;width:100%;margin:0 auto}
-.hero-tag{display:inline-block;border:1px solid rgba(184,130,10,.6);color:var(--gold);font-size:.7rem;font-weight:700;
-  letter-spacing:.1em;padding:.25rem .75rem;border-radius:2rem;margin-bottom:.75rem;text-transform:uppercase}
-.hero-h1{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.6rem);font-weight:900;color:#fff;line-height:1.25;margin-bottom:.75rem}
-.hero-h1 em{color:var(--gold);font-style:normal}
-.hero-desc{color:rgba(255,255,255,.75);font-size:clamp(.85rem,2.5vw,.95rem);max-width:500px;margin-bottom:1.5rem;line-height:1.7}
-.hero-btns{display:flex;gap:.75rem;flex-wrap:wrap}
+
+
+
+
+
+
+
+
+
 .btn-gold{background:var(--gold);color:var(--dark);padding:.65rem 1.6rem;border-radius:2rem;font-weight:700;font-size:.9rem;transition:opacity .2s}
 .btn-gold:hover{opacity:.85}
 .btn-outline{border:1.5px solid rgba(255,255,255,.5);color:#fff;padding:.65rem 1.6rem;border-radius:2rem;font-weight:600;font-size:.9rem;transition:border-color .2s}
@@ -215,18 +214,14 @@ img { aspect-ratio: attr(width) / attr(height); }
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero" aria-label="首頁主視覺">
-  <img class="hero-bg" src="/images/ai/pour-over-guide-hero.jpg" fetchpriority="high" loading="eager" alt="精品手沖咖啡" width="960" height="520">
-  <div class="hero-grad"></div>
-  <div class="hero-body">
-    <div class="hero-tag">Taiwan Specialty Coffee</div>
-    <h1 class="hero-h1">品味的知識<br><em>知識的品味</em></h1>
-    <p class="hero-desc">台灣精品咖啡知識媒體。SCA 標準手沖教學、產地風土深度報導，每週日精選更新。</p>
-    <div class="hero-btns">
-      <a class="btn-gold" href="#featured">閱讀精選文章</a>
-      <a class="btn-outline" href="#featured" onclick="document.getElementById('featured')&&document.getElementById('featured').scrollIntoView({behavior:'smooth'});return false;">最新文章</a>
+<!-- MASTHEAD -->
+<section class="masthead" aria-label="網站標題">
+  <div class="masthead-inner">
+    <div class="masthead-text">
+      <p class="masthead-tag">Taiwan Specialty Coffee · SCA 對標 · 免費知識媒體</p>
+      <h1 class="masthead-h1">精品咖啡的知識，<em>用中文說清楚</em></h1>
     </div>
+    <a class="masthead-cta" href="#featured">閱讀最新文章 ↓</a>
   </div>
 </section>
 
@@ -236,7 +231,7 @@ img { aspect-ratio: attr(width) / attr(height); }
 <section class="section" id="featured" aria-labelledby="feat-title">
   <div class="section-inner">
     <div class="sec-header">
-      <h2 class="sec-title" id="feat-title">🔥 精選<em>文章</em></h2>
+      <h2 class="sec-title" id="feat-title">最新文章</h2>
     </div>
     
     <!-- 分類篩選 tabs -->
@@ -672,12 +667,7 @@ if(burger && navLinks){
     });
   });
 
-  document.querySelectorAll('.nav-cta, .hero-cta, [class*="cta"]').forEach(function(el){
-    el.addEventListener('click',function(){
-      gtag('event','cta_click',{
-        event_category:'conversion',
-        event_label: el.textContent.trim().slice(0,30)
-      });
+  document.querySelectorAll('.nav-cta, );
     });
   });
 
