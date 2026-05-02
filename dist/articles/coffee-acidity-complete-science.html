@@ -354,6 +354,70 @@ footer a{color:var(--coffee-light)}
 }
 
 .bnotes-cover{width:100%;max-height:420px;object-fit:cover;border-radius:.9rem;margin:2rem auto;display:block;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+
+/* key-box */
+.key-box {
+  background: linear-gradient(135deg, oklch(97% .025 45), oklch(95% .035 50));
+  border: 1px solid oklch(87% .06 45);
+  border-left: 4px solid var(--gold, #c8922a);
+  border-radius: .75rem;
+  padding: 1.25rem 1.5rem;
+  margin: 0 0 2rem;
+  font-size: .95rem;
+  line-height: 1.85;
+  color: oklch(25% .03 35);
+}
+.key-box strong { color: var(--coffee-warm, #5c2d00); }
+
+/* geo-box */
+.geo-box {
+  background: oklch(97% .01 230 / .5);
+  border: 1px solid oklch(80% .04 230 / .4);
+  border-left: 4px solid oklch(50% .12 230);
+  border-radius: .75rem;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  font-size: .95rem;
+  line-height: 1.85;
+}
+.geo-box p { margin-bottom: .9em; }
+.geo-box p:last-child { margin-bottom: 0; }
+.geo-box strong { color: oklch(30% .08 230); }
+
+/* further-reading */
+.further-reading {
+  background: var(--muted, oklch(96% .008 30));
+  border: 1px solid var(--border, oklch(88% .01 30));
+  border-radius: .75rem;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  font-size: .9rem;
+}
+.further-reading strong {
+  display: block;
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--coffee-dark, #1a0a00);
+  margin-bottom: .75rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.further-reading ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.further-reading li::before { content: '→ '; color: var(--gold, #c8922a); font-weight: 700; }
+.further-reading a {
+  color: var(--coffee-mid, #8b4513);
+  text-decoration: underline;
+  text-decoration-color: oklch(75% .08 45);
+  text-underline-offset: 2px;
+}
+.further-reading a:hover { color: var(--coffee-dark, #1a0a00); }
 </style>
 </head>
 <body>
@@ -397,6 +461,15 @@ footer a{color:var(--coffee-light)}
 <p>「這杯咖啡太酸了，我不喜歡。」這是台灣精品咖啡館最常聽到的客訴。但下一桌的顧客，拿起同一杯咖啡說：「哇，這個酸質好棒，像咬了一口青蘋果！」同樣一杯咖啡，兩種截然相反的評價——這不只是個人喜好的差異，更是對「酸」這個複雜感官體驗的理解程度不同所造成的分歧。</p>
 
 <p>咖啡中含有超過 30 種有機酸 (Organic Acids)，每一種都有其獨特的風味特徵、pH 值範圍和感官強度。當你說「太酸了」，你可能說的是蘋果酸的清爽，也可能是醋酸的刺激，或者奎寧酸的澀感——它們的感官體驗天差地遠，但語言上我們都用「酸」來描述。這篇文章的目標，是幫你建立一個分辨「好酸」與「壞酸」的完整認知框架。</p>
+
+<div class="key-box">
+  <strong>☕ 讀完這篇，你會知道：</strong><br>
+  · 咖啡中的「好酸」（蘋果酸、檸檬酸）與「壞酸」（醋酸、奎寧酸）如何區分<br>
+  · 為什麼你喝到的「太酸」大多數時候是醋酸而非蘋果酸<br>
+  · 烘焙程度如何影響酸的種類與強度<br>
+  · 萃取溫度、時間對不同酸性物質溶解速度的影響<br>
+  · 如何用感官語言精準描述咖啡酸感
+</div>
 
 <h2>一、酸質的兩個維度：pH 值 vs 感知強度</h2>
 
@@ -563,6 +636,23 @@ footer a{color:var(--coffee-light)}
         <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">咖啡處理法全解析</span>
       </a>
     </div>
+  </div>
+
+  <div class="geo-box">
+    <p><strong>Q：淺焙咖啡為什麼比深焙酸？</strong><br>
+    A：淺焙保留了更多蘋果酸和檸檬酸（果實發展時形成），這些是明亮、清爽的有機酸。深焙會破壞這些酸，但同時產生奎寧酸（苦澀感的來源）。因此淺焙的「酸」通常更宜人，深焙的苦澀反而是另一種問題。</p>
+
+    <p><strong>Q：如何判斷咖啡的酸是「好酸」還是「壞酸」？</strong><br>
+    A：好酸讓你想再喝一口，通常在吞嚥後有清爽感；壞酸讓你皺眉，有刺激或金屬感。具體來說：蘋果酸類似青蘋果的清爽，醋酸則類似醋的刺激味，奎寧酸帶有苦澀的尾韻。</p>
+  </div>
+
+  <div class="further-reading">
+    <strong>📚 延伸閱讀</strong>
+    <ul>
+      <li><a href="/articles/light-roast-beginners-guide.html">淺焙咖啡入門指南：酸感的科學與選豆邏輯</a></li>
+      <li><a href="/articles/processing-methods.html">咖啡處理法完全指南：日曬、水洗、蜜處理對風味的影響</a></li>
+      <li><a href="/articles/single-origin-terroir-science.html">單一產地風土科學：海拔、土壤與有機酸的關係</a></li>
+    </ul>
   </div>
 
   <div class="share-section">
