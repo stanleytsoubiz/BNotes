@@ -354,6 +354,25 @@ footer a{color:var(--coffee-light)}
 }
 
 .bnotes-cover{width:100%;max-height:420px;object-fit:cover;border-radius:.9rem;margin:2rem auto;display:block;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+
+/* ── 酸質兩區塊（方案A） ── */
+.acid-zone-good,.acid-zone-bad{border-radius:.75rem;margin:1.2em 0;overflow:hidden}
+.acid-zone-good{border:1.5px solid oklch(83% .08 140);background:oklch(98% .015 140 / .4)}
+.acid-zone-bad{border:1.5px solid oklch(75% .12 35);background:oklch(98% .02 35 / .4)}
+.acid-zone-label{font-size:.8rem;font-weight:700;letter-spacing:.05em;padding:.55em 1.1em}
+.acid-zone-label--good{background:oklch(92% .07 140 / .6);color:oklch(30% .1 140)}
+.acid-zone-label--bad{background:oklch(88% .1 35 / .6);color:oklch(30% .1 35)}
+.acid-list{list-style:none;margin:0 !important;padding:.3em 0 !important}
+.acid-list li{display:flex;align-items:flex-start;gap:.7em;padding:.55em 1.1em;border-bottom:1px solid oklch(90% .04 140 / .5);margin-bottom:0 !important}
+.acid-list li:last-child{border-bottom:none}
+.acid-emoji{font-size:1.3em;line-height:1.4;flex-shrink:0;width:1.6em;text-align:center}
+.acid-info{display:flex;flex-direction:column;gap:.15em}
+.acid-info strong{font-size:.95rem;color:oklch(25% .04 30);font-weight:700}
+.acid-en{font-size:.8em;font-weight:400;color:oklch(50% .02 30);margin-left:.3em}
+.acid-desc{font-size:.85rem;color:oklch(40% .03 30);line-height:1.5}
+.acid-bad-content{display:flex;flex-direction:column;gap:.3em;padding:.7em 1.1em 1em}
+.acid-bad-content strong{font-size:.95rem;color:oklch(30% .08 35);font-weight:700}
+.acid-bad-content .acid-desc{font-size:.85rem;color:oklch(35% .06 35);line-height:1.6}
 </style>
 </head>
 <body>
@@ -409,30 +428,51 @@ footer a{color:var(--coffee-light)}
   <h2>一、酸質的化學本質：不是所有的酸都一樣</h2>
   <p>「咖啡很酸」——這句話其實包含了五到六種截然不同的化學物質，它們的感官特性大相徑庭。了解它們，是欣賞淺焙咖啡的第一步。</p>
 
-  <div class="acid-cards">
-    <div class="acid-card" style="border-color:#E8A87C;">
-      <h4>🍋 檸檬酸 (Citric Acid)</h4>
-      <p>來源：咖啡果實本身<br>感受：明亮、清新的柑橘感<br>在衣索比亞淺焙中最突出</p>
-    </div>
-    <div class="acid-card" style="border-color:#90C060;">
-      <h4>🍎 蘋果酸 (Malic Acid)</h4>
-      <p>來源：咖啡果實，高海拔更多<br>感受：清脆、如青蘋果的酸質<br>在哥倫比亞和哥斯大黎加常見</p>
-    </div>
-    <div class="acid-card" style="border-color:#D4A0C8;">
-      <h4>🍇 酒石酸 (Tartaric Acid)</h4>
-      <p>來源：少量存在於咖啡豆中<br>感受：圓潤、葡萄酒般的酸<br>常與其他酸協同呈現複雜度</p>
-    </div>
-    <div class="acid-card" style="border-color:#F0C040;">
-      <h4>🫙 乙酸 (Acetic Acid)</h4>
-      <p>來源：發酵處理（水洗/蜜處理）<br>感受：微弱的醋酸感，適量增添活潑感<br>過多則變為「發酵過度」的瑕疵味</p>
-    </div>
-    <div class="acid-card" style="border-color:#A0C8D8;">
-      <h4>🧪 磷酸 (Phosphoric Acid)</h4>
-      <p>來源：高海拔 Arabica（衣索比亞尤多）<br>感受：獨特的礦物感酸質，有「清涼」感<br>肯亞AA常見，被咖啡師稱為「沙沙作響的酸」</p>
-    </div>
-    <div class="acid-card" style="border-color:#C8A070;">
-      <h4>⚠️ 奎寧酸 (Quinic Acid)</h4>
-      <p>來源：綠原酸烘焙後的分解產物<br>感受：苦澀、刺激、不舒服的「壞酸」<br>深焙過度或咖啡放太久的主因</p>
+  <div class="acid-zone-good">
+    <div class="acid-zone-label acid-zone-label--good">✅ 好酸 · 精品咖啡的風味資產（5種）</div>
+    <ul class="acid-list">
+      <li>
+        <span class="acid-emoji">🍋</span>
+        <div class="acid-info">
+          <strong>檸檬酸<span class="acid-en">Citric Acid</span></strong>
+          <span class="acid-desc">明亮柑橘感 · 衣索比亞水洗最突出</span>
+        </div>
+      </li>
+      <li>
+        <span class="acid-emoji">🍎</span>
+        <div class="acid-info">
+          <strong>蘋果酸<span class="acid-en">Malic Acid</span></strong>
+          <span class="acid-desc">清脆如青蘋果 · 哥倫比亞、哥斯大黎加高海拔豆</span>
+        </div>
+      </li>
+      <li>
+        <span class="acid-emoji">🍇</span>
+        <div class="acid-info">
+          <strong>酒石酸<span class="acid-en">Tartaric Acid</span></strong>
+          <span class="acid-desc">圓潤葡萄酒感 · 常與其他酸協同，增添複雜度</span>
+        </div>
+      </li>
+      <li>
+        <span class="acid-emoji">🫙</span>
+        <div class="acid-info">
+          <strong>乙酸<span class="acid-en">Acetic Acid</span></strong>
+          <span class="acid-desc">適量添活潑感 · 水洗/蜜處理的發酵產物，過多則是瑕疵</span>
+        </div>
+      </li>
+      <li>
+        <span class="acid-emoji">🧪</span>
+        <div class="acid-info">
+          <strong>磷酸<span class="acid-en">Phosphoric Acid</span></strong>
+          <span class="acid-desc">礦物清涼感 · 高海拔 Arabica，肯亞 AA 的招牌</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="acid-zone-bad">
+    <div class="acid-zone-label acid-zone-label--bad">⚠️ 壞酸 · 這種才是你要避開的</div>
+    <div class="acid-bad-content">
+      <strong>奎寧酸<span class="acid-en">Quinic Acid</span></strong>
+      <span class="acid-desc">苦澀刺激、讓胃不舒服 · 深焙過度或咖啡放太久後，綠原酸分解的產物<br>跟前五種是完全不同的化學物質——你一直抗拒的「壞酸」，就是它</span>
     </div>
   </div>
 
