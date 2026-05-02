@@ -354,6 +354,48 @@ footer a{color:var(--coffee-light)}
 }
 
 .bnotes-cover{width:100%;max-height:420px;object-fit:cover;border-radius:.9rem;margin:2rem auto;display:block;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+
+/* key-box */
+.key-box {
+  background: oklch(97% .025 45);
+  border: 1px solid oklch(85% .06 45);
+  border-left: 4px solid var(--gold,#c8922a);
+  border-radius: .75rem;
+  padding: 1.2em 1.5em;
+  margin: 1.6em 0 2em;
+  font-size: .95rem;
+  line-height: 1.9;
+  color: oklch(28% .03 35);
+}
+.key-box strong { color: var(--coffee-dark,#1a0a00); display: block; margin-bottom: .4em }
+
+/* geo-box */
+.geo-box {
+  background: oklch(98% .01 30);
+  border: 1px solid oklch(88% .015 30);
+  border-radius: .75rem;
+  padding: 1.3em 1.5em;
+  margin: 2em 0;
+  font-size: .93rem;
+  line-height: 1.85;
+}
+.geo-box p { margin-bottom: 1em }
+.geo-box p:last-child { margin-bottom: 0 }
+.geo-box strong { color: var(--coffee-warm,#5c2d00) }
+
+/* further-reading */
+.further-reading {
+  background: var(--muted,#f5f2ee);
+  border-radius: .75rem;
+  padding: 1.2em 1.5em;
+  margin: 2em 0;
+  font-size: .93rem;
+}
+.further-reading strong { color: var(--coffee-dark,#1a0a00); display: block; margin-bottom: .6em }
+.further-reading ul { margin: 0; padding-left: 1.2em }
+.further-reading li { margin-bottom: .45em; line-height: 1.6 }
+.further-reading a { color: var(--coffee-mid,#8b4513); text-decoration: underline; text-decoration-color: oklch(80% .06 45); text-underline-offset: 2px }
+.further-reading a:hover { color: var(--coffee-dark,#1a0a00) }
 </style>
 </head>
 <body>
@@ -404,6 +446,15 @@ footer a{color:var(--coffee-light)}
     <p>你手上拿著一包豆子，包裝上印著三個字：100% Arabica。烘焙師的名字、海拔高度、處理法，全都清清楚楚。你買這包豆，是因為你知道 Arabica 才是精品咖啡的語言，Robusta 是那種你在便利商店罐裝飲料裡才會遇到的東西。</p>
     <p>但如果告訴你，你手上這包 Arabica，從遺傳學來說，正是 Robusta 的後代——它的每一條染色體，都有一半來自你「看不起」的那個豆種呢？</p>
     <p>這不是在玩文字遊戲。Arabica 是一個自然界偶發的雜交事件所產生的四倍體物種，它的基因裡帶著 Robusta 的完整基因組。而現在，氣候變遷正在強迫整個咖啡產業重新定義「好咖啡」的邊界——Robusta 的故事，遠比你以為的複雜得多。這篇文章從遺傳學、化學成分、風味科學到台灣市場，帶你把這個問題說清楚。</p>
+  </div>
+
+  <div class="key-box">
+    <strong>讀完這篇，你會知道：</strong>
+    · Arabica 與 Robusta 的基因關係（你以為的「對立」其實是「親子」）<br>
+    · 兩者在咖啡因、脂肪、蔗糖含量上的關鍵數字差異<br>
+    · 為什麼精品咖啡幾乎全是 Arabica，但 Robusta 不是「次等品」<br>
+    · 氣候變遷下，Robusta 基因正在被重新評估的原因<br>
+    · 如何用感官區分 Arabica 與 Robusta 的風味特徵
   </div>
 
   <h2>一、遺傳學揭秘：Arabica 是 Robusta 的「親戚」</h2>
@@ -493,22 +544,21 @@ footer a{color:var(--coffee-light)}
     </ul>
   </div>
 
-  <div class="related-articles" style="margin:2rem auto 0;max-width:740px;padding:0 24px">
-    <h3 style="font-size:1.05rem;font-weight:700;color:#1a0a00;margin-bottom:.9rem;border-left:4px solid #c8922a;padding-left:.75rem">📚 延伸閱讀</h3>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem">
-      <a href="../articles/green-bean-sourcing-complete-guide.html" style="display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white">
-        <span style="font-size:.72rem;color:#c8922a;font-weight:600">🌱 產地風土</span>
-        <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">生豆選購完全指南：從產地認證到杯測分數</span>
-      </a>
-      <a href="../articles/single-origin-terroir-science.html" style="display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white">
-        <span style="font-size:.72rem;color:#c8922a;font-weight:600">🌱 產地風土</span>
-        <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">單一產地的秘密：風土科學完整解析</span>
-      </a>
-      <a href="../articles/coffee-acidity-complete-science.html" style="display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white">
-        <span style="font-size:.72rem;color:#c8922a;font-weight:600">🔬 沖泡科學</span>
-        <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">咖啡酸質的完整科學：為什麼有人愛，有人怕</span>
-      </a>
-    </div>
+  <div class="geo-box">
+    <p><strong>Q：Robusta 的咖啡因為什麼比 Arabica 高？</strong><br>
+    A：Robusta 的咖啡因含量約為 2.7%，是 Arabica（1.5%）的近兩倍。咖啡因對咖啡樹本身是天然殺蟲劑，Robusta 生長在低海拔高溫環境（更多害蟲），因此演化出更高的咖啡因含量作為防禦機制。</p>
+
+    <p><strong>Q：Arabica 和 Robusta 可以混合沖泡嗎？</strong><br>
+    A：可以，且在義式濃縮（Espresso）中是常見做法。Robusta 能提供更厚實的 Crema（因含更多的蛋白質和脂肪），部分義大利傳統配方會加入 10–20% Robusta 來增加濃郁感和持久度。</p>
+  </div>
+
+  <div class="further-reading">
+    <strong>延伸閱讀</strong>
+    <ul>
+      <li><a href="/articles/single-origin-terroir-science.html">單一產地風土科學：海拔、土壤與咖啡基因的交叉點</a></li>
+      <li><a href="/articles/roast-level-guide.html">烘焙程度完全指南：從淺焙到深焙的化學變化</a></li>
+      <li><a href="/articles/green-bean-sourcing-complete-guide.html">生豆採購完全指南：如何選出真正的好豆</a></li>
+    </ul>
   </div>
 
   <div class="share-section">

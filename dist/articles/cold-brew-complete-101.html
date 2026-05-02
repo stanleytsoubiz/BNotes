@@ -354,6 +354,66 @@ footer a{color:var(--coffee-light)}
 }
 
 .bnotes-cover{width:100%;max-height:420px;object-fit:cover;border-radius:.9rem;margin:2rem auto;display:block;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+
+/* key-box */
+.key-box {
+  background: oklch(97% .025 50);
+  border: 1px solid oklch(85% .06 50);
+  border-left: 4px solid var(--gold,#c8922a);
+  border-radius: .75rem;
+  padding: 1.1em 1.4em;
+  margin: 1.6em 0 2em;
+  font-size: .95rem;
+  line-height: 1.9;
+  color: oklch(28% .04 35);
+}
+.key-box strong { color: var(--coffee-dark,#1a0a00); font-size: 1rem }
+
+/* geo-box */
+.geo-box {
+  background: oklch(98% .01 30);
+  border: 1px solid oklch(88% .02 30);
+  border-radius: .75rem;
+  padding: 1.2em 1.5em;
+  margin: 2em auto;
+  max-width: 740px;
+  font-size: .95rem;
+  line-height: 1.85;
+  color: oklch(28% .03 30);
+}
+.geo-box p { margin-bottom: .9em }
+.geo-box p:last-child { margin-bottom: 0 }
+.geo-box strong { color: var(--coffee-warm,#5c2d00) }
+
+/* further-reading */
+.further-reading {
+  background: oklch(97% .015 45);
+  border: 1px solid oklch(87% .04 45);
+  border-radius: .75rem;
+  padding: 1.1em 1.4em;
+  margin: 1.5em auto 2em;
+  max-width: 740px;
+  font-size: .92rem;
+}
+.further-reading strong {
+  display: block;
+  font-size: .95rem;
+  color: var(--coffee-dark,#1a0a00);
+  margin-bottom: .7em;
+}
+.further-reading ul {
+  margin: 0; padding: 0;
+  list-style: none;
+  display: flex; flex-direction: column; gap: .45em;
+}
+.further-reading li::before { content: "→ "; color: var(--gold,#c8922a); font-weight: 700 }
+.further-reading a {
+  color: var(--coffee-warm,#5c2d00);
+  text-decoration: underline;
+  text-decoration-color: oklch(80% .06 45);
+  text-underline-offset: 2px;
+}
+.further-reading a:hover { color: var(--gold,#c8922a) }
 </style>
 </head>
 <body>
@@ -396,6 +456,14 @@ footer a{color:var(--coffee-light)}
     
 <p>七月台北，濕度 85%，氣溫逼近 36°C。你站在廚房，想著要不要把昨天剩的手沖冰起來——然後你停下來了。因為你知道，那樣做出來的東西，跟真正的冷萃咖啡 (Cold Brew Coffee) 根本不是同一回事。冷萃不是把熱咖啡冰起來的懶人方法，它是一套截然不同的萃取哲學：以低溫作為溶劑、以時間替代熱能，在分子層面上重新定義一杯咖啡應該是什麼樣的味道。</p>
 
+<div class="key-box">
+  <strong>☕ 讀完這篇，你會知道：</strong><br>
+  · 冷萃（Cold Brew）與冰滴（Drip Cold Coffee）的根本差異<br>
+  · 為什麼低溫長時萃取讓冷萃咖啡因比熱萃低 15–25%<br>
+  · 最佳粉水比、浸泡時間與溫度的黃金參數<br>
+  · 如何判斷冷萃是否萃取完成（感官指標）<br>
+  · 冷萃保存期限與風味衰退的時間節點
+</div>
 
 <h2>一、冷萃的化學本質：低溫萃取 vs 熱萃取</h2>
 
@@ -565,6 +633,23 @@ footer a{color:var(--coffee-light)}
   </div>
 </div>
 
+
+  <div class="geo-box">
+  <p><strong>Q：冷萃和冰滴有什麼不同？</strong><br>
+  A：冷萃是將咖啡粉完全浸泡在冷水中 12–24 小時（浸泡萃取法）；冰滴則是讓冰水以極慢速度一滴一滴滴過咖啡粉（滴濾法），耗時更長但風味更清澈。家用最常見的是冷萃，設備門檻低，只需一個密封容器。</p>
+
+  <p><strong>Q：冷萃最適合什麼豆子？</strong><br>
+  A：中深焙豆表現最穩定，因為低溫萃取需要更長時間溶解，中深焙的脂質和糖分在低溫下的溶解效果更好。淺焙的細緻花果酸感在低溫下容易萃取不足，若想用淺焙，建議拉長浸泡時間至 18–20 小時，或提高粉水比至 1:6。</p>
+</div>
+
+<div class="further-reading">
+  <strong>📚 延伸閱讀</strong>
+  <ul>
+    <li><a href="/articles/cold-brew-advanced-science.html">冷萃進階科學：雙段萃取法與 TDS 最佳化</a></li>
+    <li><a href="/articles/nitro-cold-brew-home-guide.html">氮氣冷萃居家製作完全指南</a></li>
+    <li><a href="/articles/summer-iced-coffee-three-recipes.html">夏日冰咖啡三種做法：冷萃、急冷、日曬冰</a></li>
+  </ul>
+</div>
 
   <div class="related-articles" style="margin:2rem auto 0;max-width:740px;padding:0 24px">
     <h3 style="font-size:1.05rem;font-weight:700;color:#1a0a00;margin-bottom:.9rem;border-left:4px solid #c8922a;padding-left:.75rem">📚 延伸閱讀</h3>
