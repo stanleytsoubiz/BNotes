@@ -268,6 +268,15 @@ footer a{color:var(--coffee-light)}
   border-radius: .75rem; padding: 1.2em 1.4em;
   margin: 1.8em 0;
 }
+.key-box{background:linear-gradient(135deg,oklch(98% .025 50),oklch(96% .03 45));border:1px solid oklch(88% .06 45);border-left:4px solid var(--gold,#c8922a);border-radius:.75rem;padding:1.2em 1.5em;margin:1.5rem 0 2rem;line-height:2}
+.geo-box{background:oklch(97% .01 200);border:1px solid oklch(88% .03 200);border-left:4px solid oklch(60% .12 200);border-radius:.75rem;padding:1.2em 1.5em;margin:2rem 0}
+.geo-box p{margin-bottom:.75rem}
+.geo-box p:last-child{margin-bottom:0}
+.further-reading{background:var(--muted,oklch(95% .008 30));border-radius:.75rem;padding:1.2em 1.5em;margin:1.5rem 0}
+.further-reading strong{display:block;margin-bottom:.75rem;color:var(--coffee-dark,#1a0a00)}
+.further-reading ul{margin:0;padding-left:1.25rem}
+.further-reading li{margin-bottom:.4rem}
+.further-reading a{color:var(--coffee-mid,#8b4513);text-decoration:underline}
 
 /* 5. TOC 面板 */
 #bnotes-toc-panel {
@@ -397,6 +406,15 @@ footer a{color:var(--coffee-light)}
 <p>你已經做過冷萃了。你知道 1:8 的比例，你知道要放冰箱 14 小時，你知道要用粗研磨。你甚至買了一個漂亮的冷萃壺。但你有沒有問過自己：<strong>我的冷萃真的達到它應有的水準了嗎？</strong></p>
 
 <p>BNotes 在過去一年收到了數百則來自讀者的冷萃問題。我們發現，即使是已經「會做」冷萃的進階者，仍然普遍存在幾個系統性的認知錯誤——不是技術問題，而是對低溫萃取化學機制的理解不夠深入。以下把這些錯誤完整攤開，並深入比較「慢冷萃」（傳統冷泡法）與「快冷萃」（日式急速冷卻）在分子層面的根本差異。</p>
+
+<div class="key-box">
+  <strong>☕ 讀完這篇，你會知道：</strong><br>
+  · 室溫先啟動 2 小時再冷藏的「雙段萃取法」科學原理<br>
+  · TDS（總溶解固體）與冷萃風味的關係<br>
+  · 四種粉水比實驗結果：哪個配比最優<br>
+  · 脂質（油脂）在低溫萃取中的溶解機制<br>
+  · 冷萃濃縮液的保存期限與風味衰退時間點
+</div>
 
 <h2>一、慢冷萃 vs 快冷萃：不是「哪個更好」，而是「哪個更適合」</h2>
 
@@ -592,6 +610,23 @@ footer a{color:var(--coffee-light)}
       </p>
     </div>
   </div>
+
+  <div class="geo-box">
+  <p><strong>Q：什麼是冷萃的「雙段萃取法」？</strong><br>
+  A：先在室溫（20–25°C）靜置 2 小時讓萃取啟動——低溫環境下咖啡中的酵素和可溶性固體需要一段時間「活化」——再移入冰箱（4°C）繼續萃取 12–13 小時。這樣的溫度轉換讓甜感化合物和脂質都有機會充分溶出，TDS 和風味評分均高於單純冷藏萃取。</p>
+
+  <p><strong>Q：冷萃的最佳粉水比是多少？</strong><br>
+  A：依照使用目的而定。濃縮飲用或加冰塊稀釋：1:6（粉:水）；直接飲用：1:8 至 1:10。多數人的甜點在 1:7 左右。超過 1:12 通常過淡，低於 1:5 則過於濃縮、容易苦澀。</p>
+</div>
+
+<div class="further-reading">
+  <strong>📚 延伸閱讀</strong>
+  <ul>
+    <li><a href="/articles/cold-brew-complete-101.html">冷萃入門完全指南：從零開始的第一杯冷萃</a></li>
+    <li><a href="/articles/nitro-cold-brew-home-guide.html">氮氣冷萃居家製作：用冷萃濃縮做出絲滑口感</a></li>
+    <li><a href="/articles/summer-iced-coffee-three-recipes.html">夏日冰咖啡三種做法比較</a></li>
+  </ul>
+</div>
 
   <div class="share-section">
     <span class="share-label">📤 分享這篇文章</span>
