@@ -351,6 +351,15 @@ footer a{color:var(--coffee-light)}
   .related-grid { grid-template-columns: 1fr }
   .breadcrumb { padding: 0 16px }
 }
+.key-box{background:linear-gradient(135deg,oklch(98% .025 50),oklch(96% .03 45));border:1px solid oklch(88% .06 45);border-left:4px solid var(--gold,#c8922a);border-radius:.75rem;padding:1.2em 1.5em;margin:1.5rem 0 2rem;line-height:2}
+.geo-box{background:oklch(97% .01 200);border:1px solid oklch(88% .03 200);border-left:4px solid oklch(60% .12 200);border-radius:.75rem;padding:1.2em 1.5em;margin:2rem 0}
+.geo-box p{margin-bottom:.75rem}
+.geo-box p:last-child{margin-bottom:0}
+.further-reading{background:var(--muted,oklch(95% .008 30));border-radius:.75rem;padding:1.2em 1.5em;margin:1.5rem 0}
+.further-reading strong{display:block;margin-bottom:.75rem;color:var(--coffee-dark,#1a0a00)}
+.further-reading ul{margin:0;padding-left:1.25rem}
+.further-reading li{margin-bottom:.4rem}
+.further-reading a{color:var(--coffee-mid,#8b4513);text-decoration:underline}
 </style>
   <meta property="og:description" content="網路上有無數版本的最佳手沖配方，它們給出了看似精確的數字，但從未解釋為什麼。這篇文章記錄了一個月、20 種配方、60 杯咖啡的系統性實驗，告訴你什麼變數真正重要。">
 </head>
@@ -392,6 +401,15 @@ footer a{color:var(--coffee-light)}
 
 <article class="article-body">
 
+<div class="key-box">
+  <strong>☕ 讀完這篇，你會知道：</strong><br>
+  · 手沖六大變數（研磨、水溫、粉水比、注水速度、悶蒸、濾杯）的系統化實驗方法<br>
+  · 控制變數實驗的正確設計：每次只改一個變數<br>
+  · 各變數對萃取率和 TDS 的可量化影響<br>
+  · 實驗結果如何轉化為可重複的個人配方<br>
+  · 用感官描述代替儀器測量的評估方法
+</div>
+
 <p>「精品手沖咖啡的最佳配方」——這種標題在咖啡網路上有百種版本。它們給出了看似精確的數字：93°C、1:15、4分鐘。但很少有人解釋為什麼是這些數字，而非 91°C、1:16、3分半鐘。數字本身不是知識，理解數字背後的邏輯才是。這篇文章記錄了 2026 年 4–5 月間 BNotes 對手沖咖啡進行的一個系統性實驗：一個月、一支豆子、五個測試維度、二十種配方、六十杯咖啡，告訴你什麼變數真正重要。</p>
 
 <p>這不是一份「最佳配方清單」，而是一份「對不同變數的靈敏度（Sensitivity Analysis）報告」——告訴你哪些變數發揮的影響最大，哪些變數的差異影響小到幾乎可以忽略。</p>
@@ -417,6 +435,14 @@ footer a{color:var(--coffee-light)}
 <h2>台北水質的化學干預：低礦物質含量下的酸鹼緩衝效應</h2>
 <p>水質是咖啡萃取中最易被忽視的化學變數。本實驗特別針對台北地區（翡翠水庫系統）的軟水特性進行測試。台北自來水的總溶解固體量（TDS）通常低於 40 ppm，硬度極低。在化學層面上，這意味著水中的鈣（Ca2+）與鎂（Mg2+）陽離子含量不足，這兩種離子是拉動咖啡風味分子的關鍵媒介。實驗中，我們對比了台北軟水與人工添加礦物質的硬水（150 ppm），發現軟水萃取出的咖啡酸質極度明亮，甚至帶有尖銳感。這是因為軟水的緩衝能力（Buffer Capacity）較弱，無法有效中和咖啡中的有機酸，導致杯中 pH 值較低，風味雖然乾淨，卻缺乏中段的厚實度與甜感。</p>
 <p>此外，台北水質中極低的重碳酸根（Bicarbonate）含量，使得萃取過程中的酸鹼震盪更加明顯。在 20 組實驗的橫向對比中，我們嘗試調整水溫與攪動頻率來補償低硬度水質的缺陷。結果顯示，面對台北軟水，稍微提高水溫（約 91-93°C）並增加粉床擾動，能補足陽離子交換能力的不足，強迫更多糖類物質溶解，從而提升口感的黏稠度。數據反饋，在台北環境下，將成品 TDS 控制在 1.38% 左右，能獲得最接近國際杯測標準的風味表現。理解這一點後，沖煮者便不再需要盲從國外配方，而是能根據本土水質特徵，動態調整參數，實現真正的在地化風味優化。</p>
+<div class="geo-box">
+  <p><strong>Q：手沖哪個變數對風味影響最大？</strong><br>
+  A：研磨度的影響最大且最難用其他變數補救。研磨決定了萃取表面積和水流速度，粗細一旦錯誤，調再多水溫和注水方式都只能微調結果。其次是粉水比，直接決定濃度基礎。水溫和注水節奏是微調工具，在研磨和粉水比正確的前提下才能發揮最大效用。</p>
+
+  <p><strong>Q：如何判斷手沖實驗是成功還是失敗？</strong><br>
+  A：建立一個三維評估框架：①濃度（太淡/剛好/太濃）；②萃取平衡（過萃的苦澀 vs. 萃取不足的酸薄）；③風味完整度（目標風味是否被呈現）。三個維度都「剛好」才算成功，且下次能重複。建議每次實驗用同樣的評分語言記錄，累積後才能看出規律。</p>
+</div>
+
 <section class="further-reading"><h2>延伸閱讀</h2><ul>
 <li><a href="../articles/cold-brew-advanced-science.html">冷萃進階：12小時冷泡vs急速冷卻的科學差異</a></li>
 <li><a href="../articles/coffee-acidity-complete-science.html">咖啡酸質的完整科學：為什麼有人怕酸</a></li>
