@@ -351,6 +351,23 @@ footer a{color:var(--coffee-light)}
   .related-grid { grid-template-columns: 1fr }
   .breadcrumb { padding: 0 16px }
 }
+
+/* 12. Key-box / Geo-box / Further-reading / Data-table */
+.key-box{background:linear-gradient(135deg,oklch(98% .025 50),oklch(96% .03 45));border:1px solid oklch(88% .06 45);border-left:4px solid var(--gold,#c8922a);border-radius:.75rem;padding:1.2em 1.5em;margin:1.5rem 0 2rem;line-height:2}
+.geo-box{background:oklch(97% .01 200);border:1px solid oklch(88% .03 200);border-left:4px solid oklch(60% .12 200);border-radius:.75rem;padding:1.2em 1.5em;margin:2rem 0}
+.geo-box p{margin-bottom:.75rem}
+.geo-box p:last-child{margin-bottom:0}
+.further-reading{background:var(--muted,oklch(95% .008 30));border-radius:.75rem;padding:1.2em 1.5em;margin:1.5rem 0}
+.further-reading strong{display:block;margin-bottom:.75rem;color:var(--coffee-dark,#1a0a00)}
+.further-reading ul{margin:0;padding-left:1.25rem}
+.further-reading li{margin-bottom:.4rem}
+.further-reading a{color:var(--coffee-mid,#8b4513);text-decoration:underline}
+.data-table{overflow-x:auto;margin:1.5rem 0}
+.data-table strong{display:block;margin-bottom:.75rem;color:var(--coffee-dark,#1a0a00);font-size:.95rem}
+.data-table table{width:100%;border-collapse:collapse;font-size:.9rem}
+.data-table th{background:var(--coffee-dark,#1a0a00);color:white;padding:.6rem .8rem;text-align:left}
+.data-table td{padding:.6rem .8rem;border-bottom:1px solid var(--border,oklch(88% .01 30))}
+.data-table tr:nth-child(even) td{background:oklch(97% .005 30)}
 </style>
   <meta property="og:description" content="同樣的豆子、同樣的水溫、同樣的粉水比，V60和KalitaWave沖出來的味道為什麼完全不同？答案在流體力學，而不是玄學。。深度探索精品咖啡知識，從科學原理到實踐技巧，完整呈現咖啡世界。">
 </head>
@@ -394,6 +411,15 @@ footer a{color:var(--coffee-light)}
 
 <p>如果你曾經用同一支豆子、同樣的水溫、同樣的粉水比，分別在 V60 和 Kalita Wave 上沖出兩杯咖啡，然後喝了第一口就覺得「這完全不是同一杯」——你的感知是正確的，而且背後有嚴謹的流體力學（Fluid Dynamics）可以解釋。V60 的那種鋒銳酸質和清透感，Kalita Wave 的那種圓潤均衡和甜感，不是來自魔法，也不是來自「你的心情」，而是來自兩種濾杯幾何結構在水流動力上的根本差異。這篇文章，我們從物理原理出發，帶你徹底搞懂這兩款最具代表性的手沖濾杯。</p>
 
+<div class="key-box">
+  <strong>☕ 讀完這篇，你會知道：</strong><br>
+  · V60 與 Kalita Wave 的幾何結構差異如何決定水流路徑<br>
+  · 為什麼 V60 對手法要求更高，Kalita 更容易複製結果<br>
+  · 兩種濾杯在不同烘焙程度下的表現差異<br>
+  · 如何根據你的磨豆機精度選擇合適的濾杯<br>
+  · 兩者濾紙特性對萃取清澈度的影響
+</div>
+
 <h2>從幾何形狀開始：理解兩種截然不同的設計哲學</h2>
 
 <p>要理解 V60 和 Kalita Wave 的差異，最直接的切入點是觀察它們的形狀——不只是外形，而是涉及水流動力的三個關鍵幾何要素：底部出水孔設計、內壁肋骨 (Rib) 結構，以及沖煮床形狀 (Bed Geometry)。</p>
@@ -425,15 +451,23 @@ footer a{color:var(--coffee-light)}
   <p><strong>沖煮主導</strong>：技術導向</p>
   <p><strong>流速</strong>：較快（受技術影響大）</p>
 
-<div class="chart-box">[📊 圖表建議：本篇關鍵數據視覺化圖一] 根據文中核心主題製作的資料視覺化，以折線圖或柱狀圖呈現主要數據趨勢，幫助讀者快速掌握核心指標的變化方向與規模。
-<div class="related-articles" style="margin-top:2rem;padding:1.5rem;background:#fdf8f2;border-radius:.75rem;border:1px solid #e8ddd0">
-  <h3 style="font-size:1rem;font-weight:700;margin-bottom:.75rem;color:#1a0a00">📚 延伸閱讀</h3>
-  <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem">
-    <li><a href="../articles/grinder-6models-comparison-2026.html" style="color:#c8922a;text-decoration:none;font-size:.9rem">→ 磨豆機六款深度比較 2026</a></li>
-    <li><a href="../articles/coffee-acidity-complete-science.html" style="color:#c8922a;text-decoration:none;font-size:.9rem">→ 咖啡酸質的完整科學</a></li>
-    <li><a href="../articles/cold-brew-advanced-science.html" style="color:#c8922a;text-decoration:none;font-size:.9rem">→ 冷萃咖啡進階科學</a></li>
+<div class="geo-box">
+  <p><strong>Q：V60 和 Kalita Wave 哪個更適合初學者？</strong><br>
+  A：Kalita Wave 更適合初學者。平底三孔設計讓萃取更均勻、容錯率更高，即使注水不穩定也能得到穩定結果。V60 的單孔錐形設計對注水速度和角度更敏感，需要更多練習才能穩定重複。</p>
+
+  <p><strong>Q：V60 的螺旋紋路有什麼用途？</strong><br>
+  A：V60 內壁的螺旋紋路設計目的是讓濾紙不完全貼合杯壁，留出空氣排出的通道。這讓萃取速度更快（流速更高），也是 V60 風味清澈的原因之一。但這也意味著：磨豆機精度越高，V60 的優勢越明顯。</p>
+</div>
+
+<div class="further-reading">
+  <strong>📚 延伸閱讀</strong>
+  <ul>
+    <li><a href="/articles/pour-over-guide.html">手沖完全指南：研磨、水溫、注水節奏的完整邏輯</a></li>
+    <li><a href="/articles/grinder-guide-2026.html">磨豆機選購完全指南 2026：刀盤尺寸與研磨均勻度</a></li>
+    <li><a href="/articles/water-quality.html">手沖用水的科學：TDS 與礦物質如何影響萃取</a></li>
   </ul>
 </div>
+
   <div class="share-section">
     <span class="share-label">📤 分享這篇文章</span>
     <div class="share-btns">
