@@ -1,58 +1,459 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta property="og:image" content="https://bnotescoffee.com/images/ai/taipei-coffee-map-2026-hero.jpg">
-    <title>2026 台北精品咖啡地圖：從 Simple Kaffa 到 Fika Fika 的極致感官之旅</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 台北精品咖啡地圖：從 Simple Kaffa 到 Fika Fika 的極致感官之旅 | BNotes 焙學·原豆誌</title>
+<meta name="description" content="台北精品咖啡館完整指南：Simple Kaffa 環形吧台、Fika Fika 北歐淺焙哲學、Rufous Coffee 十五年口碑、Coffee Sweet 禁止拍照的安靜巷弄。四間各有故事的咖啡館，找到你今天需要的那種安靜。">
+<meta name="keywords" content="台北咖啡, 精品咖啡館, Simple Kaffa, Fika Fika, Rufous Coffee, Coffee Sweet, 台北咖啡地圖">
+<meta property="og:title" content="2026 台北精品咖啡地圖：從 Simple Kaffa 到 Fika Fika 的極致感官之旅">
+<meta property="og:description" content="四間台北精品咖啡館的真實觀察：冠軍吧台、北歐烘焙、十五年老店、禁拍巷弄咖啡館。">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://bnotescoffee.com/images/ai/taipei-coffee-map-2026-hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap">
+<noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"></noscript></noscript>
 <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:oklch(98% .005 30);--fg:oklch(20% .02 30);--primary:oklch(45% .1 30);
+  --accent:oklch(88% .05 45);--muted:oklch(95% .008 30);--muted-fg:oklch(50% .02 30);
+  --border:oklch(88% .01 30);--card:oklch(99% .003 30);
+  --gold:#c8922a;--coffee-dark:#1a0a00;--coffee-warm:#5c2d00;--coffee-mid:#8b4513;
+  --coffee-light:#d4a96a;--cream:#f5f0e8;
+  --font-serif:'Noto Serif TC',Georgia,serif;
+  --font-sans:'Noto Sans TC',-apple-system,sans-serif;
+  --radius:.75rem;
+}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--fg);line-height:1.8}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Noto Serif TC',Georgia,serif;font-size:1.15rem;font-weight:900;color:#1a0a00;letter-spacing:.02em;text-decoration:none}
+.nav-logo b{color:#c8922a}
+.nav-sub{font-family:'Noto Sans TC',-apple-system,sans-serif;font-size:.65rem;color:#7a6050;letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+.nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
+.nav-back:hover{color:var(--coffee-dark)}
+.article-hero{position:relative;height:min(480px,55vw);overflow:hidden;background:var(--coffee-dark)}
+.article-hero-img{width:100%;height:100%;object-fit:cover;opacity:.75}
+.article-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(26,10,0,.85))}
+.article-hero-content{position:absolute;bottom:2rem;left:0;right:0;padding:0 1.5rem;max-width:900px;margin:0 auto}
+.article-cat{display:inline-flex;align-items:center;gap:.4rem;background:var(--gold);color:white;padding:.25rem .875rem;border-radius:9999px;font-size:.75rem;font-weight:700;margin-bottom:.875rem}
+.article-h1{font-family:var(--font-serif);font-size:clamp(1.5rem,4vw,2.25rem);font-weight:900;color:white;line-height:1.25;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.article-meta-bar{background:white;border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
+.article-meta-inner{max-width:900px;margin:0 auto;display:flex;gap:1.5rem;font-size:.8rem;color:var(--muted-fg);flex-wrap:wrap}
+.article-wrap{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem}
+.article-body h2{font-family:var(--font-serif);font-size:1.4rem;font-weight:700;color:var(--coffee-dark);margin:2rem 0 .875rem;padding-bottom:.5rem;border-bottom:2px solid var(--accent)}
+.article-body h3{font-family:var(--font-serif);font-size:1.15rem;font-weight:700;color:var(--coffee-warm);margin:1.5rem 0 .625rem}
+.article-body p{margin-bottom:1.25rem;color:var(--fg);line-height:1.9}
+.article-body ul,ol{margin:0 0 1.25rem 1.5rem;color:var(--fg)}
+.article-body li{margin-bottom:.5rem;line-height:1.8}
+.article-body strong{color:var(--coffee-warm);font-weight:700}
+.article-sidebar{display:grid;grid-template-columns:2fr 1fr;gap:3rem;max-width:900px;margin:0 auto;padding:0 1.5rem 3rem}
+@media(max-width:768px){.article-sidebar{grid-template-columns:1fr}}
+.toc{position:sticky;top:5rem;background:var(--muted);border-radius:var(--radius);padding:1.25rem;height:fit-content}
+.toc-title{font-weight:700;font-size:.9rem;color:var(--coffee-dark);margin-bottom:.875rem}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.toc-list a{font-size:.825rem;color:var(--coffee-mid);transition:color .2s;padding:.25rem 0;border-left:2px solid transparent;padding-left:.75rem}
+.toc-list a:hover{color:var(--coffee-dark);border-left-color:var(--gold)}
+.cta-box{background:linear-gradient(135deg,var(--coffee-dark),var(--coffee-warm));color:white;border-radius:var(--radius);padding:2rem;text-align:center;margin-top:2rem}
+.cta-box h3{font-family:var(--font-serif);font-size:1.25rem;margin-bottom:.75rem}
+.cta-box p{color:var(--coffee-light);font-size:.9rem;margin-bottom:1.25rem}
+.cta-form{display:flex;gap:.5rem;max-width:380px;margin:0 auto}
+.cta-input{flex:1;padding:.75rem 1rem;border-radius:9999px;border:none;font-size:.875rem}
+.cta-btn{padding:.75rem 1.25rem;background:var(--gold);color:white;border:none;border-radius:9999px;font-weight:700;cursor:pointer;font-size:.875rem}
+footer{background:var(--coffee-dark);color:oklch(65% .02 30);padding:2rem 1.5rem;text-align:center;font-size:.85rem}
+footer a{color:var(--coffee-light)}
+</style>
+<link rel="canonical" href="https://bnotescoffee.com/articles/taipei-coffee-map-2026.html">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:url" content="https://bnotescoffee.com/articles/taipei-coffee-map-2026.html">
+<meta property="og:site_name" content="BNotes 焙學·原豆誌">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="2026 台北精品咖啡地圖：從 Simple Kaffa 到 Fika Fika 的極致感官之旅 | BNotes 焙學·原豆誌">
+<meta name="twitter:description" content="四間台北精品咖啡館的真實觀察：冠軍吧台、北歐烘焙、十五年老店、禁拍巷弄咖啡館。">
+<meta name="twitter:image" content="https://bnotescoffee.com/images/ai/taipei-coffee-map-2026-hero.jpg">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#1a0a00">
+<link rel="preconnect" href="https://images.unsplash.com">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"2026 台北精品咖啡地圖：從 Simple Kaffa 到 Fika Fika 的極致感官之旅","datePublished":"2026-04-27","dateModified":"2026-05-03","author":{"@type":"Organization","name":"BNotes 編輯部"},"publisher":{"@type":"Organization","name":"BNotes","url":"https://bnotescoffee.com"}}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://bnotescoffee.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "城市指南",
+      "item": "https://bnotescoffee.com/#categories"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "2026 台北精品咖啡地圖：從 Simple Kaffa 到 Fika Fika 的極致感官之旅",
+      "item": "https://bnotescoffee.com/articles/taipei-coffee-map-2026.html"
+    }
+  ]
+}
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2WXMBSHDSB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2WXMBSHDSB', {
+    'page_title': document.title,
+    'page_location': window.location.href,
+    'send_page_view': true
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.newsletter-form, .cta-form').forEach(function(form) {
+      form.addEventListener('submit', function(e) {
+        gtag('event', 'newsletter_signup', {
+          'event_category': 'engagement',
+          'event_label': 'newsletter_subscribe',
+          'value': 1
+        });
+      });
+    });
+    if (document.querySelector('.article-body')) {
+      var tracked = false;
+      window.addEventListener('scroll', function() {
+        if (!tracked) {
+          var scrollPct = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
+          if (scrollPct > 0.8) {
+            tracked = true;
+            gtag('event', 'article_read_complete', {
+              'event_category': 'content',
+              'event_label': document.title,
+              'value': 1
+            });
+          }
+        }
+      });
+    }
+  });
+</script>
+  <meta property="article:published_time" content="2026-04-27T00:00:00+08:00" />
+  <meta property="article:modified_time" content="2026-05-03T00:00:00+08:00" />
+  <meta property="article:author" content="https://bnotescoffee.com" />
+  <meta property="article:section" content="城市指南" />
+  <meta property="article:tag" content="精品咖啡" />
+  <meta name="twitter:label1" content="閱讀時間" />
+  <meta name="twitter:data1" content="10 分鐘閱讀" />
+  <meta name="twitter:label2" content="分類" />
+  <meta name="twitter:data2" content="城市指南" />
+<style id="bnotes-v3">
+/* ===== BNotes Unified Article Style v3.1 ===== */
+
+/* 1. 強制隱藏所有舊 hero 結構（含背景色塊與空白佔位） */
+.article-hero,
+.article-hero-overlay,
+.article-hero-content,
+.article-hero-img,
+.bnotes-hero-image,
+.typo-hero,
+.typo-hero-bg,
+.typo-hero-content,
+.hero-image,
+.post-hero,
+.entry-hero,
+.feature-image,
+[class*="hero-img"],
+.bnotes-thumb {
+  display: none !important;
+}
+
+/* 2. 統一 HEADER 區塊 */
+.bnotes-header {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 48px 24px 0;
+  text-align: center;
+}
+.bnotes-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: .78rem; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--coffee-mid,#8b4513);
+  background: oklch(93% .04 45 / .4);
+  padding: 4px 14px; border-radius: 99px;
+  margin-bottom: 20px;
+}
+.bnotes-title {
+  font-family: var(--font-serif,'Noto Serif TC',Georgia,serif);
+  font-size: clamp(1.6rem,4vw,2.4rem);
+  font-weight: 900; line-height: 1.35;
+  color: var(--coffee-dark,#1a0a00);
+  margin-bottom: 20px; letter-spacing: -.01em;
+}
+.bnotes-meta {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 6px 16px;
+  font-size: .83rem; color: oklch(45% .02 30);
+  margin-bottom: 32px;
+}
+.bnotes-meta span { display: flex; align-items: center; gap: 4px }
+.bnotes-divider {
+  width: 56px; height: 3px;
+  background: linear-gradient(90deg,var(--gold,#c8922a),transparent);
+  border-radius: 2px; margin: 0 auto 40px;
+}
+
+/* 3. 文章主體排版 */
+.article-body, .article-content, main.article-wrap article,
+.article-wrap .article-body {
+  max-width: 740px !important;
+  margin: 0 auto !important;
+  padding: 0 24px 80px !important;
+  font-family: var(--font-sans,'Noto Sans TC',sans-serif);
+  font-size: 1.05rem; line-height: 1.85;
+  color: oklch(22% .02 30);
+}
+.article-body p, .article-body li { margin-bottom: 1.3em }
+.article-body h2 {
+  font-family: var(--font-serif,'Noto Serif TC',serif);
+  font-size: 1.45rem; font-weight: 700;
+  color: var(--coffee-dark,#1a0a00);
+  margin: 2.4em 0 .8em;
+  padding-bottom: .4em;
+  border-bottom: 2px solid oklch(90% .04 45);
+}
+.article-body h3 {
+  font-size: 1.18rem; font-weight: 600;
+  color: oklch(30% .06 35);
+  margin: 1.8em 0 .6em;
+}
+.article-body blockquote {
+  border-left: 4px solid var(--gold,#c8922a);
+  padding: .8em 1.2em; margin: 1.6em 0;
+  background: oklch(97% .015 45);
+  border-radius: 0 .5rem .5rem 0;
+  font-style: italic; color: oklch(35% .04 35);
+}
+.article-body table {
+  width: 100%; border-collapse: collapse;
+  margin: 1.6em 0; font-size: .9rem;
+  border-radius: .5rem; overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,.07);
+}
+.article-body th {
+  background: var(--coffee-warm,#5c2d00); color: #fff;
+  padding: .7em 1em; text-align: left; font-weight: 600;
+}
+.article-body td {
+  padding: .65em 1em;
+  border-bottom: 1px solid oklch(90% .01 30);
+}
+.article-body tr:nth-child(even) td { background: oklch(97% .006 30) }
+
+/* 4. Key Takeaway 卡片 */
+.key-takeaway, .takeaway-box, [class*="key-take"] {
+  background: linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));
+  border: 1px solid oklch(88% .05 45);
+  border-left: 4px solid var(--gold,#c8922a);
+  border-radius: .75rem; padding: 1.2em 1.4em;
+  margin: 1.8em 0;
+}
+
+/* 5. TOC 面板 */
+#bnotes-toc-panel {
+  position: fixed; right: max(2vw,16px);
+  width: 220px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid oklch(88% .01 30);
+  border-radius: .75rem;
+  padding: 14px 16px;
+  font-size: .78rem; line-height: 1.6;
+  box-shadow: 0 4px 20px rgba(0,0,0,.08);
+  scrollbar-width: none;
+  z-index: 30;
+  display: none;
+}
+#bnotes-toc-panel::-webkit-scrollbar { display: none }
+#bnotes-toc-panel h4 {
+  font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: oklch(55% .02 30);
+  margin-bottom: 10px; border-bottom: 1px solid oklch(90% .01 30);
+  padding-bottom: 8px;
+}
+#bnotes-toc-panel a {
+  display: block; padding: 3px 0 3px 10px;
+  color: oklch(42% .02 30);
+  border-left: 2px solid transparent;
+  transition: all .15s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+#bnotes-toc-panel a:hover { color: var(--coffee-mid,#8b4513); border-left-color: var(--gold,#c8922a) }
+#bnotes-toc-panel a.active { color: var(--coffee-warm,#5c2d00); font-weight: 600; border-left-color: var(--gold,#c8922a) }
+#bnotes-toc-panel a[data-level="3"] { padding-left: 20px; font-size: .74rem }
+
+/* 6. 閱讀進度條 */
+#bnotes-progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: linear-gradient(90deg,var(--gold,#c8922a),var(--coffee-mid,#8b4513));
+  z-index: 100; transition: width .1s linear;
+}
+
+/* 7. 分享列 */
+.share-bar, .article-share {
+  max-width: 740px; margin: 0 auto;
+  padding: 24px 24px 0;
+  border-top: 1px solid oklch(90% .01 30);
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+}
+
+/* 8. 相關文章 */
+.related-articles, .related-posts {
+  max-width: 740px; margin: 40px auto 0;
+  padding: 0 24px;
+}
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 12px }
+.related-card {
+  border: 1px solid oklch(89% .01 30); border-radius: .6rem;
+  padding: 14px; font-size: .85rem;
+  background: var(--card,#fff);
+  transition: box-shadow .15s;
+}
+.related-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.09) }
+
+/* 9. 麵包屑保留 */
+.breadcrumb, nav[aria-label="breadcrumb"] {
+  max-width: 740px; margin: 12px auto 0; padding: 0 24px;
+  font-size: .8rem; color: oklch(55% .02 30);
+}
+
+/* 10. 隱藏舊的重複 meta-bar */
+.article-meta-bar, .article-meta-inner { display: none !important; }
+
+/* 11. Mobile */
+@media(max-width:767px) {
+  .bnotes-header { padding: 28px 16px 0 }
+  .bnotes-title { font-size: 1.45rem }
+  .article-body, .article-content, main.article-wrap article,
+  .article-wrap .article-body { padding: 0 16px 60px !important }
+  .article-body h2 { font-size: 1.2rem }
+  .share-bar, .article-share, .related-articles, .related-posts { padding: 16px }
+  .related-grid { grid-template-columns: 1fr }
+  .breadcrumb { padding: 0 16px }
+}
+
 .bnotes-cover{width:100%;max-height:420px;object-fit:cover;border-radius:.9rem;margin:2rem auto;display:block;box-shadow:0 4px 16px rgba(0,0,0,.12)}
-:root{--gold:#c8922a;--coffee-dark:#1a0a00;--coffee-mid:#8b4513;--muted:oklch(95% .008 30)}
-.key-box{background:linear-gradient(135deg,oklch(98% .025 50),oklch(96% .03 45));border:1px solid oklch(88% .06 45);border-left:4px solid var(--gold,#c8922a);border-radius:.75rem;padding:1.2em 1.5em;margin:1.5rem 0 2rem;line-height:2}
-.geo-box{background:oklch(97% .01 200);border:1px solid oklch(88% .03 200);border-left:4px solid oklch(60% .12 200);border-radius:.75rem;padding:1.2em 1.5em;margin:2rem 0}
-.geo-box p{margin-bottom:.75rem}
-.geo-box p:last-child{margin-bottom:0}
-.further-reading{background:var(--muted,oklch(95% .008 30));border-radius:.75rem;padding:1.2em 1.5em;margin:1.5rem 0}
-.further-reading strong{display:block;margin-bottom:.75rem;color:var(--coffee-dark,#1a0a00)}
-.further-reading ul{margin:0;padding-left:1.25rem}
-.further-reading li{margin-bottom:.4rem}
-.further-reading a{color:var(--coffee-mid,#8b4513);text-decoration:underline}
-</style>
-<style>
-body{font-family:'Noto Sans TC',-apple-system,sans-serif;background:#faf8f5;color:#1a0a00;line-height:1.85;margin:0}
-article{max-width:740px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
-h1{font-family:'Noto Serif TC',Georgia,serif;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:900;line-height:1.35;color:#1a0a00;margin:1.5rem 0 1rem}
-h2{font-family:'Noto Serif TC',Georgia,serif;font-size:1.35rem;font-weight:700;color:#1a0a00;margin:2.2rem 0 .8rem;padding-bottom:.4rem;border-bottom:2px solid oklch(90% .04 45)}
-p{margin-bottom:1.25rem;font-size:1.02rem;line-height:1.9}
-ul,ol{margin:0 0 1.25rem 1.5rem}
-li{margin-bottom:.5rem;line-height:1.8}
-strong{color:#5c2d00;font-weight:700}
-p.meta{font-size:.82rem;color:#7a6050;margin-bottom:1.5rem}
-</style>
-<style>
-.bnotes-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #e4d9cc;padding:.75rem 1.25rem}
-.bnotes-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.bnotes-nav-logo{font-family:'Noto Serif TC',Georgia,serif;font-size:1.15rem;font-weight:900;color:#1a0a00;letter-spacing:.02em;text-decoration:none}
-.bnotes-nav-logo b{color:#c8922a}
-.bnotes-nav-sub{font-family:sans-serif;font-size:.65rem;color:#7a6050;letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
-.bnotes-nav-back{font-size:.85rem;color:#7a6050;font-weight:600}
-.bnotes-nav-back:hover{color:#c8922a}
+
+/* key-box */
+.key-box {
+  background: oklch(97% .025 45);
+  border: 1px solid oklch(85% .06 45);
+  border-left: 4px solid var(--gold,#c8922a);
+  border-radius: .75rem;
+  padding: 1.2em 1.5em;
+  margin: 1.6em 0 2em;
+  font-size: .95rem;
+  line-height: 1.9;
+  color: oklch(28% .03 35);
+}
+.key-box strong { color: var(--coffee-dark,#1a0a00); display: block; margin-bottom: .4em }
+
+/* geo-box */
+.geo-box {
+  background: oklch(98% .01 30);
+  border: 1px solid oklch(88% .015 30);
+  border-radius: .75rem;
+  padding: 1.3em 1.5em;
+  margin: 2em 0;
+  font-size: .93rem;
+  line-height: 1.85;
+}
+.geo-box p { margin-bottom: 1em }
+.geo-box p:last-child { margin-bottom: 0 }
+.geo-box strong { color: var(--coffee-warm,#5c2d00) }
+
+/* further-reading */
+.further-reading {
+  background: var(--muted,#f5f2ee);
+  border-radius: .75rem;
+  padding: 1.2em 1.5em;
+  margin: 2em 0;
+  font-size: .93rem;
+}
+.further-reading strong { color: var(--coffee-dark,#1a0a00); display: block; margin-bottom: .6em }
+.further-reading ul { margin: 0; padding-left: 1.2em }
+.further-reading li { margin-bottom: .45em; line-height: 1.6 }
+.further-reading a { color: var(--coffee-mid,#8b4513); text-decoration: underline; text-decoration-color: oklch(80% .06 45); text-underline-offset: 2px }
+.further-reading a:hover { color: var(--coffee-dark,#1a0a00) }
+
+/* share-section */
+.share-section{max-width:740px;margin:2rem auto 0;padding:1.5rem 24px 0;border-top:1px solid oklch(90% .01 30);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.share-label{font-size:.85rem;font-weight:600;color:var(--coffee-mid,#8b4513)}
+.share-btns{display:flex;gap:.6rem;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;padding:.45rem 1rem;border-radius:2rem;font-size:.8rem;font-weight:600;cursor:pointer;border:none;text-decoration:none}
+.share-btn-line{background:#06C755;color:white}
+.share-btn-fb{background:#1877F2;color:white}
+.share-btn-copy{background:var(--muted,#f0ebe2);color:var(--coffee-dark,#1a0a00)}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"台北最集中的精品咖啡區在哪裡？","acceptedAnswer":{"@type":"Answer","text":"目前最密集的精品咖啡聚落是大安區（永康街周邊、師大商圈）和中山區（赤峰街、中山北路二段）。這兩個區各有特色：大安偏向在地化、社區型咖啡館；中山偏向設計感強、創意風格為主。近年松山區（五分埔、饒河週邊）和信義區也快速發展。"}},{"@type":"Question","name":"台北的精品咖啡館和日本東京相比如何？","acceptedAnswer":{"@type":"Answer","text":"台北的優勢在於吧台文化——台北咖啡師更願意和客人聊豆子、解釋沖煮邏輯，這種互動在東京較少見。東京的優勢在於空間設計和沖煮一致性。台北的精品咖啡在咖啡師培訓和比賽成績上與東京並駕齊驅，某些方面甚至領先（台灣咖啡師的 WBC 成績優於日本）。"}}]}
 </script>
 </head>
 <body>
-<nav class="bnotes-nav">
-  <div class="bnotes-nav-inner">
-    <a class="bnotes-nav-logo" href="../"><b>B</b>Notes<span class="bnotes-nav-sub">焙學·原豆誌</span></a>
-    <a href="../" class="bnotes-nav-back">← 回首頁</a>
+
+<button id="back-to-top" aria-label="返回頂部" title="返回頂部">↑</button>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="../"><b>B</b>Notes<span class="nav-sub">焙學·原豆誌</span></a>
+    <a href="../" class="nav-back">← 回首頁</a>
   </div>
 </nav>
-    <article>
-        <h1>2026 台北精品咖啡地圖：從 Simple Kaffa 到 Fika Fika 的極致感官之旅</h1>
-        <p class="meta">日期：2026-04-27 | 分類：城市指南 | 標籤：#台北咖啡 #精品咖啡 #感官分析</p>
 
-        <div class="key-box">
+<div class="article-hero">
+  <img class="article-hero-img" src="https://bnotescoffee.com/images/ai/taipei-coffee-map-2026-hero.jpg" alt="2026 台北精品咖啡地圖：從 Simple Kaffa 到 Fika Fika 的極致感官之旅" fetchpriority="high" loading="eager" decoding="async">
+  <div class="article-hero-overlay"></div>
+  <div class="article-hero-content" style="max-width:900px;width:100%;left:50%;transform:translateX(-50%)">
+    <div class="article-cat">🗺️ 城市指南</div>
+    <h1 class="article-h1">2026 台北精品咖啡地圖：從 Simple Kaffa 到 Fika Fika 的極致感官之旅</h1>
+  </div>
+</div>
+
+<div class="article-meta-bar">
+  <div class="article-meta-inner">
+    <span>📅 2026-04-27</span>
+    <span>⏱ 10 分鐘閱讀</span>
+    <span>📝 約 3,100 字</span>
+    <span>✍️ BNotes 編輯部</span>
+  </div>
+</div>
+
+<nav aria-label="breadcrumb" style="max-width:900px;margin:.75rem auto;padding:0 1.5rem;font-size:.8rem;color:var(--muted-fg)">
+  <a href="../">首頁</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
+  <a href="../#categories">城市指南</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
+  <span style="color:var(--coffee-mid)">2026 台北精品咖啡地圖：從 Simple Kaffa 到 Fika Fika 的極致感官之旅</span>
+</nav>
+
+<main class="article-wrap">
+
+<article class="article-body">
+
+<div class="lead">
+  <p>忠孝東路二段的午後三點，你坐在 Simple Kaffa 的吧台邊，手邊是一杯衣索比亞日曬。咖啡師遞過來的時候說了一句：「這批豆子的處理場在耶加雪菲，農場主叫 Shara。」不是推銷，是真的在分享。</p>
+  <p>這件事在東京很少發生。東京的精品咖啡館空間設計無懈可擊，沖煮一致性高，但吧台那道隱形的距離感始終存在。台北的咖啡師習慣聊豆子——產地、海拔、處理法（就是咖啡果實從採收到生豆的處理方式，直接影響風味），他們願意解釋為什麼這杯酸，為什麼那杯甜。</p>
+</div>
+
+<div class="key-box">
   <strong>讀完這篇，你會知道：</strong><br>
   · 台北精品咖啡為什麼值得認真對待，以及它和東京的真正差別<br>
   · Simple Kaffa、Fika Fika、Rufous、Coffee Sweet 各自的真實特色與點餐建議<br>
@@ -60,71 +461,57 @@ p.meta{font-size:.82rem;color:#7a6050;margin-bottom:1.5rem}
   · 幾點去最合適、需不需要預約
 </div>
 
-        <section>
-            <h2>為什麼台北的咖啡館值得認真對待</h2>
+<h2>為什麼台北的咖啡館值得認真對待</h2>
 
-            <p>忠孝東路二段的午後三點，你坐在 Simple Kaffa 的吧台邊，手邊是一杯衣索比亞日曬。咖啡師遞過來的時候說了一句：「這批豆子的處理場在耶加雪菲，農場主叫 Shara。」不是推銷，是真的在分享。</p>
+<p>台灣咖啡師的國際競爭力有數據支撐：世界咖啡師大賽（WBC）的成績上，台灣多次進入決賽，吳則霖在 2016 年摘下 WBC 冠軍。但讓台北咖啡館真正有趣的，不只是冠軍頭銜，而是這座城市裡吧台師和顧客之間那種罕見的對話文化。</p>
 
-            <p>這件事在東京很少發生。東京的精品咖啡館空間設計無懈可擊，沖煮一致性高，但吧台那道隱形的距離感始終存在。台北的咖啡師習慣聊豆子——產地、海拔、處理法（就是咖啡果實從採收到生豆的處理方式，直接影響風味），他們願意解釋為什麼這杯酸，為什麼那杯甜。</p>
+<p>我們的立場很簡單：如果你只打算在台北喝一杯好咖啡，隨便走進一間有自家烘焙標誌的小店就夠了。但如果你想理解台北咖啡為什麼在亞洲精品咖啡版圖上佔有一席之地，下面四間店是最好的切入點。</p>
 
-            <p>台灣咖啡師的國際競爭力有數據支撐：世界咖啡師大賽（WBC）的成績上，台灣多次進入決賽，吳則霖在 2016 年摘下 WBC 冠軍。但讓台北咖啡館真正有趣的，不只是冠軍頭銜，而是這座城市裡吧台師和顧客之間那種罕見的對話文化。</p>
+<h2>Simple Kaffa（興波咖啡）——冠軍本色</h2>
 
-            <p>我們的立場很簡單：如果你只打算在台北喝一杯好咖啡，隨便走進一間有自家烘焙標誌的小店就夠了。但如果你想理解台北咖啡為什麼在亞洲精品咖啡版圖上佔有一席之地，下面四間店是最好的切入點。</p>
-        </section>
+<p>地址在台北市中正區忠孝東路二段 27 號，捷運忠孝新生站步行約三分鐘。旗艦店最顯眼的是一樓中央的環形吧台——設計參考歐洲高端餐廳，客人圍坐一圈，近距離看咖啡師工作。天井採光讓整個空間在下午特別好看，二樓也有座位，但第一次去建議坐吧台。</p>
 
-        <section>
-            <h2>Simple Kaffa（興波咖啡）——冠軍本色</h2>
+<p>創辦人吳則霖是 2016 年世界咖啡師大賽冠軍，Simple Kaffa 曾入選全球 50 間最佳咖啡館第一名（2019–2020 年）。頭銜不是重點，重點是這裡的豆單不貪多：手沖分淺焙和中深焙兩個方向，每季輪換，支支都有明確的來源與風味說明。</p>
 
-            <p>地址在台北市中正區忠孝東路二段 27 號，捷運忠孝新生站步行約三分鐘。旗艦店最顯眼的是一樓中央的環形吧台——設計參考歐洲高端餐廳，客人圍坐一圈，近距離看咖啡師工作。天井採光讓整個空間在下午特別好看，二樓也有座位，但第一次去建議坐吧台。</p>
+<p>第一次去，點<strong>手沖單品</strong>（淺焙那一欄）。讓咖啡師推薦當季的豆子，然後坐下來等。那杯咖啡端上來的時候溫度通常略低於你預期——這是刻意的，淺焙豆在稍低溫度下花香和果酸才完整。不加糖，不加奶，先喝一口原味。</p>
 
-            <p>創辦人吳則霖是 2016 年世界咖啡師大賽冠軍，Simple Kaffa 曾入選全球 50 間最佳咖啡館第一名（2019–2020 年）。頭銜不是重點，重點是這裡的豆單不貪多：手沖分淺焙和中深焙兩個方向，每季輪換，支支都有明確的來源與風味說明。</p>
+<p>不接受預約，現場登記候位。週末下午等候時間可能超過 30 分鐘，平日上午 11 點前人少，是去這裡最好的時機。</p>
 
-            <p>第一次去，點<strong>手沖單品</strong>（淺焙那一欄）。讓咖啡師推薦當季的豆子，然後坐下來等。那杯咖啡端上來的時候溫度通常略低於你預期——這是刻意的，淺焙豆在稍低溫度下花香和果酸才完整。不加糖，不加奶，先喝一口原味。</p>
+<h2>Fika Fika Cafe——北歐淺焙在台灣</h2>
 
-            <p>不接受預約，現場登記候位。週末下午等候時間可能超過 30 分鐘，平日上午 11 點前人少，是去這裡最好的時機。</p>
-        </section>
+<p>「Fika」是瑞典文，意思是放下手邊的事、坐下來喝杯咖啡——那種帶著小點心、和朋友或同事喘一口氣的日常儀式。Fika Fika Cafe 的名字就是這個意思重複了兩次，某種程度上說明了這間店的調性：認真但不嚴肅。</p>
 
-        <section>
-            <h2>Fika Fika Cafe——北歐淺焙在台灣</h2>
+<p>本店位於台北市中山區伊通街 33 號，伊通公園旁。空間走極簡線條，白牆、木桌、自然光。創辦人陳志煌（James）在 2013 年以創新烘焙技術奪下北歐杯咖啡烘焙大賽雙料冠軍，他的烘焙哲學是：中深焙也可以保留淺焙的細膩香氣，不必用焦苦來換醇厚。</p>
 
-            <p>「Fika」是瑞典文，意思是放下手邊的事、坐下來喝杯咖啡——那種帶著小點心、和朋友或同事喘一口氣的日常儀式。Fika Fika Cafe 的名字就是這個意思重複了兩次，某種程度上說明了這間店的調性：認真但不嚴肅。</p>
+<p>店內招牌配方豆「卡布里布理」是中烘焙，油潤豐厚，與牛奶結合後出現奶油、核果、焦糖的層次。如果你對精品咖啡不熟悉，<strong>拿鐵</strong>是最好的入門選擇——它足夠圓潤，不會讓你因為酸度太高而不舒服，但你能清楚感受到咖啡本身的甜感。</p>
 
-            <p>本店位於台北市中山區伊通街 33 號，伊通公園旁。空間走極簡線條，白牆、木桌、自然光。創辦人陳志煌（James）在 2013 年以創新烘焙技術奪下北歐杯咖啡烘焙大賽雙料冠軍，他的烘焙哲學是：中深焙也可以保留淺焙的細膩香氣，不必用焦苦來換醇厚。</p>
+<p>對已經熟悉精品咖啡的人，問咖啡師有沒有當季的淺焙單品手沖。Fika Fika 在台灣在地豆的選豆上也有累積，偶爾會有阿里山或其他台灣高山豆，值得問一下。Fika Fika 另有信義區門市，但伊通街本店的空間氛圍更好。</p>
 
-            <p>店內招牌配方豆「卡布里布理」是中烘焙，油潤豐厚，與牛奶結合後出現奶油、核果、焦糖的層次。如果你對精品咖啡不熟悉，<strong>拿鐵</strong>是最好的入門選擇——它足夠圓潤，不會讓你因為酸度太高而不舒服，但你能清楚感受到咖啡本身的甜感。</p>
+<h2>Rufous Coffee + Coffee Sweet——大安與中山的兩種個性</h2>
 
-            <p>對已經熟悉精品咖啡的人，問咖啡師有沒有當季的淺焙單品手沖。Fika Fika 在台灣在地豆的選豆上也有累積，偶爾會有阿里山或其他台灣高山豆，值得問一下。Fika Fika 另有信義區門市，但伊通街本店的空間氛圍更好。</p>
-        </section>
+<p><strong>Rufous Coffee</strong>（台北市大安區復興南路二段 339 號，捷運科技大樓站步行三分鐘）開業超過十五年，是台北精品咖啡老字號裡少數一直保持高水準的店之一。空間走歐風復古路線，改建自老屋，室內光線偏暗黃，有種老式咖啡館的沉靜感。</p>
 
-        <section>
-            <h2>Rufous Coffee + Coffee Sweet——大安與中山的兩種個性</h2>
+<p>Rufous 的強項在義式基底——拿鐵在台北咖啡圈有長期口碑，醇厚不苦，奶香和咖啡香的比例拿捏很穩。如果你喜歡的是一杯喝起來沒有壓力、但明顯比便利商店咖啡好太多的拿鐵，這裡是首選。冰滴咖啡（Cold Drip，將冷水緩慢滴濾過咖啡粉，需要數小時製作）也是招牌，口感濃郁卻乾淨。週四公休，其餘時間下午 12 點到 8 點開放。</p>
 
-            <p><strong>Rufous Coffee</strong>（台北市大安區復興南路二段 339 號，捷運科技大樓站步行三分鐘）開業超過十五年，是台北精品咖啡老字號裡少數一直保持高水準的店之一。空間走歐風復古路線，改建自老屋，室內光線偏暗黃，有種老式咖啡館的沉靜感。</p>
+<p><strong>Coffee Sweet</strong>（台北市中山區中山北路一段 33 巷 20 弄 3 號）走的是完全不同的路。這間店隱在中山捷運站附近的小巷弄裡，沒有明顯招牌，有一條「嚴禁拍照」的規矩——進去之後你不能對著咖啡或空間拍照。</p>
 
-            <p>Rufous 的強項在義式基底——拿鐵在台北咖啡圈有長期口碑，醇厚不苦，奶香和咖啡香的比例拿捏很穩。如果你喜歡的是一杯喝起來沒有壓力、但明顯比便利商店咖啡好太多的拿鐵，這裡是首選。冰滴咖啡（Cold Drip，將冷水緩慢滴濾過咖啡粉，需要數小時製作）也是招牌，口感濃郁卻乾淨。週四公休，其餘時間下午 12 點到 8 點開放。</p>
+<p>這條規矩一開始聽起來很奇怪，但坐下來之後你會理解它在護衛什麼：整個空間安靜得不尋常，客人專注在杯子裡，不是在手機螢幕上。Coffee Sweet 以自家烘焙淺焙豆為主，手沖和虹吸式咖啡（Siphon，用酒精燈加熱真空原理萃取的老派沖煮方式）都有。帶著你最想好好喝一杯咖啡的心情去，不適合帶不熟悉精品咖啡的朋友。</p>
 
-            <p><strong>Coffee Sweet</strong>（台北市中山區中山北路一段 33 巷 20 弄 3 號）走的是完全不同的路。這間店隱在中山捷運站附近的小巷弄裡，沒有明顯招牌，有一條「嚴禁拍照」的規矩——進去之後你不能對著咖啡或空間拍照。</p>
+<h2>台北精品咖啡地圖的使用邏輯</h2>
 
-            <p>這條規矩一開始聽起來很奇怪，但坐下來之後你會理解它在護衛什麼：整個空間安靜得不尋常，客人專注在杯子裡，不是在手機螢幕上。Coffee Sweet 以自家烘焙淺焙豆為主，手沖和虹吸式咖啡（Siphon，用酒精燈加熱真空原理萃取的老派沖煮方式）都有。帶著你最想好好喝一杯咖啡的心情去，不適合帶不熟悉精品咖啡的朋友。</p>
-        </section>
+<p>不是每次去咖啡館的理由都一樣，選店也不必每次用同一個標準。</p>
 
-        <section>
-            <h2>台北精品咖啡地圖的使用邏輯</h2>
+<p><strong>獨處閱讀或工作</strong>：Fika Fika 伊通街本店空間舒適，氣氛不壓迫，適合一個人待兩小時。Rufous 的歐式老屋空間也有這種安靜感，而且不限時。</p>
 
-            <p>不是每次去咖啡館的理由都一樣，選店也不必每次用同一個標準。</p>
+<p><strong>帶不喝咖啡的朋友</strong>：Simple Kaffa 有甜點和輕食，空間夠大，吧台的視覺感強，適合帶對咖啡好奇但還沒踏入精品咖啡世界的人——冠軍店的標籤讓初次體驗有個具體的錨點。</p>
 
-            <p><strong>獨處閱讀或工作</strong>：Fika Fika 伊通街本店空間舒適，氣氛不壓迫，適合一個人待兩小時。Rufous 的歐式老屋空間也有這種安靜感，而且不限時。</p>
+<p><strong>第一次認真喝精品咖啡</strong>：Fika Fika 的拿鐵是門檻最低的起點，圓潤不刺激。喝完覺得「好像還可以」，再去 Simple Kaffa 試手沖單品，感受酸度和香氣是怎麼在一杯不加奶的咖啡裡同時存在的。</p>
 
-            <p><strong>帶不喝咖啡的朋友</strong>：Simple Kaffa 有甜點和輕食，空間夠大，吧台的視覺感強，適合帶對咖啡好奇但還沒踏入精品咖啡世界的人——冠軍店的標籤讓初次體驗有個具體的錨點。</p>
+<p>關於時間：台北精品咖啡館週末下午的人流普遍偏高，Simple Kaffa 和 Fika Fika 等候時間都可能超過 20 分鐘。平日上午 10 點到 12 點是最好的時段，空間安靜，咖啡師有餘裕和你多說幾句。Fika Fika 信義店有預約制，Fika Fika SHIU XIANG（伊通街 38 號，Fika Fika 的第二品牌，走精品咖啡 Fine Dining 方向）採部分預約制，一次只服務一組客人，想去要提前安排。</p>
 
-            <p><strong>第一次認真喝精品咖啡</strong>：Fika Fika 的拿鐵是門檻最低的起點，圓潤不刺激。喝完覺得「好像還可以」，再去 Simple Kaffa 試手沖單品，感受酸度和香氣是怎麼在一杯不加奶的咖啡裡同時存在的。</p>
+<p>台北的咖啡館不缺選擇，缺的是一個進場的理由。這四間店裡，各有一個值得說給朋友聽的故事——冠軍師的環形吧台、瑞典文店名背後的烘焙哲學、十五年沒有崩壞的老店、禁止拍照的安靜巷弄。你去哪一間，取決於今天你需要的是哪一種安靜。</p>
 
-            <p>關於時間：台北精品咖啡館週末下午的人流普遍偏高，Simple Kaffa 和 Fika Fika 等候時間都可能超過 20 分鐘。平日上午 10 點到 12 點是最好的時段，空間安靜，咖啡師有餘裕和你多說幾句。Fika Fika 信義店有預約制，Fika Fika SHIU XIANG（伊通街 38 號，Fika Fika 的第二品牌，走精品咖啡 Fine Dining 方向）採部分預約制，一次只服務一組客人，想去要提前安排。</p>
-        </section>
-
-        <p>台北的咖啡館不缺選擇，缺的是一個進場的理由。這四間店裡，各有一個值得說給朋友聽的故事——冠軍師的環形吧台、瑞典文店名背後的烘焙哲學、十五年沒有崩壞的老店、禁止拍照的安靜巷弄。你去哪一間，取決於今天你需要的是哪一種安靜。</p>
-
-  <div class="geo-box">
+<div class="geo-box">
   <p><strong>Q：台北最集中的精品咖啡區在哪裡？</strong><br>
   A：目前最密集的精品咖啡聚落是大安區（永康街周邊、師大商圈）和中山區（赤峰街、中山北路二段）。這兩個區各有特色：大安偏向在地化、社區型咖啡館；中山偏向設計感強、創意風格為主。近年松山區（五分埔、饒河週邊）和信義區也快速發展。</p>
 
@@ -151,22 +538,160 @@ p.meta{font-size:.82rem;color:#7a6050;margin-bottom:1.5rem}
   </div>
 
 </article>
-<script>
+
+<div class="cta-box" style="margin-top:3rem">
+    <h3>📬 喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
+    <p>每週日收到精選咖啡知識，與 2,400+ 咖啡愛好者一起深入咖啡世界。</p>
+    <form class="cta-form" onsubmit="return false">
+      <input class="cta-input" type="email" placeholder="your@email.com" required>
+      <button class="cta-btn">免費訂閱</button>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 BNotes 焙學·原豆誌 · <a href="https://bnotescoffee.com">bnotescoffee.com</a></p>
+</footer>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"52882166ceb34dbc81601c4020da5ca0","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
+
+<script id="bnotes-v3-js">
 (function(){
-  var ogImg=document.querySelector('meta[property="og:image"]');
-  var heroSrc=ogImg?ogImg.getAttribute('content'):'';
-  if(heroSrc){
-    var h1=document.querySelector('h1');
-    if(h1){
-      var img=document.createElement('img');
-      img.className='bnotes-cover';
-      img.src=heroSrc;
-      img.alt=h1.textContent;
-      img.loading='eager';
-      img.decoding='async';
-      h1.parentNode.insertBefore(img,h1.nextSibling);
-    }
+  /* ── 1. 進度條 ── */
+  var pb=document.createElement('div');
+  pb.id='bnotes-progress';
+  document.body.prepend(pb);
+  function updateProgress(){
+    var s=document.documentElement;
+    var pct=(s.scrollTop||document.body.scrollTop)/(s.scrollHeight-s.clientHeight)*100;
+    pb.style.width=Math.min(pct,100)+'%';
   }
+  window.addEventListener('scroll',updateProgress,{passive:true});
+
+  /* ── 2. 統一 Header 注入 ── */
+  (function injectHeader(){
+    /* 從現有 DOM 抓 meta 資訊 */
+    var titleEl=document.querySelector('h1,.article-title,.typo-hero-title');
+    if(!titleEl)return;
+
+    /* 不重複注入 */
+    if(document.getElementById('bnotes-unified-header'))return;
+
+    var title=titleEl.textContent.trim();
+
+    /* category / eyebrow */
+    var eyebrow='';
+    var catEl=document.querySelector('.article-cat,.article-category,.typo-hero-eyebrow,.article-tag-badge');
+    if(catEl) eyebrow=catEl.textContent.trim();
+
+    /* date */
+    var dateEl=document.querySelector('[datetime],[data-date]');
+    var dateStr='';
+    if(dateEl) dateStr=dateEl.getAttribute('datetime')||dateEl.getAttribute('data-date')||'';
+    if(!dateStr){
+      /* 從 meta og:article:published_time 抓 */
+      var ogDate=document.querySelector('meta[property="article:published_time"]');
+      if(ogDate) dateStr=ogDate.content.slice(0,10);
+    }
+    if(!dateStr){
+      /* 從 ld+json 抓 */
+      var ldJson=document.querySelector('script[type="application/ld+json"]');
+      if(ldJson){try{var d=JSON.parse(ldJson.textContent);dateStr=(d.datePublished||'').slice(0,10);}catch(e){}}
+    }
+
+    /* reading time */
+    var rtEl=document.querySelector('.reading-time,[data-reading-time]');
+    var rt=rtEl?rtEl.textContent.trim():'';
+    if(!rt){
+      /* 從頁面文字估算 */
+      var bodyEl=document.querySelector('.article-body,.article-content,article');
+      if(bodyEl){
+        var words=(bodyEl.textContent||'').replace(/\s+/g,' ').trim().length;
+        rt=Math.ceil(words/350)+' 分鐘閱讀';
+      }
+    }
+
+    /* 組合 header */
+    var ogImg=document.querySelector('meta[property="og:image"]');var heroSrc=ogImg?ogImg.getAttribute('content'):'';
+    var headerHtml='<header id="bnotes-unified-header" class="bnotes-header">';
+    if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
+    headerHtml+='<h2 class="bnotes-title">'+title+'</h2>';
+    headerHtml+='<div class="bnotes-meta">';
+    if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
+    headerHtml+='<span>✍️ BNotes 編輯部</span>';
+    if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
+    headerHtml+='</div><div class="bnotes-divider"></div></header>';
+    if(heroSrc){headerHtml+='<img class="bnotes-cover" src="'+heroSrc+'" alt="'+title+'" loading="eager" decoding="async">';}
+
+    /* 隱藏舊 hero / title 區塊 */
+    var oldHeroes=document.querySelectorAll(
+      '.article-hero,.typo-hero,.article-meta-bar,.article-meta,.article-header'
+    );
+    oldHeroes.forEach(function(el){el.style.display='none';});
+    /* 隱藏舊 H1（避免重複顯示） */
+    titleEl.style.display='none';
+
+    /* 插入在 <body> 最前，導覽列之後 */
+    var nav=document.querySelector('nav,.nav,header:not(#bnotes-unified-header)');
+    var ref=nav?nav.nextSibling:document.body.firstChild;
+    var tmp=document.createElement('div');
+    tmp.innerHTML=headerHtml;
+    document.body.insertBefore(tmp.firstElementChild,ref&&ref.parentNode===document.body?ref:null);
+  })();
+
+  /* ── 3. TOC 目錄 ── */
+  (function buildTOC(){
+    if(window.innerWidth<1300)return;
+
+    var body=document.querySelector('.article-body,.article-content,article');
+    if(!body)return;
+    var headings=body.querySelectorAll('h2,h3');
+    if(headings.length<3)return;
+
+    /* 給每個標題加 id */
+    headings.forEach(function(h,i){
+      if(!h.id)h.id='bnotes-s'+i;
+    });
+
+    /* 建立面板 */
+    var panel=document.createElement('div');
+    panel.id='bnotes-toc-panel';
+    panel.innerHTML='<h4>目　錄</h4>';
+    var list=document.createElement('div');
+    headings.forEach(function(h){
+      var a=document.createElement('a');
+      a.href='#'+h.id;
+      a.setAttribute('data-level',h.tagName==='H2'?'2':'3');
+      a.textContent=h.textContent.trim().replace(/^[#\s]+/,'');
+      list.appendChild(a);
+    });
+    panel.appendChild(list);
+    document.body.appendChild(panel);
+
+    /* 定位 */
+    function positionTOC(){
+      var art=document.querySelector('main,.article-wrap,.container');
+      if(!art)return;
+      var rect=art.getBoundingClientRect();
+      var rightEdge=rect.right+document.documentElement.scrollLeft;
+      var left=rightEdge+24;
+      if(left+240>window.innerWidth){panel.style.display='none';return;}
+      panel.style.display='block';
+      panel.style.left=left+'px';
+      panel.style.top='80px';
+    }
+    positionTOC();
+    window.addEventListener('resize',positionTOC);
+
+    /* scroll 高亮 */
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var link=panel.querySelector('a[href="#'+e.target.id+'"]');
+        if(link)link.classList.toggle('active',e.isIntersecting);
+      });
+    },{rootMargin:'-10% 0px -80% 0px'});
+    headings.forEach(function(h){io.observe(h);});
+  })();
 })();
 </script>
 
