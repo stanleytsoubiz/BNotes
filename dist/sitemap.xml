@@ -11,11 +11,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/2026-coffee-keywords-annual-review</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://bnotescoffee.com/articles/alishan-new-crop-w02</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -32,11 +27,6 @@
   </url>
   <url>
     <loc>https://bnotescoffee.com/articles/autumn-brewing-temperature-guide</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bnotescoffee.com/articles/bnotes-2026-annual-coffee-report</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -316,6 +306,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://bnotescoffee.com/articles/wbc-2026-champion-philosophy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://bnotescoffee.com/articles/wbc-2026-champion-technique-breakdown</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -332,11 +327,6 @@
   </url>
   <url>
     <loc>https://bnotescoffee.com/articles/wlac-2026-champion-technique</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bnotescoffee.com/articles/world-coffee-weekly-vol1</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
