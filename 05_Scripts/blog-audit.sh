@@ -307,6 +307,51 @@ if [[ "$*" == *"--visual"* ]] || [ "$(date +%d)" -le "07" ] && [ "$(date +%u)" -
 fi
 
 # ════════════════════════════════════════════════════════════════════════════
+# CHECK 11: 時效性文章偵測（逾期 / 年份過期警告）
+# ════════════════════════════════════════════════════════════════════════════
+hdr "CHECK 11: 時效性文章偵測"
+echo -e "\n## CHECK 11: 時效性文章偵測" >> "$REPORT"
+
+CURRENT_YEAR=$(date +%Y)
+CURRENT_TS=$(date +%s)
+STALE_FOUND=0
+
+while IFS= read -r f; do
+  SLUG=$(basename "$f" .html)
+
+  # 從 JSON-LD 抽取 datePublished
+  DATE_PUB=$(grep -o '"datePublished":"[0-9-]*"' "$f" 2>/dev/null \
+           | grep -o '[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}' | head -1)
+
+  # ① 文章逾 365 天未更新
+  if [ -n "$DATE_PUB" ]; then
+    PUB_TS=$(date -j -f "%Y-%m-%d" "$DATE_PUB" "+%s" 2>/dev/null || echo "0")
+    if [ "$PUB_TS" != "0" ]; then
+      DAYS_OLD=$(( ( CURRENT_TS - PUB_TS ) / 86400 ))
+      if [ "$DAYS_OLD" -gt 365 ]; then
+        warn "逾期文章：$SLUG（發布 ${DATE_PUB}，已過 ${DAYS_OLD} 天，建議更新）"
+        echo "- ⚠️  $SLUG — 發布 ${DATE_PUB}，已逾 ${DAYS_OLD} 天，建議重新審稿" >> "$REPORT"
+        STALE_FOUND=$((STALE_FOUND + 1))
+      fi
+    fi
+  fi
+
+  # ② Slug 或標題含有已過去的年份
+  SLUG_YEAR=$(echo "$SLUG" | grep -o '20[2-9][0-9]' | head -1)
+  if [ -n "$SLUG_YEAR" ] && [ "$SLUG_YEAR" -lt "$CURRENT_YEAR" ] 2>/dev/null; then
+    warn "年份過期：$SLUG（Slug 含 $SLUG_YEAR，當前年份 $CURRENT_YEAR，考慮更新或建立重新導向）"
+    echo "- 🗓️  $SLUG — Slug 年份 $SLUG_YEAR 已過期（當前 $CURRENT_YEAR）" >> "$REPORT"
+    STALE_FOUND=$((STALE_FOUND + 1))
+  fi
+
+done < <(find "$ARTICLES" -name "*.html" ! -name "index.html")
+
+if [ "$STALE_FOUND" -eq 0 ]; then
+  ok "無逾期或年份過期文章"
+  echo "✅ 無逾期文章" >> "$REPORT"
+fi
+
+# ════════════════════════════════════════════════════════════════════════════
 # SUMMARY
 # ════════════════════════════════════════════════════════════════════════════
 echo ""

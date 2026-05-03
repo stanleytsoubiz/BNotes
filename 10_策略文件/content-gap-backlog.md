@@ -18,7 +18,7 @@
 
 | 優先 | slug | 標題（建議） | 備註 |
 |------|------|-------------|------|
-| P1 | `brazil-natural-process-guide` | 巴西日曬處理完全指南 | 全球最大產國，BNotes 完全缺席 |
+| P1 | `brazil-natural-process-guide` | 巴西日曬處理完全指南 | [~] 草稿完成 2026-05-03，待 GM 審核後發布 |
 | P1 | `guatemala-antigua-coffee-terroir` | 瓜地馬拉安提瓜產區風土深探 | 台灣市場常見但缺深度內容 |
 | P2 | `yemen-mocha-origin-story` | 葉門摩卡：咖啡起源地的現代困境 | 文化深度 + 稀缺敘事，差異化強 |
 | P2 | `costa-rica-honey-process` | 哥斯大黎加蜜處理：甜感科學 | 處理法 + 產地雙軸 |
