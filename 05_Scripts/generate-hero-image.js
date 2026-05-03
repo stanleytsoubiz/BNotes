@@ -82,7 +82,7 @@ const SLUG_SEARCH_TERMS = {
   // 品飲 / 感官
   'cup-tasters-palate-training-guide':       'coffee cupping tasting spoons bowls',
   'sca-tasting-vocabulary-guide':            'coffee flavor wheel tasting notes',
-  'coffee-acidity-complete-science':         'bright acidic coffee lemon citrus',
+  'coffee-acidity-complete-science':         'specialty coffee black drip coffee in clear glass, bright lemon wedge beside it on white marble, pH test strips, science acidity concept, dark rich coffee liquid clearly visible',
   'coffee-dessert-pairing-science':          'coffee dessert cake pastry pairing',
   'flavor-pairing-w03':                      'coffee food flavor pairing match',
 
@@ -102,7 +102,7 @@ const SLUG_SEARCH_TERMS = {
 
   // 咖啡廳 / 城市
   'taipei-specialty-cafes':                  'specialty coffee shop cafe interior design',
-  'taipei-coffee-map-2026':                  'coffee shop city street map explore',
+  'taipei-coffee-map-2026':                  'Taipei city specialty coffee street scene, row of modern Japanese-style coffee shop storefronts, afternoon light, coffee shop signs in urban setting, city cafe district guide, warm editorial photography',
   'taipei-coffee-expo-2026-complete-guide':  'coffee exhibition expo event fair crowd',
   'chiayi-coffee-festival-2026-guide':       'outdoor coffee festival market event Taiwan',
 
@@ -114,7 +114,7 @@ const SLUG_SEARCH_TERMS = {
 
   // 賽事
   'wbc-2026-champion-technique-breakdown':   'world barista championship competition stage',
-  'wbc-2026-champion-philosophy':            'world barista championship stage spotlight philosophy coffee',
+  'wbc-2026-champion-philosophy':            'world barista championship competition stage, focused professional barista in black competition attire operating gleaming espresso machine, dramatic spotlight, championship atmosphere, judges table in background',
 
   // 生活風格 / 季節
   'morning-coffee-ritual-science':           'morning coffee ritual sunrise peaceful',
@@ -130,7 +130,7 @@ const SLUG_SEARCH_TERMS = {
 
   // 年度 / 週報
   '2026-coffee-keywords-annual-review':      'coffee year review 2026 trending',
-  'bnotes-2026-annual-coffee-report':        'coffee annual report notebook writing',
+  'bnotes-2026-annual-coffee-report':        'coffee industry annual report desk scene, cupping score sheets, small glass coffee samples, specialty coffee bags, pen and notebook with handwritten notes, warm editorial light',
   'world-coffee-weekly-vol1':                'coffee news weekly digest reading',
   'taiwan-barista-2026-annual-review':       'barista annual review year professional',
 };
