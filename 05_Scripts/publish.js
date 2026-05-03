@@ -40,6 +40,18 @@ if (!fs.existsSync(draftPath)) {
   process.exit(1);
 }
 
+// ── 0. 發布前驗證（validate-article.js）───────────────────
+const { execSync } = require('child_process');
+const validatorPath = path.join(__dirname, 'validate-article.js');
+if (fs.existsSync(validatorPath)) {
+  try {
+    execSync(`node "${validatorPath}" "${slug}"`, { stdio: 'inherit' });
+  } catch (e) {
+    console.error('\n🔴 發布中止：請修復上方 BLOCK 項後重新執行 publish.js\n');
+    process.exit(1);
+  }
+}
+
 // ── 1. 讀取草稿 ────────────────────────────────────────────
 let content = fs.readFileSync(draftPath, 'utf8');
 
