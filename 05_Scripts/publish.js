@@ -91,56 +91,90 @@ if (idx.includes(`/articles/${slug}.html`)) {
   const loading = 'eager';   // 最新文章用 eager
   const card = `<article class="card"><a href="/articles/${slug}.html" aria-label="${title}"><div class="card-img-wrap"><img class="card-img" src="${heroImg}" data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg" alt="${title}" loading="${loading}"><span class="card-cat">${cat}</span></div></a><div class="card-body"><div class="card-meta"><span>${date}</span></div><h3 class="card-title"><a href="/articles/${slug}.html">${title}</a></h3><p class="card-desc">${desc}</p></div></article>`;
 
-  // 5c. 找 latest-grid 內第一張卡並在前面插入
-  //     注意：實際 HTML 第一張卡片帶有 data-cat 等屬性（<article class="card" data-cat="...">），
-  //     因此用 regex /<article class="card"[\s>]/ 匹配，避免精準字串失配。
-  const CARD_OPEN_RE = /<article class="card"[\s>]/g;
+  // 5c. 找 latest-grid 內「最後一張精選柱石之後、第一張一般卡之前」的位置插入
+  //     精選柱石定義：含 <span class="card-badge">精選</span> 的卡片（董事長 2026-05-02 確認永久置頂）
+  //     插入策略：掃描 grid 內所有卡片，找到第一張「無 card-badge」的卡片，在其前面插入新卡片
+  //     若全部都是精選柱石（無一般卡），則插入到 grid 最後一張卡之後
   const gridStart = idx.indexOf('id="latest-grid"');
   if (gridStart === -1) {
     console.warn('⚠️   找不到 #latest-grid，請手動更新 index.html');
   } else {
-    // 在 gridStart 之後尋找第一張卡片
-    CARD_OPEN_RE.lastIndex = gridStart;
-    const firstMatch = CARD_OPEN_RE.exec(idx);
-    const firstCard = firstMatch ? firstMatch.index : -1;
-    if (firstCard === -1) {
-      console.warn('⚠️   找不到第一張卡片，請手動更新 index.html');
+    const gridEndMarker = '</div>\n    <div id="load-more-wrap"';
+    const gridEnd = idx.indexOf(gridEndMarker);
+    if (gridEnd === -1) {
+      console.warn('⚠️   找不到 grid 結尾標記，請手動更新 index.html');
     } else {
-      idx = idx.slice(0, firstCard) + card + '\n      ' + idx.slice(firstCard);
-      // 註：firstCard 之前已有縮排空白，因此只在新卡片後補一次換行+縮排
-
-      // 5d. 計算 hardcoded 卡片數，若超過 9 張，把最後一張降入 SLUGS
-      const gridEnd = idx.indexOf('</div>\n    <div id="load-more-wrap"');
       const gridContent = idx.slice(gridStart, gridEnd);
-      const gridCards = [...gridContent.matchAll(/<article class="card"[\s>]/g)];
-
-      if (gridCards.length > 9) {
-        // 找最後一張卡，取其 slug，移入 SLUGS
-        const lastCardMatches = [...gridContent.matchAll(/href="\/articles\/([^"]+)\.html"/g)];
-        const lastSlug = lastCardMatches[lastCardMatches.length - 1]?.[1];
-
-        if (lastSlug) {
-          // 找最後一張完整 card HTML 並刪除（用 regex 找最後一個開始位置）
-          const lastCardOpenIdx = gridCards[gridCards.length - 1].index;
-          const afterGrid   = gridContent.slice(lastCardOpenIdx);
-          const lastCardEnd = afterGrid.indexOf('</article>') + '</article>'.length;
-          const lastCardHtml = afterGrid.slice(0, lastCardEnd);
-
-          // 從 idx 中移除此卡（連同前面的縮排換行）
-          if (idx.includes('\n      ' + lastCardHtml)) {
-            idx = idx.replace('\n      ' + lastCardHtml, '');
-          } else {
-            idx = idx.replace(lastCardHtml, '');
-          }
-
-          // 插入 slug 到 SLUGS 第一位
-          idx = idx.replace('var SLUGS = [', `var SLUGS = [\n    '${lastSlug}',`);
-          console.log(`🔄  卡片數超過 9，已將「${lastSlug}」降入 SLUGS`);
-        }
+      // 收集 grid 內每張卡片的開始位置與是否為精選柱石
+      const cardOpenRe = /<article class="card"[^>]*>/g;
+      const allCards = [];
+      let m;
+      while ((m = cardOpenRe.exec(gridContent)) !== null) {
+        // 從卡片開始到下一個 </article>，判斷是否含 card-badge
+        const cardEndRel = gridContent.indexOf('</article>', m.index) + '</article>'.length;
+        const cardHtml = gridContent.slice(m.index, cardEndRel);
+        const isPillar = /<span class="card-badge">/.test(cardHtml);
+        allCards.push({ relStart: m.index, relEnd: cardEndRel, isPillar });
       }
 
-      fs.writeFileSync(INDEX, idx, 'utf8');
-      console.log(`✅  index.html 已更新，新文章置頂`);
+      if (allCards.length === 0) {
+        console.warn('⚠️   grid 內找不到任何卡片，請手動更新 index.html');
+      } else {
+        // 找第一張「非精選」卡片
+        const firstNonPillar = allCards.find(c => !c.isPillar);
+        let insertRel;
+        if (firstNonPillar) {
+          insertRel = firstNonPillar.relStart; // 在第一張一般卡之前
+        } else {
+          // 全部都是精選柱石：插入在最後一張柱石之後
+          insertRel = allCards[allCards.length - 1].relEnd;
+        }
+        const insertAbs = gridStart + insertRel;
+
+        if (firstNonPillar) {
+          idx = idx.slice(0, insertAbs) + card + '\n      ' + idx.slice(insertAbs);
+        } else {
+          idx = idx.slice(0, insertAbs) + '\n      ' + card + idx.slice(insertAbs);
+        }
+
+        // 5d. 計算 hardcoded 卡片數，若超過 9 張，把最後一張「一般卡」降入 SLUGS
+        //     精選柱石永遠不降級
+        const gridEnd2 = idx.indexOf(gridEndMarker);
+        const gridContent2 = idx.slice(gridStart, gridEnd2);
+        const cardOpenRe2 = /<article class="card"[^>]*>/g;
+        const allCards2 = [];
+        let m2;
+        while ((m2 = cardOpenRe2.exec(gridContent2)) !== null) {
+          const cardEndRel = gridContent2.indexOf('</article>', m2.index) + '</article>'.length;
+          const cardHtml = gridContent2.slice(m2.index, cardEndRel);
+          const isPillar = /<span class="card-badge">/.test(cardHtml);
+          const slugMatch = cardHtml.match(/href="\/articles\/([^"]+)\.html"/);
+          allCards2.push({ relStart: m2.index, relEnd: cardEndRel, isPillar, slug: slugMatch?.[1], html: cardHtml });
+        }
+
+        if (allCards2.length > 9) {
+          // 從尾部往前找第一張「非精選」卡片
+          let lastNonPillar = null;
+          for (let i = allCards2.length - 1; i >= 0; i--) {
+            if (!allCards2[i].isPillar) { lastNonPillar = allCards2[i]; break; }
+          }
+          if (lastNonPillar && lastNonPillar.slug) {
+            const lastCardHtml = lastNonPillar.html;
+            if (idx.includes('\n      ' + lastCardHtml)) {
+              idx = idx.replace('\n      ' + lastCardHtml, '');
+            } else {
+              idx = idx.replace(lastCardHtml, '');
+            }
+            idx = idx.replace('var SLUGS = [', `var SLUGS = [\n    '${lastNonPillar.slug}',`);
+            console.log(`🔄  卡片數超過 9，已將「${lastNonPillar.slug}」降入 SLUGS（精選柱石永久保留）`);
+          } else {
+            console.warn('⚠️   超過 9 張但找不到可降級的一般卡（全為精選柱石），跳過降級');
+          }
+        }
+
+        fs.writeFileSync(INDEX, idx, 'utf8');
+        console.log(`✅  index.html 已更新，新文章插入於精選柱石之後`);
+      }
     }
   }
 }
