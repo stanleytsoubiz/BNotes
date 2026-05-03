@@ -7,7 +7,7 @@
     <link>https://bnotescoffee.com</link>
     <description>讓喜好咖啡的人免費享受與世界沒有落差的專業咖啡知識庫</description>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 03 May 2026 15:30:37 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2026 17:09:59 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://bnotescoffee.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
@@ -161,6 +161,15 @@
   </item>
 
   <item>
+    <title>巴西日曬處理完全指南：當全球最大產國遇見最複雜的發酵科學</title>
+    <link>https://bnotescoffee.com/articles/brazil-natural-process-guide.html</link>
+    <guid isPermaLink="true">https://bnotescoffee.com/articles/brazil-natural-process-guide.html</guid>
+    <pubDate>Sun, 03 May 2026 00:00:00 GMT</pubDate>
+    <description>巴西日曬豆的甜感和醇厚，是二十天陽光與微生物共同完成的作品。從果皮發酵科學到慢日曬革命，讀懂這篇才算真正認識巴西咖啡。</description>
+    <enclosure url="https://bnotescoffee.com/images/ai/brazil-natural-process-guide-hero.jpg" type="image/jpeg" length="0"/>
+  </item>
+
+  <item>
     <title>WBC 連兩屆冠軍都在證明一件事：咖啡比賽贏的不是技術</title>
     <link>https://bnotescoffee.com/articles/wbc-2026-champion-philosophy.html</link>
     <guid isPermaLink="true">https://bnotescoffee.com/articles/wbc-2026-champion-philosophy.html</guid>
@@ -185,15 +194,6 @@
     <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
     <description>燕麥奶打奶泡為什麼那麼好用？豆漿拿鐵為什麼會出現白色顆粒？…</description>
     <enclosure url="https://bnotescoffee.com/images/ai/milk-alternatives-science-2026-hero.jpg" type="image/jpeg" length="0"/>
-  </item>
-
-  <item>
-    <title>2026 台北精品咖啡地圖：從 Simple Kaffa 到 Fika Fika 的極致感官之旅</title>
-    <link>https://bnotescoffee.com/articles/taipei-coffee-map-2026.html</link>
-    <guid isPermaLink="true">https://bnotescoffee.com/articles/taipei-coffee-map-2026.html</guid>
-    <pubDate>Mon, 27 Apr 2026 00:00:00 GMT</pubDate>
-    <description>Simple Kaffa 環形吧台、Fika Fika Nordic Roaster Competition 冠軍哲學、2007 年創立的 Rufous、禁止拍照的 Coffee…</description>
-    <enclosure url="https://bnotescoffee.com/images/ai/taipei-coffee-map-2026-hero.jpg" type="image/jpeg" length="0"/>
   </item>
   </channel>
 </rss>
