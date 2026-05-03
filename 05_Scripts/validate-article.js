@@ -101,6 +101,52 @@ check(
   '缺少 .share-section 區塊'
 );
 
+// ── WARN 項（內容層 — 編輯五律）────────────────────────
+// 取出 <article> 或 <main> 內第一個 <p> 作為場景開頭偵測
+const firstParaMatch = html.match(/<p[^>]*>([\s\S]*?)<\/p>/);
+const firstPara = firstParaMatch ? firstParaMatch[1].replace(/<[^>]+>/g, '') : '';
+const startsWithBadPattern = /^根據|^[\d０-９]|^According|^研究顯示|^研究表明|^數據|^統計/.test(firstPara.trim());
+check(
+  '場景開頭（非數據/非「根據」開頭）',
+  'WARN',
+  firstPara.length > 0 && !startsWithBadPattern,
+  `首段開頭疑似數據或分析語句：「${firstPara.substring(0,30)}…」`
+);
+
+const authorPresent = (html.match(/我[^們的是]|我的|我在|我用|我曾|我第一次|我試|我喝/g) || []).length >= 1;
+check(
+  '作者在場（至少 1 處「我」的視角）',
+  'WARN',
+  authorPresent,
+  '全文未偵測到作者第一人稱語句（我…）'
+);
+
+const sensoryWords = ['香氣', '酸味', '苦味', '甜感', '口感', '餘韻', '尾韻', '滑順', '厚實', '清亮',
+  '焦糖', '果香', '花香', '煙燻', '木質', '堅果', '巧克力', '柑橘', '莓果', '茉莉',
+  '聞到', '嚐到', '感受', '入口', '喉韻'];
+const sensoryCount = sensoryWords.filter(w => html.includes(w)).length;
+check(
+  `感官描寫（≥3 個感官詞彙，目前：${sensoryCount}）`,
+  'WARN',
+  sensoryCount >= 3,
+  `感官詞彙不足：${sensoryWords.filter(w => html.includes(w)).join('、') || '無'}`
+);
+
+check(
+  'Geo-box / FAQ 區塊',
+  'WARN',
+  html.includes('class="geo-box"') || html.includes('class="faq-section"') || html.includes('"@type":"FAQPage"'),
+  '缺少 .geo-box 或 .faq-section（地理/產地文章建議加入）'
+);
+
+const closingH2 = /<h2[^>]*>[^<]*(?:結語|總結|最後|下一步|你的|試試|邀請|一杯)[^<]*<\/h2>/i.test(html);
+check(
+  '結語 H2 標題存在',
+  'WARN',
+  closingH2,
+  '缺少結語 H2（應含「結語/最後/邀請/試試」等結尾詞）'
+);
+
 // ── 結果 ────────────────────────────────────────────────
 console.log(`\n${'─'.repeat(50)}`);
 if (blocks > 0) {
