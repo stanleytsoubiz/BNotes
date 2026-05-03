@@ -92,21 +92,27 @@ if (idx.includes(`/articles/${slug}.html`)) {
   const card = `<article class="card"><a href="/articles/${slug}.html" aria-label="${title}"><div class="card-img-wrap"><img class="card-img" src="${heroImg}" data-fallback="/images/ai/alishan-new-crop-w02-hero.jpg" alt="${title}" loading="${loading}"><span class="card-cat">${cat}</span></div></a><div class="card-body"><div class="card-meta"><span>${date}</span></div><h3 class="card-title"><a href="/articles/${slug}.html">${title}</a></h3><p class="card-desc">${desc}</p></div></article>`;
 
   // 5c. 找 latest-grid 內第一張卡並在前面插入
+  //     注意：實際 HTML 第一張卡片帶有 data-cat 等屬性（<article class="card" data-cat="...">），
+  //     因此用 regex /<article class="card"[\s>]/ 匹配，避免精準字串失配。
+  const CARD_OPEN_RE = /<article class="card"[\s>]/g;
   const gridStart = idx.indexOf('id="latest-grid"');
   if (gridStart === -1) {
     console.warn('⚠️   找不到 #latest-grid，請手動更新 index.html');
   } else {
-    const firstCard = idx.indexOf('<article class="card">', gridStart);
+    // 在 gridStart 之後尋找第一張卡片
+    CARD_OPEN_RE.lastIndex = gridStart;
+    const firstMatch = CARD_OPEN_RE.exec(idx);
+    const firstCard = firstMatch ? firstMatch.index : -1;
     if (firstCard === -1) {
       console.warn('⚠️   找不到第一張卡片，請手動更新 index.html');
     } else {
-      idx = idx.slice(0, firstCard) + '\n      ' + card + '\n      ' + idx.slice(firstCard);
+      idx = idx.slice(0, firstCard) + card + '\n      ' + idx.slice(firstCard);
+      // 註：firstCard 之前已有縮排空白，因此只在新卡片後補一次換行+縮排
 
       // 5d. 計算 hardcoded 卡片數，若超過 9 張，把最後一張降入 SLUGS
-      const cards = [...idx.matchAll(/<article class="card">/g)];
       const gridEnd = idx.indexOf('</div>\n    <div id="load-more-wrap"');
       const gridContent = idx.slice(gridStart, gridEnd);
-      const gridCards = [...gridContent.matchAll(/<article class="card">/g)];
+      const gridCards = [...gridContent.matchAll(/<article class="card"[\s>]/g)];
 
       if (gridCards.length > 9) {
         // 找最後一張卡，取其 slug，移入 SLUGS
@@ -114,14 +120,18 @@ if (idx.includes(`/articles/${slug}.html`)) {
         const lastSlug = lastCardMatches[lastCardMatches.length - 1]?.[1];
 
         if (lastSlug) {
-          // 找最後一張完整 card HTML 並刪除
-          const lastCardIdx = gridContent.lastIndexOf('<article class="card">');
-          const afterGrid   = gridContent.slice(lastCardIdx);
+          // 找最後一張完整 card HTML 並刪除（用 regex 找最後一個開始位置）
+          const lastCardOpenIdx = gridCards[gridCards.length - 1].index;
+          const afterGrid   = gridContent.slice(lastCardOpenIdx);
           const lastCardEnd = afterGrid.indexOf('</article>') + '</article>'.length;
           const lastCardHtml = afterGrid.slice(0, lastCardEnd);
 
-          // 從 idx 中移除此卡
-          idx = idx.replace('\n      ' + lastCardHtml, '');
+          // 從 idx 中移除此卡（連同前面的縮排換行）
+          if (idx.includes('\n      ' + lastCardHtml)) {
+            idx = idx.replace('\n      ' + lastCardHtml, '');
+          } else {
+            idx = idx.replace(lastCardHtml, '');
+          }
 
           // 插入 slug 到 SLUGS 第一位
           idx = idx.replace('var SLUGS = [', `var SLUGS = [\n    '${lastSlug}',`);
@@ -172,9 +182,20 @@ try {
   console.warn(`⚠️   IndexNow ping 失敗（可於 git push 後手動補送）`);
 }
 
-// ── 9. 建議的 git commit ───────────────────────────────────
+// ── 9. 更新 RSS feed ──────────────────────────────────────
+try {
+  const rssScript = path.join(__dirname, 'generate-rss.js');
+  if (fs.existsSync(rssScript)) {
+    execSync(`node "${rssScript}"`, { stdio: 'pipe' });
+    console.log(`✅  RSS feed 已更新 → dist/feed.xml`);
+  }
+} catch(e) {
+  console.warn(`⚠️   RSS feed 更新失敗（不影響發布）：${e.message}`);
+}
+
+// ── 10. 建議的 git commit ──────────────────────────────────
 console.log(`\n🚀  建議執行：`);
-console.log(`    git add -f dist/articles/${slug}.html dist/index.html dist/sitemap.xml 08_文章_Articles_HTML/${slug}.html`);
+console.log(`    git add -f dist/articles/${slug}.html dist/index.html dist/sitemap.xml dist/feed.xml 08_文章_Articles_HTML/${slug}.html`);
 console.log(`    git commit -m "feat(article): 發布《${title.substring(0,30)}》"`);
 console.log(`    git push origin main`);
 console.log(`\n📌  文章上線後網址：https://bnotescoffee.com/articles/${slug}.html\n`);
