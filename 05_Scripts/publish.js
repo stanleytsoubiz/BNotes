@@ -142,9 +142,39 @@ const updatedDraft = content
 fs.writeFileSync(draftPath, updatedDraft, 'utf8');
 console.log(`✅  草稿 status 更新為 published`);
 
-// ── 7. 建議的 git commit ───────────────────────────────────
+// ── 7. 更新 sitemap.xml ────────────────────────────────────
+const sitemapPath = path.join(ROOT, 'dist', 'sitemap.xml');
+if (fs.existsSync(sitemapPath)) {
+  let sitemap = fs.readFileSync(sitemapPath, 'utf8');
+  if (!sitemap.includes(`/articles/${slug}`)) {
+    const newEntry = `  <url>\n    <loc>https://bnotescoffee.com/articles/${slug}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
+    sitemap = sitemap.replace('</urlset>', newEntry + '</urlset>');
+    fs.writeFileSync(sitemapPath, sitemap, 'utf8');
+    console.log(`✅  sitemap.xml 已加入 ${slug}`);
+  } else {
+    console.log(`ℹ️   sitemap.xml 已含此 slug，跳過`);
+  }
+}
+
+// ── 8. IndexNow ping ──────────────────────────────────────
+const { execSync } = require('child_process');
+const INDEXNOW_KEY = '4c5bbd8accc0d62f986790f5eb4818e5';
+try {
+  const body = JSON.stringify({
+    host: 'bnotescoffee.com',
+    key: INDEXNOW_KEY,
+    keyLocation: `https://bnotescoffee.com/${INDEXNOW_KEY}.txt`,
+    urlList: [`https://bnotescoffee.com/articles/${slug}.html`]
+  });
+  execSync(`curl -s -o /dev/null -w "%{http_code}" -X POST "https://api.indexnow.org/IndexNow" -H "Content-Type: application/json" -d '${body}'`);
+  console.log(`✅  IndexNow ping 送出 → https://bnotescoffee.com/articles/${slug}.html`);
+} catch(e) {
+  console.warn(`⚠️   IndexNow ping 失敗（可於 git push 後手動補送）`);
+}
+
+// ── 9. 建議的 git commit ───────────────────────────────────
 console.log(`\n🚀  建議執行：`);
-console.log(`    git add -f dist/articles/${slug}.html dist/index.html 08_文章_Articles_HTML/${slug}.html`);
+console.log(`    git add -f dist/articles/${slug}.html dist/index.html dist/sitemap.xml 08_文章_Articles_HTML/${slug}.html`);
 console.log(`    git commit -m "feat(article): 發布《${title.substring(0,30)}》"`);
 console.log(`    git push origin main`);
 console.log(`\n📌  文章上線後網址：https://bnotescoffee.com/articles/${slug}.html\n`);
