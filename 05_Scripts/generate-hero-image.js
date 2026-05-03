@@ -47,7 +47,7 @@ const SLUG_SEARCH_TERMS = {
   'pour-over-guide':                         'pour over coffee gooseneck kettle drip',
   'pour-over-variable-complete-experiment':  'coffee brewing experiment scale timer',
   'v60-vs-kalita-filter-geometry':           'v60 coffee dripper filter cone',
-  'water-quality':                           'water pouring coffee science mineral',
+  'water-quality':                           'close-up sparkling mineral water poured into laboratory glass beaker beside specialty coffee, TDS meter and pH strips on white marble surface, water science coffee brewing concept, clean editorial photography mineral analysis',
   'brewing-diagnosis-w01':                   'coffee extraction troubleshoot diagnosis',
   'cold-brew-complete-101':                  'cold brew coffee glass jar overnight',
   'cold-brew-advanced-science':              'cold brew coffee science laboratory',
@@ -62,14 +62,14 @@ const SLUG_SEARCH_TERMS = {
   'espresso-ratio-science':                  'espresso shot crema ratio golden',
   'latte-art':                               'latte art milk foam rosetta heart',
   'milk-steaming-science':                   'barista steam wand milk steaming',
-  'plant-milk-barista-complete-guide':       'oat milk coffee barista plant alternative',
+  'plant-milk-barista-complete-guide':       'barista hands steaming oat milk in metal pitcher beside espresso machine, oat milk latte art heart being poured into ceramic cup, coffee bar counter, warm soft editorial light, plant-based milk coffee science perspective',
   'milk-alternatives-science-2026':          'plant milk varieties almond oat soy',
   'wlac-2026-champion-technique':            'latte art world championship competition',
 
   // 磨豆機 / 器材
   'grinder-guide-2026':                      'coffee hand grinder burr manual',
   'grinder-6models-comparison-2026':         'coffee grinder burr comparison review',
-  'coffee-equipment-cleaning-bible':         'coffee equipment cleaning maintenance',
+  'coffee-equipment-cleaning-bible':         'hand grinder disassembled burrs beside ceramic V60 filter cup and gooseneck pour-over kettle, cleaning brush, microfiber cloth, warm editorial flat-lay on light wood surface, pour-over hand-brew equipment maintenance',
   'taiwan-coffee-equipment-midyear-2026':    'coffee equipment tools professional',
   'home-coffee-corner':                      'home coffee station setup corner',
 
@@ -88,8 +88,8 @@ const SLUG_SEARCH_TERMS = {
 
   // 產地 / 風土
   'single-origin-terroir-science':           'coffee single origin farm terroir landscape',
-  'kenya-aa-flavor-profile-deep':            'Kenya coffee cherry berries red branch',
-  'ethiopia-natural-process-deep-dive':      'Ethiopia coffee natural drying raised beds',
+  'kenya-aa-flavor-profile-deep':            'Kenya AA coffee SL28 ripe cherries on branch with rich red African volcanic soil visible in foreground, lush green leaves, golden afternoon highland light, berry-like quality editorial photography, Kenya coffee terroir',
+  'ethiopia-natural-process-deep-dive':      'Ethiopia natural process coffee fermentation close-up, ripe red cherries piled on raised drying beds with visible mucilage glistening, warm golden afternoon light, scientific documentary style, fermentation process visible',
   'ethiopia-vs-colombia-natural-showdown':   'coffee origins comparison Africa South America',
   'colombia-main-harvest-selection':         'Colombia coffee mountain farm harvest picking',
   'colombia-mitaca-second-harvest':          'Colombia coffee harvest workers mountain',
@@ -98,10 +98,10 @@ const SLUG_SEARCH_TERMS = {
   'geisha-molecular-biology-2026':           'geisha coffee specialty Panama floral',
   'green-bean-sourcing-complete-guide':      'green coffee beans raw unroasted sourcing',
   'processing-methods':                      'coffee natural washed honey processing drying',
-  'taiwan-coffee-farmer-summer-story':       'small coffee farm worker family summer',
+  'taiwan-coffee-farmer-summer-story':       'elderly Taiwanese coffee farmer couple hand-sorting red coffee cherries in shade of mountain farm, woven baskets of ripe cherries, summer heat haze on green terraced hillside, intimate family farm documentary photography, Taiwan mountain coffee',
 
   // 咖啡廳 / 城市
-  'taipei-specialty-cafes':                  'specialty coffee shop cafe interior design',
+  'taipei-specialty-cafes':                  'authentic Taipei specialty coffee shop interior with worn wooden bar counter, barista preparing pour-over behind counter, coffee menu on chalkboard in Chinese characters, warm Edison bulb lighting, intimate real Taiwan cafe atmosphere not overly perfect',
   'taipei-coffee-map-2026':                  'Taipei city specialty coffee street scene, row of modern Japanese-style coffee shop storefronts, afternoon light, coffee shop signs in urban setting, city cafe district guide, warm editorial photography',
   'taipei-coffee-expo-2026-complete-guide':  'coffee exhibition expo event fair crowd',
   'chiayi-coffee-festival-2026-guide':       'outdoor coffee festival market event Taiwan',
@@ -118,8 +118,8 @@ const SLUG_SEARCH_TERMS = {
 
   // 生活風格 / 季節
   'morning-coffee-ritual-science':           'morning coffee ritual sunrise peaceful',
-  'coffee-reading-afternoon-ritual':         'coffee reading book afternoon cozy',
-  'solo-brewing-valentines':                 'solo coffee brewing alone peaceful mindful',
+  'coffee-reading-afternoon-ritual':         'open book beside V60 pour-over dripper mid-pour with gooseneck kettle, steam rising, soft afternoon window light on wooden desk, reading glasses folded beside book, specialty coffee science and reading afternoon mood',
+  'solo-brewing-valentines':                 'single person alone at wooden table slowly pouring gooseneck kettle over V60 pour-over dripper, ceramic mug below catching drip, rainy window in background, quiet solitary afternoon brewing ritual, soft warm side light, meditative peaceful mood',
   'christmas-coffee-gift-guide-2026':        'christmas coffee gift holiday festive',
   'new-years-eve-coffee-survival-guide':     'new year night city coffee celebration',
   'international-coffee-day-10-stories':     'international coffee day celebration world',
