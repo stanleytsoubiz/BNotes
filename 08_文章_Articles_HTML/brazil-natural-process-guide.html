@@ -675,7 +675,103 @@ footer a{color:var(--coffee-light)}
   }
   window.addEventListener('scroll',updateProgress,{passive:true});
 
-  /* ── 2. GA4 scroll depth ── */
+  /* ── 2. 統一 Header 注入 ── */
+  (function injectHeader(){
+    var titleEl=document.querySelector('h1,.article-title,.typo-hero-title');
+    if(!titleEl)return;
+    if(document.getElementById('bnotes-unified-header'))return;
+    var title=titleEl.textContent.trim();
+    var eyebrow='';
+    var catEl=document.querySelector('.article-cat,.article-category,.typo-hero-eyebrow,.article-tag-badge');
+    if(catEl) eyebrow=catEl.textContent.trim();
+    var dateEl=document.querySelector('[datetime],[data-date]');
+    var dateStr='';
+    if(dateEl) dateStr=dateEl.getAttribute('datetime')||dateEl.getAttribute('data-date')||'';
+    if(!dateStr){
+      var ogDate=document.querySelector('meta[property="article:published_time"]');
+      if(ogDate) dateStr=ogDate.content.slice(0,10);
+    }
+    if(!dateStr){
+      var ldJson=document.querySelector('script[type="application/ld+json"]');
+      if(ldJson){try{var d=JSON.parse(ldJson.textContent);dateStr=(d.datePublished||'').slice(0,10);}catch(e){}}
+    }
+    var rtEl=document.querySelector('.reading-time,[data-reading-time]');
+    var rt=rtEl?rtEl.textContent.trim():'';
+    if(!rt){
+      var bodyEl=document.querySelector('.article-body,.article-content,article');
+      if(bodyEl){
+        var words=(bodyEl.textContent||'').replace(/\s+/g,' ').trim().length;
+        rt=Math.ceil(words/350)+' 分鐘閱讀';
+      }
+    }
+    var ogImg=document.querySelector('meta[property="og:image"]');var heroSrc=ogImg?ogImg.getAttribute('content'):'';
+    var headerHtml='<header id="bnotes-unified-header" class="bnotes-header">';
+    if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
+    headerHtml+='<h2 class="bnotes-title">'+title+'</h2>';
+    headerHtml+='<div class="bnotes-meta">';
+    if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
+    headerHtml+='<span>✍️ BNotes 編輯部</span>';
+    if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
+    headerHtml+='</div><div class="bnotes-divider"></div></header>';
+    if(heroSrc){headerHtml+='<img class="bnotes-cover" src="'+heroSrc+'" alt="'+title+'" loading="eager" decoding="async">';}
+    var oldHeroes=document.querySelectorAll(
+      '.article-hero,.typo-hero,.article-meta-bar,.article-meta,.article-header'
+    );
+    oldHeroes.forEach(function(el){el.style.display='none';});
+    titleEl.style.display='none';
+    var nav=document.querySelector('nav,.nav,header:not(#bnotes-unified-header)');
+    var ref=nav?nav.nextSibling:document.body.firstChild;
+    var tmp=document.createElement('div');
+    tmp.innerHTML=headerHtml;
+    document.body.insertBefore(tmp.firstElementChild,ref&&ref.parentNode===document.body?ref:null);
+  })();
+
+  /* ── 3. TOC 側欄目錄 ── */
+  (function buildTOC(){
+    if(window.innerWidth<1300)return;
+    var body=document.querySelector('.article-body,.article-content,article');
+    if(!body)return;
+    var headings=body.querySelectorAll('h2,h3');
+    if(headings.length<3)return;
+    headings.forEach(function(h,i){
+      if(!h.id)h.id='bnotes-s'+i;
+    });
+    var panel=document.createElement('div');
+    panel.id='bnotes-toc-panel';
+    panel.innerHTML='<h4>目　錄</h4>';
+    var list=document.createElement('div');
+    headings.forEach(function(h){
+      var a=document.createElement('a');
+      a.href='#'+h.id;
+      a.setAttribute('data-level',h.tagName==='H2'?'2':'3');
+      a.textContent=h.textContent.trim().replace(/^[#\s]+/,'');
+      list.appendChild(a);
+    });
+    panel.appendChild(list);
+    document.body.appendChild(panel);
+    function positionTOC(){
+      var art=document.querySelector('main,.article-wrap,.container');
+      if(!art)return;
+      var rect=art.getBoundingClientRect();
+      var rightEdge=rect.right+document.documentElement.scrollLeft;
+      var left=rightEdge+24;
+      if(left+240>window.innerWidth){panel.style.display='none';return;}
+      panel.style.display='block';
+      panel.style.left=left+'px';
+      panel.style.top='80px';
+    }
+    positionTOC();
+    window.addEventListener('resize',positionTOC);
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var link=panel.querySelector('a[href="#'+e.target.id+'"]');
+        if(link)link.classList.toggle('active',e.isIntersecting);
+      });
+    },{rootMargin:'-10% 0px -80% 0px'});
+    headings.forEach(function(h){io.observe(h);});
+  })();
+
+  /* ── 4. GA4 scroll depth ── */
   (function(){
     if(typeof gtag !== 'function')return;
     var milestones={25:false,50:false,75:false,100:false};
