@@ -1,5 +1,5 @@
 # BNotes Blog Audit Report
-**掃描時間：** 2026-05-03 23:31
+**掃描時間：** 2026-05-04 09:05
 **工作目錄：** /Users/stanleytsou/Library/Mobile Documents/com~apple~CloudDocs/Skywork AI/BNotes_完整知識庫_2026_b70125664b1e40e3a606b89bbd238f5c
 
 ---
@@ -89,12 +89,13 @@
 - ⚠️ 弱提示詞（3字）：`  'default`
 
 ## CHECK 7: 9 元素結構完整性
-- ✅ 全部 9 元素完整
+- ⚠️ `brazil-natural-process-guide` 缺：affiliate
 
 ## CHECK 8: Meta description 品質
 - ⚠️ `alishan-new-crop-w02` meta 太長（119 字，Google 顯示約 53 中文字）
 - ⚠️ `alishan-terroir` meta 太長（146 字，Google 顯示約 53 中文字）
 - ⚠️ `autumn-brewing-temperature-guide` meta 太長（157 字，Google 顯示約 53 中文字）
+- ⚠️ `brazil-natural-process-guide` meta 太長（177 字，Google 顯示約 53 中文字）
 - ⚠️ `brewing-diagnosis-w01` meta 太長（144 字，Google 顯示約 53 中文字）
 - ⚠️ `chiayi-coffee-festival-2026-guide` meta 太長（162 字，Google 顯示約 53 中文字）
 - ⚠️ `coffee-acidity-complete-science` meta 太長（105 字，Google 顯示約 53 中文字）
@@ -152,7 +153,7 @@
 - ✅ 已覆蓋：肯亞
 - ✅ 已覆蓋：哥倫比亞
 - ✅ 已覆蓋：巴拿馬
-- ⚠️ 覆蓋缺口：**巴西**
+- ✅ 已覆蓋：巴西
 - ⚠️ 覆蓋缺口：**瓜地馬拉**
 - ✅ 已覆蓋：台灣產地
 - ⚠️ 覆蓋缺口：**葉門**
@@ -164,13 +165,72 @@
 - ✅ 已覆蓋：土耳其咖啡
 - ✅ 已覆蓋：氮氣冷萃
 
+## CHECK 10: 本月視覺掃描清單
+以下文章的 Hero 圖需 GM 目視驗證：
+- [ ] alishan-new-crop-w02
+- [ ] alishan-terroir
+- [ ] arabica-vs-robusta-complete-guide
+- [ ] autumn-brewing-temperature-guide
+- [ ] brazil-natural-process-guide
+- [ ] brewing-diagnosis-w01
+- [ ] chiayi-coffee-festival-2026-guide
+- [ ] christmas-coffee-gift-guide-2026
+- [ ] coffee-acidity-complete-science
+- [ ] coffee-dessert-pairing-science
+- [ ] coffee-equipment-cleaning-bible
+- [ ] coffee-reading-afternoon-ritual
+- [ ] cold-brew-advanced-science
+- [ ] cold-brew-complete-101
+- [ ] colombia-main-harvest-selection
+- [ ] colombia-mitaca-second-harvest
+- [ ] competition-recipe-homebrew-guide
+- [ ] cup-tasters-palate-training-guide
+- [ ] espresso-parameters
+- [ ] espresso-ratio-science
+- [ ] ethiopia-natural-process-deep-dive
+- [ ] ethiopia-vs-colombia-natural-showdown
+- [ ] flavor-pairing-w03
+- [ ] geisha-molecular-biology-2026
+- [ ] green-bean-sourcing-complete-guide
+- [ ] grinder-6models-comparison-2026
+- [ ] grinder-guide-2026
+- [ ] home-coffee-corner
+- [ ] home-roasting-beginners-complete
+- [ ] international-coffee-day-10-stories
+- [ ] kenya-aa-flavor-profile-deep
+- [ ] latte-art
+- [ ] light-roast-beginners-guide
+- [ ] milk-alternatives-science-2026
+- [ ] milk-steaming-science
+- [ ] morning-coffee-ritual-science
+- [ ] new-years-eve-coffee-survival-guide
+- [ ] nitro-cold-brew-home-guide
+- [ ] plant-milk-barista-complete-guide
+- [ ] pour-over-guide
+- [ ] pour-over-variable-complete-experiment
+- [ ] processing-methods
+- [ ] roast-level-guide
+- [ ] sca-tasting-vocabulary-guide
+- [ ] single-origin-terroir-science
+- [ ] solo-brewing-valentines
+- [ ] specialty-coffee-third-wave-history
+- [ ] summer-iced-coffee-three-recipes
+- [ ] sustainable-coffee-complete-guide
+- [ ] taipei-coffee-expo-2026-complete-guide
+- [ ] taipei-coffee-map-2026
+- [ ] taipei-specialty-cafes
+- [ ] taiwan-barista-2026-annual-review
+- [ ] taiwan-coffee-equipment-midyear-2026
+- [ ] taiwan-coffee-farmer-summer-story
+- [ ] taiwan-coffee-subscription-guide-2026
+- [ ] taiwan-specialty-coffee-whitepaper-2026
+- [ ] turkish-coffee-ibrik
+- [ ] v60-vs-kalita-filter-geometry
+- [ ] water-quality
+- [ ] wbc-2026-champion-philosophy
+- [ ] wbc-2026-champion-technique-breakdown
+- [ ] wbrc-2026-roasting-analysis
+- [ ] winter-brewing-w04
+- [ ] wlac-2026-champion-technique
+
 ## CHECK 11: 時效性文章偵測
-✅ 無逾期文章
-
----
-## 掃描摘要
-- **問題（需立即修復）：** 0 個
-- **警告（建議改善）：** 198 個
-- **報告產生時間：** 2026-05-03 23:31
-
-> GM 自主掃描系統 v1.0 — 每週一 09:03 自動觸發
