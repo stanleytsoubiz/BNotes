@@ -32,3 +32,46 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Submit Sitemap to Google & Bing
+        run: |
+          pip install google-api-python-client google-auth --quiet
+          echo '${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}' > /tmp/gsc_sa.json
+          python3 - <<'PYEOF'
+import warnings, json, subprocess
+warnings.filterwarnings('ignore')
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+
+SITE_URL = "https://bnotescoffee.com/"
+SITEMAP_URL = "https://bnotescoffee.com/sitemap.xml"
+INDEXNOW_KEY = "4c5bbd8accc0d62f986790f5eb4818e5"
+
+# Google GSC
+try:
+    creds = service_account.Credentials.from_service_account_file(
+        "/tmp/gsc_sa.json", scopes=["https://www.googleapis.com/auth/webmasters"]
+    )
+    service = build("searchconsole", "v1", credentials=creds)
+    service.sitemaps().submit(siteUrl=SITE_URL, feedpath=SITEMAP_URL).execute()
+    print("✅ Google GSC Sitemap submitted")
+except Exception as e:
+    print(f"❌ Google GSC failed: {e}")
+
+# Bing IndexNow
+try:
+    result = subprocess.run([
+        "curl", "-s", "-o", "/dev/null", "-w", "%{http_code}",
+        "-X", "POST", "https://api.indexnow.org/IndexNow",
+        "-H", "Content-Type: application/json; charset=utf-8",
+        "-d", json.dumps({
+            "host": "bnotescoffee.com",
+            "key": INDEXNOW_KEY,
+            "keyLocation": f"https://bnotescoffee.com/{INDEXNOW_KEY}.txt",
+            "urlList": [SITEMAP_URL]
+        })
+    ], capture_output=True, text=True)
+    print(f"✅ Bing IndexNow: HTTP {result.stdout.strip()}")
+except Exception as e:
+    print(f"❌ Bing IndexNow failed: {e}")
+PYEOF
