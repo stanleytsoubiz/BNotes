@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-
-# Admin area — not for indexing
-Disallow: /admin/
-Disallow: /api/
-
-Sitemap: https://bnotescoffee.com/sitemap.xml

@@ -16,6 +16,32 @@ jobs:
       - name: Strip YAML frontmatter from articles
         run: node 05_Scripts/strip-frontmatter.js
 
+      - name: Validate new/modified articles (quality gate)
+        run: |
+          # 只驗證本次 commit 新增或修改的文章，不影響既有文章
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'dist/articles/*.html' 2>/dev/null || true)
+          if [ -z "$CHANGED" ]; then
+            echo "ℹ️  本次無文章變動，跳過驗證"
+            exit 0
+          fi
+          FAIL=0
+          for f in $CHANGED; do
+            [ -f "$f" ] || continue
+            SLUG=$(basename "$f" .html)
+            RESULT=$(node 05_Scripts/validate-article.js "$SLUG" 2>&1)
+            if echo "$RESULT" | grep -q "BLOCK"; then
+              echo "❌ BLOCK: $SLUG"
+              echo "$RESULT" | grep "BLOCK"
+              FAIL=1
+            else
+              echo "✅ OK: $SLUG"
+            fi
+          done
+          if [ $FAIL -eq 1 ]; then
+            echo "::error::有文章未通過品質驗證（BLOCK），請修正後重新 push"
+            exit 1
+          fi
+
       - name: Deploy to Cloudflare Pages
         run: |
           # Use short SHA as commit-message to avoid Cloudflare API rejecting

@@ -6,7 +6,7 @@
  *
  * Options (可 --key=value 或 --key "value"):
  *   --title    文章標題（必填）
- *   --cat      分類：沖泡科學|產地風土|烘焙工藝|器材評測|咖啡文化  (default: 沖泡科學)
+ *   --cat      分類：手沖技法|義式咖啡|器材評測|產地風土|沖泡科學|咖啡生活  (default: 手沖技法)
  *   --desc     Meta description，≤80 中文字  (必填)
  *   --date     發布日期 YYYY-MM-DD  (default: today)
  *   --author   作者名  (default: BNotes 編輯室)
@@ -51,23 +51,31 @@ for (let i = 1; i < args.length; i++) {
 }
 
 const title  = opts.title  || `【TODO】${slug} 文章標題`;
-const cat    = opts.cat    || '沖泡科學';
+const cat    = opts.cat    || '手沖技法';
 const desc   = opts.desc   || `【TODO】${title.substring(0, 40)} — BNotes 深度解析`;
 const date   = opts.date   || new Date().toISOString().substring(0, 10);
 const author = opts.author || 'BNotes 編輯室';
 const tags   = opts.tags   || '咖啡,精品咖啡';
 const prompt = opts.prompt || `TODO: Add 25+ word Imagen 4 prompt for ${slug} — describe equipment/origin/mood/photographic style in English`;
 
-// ── 分類對應 emoji 與顏色 ──────────────────────────────────
+// ── 分類對應 emoji、顏色、URL slug ────────────────────────────
+// 必須與 validate-article.js VALID_CATS 及 sitemap 分類頁保持一致
 const catConfig = {
-  '沖泡科學': { emoji: '🔬', color: '#2563eb' },
-  '產地風土': { emoji: '🌍', color: '#16a34a' },
-  '烘焙工藝': { emoji: '🔥', color: '#dc2626' },
-  '器材評測': { emoji: '⚙️',  color: '#7c3aed' },
-  '咖啡文化': { emoji: '☕', color: '#d97706' },
+  '手沖技法': { emoji: '🫗', color: '#c8922a', slug: 'pour-over'  },
+  '義式咖啡': { emoji: '☕', color: '#dc2626', slug: 'espresso'   },
+  '器材評測': { emoji: '⚙️',  color: '#7c3aed', slug: 'equipment'  },
+  '產地風土': { emoji: '🌍', color: '#16a34a', slug: 'terroir'    },
+  '沖泡科學': { emoji: '🔬', color: '#2563eb', slug: 'science'    },
+  '咖啡生活': { emoji: '🌿', color: '#d97706', slug: 'lifestyle'  },
 };
-const catEmoji = catConfig[cat]?.emoji || '☕';
-const catColor = catConfig[cat]?.color || '#d97706';
+const VALID_CATS = Object.keys(catConfig);
+if (!VALID_CATS.includes(cat)) {
+  console.error(`❌ 分類「${cat}」不合法。合法分類：${VALID_CATS.join(' / ')}`);
+  process.exit(1);
+}
+const catEmoji = catConfig[cat].emoji;
+const catColor = catConfig[cat].color;
+const catSlug  = catConfig[cat].slug;
 
 // 取第一個 tag 作為主關鍵字
 const primaryKw = tags.split(',')[0].trim();
@@ -126,14 +134,18 @@ hero_prompt: ${prompt}
   </script>
 </head>
 <body>
-  <!-- NAV: 由 layout inject，此處保留 placeholder -->
-  <nav class="site-nav" id="site-nav">
-    <a href="/" class="nav-logo">BNotes</a>
-    <ul class="nav-links">
-      <li><a href="/">首頁</a></li>
-      <li><a href="/gear.html">器材</a></li>
-    </ul>
-  </nav>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">BNotes <span>焙學·原豆誌</span></a>
+      <nav class="site-nav">
+        <a href="/category/pour-over">手沖技法</a>
+        <a href="/category/espresso">義式咖啡</a>
+        <a href="/category/equipment">器材評測</a>
+        <a href="/category/terroir">產地風土</a>
+        <a href="/gear">精選器材</a>
+      </nav>
+    </div>
+  </header>
 
   <main class="article-main">
     <article class="article-body" itemscope itemtype="https://schema.org/NewsArticle">
