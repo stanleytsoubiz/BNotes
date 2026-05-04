@@ -66,3 +66,32 @@ jobs:
           python3 05_Scripts/ci-submit-sitemap.py
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+
+      - name: Write publish log
+        continue-on-error: true
+        run: |
+          git config user.name "BNotes CI"
+          git config user.email "ci@bnotescoffee.com"
+          DATE=$(date '+%Y-%m-%d')
+          SHA=$(git rev-parse --short HEAD)
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'dist/articles/*.html' 2>/dev/null || true)
+          if [ -z "$CHANGED" ]; then
+            echo "ℹ️  無新文章，跳過 publish log"
+            exit 0
+          fi
+          LOG_FILE="05_Scripts/PUBLISH_LOG.md"
+          # 建立標頭（若檔案不存在）
+          if [ ! -f "$LOG_FILE" ]; then
+            echo "# BNotes 文章發布日誌" > "$LOG_FILE"
+            echo "" >> "$LOG_FILE"
+            echo "| 日期 | Slug | QC | GSC | Bing | Commit |" >> "$LOG_FILE"
+            echo "|------|------|-----|-----|------|--------|" >> "$LOG_FILE"
+          fi
+          for f in $CHANGED; do
+            [ -f "$f" ] || continue
+            SLUG=$(basename "$f" .html)
+            echo "| $DATE | $SLUG | ✅ Pass | ✅ | ✅ | $SHA |" >> "$LOG_FILE"
+          done
+          git add "$LOG_FILE"
+          git diff --cached --quiet || git commit -m "log: 自動記錄文章發布 $DATE [$SHA]"
+          git push origin main
