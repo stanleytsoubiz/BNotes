@@ -438,4 +438,22 @@
     <priority>0.8</priority>
     <lastmod>2026-05-04</lastmod>
   </url>
+  <url>
+    <loc>https://bnotescoffee.com/articles/coffee-bean-storage-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-04</lastmod>
+  </url>
+  <url>
+    <loc>https://bnotescoffee.com/articles/aeropress-complete-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-04</lastmod>
+  </url>
+  <url>
+    <loc>https://bnotescoffee.com/articles/pour-over-water-temperature-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-05-04</lastmod>
+  </url>
 </urlset>
