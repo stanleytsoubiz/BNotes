@@ -65,5 +65,54 @@ description: "台北咖啡師願意跟你聊豆子產地、談比賽配方，這
             <p><em>註：本文內容基於 2026 年實地測評。本站與上述品牌無直接商業贊助關係，推薦純屬感官研究導向。部分連結可能包含聯盟行銷，詳情請閱規範。</em></p>
         </section>
     </article>
+<script>
+/* bnotes-ga4-affiliate */
+(function(){
+  if(typeof gtag!=='function')return;
+  document.addEventListener('click',function(e){
+    var el=e.target.closest('a');
+    if(!el)return;
+    var href=el.getAttribute('href')||'';
+    if(href.startsWith('/re/')){
+      gtag('event','affiliate_click',{
+        'event_category':'monetization',
+        'affiliate_product':href.replace('/re/',''),
+        'link_text':(el.textContent||'').trim().substring(0,100),
+        'page_title':document.title
+      });
+    }
+  });
+})();
+</script>
+<script>
+/* bnotes-ga4-faq */
+(function(){
+  if(typeof gtag!=='function')return;
+  // 原生 <details> 展開
+  document.querySelectorAll('details').forEach(function(el){
+    el.addEventListener('toggle',function(){
+      if(el.open){
+        var q=(el.querySelector('summary')||el).textContent.trim().substring(0,100);
+        gtag('event','faq_expand',{
+          'event_category':'content_interaction',
+          'faq_question':q,
+          'page_title':document.title
+        });
+      }
+    });
+  });
+  // .faq-item 按鈕點擊（自訂 accordion 元件）
+  document.querySelectorAll('.faq-question, .faq-item > h3, .faq-item > h4').forEach(function(el){
+    el.addEventListener('click',function(){
+      var q=el.textContent.trim().substring(0,100);
+      gtag('event','faq_expand',{
+        'event_category':'content_interaction',
+        'faq_question':q,
+        'page_title':document.title
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>

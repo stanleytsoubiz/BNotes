@@ -755,5 +755,54 @@ footer a{color:var(--coffee-light)}
     }, 60000);
   })();
   </script>
+<script>
+/* bnotes-ga4-affiliate */
+(function(){
+  if(typeof gtag!=='function')return;
+  document.addEventListener('click',function(e){
+    var el=e.target.closest('a');
+    if(!el)return;
+    var href=el.getAttribute('href')||'';
+    if(href.startsWith('/re/')){
+      gtag('event','affiliate_click',{
+        'event_category':'monetization',
+        'affiliate_product':href.replace('/re/',''),
+        'link_text':(el.textContent||'').trim().substring(0,100),
+        'page_title':document.title
+      });
+    }
+  });
+})();
+</script>
+<script>
+/* bnotes-ga4-faq */
+(function(){
+  if(typeof gtag!=='function')return;
+  // 原生 <details> 展開
+  document.querySelectorAll('details').forEach(function(el){
+    el.addEventListener('toggle',function(){
+      if(el.open){
+        var q=(el.querySelector('summary')||el).textContent.trim().substring(0,100);
+        gtag('event','faq_expand',{
+          'event_category':'content_interaction',
+          'faq_question':q,
+          'page_title':document.title
+        });
+      }
+    });
+  });
+  // .faq-item 按鈕點擊（自訂 accordion 元件）
+  document.querySelectorAll('.faq-question, .faq-item > h3, .faq-item > h4').forEach(function(el){
+    el.addEventListener('click',function(){
+      var q=el.textContent.trim().substring(0,100);
+      gtag('event','faq_expand',{
+        'event_category':'content_interaction',
+        'faq_question':q,
+        'page_title':document.title
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
