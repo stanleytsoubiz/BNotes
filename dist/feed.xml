@@ -7,7 +7,7 @@
     <link>https://bnotescoffee.com</link>
     <description>讓喜好咖啡的人免費享受與世界沒有落差的專業咖啡知識庫</description>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 05 May 2026 07:01:50 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2026 08:30:53 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://bnotescoffee.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
@@ -125,6 +125,15 @@
   </item>
 
   <item>
+    <title>世界咖啡週報 Vol.1（2026/4月底）：本週精品咖啡世界三大新知</title>
+    <link>https://bnotescoffee.com/articles/world-coffee-weekly-vol1.html</link>
+    <guid isPermaLink="true">https://bnotescoffee.com/articles/world-coffee-weekly-vol1.html</guid>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+    <description>台灣選手Bala奪下2026世界拉花藝術冠軍、SCA永續獎揭曉、全球咖啡產量即將創下史上新高——本週精品咖啡世界三則最值得你知道的消息。</description>
+    <enclosure url="https://bnotescoffee.com/images/ai/world-coffee-weekly-vol1-hero.jpg" type="image/jpeg" length="0"/>
+  </item>
+
+  <item>
     <title>AeroPress 完全指南：這個醜醜的塑膠管，為什麼征服了全世界的咖啡師？</title>
     <link>https://bnotescoffee.com/articles/aeropress-complete-guide.html</link>
     <guid isPermaLink="true">https://bnotescoffee.com/articles/aeropress-complete-guide.html</guid>
@@ -185,15 +194,6 @@
     <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
     <description>從 β-葡聚糖、蛋白質熱變性到 pH 酸鹼交互，完整解析六種植物奶的分子機制與配對邏輯。</description>
     <enclosure url="https://bnotescoffee.com/images/ai/milk-alternatives-science-2026-hero.jpg" type="image/jpeg" length="0"/>
-  </item>
-
-  <item>
-    <title>2026 台北精品咖啡地圖：從 Simple Kaffa 到 Fika Fika 的極致感官之旅</title>
-    <link>https://bnotescoffee.com/articles/taipei-coffee-map-2026.html</link>
-    <guid isPermaLink="true">https://bnotescoffee.com/articles/taipei-coffee-map-2026.html</guid>
-    <pubDate>Mon, 27 Apr 2026 00:00:00 GMT</pubDate>
-    <description>Simple Kaffa 環形吧台、Fika Fika Nordic Roaster Competition 冠軍哲學、2007 年創立的 Rufous、禁止拍照的 Coffee…</description>
-    <enclosure url="https://bnotescoffee.com/images/ai/taipei-coffee-map-2026-hero.jpg" type="image/jpeg" length="0"/>
   </item>
   </channel>
 </rss>
