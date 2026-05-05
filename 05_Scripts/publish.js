@@ -213,7 +213,6 @@ if (fs.existsSync(sitemapPath)) {
 }
 
 // ── 8. IndexNow ping ──────────────────────────────────────
-const { execSync } = require('child_process');
 const INDEXNOW_KEY = '4c5bbd8accc0d62f986790f5eb4818e5';
 try {
   const body = JSON.stringify({
