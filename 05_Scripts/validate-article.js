@@ -72,6 +72,43 @@ check(
   '仍有未替換的佔位欄位'
 );
 
+// ── BLOCK 項：審核留痕（v1.7 規範）────────────────────
+// frontmatter 格式：YAML（--- 包圍）
+// b1_reviewed_at / gm_approved_at 須存在且為 ISO 8601 時間戳，且 b1 < gm
+const ISO8601_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:[+-]\d{2}:\d{2}|Z)$/;
+
+// [^\S\r\n]* 只匹配行內空白（不含換行），確保不跨行；
+// [^\r\n]* 抓行內剩餘值（允許空值）
+// 若欄位行完全不存在則 match 回 null
+const b1Match  = html.match(/^b1_reviewed_at:[^\S\r\n]*([^\r\n]*)/m);
+const gmMatch  = html.match(/^gm_approved_at:[^\S\r\n]*([^\r\n]*)/m);
+const b1Raw    = b1Match  ? b1Match[1].trim()  : '';
+const gmRaw    = gmMatch  ? gmMatch[1].trim()  : '';
+const b1Valid  = ISO8601_RE.test(b1Raw);
+const gmValid  = ISO8601_RE.test(gmRaw);
+const seqValid = b1Valid && gmValid && (new Date(b1Raw) < new Date(gmRaw));
+
+check(
+  `b1_reviewed_at 存在且格式正確（目前：${b1Raw || '未填'}）`,
+  'BLOCK',
+  b1Valid,
+  'B1 審核時間戳缺失或格式錯誤，應為 ISO 8601，例：2026-05-05T14:00:00+08:00'
+);
+
+check(
+  `gm_approved_at 存在且格式正確（目前：${gmRaw || '未填'}）`,
+  'BLOCK',
+  gmValid,
+  'GM 終審時間戳缺失或格式錯誤，應為 ISO 8601，例：2026-05-05T16:00:00+08:00'
+);
+
+check(
+  `審核時序正確（b1_reviewed_at < gm_approved_at）`,
+  'BLOCK',
+  seqValid,
+  `時序錯誤：B1 審核（${b1Raw}）必須早於 GM 終審（${gmRaw}）`
+);
+
 // ── WARN 項（提示但不阻擋）──────────────────────────────
 check(
   'H1 標題存在',
