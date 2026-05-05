@@ -7,7 +7,7 @@
     <link>https://bnotescoffee.com</link>
     <description>讓喜好咖啡的人免費享受與世界沒有落差的專業咖啡知識庫</description>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 05 May 2026 06:55:11 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2026 07:01:50 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://bnotescoffee.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
@@ -116,6 +116,15 @@
   </item>
 
   <item>
+    <title>在家烘豆完全入門指南：從生豆到第一爐的科學與實作</title>
+    <link>https://bnotescoffee.com/articles/home-roasting-beginners-guide-2026.html</link>
+    <guid isPermaLink="true">https://bnotescoffee.com/articles/home-roasting-beginners-guide-2026.html</guid>
+    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+    <description>第一次在家烘豆，你會聞到生豆的青草氣、聽見一爆的爆裂聲、嗅到焦糖轉化的瞬間。這篇指南從梅納反應到發展時間，帶你用爆米花機或鐵鍋完成人生第一爐，不只理解科學，更能真正動手烘出自己的咖啡豆。</description>
+    <enclosure url="https://bnotescoffee.com/images/ai/home-roasting-beginners-guide-2026-hero.jpg" type="image/jpeg" length="0"/>
+  </item>
+
+  <item>
     <title>AeroPress 完全指南：這個醜醜的塑膠管，為什麼征服了全世界的咖啡師？</title>
     <link>https://bnotescoffee.com/articles/aeropress-complete-guide.html</link>
     <guid isPermaLink="true">https://bnotescoffee.com/articles/aeropress-complete-guide.html</guid>
@@ -185,15 +194,6 @@
     <pubDate>Mon, 27 Apr 2026 00:00:00 GMT</pubDate>
     <description>Simple Kaffa 環形吧台、Fika Fika Nordic Roaster Competition 冠軍哲學、2007 年創立的 Rufous、禁止拍照的 Coffee…</description>
     <enclosure url="https://bnotescoffee.com/images/ai/taipei-coffee-map-2026-hero.jpg" type="image/jpeg" length="0"/>
-  </item>
-
-  <item>
-    <title>咖啡酸質的完整科學：為什麼有人愛，有人怕，以及如何找到你的「對的酸」</title>
-    <link>https://bnotescoffee.com/articles/coffee-acidity-complete-science.html</link>
-    <guid isPermaLink="true">https://bnotescoffee.com/articles/coffee-acidity-complete-science.html</guid>
-    <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
-    <description>「這杯咖啡太酸了」——但你說的「酸」是蘋果酸的清爽，還是醋酸的刺激？…</description>
-    <enclosure url="https://bnotescoffee.com/images/ai/coffee-acidity-complete-science-hero.jpg" type="image/jpeg" length="0"/>
   </item>
   </channel>
 </rss>
