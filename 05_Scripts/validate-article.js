@@ -9,7 +9,7 @@
 const fs   = require('fs');
 const path = require('path');
 
-const VALID_CATS = ['手沖技法', '產地風土', '器材評測', '沖泡科學', '義式咖啡', '咖啡生活'];
+const VALID_CATS = ['beans', 'brew-methods', 'science', 'culture', 'gear', 'brewing-science', 'origin', 'roasting'];
 const ARTICLES_DIR = path.join(__dirname, '../08_文章_Articles_HTML');
 
 const slug = process.argv[2];
@@ -56,7 +56,7 @@ check(
   '應使用 <a class="nav-logo"><b>B</b>Notes...</a> 標準格式'
 );
 
-const catMatch = html.match(/cat:\s*(.+)/);
+const catMatch = html.match(/(?:category|cat):\s*(.+)/);
 const cat = catMatch ? catMatch[1].trim() : '';
 check(
   `分類合法（目前：${cat || '未填'}）`,
