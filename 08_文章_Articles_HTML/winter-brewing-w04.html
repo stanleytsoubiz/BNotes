@@ -271,13 +271,17 @@ footer a{color:var(--coffee-light)}
 .article-body tr:nth-child(even) td { background: oklch(97% .006 30) }
 
 /* 4. Key Takeaway 卡片 */
-.key-takeaway, .takeaway-box, [class*="key-take"] {
+.key-takeaway, .key-box, .takeaway-box, [class*="key-take"] {
   background: linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));
   border: 1px solid oklch(88% .05 45);
   border-left: 4px solid var(--gold,#c8922a);
   border-radius: .75rem; padding: 1.2em 1.4em;
   margin: 1.8em 0;
 }
+
+.geo-box{background:oklch(97% .01 200);border:1px solid oklch(88% .03 200);border-left:4px solid oklch(60% .12 200);border-radius:.75rem;padding:1.2em 1.5em;margin:2rem 0}
+.geo-box p{margin-bottom:.75rem}
+.geo-box p:last-child{margin-bottom:0}
 
 /* 5. TOC 面板 */
 #bnotes-toc-panel {
