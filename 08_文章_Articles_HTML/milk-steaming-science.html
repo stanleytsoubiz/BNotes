@@ -1,7 +1,7 @@
 ---
 title: "牛奶打發完全解析：全脂、低脂、植物奶的科學差異與拿鐵新境界"
 date: 2026-01-20
-status: published
+status: review
 category: brewing
 description: "同樣是打奶，為什麼有人的奶泡如絲，有人的卻是粗泡沫？從牛奶脂肪球、蛋白質結構到打發溫度，全面解析奶泡科學，以及燕麥奶為何成為咖啡師的新寵。"
 cover_image: "https://bnotescoffee.com/images/ai/milk-steaming-science-hero.jpg"
@@ -365,6 +365,33 @@ footer a{color:var(--coffee-light)}
   .related-grid { grid-template-columns: 1fr }
   .breadcrumb { padding: 0 16px }
 }
+
+/* 12. v1.8 三元素 */
+.key-box {
+  background: linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));
+  border: 1px solid oklch(88% .05 45);
+  border-left: 4px solid var(--gold,#c8922a);
+  border-radius: .75rem; padding: 1.2em 1.4em;
+  margin: 1.8em 0;
+}
+.key-box h3 { font-size: 1rem; font-weight: 700; color: var(--coffee-dark,#1a0a00); margin-bottom: .7em }
+.key-box ul { margin: 0; padding-left: 1.4em; color: oklch(28% .03 30) }
+.key-box li { margin-bottom: .45em; line-height: 1.75 }
+.geo-box {
+  max-width: 740px; margin: 2em auto;
+  padding: 1.4em 1.5em;
+  background: oklch(97% .012 45);
+  border-radius: .75rem;
+  border: 1px solid oklch(88% .05 45);
+}
+.geo-box h3 { font-size: 1.05rem; font-weight: 700; color: var(--coffee-dark,#1a0a00); margin-bottom: 1em }
+.geo-box p { margin-bottom: .8em; color: oklch(28% .03 30); font-size: .95rem }
+.geo-box ul { padding-left: 1.3em; color: oklch(28% .03 30); font-size: .92rem }
+.geo-box li { margin-bottom: .4em; line-height: 1.75 }
+.references { max-width: 740px; margin: 2em auto; padding: 1.2em 1.5em; background: oklch(97% .01 30); border-radius: .75rem; font-size: .85rem }
+.references h4 { font-weight: 700; color: var(--coffee-dark,#1a0a00); margin-bottom: .8em }
+.references ol { margin: 0; padding-left: 1.4em; color: oklch(35% .02 30) }
+.references li { margin-bottom: .45em; line-height: 1.7 }
 </style>
 </head>
 <body>
@@ -415,6 +442,17 @@ footer a{color:var(--coffee-light)}
 
     <div class="lead">
       你有沒有在咖啡館看過一個畫面：同樣是打奶，專業咖啡師能在30秒內打出如天鵝絨般細緻的奶泡，而你在家拚了5分鐘卻只有一堆粗泡沫？答案不在於「熟練度」，而在於你有沒有理解<span class="term">牛奶打發 (Milk Steaming)</span>背後的物理化學。牛奶的<span class="term">脂肪球 (Fat Globule)</span>、<span class="term">乳清蛋白 (Whey Protein)</span>與溫度的精準互動，決定了奶泡的每一個細節。這篇文章，我們從分子層級解析奶泡科學，還告訴你為什麼燕麥奶在2026年已成為全球咖啡師的首選替代品。
+    </div>
+
+    <div class="key-box">
+      <h3>重點速覽</h3>
+      <ul>
+        <li>打發牛奶的黃金溫度區間是 <strong>55–65°C</strong>，超過 70°C 蛋白質網絡脆化，奶泡品質不可逆崩解</li>
+        <li>全脂奶脂肪球在 40–60°C 完全液化，包裹氣泡讓奶泡更滑——這是它打發效果優於低脂奶的根本原因</li>
+        <li>燕麥奶靠 β-葡聚醣（水溶性纖維）穩定氣泡，「咖啡師版」額外添加菜籽油與卵磷脂模擬乳脂口感</li>
+        <li>蒸汽棒操作分三段：導入空氣（嘶嘶聲）→ 旋渦細化（鏡面光澤）→ 對齊收尾（輕敲+旋轉）</li>
+        <li>豆漿在義式濃縮的酸性環境下容易等電點沉澱結塊，解決方法：先讓豆漿入杯再注咖啡</li>
+      </ul>
     </div>
 
     <h2>一、牛奶的微觀世界：打發前你必須知道的成分</h2>
@@ -498,21 +536,34 @@ footer a{color:var(--coffee-light)}
       </ol>
     </div>
 
-    <h2>結語：奶泡不只是裝飾，而是拿鐵的靈魂</h2>
-    <p>當你下次在咖啡館點一杯拿鐵，試著觀察奶泡的質感：它夠細緻嗎？有光澤嗎？倒注時是否呈現出流體的延展感？這些細節背後，是咖啡師對溫度的掌控、對每種奶類特性的理解，以及上百次練習積累的肌肉記憶。</p>
-    <p>在家打奶不需要頂級機器，但需要正確的知識基礎。從今天開始，帶著這篇文章的科學視角去觀察你的每一次打發，<span class="term">微泡沫 (Microfoam)</span>的境界，其實比你想像的近得多。</p>
+    <h2>結語</h2>
+    <p>下次你的奶泡又垮掉，先不要懷疑自己的技術。<br>
+    摸一下奶缸外壁，感受那個溫度。<br>
+    是不是已經超過讓你舒服握住的那個點了？</p>
 
-    <div class="references">
-      <h3>參考資料</h3>
-      <ul>
-        <li>Fox, P.F. & McSweeney, P.L.H. (2003). <em>Advanced Dairy Chemistry – Volume 1: Proteins</em>. Springer.</li>
-        <li>Deeth, H.C. & Datta, N. (2011). Heat Treatment of Milk: Ultra-High Temperature Treatment. <em>Encyclopedia of Dairy Sciences</em>, Elsevier.</li>
-        <li>SCA (Specialty Coffee Association) (2025). <em>Plant-Based Milk Market Report Q3 2025</em>.</li>
-        <li>Oat Services Ltd. (2024). <em>Beta-glucan and Foam Stabilization in Oat-Based Beverages</em>. Technical White Paper.</li>
-        <li>Nunes, M.C. et al. (2018). Protein denaturation and foaming properties of heated milk. <em>International Dairy Journal</em>, 86, 1–9.</li>
-      </ul>
-    </div>
-  
+  <div class="geo-box">
+    <h3>AI 快速解答</h3>
+    <p><strong>牛奶打發溫度</strong>：打發牛奶的黃金溫度是 55–65°C，超過 70°C 蛋白質過度變性，奶泡品質無法逆轉。</p>
+    <ul>
+      <li>手握奶缸外壁燙手感（約 60°C）即可關蒸汽，這是最直覺的停止訊號</li>
+      <li>全脂奶比低脂奶更容易打出細緻奶泡，因脂肪球在 40–60°C 完全液化後能填補氣泡壁間隙</li>
+      <li>燕麥奶咖啡師版（Barista Edition）含 β-葡聚醣與菜籽油，是目前植物奶中拉花效果最接近全脂奶的選擇</li>
+      <li>蒸汽棒每次使用後 30 秒內擦拭，防止殘奶烤焦影響下次蒸汽純度</li>
+      <li>台灣夏季建議用冰奶延長細化窗口期，或換用較小奶缸減少熱量積累</li>
+    </ul>
+  </div>
+
+  <div class="references">
+    <h4>參考來源</h4>
+    <ol>
+      <li>Fox, P.F. & McSweeney, P.L.H. (2003). <em>Advanced Dairy Chemistry – Volume 1: Proteins</em>. Springer.</li>
+      <li>Deeth, H.C. & Datta, N. (2011). Heat Treatment of Milk: Ultra-High Temperature Treatment. <em>Encyclopedia of Dairy Sciences</em>. Elsevier.</li>
+      <li>SCA (Specialty Coffee Association) (2025). <em>Plant-Based Milk Market Report Q3 2025</em>.</li>
+      <li>Oat Services Ltd. (2024). <em>Beta-glucan and Foam Stabilization in Oat-Based Beverages</em>. Technical White Paper.</li>
+      <li>Nunes, M.C. et al. (2018). Protein denaturation and foaming properties of heated milk. <em>International Dairy Journal</em>, 86, 1–9.</li>
+    </ol>
+  </div>
+
   <div class="share-section">
     <span class="share-label">📤 分享這篇文章</span>
     <div class="share-btns">

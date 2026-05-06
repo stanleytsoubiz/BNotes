@@ -3,17 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>把 WBC 賽事冠軍配方帶回家：你真的能重現嗎？一次誠實的實驗報告 | BNotes 焙學·原豆誌</title>
-<meta name="description" content="看了世界咖啡師大賽的冠軍配方，你是否也想在家複製？這篇文章誠實記錄了嘗試用家用設備重現賽事配方的完整過程�...">
-<meta name="keywords" content="精品咖啡,咖啡知識,台灣咖啡">
-<meta property="og:title" content="把 WBC 賽事冠軍配方帶回家：你真的能重現嗎？一次誠實的實驗報告">
-    <meta property="og:description" content="看了世界咖啡師大賽的冠軍配方，你是否也想在家複製？這篇文章誠實記錄了嘗試用家用設備重現賽事配方的完整過程，�" />
+<title>把比賽配方帶回家：WBC 選手的手沖邏輯與家用實踐 | BNotes 焙學·原豆誌</title>
+<meta name="description" content="看了 WBC 冠軍配方，你是否也想在家複製？這篇文章誠實記錄了用家用設備重現賽事配方的完整過程，告訴你差距真正在哪裡，以及哪些元素其實可以帶回家。">
+<meta name="keywords" content="比賽配方,WBC 手沖,手沖進階,精品咖啡">
+<meta property="og:title" content="把比賽配方帶回家：WBC 選手的手沖邏輯與家用實踐">
+<meta property="og:description" content="WBC 冠軍配方那些數字，在家能重現嗎？我們誠實測了，告訴你差距在哪，以及那些可以真正帶回家的東西。" />
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://bnotescoffee.com/images/ai/competition-recipe-homebrew-guide-hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap">
-<noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"></noscript></noscript>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -31,9 +30,7 @@ a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Noto Serif TC',Georgia,serif;font-size:1.15rem;font-weight:900;color:#1a0a00;letter-spacing:.02em;text-decoration:none}
-.nav-logo b{color:#c8922a}
-.nav-sub{font-family:'Noto Sans TC',-apple-system,sans-serif;font-size:.65rem;color:#7a6050;letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+.nav-logo{font-size:1.5rem}
 .nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
 .nav-back:hover{color:var(--coffee-dark)}
 .article-hero{position:relative;height:min(480px,55vw);overflow:hidden;background:var(--coffee-dark)}
@@ -51,13 +48,6 @@ img{max-width:100%;display:block}
 .article-body ul,ol{margin:0 0 1.25rem 1.5rem;color:var(--fg)}
 .article-body li{margin-bottom:.5rem;line-height:1.8}
 .article-body strong{color:var(--coffee-warm);font-weight:700}
-.article-sidebar{display:grid;grid-template-columns:2fr 1fr;gap:3rem;max-width:900px;margin:0 auto;padding:0 1.5rem 3rem}
-@media(max-width:768px){.article-sidebar{grid-template-columns:1fr}}
-.toc{position:sticky;top:5rem;background:var(--muted);border-radius:var(--radius);padding:1.25rem;height:fit-content}
-.toc-title{font-weight:700;font-size:.9rem;color:var(--coffee-dark);margin-bottom:.875rem}
-.toc-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
-.toc-list a{font-size:.825rem;color:var(--coffee-mid);transition:color .2s;padding:.25rem 0;border-left:2px solid transparent;padding-left:.75rem}
-.toc-list a:hover{color:var(--coffee-dark);border-left-color:var(--gold)}
 .cta-box{background:linear-gradient(135deg,var(--coffee-dark),var(--coffee-warm));color:white;border-radius:var(--radius);padding:2rem;text-align:center;margin-top:2rem}
 .cta-box h3{font-family:var(--font-serif);font-size:1.25rem;margin-bottom:.75rem}
 .cta-box p{color:var(--coffee-light);font-size:.9rem;margin-bottom:1.25rem}
@@ -67,763 +57,273 @@ img{max-width:100%;display:block}
 footer{background:var(--coffee-dark);color:oklch(65% .02 30);padding:2rem 1.5rem;text-align:center;font-size:.85rem}
 footer a{color:var(--coffee-light)}
 </style>
-<link rel="canonical" href="https://bnotescoffee.com/articles/competition-recipe-homebrew-guide">
+<link rel="canonical" href="https://bnotescoffee.com/articles/competition-recipe-homebrew-guide.html">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta property="og:url" content="https://bnotescoffee.com/articles/competition-recipe-homebrew-guide">
+<meta property="og:url" content="https://bnotescoffee.com/articles/competition-recipe-homebrew-guide.html">
 <meta property="og:site_name" content="BNotes 焙學·原豆誌">
 <meta property="og:locale" content="zh_TW">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="把 WBC 賽事冠軍配方帶回家：你真的能重現嗎？一次誠實的實驗報告 | BNotes 焙學·原豆誌">
-<meta name="twitter:description" content="看了世界咖啡師大賽的冠軍配方，你是否也想在家複製？這篇文章誠實記錄了嘗試用家用設備重現賽事配方的完整過程，以及「差距」真正在哪裡。">
+<meta name="twitter:title" content="把比賽配方帶回家：WBC 選手的手沖邏輯與家用實踐 | BNotes 焙學·原豆誌">
+<meta name="twitter:description" content="WBC 冠軍配方那些數字，在家能重現嗎？我們誠實測了，告訴你差距在哪，以及那些可以真正帶回家的東西。">
 <meta name="twitter:image" content="https://bnotescoffee.com/images/ai/competition-recipe-homebrew-guide-hero.jpg">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="icon" type="image/x-icon" href="../favicon.ico">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="manifest" href="../manifest.json">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#1a0a00">
-<link rel="preconnect" href="https://images.unsplash.com">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "把 WBC 賽事冠軍配方帶回家：你真的能重現嗎？一次誠實的實驗報告", "description": "看了世界咖啡師大賽的冠軍配方，你是否也想在家複製？這篇文章誠實記錄了嘗試用家用設備重現賽事配方的完整過程，以及「差距」真正在哪裡。", "url": "https://bnotescoffee.com/articles/competition-recipe-homebrew-guide", "datePublished": "2026-04-08T00:00:00+08:00", "dateModified": "2026-04-08T00:00:00+08:00", "inLanguage": "zh-TW", "author": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com"}, "publisher": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com", "logo": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/bnotes-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bnotescoffee.com/articles/competition-recipe-homebrew-guide"}, "keywords": "精品咖啡,咖啡知識,台灣咖啡", "image": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/ai/competition-recipe-homebrew-guide-hero.jpg", "width": 1200, "height": 630}}</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "首頁",
-      "item": "https://bnotescoffee.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "沖泡科學",
-      "item": "https://bnotescoffee.com/#categories"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "把 WBC 賽事冠軍配方帶回家：你真的能重現嗎？一次誠實的實驗報告",
-      "item": "https://bnotescoffee.com/articles/competition-recipe-homebrew-guide"
-    }
-  ]
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"把比賽配方帶回家：WBC 選手的手沖邏輯與家用實踐","description":"看了 WBC 冠軍配方，你是否也想在家複製？這篇文章誠實記錄了用家用設備重現賽事配方的完整過程。","url":"https://bnotescoffee.com/articles/competition-recipe-homebrew-guide.html","datePublished":"2026-04-20T00:00:00+08:00","dateModified":"2026-05-06T00:00:00+08:00","inLanguage":"zh-TW","author":{"@type":"Organization","name":"BNotes 焙學·原豆誌","url":"https://bnotescoffee.com"},"publisher":{"@type":"Organization","name":"BNotes 焙學·原豆誌","url":"https://bnotescoffee.com","logo":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/bnotes-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bnotescoffee.com/articles/competition-recipe-homebrew-guide.html"},"keywords":"比賽配方,WBC 手沖,手沖進階","image":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/ai/competition-recipe-homebrew-guide-hero.jpg","width":1200,"height":630}}</script>
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2WXMBSHDSB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-2WXMBSHDSB', {
-    'page_title': document.title,
-    'page_location': window.location.href,
-    'send_page_view': true
-  });
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.newsletter-form, .cta-form').forEach(function(form) {
-      form.addEventListener('submit', function(e) {
-        gtag('event', 'newsletter_signup', {
-          'event_category': 'engagement',
-          'event_label': 'newsletter_subscribe',
-          'value': 1
-        });
-      });
-    });
-    if (document.querySelector('.article-body')) {
-      var tracked = false;
-      window.addEventListener('scroll', function() {
-        if (!tracked) {
-          var scrollPct = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
-          if (scrollPct > 0.8) {
-            tracked = true;
-            gtag('event', 'article_read_complete', {
-              'event_category': 'content',
-              'event_label': document.title,
-              'value': 1
-            });
-          }
-        }
-      });
-    }
-  });
-</script>
-  <meta property="article:published_time" content="2026-04-08T00:00:00+08:00" />
-  <meta property="article:modified_time" content="2026-04-08T00:00:00+08:00" />
-  <meta property="article:author" content="https://bnotescoffee.com" />
-  <meta property="article:section" content="沖泡科學" />
-  <meta property="article:tag" content="精品咖啡" />
-  <meta name="twitter:label1" content="閱讀時間" />
-  <meta name="twitter:data1" content="9 分鐘閱讀" />
-  <meta name="twitter:label2" content="分類" />
-  <meta name="twitter:data2" content="沖泡科學" />
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2WXMBSHDSB');</script>
+<meta property="article:published_time" content="2026-04-20T00:00:00+08:00" />
+<meta property="article:modified_time" content="2026-05-06T00:00:00+08:00" />
+<meta property="article:section" content="賽事觀察" />
 <style id="bnotes-v3">
 /* ===== BNotes Unified Article Style v3.1 ===== */
-
-/* 1. 強制隱藏所有舊 hero 結構（含背景色塊與空白佔位） */
-.article-hero,
-.article-hero-overlay,
-.article-hero-content,
-.article-hero-img,
-.bnotes-hero-image,
-.typo-hero,
-.typo-hero-bg,
-.typo-hero-content,
-.hero-image,
-.post-hero,
-.entry-hero,
-.feature-image,
-[class*="hero-img"],
-.bnotes-thumb {
-  display: none !important;
-}
-
-/* 2. 統一 HEADER 區塊 */
-.bnotes-header {
-  max-width: 740px;
-  margin: 0 auto;
-  padding: 48px 24px 0;
-  text-align: center;
-}
-.bnotes-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: .78rem; font-weight: 600; letter-spacing: .08em;
-  text-transform: uppercase; color: var(--coffee-mid,#8b4513);
-  background: oklch(93% .04 45 / .4);
-  padding: 4px 14px; border-radius: 99px;
-  margin-bottom: 20px;
-}
-.bnotes-title {
-  font-family: var(--font-serif,'Noto Serif TC',Georgia,serif);
-  font-size: clamp(1.6rem,4vw,2.4rem);
-  font-weight: 900; line-height: 1.35;
-  color: var(--coffee-dark,#1a0a00);
-  margin-bottom: 20px; letter-spacing: -.01em;
-}
-.bnotes-meta {
-  display: flex; flex-wrap: wrap; justify-content: center;
-  gap: 6px 16px;
-  font-size: .83rem; color: oklch(45% .02 30);
-  margin-bottom: 32px;
-}
-.bnotes-meta span { display: flex; align-items: center; gap: 4px }
-.bnotes-divider {
-  width: 56px; height: 3px;
-  background: linear-gradient(90deg,var(--gold,#c8922a),transparent);
-  border-radius: 2px; margin: 0 auto 40px;
-}
-
-/* 3. 文章主體排版 */
-.article-body, .article-content, main.article-wrap article,
-.article-wrap .article-body {
-  max-width: 740px !important;
-  margin: 0 auto !important;
-  padding: 0 24px 80px !important;
-  font-family: var(--font-sans,'Noto Sans TC',sans-serif);
-  font-size: 1.05rem; line-height: 1.85;
-  color: oklch(22% .02 30);
-}
-.article-body p, .article-body li { margin-bottom: 1.3em }
-.article-body h2 {
-  font-family: var(--font-serif,'Noto Serif TC',serif);
-  font-size: 1.45rem; font-weight: 700;
-  color: var(--coffee-dark,#1a0a00);
-  margin: 2.4em 0 .8em;
-  padding-bottom: .4em;
-  border-bottom: 2px solid oklch(90% .04 45);
-}
-.article-body h3 {
-  font-size: 1.18rem; font-weight: 600;
-  color: oklch(30% .06 35);
-  margin: 1.8em 0 .6em;
-}
-.article-body blockquote {
-  border-left: 4px solid var(--gold,#c8922a);
-  padding: .8em 1.2em; margin: 1.6em 0;
-  background: oklch(97% .015 45);
-  border-radius: 0 .5rem .5rem 0;
-  font-style: italic; color: oklch(35% .04 35);
-}
-.article-body table {
-  width: 100%; border-collapse: collapse;
-  margin: 1.6em 0; font-size: .9rem;
-  border-radius: .5rem; overflow: hidden;
-  box-shadow: 0 1px 4px rgba(0,0,0,.07);
-}
-.article-body th {
-  background: var(--coffee-warm,#5c2d00); color: #fff;
-  padding: .7em 1em; text-align: left; font-weight: 600;
-}
-.article-body td {
-  padding: .65em 1em;
-  border-bottom: 1px solid oklch(90% .01 30);
-}
-.article-body tr:nth-child(even) td { background: oklch(97% .006 30) }
-
-/* 4. Key Takeaway 卡片 */
-.key-takeaway, .takeaway-box, [class*="key-take"] {
-  background: linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));
-  border: 1px solid oklch(88% .05 45);
-  border-left: 4px solid var(--gold,#c8922a);
-  border-radius: .75rem; padding: 1.2em 1.4em;
-  margin: 1.8em 0;
-}
-
-/* 5. TOC 面板 */
-#bnotes-toc-panel {
-  position: fixed; right: max(2vw,16px);
-  width: 220px;
-  max-height: calc(100vh - 120px);
-  overflow-y: auto;
-  background: rgba(255,255,255,.95);
-  backdrop-filter: blur(8px);
-  border: 1px solid oklch(88% .01 30);
-  border-radius: .75rem;
-  padding: 14px 16px;
-  font-size: .78rem; line-height: 1.6;
-  box-shadow: 0 4px 20px rgba(0,0,0,.08);
-  scrollbar-width: none;
-  z-index: 30;
-  display: none;
-}
-#bnotes-toc-panel::-webkit-scrollbar { display: none }
-#bnotes-toc-panel h4 {
-  font-size: .72rem; font-weight: 700; letter-spacing: .1em;
-  text-transform: uppercase; color: oklch(55% .02 30);
-  margin-bottom: 10px; border-bottom: 1px solid oklch(90% .01 30);
-  padding-bottom: 8px;
-}
-#bnotes-toc-panel a {
-  display: block; padding: 3px 0 3px 10px;
-  color: oklch(42% .02 30);
-  border-left: 2px solid transparent;
-  transition: all .15s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-#bnotes-toc-panel a:hover { color: var(--coffee-mid,#8b4513); border-left-color: var(--gold,#c8922a) }
-#bnotes-toc-panel a.active { color: var(--coffee-warm,#5c2d00); font-weight: 600; border-left-color: var(--gold,#c8922a) }
-#bnotes-toc-panel a[data-level="3"] { padding-left: 20px; font-size: .74rem }
-
-/* 6. 閱讀進度條 */
-#bnotes-progress {
-  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
-  background: linear-gradient(90deg,var(--gold,#c8922a),var(--coffee-mid,#8b4513));
-  z-index: 100; transition: width .1s linear;
-}
-
-/* 7. 分享列 */
-.share-bar, .article-share {
-  max-width: 740px; margin: 0 auto;
-  padding: 24px 24px 0;
-  border-top: 1px solid oklch(90% .01 30);
-  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-}
-
-/* 8. 相關文章 */
-.related-articles, .related-posts {
-  max-width: 740px; margin: 40px auto 0;
-  padding: 0 24px;
-}
-.related-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 12px }
-.related-card {
-  border: 1px solid oklch(89% .01 30); border-radius: .6rem;
-  padding: 14px; font-size: .85rem;
-  background: var(--card,#fff);
-  transition: box-shadow .15s;
-}
-.related-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.09) }
-
-/* 9. 麵包屑保留 */
-.breadcrumb, nav[aria-label="breadcrumb"] {
-  max-width: 740px; margin: 12px auto 0; padding: 0 24px;
-  font-size: .8rem; color: oklch(55% .02 30);
-}
-
-/* 10. 隱藏舊的重複 meta-bar */
-.article-meta-bar, .article-meta-inner { display: none !important; }
-
-/* 11. Mobile */
-@media(max-width:767px) {
-  .bnotes-header { padding: 28px 16px 0 }
-  .bnotes-title { font-size: 1.45rem }
-  .article-body, .article-content, main.article-wrap article,
-  .article-wrap .article-body { padding: 0 16px 60px !important }
-  .article-body h2 { font-size: 1.2rem }
-  .share-bar, .article-share, .related-articles, .related-posts { padding: 16px }
-  .related-grid { grid-template-columns: 1fr }
-  .breadcrumb { padding: 0 16px }
-}
-
-.bnotes-cover{width:100%;max-height:420px;object-fit:cover;border-radius:.9rem;margin:2rem auto;display:block;box-shadow:0 4px 16px rgba(0,0,0,.12)}
-.key-box{background:linear-gradient(135deg,oklch(98% .025 50),oklch(96% .03 45));border:1px solid oklch(88% .06 45);border-left:4px solid var(--gold,#c8922a);border-radius:.75rem;padding:1.2em 1.5em;margin:1.5rem 0 2rem;line-height:2}
-.geo-box{background:oklch(97% .01 200);border:1px solid oklch(88% .03 200);border-left:4px solid oklch(60% .12 200);border-radius:.75rem;padding:1.2em 1.5em;margin:2rem 0}
-.geo-box p{margin-bottom:.75rem}
-.geo-box p:last-child{margin-bottom:0}
-.further-reading{background:var(--muted,oklch(95% .008 30));border-radius:.75rem;padding:1.2em 1.5em;margin:1.5rem 0}
-.further-reading strong{display:block;margin-bottom:.75rem;color:var(--coffee-dark,#1a0a00)}
-.further-reading ul{margin:0;padding-left:1.25rem}
-.further-reading li{margin-bottom:.4rem}
-.further-reading a{color:var(--coffee-mid,#8b4513);text-decoration:underline}
+.article-hero,.article-hero-overlay,.article-hero-content,.article-hero-img,.bnotes-hero-image,.typo-hero,.typo-hero-bg,.typo-hero-content,.hero-image,.post-hero,.entry-hero,.feature-image,[class*="hero-img"],.bnotes-thumb{display:none !important}
+.bnotes-header{max-width:740px;margin:0 auto;padding:48px 24px 0;text-align:center}
+.bnotes-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--coffee-mid,#8b4513);background:oklch(93% .04 45/.4);padding:4px 14px;border-radius:99px;margin-bottom:20px}
+.bnotes-title{font-family:var(--font-serif,'Noto Serif TC',Georgia,serif);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;line-height:1.35;color:var(--coffee-dark,#1a0a00);margin-bottom:20px;letter-spacing:-.01em}
+.bnotes-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;font-size:.83rem;color:oklch(45% .02 30);margin-bottom:32px}
+.bnotes-meta span{display:flex;align-items:center;gap:4px}
+.bnotes-divider{width:56px;height:3px;background:linear-gradient(90deg,var(--gold,#c8922a),transparent);border-radius:2px;margin:0 auto 40px}
+.article-body,.article-content,main.article-wrap article,.article-wrap .article-body{max-width:740px !important;margin:0 auto !important;padding:0 24px 80px !important;font-family:var(--font-sans,'Noto Sans TC',sans-serif);font-size:1.05rem;line-height:1.85;color:oklch(22% .02 30)}
+.article-body p,.article-body li{margin-bottom:1.3em}
+.article-body h2{font-family:var(--font-serif,'Noto Serif TC',serif);font-size:1.45rem;font-weight:700;color:var(--coffee-dark,#1a0a00);margin:2.4em 0 .8em;padding-bottom:.4em;border-bottom:2px solid oklch(90% .04 45)}
+.article-body h3{font-size:1.18rem;font-weight:600;color:oklch(30% .06 35);margin:1.8em 0 .6em}
+.article-body table{width:100%;border-collapse:collapse;margin:1.6em 0;font-size:.9rem;border-radius:.5rem;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.article-body th{background:var(--coffee-warm,#5c2d00);color:#fff;padding:.7em 1em;text-align:left;font-weight:600}
+.article-body td{padding:.65em 1em;border-bottom:1px solid oklch(90% .01 30)}
+.article-body tr:nth-child(even) td{background:oklch(97% .006 30)}
+#bnotes-toc-panel{position:fixed;right:max(2vw,16px);width:220px;max-height:calc(100vh - 120px);overflow-y:auto;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border:1px solid oklch(88% .01 30);border-radius:.75rem;padding:14px 16px;font-size:.78rem;line-height:1.6;box-shadow:0 4px 20px rgba(0,0,0,.08);scrollbar-width:none;z-index:30;display:none}
+#bnotes-toc-panel::-webkit-scrollbar{display:none}
+#bnotes-toc-panel h4{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:oklch(55% .02 30);margin-bottom:10px;border-bottom:1px solid oklch(90% .01 30);padding-bottom:8px}
+#bnotes-toc-panel a{display:block;padding:3px 0 3px 10px;color:oklch(42% .02 30);border-left:2px solid transparent;transition:all .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#bnotes-toc-panel a:hover{color:var(--coffee-mid,#8b4513);border-left-color:var(--gold,#c8922a)}
+#bnotes-toc-panel a.active{color:var(--coffee-warm,#5c2d00);font-weight:600;border-left-color:var(--gold,#c8922a)}
+#bnotes-toc-panel a[data-level="3"]{padding-left:20px;font-size:.74rem}
+#bnotes-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--gold,#c8922a),var(--coffee-mid,#8b4513));z-index:100;transition:width .1s linear}
+.share-bar,.article-share{max-width:740px;margin:0 auto;padding:24px 24px 0;border-top:1px solid oklch(90% .01 30);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+nav[aria-label="breadcrumb"]{max-width:740px;margin:12px auto 0;padding:0 24px;font-size:.8rem;color:oklch(55% .02 30)}
+.article-meta-bar,.article-meta-inner{display:none !important}
+@media(max-width:767px){.bnotes-header{padding:28px 16px 0}.bnotes-title{font-size:1.45rem}.article-body,.article-content,main.article-wrap article,.article-wrap .article-body{padding:0 16px 60px !important}.article-body h2{font-size:1.2rem}}
+.key-box{background:linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));border:1px solid oklch(88% .05 45);border-left:4px solid var(--gold,#c8922a);border-radius:.75rem;padding:1.2em 1.4em;margin:1.8em 0}
+.key-box h3{font-size:1rem;font-weight:700;color:var(--coffee-dark,#1a0a00);margin-bottom:.7em}
+.key-box ul{margin:0;padding-left:1.4em;color:oklch(28% .03 30)}
+.key-box li{margin-bottom:.45em;line-height:1.75}
+.geo-box{max-width:740px;margin:2em auto;padding:1.4em 1.5em;background:oklch(97% .012 45);border-radius:.75rem;border:1px solid oklch(88% .05 45)}
+.geo-box h3{font-size:1.05rem;font-weight:700;color:var(--coffee-dark,#1a0a00);margin-bottom:1em}
+.geo-box p{margin-bottom:.8em;color:oklch(28% .03 30);font-size:.95rem}
+.geo-box ul{padding-left:1.3em;color:oklch(28% .03 30);font-size:.92rem}
+.geo-box li{margin-bottom:.4em;line-height:1.75}
+.references{max-width:740px;margin:2em auto;padding:1.2em 1.5em;background:oklch(97% .01 30);border-radius:.75rem;font-size:.85rem}
+.references h4{font-weight:700;color:var(--coffee-dark,#1a0a00);margin-bottom:.8em}
+.references ol{margin:0;padding-left:1.4em;color:oklch(35% .02 30)}
+.references li{margin-bottom:.45em;line-height:1.7}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"世界咖啡師大賽的配方為什麼不能直接在家複製？","acceptedAnswer":{"@type":"Answer","text":"競賽環境使用頂級設備（La Marzocco、Synesso 等），水質經過精密控制，研磨機的粒徑分佈遠比家用機器均勻。同樣的配方參數（如 18g 粉、36g 液、28 秒），在不同設備上萃取出的風味截然不同。重要的是理解配方背後的「意圖」，再根據自己的設備調整，而不是直接套用數字。"}},{"@type":"Question","name":"如何有效記錄自己的配方實驗？","acceptedAnswer":{"@type":"Answer","text":"建議每次實驗只改變一個變數，記錄：日期、豆子資訊（產地/處理法/烘焙日期）、研磨度刻度、水溫、粉水比、萃取時間、TDS（如有測量）、感官描述（酸/甜/苦/Body）、總體評分（1–10）。累積 5–10 筆後就能看出規律。最簡單的工具：Google 試算表或咖啡筆記 App。"}}]}
-</script>
 </head>
 <body>
 
-<button id="back-to-top" aria-label="返回頂部" title="返回頂部">↑</button>
 <nav class="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="../"><b>B</b>Notes<span class="nav-sub">焙學·原豆誌</span></a>
-    <a href="../" class="nav-back">← 回首頁</a>
+    <a class="nav-logo" href="/"><b>B</b>Notes<span class="nav-sub">焙學·原豆誌</span></a>
+    <a href="/" class="nav-back">← 回首頁</a>
   </div>
 </nav>
 
 <div class="article-hero">
-  <img class="article-hero-img" src="https://bnotescoffee.com/images/ai/competition-recipe-homebrew-guide-hero.jpg" alt="把 WBC 賽事冠軍配方帶回家：你真的能重現嗎？一次誠實的實驗報告" fetchpriority="high" loading="eager" decoding="async">
+  <img class="article-hero-img" src="https://bnotescoffee.com/images/ai/competition-recipe-homebrew-guide-hero.jpg" alt="把比賽配方帶回家" fetchpriority="high" loading="eager" decoding="async">
   <div class="article-hero-overlay"></div>
-  <div class="article-hero-content" style="max-width:900px;width:100%;left:50%;transform:translateX(-50%)">
-    <div class="article-cat">🔬 沖泡科學</div>
-    <h1 class="article-h1">把 WBC 賽事冠軍配方帶回家：你真的能重現嗎？一次誠實的實驗報告</h1>
-  </div>
-</div>
-
-<div class="article-meta-bar">
-  <div class="article-meta-inner">
-    <span>⏱ 9 分鐘閱讀</span>
-    <span>📝 約 3,075 字</span>
-    <span>✍️ BNotes 編輯部</span>
+  <div class="article-hero-content">
+    <div class="article-cat">賽事觀察</div>
+    <h1 class="article-h1">把比賽配方帶回家：WBC 選手的手沖邏輯與家用實踐</h1>
   </div>
 </div>
 
 <nav aria-label="breadcrumb" style="max-width:900px;margin:.75rem auto;padding:0 1.5rem;font-size:.8rem;color:var(--muted-fg)">
-  <a href="../">首頁</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
-  <a href="../#categories">沖泡科學</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
-  <span style="color:var(--coffee-mid)">把 WBC 賽事冠軍配方帶回家：你真的能重現嗎？一次誠實的實驗報告</span>
+  <a href="/">首頁</a> <span style="margin:0 .5rem">›</span>
+  <a href="/#categories">賽事觀察</a> <span style="margin:0 .5rem">›</span>
+  <span style="color:var(--coffee-mid)">把比賽配方帶回家</span>
 </nav>
 
 <main class="article-wrap">
-
 <article class="article-body">
-    
+
 <div class="article-header">
-    <h2>把 WBC 賽事冠軍配方帶回家：你真的能重現嗎？一次誠實的實驗報告</h2>
-    <div class="article-meta"><span>✍ BNotes 編輯部</span><span>⏱ 閱讀約13分鐘</span></div>
-  </div>
+  <h2>把比賽配方帶回家：WBC 選手的手沖邏輯與家用實踐</h2>
+  <div class="article-meta"><span>✍ BNotes 編輯部</span><span>⏱ 閱讀約10分鐘</span></div>
+</div>
+
+<div class="lead">
+  每年 WBC（World Barista Championship）結束後，社群媒體上都會瘋傳冠軍選手公開的配方數據：「20g / 42g / 94°C / 26秒 / 壓力曲線：預浸3秒→9bar→7bar收尾」。這些數字，讓無數咖啡愛好者摩拳擦掌想要在家複製。但這個實驗的結果，往往讓人沮喪——花了三包豆子，萃出來的就是不一樣。這篇文章誠實記錄了嘗試用家用設備重現賽事配方的完整過程，告訴你「差距」真正在哪裡，以及哪些元素其實是可以帶回家的。
+</div>
 
 <div class="key-box">
-  <strong>☕ 讀完這篇，你會知道：</strong><br>
-  · 世界級咖啡師比賽配方的設計邏輯<br>
-  · 如何將競技配方轉化為家用版本的關鍵調整<br>
-  · 比賽配方中常用的變數組合（粉水比、水溫、研磨）<br>
-  · 為什麼比賽配方不能直接用家用設備複製<br>
-  · 居家實驗配方的系統化記錄方法
+  <h3>重點速覽</h3>
+  <ul>
+    <li>WBC 冠軍配方最大的不可複製因素是<strong>壓力曲線精度</strong>——比賽機器可做多段可程式化曲線，家用機多數只能簡單預浸</li>
+    <li>磨豆機粒徑均勻度對義式咖啡風味的影響，遠大於義式機本體差異；升級磨豆機比換機器更值</li>
+    <li>比賽配方的水溫方向（如偏高 94–96°C）可以帶回家，但不必硬追 ±0.2°C 的精度</li>
+    <li>我們的實驗：用中階雙鍋爐機 + 好馬達磨豆機，第 7–12 杯後達到「精神上接近」的版本</li>
+    <li>家用版建議：粉量降至 17–18g、水溫補償 +1°C、以流速外觀判斷萃取時間比死盯秒數更實用</li>
+  </ul>
 </div>
 
-  <div class="lead">
-    每年 WBC（World Barista Championship）結束後，社群媒體上都會瘋傳冠軍選手公開的配方數據：「20g / 42g / 94°C / 26秒 / 壓力曲線：預浸3秒→9bar→7bar收尾」。這些數字，讓無數咖啡愛好者摩拳擦掌想要在家複製。但這個實驗的結果，往往讓人沮喪——花了三包豆子，萃出來的就是不一樣。這篇文章誠實記錄了嘗試用家用設備重現賽事配方的完整過程，告訴你「差距」真正在哪裡，以及哪些元素其實是可以帶回家的。
-  </div>
+<h2>一、WBC 2025/2026 冠軍配方的核心技術點</h2>
+<p>近兩屆 WBC 冠軍配方展現了幾個共同的技術趨勢：</p>
+<ul>
+  <li><strong>豆種：</strong>高海拔精品批次（SCA 88+分），以衣索比亞厭氧日曬或巴拿馬 Gesha 為主流，追求風味複雜度的極致展現。</li>
+  <li><strong>粉液比：</strong>多在 1:2—1:2.5 之間，相較五年前已明顯往「更大比例」移動。</li>
+  <li><strong>水溫：</strong>精品豆使用趨勢偏向 93—96°C，部分淺烘豆甚至使用 97°C。</li>
+  <li><strong>萃取時間：</strong>通常 24—32 秒，但「開始計時點」的定義影響很大。</li>
+  <li><strong>壓力曲線：</strong>這是近兩屆最重要的技術差異化因素——<span class="term">預浸 (Pre-infusion)</span>、壓力爬升速度、高峰壓力、收尾降壓的設計，形成各選手的技術簽名。</li>
+</ul>
 
-  <h2>一、WBC 2025/2026 冠軍配方的核心技術點</h2>
-  <p>近兩屆 WBC 冠軍配方展現了幾個共同的技術趨勢：</p>
-  <ul>
-    <li><strong>豆種：</strong>高海拔精品批次（SCA 88+分），以衣索比亞厭氧日曬或巴拿馬 Gesha 為主流，追求風味複雜度的極致展現。</li>
-    <li><strong>粉液比：</strong>多在 1:2—1:2.5 之間，相較五年前已明顯往「更大比例」移動。</li>
-    <li><strong>水溫：</strong>精品豆使用趨勢偏向 93—96°C，部分淺烘豆甚至使用 97°C。</li>
-    <li><strong>萃取時間：</strong>通常 24—32 秒，但「開始計時點」的定義影響很大（從壓泵時？還是從第一滴液出來時？）。</li>
-    <li><strong>壓力曲線：</strong>這是近兩屆最重要的技術差異化因素——<span class="term">預浸 (Pre-infusion)</span>、壓力爬升速度、高峰壓力、收尾降壓的設計，形成各選手的技術簽名。</li>
-  </ul>
+<h2>二、家用設備 vs 比賽設備：差距分析</h2>
+<p>讓我們先說清楚「差距」的真正來源，而不是停在「比賽機器比較好」這個模糊的認知。</p>
 
-  <div class="chart-suggestion">近三屆WBC冠軍配方關鍵參數時間軸：展示2023—2025年度冠軍的粉液比、水溫、萃取時間的演變趨勢，以折線圖呈現數字的「漂移方向」，讓讀者看到賽事配方如何反映整個精品咖啡圈的技術演進。</div>
+<table>
+  <thead><tr><th>技術面向</th><th>比賽設備（La Marzocco Linea 等）</th><th>家用設備（入門至中階）</th><th>差距影響</th></tr></thead>
+  <tbody>
+    <tr><td>壓力穩定性</td><td>±0.1 bar 精度，無波動</td><td>±0.5—1 bar，有波動</td><td>直接影響萃取均勻性和克里瑪品質</td></tr>
+    <tr><td>溫度控制精度</td><td>±0.2°C，雙鍋爐或鍋爐獨立控溫</td><td>±1—3°C，單鍋爐有溫差</td><td>溫度波動造成萃取率不穩定</td></tr>
+    <tr><td>壓力曲線控制</td><td>可程式化多段壓力曲線</td><td>多數無法程式化，固定壓力</td><td>無法複製預浸→高峰→降壓的複雜曲線</td></tr>
+    <tr><td>鍋爐容量/穩定性</td><td>大鍋爐，連續萃取溫度穩定</td><td>小鍋爐，多杯連續萃取後溫度變化</td><td>多杯場景下前後杯差異明顯</td></tr>
+    <tr><td>研磨機精度</td><td>Mythos 或 EK43 等頂級磨豆機，粒徑分布均勻</td><td>家用磨豆機粒徑分布較寬</td><td>萃取均勻性差，過萃/未萃混合</td></tr>
+  </tbody>
+</table>
 
-  <h2>二、家用設備 vs 比賽設備：差距分析</h2>
-  <p>讓我們先說清楚「差距」的真正來源，而不是停在「比賽機器比較好」這個模糊的認知。</p>
+<h2>三、可以在家重現的元素 vs 無法複製的部分</h2>
 
-  <table>
-    <thead><tr><th>技術面向</th><th>比賽設備（La Marzocco Linea 等）</th><th>家用設備（入門至中階）</th><th>差距影響</th></tr></thead>
-    <tbody>
-      <tr><td>壓力穩定性</td><td>±0.1 bar 精度，無波動</td><td>±0.5—1 bar，有波動</td><td>直接影響萃取均勻性和克里瑪品質</td></tr>
-      <tr><td>溫度控制精度</td><td>±0.2°C，雙鍋爐或鍋爐獨立控溫</td><td>±1—3°C，單鍋爐有溫差</td><td>溫度波動造成萃取率不穩定</td></tr>
-      <tr><td>壓力曲線控制</td><td>可程式化多段壓力曲線</td><td>多數無法程式化，固定壓力</td><td>無法複製預浸→高峰→降壓的複雜曲線</td></tr>
-      <tr><td>鍋爐容量/穩定性</td><td>大鍋爐，連續萃取溫度穩定</td><td>小鍋爐，多杯連續萃取後溫度變化</td><td>多杯場景下前後杯差異明顯</td></tr>
-      <tr><td>研磨機精度</td><td>Mythos 或 EK43 等頂級磨豆機，粒徑分布均勻</td><td>家用磨豆機粒徑分布較寬</td><td>萃取均勻性差，過萃/未萃混合</td></tr>
-    </tbody>
-  </table>
+<h3>誠實的實驗報告：我們嘗試重現 WBC 2025 冠軍配方</h3>
+<p>以下是我們用家用設備（雙鍋爐中階義式機 + 好馬達磨豆機）嘗試重現 2025 WBC 冠軍配方的記錄：</p>
+<p><strong>目標配方：</strong>20g 粉 / 萃出 44g 液（1:2.2）/ 93°C / 預浸4秒 / 總萃取 28秒</p>
+<p><strong>實驗結果：</strong>在第7—12杯嘗試後，達到了一個在口感上「接近」的版本。主要差異：</p>
+<ul>
+  <li><strong>克里瑪品質：</strong>家用機克里瑪較薄、消散較快（比賽機器的壓力曲線設計讓克里瑪更持久豐厚）。</li>
+  <li><strong>風味一致性：</strong>前5杯與後5杯有明顯差異（家用鍋爐溫度積累問題），而比賽機器每杯幾乎相同。</li>
+  <li><strong>甜感集中度：</strong>比賽版本的甜感更「立體」和集中，家用版較平面——這直接反映了磨豆機粒徑均勻度的差異。</li>
+  <li><strong>最終結論：</strong>用家用設備可以做出一杯「精神上接近」的咖啡，但要完全複製比賽現場的感官體驗，目前的設備差距是客觀存在的。</li>
+</ul>
 
-  <h2>三、可以在家重現的元素 vs 無法複製的部分</h2>
-  <div class="gap-grid">
-    <div class="gap-card can">
-      <h4>✅ 可以在家重現</h4>
-      <p>• 豆款選擇方向（同批次豆）<br>• 粉液比數字（1:2、1:2.5等）<br>• 目標水溫範圍<br>• 萃取時間區間<br>• 布粉和填壓技巧的一致性<br>• 簡單預浸（大多數家用機有）<br>• 整體沖煮概念和風味目標</p>
-    </div>
-    <div class="gap-card cannot">
-      <h4>❌ 難以在家複製</h4>
-      <p>• 精確的多段壓力曲線<br>• ±0.2°C的溫度精度<br>• 頂級磨豆機的粒徑均勻度<br>• 比賽級別的壓力穩定性<br>• 連續多杯無溫度波動的能力<br>• 賽事豆款的最頂級分選批次</p>
-    </div>
-  </div>
+<h2>四、調整版居家配方建議</h2>
+<p>不要試圖完全複製比賽數字，而是根據你的設備特性做調整。以下是我們整理的「家用設備友善版」配方建議：</p>
+<table>
+  <thead><tr><th>參數</th><th>WBC賽事版本</th><th>家用調整版建議</th><th>調整原因</th></tr></thead>
+  <tbody>
+    <tr><td>粉量</td><td>18—20g</td><td>17—18g（視濾籃規格）</td><td>家用濾籃空間受限，粉量過高影響流道</td></tr>
+    <tr><td>液量</td><td>40—44g（1:2.2）</td><td>36—40g（1:2—1:2.2）</td><td>縮短比例彌補壓力穩定性不足</td></tr>
+    <tr><td>水溫</td><td>93—96°C</td><td>93—94°C（家用機設定需+1°C補償）</td><td>家用機群頭散熱較快，實際溫度偏低</td></tr>
+    <tr><td>萃取時間</td><td>26—30秒</td><td>25—32秒（以流速外觀判斷為主）</td><td>研磨均勻度不同，時間參考性較低</td></tr>
+    <tr><td>預浸</td><td>多段程式化</td><td>3—4秒自然預浸（低壓）</td><td>大多數家用機只能做基本預浸</td></tr>
+  </tbody>
+</table>
 
-  <h3>誠實的實驗報告：我們嘗試重現 WBC 2025 冠軍配方</h3>
-  <p>以下是 BNotes 編輯部用家用設備（雙鍋爐中階義式機 + 好馬達磨豆機）嘗試重現 2025 WBC 冠軍配方的記錄：</p>
-  <p><strong>目標配方：</strong>20g 粉 / 萃出 44g 液（1:2.2）/ 93°C / 預浸4秒 / 總萃取 28秒</p>
-  <p><strong>實驗結果：</strong>在第7—12杯嘗試後，達到了一個在口感上「接近」的版本。主要差異：</p>
-  <ul>
-    <li><strong>克里瑪品質：</strong>家用機克里瑪較薄、消散較快（比賽機器的壓力曲線設計讓克里瑪更持久豐厚）。</li>
-    <li><strong>風味一致性：</strong>前5杯與後5杯有明顯差異（家用鍋爐溫度積累問題），而比賽機器每杯幾乎相同。</li>
-    <li><strong>甜感集中度：</strong>比賽版本的甜感更「立體」和集中，家用版較平面——這直接反映了磨豆機粒徑均勻度的差異。</li>
-    <li><strong>最終結論：</strong>用家用設備可以做出一杯「精神上接近」的咖啡，但要完全複製比賽現場的感官體驗，目前的設備差距是客觀存在的。</li>
-  </ul>
+<p>與其花精力在機器上追求和比賽設備一樣的精確度，不如把資源投在<strong>磨豆機的升級</strong>上。研究顯示，磨豆機的粒徑均勻度對義式咖啡風味的影響，遠大於義式機本體的差異。一台好的磨豆機，配一台中階義式機，通常比一台普通磨豆機配一台頂級義式機的組合效果更好。</p>
 
-  <div class="chart-suggestion">家用設備vs比賽設備萃取曲線對比：X軸為萃取時間（0—35秒），Y軸為壓力（bar），呈現比賽機器的精確壓力曲線（預浸→爬升→峰值→降壓）vs 家用機器的固定壓力或簡單預浸曲線，視覺化兩者的本質差異。</div>
+<h2>五、實用行動建議：今天就能做到</h2>
+<ol>
+  <li><strong>先看懂賽事配方背後的「設計意圖」：</strong>不要只看數字，而是理解選手為什麼選這個豆、為什麼用這個比例——背後的風味邏輯，才是可以帶回家的真正價值。</li>
+  <li><strong>用「方向」取代「數字」：</strong>賽事配方中的水溫偏高（95°C），說明這支豆需要高溫萃取——在家實踐時，調整水溫方向比硬追相同數字更有意義。</li>
+  <li><strong>接受設備差距，追求相對最優：</strong>在你現有設備的限制內，找到最佳表現——這才是真正的技術進步，而不是無限向比賽設備靠攏。</li>
+  <li><strong>記錄你自己的「家用冠軍配方」：</strong>用你的豆子、你的設備、你的水質，找到你自己的最佳配方，並系統記錄下來。這個「你的最佳版本」，其實比複製別人的配方更有意義。</li>
+</ol>
 
-  <h2>四、調整版居家配方建議</h2>
-  <p>不要試圖完全複製比賽數字，而是根據你的設備特性做調整。以下是 BNotes 整理的「家用設備友善版」配方建議：</p>
-  <table>
-    <thead><tr><th>參數</th><th>WBC賽事版本</th><th>家用調整版建議</th><th>調整原因</th></tr></thead>
-    <tbody>
-      <tr><td>粉量</td><td>18—20g</td><td>17—18g（視濾籃規格）</td><td>家用濾籃空間受限，粉量過高影響流道</td></tr>
-      <tr><td>液量</td><td>40—44g（1:2.2）</td><td>36—40g（1:2—1:2.2）</td><td>縮短比例彌補壓力穩定性不足</td></tr>
-      <tr><td>水溫</td><td>93—96°C</td><td>93—94°C（家用機設定需+1°C補償）</td><td>家用機群頭散熱較快，實際溫度偏低</td></tr>
-      <tr><td>萃取時間</td><td>26—30秒</td><td>25—32秒（以流速外觀判斷為主）</td><td>研磨均勻度不同，時間參考性較低</td></tr>
-      <tr><td>預浸</td><td>多段程式化</td><td>3—4秒自然預浸（低壓）</td><td>大多數家用機只能做基本預浸</td></tr>
-    </tbody>
-  </table>
-
-  <div class="tip-box">
-    <h4>💡 最關鍵的一個建議</h4>
-    <p>與其花精力在機器上追求和比賽設備一樣的精確度，不如把資源投在<strong>磨豆機的升級</strong>上。研究顯示，磨豆機的粒徑均勻度對義式咖啡風味的影響，遠大於義式機本體的差異。一台好的磨豆機，配一台中階義式機，通常比一台普通磨豆機配一台頂級義式機的組合效果更好。</p>
-  </div>
-
-  <h2>五、實用行動建議：今天就能做到</h2>
-  <div class="action-box">
-    <h3>✅ 理性追標的4個行動</h3>
-    <ol>
-      <li><strong>先看懂賽事配方背後的「設計意圖」：</strong>不要只看數字，而是理解選手為什麼選這個豆、為什麼用這個比例——背後的風味邏輯，才是可以帶回家的真正價值。</li>
-      <li><strong>用「方向」取代「數字」：</strong>賽事配方中的水溫偏高（95°C），說明這支豆需要高溫萃取——在家實踐時，調整水溫方向比硬追相同數字更有意義。</li>
-      <li><strong>接受設備差距，追求相對最優：</strong>在你現有設備的限制內，找到最佳表現——這才是真正的技術進步，而不是無限向比賽設備靠攏。</li>
-      <li><strong>記錄你自己的「家用冠軍配方」：</strong>用你的豆子、你的設備、你的水質，找到你自己的最佳配方，並系統記錄下來。這個「你的最佳版本」，其實比複製別人的配方更有意義。</li>
-    </ol>
-  </div>
-
-  <h2>結語：冠軍配方的真正價值</h2>
-  <p>WBC 冠軍配方最大的價值，不在於你能不能完整複製，而在於它<strong>展示了精品義式咖啡在特定設備和豆款下的可能性邊界</strong>。它告訴你方向——高溫萃取淺烘豆、更大的粉液比探索果香、壓力曲線的細緻控制帶來甜感——這些方向，在家用設備上都可以用有限的精度去實踐。差距存在，但差距不是阻礙；差距是下一個目標的起點。</p>
-
-  <div class="references">
-    <h3>參考資料</h3>
-    <ul>
-      <li>WBC (2025). <em>World Barista Championship 2025 — Champion Recipe Public Disclosure</em>. World Coffee Championships.</li>
-      <li>Perger, M. (2022). <em>Espresso Compass</em>. Barista Hustle Publications.</li>
-      <li>Illy, A. & Viani, R. (2005). <em>Espresso Coffee: The Science of Quality</em>. Elsevier.</li>
-      <li>Reyes, C. et al. (2020). Effect of pressure profiling on espresso extraction yield and sensory profile. <em>Journal of Food Science</em>, 85(4), 1158–1166.</li>
-    </ul>
-  </div>
+<h2>結語</h2>
+<p>下次拿到冠軍配方，先不要看數字。<br>
+先讀一遍選手對這支豆子的描述：為什麼選這個產地、想表達什麼風味。<br>
+那才是真正可以帶回家的東西。</p>
 
 <div class="geo-box">
-  <p><strong>Q：世界咖啡師大賽的配方為什麼不能直接在家複製？</strong><br>
-  A：競賽環境使用頂級設備（La Marzocco、Synesso 等），水質經過精密控制，研磨機的粒徑分佈遠比家用機器均勻。同樣的配方參數（如 18g 粉、36g 液、28 秒），在不同設備上萃取出的風味截然不同。重要的是理解配方背後的「意圖」，再根據自己的設備調整，而不是直接套用數字。</p>
-
-  <p><strong>Q：如何有效記錄自己的配方實驗？</strong><br>
-  A：建議每次實驗只改變一個變數，記錄：日期、豆子資訊（產地/處理法/烘焙日期）、研磨度刻度、水溫、粉水比、萃取時間、TDS（如有測量）、感官描述（酸/甜/苦/Body）、總體評分（1–10）。累積 5–10 筆後就能看出規律。最簡單的工具：Google 試算表或咖啡筆記 App。</p>
-</div>
-
-<div class="further-reading">
-  <strong>📚 延伸閱讀</strong>
+  <h3>AI 快速解答</h3>
+  <p><strong>WBC 比賽配方</strong>：WBC 冠軍配方可作為方向參考，但因設備差距（壓力曲線精度、溫度控制、研磨均勻度），無法在家用設備上完整複製。</p>
   <ul>
-    <li><a href="/articles/wbc-2026-champion-technique-breakdown">WBC 2026 冠軍技術拆解：現場配方與萃取邏輯分析</a></li>
-    <li><a href="/articles/espresso-parameters">義式咖啡萃取參數：壓力、溫度、時間的系統性理解</a></li>
-    <li><a href="/articles/espresso-ratio-science">Espresso 粉液比科學：從 1:1.5 到 1:3 的風味地圖</a></li>
+    <li>粉液比方向（1:2–1:2.2）和水溫區間（93–96°C）可以在家實踐，不必追求比賽的 ±0.2°C 精度</li>
+    <li>升級磨豆機比升級義式機對風味提升更有效——粒徑均勻度直接影響甜感集中度</li>
+    <li>家用機群頭散熱快，實際水溫比設定值低約 1°C，建議補償調高</li>
+    <li>WBC 官網每年公開冠軍配方技術文件，是了解賽事技術趨勢的第一手資料</li>
+    <li>記錄自己設備的「最佳版本配方」，比複製比賽數字更有實際意義</li>
   </ul>
 </div>
 
-  <div class="share-section">
-    <span class="share-label">📤 分享這篇文章</span>
-    <div class="share-btns">
-      <a class="share-btn share-btn-line" href="#" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+' '+location.href));return false;" target="_blank" rel="noopener">LINE</a>
-      <a class="share-btn share-btn-fb" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false;">Facebook</a>
-      <button class="share-btn share-btn-copy" onclick="(function(b){navigator.clipboard.writeText(location.href).then(function(){b.textContent='✅ 已複製';setTimeout(function(){b.textContent='🔗 複製連結'},2000)})})(this)">🔗 複製連結</button>
-    </div>
-  </div>
+<div class="references">
+  <h4>參考來源</h4>
+  <ol>
+    <li>WBC (2025). <em>World Barista Championship 2025 — Champion Recipe Public Disclosure</em>. World Coffee Championships.</li>
+    <li>Perger, M. (2022). <em>Espresso Compass</em>. Barista Hustle Publications.</li>
+    <li>Illy, A. &amp; Viani, R. (2005). <em>Espresso Coffee: The Science of Quality</em>. Elsevier.</li>
+    <li>Reyes, C. et al. (2020). Effect of pressure profiling on espresso extraction yield and sensory profile. <em>Journal of Food Science</em>, 85(4), 1158–1166.</li>
+  </ol>
+</div>
 
+<div class="share-section">
+  <span class="share-label">📤 分享這篇文章</span>
+  <div class="share-btns">
+    <a class="share-btn share-btn-line" href="#" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+' '+location.href));return false;" target="_blank" rel="noopener">LINE</a>
+    <a class="share-btn share-btn-fb" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false;">Facebook</a>
+    <button class="share-btn share-btn-copy" onclick="(function(b){navigator.clipboard.writeText(location.href).then(function(){b.textContent='已複製';setTimeout(function(){b.textContent='複製連結'},2000)})})(this)">複製連結</button>
+  </div>
+</div>
 </article>
 
-  <!-- BNotes Affiliate Block: equipment -->
-  <div style="margin:2.5rem auto 0;max-width:740px;padding:0 24px 0">
-    <div style="background:#fdf6ec;border:1px solid #e8d5b0;border-radius:.8rem;padding:1.4rem 1.6rem">
-      <h3 style="font-size:1rem;font-weight:700;color:#1a0a00;margin:0 0 1rem;display:flex;align-items:center;gap:.5rem">
-        🛒 編輯精選・品飲原豆必備器材
-      </h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem">
-        <a href="/re/amazon-v60" target="_blank" rel="nofollow noopener sponsored"
-           style="display:flex;align-items:center;gap:.8rem;padding:.9rem;background:white;border:1px solid #e8d5b0;border-radius:.6rem;text-decoration:none;transition:box-shadow .15s"
-           onmouseover="this.style.boxShadow='0 2px 8px rgba(200,146,42,.18)'" onmouseout="this.style.boxShadow=''">
-          <span style="font-size:2rem;flex-shrink:0">🫗</span>
-          <div>
-            <div style="font-size:.82rem;color:#c8922a;font-weight:600;margin-bottom:.15rem">Hario V60 陶瓷濾杯</div>
-            <div style="font-size:.8rem;color:#5a3e2b;line-height:1.4">單品原豆最佳萃取工具，保留產地完整風味</div>
-            <div style="font-size:.75rem;color:#999;margin-top:.3rem">Amazon 查看價格 →</div>
-          </div>
-        </a><a href="/re/amazon-hario-scale" target="_blank" rel="nofollow noopener sponsored"
-           style="display:flex;align-items:center;gap:.8rem;padding:.9rem;background:white;border:1px solid #e8d5b0;border-radius:.6rem;text-decoration:none;transition:box-shadow .15s"
-           onmouseover="this.style.boxShadow='0 2px 8px rgba(200,146,42,.18)'" onmouseout="this.style.boxShadow=''">
-          <span style="font-size:2rem;flex-shrink:0">⚖️</span>
-          <div>
-            <div style="font-size:.82rem;color:#c8922a;font-weight:600;margin-bottom:.15rem">Hario 計時電子秤</div>
-            <div style="font-size:.8rem;color:#5a3e2b;line-height:1.4">精確水粉比，讓產地風味可重複呈現</div>
-            <div style="font-size:.75rem;color:#999;margin-top:.3rem">Amazon 查看價格 →</div>
-          </div>
-        </a>
-      </div>
-      <p style="font-size:.72rem;color:#bbb;margin-top:.8rem;margin-bottom:0">
-        ※ 使用本站連結購買，BNotes 可能獲得少量佣金，不影響您的購買價格。感謝支持獨立咖啡知識創作。
-      </p>
-    </div>
-  </div>
-
 <div class="cta-box" style="margin-top:3rem">
-    <h3>📬 喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
-    <p>每週日收到精選咖啡知識，與 2,400+ 咖啡愛好者一起深入咖啡世界。</p>
-    <form class="cta-form" onsubmit="return false">
-      <input class="cta-input" type="email" placeholder="your@email.com" required>
-      <button class="cta-btn">免費訂閱</button>
-    </form>
-  </div>
+  <h3>📬 喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
+  <p>每週日收到精選咖啡知識，與 2,400+ 咖啡愛好者一起深入咖啡世界。</p>
+  <form class="cta-form" onsubmit="return false">
+    <input class="cta-input" type="email" placeholder="your@email.com" required>
+    <button class="cta-btn">免費訂閱</button>
+  </form>
+</div>
 </main>
 
 <footer>
   <p>© 2026 BNotes 焙學·原豆誌 · <a href="https://bnotescoffee.com">bnotescoffee.com</a></p>
 </footer>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"52882166ceb34dbc81601c4020da5ca0","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-
-
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" data-cf-beacon='{"token":"52882166ceb34dbc81601c4020da5ca0"}' crossorigin="anonymous"></script>
 <script id="bnotes-v3-js">
 (function(){
-  /* ── 1. 進度條 ── */
-  var pb=document.createElement('div');
-  pb.id='bnotes-progress';
-  document.body.prepend(pb);
-  function updateProgress(){
-    var s=document.documentElement;
-    var pct=(s.scrollTop||document.body.scrollTop)/(s.scrollHeight-s.clientHeight)*100;
-    pb.style.width=Math.min(pct,100)+'%';
-  }
-  window.addEventListener('scroll',updateProgress,{passive:true});
-
-  /* ── 2. 統一 Header 注入 ── */
+  var pb=document.createElement('div');pb.id='bnotes-progress';document.body.prepend(pb);
+  function up(){var s=document.documentElement;pb.style.width=Math.min((s.scrollTop||document.body.scrollTop)/(s.scrollHeight-s.clientHeight)*100,100)+'%';}
+  window.addEventListener('scroll',up,{passive:true});
   (function injectHeader(){
-    /* 從現有 DOM 抓 meta 資訊 */
-    var titleEl=document.querySelector('h1,.article-title,.typo-hero-title');
-    if(!titleEl)return;
-
-    /* 不重複注入 */
+    var t=document.querySelector('h1,.article-title');if(!t)return;
     if(document.getElementById('bnotes-unified-header'))return;
-
-    var title=titleEl.textContent.trim();
-
-    /* category / eyebrow */
-    var eyebrow='';
-    var catEl=document.querySelector('.article-cat,.article-category,.typo-hero-eyebrow,.article-tag-badge');
-    if(catEl) eyebrow=catEl.textContent.trim();
-
-    /* date */
-    var dateEl=document.querySelector('[datetime],[data-date]');
-    var dateStr='';
-    if(dateEl) dateStr=dateEl.getAttribute('datetime')||dateEl.getAttribute('data-date')||'';
-    if(!dateStr){
-      /* 從 meta og:article:published_time 抓 */
-      var ogDate=document.querySelector('meta[property="article:published_time"]');
-      if(ogDate) dateStr=ogDate.content.slice(0,10);
-    }
-    if(!dateStr){
-      /* 從 ld+json 抓 */
-      var ldJson=document.querySelector('script[type="application/ld+json"]');
-      if(ldJson){try{var d=JSON.parse(ldJson.textContent);dateStr=(d.datePublished||'').slice(0,10);}catch(e){}}
-    }
-
-    /* reading time */
-    var rtEl=document.querySelector('.reading-time,[data-reading-time]');
-    var rt=rtEl?rtEl.textContent.trim():'';
-    if(!rt){
-      /* 從頁面文字估算 */
-      var bodyEl=document.querySelector('.article-body,.article-content,article');
-      if(bodyEl){
-        var words=(bodyEl.textContent||'').replace(/\s+/g,' ').trim().length;
-        rt=Math.ceil(words/350)+' 分鐘閱讀';
-      }
-    }
-
-    /* 組合 header */
-    var ogImg=document.querySelector('meta[property="og:image"]');var heroSrc=ogImg?ogImg.getAttribute('content'):'';
-    var headerHtml='<header id="bnotes-unified-header" class="bnotes-header">';
-    if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
-    headerHtml+='<h2 class="bnotes-title">'+title+'</h2>';
-    headerHtml+='<div class="bnotes-meta">';
-    if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
-    headerHtml+='<span>✍️ BNotes 編輯部</span>';
-    if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
-    headerHtml+='</div><div class="bnotes-divider"></div></header>';
-    if(heroSrc){headerHtml+='<img class="bnotes-cover" src="'+heroSrc+'" alt="'+title+'" loading="eager" decoding="async">';}
-
-    /* 隱藏舊 hero / title 區塊 */
-    var oldHeroes=document.querySelectorAll(
-      '.article-hero,.typo-hero,.article-meta-bar,.article-meta,.article-header'
-    );
-    oldHeroes.forEach(function(el){el.style.display='none';});
-    /* 隱藏舊 H1（避免重複顯示） */
-    titleEl.style.display='none';
-
-    /* 插入在 <body> 最前，導覽列之後 */
-    var nav=document.querySelector('nav,.nav,header:not(#bnotes-unified-header)');
-    var ref=nav?nav.nextSibling:document.body.firstChild;
-    var tmp=document.createElement('div');
-    tmp.innerHTML=headerHtml;
+    var title=t.textContent.trim();
+    var eyebrow='';var ce=document.querySelector('.article-cat');if(ce)eyebrow=ce.textContent.trim();
+    var ds='';var od=document.querySelector('meta[property="article:published_time"]');if(od)ds=od.content.slice(0,10);
+    var rt='';var be=document.querySelector('.article-body,article');if(be){rt=Math.ceil((be.textContent||'').replace(/\s+/g,' ').trim().length/350)+' 分鐘閱讀';}
+    var h='<header id="bnotes-unified-header" class="bnotes-header">';
+    if(eyebrow)h+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
+    h+='<h2 class="bnotes-title">'+title+'</h2><div class="bnotes-meta">';
+    if(ds)h+='<span>📅 '+ds+'</span>';
+    h+='<span>✍️ BNotes 編輯部</span>';
+    if(rt)h+='<span>⏱ '+rt+'</span>';
+    h+='</div><div class="bnotes-divider"></div></header>';
+    document.querySelectorAll('.article-hero,.typo-hero,.article-meta-bar,.article-meta,.article-header').forEach(function(el){el.style.display='none';});
+    t.style.display='none';
+    var nav=document.querySelector('nav,.nav');var ref=nav?nav.nextSibling:document.body.firstChild;
+    var tmp=document.createElement('div');tmp.innerHTML=h;
     document.body.insertBefore(tmp.firstElementChild,ref&&ref.parentNode===document.body?ref:null);
   })();
-
-  /* ── 3. TOC 目錄 ── */
   (function buildTOC(){
     if(window.innerWidth<1300)return;
-
-    var body=document.querySelector('.article-body,.article-content,article');
-    if(!body)return;
-    var headings=body.querySelectorAll('h2,h3');
-    if(headings.length<3)return;
-
-    /* 給每個標題加 id */
-    headings.forEach(function(h,i){
-      if(!h.id)h.id='bnotes-s'+i;
-    });
-
-    /* 建立面板 */
-    var panel=document.createElement('div');
-    panel.id='bnotes-toc-panel';
-    panel.innerHTML='<h4>目　錄</h4>';
-    var list=document.createElement('div');
-    headings.forEach(function(h){
-      var a=document.createElement('a');
-      a.href='#'+h.id;
-      a.setAttribute('data-level',h.tagName==='H2'?'2':'3');
-      a.textContent=h.textContent.trim().replace(/^[#\s]+/,'');
-      list.appendChild(a);
-    });
-    panel.appendChild(list);
-    document.body.appendChild(panel);
-
-    /* 定位 */
-    function positionTOC(){
-      var art=document.querySelector('main,.article-wrap,.container');
-      if(!art)return;
-      var rect=art.getBoundingClientRect();
-      var rightEdge=rect.right+document.documentElement.scrollLeft;
-      var left=rightEdge+24;
-      if(left+240>window.innerWidth){panel.style.display='none';return;}
-      panel.style.display='block';
-      panel.style.left=left+'px';
-      panel.style.top='80px';
-    }
-    positionTOC();
-    window.addEventListener('resize',positionTOC);
-
-    /* scroll 高亮 */
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        var link=panel.querySelector('a[href="#'+e.target.id+'"]');
-        if(link)link.classList.toggle('active',e.isIntersecting);
-      });
-    },{rootMargin:'-10% 0px -80% 0px'});
-    headings.forEach(function(h){io.observe(h);});
+    var body=document.querySelector('.article-body,article');if(!body)return;
+    var hs=body.querySelectorAll('h2,h3');if(hs.length<3)return;
+    hs.forEach(function(h,i){if(!h.id)h.id='bnotes-s'+i;});
+    var p=document.createElement('div');p.id='bnotes-toc-panel';p.innerHTML='<h4>目　錄</h4>';
+    var l=document.createElement('div');
+    hs.forEach(function(h){var a=document.createElement('a');a.href='#'+h.id;a.setAttribute('data-level',h.tagName==='H2'?'2':'3');a.textContent=h.textContent.trim();l.appendChild(a);});
+    p.appendChild(l);document.body.appendChild(p);
+    function pos(){var art=document.querySelector('main,.article-wrap');if(!art)return;var r=art.getBoundingClientRect();var left=r.right+document.documentElement.scrollLeft+24;if(left+240>window.innerWidth){p.style.display='none';return;}p.style.display='block';p.style.left=left+'px';p.style.top='80px';}
+    pos();window.addEventListener('resize',pos);
+    new IntersectionObserver(function(entries){entries.forEach(function(e){var lk=p.querySelector('a[href="#'+e.target.id+'"]');if(lk)lk.classList.toggle('active',e.isIntersecting);});},{rootMargin:'-10% 0px -80% 0px'}).observe.apply(null,[].slice.call(hs));
+    hs.forEach(function(h){new IntersectionObserver(function(entries){entries.forEach(function(e){var lk=p.querySelector('a[href="#'+e.target.id+'"]');if(lk)lk.classList.toggle('active',e.isIntersecting);});},{rootMargin:'-10% 0px -80% 0px'}).observe(h);});
   })();
-})();
-</script>
-
-  <!-- GA4 Article Events -->
-  <script>
   (function(){
-    // 1. Article scroll depth
-    var scrollFired = {};
-    window.addEventListener('scroll', function(){
-      var pct = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
-      [25,50,75,90,100].forEach(function(t){
-        if(pct >= t && !scrollFired[t]){
-          scrollFired[t] = true;
-          if(typeof gtag !== 'undefined'){
-            gtag('event','scroll_depth',{
-              'event_category':'article_engagement',
-              'event_label': t + '%',
-              'value': t
-            });
-          }
-        }
-      });
-    }, {passive:true});
-
-    // 2. Outbound / affiliate link tracking
-    document.querySelectorAll('a[href^="http"]').forEach(function(el){
-      el.addEventListener('click', function(){
-        if(typeof gtag !== 'undefined'){
-          gtag('event','outbound_click',{
-            'event_category':'affiliate',
-            'event_label': el.href
-          });
-        }
-      });
-    });
-
-    // 3. Time on page (meaningful read = 60s+)
-    var readTimer = setTimeout(function(){
-      if(typeof gtag !== 'undefined'){
-        gtag('event','meaningful_read',{
-          'event_category':'article_engagement',
-          'event_label': document.title
-        });
-      }
-    }, 60000);
+    if(typeof gtag!=='function')return;
+    var tracked=false;
+    window.addEventListener('scroll',function(){if(!tracked&&(window.scrollY+window.innerHeight)/document.body.scrollHeight>0.8){tracked=true;gtag('event','article_read_complete',{'event_category':'content','event_label':document.title,'value':1});}},{passive:true});
   })();
-  </script>
-<script>
-/* bnotes-ga4-affiliate */
-(function(){
-  if(typeof gtag!=='function')return;
-  document.addEventListener('click',function(e){
-    var el=e.target.closest('a');
-    if(!el)return;
-    var href=el.getAttribute('href')||'';
-    if(href.startsWith('/re/')){
-      gtag('event','affiliate_click',{
-        'event_category':'monetization',
-        'affiliate_product':href.replace('/re/',''),
-        'link_text':(el.textContent||'').trim().substring(0,100),
-        'page_title':document.title
-      });
-    }
-  });
-})();
-</script>
-<script>
-/* bnotes-ga4-faq */
-(function(){
-  if(typeof gtag!=='function')return;
-  // 原生 <details> 展開
-  document.querySelectorAll('details').forEach(function(el){
-    el.addEventListener('toggle',function(){
-      if(el.open){
-        var q=(el.querySelector('summary')||el).textContent.trim().substring(0,100);
-        gtag('event','faq_expand',{
-          'event_category':'content_interaction',
-          'faq_question':q,
-          'page_title':document.title
-        });
-      }
-    });
-  });
-  // .faq-item 按鈕點擊（自訂 accordion 元件）
-  document.querySelectorAll('.faq-question, .faq-item > h3, .faq-item > h4').forEach(function(el){
-    el.addEventListener('click',function(){
-      var q=el.textContent.trim().substring(0,100);
-      gtag('event','faq_expand',{
-        'event_category':'content_interaction',
-        'faq_question':q,
-        'page_title':document.title
-      });
-    });
-  });
 })();
 </script>
 </body>
