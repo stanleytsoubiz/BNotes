@@ -1,7 +1,8 @@
 ---
 title: "義式咖啡比例科學：Espresso 粉液比 1:2 的根據與何時該打破它"
 date: "2026-04-20"
-status: review
+status: published
+published_at: 2026-05-07
 category: culture
 description: "義式咖啡的1:2粉液比（18g粉萃出36g液）被奉為黃金標準，但世界頂尖咖啡師正在挑戰這個數字。了解背後的科學，�...。深度探索精品咖啡知識，從科學原理到實踐技巧，完整呈現咖啡世界。"
 cover_image: "https://bnotescoffee.com/images/ai/espresso-ratio-science-hero.jpg"
@@ -441,7 +442,7 @@ footer a{color:var(--coffee-light)}
 <main class="article-wrap">
 
 <article class="article-body">
-
+    
 <div class="article-header">
     <h2>義式咖啡比例科學：Espresso 粉液比 1:2 的根據，以及何時應該打破它</h2>
     <div class="article-meta"><span>✍ BNotes 編輯部</span><span>⏱ 閱讀約13分鐘</span></div>
@@ -641,33 +642,48 @@ footer a{color:var(--coffee-light)}
 
   /* ── 2. 統一 Header 注入 ── */
   (function injectHeader(){
+    /* 從現有 DOM 抓 meta 資訊 */
     var titleEl=document.querySelector('h1,.article-title,.typo-hero-title');
     if(!titleEl)return;
+
+    /* 不重複注入 */
     if(document.getElementById('bnotes-unified-header'))return;
+
     var title=titleEl.textContent.trim();
+
+    /* category / eyebrow */
     var eyebrow='';
     var catEl=document.querySelector('.article-cat,.typo-hero-eyebrow,.article-tag-badge');
     if(catEl) eyebrow=catEl.textContent.trim();
+
+    /* date */
     var dateEl=document.querySelector('[datetime],[data-date]');
     var dateStr='';
     if(dateEl) dateStr=dateEl.getAttribute('datetime')||dateEl.getAttribute('data-date')||'';
     if(!dateStr){
+      /* 從 meta og:article:published_time 抓 */
       var ogDate=document.querySelector('meta[property="article:published_time"]');
       if(ogDate) dateStr=ogDate.content.slice(0,10);
     }
     if(!dateStr){
+      /* 從 ld+json 抓 */
       var ldJson=document.querySelector('script[type="application/ld+json"]');
       if(ldJson){try{var d=JSON.parse(ldJson.textContent);dateStr=(d.datePublished||'').slice(0,10);}catch(e){}}
     }
+
+    /* reading time */
     var rtEl=document.querySelector('.reading-time,[data-reading-time]');
     var rt=rtEl?rtEl.textContent.trim():'';
     if(!rt){
+      /* 從頁面文字估算 */
       var bodyEl=document.querySelector('.article-body,.article-content,article');
       if(bodyEl){
         var words=(bodyEl.textContent||'').replace(/\s+/g,' ').trim().length;
         rt=Math.ceil(words/350)+' 分鐘閱讀';
       }
     }
+
+    /* 組合 header */
     var headerHtml='<header id="bnotes-unified-header" class="bnotes-header">';
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
     headerHtml+='<h2 class="bnotes-title">'+title+'</h2>';
@@ -676,9 +692,16 @@ footer a{color:var(--coffee-light)}
     headerHtml+='<span>✍️ BNotes 編輯部</span>';
     if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
     headerHtml+='</div><div class="bnotes-divider"></div></header>';
-    var oldHeroes=document.querySelectorAll('.article-hero,.typo-hero,.article-meta-bar,.article-meta,.article-header');
+
+    /* 隱藏舊 hero / title 區塊 */
+    var oldHeroes=document.querySelectorAll(
+      '.article-hero,.typo-hero,.article-meta-bar,.article-meta,.article-header'
+    );
     oldHeroes.forEach(function(el){el.style.display='none';});
+    /* 隱藏舊 H1（避免重複顯示） */
     titleEl.style.display='none';
+
+    /* 插入在 <body> 最前，導覽列之後 */
     var nav=document.querySelector('nav,.nav,header:not(#bnotes-unified-header)');
     var ref=nav?nav.nextSibling:document.body.firstChild;
     var tmp=document.createElement('div');
@@ -689,11 +712,18 @@ footer a{color:var(--coffee-light)}
   /* ── 3. TOC 目錄 ── */
   (function buildTOC(){
     if(window.innerWidth<1300)return;
+
     var body=document.querySelector('.article-body,.article-content,article');
     if(!body)return;
     var headings=body.querySelectorAll('h2,h3');
     if(headings.length<3)return;
-    headings.forEach(function(h,i){if(!h.id)h.id='bnotes-s'+i;});
+
+    /* 給每個標題加 id */
+    headings.forEach(function(h,i){
+      if(!h.id)h.id='bnotes-s'+i;
+    });
+
+    /* 建立面板 */
     var panel=document.createElement('div');
     panel.id='bnotes-toc-panel';
     panel.innerHTML='<h4>目　錄</h4>';
@@ -707,6 +737,8 @@ footer a{color:var(--coffee-light)}
     });
     panel.appendChild(list);
     document.body.appendChild(panel);
+
+    /* 定位 */
     function positionTOC(){
       var art=document.querySelector('main,.article-wrap,.container');
       if(!art)return;
@@ -720,6 +752,8 @@ footer a{color:var(--coffee-light)}
     }
     positionTOC();
     window.addEventListener('resize',positionTOC);
+
+    /* scroll 高亮 */
     var io=new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         var link=panel.querySelector('a[href="#'+e.target.id+'"]');
@@ -753,18 +787,28 @@ footer a{color:var(--coffee-light)}
 /* bnotes-ga4-faq */
 (function(){
   if(typeof gtag!=='function')return;
+  // 原生 <details> 展開
   document.querySelectorAll('details').forEach(function(el){
     el.addEventListener('toggle',function(){
       if(el.open){
         var q=(el.querySelector('summary')||el).textContent.trim().substring(0,100);
-        gtag('event','faq_expand',{'event_category':'content_interaction','faq_question':q,'page_title':document.title});
+        gtag('event','faq_expand',{
+          'event_category':'content_interaction',
+          'faq_question':q,
+          'page_title':document.title
+        });
       }
     });
   });
+  // .faq-item 按鈕點擊（自訂 accordion 元件）
   document.querySelectorAll('.faq-question, .faq-item > h3, .faq-item > h4').forEach(function(el){
     el.addEventListener('click',function(){
       var q=el.textContent.trim().substring(0,100);
-      gtag('event','faq_expand',{'event_category':'content_interaction','faq_question':q,'page_title':document.title});
+      gtag('event','faq_expand',{
+        'event_category':'content_interaction',
+        'faq_question':q,
+        'page_title':document.title
+      });
     });
   });
 })();
