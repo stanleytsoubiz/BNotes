@@ -24,9 +24,18 @@ export async function onRequestGet(context) {
   if ([...links].some(l => patterns.some(p => p.test(l.href))) && !article.querySelector('.affiliate-disclosure')) {
     const div = document.createElement('div');
     div.className = 'affiliate-disclosure';
-    div.style.cssText = 'font-size:.82rem;color:#7a6050;background:#faf8f4;padding:1.25rem;border-radius:.75rem;margin-bottom:2.5rem;border-left:4px solid #c8922a;line-height:1.6;box-shadow:0 2px 8px rgba(0,0,0,0.04);';
-    div.innerHTML = '<strong>☕ 利益揭露：</strong>本篇文章包含聯盟行銷連結。若您透過連結購買，我們可能會獲得小額佣金，這有助於維持 BNotes 的優質內容營運，且不會增加您的購買成本。感謝您的支持！';
-    article.prepend(div);
+    div.style.cssText = 'font-size:.74rem;color:oklch(55% .02 30);font-style:italic;margin:2em auto .5em;padding:0 24px;line-height:1.55;text-align:left;max-width:740px;';
+    div.innerHTML = '※ 本文含聯盟連結。透過連結購買，BNotes 可能獲得佣金，這不會增加您的成本，且支持我們持續產製獨立內容。';
+    // 移至文末：references 之後、share 之前
+    const refs = article.querySelector('.references');
+    const share = article.querySelector('.share-section');
+    if (refs && refs.parentNode) {
+      refs.parentNode.insertBefore(div, refs.nextSibling);
+    } else if (share && share.parentNode) {
+      share.parentNode.insertBefore(div, share);
+    } else {
+      article.appendChild(div);
+    }
   }
 })();
 </script>
