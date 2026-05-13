@@ -37,6 +37,8 @@ gm_approved_at: 2026-05-10T20:00:00+08:00
   --font-serif:'Noto Serif TC',Georgia,serif;
   --font-sans:'Noto Sans TC',-apple-system,sans-serif;
   --radius:.75rem;
+  /* index.html 對齊別名 */
+  --serif:var(--font-serif);--sans:var(--font-sans);--dark:var(--coffee-dark);
 }
 body{font-family:var(--font-sans);background:var(--bg);color:var(--fg);line-height:1.8}
 a{color:inherit;text-decoration:none}
@@ -44,7 +46,9 @@ img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
 .nav-brand{display:flex;align-items:center;gap:.75rem}
-.nav-logo{font-size:1.5rem}
+.nav-logo{font-family:var(--serif);font-size:1.15rem;font-weight:900;color:var(--dark);letter-spacing:.02em}
+.nav-logo b{color:var(--gold)}
+.nav-sub{font-family:var(--sans);font-size:.65rem;color:var(--muted-fg);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
 .nav-name{font-family:var(--font-serif);font-weight:700;font-size:1rem;color:var(--coffee-dark);line-height:1.2}
 .nav-en{font-size:.6rem;letter-spacing:.3em;color:var(--coffee-mid)}
 .nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
@@ -369,6 +373,38 @@ footer a{color:var(--coffee-light)}
   .related-grid { grid-template-columns: 1fr }
   .breadcrumb { padding: 0 16px }
 }
+
+/* 12. References */
+.references{font-size:.82rem;line-height:1.55;color:oklch(45% .02 30);margin-top:2.5em;padding-top:1em;border-top:1px dashed oklch(85% .01 30)}
+.references h3{font-size:.9rem;color:oklch(40% .02 30);margin-bottom:.6em}
+.references ul{padding-left:1.2em;margin:0}
+.references li{margin-bottom:.35em}
+.references em{color:oklch(35% .02 30)}
+
+/* 13. Share buttons */
+.share-section{max-width:740px;margin:2.5em auto 0;padding:1.5em 24px 0;border-top:1px solid oklch(90% .01 30);display:flex;align-items:center;gap:.75em;flex-wrap:wrap}
+.share-label{font-size:.85rem;color:oklch(45% .02 30);font-weight:600;margin-right:.5em}
+.share-btns{display:flex;gap:.5em;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;text-decoration:none}
+.share-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.share-btn svg{width:18px;height:18px}
+.share-btn-line{background:#00C300}
+.share-btn-fb{background:#1877F2}
+.share-btn-threads{background:#000}
+.share-btn-x{background:#000}
+.share-btn-copy{background:#8b4513}
+
+/* 14. Flavor meter */
+.flavor-meter{margin:1.8em 0}
+.flavor-meter table{width:100%;border-collapse:collapse;font-size:.92rem}
+.flavor-meter th{background:oklch(95% .03 45);color:oklch(28% .04 30);padding:.7em .9em;text-align:left;font-weight:700}
+.flavor-meter td{padding:.65em .9em;border-bottom:1px solid oklch(92% .01 30)}
+.flavor-meter td:first-child{font-weight:600;color:oklch(30% .03 35);width:25%}
+.meter-bar{display:inline-flex;gap:3px;align-items:center}
+.meter-dot{display:inline-block;width:11px;height:11px;border-radius:50%;background:oklch(90% .02 45)}
+.meter-dot.filled-a{background:#8b4513}
+.meter-dot.filled-r{background:#c8922a}
+.flavor-meter caption{caption-side:bottom;font-size:.78rem;color:oklch(55% .02 30);margin-top:.6em;text-align:left}
 </style>
 </head>
 <body>
@@ -418,6 +454,17 @@ footer a{color:var(--coffee-light)}
   </div>
   <p>從遺傳學的視角看，<span class="term">阿拉比卡 (Arabica, Coffea arabica)</span> 實際上是<span class="term">羅布斯塔 (Robusta, Coffea canephora)</span> 的「後代」——一個在自然界偶發的雜交事件，讓這個物種攜帶了前者的全部基因。咖啡因含量、風味複雜度、海拔適應性、全球暖化下的韌性……這兩個豆種的對比，遠比市場話術複雜得多。</p>
 
+  <div class="key-box" style="background:linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));border:1px solid oklch(88% .05 45);border-left:4px solid #c8922a;border-radius:.75rem;padding:1.2em 1.4em;margin:1.8em 0;">
+  <strong style="display:block;margin-bottom:.7em;color:#1a0a00;font-size:.95rem;letter-spacing:.05em;">讀完這篇，你會知道</strong>
+  <ul style="margin:0;padding-left:1.4em;color:oklch(28% .03 30);font-size:.95rem;line-height:1.7;">
+    <li>Arabica 不是「純血」——它的基因有一半來自 Robusta</li>
+    <li>SCA 87 分的精品 Arabica 在分子層面藏著哪些秘密</li>
+    <li>為什麼義式 Espresso 反而需要 Robusta 才完整</li>
+    <li>氣候變遷下，Arabica 與 Robusta 的未來消長</li>
+    <li>身為台灣消費者，你的下一杯應該怎麼選</li>
+  </ul>
+  </div>
+
   <h2>一、遺傳學揭秘：Arabica 是 Robusta 的「親戚」</h2>
   <p>先從一個讓很多咖啡愛好者驚訝的事實說起：從植物遺傳學的角度，<span class="term">阿拉比卡</span>（<em>Coffea arabica</em>，2n=4x=44，四倍體）實際上是<span class="term">羅布斯塔</span>（<em>Coffea canephora</em>，2n=2x=22，二倍體）與另一個二倍體物種<span class="term">尤金尼奧伊德斯 (Coffea eugenioides)</span>的天然雜交後代。這個雜交事件估計發生在1萬至20萬年前的非洲，在衣索比亞的高地森林中（Cenci et al., 2012；Davis et al., 2019）。</p>
   <p>這個遺傳背景意味著什麼？Arabica 是一個<span class="term">同源四倍體 (Allotetraploid)</span>，它的基因組比 Robusta 大一倍，但<strong>遺傳多樣性反而更低</strong>——因為所有 Arabica 都源自那一個罕見的雜交事件，基因瓶頸非常明顯。這也解釋了為什麼 Arabica 對病蟲害（如<span class="term">咖啡葉鏽病 Coffee Leaf Rust</span>）和氣候變化更脆弱。Krishnan（2017）在 Oxford Research Encyclopedia 的系統性綜述中指出，Arabica 的這個基因瓶頸效應，是導致它在農業上比 Robusta 更難栽培的根本原因之一。</p>
@@ -457,30 +504,22 @@ footer a{color:var(--coffee-light)}
   </table>
 
   <h2>三、風味輪對比：兩個豆種的感官地圖</h2>
-  <div class="compare-grid">
-    <div class="compare-card arabica">
-      <h4>🌱 Arabica 的風味特徵</h4>
-      <ul>
-        <li><strong>酸質：</strong>明亮、清晰的果酸（檸檬酸、蘋果酸）——喝進去的瞬間，舌尖兩側微微收縮的那種清爽</li>
-        <li><strong>甜感：</strong>自然甜、焦糖感明顯，餘韻像含了一顆薄荷糖後的涼甜</li>
-        <li><strong>香氣：</strong>花香、果香、柑橘、莓果——開蓋瞬間從杯口升起的那縷氣息，讓你先聞到春天再喝到咖啡</li>
-        <li><strong>Body：</strong>輕至中等，飲後清爽</li>
-        <li><strong>後韻：</strong>複雜、多層次、持久</li>
-        <li><strong>典型產區：</strong>衣索比亞、巴拿馬、哥倫比亞</li>
-      </ul>
-    </div>
-    <div class="compare-card robusta">
-      <h4>🏔 Robusta 的風味特徵</h4>
-      <ul>
-        <li><strong>酸質：</strong>低酸，偏平淡</li>
-        <li><strong>苦味：</strong>強烈、直接、持續——不是尖刺感，而是一股沉甸甸的苦落在舌根，像黑巧克力85%的那種滯留</li>
-        <li><strong>香氣：</strong>木質、泥土、黑巧克力——更接近大地氣息，是靠近烘豆機出豆口時那種炭烤木質的煙燻感</li>
-        <li><strong>Body：</strong>厚實、濃郁、飽滿，舌面有明顯的重量感</li>
-        <li><strong>後韻：</strong>餘韻苦長，奶油感</li>
-        <li><strong>典型產區：</strong>越南、印尼、剛果</li>
-      </ul>
-    </div>
-  </div>
+  <div class="flavor-meter">
+<table>
+<caption>實心 = 強度；空心 = 弱度。Arabica 深棕色，Robusta 金色。</caption>
+<thead><tr><th>感官維度</th><th>Arabica</th><th>Robusta</th></tr></thead>
+<tbody>
+<tr><td>酸質明亮度</td><td><span class="meter-bar"><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span><span class="meter-dot"></span></span></td><td><span class="meter-bar"><span class="meter-dot filled-r"></span><span class="meter-dot"></span><span class="meter-dot"></span><span class="meter-dot"></span><span class="meter-dot"></span></span></td></tr>
+<tr><td>苦感濃度</td><td><span class="meter-bar"><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span><span class="meter-dot"></span><span class="meter-dot"></span><span class="meter-dot"></span></span></td><td><span class="meter-bar"><span class="meter-dot filled-r"></span><span class="meter-dot filled-r"></span><span class="meter-dot filled-r"></span><span class="meter-dot filled-r"></span><span class="meter-dot filled-r"></span></span></td></tr>
+<tr><td>甜感層次</td><td><span class="meter-bar"><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span><span class="meter-dot"></span></span></td><td><span class="meter-bar"><span class="meter-dot filled-r"></span><span class="meter-dot filled-r"></span><span class="meter-dot"></span><span class="meter-dot"></span><span class="meter-dot"></span></span></td></tr>
+<tr><td>香氣複雜度</td><td><span class="meter-bar"><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span></span></td><td><span class="meter-bar"><span class="meter-dot filled-r"></span><span class="meter-dot filled-r"></span><span class="meter-dot"></span><span class="meter-dot"></span><span class="meter-dot"></span></span></td></tr>
+<tr><td>口腔重量感</td><td><span class="meter-bar"><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span><span class="meter-dot"></span><span class="meter-dot"></span></span></td><td><span class="meter-bar"><span class="meter-dot filled-r"></span><span class="meter-dot filled-r"></span><span class="meter-dot filled-r"></span><span class="meter-dot filled-r"></span><span class="meter-dot"></span></span></td></tr>
+<tr><td>餘韻長度</td><td><span class="meter-bar"><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span><span class="meter-dot filled-a"></span><span class="meter-dot"></span></span></td><td><span class="meter-bar"><span class="meter-dot filled-r"></span><span class="meter-dot filled-r"></span><span class="meter-dot"></span><span class="meter-dot"></span><span class="meter-dot"></span></span></td></tr>
+</tbody>
+</table>
+</div>
+
+  <p>Arabica 的酸質在舌尖兩側微微收縮，像檸檬酸與蘋果酸的清爽；香氣開蓋瞬間就從杯口升起，讓你先聞到春天再喝到咖啡。Robusta 是另一種語言——入口是一股沉甸甸的苦落在舌根，像黑巧克力85%的那種滯留，靠近烘豆機出豆口時那種炭烤木質的煙燻底韻，舌面有明顯的重量感。典型 Arabica 產區：衣索比亞、巴拿馬、哥倫比亞；典型 Robusta 產區：越南、印尼、剛果。</p>
 
   <div class="chart-suggestion">SCA 風味輪對比雙環圖：內環顯示 Arabica 常見風味詞彙（花香、柑橘、莓果、焦糖），外環顯示 Robusta 風味詞彙（黑巧克力、木質、苦味、土壤），使用不同色系區分，視覺化兩者風味領域的重疊與差異。</div>
 
@@ -528,11 +567,9 @@ footer a{color:var(--coffee-light)}
   <p>Arabica 對 Robusta 的競爭，從來不是非黑即白的。好的 Arabica 能展現令人屏息的風味層次；而精心種植、處理的優質 Robusta 也能帶來其他豆種無法複製的醇厚與力量。我在那不勒斯咖啡店的那一口 Robusta 配方 Espresso，到現在還記得——不是因為它「好不好」，而是因為它真實。它就是它想成為的東西，不需要精品咖啡的身份認證。</p>
   <p>這週，去一間你常去的咖啡館，點一杯義式濃縮。在杯子放到桌上的那一秒，先不要喝——低下頭，讓那縷薄薄的蒸氣進入你的鼻腔，試著辨識：是花香與果酸，還是巧克力與木質？你的答案，就是你那杯咖啡的豆種密碼。那個密碼不是好壞之分，是風格之分——而風格，從來都是個人的事。</p>
   <p>下次你喝那杯 SCA 87 分的精品 Arabica，記住這件事：它的基因裡，有一半來自 Robusta。</p>
-  <blockquote>想親自驗證？試試一支單品 Arabica 配一支義式拼配（含 Robusta），盲飲，把答案留在你的味覺記憶裡。</blockquote>
-
   <div class="key-box" style="background:linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));border:1px solid oklch(88% .05 45);border-left:4px solid #c8922a;border-radius:.75rem;padding:1.2em 1.4em;margin:1.8em 0;">
-    <strong style="display:block;margin-bottom:.7em;color:#1a0a00;">想親自驗證這個論點？</strong>
-    <p style="margin-bottom:.75em;">試試這個對比實驗：以相同的<a href="/re/hario-v60-dripper" class="affiliate-link" data-product="hario-v60-dripper">手沖器具</a>沖煮一支衣索比亞水洗 Arabica 和一支越南高地精品 Robusta，水溫 90°C、粉水比 1:15、中研磨，盲飲評分，把答案留在你的味覺記憶裡。你對「好咖啡」的定義，可能從此不一樣。</p>
+  <strong style="display:block;margin-bottom:.7em;color:#1a0a00;">把答案留在你的味覺記憶裡</strong>
+  <p style="margin-bottom:.75em;">想親自驗證這個論點？試試這個對比實驗：以相同的<a href="/re/hario-v60-dripper" class="affiliate-link" data-product="hario-v60-dripper">手沖器具</a>沖煮一支衣索比亞水洗 Arabica 和一支越南高地精品 Robusta，水溫 90°C、粉水比 1:15、中研磨，盲飲評分。你對「好咖啡」的定義，可能從此不一樣。</p>
   </div>
 
   <div class="references">
@@ -552,12 +589,24 @@ footer a{color:var(--coffee-light)}
   </div>
 
   <div class="share-section">
-    <span class="share-label">📤 分享這篇文章</span>
-    <div class="share-btns">
-      <a class="share-btn share-btn-line" href="#" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+' '+location.href));return false;" target="_blank" rel="noopener">LINE</a>
-      <a class="share-btn share-btn-fb" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false;">Facebook</a>
-      <button class="share-btn share-btn-copy" onclick="(function(b){navigator.clipboard.writeText(location.href).then(function(){b.textContent='✅ 已複製';setTimeout(function(){b.textContent='🔗 複製連結'},2000)})})(this)">🔗 複製連結</button>
-    </div>
+  <span class="share-label">分享這篇</span>
+  <div class="share-btns">
+    <a class="share-btn share-btn-line" href="#" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+' '+location.href));return false;" aria-label="分享至 LINE" title="LINE">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    </a>
+    <a class="share-btn share-btn-fb" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false;" aria-label="分享至 Facebook" title="Facebook">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    <a class="share-btn share-btn-threads" href="#" onclick="window.open('https://threads.net/intent/post?text='+encodeURIComponent(document.title+' '+location.href),'_blank');return false;" aria-label="分享至 Threads" title="Threads">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.78 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.143 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg>
+    </a>
+    <a class="share-btn share-btn-x" href="#" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false;" aria-label="分享至 X" title="X (Twitter)">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <button class="share-btn share-btn-copy" onclick="(function(b){navigator.clipboard.writeText(location.href).then(function(){b.innerHTML='<svg viewBox=\'0 0 24 24\' fill=\'white\'><path d=\'M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\'/></svg>';setTimeout(function(){b.innerHTML='<svg viewBox=\'0 0 24 24\' fill=\'white\'><path d=\'M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z\'/></svg>'},2000)})})(this)" aria-label="複製連結" title="複製連結">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+    </button>
+  </div>
   </div>
   <div class="related-articles" style="margin:2rem auto 0;max-width:740px;padding:0 24px">
     <h3 style="font-size:1.05rem;font-weight:700;color:#1a0a00;margin-bottom:.9rem;border-left:4px solid #c8922a;padding-left:.75rem">📚 延伸閱讀</h3>
