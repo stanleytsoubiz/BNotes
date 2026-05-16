@@ -1,3 +1,15 @@
+---
+title: "手沖咖啡的水質科學：如何選擇最適合的沖煮用水"
+date: 2026-02-12
+status: published
+category: culture
+description: "手沖咖啡用水不是越純越好。從 TDS、硬度、鹼度到台灣家用水源，建立一套可操作的咖啡水質選擇方法。"
+cover_image: "/images/ai/water-quality-hero.jpg"
+reading_time: 3
+featured: false
+b1_reviewed_at: 2026-05-13T10:00:00+08:00
+gm_approved_at: 2026-05-13T10:30:00+08:00
+---
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -109,6 +121,54 @@ footer a{color:var(--coffee-light)}
       "position": 3,
       "name": "手沖咖啡的水質科學：如何選擇最適合的沖煮用水",
       "item": "https://bnotescoffee.com/articles/water-quality.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "手沖咖啡可以直接用自來水嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以先從過濾後的自來水開始測試，但台灣各地水質差異很大。如果有氯味、口感偏薄或香氣不清楚，建議再比較濾水、礦泉水或再礦化水。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TDS 是什麼，為什麼會影響咖啡？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TDS 是水中總溶解固體量，可粗略反映礦物質含量。礦物質太少時，咖啡可能偏薄；太多時，風味可能變鈍或厚重。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "RO 逆滲透水適合沖咖啡嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RO 水本身礦物質很低，單獨使用時常讓風味偏薄。若想使用 RO 水，較適合搭配再礦化方式。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "礦泉水一定比濾水好嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不一定。礦泉水的優點是數值較穩定，但若 TDS 或硬度太高，也可能讓咖啡口感沉重。濾水、礦泉水與配方水都需要回到風味測試。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "台灣家用手沖最簡單的水質改善方式是什麼？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "先確認水中沒有明顯氯味，再用同一支豆子比較濾水與一款中低 TDS 礦泉水。若差異明顯，再考慮 TDS 筆或配方水。"
+      }
     }
   ]
 }
@@ -264,16 +324,47 @@ footer a{color:var(--coffee-light)}
 }
 .article-body tr:nth-child(even) td { background: oklch(97% .006 30) }
 
-/* 4. Key Takeaway 卡片 */
-.key-takeaway, .key-box, .takeaway-box, [class*="key-take"] {
-  background: linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));
-  border: 1px solid oklch(88% .05 45);
-  border-left: 4px solid var(--gold,#c8922a);
-  border-radius: .75rem; padding: 1.2em 1.4em;
-  margin: 1.8em 0;
+/* 4. Article Shell Modules */
+.article-module-title{
+  display:block;
+  margin-bottom:.55em;
+  color:var(--coffee-dark,#1a0a00);
+  font-weight:700;
 }
-
-.geo-box{background:oklch(97% .01 200);border:1px solid oklch(88% .03 200);border-left:4px solid oklch(60% .12 200);border-radius:.75rem;padding:1.2em 1.5em;margin:2rem 0}
+.module-conclusion,
+.module-you-know,
+.module-quick{
+  border-radius:.75rem;
+  padding:1.2em 1.4em;
+  margin:1.8em 0;
+  color:var(--fg,oklch(20% .02 30));
+}
+.module-conclusion{
+  background:linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));
+  border:1px solid oklch(88% .05 45);
+  border-left:4px solid var(--gold,#c8922a);
+}
+.module-you-know{
+  background:oklch(98% .015 50);
+  border:1px solid oklch(90% .025 50);
+  border-left:4px solid oklch(72% .08 55);
+}
+.module-quick{
+  background:oklch(97% .012 165);
+  border:1px solid oklch(88% .03 165);
+  border-left:4px solid oklch(58% .09 165);
+}
+.module-conclusion p,
+.module-you-know p,
+.module-quick p{margin-bottom:.75rem}
+.module-conclusion p:last-child,
+.module-you-know p:last-child,
+.module-quick p:last-child{margin-bottom:0}
+.module-you-know ul,
+.module-quick ul{margin:.55rem 0 0 1.2rem}
+.module-you-know li,
+.module-quick li{margin-bottom:.45rem;line-height:1.75}
+.geo-box{background:oklch(97% .012 165);border:1px solid oklch(88% .03 165);border-left:4px solid oklch(58% .09 165);border-radius:.75rem;padding:1.2em 1.5em;margin:2rem 0}
 .geo-box p{margin-bottom:.75rem}
 .geo-box p:last-child{margin-bottom:0}
 
@@ -384,54 +475,6 @@ footer a{color:var(--coffee-light)}
   .breadcrumb { padding: 0 16px }
 }
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "手沖咖啡可以直接用自來水嗎？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "可以先從過濾後的自來水開始測試，但台灣各地水質差異很大。如果有氯味、口感偏薄或香氣不清楚，建議再比較濾水、礦泉水或再礦化水。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "TDS 是什麼，為什麼會影響咖啡？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "TDS 是水中總溶解固體量，可粗略反映礦物質含量。礦物質太少時，咖啡可能偏薄；太多時，風味可能變鈍或厚重。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "RO 逆滲透水適合沖咖啡嗎？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "RO 水本身礦物質很低，單獨使用時常讓風味偏薄。若想使用 RO 水，較適合搭配再礦化方式。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "礦泉水一定比濾水好嗎？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "不一定。礦泉水的優點是數值較穩定，但若 TDS 或硬度太高，也可能讓咖啡口感沉重。濾水、礦泉水與配方水都需要回到風味測試。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "台灣家用手沖最簡單的水質改善方式是什麼？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "先確認水中沒有明顯氯味，再用同一支豆子比較濾水與一款中低 TDS 礦泉水。若差異明顯，再考慮 TDS 筆或配方水。"
-      }
-    }
-  ]
-}
-</script>
 </head>
 <body>
 
@@ -470,17 +513,25 @@ footer a{color:var(--coffee-light)}
 
 <article class="article-body">
     
-<p>「水是最被忽視的咖啡原料」——這是咖啡業界的共識。咖啡液體組成中，水佔了 98% 以上。水中礦物質種類與濃度，會直接影響萃取效率與最終風味。本文帶你從科學角度，理解咖啡用水的判斷方法。</p>
-<div class="key-box"><strong>先講結論</strong><br>
-手沖咖啡用水不是越純越好。適合的礦物質含量、硬度與鹼度，會影響萃取效率、酸質、甜感與口感厚度；SCA 建議範圍可以作為起點，但仍需依豆子、烘焙度與在地水源調整。</div>
-<div class="key-box"><strong>讀完這篇，你會知道：</strong><br>
-• SCA 咖啡用水建議範圍：TDS 75–175 mg/L，pH 6.5–7.5<br>
-• 鎂離子（Mg²⁺）與鈣離子（Ca²⁺）如何影響酸質、香氣與口感結構<br>
-• 台灣不同地區水質差異，為什麼需要用 TDS 與實際風味一起判斷<br>
-• 自來水、濾水壺、RO 水、礦泉水與配方水各自適合什麼情境<br>
-• 為什麼氯味會干擾咖啡香氣，使用前應先過濾或靜置</div>
+<div class="module-conclusion">
+  <p><strong class="article-module-title">先講結論</strong>手沖咖啡用水不是越純越好。適合的礦物質含量、硬度與鹼度，會影響萃取效率、酸質、甜感與口感厚度；SCA 建議範圍可以作為起點，但仍需依豆子、烘焙度與在地水源調整。</p>
+</div>
+<div class="lead">
+  <p>「水是最被忽視的咖啡原料」——這是咖啡業界的共識。咖啡液體組成中，水佔了 98% 以上。水中礦物質種類與濃度，會直接影響萃取效率與最終風味。本文帶你從科學角度，理解咖啡用水的判斷方法。</p>
+</div>
+<div class="module-you-know">
+  <strong class="article-module-title">讀完這篇，你會知道</strong>
+  <ul>
+    <li>SCA 咖啡用水建議範圍：TDS 75–175 mg/L，pH 6.5–7.5</li>
+    <li>鎂離子（Mg²⁺）與鈣離子（Ca²⁺）如何影響酸質、香氣與口感結構</li>
+    <li>台灣不同地區水質差異，為什麼需要用 TDS 與實際風味一起判斷</li>
+    <li>自來水、濾水壺、RO 水、礦泉水與配方水各自適合什麼情境</li>
+    <li>為什麼氯味會干擾咖啡香氣，使用前應先過濾或靜置</li>
+  </ul>
+</div>
 
-<div class="geo-box"><h3>快速判斷：今天應該用哪種水？</h3>
+<div class="module-quick">
+  <strong class="article-module-title">快速判斷：今天應該用哪種水？</strong>
 <ul>
   <li><strong>咖啡喝起來薄、水、香氣不集中：</strong>先比較中低 TDS 礦泉水，或考慮在 RO 水中補回礦物質。</li>
   <li><strong>咖啡厚重、酸質不明亮：</strong>可能是水中礦物質或鹼度偏高，先換低 TDS 水源交叉測試。</li>
@@ -524,12 +575,14 @@ footer a{color:var(--coffee-light)}
 <h2>DIY 礦物質水調配方案</h2>
 <p>進階玩家可使用礦物質膠囊或自行調配水，讓 RO 水重新取得適合萃取的礦物質。這類方法的優點是可控，缺點是需要精準秤量與食品級材料。若自行調配，務必使用食品級原料、乾淨容器與可靠秤具；第一次測試時，建議只做小量，並與平常用水做盲測比較。</p>
 
-<div class="geo-box"><h3 style="font-size:1rem;color:#5c2d00;margin-bottom:.75rem">🔬 常見問題</h3>
-<p><strong>Q：手沖咖啡可以直接用自來水嗎？</strong><br>A：可以先從過濾後的自來水開始測試，但台灣各地水質差異很大。如果有氯味、口感偏薄或香氣不清楚，建議再比較濾水、礦泉水或再礦化水。</p>
-<p style="margin-top:.75rem"><strong>Q：TDS 是什麼，為什麼會影響咖啡？</strong><br>A：TDS 是水中總溶解固體量，可粗略反映礦物質含量。礦物質太少時，咖啡可能偏薄；太多時，風味可能變鈍或厚重。</p>
-<p style="margin-top:.75rem"><strong>Q：RO 逆滲透水適合沖咖啡嗎？</strong><br>A：RO 水本身礦物質很低，單獨使用時常讓風味偏薄。若想使用 RO 水，較適合搭配再礦化方式。</p>
-<p style="margin-top:.75rem"><strong>Q：礦泉水一定比濾水好嗎？</strong><br>A：不一定。礦泉水的優點是數值較穩定，但若 TDS 或硬度太高，也可能讓咖啡口感沉重。濾水、礦泉水與配方水都需要回到風味測試。</p>
-<p style="margin-top:.75rem"><strong>Q：台灣家用手沖最簡單的水質改善方式是什麼？</strong><br>A：先確認水中沒有明顯氯味，再用同一支豆子比較濾水與一款中低 TDS 礦泉水。若差異明顯，再考慮 TDS 筆或配方水。</p></div>
+<div class="geo-box">
+  <h3>常見問題</h3>
+  <p><strong>Q：手沖咖啡可以直接用自來水嗎？</strong><br>A：可以先從過濾後的自來水開始測試，但台灣各地水質差異很大。如果有氯味、口感偏薄或香氣不清楚，建議再比較濾水、礦泉水或再礦化水。</p>
+  <p><strong>Q：TDS 是什麼，為什麼會影響咖啡？</strong><br>A：TDS 是水中總溶解固體量，可粗略反映礦物質含量。礦物質太少時，咖啡可能偏薄；太多時，風味可能變鈍或厚重。</p>
+  <p><strong>Q：RO 逆滲透水適合沖咖啡嗎？</strong><br>A：RO 水本身礦物質很低，單獨使用時常讓風味偏薄。若想使用 RO 水，較適合搭配再礦化方式。</p>
+  <p><strong>Q：礦泉水一定比濾水好嗎？</strong><br>A：不一定。礦泉水的優點是數值較穩定，但若 TDS 或硬度太高，也可能讓咖啡口感沉重。濾水、礦泉水與配方水都需要回到風味測試。</p>
+  <p><strong>Q：台灣家用手沖最簡單的水質改善方式是什麼？</strong><br>A：先確認水中沒有明顯氯味，再用同一支豆子比較濾水與一款中低 TDS 礦泉水。若差異明顯，再考慮 TDS 筆或配方水。</p>
+</div>
 
 <h2>結語：先用風味驗證你的水</h2>
 <p>咖啡水質不需要一開始就追求實驗室等級的精準。更實用的做法，是先排除氯味與明顯異味，再用同一支豆子比較不同水源。當你能喝出香氣、酸質、甜感與口感厚度的差異，TDS 與硬度數字才會真正變成有用的工具。</p>

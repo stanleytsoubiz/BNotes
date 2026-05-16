@@ -308,16 +308,47 @@ footer a{color:var(--coffee-light)}
 }
 .article-body tr:nth-child(even) td { background: oklch(97% .006 30) }
 
-/* 4. Key Takeaway 卡片 */
-.key-takeaway, .key-box, .takeaway-box, [class*="key-take"] {
-  background: linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));
-  border: 1px solid oklch(88% .05 45);
-  border-left: 4px solid var(--gold,#c8922a);
-  border-radius: .75rem; padding: 1.2em 1.4em;
-  margin: 1.8em 0;
+/* 4. Article Shell Modules */
+.article-module-title{
+  display:block;
+  margin-bottom:.55em;
+  color:var(--coffee-dark,#1a0a00);
+  font-weight:700;
 }
-
-.geo-box{background:oklch(97% .01 200);border:1px solid oklch(88% .03 200);border-left:4px solid oklch(60% .12 200);border-radius:.75rem;padding:1.2em 1.5em;margin:2rem 0}
+.module-conclusion,
+.module-you-know,
+.module-quick{
+  border-radius:.75rem;
+  padding:1.2em 1.4em;
+  margin:1.8em 0;
+  color:var(--fg,oklch(20% .02 30));
+}
+.module-conclusion{
+  background:linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));
+  border:1px solid oklch(88% .05 45);
+  border-left:4px solid var(--gold,#c8922a);
+}
+.module-you-know{
+  background:oklch(98% .015 50);
+  border:1px solid oklch(90% .025 50);
+  border-left:4px solid oklch(72% .08 55);
+}
+.module-quick{
+  background:oklch(97% .012 165);
+  border:1px solid oklch(88% .03 165);
+  border-left:4px solid oklch(58% .09 165);
+}
+.module-conclusion p,
+.module-you-know p,
+.module-quick p{margin-bottom:.75rem}
+.module-conclusion p:last-child,
+.module-you-know p:last-child,
+.module-quick p:last-child{margin-bottom:0}
+.module-you-know ul,
+.module-quick ul{margin:.55rem 0 0 1.2rem}
+.module-you-know li,
+.module-quick li{margin-bottom:.45rem;line-height:1.75}
+.geo-box{background:oklch(97% .012 165);border:1px solid oklch(88% .03 165);border-left:4px solid oklch(58% .09 165);border-radius:.75rem;padding:1.2em 1.5em;margin:2rem 0}
 .geo-box p{margin-bottom:.75rem}
 .geo-box p:last-child{margin-bottom:0}
 
@@ -466,8 +497,8 @@ footer a{color:var(--coffee-light)}
 
 <article class="article-body">
     
-<div class="geo-box">
-  <p><strong>先講結論：</strong>好的 Espresso 不是把 9 Bar、93°C、30 秒背熟，而是學會從液流、Crema、風味與粉餅狀態判斷「這一杯正在往哪裡走」。參數是起點，判斷才是答案。</p>
+<div class="module-conclusion">
+  <p><strong class="article-module-title">先講結論</strong>好的 Espresso 不是把 9 Bar、93°C、30 秒背熟，而是學會從液流、Crema、風味與粉餅狀態判斷「這一杯正在往哪裡走」。參數是起點，判斷才是答案。</p>
 </div>
 
 <div class="lead">
@@ -476,13 +507,17 @@ footer a{color:var(--coffee-light)}
   <p>這篇不是要你迷信一組黃金數字，而是建立一套 BNotes 的 Espresso 判斷路線：先看液流，再看壓力，接著理解預浸、Crema、粉量與台灣常見水質，最後回到杯中風味。</p>
 </div>
 
-<div class="key-box"><strong>讀完這篇，你會知道：</strong><br>
-• 9 Bar、90–96°C、25–30 秒為什麼只是起點，不是標準答案<br>
-• 如何從液流速度、Crema 顏色與風味判斷萃取方向<br>
-• 預浸如何讓粉床穩定，減少水道效應（Channeling）<br>
-• 粉量、粉餅密度與流速為什麼要一起看<br>
-• 台灣常見軟水與中深焙豆，應該如何調整萃取策略<br>
-• 為什麼穩定的<a href="/re/espresso-scale" class="affiliate-link" data-product="espresso-scale">義式電子秤</a>與<a href="/re/espresso-tamper" class="affiliate-link" data-product="espresso-tamper">填壓器</a>，通常比盲目升級機器更先影響結果</div>
+<div class="module-you-know">
+  <strong class="article-module-title">讀完這篇，你會知道</strong>
+  <ul>
+    <li>9 Bar、90–96°C、25–30 秒為什麼只是起點，不是標準答案</li>
+    <li>如何從液流速度、Crema 顏色與風味判斷萃取方向</li>
+    <li>預浸如何讓粉床穩定，減少水道效應（Channeling）</li>
+    <li>粉量、粉餅密度與流速為什麼要一起看</li>
+    <li>台灣常見軟水與中深焙豆，應該如何調整萃取策略</li>
+    <li>為什麼穩定的<a href="/re/espresso-scale" class="affiliate-link" data-product="espresso-scale">義式電子秤</a>與<a href="/re/espresso-tamper" class="affiliate-link" data-product="espresso-tamper">填壓器</a>，通常比盲目升級機器更先影響結果</li>
+  </ul>
+</div>
 
 <h2>先看液流：它比秒數更早告訴你答案</h2>
 <p>很多人第一次學 Espresso，會先記住 25 到 30 秒。但真正站在機器前，秒數只是最後被記錄的結果；更早出現的線索，是液流。</p>
@@ -514,7 +549,8 @@ footer a{color:var(--coffee-light)}
 <p>但 Crema 不能單獨代表好喝。它由咖啡油脂、蛋白質與 CO₂ 氣泡共同形成。新鮮深焙豆可能產生漂亮厚實的 Crema，卻仍然苦澀；淺焙豆 Crema 較薄，也可能有清楚甜感與酸質。</p>
 <p>更好的用法，是把 Crema 當作線索：太薄，先懷疑豆子新鮮度、研磨太粗或萃取不足；太白又快速消散，可能是阻力不夠；顏色過深且帶白斑，可能正在走向過度萃取。</p>
 
-<div class="geo-box"><h3>快速判斷：什麼是萃取過度？</h3>
+<div class="module-quick">
+  <strong class="article-module-title">快速判斷：什麼是萃取過度？</strong>
 <p><strong>萃取過度（Over-Extraction）</strong>指咖啡粉中太多苦味與乾澀物質被溶出，常見原因是研磨過細、萃取時間過長、填壓或粉餅阻力過高、水溫對該豆款過高。</p>
 <ul>
   <li><strong>喝起來：</strong>苦澀、乾、餘韻短，甜感被壓掉。</li>
