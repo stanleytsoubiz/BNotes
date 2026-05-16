@@ -405,14 +405,21 @@ footer a{color:var(--coffee-light)}
   max-width: 740px; margin: 40px auto 0;
   padding: 0 24px;
 }
-.related-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 12px }
-.related-card {
-  border: 1px solid oklch(89% .01 30); border-radius: .6rem;
-  padding: 14px; font-size: .85rem;
-  background: var(--card,#fff);
-  transition: box-shadow .15s;
+.related-title {
+  font-size: 1.05rem; font-weight: 700; color: var(--coffee-dark,#1a0a00);
+  margin-bottom: .9rem; border-left: 4px solid var(--gold,#c8922a); padding-left: .75rem;
 }
-.related-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.09) }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: .7rem }
+.related-card {
+  display: flex; flex-direction: column; gap: .35rem; text-decoration: none;
+  border: 1px solid #e8d5b0; border-radius: .6rem;
+  padding: .9rem; font-size: .85rem;
+  background: var(--card,#fff);
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+}
+.related-card:hover { transform: translateY(-2px); box-shadow: 0 3px 12px rgba(0,0,0,.09); border-color: var(--gold,#c8922a) }
+.related-kicker { font-size: .72rem; color: var(--gold,#c8922a); font-weight: 600 }
+.related-card-title { font-size: .87rem; font-weight: 700; color: var(--coffee-dark,#1a0a00); line-height: 1.4 }
 
 /* 9. 麵包屑保留 */
 .breadcrumb, nav[aria-label="breadcrumb"] {
@@ -696,32 +703,32 @@ footer a{color:var(--coffee-light)}
     </button>
   </div>
   </div>
-  <div class="related-articles" style="margin:2rem auto 0;max-width:740px;padding:0 24px">
-    <h3 style="font-size:1.05rem;font-weight:700;color:#1a0a00;margin-bottom:.9rem;border-left:4px solid #c8922a;padding-left:.75rem">延伸閱讀</h3>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem">
-      <a href="/articles/green-bean-sourcing-complete-guide.html" style="display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white">
-        <span style="font-size:.72rem;color:#c8922a;font-weight:600">產地風土</span>
-        <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">生豆選購完全指南：從產地認證到杯測分數</span>
+  <div class="related-articles">
+    <h3 class="related-title">延伸閱讀</h3>
+    <div class="related-grid">
+      <a href="/articles/green-bean-sourcing-complete-guide.html" class="related-card">
+        <span class="related-kicker">產地風土</span>
+        <span class="related-card-title">生豆選購完全指南：從產地認證到杯測分數</span>
       </a>
-      <a href="/articles/single-origin-terroir-science.html" style="display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white">
-        <span style="font-size:.72rem;color:#c8922a;font-weight:600">產地風土</span>
-        <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">單一產地的秘密：風土科學完整解析</span>
+      <a href="/articles/single-origin-terroir-science.html" class="related-card">
+        <span class="related-kicker">產地風土</span>
+        <span class="related-card-title">單一產地的秘密：風土科學完整解析</span>
       </a>
-      <a href="/articles/coffee-acidity-complete-science.html" style="display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white">
-        <span style="font-size:.72rem;color:#c8922a;font-weight:600">沖泡科學</span>
-        <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">咖啡酸質的完整科學：為什麼有人愛，有人怕</span>
+      <a href="/articles/coffee-acidity-complete-science.html" class="related-card">
+        <span class="related-kicker">沖泡科學</span>
+        <span class="related-card-title">咖啡酸質的完整科學：為什麼有人愛，有人怕</span>
       </a>
-      <a href="/articles/geisha-molecular-biology-2026.html" style="display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white">
-        <span style="font-size:.72rem;color:#c8922a;font-weight:600">產地風土</span>
-        <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">藝伎咖啡的分子生物學：為什麼它的香氣讓人說不出話</span>
+      <a href="/articles/geisha-molecular-biology-2026.html" class="related-card">
+        <span class="related-kicker">產地風土</span>
+        <span class="related-card-title">藝伎咖啡的分子生物學：為什麼它的香氣讓人說不出話</span>
       </a>
-      <a href="/articles/espresso-parameters.html" style="display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white">
-        <span style="font-size:.72rem;color:#c8922a;font-weight:600">沖泡科學</span>
-        <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">義式濃縮參數完整解析：壓力、溫度、粉水比的科學</span>
+      <a href="/articles/espresso-parameters.html" class="related-card">
+        <span class="related-kicker">沖泡科學</span>
+        <span class="related-card-title">義式濃縮參數完整解析：壓力、溫度、粉水比的科學</span>
       </a>
-      <a href="/articles/processing-methods.html" style="display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white">
-        <span style="font-size:.72rem;color:#c8922a;font-weight:600">處理法</span>
-        <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">水洗、日曬、蜜處理：處理法如何決定你杯中的風味</span>
+      <a href="/articles/processing-methods.html" class="related-card">
+        <span class="related-kicker">處理法</span>
+        <span class="related-card-title">水洗、日曬、蜜處理：處理法如何決定你杯中的風味</span>
       </a>
     </div>
   </div>

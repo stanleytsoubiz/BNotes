@@ -391,14 +391,21 @@ footer a{color:var(--coffee-light)}
   max-width: 740px; margin: 40px auto 0;
   padding: 0 24px;
 }
-.related-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 12px }
-.related-card {
-  border: 1px solid oklch(89% .01 30); border-radius: .6rem;
-  padding: 14px; font-size: .85rem;
-  background: var(--card,#fff);
-  transition: box-shadow .15s;
+.related-title {
+  font-size: 1.05rem; font-weight: 700; color: var(--coffee-dark,#1a0a00);
+  margin-bottom: .9rem; border-left: 4px solid var(--gold,#c8922a); padding-left: .75rem;
 }
-.related-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.09) }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: .7rem }
+.related-card {
+  display: flex; flex-direction: column; gap: .35rem; text-decoration: none;
+  border: 1px solid #e8d5b0; border-radius: .6rem;
+  padding: .9rem; font-size: .85rem;
+  background: var(--card,#fff);
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+}
+.related-card:hover { transform: translateY(-2px); box-shadow: 0 3px 12px rgba(0,0,0,.09); border-color: var(--gold,#c8922a) }
+.related-kicker { font-size: .72rem; color: var(--gold,#c8922a); font-weight: 600 }
+.related-card-title { font-size: .87rem; font-weight: 700; color: var(--coffee-dark,#1a0a00); line-height: 1.4 }
 
 /* 9. 麵包屑保留 */
 .breadcrumb, nav[aria-label="breadcrumb"] {
@@ -566,11 +573,35 @@ footer a{color:var(--coffee-light)}
   </ol>
 </div>
 
-<section class="related-articles"><h2>延伸閱讀</h2><ul>
-<li><a href="/articles/latte-art.html">義式咖啡拉花藝術：從心形到鬱金香的完整教學</a></li>
-<li><a href="/articles/pour-over-variable-complete-experiment.html">手沖變數完全實驗：水溫與研磨度的科學數據</a></li>
-<li><a href="/articles/water-quality.html">手沖咖啡的水質科學：如何選擇最適合的沖煮用水</a></li>
-</ul></section>
+<div class="related-articles">
+    <h3 class="related-title">延伸閱讀</h3>
+    <div class="related-grid">
+      <a href="/articles/latte-art.html" class="related-card">
+        <span class="related-kicker">義式咖啡</span>
+        <span class="related-card-title">義式咖啡拉花藝術：從心形到鬱金香的完整教學</span>
+      </a>
+      <a href="/articles/milk-steaming-science.html" class="related-card">
+        <span class="related-kicker">義式咖啡</span>
+        <span class="related-card-title">牛奶打發科學：綿密奶泡與溫度控制</span>
+      </a>
+      <a href="/articles/water-quality.html" class="related-card">
+        <span class="related-kicker">沖煮科學</span>
+        <span class="related-card-title">手沖咖啡的水質科學：如何選擇最適合的沖煮用水</span>
+      </a>
+      <a href="/articles/pour-over-variable-complete-experiment.html" class="related-card">
+        <span class="related-kicker">沖煮科學</span>
+        <span class="related-card-title">手沖變數完全實驗：水溫與研磨度的科學數據</span>
+      </a>
+      <a href="/articles/grinder-guide-2026.html" class="related-card">
+        <span class="related-kicker">器材指南</span>
+        <span class="related-card-title">磨豆機選購指南：研磨穩定度怎麼看</span>
+      </a>
+      <a href="/articles/coffee-equipment-cleaning-bible.html" class="related-card">
+        <span class="related-kicker">器材保養</span>
+        <span class="related-card-title">咖啡器材清潔聖經：讓風味穩定的日常保養</span>
+      </a>
+    </div>
+  </div>
 
   <div class="share-section">
     <span class="share-label">分享這篇</span>
