@@ -1,10 +1,13 @@
-<!--
+---
 title: 手沖水溫完整指南：為什麼 93°C 不是萬能答案
 date: 2026-05-04
-cat: 手沖技法
-desc: 水溫不只影響萃取速度，更決定了你杯中的是花香還是苦澀。從烘焙度到研磨度，拆解手沖水溫的完整邏輯，給你一個真正能用的判斷框架。
 status: published
--->
+category: brew-methods
+description: 水溫不只影響萃取速度，更決定了你杯中的是花香還是苦澀。從烘焙度到研磨度，拆解手沖水溫的完整邏輯，給你一個真正能用的判斷框架。
+cover_image: "/images/ai/pour-over-water-temperature-guide-hero.jpg"
+b1_reviewed_at: 2026-05-17T12:00:00+08:00
+gm_approved_at: 2026-05-17T12:30:00+08:00
+---
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -25,7 +28,7 @@ status: published
 <meta name="twitter:description" content="用 93°C 沖淺焙豆，你喝到的是酸水而不是莓果。6°C 的差距，決定你喝到的是哪杯咖啡。">
 <meta name="twitter:image" content="https://bnotescoffee.com/images/ai/pour-over-water-temperature-guide-hero.jpg">
 <meta property="article:published_time" content="2026-05-04T08:00:00+08:00" />
-<meta property="article:modified_time" content="2026-05-04T08:00:00+08:00" />
+<meta property="article:modified_time" content="2026-05-17T12:30:00+08:00" />
 <meta property="article:author" content="https://bnotescoffee.com" />
 <meta property="article:section" content="手沖技法" />
 <meta property="article:tag" content="手沖,水溫,萃取,烘焙度,手沖技法,咖啡科學,93度,淺焙" />
@@ -51,9 +54,9 @@ a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Noto Serif TC',Georgia,serif;font-size:1.15rem;font-weight:900;color:#1a0a00;letter-spacing:.02em;text-decoration:none}
-.nav-logo b{color:#c8922a}
-.nav-sub{font-family:'Noto Sans TC',-apple-system,sans-serif;font-size:.65rem;color:#7a6050;letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+.nav-logo{font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:var(--coffee-dark);letter-spacing:.02em;text-decoration:none}
+.nav-logo b{color:var(--gold)}
+.nav-sub{font-family:var(--font-sans);font-size:.65rem;color:var(--muted-fg);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
 .nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
 .nav-back:hover{color:var(--coffee-dark)}
 .article-hero{position:relative;height:min(480px,55vw);overflow:hidden;background:var(--coffee-dark)}
@@ -80,21 +83,46 @@ footer a{color:var(--coffee-light)}
 .bnotes-meta{display:flex;justify-content:center;gap:20px;font-size:.82rem;color:var(--muted-fg,#7a6050);flex-wrap:wrap;margin-bottom:24px}
 .bnotes-divider{width:48px;height:3px;background:var(--gold,#c8922a);border-radius:9999px;margin:0 auto 32px}
 .bnotes-cover{width:100%;max-height:420px;object-fit:cover;border-radius:.9rem;margin:2rem auto;display:block;box-shadow:0 4px 16px rgba(0,0,0,.12)}
-.key-box{background:oklch(97% .025 45);border:1px solid oklch(85% .06 45);border-left:4px solid var(--gold,#c8922a);border-radius:.75rem;padding:1.2em 1.5em;margin:1.6em 0 2em;font-size:.95rem;line-height:1.9;color:oklch(28% .03 35)}
-.key-box strong{color:var(--coffee-dark,#1a0a00);display:block;margin-bottom:.4em}
-.further-reading{background:var(--muted,#f5f2ee);border-radius:.75rem;padding:1.2em 1.5em;margin:2em 0;font-size:.93rem}
-.further-reading strong{color:var(--coffee-dark,#1a0a00);display:block;margin-bottom:.6em}
-.further-reading ul{margin:0;padding-left:1.2em}
-.further-reading li{margin-bottom:.45em;line-height:1.6}
-.further-reading a{color:var(--coffee-mid,#8b4513);text-decoration:underline;text-decoration-color:oklch(80% .06 45);text-underline-offset:2px}
-.further-reading a:hover{color:var(--coffee-dark,#1a0a00)}
-.share-section{max-width:740px;margin:2rem auto 0;padding:1.5rem 24px 0;border-top:1px solid oklch(90% .01 30);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.share-label{font-size:.85rem;font-weight:600;color:var(--coffee-mid,#8b4513)}
-.share-btns{display:flex;gap:.6rem;flex-wrap:wrap}
-.share-btn{display:inline-flex;align-items:center;padding:.45rem 1rem;border-radius:2rem;font-size:.8rem;font-weight:600;cursor:pointer;border:none;text-decoration:none}
-.share-btn-line{background:#06C755;color:white}
-.share-btn-fb{background:#1877F2;color:white}
-.share-btn-copy{background:var(--muted,#f0ebe2);color:var(--coffee-dark,#1a0a00)}
+.article-module-title{display:block;margin-bottom:.55em;color:var(--coffee-dark,#1a0a00);font-weight:700}
+.module-conclusion,.module-quick{border-radius:.75rem;padding:1.2em 1.4em;margin:1.8em 0;color:var(--fg,oklch(20% .02 30))}
+.module-conclusion{background:linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));border:1px solid oklch(88% .05 45);border-left:4px solid var(--gold,#c8922a)}
+.module-quick{background:oklch(97% .012 165);border:1px solid oklch(88% .03 165);border-left:4px solid oklch(58% .09 165)}
+.module-conclusion p,.module-quick p{margin-bottom:.75rem}
+.module-conclusion p:last-child,.module-quick p:last-child{margin-bottom:0}
+.module-conclusion ul,.module-quick ul{margin:.55rem 0 0 1.2rem}
+.module-conclusion li,.module-quick li{margin-bottom:.38rem;line-height:1.65}
+.module-conclusion li:last-child,.module-quick li:last-child{margin-bottom:0}
+.faq-section{margin:2.5rem 0;padding-top:1.25rem;border-top:1px solid oklch(90% .01 30)}
+.faq-section h2{margin-top:0}
+.faq-item{border:1px solid oklch(90% .012 45);border-radius:.75rem;background:oklch(99% .006 45);margin:0 0 .75rem;overflow:hidden}
+.faq-item summary{cursor:pointer;padding:1rem 1.15rem;font-weight:700;color:var(--coffee-dark,#1a0a00);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-weight:700;color:var(--gold,#c8922a);font-size:1.1rem;line-height:1}
+.faq-item[open] summary::after{content:"-"}
+.faq-item p{padding:0 1.15rem 1rem;margin:0;color:var(--muted-fg,oklch(45% .02 30));line-height:1.8}
+.references{font-size:.82rem;line-height:1.55;color:oklch(45% .02 30);margin-top:2.5em;padding-top:1em;border-top:1px dashed oklch(85% .01 30)}
+.references h3{font-size:.9rem;color:oklch(40% .02 30);margin-bottom:.6em}
+.references ol,.references ul{padding-left:1.2em;margin:0}
+.references li{margin-bottom:.35em}
+.references em{color:oklch(35% .02 30)}
+.share-section{max-width:740px;margin:2.5em auto 0;padding:1.5em 24px 0;border-top:1px solid oklch(90% .01 30);display:flex;align-items:center;gap:.75em;flex-wrap:wrap}
+.share-label{font-size:.85rem;color:oklch(45% .02 30);font-weight:600;margin-right:.5em}
+.share-btns{display:flex;gap:.5em;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;text-decoration:none}
+.share-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.share-btn svg{width:18px;height:18px}
+.share-btn-line{background:#00C300}
+.share-btn-fb{background:#1877F2}
+.share-btn-threads{background:#000}
+.share-btn-x{background:#000}
+.share-btn-copy{background:#8b4513}
+.related-articles{max-width:740px;margin:40px auto 0;padding:0 24px}
+.related-title{font-size:1.05rem;font-weight:700;color:var(--coffee-dark,#1a0a00);margin-bottom:.9rem;border-left:4px solid var(--gold,#c8922a);padding-left:.75rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem}
+.related-card{display:flex;flex-direction:column;gap:.35rem;text-decoration:none;border:1px solid #e8d5b0;border-radius:.6rem;padding:.9rem;font-size:.85rem;background:var(--card,#fff);transition:transform .15s,box-shadow .15s,border-color .15s}
+.related-card:hover{transform:translateY(-2px);box-shadow:0 3px 12px rgba(0,0,0,.09);border-color:var(--gold,#c8922a)}
+.related-kicker{font-size:.72rem;color:var(--gold,#c8922a);font-weight:600}
+.related-card-title{font-size:.87rem;font-weight:700;color:var(--coffee-dark,#1a0a00);line-height:1.4}
 .article-wrap{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem}
 .article-body,.article-content,main.article-wrap article,.article-wrap .article-body{padding:0;font-size:1.05rem;line-height:1.85}
 .article-body p,.article-body li{margin-bottom:1.3em}
@@ -117,7 +145,7 @@ footer a{color:var(--coffee-light)}
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"手沖水溫完整指南：為什麼 93°C 不是萬能答案","description":"用 93°C 沖淺焙豆，你喝到的是酸水而不是莓果。6°C 的差距，決定你喝到的是哪杯咖啡。","url":"https://bnotescoffee.com/articles/pour-over-water-temperature-guide","image":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/ai/pour-over-water-temperature-guide-hero.jpg","width":1200,"height":630},"datePublished":"2026-05-04T08:00:00+08:00","dateModified":"2026-05-04T08:00:00+08:00","author":{"@type":"Organization","name":"BNotes 編輯部","url":"https://bnotescoffee.com"},"publisher":{"@type":"Organization","name":"BNotes 焙學·原豆誌","url":"https://bnotescoffee.com","logo":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/bnotes-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bnotescoffee.com/articles/pour-over-water-temperature-guide"},"keywords":"手沖,水溫,萃取,烘焙度,手沖技法,咖啡科學,93度,淺焙"}
+{"@context":"https://schema.org","@type":"Article","headline":"手沖水溫完整指南：為什麼 93°C 不是萬能答案","description":"用 93°C 沖淺焙豆，你喝到的是酸水而不是莓果。6°C 的差距，決定你喝到的是哪杯咖啡。","url":"https://bnotescoffee.com/articles/pour-over-water-temperature-guide","image":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/ai/pour-over-water-temperature-guide-hero.jpg","width":1200,"height":630},"datePublished":"2026-05-04T08:00:00+08:00","dateModified":"2026-05-17T12:30:00+08:00","author":{"@type":"Organization","name":"BNotes 編輯部","url":"https://bnotescoffee.com"},"publisher":{"@type":"Organization","name":"BNotes 焙學·原豆誌","url":"https://bnotescoffee.com","logo":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/bnotes-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bnotescoffee.com/articles/pour-over-water-temperature-guide"},"keywords":"手沖,水溫,萃取,烘焙度,手沖技法,咖啡科學,93度,淺焙"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -188,12 +216,15 @@ footer a{color:var(--coffee-light)}
   <p>豆袋側面印著「草莓、覆盆子、茉莉」。你把水燒到 93°C，注水、等待、倒出。喝下去的是酸水。不是那種明亮的果酸，是讓你皺眉的尖銳感，帶一點空洞。你懷疑自己手法不對，或者是豆子壞了，或者是研磨刻度偏差。你試了三次，三次都是同樣的結果。</p>
   <p>問題其實出在水溫。不是你沖得不好——是你用了一個「聽說適合手沖」的溫度，套在一支完全不適合這個溫度的豆子上。93°C 是個好數字，但它不是通行證。</p>
 
-  <div class="key-box">
-    <strong>讀完這篇，你會知道：</strong>
-    · 水溫在咖啡萃取中的實際角色，以及「高溫≠過萃」的誤區<br>
-    · 不同烘焙度的建議水溫區間，以及背後的科學邏輯<br>
-    · 水溫與研磨度的互動關係，以及為什麼不能同時調整兩個變數<br>
-    · 三個常見錯誤，以及現在就可以修正的方法
+  <div class="module-conclusion">
+    <strong class="article-module-title">先把水溫變成可判斷的變數</strong>
+    <p>手沖水溫不是背一個 93°C 就結束。它會改變萃取速度，也會改變酸質、甜感、苦感與香氣被打開的順序；真正重要的是先看豆子的烘焙度，再決定水溫要往上還是往下。</p>
+    <p>這篇文章會把水溫、烘焙度與研磨度放在一起看，讓你知道什麼時候該升溫、什麼時候該降溫，以及為什麼一次只調一個變數，會比同時亂改更快找到答案。</p>
+    <ul>
+      <li>淺焙通常需要更高水溫，幫助花香、果香與甜感完整溶出。</li>
+      <li>中焙可以從 90–94°C 找平衡，再依杯中酸苦微調。</li>
+      <li>深焙通常要降溫，避免苦味與乾澀感壓過甜感。</li>
+    </ul>
   </div>
 
   <h2>水溫在咖啡裡做的事：不只是「熱」</h2>
@@ -243,21 +274,61 @@ footer a{color:var(--coffee-light)}
   <p>88°C 那杯：香氣有，但喝下去之後幾乎空掉，後段帶著讓人不舒服的草味。93°C：果酸明顯，但整體偏薄，花香沒有完全打開。96°C：前段香氣飽滿——真的有那個莓果感——中段甜度出來了，尾韻乾淨。</p>
   <p>6°C 的差距，就可以決定你喝到的是平凡的酸水還是那支豆子本來的樣子。我們的建議是：淺焙豆先從 94°C 開始，如果酸感太過尖銳就往上調，如果苦味出現了就往下退。找到那個讓你想再喝一杯的溫度，然後記住它。</p>
 
-  <div class="further-reading">
-    <strong>📚 延伸閱讀</strong>
-    <ul>
-      <li><a href="/articles/pour-over-guide">你的手沖咖啡為什麼永遠差那一口？</a></li>
-      <li><a href="/articles/pour-over-variable-complete-experiment">手沖變數實驗完整紀錄：我測試了 20 種配方後，告訴你什麼真正影響你的那杯咖啡</a></li>
-      <li><a href="/articles/water-quality">水占咖啡的 98%——你卻從來沒有認真選過它</a></li>
-    </ul>
+  <h2>下一杯先調水溫，不要同時改兩件事</h2>
+  <p>如果是我，會先把粉量、研磨度、粉水比與注水節奏固定，只改水溫。這樣你喝到的差異才有意義，也能知道杯中的酸、甜、苦到底是水溫造成的，還是其他變數干擾了判斷。</p>
+
+  <section class="faq-section">
+    <h2>常見問題</h2>
+    <details class="faq-item">
+      <summary>Q：手沖水溫幾度最好？</summary>
+      <p>沒有一個對所有咖啡都適用的最佳水溫。淺焙可以先從 92–96°C，中焙從 90–94°C，深焙從 85–90°C 開始，再依杯中的酸甜苦感微調。</p>
+    </details>
+    <details class="faq-item">
+      <summary>Q：為什麼 93°C 不是萬能答案？</summary>
+      <p>93°C 對許多中焙咖啡是好起點，但淺焙可能需要更高熱能，深焙則可能因高溫而苦澀。水溫要跟烘焙度、研磨度與風味目標一起判斷。</p>
+    </details>
+    <details class="faq-item">
+      <summary>Q：水溫太低會發生什麼事？</summary>
+      <p>水溫太低時，萃取容易停在酸質前段，杯中可能出現尖酸、空洞、薄弱或草味。這不一定是豆子不好，可能只是熱能不足。</p>
+    </details>
+    <details class="faq-item">
+      <summary>Q：水溫太高一定會過萃嗎？</summary>
+      <p>不一定。高溫會加快萃取，但是否過萃還要看研磨細度、注水時間與粉水比。高溫加細研磨才是特別容易苦澀的組合。</p>
+    </details>
+    <details class="faq-item">
+      <summary>Q：水溫和研磨度可以同時調整嗎？</summary>
+      <p>不建議。兩者都會改變萃取速度，同時調整會讓你無法判斷是哪個變數造成杯中變化。一次只調一件事，才比較容易學會。</p>
+    </details>
+  </section>
+
+  <div class="references">
+    <h3>參考資料</h3>
+    <ol>
+      <li>Specialty Coffee Association. <em>Brewing Control Chart and Methodology</em>. <a href="https://sca.coffee/research" target="_blank" rel="noopener">sca.coffee</a></li>
+      <li>Barista Hustle. <em>Coffee Brewing Control</em>. <a href="https://www.baristahustle.com" target="_blank" rel="noopener">baristahustle.com</a></li>
+      <li>Illy, A. &amp; Viani, R. <em>Espresso Coffee: The Science of Quality</em>. Elsevier Academic Press.</li>
+      <li>Rao, S. <em>The Coffee Roaster's Companion</em>. Scott Rao.</li>
+      <li>Perfect Daily Grind. <em>Water Temperature and Coffee Extraction</em>. <a href="https://perfectdailygrind.com" target="_blank" rel="noopener">perfectdailygrind.com</a></li>
+    </ol>
   </div>
 
   <div class="share-section">
-    <span class="share-label">📤 分享這篇文章</span>
+    <span class="share-label">分享這篇</span>
     <div class="share-btns">
-      <a class="share-btn share-btn-line" href="#" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+' '+location.href));return false;" target="_blank" rel="noopener">LINE</a>
-      <a class="share-btn share-btn-fb" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false;">Facebook</a>
-      <button class="share-btn share-btn-copy" onclick="(function(b){navigator.clipboard.writeText(location.href).then(function(){b.textContent='✅ 已複製';setTimeout(function(){b.textContent='🔗 複製連結'},2000)})})(this)">🔗 複製連結</button>
+      <a class="share-btn share-btn-line" href="#" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+' '+location.href));return false;" target="_blank" rel="noopener" aria-label="分享至 LINE" title="LINE"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
+      <a class="share-btn share-btn-fb" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false;" aria-label="分享至 Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a class="share-btn share-btn-threads" href="#" onclick="window.open('https://threads.net/intent/post?text='+encodeURIComponent(document.title+' '+location.href),'_blank');return false;" aria-label="分享至 Threads" title="Threads"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.78 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.143 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></a>
+      <a class="share-btn share-btn-x" href="#" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false;" aria-label="分享至 X" title="X (Twitter)"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <button class="share-btn share-btn-copy" onclick="navigator.clipboard.writeText(location.href)" aria-label="複製連結" title="複製連結"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></button>
+    </div>
+  </div>
+
+  <div class="related-articles">
+    <h3 class="related-title">延伸閱讀</h3>
+    <div class="related-grid">
+      <a class="related-card" href="/articles/pour-over-guide.html"><span class="related-kicker">先建立手沖基礎</span><span class="related-card-title">手沖咖啡完全指南：從選豆到沖煮的 10 個關鍵步驟</span></a>
+      <a class="related-card" href="/articles/water-quality.html"><span class="related-kicker">同步理解用水</span><span class="related-card-title">手沖咖啡的水質科學：如何選擇最適合的沖煮用水</span></a>
+      <a class="related-card" href="/articles/pour-over-variable-complete-experiment.html"><span class="related-kicker">深入變數實驗</span><span class="related-card-title">手沖變數完整實驗：從水溫到注水節奏</span></a>
     </div>
   </div>
 
