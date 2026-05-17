@@ -364,8 +364,20 @@ footer a{color:var(--coffee-light)}
 .module-quick p{margin-bottom:.75rem}
 .module-conclusion p:last-child,
 .module-quick p:last-child{margin-bottom:0}
+.module-conclusion ul{margin:.55rem 0 0 1.1rem}
+.module-conclusion li{margin-bottom:.32rem;line-height:1.65}
+.module-conclusion li:last-child{margin-bottom:0}
 .module-quick ul{margin:.55rem 0 0 1.2rem}
 .module-quick li{margin-bottom:.45rem;line-height:1.75}
+.faq-section{margin:2.5rem 0;padding-top:1.25rem;border-top:1px solid oklch(90% .01 30)}
+.faq-section h2{margin-top:0}
+.faq-item{border:1px solid oklch(90% .012 45);border-radius:.75rem;background:oklch(99% .006 45);margin:0 0 .75rem;overflow:hidden}
+.faq-question{width:100%;border:0;background:white;padding:.9rem 1rem;text-align:left;font:inherit;font-weight:700;color:var(--coffee-dark,#1a0a00);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.faq-question::after{content:"+";font-weight:700;color:var(--gold,#c8922a);font-size:1.1rem;line-height:1}
+.faq-item.open .faq-question::after{content:"-"}
+.faq-answer{display:none;padding:0 1rem 1rem;color:oklch(30% .02 30)}
+.faq-item.open .faq-answer{display:block}
+.faq-answer p{margin:0;line-height:1.8}
 .article-body .share-section,
 .article-body .related-articles {
   max-width: 100% !important;
@@ -645,11 +657,11 @@ footer a{color:var(--coffee-light)}
   <p>WCR 的 F1 雜交種研究（Montagnon et al., 2023）已證明，特定 Arabica × Robusta 後代在風味分數和環境耐受性上均有顯著提升。其中一個已商業化的品種，<span class="term">伊卡特 (Icatu)</span>，就是 Arabica-Robusta 雜交的成功案例，在巴西已有相當規模的種植。</p>
 
 
-  <h2>回到華語市場：你買的咖啡豆裡有多少 Robusta？</h2>
-  <p>在華語咖啡市場，許多消費者仍然把 Robusta 和低價、即溶、粗糙苦味直接畫上等號。但現實情況更複雜：台灣、香港、新加坡、馬來西亞、海外華人城市裡常見的義式配方、奶咖店用豆與越南咖啡文化，都可能讓 Robusta 以不同方式出現在杯中。</p>
+  <h2>你買的咖啡豆裡有多少 Robusta？</h2>
+  <p>許多咖啡愛好者仍然把 Robusta 和低價、即溶、粗糙苦味直接畫上等號。但現實情況更複雜：不管你在台北、香港、新加坡、馬來西亞，或其他海外華人城市喝咖啡，義式配方、奶咖店用豆與越南咖啡文化，都可能讓 Robusta 以不同方式出現在杯中。</p>
   <p>首先，許多市售「義式配方豆（Espresso Blend）」會加入一定比例 Robusta，但包裝上未必清楚列出豆種比例。這不一定是問題，關鍵在於 Robusta 的等級、烘焙方式與它在配方中扮演的角色。</p>
   <p>其次，越南是全球 Robusta 重要產地，近年「越南精品咖啡（Vietnam Specialty Coffee）」也正在用更精細的採收、處理與烘焙，提升 Robusta 的風味表現。這件事對整個華語咖啡圈都值得關注，因為它會影響我們如何理解奶咖、義式、旅居地咖啡館與日常咖啡文化。</p>
-  <p>如果你在台灣買豆，可以把台灣市場當作一個觀察案例；如果你在世界其他華人城市喝咖啡，也可以用同一套邏輯判斷：不要因「Robusta」這個名字就直接否定，而是問：「這是哪個等級的 Robusta？怎麼烘焙？適合什麼沖煮方式？」這才是真正的精品思維。</p>
+  <p>如果你在台灣買豆，可以把台灣當作一個觀察案例；如果你在其他城市喝咖啡，也可以用同一套邏輯判斷：不要因「Robusta」這個名字就直接否定，而是問：「這是哪個等級的 Robusta？怎麼烘焙？適合什麼沖煮方式？」這才是真正的精品思維。</p>
   <p>所以問題不是「要不要喝 Robusta」，而是你能不能辨認它在杯子裡扮演的角色。</p>
 
   <div class="module-quick">
@@ -882,6 +894,18 @@ footer a{color:var(--coffee-light)}
     },{rootMargin:'-10% 0px -80% 0px'});
     headings.forEach(function(h){io.observe(h);});
   })();
+})();
+</script>
+<script>
+/* bnotes-faq-accordion */
+(function(){
+  document.querySelectorAll('.faq-question').forEach(function(button){
+    button.addEventListener('click',function(){
+      var item=button.closest('.faq-item');
+      if(!item)return;
+      item.classList.toggle('open');
+    });
+  });
 })();
 </script>
 <script>
