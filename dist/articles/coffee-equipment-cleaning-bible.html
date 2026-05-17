@@ -708,7 +708,7 @@ footer a{color:var(--coffee-light)}
     var ogImg=document.querySelector('meta[property="og:image"]');var heroSrc=ogImg?ogImg.getAttribute('content'):'';
     var headerHtml='<header id="bnotes-unified-header" class="bnotes-header">';
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
-    headerHtml+='<!-- removed duplicate template H1 -->';
+    headerHtml+='<h2 class="bnotes-title">'+title+'</h2>';
     headerHtml+='<div class="bnotes-meta">';
     if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
     headerHtml+='<span>✍️ BNotes 編輯部</span>';
