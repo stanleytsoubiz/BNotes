@@ -42,7 +42,8 @@ img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
 .nav-brand{display:flex;align-items:center;gap:.75rem}
-.nav-logo{font-size:1.5rem}
+.nav-logo{font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:var(--coffee-dark);letter-spacing:.02em;text-decoration:none}
+.nav-logo b{color:var(--gold)}
 .nav-name{font-family:var(--font-serif);font-weight:700;font-size:1rem;color:var(--coffee-dark);line-height:1.2}
 .nav-en{font-size:.6rem;letter-spacing:.3em;color:var(--coffee-mid)}
 .nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
@@ -319,14 +320,54 @@ footer a{color:var(--coffee-light)}
 }
 .article-body tr:nth-child(even) td { background: oklch(97% .006 30) }
 
-/* 4. Key Takeaway 卡片 */
-.key-takeaway, .takeaway-box, [class*="key-take"] {
-  background: linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));
-  border: 1px solid oklch(88% .05 45);
-  border-left: 4px solid var(--gold,#c8922a);
-  border-radius: .75rem; padding: 1.2em 1.4em;
-  margin: 1.8em 0;
+/* 4. Article Shell Modules */
+.article-module-title{
+  display:block;
+  margin-bottom:.55em;
+  color:var(--coffee-dark,#1a0a00);
+  font-weight:700;
 }
+.module-conclusion,
+.module-you-know,
+.module-quick{
+  border-radius:.75rem;
+  padding:1.2em 1.4em;
+  margin:1.8em 0;
+  color:var(--fg,oklch(20% .02 30));
+}
+.module-conclusion{
+  background:linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));
+  border:1px solid oklch(88% .05 45);
+  border-left:4px solid var(--gold,#c8922a);
+}
+.module-you-know{
+  background:oklch(98% .015 50);
+  border:1px solid oklch(90% .025 50);
+  border-left:4px solid oklch(72% .08 55);
+}
+.module-quick{
+  background:oklch(97% .012 165);
+  border:1px solid oklch(88% .03 165);
+  border-left:4px solid oklch(58% .09 165);
+}
+.module-conclusion p,
+.module-you-know p,
+.module-quick p{margin-bottom:.75rem}
+.module-conclusion p:last-child,
+.module-you-know p:last-child,
+.module-quick p:last-child{margin-bottom:0}
+.module-you-know ul,
+.module-quick ul{margin:.55rem 0 0 1.2rem}
+.module-you-know li,
+.module-quick li{margin-bottom:.45rem;line-height:1.75}
+.faq-section{margin:2.5rem 0;padding-top:1.25rem;border-top:1px solid oklch(90% .01 30)}
+.faq-section h2{margin-top:0}
+.faq-item{border:1px solid oklch(90% .012 45);border-radius:.75rem;background:oklch(99% .006 45);margin:0 0 .75rem;overflow:hidden}
+.faq-item summary{cursor:pointer;padding:1rem 1.15rem;font-weight:700;color:var(--coffee-dark,#1a0a00);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-weight:700;color:var(--gold,#c8922a);font-size:1.1rem;line-height:1}
+.faq-item[open] summary::after{content:"-"}
+.faq-item p{padding:0 1.15rem 1rem;margin:0;color:var(--muted-fg,oklch(45% .02 30));line-height:1.8}
 
 /* 5. TOC 面板 */
 #bnotes-toc-panel {
@@ -376,20 +417,40 @@ footer a{color:var(--coffee-light)}
   border-top: 1px solid oklch(90% .01 30);
   display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
 }
+.references{font-size:.82rem;line-height:1.55;color:oklch(45% .02 30);margin-top:2.5em;padding-top:1em;border-top:1px dashed oklch(85% .01 30)}
+.references h3{font-size:.9rem;color:oklch(40% .02 30);margin-bottom:.6em}
+.references ol,.references ul{padding-left:1.2em;margin:0}
+.references li{margin-bottom:.35em}
+.references em{color:oklch(35% .02 30)}
+.share-section{max-width:740px;margin:2.5em auto 0;padding:1.5em 24px 0;border-top:1px solid oklch(90% .01 30);display:flex;align-items:center;gap:.75em;flex-wrap:wrap}
+.share-label{font-size:.85rem;color:oklch(45% .02 30);font-weight:600;margin-right:.5em}
+.share-btns{display:flex;gap:.5em;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;text-decoration:none;color:white;font-size:.75rem;font-weight:700}
+.share-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.share-btn-line{background:#00C300}
+.share-btn-fb{background:#1877F2}
+.share-btn-copy{background:#8b4513}
 
 /* 8. 相關文章 */
 .related-articles, .related-posts {
   max-width: 740px; margin: 40px auto 0;
   padding: 0 24px;
 }
-.related-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 12px }
+.related-title {
+  font-size: 1.05rem; font-weight: 700; color: var(--coffee-dark,#1a0a00);
+  margin-bottom: .9rem; border-left: 4px solid var(--gold,#c8922a); padding-left: .75rem;
+}
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: .7rem }
 .related-card {
+  display: flex; flex-direction: column; gap: .35rem; text-decoration: none;
   border: 1px solid oklch(89% .01 30); border-radius: .6rem;
   padding: 14px; font-size: .85rem;
   background: var(--card,#fff);
   transition: box-shadow .15s;
 }
 .related-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.09) }
+.related-kicker{font-size:.72rem;color:var(--gold,#c8922a);font-weight:700}
+.related-card-title{color:var(--coffee-dark,#1a0a00);font-weight:600;line-height:1.5}
 
 /* 9. 麵包屑保留 */
 .breadcrumb, nav[aria-label="breadcrumb"] {
@@ -457,9 +518,9 @@ footer a{color:var(--coffee-light)}
 
 <p>這不是一份「最佳配方清單」，而是一份「變數靈敏度」報告。你會看到哪些變數影響最大，哪些變數只是微調，最後也會知道自己在家沖煮時，應該先改哪一個地方。</p>
 
-<div class="key-box" style="background:linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));border:1px solid oklch(88% .05 45);border-left:4px solid #c8922a;border-radius:.75rem;padding:1.2em 1.4em;margin:1.8em 0;">
-  <strong style="display:block;margin-bottom:.6em;color:#1a0a00;">先講結論</strong>
-  <ul style="margin:0;padding-left:1.4em;color:oklch(22% .02 30);">
+<div class="module-conclusion">
+  <strong class="article-module-title">先講結論</strong>
+  <ul>
     <li>研磨度是這組實驗中影響最大的單一變因，尤其是細粉比例與粒徑均勻度。</li>
     <li>水溫不是越高越好；在本次條件下，92°C 附近的平衡感最穩。</li>
     <li>粉水比可以先用 1:15 作為起點，但粉床均勻度比比例數字更關鍵。</li>
@@ -468,9 +529,9 @@ footer a{color:var(--coffee-light)}
   </ul>
 </div>
 
-<div class="geo-box" style="max-width:740px;margin:2em auto;padding:1.4em 1.5em;background:oklch(97% .01 30);border-radius:.75rem;border:1px solid oklch(89% .02 30);">
-  <h3 style="font-size:1rem;font-weight:700;color:#1a0a00;margin-bottom:1em;">讀完這篇，你會知道</h3>
-  <ul style="margin:0;padding-left:1.4em;color:oklch(28% .02 30);">
+<div class="module-you-know">
+  <strong class="article-module-title">讀完這篇，你會知道</strong>
+  <ul>
     <li>如何把手沖配方拆成可以測試的變因。</li>
     <li>研磨度、水溫、粉水比、注水方式與水質各自影響什麼。</li>
     <li>為什麼同一個配方，換到台灣水質與不同器材後可能不再準。</li>
@@ -516,9 +577,9 @@ footer a{color:var(--coffee-light)}
 
 <p>因此，配方不是拿來背的，而是拿來校正的。當你使用偏軟的水，可以嘗試略微提高水溫或增加粉床萃取效率；當水質偏硬，則要更小心過度萃取與厚重苦感。</p>
 
-<div class="key-box" style="background:linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));border:1px solid oklch(88% .05 45);border-left:4px solid #c8922a;border-radius:.75rem;padding:1.2em 1.4em;margin:1.8em 0;">
-  <strong style="display:block;margin-bottom:.6em;color:#1a0a00;">快速判斷：手沖不好喝時，先改哪裡？</strong>
-  <ol style="margin:0;padding-left:1.4em;color:oklch(22% .02 30);">
+<div class="module-quick">
+  <strong class="article-module-title">快速判斷：手沖不好喝時，先改哪裡？</strong>
+  <ol>
     <li><strong>味道混濁、苦澀、乾：</strong>先檢查研磨是否太細、細粉是否過多。</li>
     <li><strong>酸尖、薄、水感重：</strong>先略微提高水溫，或讓研磨細一點。</li>
     <li><strong>香氣好但尾韻短：</strong>檢查粉水比與總萃取時間，不要只加粉。</li>
@@ -531,41 +592,43 @@ footer a{color:var(--coffee-light)}
 
 <p>如果你剛開始練習，我們會建議先固定豆子與器材，一次只改一個變因，並記錄杯中的變化。當你能說出「我為什麼這樣改」，就已經從照表沖煮，走向真正理解手沖。</p>
 
-<section class="faq-section" style="max-width:740px;margin:2em auto;">
-  <h2>常見問題</h2>
-  <details style="margin-bottom:.8em;"><summary style="font-weight:600;cursor:pointer;color:#5c2d00;">Q: 手沖咖啡哪個變因最重要？</summary><p style="margin:.6em 0 0;color:oklch(28% .02 30);">A: 研磨度影響最大，其次是水溫。我們在一個月 20 組實驗中發現，研磨不均（細粉超過 15%）即便其他參數完美也無法補救。水溫的甜蜜點約在 92°C，高低各 2°C 差距明顯可辨。</p></details>
-  <details style="margin-bottom:.8em;"><summary style="font-weight:600;cursor:pointer;color:#5c2d00;">Q: 手沖水溫幾度最好？</summary><p style="margin:.6em 0 0;color:oklch(28% .02 30);">A: 基準答案是 88–94°C，但我們的實驗指向 92°C 是風味轉折的甜蜜點。台北軟水（低礦物質）建議拉高至 91–93°C，幫助萃取出足夠甜感。水溫每升高 2°C，溶解速率約增加 15–20%。</p></details>
-  <details style="margin-bottom:.8em;"><summary style="font-weight:600;cursor:pointer;color:#5c2d00;">Q: 手沖研磨度怎麼設定？</summary><p style="margin:.6em 0 0;color:oklch(28% .02 30);">A: 目標平均粒徑約 800 微米（以 Commandante C40 為參考約 20–22 刻）。更重要的是控制細粉比例在 15% 以下——細粉超標是造成雜味和萃取不均最常見的原因。</p></details>
-  <details style="margin-bottom:.8em;"><summary style="font-weight:600;cursor:pointer;color:#5c2d00;">Q: 注水方式會影響手沖味道嗎？</summary><p style="margin:.6em 0 0;color:oklch(28% .02 30);">A: 影響的是萃取均勻性，而非萃取總量。穩定的螺旋注水讓粉床受熱均勻，點注適合需要延長接觸時間的粗研磨配置。兩者本身都可達到好結果，關鍵是維持水流穩定、避免擾動過度。</p></details>
-  <details><summary style="font-weight:600;cursor:pointer;color:#5c2d00;">Q: 手沖咖啡萃取不足怎麼辦？</summary><p style="margin:.6em 0 0;color:oklch(28% .02 30);">A: 先確認 TDS 值（目標 1.35–1.42%），萃取不足通常表現為酸澀、水感薄。修正優先順序：1. 研磨更細 2. 提高水溫 3. 延長注水時間。不要同時改動多個變數，否則難以判斷原因。</p></details>
+<section class="faq-section" aria-labelledby="pour-over-experiment-faq">
+  <h2 id="pour-over-experiment-faq">常見問題</h2>
+  <details class="faq-item"><summary>手沖咖啡哪個變因最重要？</summary><p>研磨度影響最大，其次是水溫。研磨不均或細粉比例過高時，即便其他參數看起來正確，也容易造成萃取不均。</p></details>
+  <details class="faq-item"><summary>手沖水溫幾度最好？</summary><p>多數手沖可以先從 88 至 94°C 之間測試。本篇實驗條件下，92°C 附近的平衡感最穩，但仍需依豆子、研磨與水質調整。</p></details>
+  <details class="faq-item"><summary>手沖研磨度怎麼設定？</summary><p>先以中細研磨作為起點，再依杯中表現微調。比起追求單一刻度，更重要的是控制研磨均勻度與細粉比例。</p></details>
+  <details class="faq-item"><summary>注水方式會影響手沖味道嗎？</summary><p>會。注水方式主要影響粉床受水與受熱的均勻性。穩定螺旋注水與點注都能做出好咖啡，關鍵是水流穩定、避免局部沖刷。</p></details>
+  <details class="faq-item"><summary>手沖咖啡萃取不足怎麼辦？</summary><p>先觀察杯中是否酸尖、水感薄或尾韻短。修正順序建議從研磨更細、提高水溫、延長接觸時間開始，且一次只改一個變因。</p></details>
 </section>
 
-<div class="references" style="max-width:740px;margin:2em auto;padding:1.2em 1.5em;background:oklch(97% .01 30);border-radius:.75rem;font-size:.85rem;">
-  <strong style="display:block;margin-bottom:.8em;color:#1a0a00;">參考資料</strong>
-  <ol style="margin:0;padding-left:1.4em;color:oklch(35% .02 30);">
-    <li>Specialty Coffee Association. <em>Water for Coffee Technical Standards</em>. 2018. <a href="https://sca.coffee" style="color:#c8922a" target="_blank" rel="noopener">sca.coffee</a></li>
-    <li>Hendon, C.H. et al. <em>The Role of Dissolved Cations in Coffee Extraction</em>. Journal of Food Chemistry. 2014. <a href="https://www.sciencedirect.com" style="color:#c8922a" target="_blank" rel="noopener">sciencedirect.com</a></li>
+<div class="references">
+  <h3>參考資料</h3>
+  <ol>
+    <li>Specialty Coffee Association. <em>Water for Coffee Technical Standards</em>. 2018. <a href="https://sca.coffee" target="_blank" rel="noopener">sca.coffee</a></li>
+    <li>Hendon, C.H. et al. <em>The Role of Dissolved Cations in Coffee Extraction</em>. Journal of Food Chemistry. 2014. <a href="https://www.sciencedirect.com" target="_blank" rel="noopener">sciencedirect.com</a></li>
     <li>Rao, S. <em>The Coffee Roaster's Companion</em>. 2014. Scott Rao.</li>
-    <li>VST Coffee. <em>Refractometer and Extraction Yield Protocol</em>. 2024. <a href="https://vstapps.com" style="color:#c8922a" target="_blank" rel="noopener">vstapps.com</a></li>
+    <li>VST Coffee. <em>Refractometer and Extraction Yield Protocol</em>. 2024. <a href="https://vstapps.com" target="_blank" rel="noopener">vstapps.com</a></li>
   </ol>
 </div>
 
-<div class="share-section" style="max-width:740px;margin:2em auto 0;padding-top:1.2em;border-top:1px solid oklch(90% .01 30);">
-  <strong style="color:#1a0a00;">分享這篇</strong>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://bnotescoffee.com/articles/pour-over-variable-complete-experiment.html" target="_blank" rel="noopener">Facebook</a>
-  <a href="https://social-plugins.line.me/lineit/share?url=https://bnotescoffee.com/articles/pour-over-variable-complete-experiment.html" target="_blank" rel="noopener">LINE</a>
-  <button type="button" onclick="navigator.clipboard.writeText(location.href)">複製連結</button>
+<div class="share-section">
+  <span class="share-label">分享這篇</span>
+  <div class="share-btns">
+    <a class="share-btn share-btn-line" href="#" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+' '+location.href));return false;" target="_blank" rel="noopener" aria-label="分享至 LINE" title="LINE">LINE</a>
+    <a class="share-btn share-btn-fb" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false;" aria-label="分享至 Facebook" title="Facebook">f</a>
+    <button class="share-btn share-btn-copy" onclick="navigator.clipboard.writeText(location.href)" aria-label="複製連結" title="複製連結">複製</button>
+  </div>
 </div>
 
-<section class="related-articles">
-  <h2>延伸閱讀</h2>
+<div class="related-articles">
+  <h3 class="related-title">延伸閱讀</h3>
   <div class="related-grid">
-    <a class="related-card" href="/articles/water-quality.html">手沖咖啡的水質科學：如何選擇最適合的沖煮用水</a>
-    <a class="related-card" href="/articles/pour-over-water-temperature-guide.html">手沖水溫完整指南：為什麼 93°C 不是萬能答案</a>
-    <a class="related-card" href="/articles/coffee-acidity-complete-science.html">咖啡酸質的完整科學：如何找到你的對的酸</a>
-    <a class="related-card" href="/articles/cold-brew-advanced-science.html">冷萃進階：12 小時冷泡 vs 急速冷卻的科學差異</a>
+    <a class="related-card" href="/articles/water-quality.html"><span class="related-kicker">手沖科學</span><span class="related-card-title">手沖咖啡的水質科學：如何選擇最適合的沖煮用水</span></a>
+    <a class="related-card" href="/articles/pour-over-water-temperature-guide.html"><span class="related-kicker">水溫調整</span><span class="related-card-title">手沖水溫完整指南：為什麼 93°C 不是萬能答案</span></a>
+    <a class="related-card" href="/articles/coffee-acidity-complete-science.html"><span class="related-kicker">風味理解</span><span class="related-card-title">咖啡酸質的完整科學：如何找到你的對的酸</span></a>
+    <a class="related-card" href="/articles/cold-brew-advanced-science.html"><span class="related-kicker">萃取實驗</span><span class="related-card-title">冷萃進階：12 小時冷泡 vs 急速冷卻的科學差異</span></a>
   </div>
-</section>
+</div>
 </article>
 
   <div class="cta-box" style="margin-top:3rem">
