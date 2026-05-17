@@ -127,10 +127,10 @@ check(
 );
 
 check(
-  'Affiliate 聯盟連結（≥2 個）',
+  '商業連結暫停（影響力目標達成前不設置）',
   'WARN',
-  (html.match(/href="\/re\//g) || []).length >= 2,
-  `目前 /re/ 連結數：${(html.match(/href="\/re\//g) || []).length}`
+  (html.match(/href="\/re\//g) || []).length === 0,
+  `目前 /re/ 連結數：${(html.match(/href="\/re\//g) || []).length}；需 MD 委員會核准後才可加入`
 );
 
 check(
