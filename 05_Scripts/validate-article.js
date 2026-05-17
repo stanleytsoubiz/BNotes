@@ -56,6 +56,15 @@ check(
   '應使用 <a class="nav-logo"><b>B</b>Notes...</a> 標準格式'
 );
 
+check(
+  'Nav Logo 品牌視覺規則',
+  'BLOCK',
+  /\.nav-logo\s*\{[^}]*font-family:[^}]*var\(--(?:font-)?serif/.test(html) &&
+    /\.nav-logo\s+b\s*\{[^}]*color:\s*var\(--gold/.test(html) &&
+    /\.nav-sub\s*\{[^}]*letter-spacing:[^}]*\.12em/.test(html),
+  'Logo 必須使用 BNotes 標準字體、金色 B、品牌副標樣式，避免文章外殼漂移'
+);
+
 const catMatch = html.match(/(?:category|cat):\s*(.+)/);
 const cat = catMatch ? catMatch[1].trim() : '';
 check(
