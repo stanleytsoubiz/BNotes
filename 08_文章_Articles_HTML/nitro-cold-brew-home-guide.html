@@ -409,9 +409,9 @@ footer a{color:var(--coffee-light)}
 
 <div class="article-meta-bar">
   <div class="article-meta-inner">
-    <span>⏱ 12 分鐘閱讀</span>
-    <span>📝 約 4,351 字</span>
-    <span>✍️ BNotes 編輯部</span>
+    <span> 12 分鐘閱讀</span>
+    <span>約 4,351 字</span>
+    <span>️ BNotes 編輯部</span>
   </div>
 </div>
 
@@ -465,7 +465,7 @@ footer a{color:var(--coffee-light)}
 <p>細密的氮氣微泡沫包覆了咖啡液，形成一層「奶油感界面」，這層界面在到達舌頭甜味受器之前，先阻擋了部分苦味物質（如奎寧酸 Quinic Acid）的直接接觸。同時，微泡沫增加了咖啡液的濃稠感（稠度/Mouthfeel），而大腦的感知系統傾向將「稠度」與「甜感」連結——這就是我們不加糖也感受到甜意的原因。</p>
 
 <div class="highlight-box">
-  <div class="box-title">🧪 科學小教室：泡沫的感官效應</div>
+  <div class="box-title">科學小教室：泡沫的感官效應</div>
   <p>根據 2019 年《Food Quality and Preference》期刊的研究，微泡沫結構（Microfoam Structure）能顯著提升食品的感知甜度，降低感知苦度，同時增加「濃郁感 (Richness)」的評分。這也解釋了為什麼義式拿鐵的奶泡感覺比牛奶更甜的現象。</p>
 </div>
 
@@ -510,7 +510,7 @@ footer a{color:var(--coffee-light)}
 </ol>
 
 <div class="highlight-box">
-  <div class="box-title">⚠️ 安全注意事項</div>
+  <div class="box-title">️ 安全注意事項</div>
   <p>N₂O 在食品加工中屬合法使用，但吸入 N₂O 氣體有健康風險。操作奶油槍時，<strong>不可將氣體直接對人吸入，確保在通風良好的環境操作</strong>。台灣食藥署 (TFDA) 對 N₂O 氣彈的購買有年齡限制（18 歲以上），購買前請確認相關規定。</p>
 </div>
 
@@ -634,7 +634,7 @@ footer a{color:var(--coffee-light)}
 </article>
 
   <div class="cta-box" style="margin-top:3rem">
-    <h3>📬 喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
+    <h3>喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
     <p>每週日收到精選咖啡知識，與 2,400+ 咖啡愛好者一起深入咖啡世界。</p>
     <form class="cta-form" onsubmit="return false">
       <input class="cta-input" type="email" placeholder="your@email.com" required>
@@ -651,7 +651,7 @@ footer a{color:var(--coffee-light)}
 
 <script id="bnotes-v3-js">
 (function(){
-  /* ── 1. 進度條 ── */
+  /*  1. 進度條  */
   var pb=document.createElement('div');
   pb.id='bnotes-progress';
   document.body.prepend(pb);
@@ -662,7 +662,7 @@ footer a{color:var(--coffee-light)}
   }
   window.addEventListener('scroll',updateProgress,{passive:true});
 
-  /* ── 2. 統一 Header 注入 ── */
+  /*  2. 統一 Header 注入  */
   (function injectHeader(){
     /* 從現有 DOM 抓 meta 資訊 */
     var titleEl=document.querySelector('h1,.article-title,.typo-hero-title');
@@ -710,9 +710,9 @@ footer a{color:var(--coffee-light)}
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
     headerHtml+='<h2 class="bnotes-title">'+title+'</h2>';
     headerHtml+='<div class="bnotes-meta">';
-    if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
-    headerHtml+='<span>✍️ BNotes 編輯部</span>';
-    if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
+    if(dateStr) headerHtml+='<span>'+dateStr+'</span>';
+    headerHtml+='<span>️ BNotes 編輯部</span>';
+    if(rt)      headerHtml+='<span> '+rt+'</span>';
     headerHtml+='</div><div class="bnotes-divider"></div></header>';
 
     /* 隱藏舊 hero / title 區塊 */
@@ -731,7 +731,7 @@ footer a{color:var(--coffee-light)}
     document.body.insertBefore(tmp.firstElementChild,ref&&ref.parentNode===document.body?ref:null);
   })();
 
-  /* ── 3. TOC 目錄 ── */
+  /*  3. TOC 目錄  */
   (function buildTOC(){
     if(window.innerWidth<1300)return;
 

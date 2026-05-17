@@ -414,9 +414,9 @@ footer a{color:var(--coffee-light)}
 
 <div class="article-meta-bar">
   <div class="article-meta-inner">
-    <span>⏱ 3 分鐘閱讀</span>
-    <span>📝 約 4,500 字</span>
-    <span>✍️ BNotes 編輯部</span>
+    <span> 3 分鐘閱讀</span>
+    <span>約 4,500 字</span>
+    <span>️ BNotes 編輯部</span>
   </div>
 </div>
 
@@ -441,7 +441,7 @@ footer a{color:var(--coffee-light)}
 
 <p>想像一下：把粗顆粒和細粉混在一起沖煮，細粉早就過萃出苦味，粗顆粒卻還未充分萃取——最終杯中是雜訊疊加的混亂，而不是豆子本身的風味。這就是廉價磨豆機讓好豆「浪費掉」的根本原因。</p>
 
-<div class="data-table"><strong>📊 2026 各價位段磨豆機推薦</strong>
+<div class="data-table"><strong>2026 各價位段磨豆機推薦</strong>
 <table><thead><tr><th>機型</th><th>刀盤</th><th>建議售價</th><th>適用場景</th><th>評分</th></tr></thead>
 <tbody>
 <tr><td>1Zpresso JX Pro S</td><td>48mm 錐刀</td><td>NT$5,800</td><td>手沖/旅行</td><td>⭐⭐⭐⭐⭐</td></tr>
@@ -492,7 +492,7 @@ footer a{color:var(--coffee-light)}
   </div>
 <div class="related-articles"><h3 class="related-title">延伸閱讀</h3><div class="related-grid"><a class="related-card" href="/articles/grinder-6models-comparison-2026.html"><span class="related-kicker">器材比較</span><span class="related-card-title">2026 入門磨豆機橫向對比：六款完整實測</span></a><a class="related-card" href="/articles/coffee-equipment-cleaning-bible.html"><span class="related-kicker">清潔維護</span><span class="related-card-title">你的磨豆機，上次清潔是什麼時候？</span></a><a class="related-card" href="/articles/espresso-parameters.html"><span class="related-kicker">萃取參數</span><span class="related-card-title">義式咖啡萃取參數調整指南</span></a></div></div>
 </article><div class="cta-box" style="margin-top:3rem">
-    <h3>📬 喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
+    <h3>喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
     <p>每週日收到精選咖啡知識，與 2,400+ 咖啡愛好者一起深入咖啡世界。</p>
     <form class="cta-form" onsubmit="return false">
       <input class="cta-input" type="email" placeholder="your@email.com" required>
@@ -509,7 +509,7 @@ footer a{color:var(--coffee-light)}
 
 <script id="bnotes-v3-js">
 (function(){
-  /* ── 1. 進度條 ── */
+  /*  1. 進度條  */
   var pb=document.createElement('div');
   pb.id='bnotes-progress';
   document.body.prepend(pb);
@@ -520,7 +520,7 @@ footer a{color:var(--coffee-light)}
   }
   window.addEventListener('scroll',updateProgress,{passive:true});
 
-  /* ── 2. 統一 Header 注入 ── */
+  /*  2. 統一 Header 注入  */
   (function injectHeader(){
     /* 從現有 DOM 抓 meta 資訊 */
     var titleEl=document.querySelector('h1,.article-title,.typo-hero-title');
@@ -568,9 +568,9 @@ footer a{color:var(--coffee-light)}
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
     headerHtml+='<h2 class="bnotes-title">'+title+'</h2>';
     headerHtml+='<div class="bnotes-meta">';
-    if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
-    headerHtml+='<span>✍️ BNotes 編輯部</span>';
-    if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
+    if(dateStr) headerHtml+='<span>'+dateStr+'</span>';
+    headerHtml+='<span>️ BNotes 編輯部</span>';
+    if(rt)      headerHtml+='<span> '+rt+'</span>';
     headerHtml+='</div><div class="bnotes-divider"></div></header>';
 
     /* 隱藏舊 hero / title 區塊 */
@@ -589,7 +589,7 @@ footer a{color:var(--coffee-light)}
     document.body.insertBefore(tmp.firstElementChild,ref&&ref.parentNode===document.body?ref:null);
   })();
 
-  /* ── 3. TOC 目錄 ── */
+  /*  3. TOC 目錄  */
   (function buildTOC(){
     if(window.innerWidth<1300)return;
 

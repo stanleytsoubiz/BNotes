@@ -80,7 +80,7 @@ img{max-width:100%;display:block}
 footer{background:var(--coffee-dark);color:oklch(65% .02 30);padding:2rem 1.5rem;text-align:center;font-size:.85rem}
 footer a{color:var(--coffee-light)}
 
-  /* ── 磨豆機評測專用樣式 ─────────────────────────────────────── */
+  /*  磨豆機評測專用樣式  */
   .grinder-card {
     background: #fff;
     border: 1px solid #e8e0d5;
@@ -158,7 +158,7 @@ footer a{color:var(--coffee-light)}
     line-height: 1.7;
     margin-top: 12px;
   }
-  /* ── chart-block（圖表提示區） ──────────────────────────────── */
+  /*  chart-block（圖表提示區）  */
   .chart-block {
     background: linear-gradient(135deg, #faf6ef 0%, #f5ece0 100%);
     border: 1px dashed #d4a030;
@@ -169,11 +169,7 @@ footer a{color:var(--coffee-light)}
     flex-direction: column;
     gap: 8px;
   }
-  .chart-icon {
-    font-size: 1.8rem;
-    line-height: 1;
-  }
-  .chart-label {
+.chart-label {
     font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 700;
@@ -185,7 +181,7 @@ footer a{color:var(--coffee-light)}
     line-height: 1.7;
     margin: 0;
   }
-  /* ── 推薦選購卡片 ─────────────────────────────────────────── */
+  /*  推薦選購卡片  */
   .recommendation {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -533,9 +529,9 @@ footer a{color:var(--coffee-light)}
 
 <div class="article-meta-bar">
   <div class="article-meta-inner">
-    <span>⏱ 12 分鐘閱讀</span>
-    <span>📝 約 4,196 字</span>
-    <span>✍️ BNotes 編輯部</span>
+    <span> 12 分鐘閱讀</span>
+    <span>約 4,196 字</span>
+    <span>️ BNotes 編輯部</span>
   </div>
 </div>
 
@@ -572,7 +568,6 @@ footer a{color:var(--coffee-light)}
 <p>為確保橫向比較的公平性，所有磨豆機均以相同設定測試：目標研磨度為手沖中研磨（約 700–800μm 為主體粒徑）、測試重量 15g/次、連續測試 5 次取平均。</p>
 
 <div class="chart-block">
-  <div class="chart-icon">📊</div>
   <div class="chart-label">重點對照：六款磨豆機粒徑分布比較圖</div>
   <p>建議製作六條粒徑分布曲線（常態分布曲線），X 軸為粒徑（μm，100–1200μm），Y 軸為各粒徑的重量佔比（%）。六條曲線以不同顏色標示六款磨豆機，理想曲線（高均勻度）呈現窄峰型，低均勻度磨豆機呈現寬型或雙峰型。在圖下方標注各款的「細粉率（150μm以下佔比）」數值，讓讀者一眼看出各款磨豆機的均勻度差異。</p>
 </div>
@@ -676,7 +671,6 @@ footer a{color:var(--coffee-light)}
 </div>
 
 <div class="chart-block">
-  <div class="chart-icon">📊</div>
   <div class="chart-label">重點對照：六款磨豆機性能雷達圖比較</div>
   <p>建議製作六邊形雷達圖，六個評測維度：均勻度、細粉率控制、結塊抗性、刻度精細度、操作便利性、性價比，各維度最高10分。將六款磨豆機在同一張圖上以不同顏色標示，讓讀者一眼看出各款磨豆機的「整體輪廓」，快速判斷哪款最符合自己的優先考量。</p>
 </div>
@@ -736,7 +730,6 @@ footer a{color:var(--coffee-light)}
 </ul>
 
 <div class="chart-block">
-  <div class="chart-icon">📊</div>
   <div class="chart-label">選購決策：先用沖煮方式縮小範圍</div>
   <p>如果你主要喝手沖，先比較研磨均勻度、細粉量與日常清潔；如果也想兼顧義式，再把刻度精細度、低殘粉與馬達穩定度放進評估。這樣讀者不用一次理解所有規格，而是從自己的沖煮情境回推合適機型。</p>
 </div>
@@ -752,14 +745,6 @@ footer a{color:var(--coffee-light)}
   <span>#磨豆機推薦</span><span>#磨豆機評測</span><span>#2026磨豆機</span><span>#手沖磨豆機</span><span>#入門磨豆機</span><span>#Timemore</span><span>#Comandante</span>
 </div>
 
-<div class="newsletter-cta">
-  <h3>☕ 訂閱 BNotes 週報，每週一杯知識濃縮</h3>
-  <p>每週五發送，精選全球精品咖啡趨勢、產地新知與沖煮實驗，直送你的信箱。台灣最具深度的咖啡電子報，目前已有 12,000+ 訂閱者。</p>
-  <div class="newsletter-form">
-    <input type="email" placeholder="your@email.com" aria-label="Email 地址" />
-    <button type="button">免費訂閱</button>
-  </div>
-</div>
 <section class="faq-section"><h2>常見問題</h2>
 <div class="faq-item"><button class="faq-question" type="button">六款比較應該先看哪個指標？</button><div class="faq-answer"><p>先看研磨均勻度與細粉量，因為它們直接影響酸甜平衡與苦澀感。</p></div></div>
 <div class="faq-item"><button class="faq-question" type="button">入門磨豆機能做義式嗎？</button><div class="faq-answer"><p>部分可以，但義式需要更細且更穩的刻度，入門機若刻度太粗，調整會很痛苦。</p></div></div>
@@ -786,7 +771,7 @@ footer a{color:var(--coffee-light)}
 </article>
 
   <div class="cta-box" style="margin-top:3rem">
-    <h3>📬 喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
+    <h3>喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
     <p>每週日收到精選咖啡知識，與 2,400+ 咖啡愛好者一起深入咖啡世界。</p>
     <form class="cta-form" onsubmit="return false">
       <input class="cta-input" type="email" placeholder="your@email.com" required>
@@ -803,7 +788,7 @@ footer a{color:var(--coffee-light)}
 
 <script id="bnotes-v3-js">
 (function(){
-  /* ── 1. 進度條 ── */
+  /*  1. 進度條  */
   var pb=document.createElement('div');
   pb.id='bnotes-progress';
   document.body.prepend(pb);
@@ -814,7 +799,7 @@ footer a{color:var(--coffee-light)}
   }
   window.addEventListener('scroll',updateProgress,{passive:true});
 
-  /* ── 2. 統一 Header 注入 ── */
+  /*  2. 統一 Header 注入  */
   (function injectHeader(){
     /* 從現有 DOM 抓 meta 資訊 */
     var titleEl=document.querySelector('h1,.article-title,.typo-hero-title');
@@ -862,9 +847,9 @@ footer a{color:var(--coffee-light)}
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
     headerHtml+='<h2 class="bnotes-title">'+title+'</h2>';
     headerHtml+='<div class="bnotes-meta">';
-    if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
-    headerHtml+='<span>✍️ BNotes 編輯部</span>';
-    if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
+    if(dateStr) headerHtml+='<span>'+dateStr+'</span>';
+    headerHtml+='<span>️ BNotes 編輯部</span>';
+    if(rt)      headerHtml+='<span> '+rt+'</span>';
     headerHtml+='</div><div class="bnotes-divider"></div></header>';
 
     /* 隱藏舊 hero / title 區塊 */
@@ -883,7 +868,7 @@ footer a{color:var(--coffee-light)}
     document.body.insertBefore(tmp.firstElementChild,ref&&ref.parentNode===document.body?ref:null);
   })();
 
-  /* ── 3. TOC 目錄 ── */
+  /*  3. TOC 目錄  */
   (function buildTOC(){
     if(window.innerWidth<1300)return;
 

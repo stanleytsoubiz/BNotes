@@ -414,9 +414,9 @@ footer a{color:var(--coffee-light)}
 
 <div class="article-meta-bar">
   <div class="article-meta-inner">
-    <span>⏱ 3 分鐘閱讀</span>
-    <span>📝 約 3,200 字</span>
-    <span>✍️ BNotes 編輯部</span>
+    <span> 3 分鐘閱讀</span>
+    <span>約 3,200 字</span>
+    <span>️ BNotes 編輯部</span>
   </div>
 </div>
 
@@ -436,7 +436,7 @@ footer a{color:var(--coffee-light)}
 <h2>微奶泡的科學原理</h2>
 <p>打出優質微奶泡的關鍵，在於蒸汽棒（<strong>Steam Wand</strong>）的位置與角度。正確方式：蒸汽棒插入奶壺約 1cm，偏離中心 1–2cm，產生旋轉渦流（Vortex）。初期在液面下「拉伸」（Stretching）注入空氣，使奶泡量增加；隨後深入加熱，使奶泡在旋轉中被「捲入」均質化，形成絲滑微泡。</p>
 
-<div class="data-table"><strong>📊 牛奶種類與拉花適性比較</strong>
+<div class="data-table"><strong>牛奶種類與拉花適性比較</strong>
 <table><thead><tr><th>牛奶種類</th><th>脂肪含量</th><th>拉花適性</th><th>風味特點</th></tr></thead>
 <tbody><tr><td>全脂牛奶</td><td>3.5%</td><td>⭐⭐⭐⭐⭐</td><td>奶香濃郁、奶泡穩定</td></tr>
 <tr><td>低脂牛奶</td><td>1–2%</td><td>⭐⭐⭐</td><td>奶泡蓬鬆但不持久</td></tr>
@@ -491,7 +491,7 @@ footer a{color:var(--coffee-light)}
   </div>
 <div class="related-articles"><h3 class="related-title">延伸閱讀</h3><div class="related-grid"><a class="related-card" href="/articles/milk-steaming-science.html"><span class="related-kicker">奶泡科學</span><span class="related-card-title">奶泡打發科學：溫度、蛋白質與微泡控制</span></a><a class="related-card" href="/articles/plant-milk-barista-complete-guide.html"><span class="related-kicker">植物奶</span><span class="related-card-title">植物奶咖啡師指南：穩定泡沫與融合判斷</span></a><a class="related-card" href="/articles/wlac-2026-champion-technique.html"><span class="related-kicker">冠軍技術</span><span class="related-card-title">WCC 世界拉花藝術賽 2026 冠軍技術拆解</span></a></div></div>
 </article><div class="cta-box" style="margin-top:3rem">
-    <h3>📬 喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
+    <h3>喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
     <p>每週日收到精選咖啡知識，與 2,400+ 咖啡愛好者一起深入咖啡世界。</p>
     <form class="cta-form" onsubmit="return false">
       <input class="cta-input" type="email" placeholder="your@email.com" required>
@@ -508,7 +508,7 @@ footer a{color:var(--coffee-light)}
 
 <script id="bnotes-v3-js">
 (function(){
-  /* ── 1. 進度條 ── */
+  /*  1. 進度條  */
   var pb=document.createElement('div');
   pb.id='bnotes-progress';
   document.body.prepend(pb);
@@ -519,7 +519,7 @@ footer a{color:var(--coffee-light)}
   }
   window.addEventListener('scroll',updateProgress,{passive:true});
 
-  /* ── 2. 統一 Header 注入 ── */
+  /*  2. 統一 Header 注入  */
   (function injectHeader(){
     /* 從現有 DOM 抓 meta 資訊 */
     var titleEl=document.querySelector('h1,.article-title,.typo-hero-title');
@@ -567,9 +567,9 @@ footer a{color:var(--coffee-light)}
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
     headerHtml+='<h2 class="bnotes-title">'+title+'</h2>';
     headerHtml+='<div class="bnotes-meta">';
-    if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
-    headerHtml+='<span>✍️ BNotes 編輯部</span>';
-    if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
+    if(dateStr) headerHtml+='<span>'+dateStr+'</span>';
+    headerHtml+='<span>️ BNotes 編輯部</span>';
+    if(rt)      headerHtml+='<span> '+rt+'</span>';
     headerHtml+='</div><div class="bnotes-divider"></div></header>';
 
     /* 隱藏舊 hero / title 區塊 */
@@ -588,7 +588,7 @@ footer a{color:var(--coffee-light)}
     document.body.insertBefore(tmp.firstElementChild,ref&&ref.parentNode===document.body?ref:null);
   })();
 
-  /* ── 3. TOC 目錄 ── */
+  /*  3. TOC 目錄  */
   (function buildTOC(){
     if(window.innerWidth<1300)return;
 

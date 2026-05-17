@@ -395,9 +395,9 @@ footer a{color:var(--coffee-light)}
 
 <div class="article-meta-bar">
   <div class="article-meta-inner">
-    <span>⏱ 6 分鐘閱讀</span>
-    <span>📝 約 2,000 字</span>
-    <span>✍️ BNotes 編輯部</span>
+    <span> 6 分鐘閱讀</span>
+    <span>約 2,000 字</span>
+    <span>️ BNotes 編輯部</span>
   </div>
 </div>
 
@@ -420,7 +420,7 @@ footer a{color:var(--coffee-light)}
 
 
 <div class="methodology-box">
-<h3>📋 測評方法論說明</h3>
+<h3>測評方法論說明</h3>
 <p><strong>測試週期</strong>：2026年4月至6月（三個月）</p>
 <p><strong>評分維度</strong>：手沖壺 — 流量控制精準度/保溫效果/鵝頸角度；電子秤 — 反應速度/計時功能/防水設計；濾杯 — 萃取一致性/清潔難易度/材質耐熱性</p>
 
@@ -456,7 +456,7 @@ footer a{color:var(--coffee-light)}
   </div>
 <div class="related-articles"><h3 class="related-title">延伸閱讀</h3><div class="related-grid"><a class="related-card" href="/articles/grinder-guide-2026.html"><span class="related-kicker">磨豆機</span><span class="related-card-title">2026 年度咖啡磨豆機推薦</span></a><a class="related-card" href="/articles/v60-vs-kalita-filter-geometry.html"><span class="related-kicker">濾杯比較</span><span class="related-card-title">V60 vs Kalita：濾杯幾何如何改變風味</span></a><a class="related-card" href="/articles/water-quality.html"><span class="related-kicker">水質</span><span class="related-card-title">手沖咖啡的水質科學</span></a></div></div>
 </article><div class="cta-box" style="margin-top:3rem">
-    <h3>📬 喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
+    <h3>喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
     <p>每週日收到精選咖啡知識，與 2,400+ 咖啡愛好者一起深入咖啡世界。</p>
     <form class="cta-form" onsubmit="return false">
       <input class="cta-input" type="email" placeholder="your@email.com" required>
@@ -473,7 +473,7 @@ footer a{color:var(--coffee-light)}
 
 <script id="bnotes-v3-js">
 (function(){
-  /* ── 1. 進度條 ── */
+  /*  1. 進度條  */
   var pb=document.createElement('div');
   pb.id='bnotes-progress';
   document.body.prepend(pb);
@@ -484,7 +484,7 @@ footer a{color:var(--coffee-light)}
   }
   window.addEventListener('scroll',updateProgress,{passive:true});
 
-  /* ── 2. 統一 Header 注入 ── */
+  /*  2. 統一 Header 注入  */
   (function injectHeader(){
     /* 從現有 DOM 抓 meta 資訊 */
     var titleEl=document.querySelector('h1,.article-title,.typo-hero-title');
@@ -532,9 +532,9 @@ footer a{color:var(--coffee-light)}
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
     headerHtml+='<!-- removed duplicate template H1 -->';
     headerHtml+='<div class="bnotes-meta">';
-    if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
-    headerHtml+='<span>✍️ BNotes 編輯部</span>';
-    if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
+    if(dateStr) headerHtml+='<span>'+dateStr+'</span>';
+    headerHtml+='<span>️ BNotes 編輯部</span>';
+    if(rt)      headerHtml+='<span> '+rt+'</span>';
     headerHtml+='</div><div class="bnotes-divider"></div></header>';
 
     /* 隱藏舊 hero / title 區塊 */
@@ -553,7 +553,7 @@ footer a{color:var(--coffee-light)}
     document.body.insertBefore(tmp.firstElementChild,ref&&ref.parentNode===document.body?ref:null);
   })();
 
-  /* ── 3. TOC 目錄 ── */
+  /*  3. TOC 目錄  */
   (function buildTOC(){
     if(window.innerWidth<1300)return;
 

@@ -409,9 +409,9 @@ footer a{color:var(--coffee-light)}
 
 <div class="article-meta-bar">
   <div class="article-meta-inner">
-    <span>⏱ 6 分鐘閱讀</span>
-    <span>📝 約 2,000 字</span>
-    <span>✍️ BNotes 編輯部</span>
+    <span> 6 分鐘閱讀</span>
+    <span>約 2,000 字</span>
+    <span>️ BNotes 編輯部</span>
   </div>
 </div>
 
@@ -444,17 +444,17 @@ footer a{color:var(--coffee-light)}
 
 
 <div class="item-card">
-<h4>🗺 A 路線：精品豆愛好者優先動線（4–5 小時）</h4>
+<h4>A 路線：精品豆愛好者優先動線（4–5 小時）</h4>
 <p><strong>Step 1</strong>：進館後直接前往台灣在地烘豆師區（通常在二館），趁早上人少時與烘豆師深度交流，了解新豆款和直購管道。</p>
 <p><strong>Step 2</strong>：移至生豆貿易區（Green Bean Trading Zone），這裡有來自各產國的出口商，可以取得第一手的產地資訊。</p>
 <p><strong>Step 3</strong>：前往國際精品烘豆品牌展示區，試喝並比較不同品牌的新豆款。</p>
 <p><strong>Step 4</strong>：最後逛器具和設備區（此時通常人流較多，可稍作休息）。</p>
 </div>
 
-<h3>🗺 B 路線：器材採購者優先動線（3–4 小時）</h3>
+<h3>B 路線：器材採購者優先動線（3–4 小時）</h3>
 <p>進館直攻器具設備區——這時段人少，廠商有充裕時間給你實際操作演示。把想比較的機型清單提前列好，現場對比價格和操作手感。下午再繞去台灣烘豆師區補充豆款，做為搭配新器材的第一批測試豆。</p>
 
-<h3>🗺 C 路線：純體驗型（2–3 小時，週末入場）</h3>
+<h3>C 路線：純體驗型（2–3 小時，週末入場）</h3>
 <p>不做採購計畫，就是想喝到各地好咖啡。優先前往有提供現場試飲的攤位（通常貼有「試喝」標示），準備 NT$300–500，可以喝到 5–8 杯不同產地和烘焙風格的咖啡，是一次高密度的感官教育。</p>
 
 <h2>入場須知與購票資訊</h2>
@@ -476,15 +476,6 @@ footer a{color:var(--coffee-light)}
 <div class="article-tags" style="margin-top:1.5em;">
   <strong style="font-size:.85rem;color:var(--muted-fg);">標籤：</strong>
   <span>#台北咖啡展</span><span>#台北國際咖啡展</span><span>#南港展覽館</span><span>#咖啡產業</span><span>#精品咖啡活動</span>
-</div>
-
-<div class="newsletter-cta">
-  <h3>☕ 訂閱 BNotes 週報，每週一杯知識濃縮</h3>
-  <p>每週五發送，精選全球精品咖啡趨勢、產地新知與沖煮實驗，直送你的信箱。台灣最具深度的咖啡電子報，目前已有 12,000+ 訂閱者。</p>
-  <div class="newsletter-form">
-    <input type="email" placeholder="your@email.com" aria-label="Email 地址" />
-    <button type="button">免費訂閱</button>
-  </div>
 </div>
 
 <h2>結語：把咖啡展變成你的學習路線</h2>
@@ -519,7 +510,7 @@ footer a{color:var(--coffee-light)}
 </article>
 
   <div class="cta-box" style="margin-top:3rem">
-    <h3>📬 喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
+    <h3>喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
     <p>每週日收到精選咖啡知識，與 2,400+ 咖啡愛好者一起深入咖啡世界。</p>
     <form class="cta-form" onsubmit="return false">
       <input class="cta-input" type="email" placeholder="your@email.com" required>
@@ -536,7 +527,7 @@ footer a{color:var(--coffee-light)}
 
 <script id="bnotes-v3-js">
 (function(){
-  /* ── 1. 進度條 ── */
+  /*  1. 進度條  */
   var pb=document.createElement('div');
   pb.id='bnotes-progress';
   document.body.prepend(pb);
@@ -547,7 +538,7 @@ footer a{color:var(--coffee-light)}
   }
   window.addEventListener('scroll',updateProgress,{passive:true});
 
-  /* ── 2. 統一 Header 注入 ── */
+  /*  2. 統一 Header 注入  */
   (function injectHeader(){
     /* 從現有 DOM 抓 meta 資訊 */
     var titleEl=document.querySelector('h1,.article-title,.typo-hero-title');
@@ -595,9 +586,9 @@ footer a{color:var(--coffee-light)}
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
     headerHtml+='<!-- removed duplicate template H1 -->';
     headerHtml+='<div class="bnotes-meta">';
-    if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
-    headerHtml+='<span>✍️ BNotes 編輯部</span>';
-    if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
+    if(dateStr) headerHtml+='<span>'+dateStr+'</span>';
+    headerHtml+='<span>️ BNotes 編輯部</span>';
+    if(rt)      headerHtml+='<span> '+rt+'</span>';
     headerHtml+='</div><div class="bnotes-divider"></div></header>';
 
     /* 隱藏舊 hero / title 區塊 */
@@ -616,7 +607,7 @@ footer a{color:var(--coffee-light)}
     document.body.insertBefore(tmp.firstElementChild,ref&&ref.parentNode===document.body?ref:null);
   })();
 
-  /* ── 3. TOC 目錄 ── */
+  /*  3. TOC 目錄  */
   (function buildTOC(){
     if(window.innerWidth<1300)return;
 

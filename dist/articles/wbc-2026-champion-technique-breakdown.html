@@ -395,9 +395,9 @@ footer a{color:var(--coffee-light)}
 
 <div class="article-meta-bar">
   <div class="article-meta-inner">
-    <span>⏱ 6 分鐘閱讀</span>
-    <span>📝 約 2,000 字</span>
-    <span>✍️ BNotes 編輯部</span>
+    <span> 6 分鐘閱讀</span>
+    <span>約 2,000 字</span>
+    <span>️ BNotes 編輯部</span>
   </div>
 </div>
 
@@ -423,7 +423,7 @@ footer a{color:var(--coffee-light)}
 <h2>2026 冠軍的 15 分鐘拆解</h2>
 
 <div class="highlight-box">
-<h4>🏆 2026 WBC 冠軍核心技術摘要（基於賽後媒體報導及官方演示記錄）</h4>
+<h4>2026 WBC 冠軍核心技術摘要（基於賽後媒體報導及官方演示記錄）</h4>
 <p><strong>豆款選擇</strong>：巴拿馬 Geisha（葛夏/藝伎）品種，採用雙重厭氧乳酸菌控制發酵（Lactic Acid Bacteria Anaerobic Fermentation），72小時發酵週期，發酵溫度嚴格控制在16°C±1°C。</p>
 
 <p><strong>Espresso 萃取參數</strong>：水溫 90.5°C，研磨至 ~200μm，粉量 21g，萃取量 48g（粉液比 1:2.3），萃取時間 28 秒，使用壓力曲線機（Pressure Profile Machine）實施先高壓後低壓的非線性萃取流程。</p>
@@ -451,14 +451,6 @@ footer a{color:var(--coffee-light)}
   <span>#WBC2026</span><span>#世界咖啡師大賽</span><span>#Geisha</span><span>#厭氧發酵</span><span>#精品咖啡</span><span>#巴拿馬咖啡</span>
 </div>
 
-<div class="newsletter-cta">
-  <h3>☕ 訂閱 BNotes 週報，每週一杯知識濃縮</h3>
-  <p>每週五發送，精選全球精品咖啡趨勢、產地新知與沖煮實驗，直送你的信箱。台灣最具深度的咖啡電子報，目前已有 12,000+ 訂閱者。</p>
-  <div class="newsletter-form">
-    <input type="email" placeholder="your@email.com" aria-label="Email 地址" />
-    <button type="button">免費訂閱</button>
-  </div>
-</div>
 <h2>結語：把這篇變成下一杯的練習</h2>
 <p>我會建議你讀完後不要急著追求完整複製，而是先選一個變因在下一杯咖啡裡測試：香氣是否更清楚、甜感是否更完整、口感是否更乾淨。這才是 BNotes 希望陪你建立的自學節奏。</p>
 <section class="faq-section"><h2>常見問題</h2>
@@ -487,7 +479,7 @@ footer a{color:var(--coffee-light)}
 </article>
 
   <div class="cta-box" style="margin-top:3rem">
-    <h3>📬 喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
+    <h3>喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
     <p>每週日收到精選咖啡知識，與 2,400+ 咖啡愛好者一起深入咖啡世界。</p>
     <form class="cta-form" onsubmit="return false">
       <input class="cta-input" type="email" placeholder="your@email.com" required>
@@ -504,7 +496,7 @@ footer a{color:var(--coffee-light)}
 
 <script id="bnotes-v3-js">
 (function(){
-  /* ── 1. 進度條 ── */
+  /*  1. 進度條  */
   var pb=document.createElement('div');
   pb.id='bnotes-progress';
   document.body.prepend(pb);
@@ -515,7 +507,7 @@ footer a{color:var(--coffee-light)}
   }
   window.addEventListener('scroll',updateProgress,{passive:true});
 
-  /* ── 2. 統一 Header 注入 ── */
+  /*  2. 統一 Header 注入  */
   (function injectHeader(){
     /* 從現有 DOM 抓 meta 資訊 */
     var titleEl=document.querySelector('h1,.article-title,.typo-hero-title');
@@ -563,9 +555,9 @@ footer a{color:var(--coffee-light)}
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
     headerHtml+='<!-- removed duplicate template H1 -->';
     headerHtml+='<div class="bnotes-meta">';
-    if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
-    headerHtml+='<span>✍️ BNotes 編輯部</span>';
-    if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
+    if(dateStr) headerHtml+='<span>'+dateStr+'</span>';
+    headerHtml+='<span>️ BNotes 編輯部</span>';
+    if(rt)      headerHtml+='<span> '+rt+'</span>';
     headerHtml+='</div><div class="bnotes-divider"></div></header>';
 
     /* 隱藏舊 hero / title 區塊 */
@@ -584,7 +576,7 @@ footer a{color:var(--coffee-light)}
     document.body.insertBefore(tmp.firstElementChild,ref&&ref.parentNode===document.body?ref:null);
   })();
 
-  /* ── 3. TOC 目錄 ── */
+  /*  3. TOC 目錄  */
   (function buildTOC(){
     if(window.innerWidth<1300)return;
 
