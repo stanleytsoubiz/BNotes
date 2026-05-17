@@ -368,14 +368,21 @@ footer a{color:var(--coffee-light)}
   max-width: 740px; margin: 40px auto 0;
   padding: 0 24px;
 }
-.related-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 12px }
-.related-card {
-  border: 1px solid oklch(89% .01 30); border-radius: .6rem;
-  padding: 14px; font-size: .85rem;
-  background: var(--card,#fff);
-  transition: box-shadow .15s;
+.related-title {
+  font-size: 1.05rem; font-weight: 700; color: var(--coffee-dark,#1a0a00);
+  margin-bottom: .9rem; border-left: 4px solid var(--gold,#c8922a); padding-left: .75rem;
 }
-.related-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.09) }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: .7rem }
+.related-card {
+  display: flex; flex-direction: column; gap: .35rem; text-decoration: none;
+  border: 1px solid #e8d5b0; border-radius: .6rem;
+  padding: .9rem; font-size: .85rem;
+  background: var(--card,#fff);
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+}
+.related-card:hover { transform: translateY(-2px); box-shadow: 0 3px 12px rgba(0,0,0,.09); border-color: var(--gold,#c8922a) }
+.related-kicker { font-size: .72rem; color: var(--gold,#c8922a); font-weight: 600 }
+.related-card-title { font-size: .87rem; font-weight: 700; color: var(--coffee-dark,#1a0a00); line-height: 1.4 }
 
 /* 9. 麵包屑保留 */
 .breadcrumb, nav[aria-label="breadcrumb"] {
