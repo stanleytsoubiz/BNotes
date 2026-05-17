@@ -519,7 +519,7 @@ footer a{color:var(--coffee-light)}
     /* 組合 header */
     var headerHtml='<header id="bnotes-unified-header" class="bnotes-header">';
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
-    headerHtml+='<!-- removed duplicate template H1 -->';
+    headerHtml+='<h1 class="bnotes-title">'+title+'</h1>';
     headerHtml+='<div class="bnotes-meta">';
     if(dateStr) headerHtml+='<span>'+dateStr+'</span>';
     headerHtml+='<span>️ BNotes 編輯部</span>';

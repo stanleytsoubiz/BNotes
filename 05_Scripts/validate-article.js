@@ -25,6 +25,7 @@ if (!fs.existsSync(filePath)) {
 }
 
 const html = fs.readFileSync(filePath, 'utf8');
+const now = new Date();
 
 let blocks = 0;
 let warns  = 0;
@@ -79,6 +80,44 @@ check(
   'BLOCK',
   !html.includes('{{'),
   '仍有未替換的佔位欄位'
+);
+
+check(
+  '文章頁不得殘留標籤區塊',
+  'BLOCK',
+  !html.includes('article-tags') && !/<strong[^>]*>標籤/.test(html) && !/標籤：<\/strong>/.test(html),
+  '文章內頁不得顯示 article-tags 或「標籤：」模組，避免破壞 BNotes 統一閱讀外殼'
+);
+
+check(
+  '可見 BNotes 文章主標',
+  'BLOCK',
+  html.includes('class="bnotes-title"') || html.includes('class="bnotes-unified-title"'),
+  '不可只依賴 meta title 或隱藏 H1；讀者進入文章後必須看得到標準主標'
+);
+
+const jsonLdMatches = [...html.matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)];
+const publishDates = [];
+for (const match of jsonLdMatches) {
+  try {
+    const data = JSON.parse(match[1]);
+    const items = Array.isArray(data) ? data : [data];
+    for (const item of items) {
+      if (item && item.datePublished) publishDates.push(String(item.datePublished));
+    }
+  } catch (error) {
+    // JSON-LD syntax is not the focus of this check; malformed data is handled elsewhere.
+  }
+}
+const futurePublishDate = publishDates.find((date) => {
+  const parsed = new Date(date);
+  return !Number.isNaN(parsed.getTime()) && parsed > now;
+});
+check(
+  '發布日期不可晚於今天',
+  'BLOCK',
+  !futurePublishDate,
+  `偵測到未來發布日期：${futurePublishDate}。未來文章、年度報告、賽事冠軍拆解不得誤當已發布內容`
 );
 
 // ── BLOCK 項：審核留痕（v1.7 規範）────────────────────
