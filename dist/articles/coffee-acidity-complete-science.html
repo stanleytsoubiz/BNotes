@@ -1,3 +1,15 @@
+---
+title: "咖啡酸質的完整科學：為什麼有人愛，有人怕，以及如何找到你的「對的酸」"
+date: 2026-04-09
+status: published
+category: science
+description: "「這杯咖啡太酸了」——但你說的「酸」是蘋果酸的清爽，還是醋酸的刺激？理解咖啡中30多種有機酸的差異，讓你從此不再盲目抗拒或追求酸質。"
+cover_image: "https://bnotescoffee.com/images/ai/coffee-acidity-complete-science-hero.jpg"
+reading_time: 12
+featured: false
+b1_reviewed_at: 2026-05-17T11:00:00Z
+gm_approved_at: 2026-05-17T11:30:00Z
+---
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -32,7 +44,9 @@ img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
 .nav-brand{display:flex;align-items:center;gap:.75rem}
-.nav-logo{font-size:1.5rem}
+.nav-logo{font-family:var(--serif,var(--font-serif));font-size:1.15rem;font-weight:900;color:var(--dark,var(--coffee-dark));letter-spacing:.02em;text-decoration:none}
+.nav-logo b{color:var(--gold)}
+.nav-sub{font-family:var(--sans,var(--font-sans));font-size:.65rem;color:var(--muted-fg);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
 .nav-name{font-family:var(--font-serif);font-weight:700;font-size:1rem;color:var(--coffee-dark);line-height:1.2}
 .nav-en{font-size:.6rem;letter-spacing:.3em;color:var(--coffee-mid)}
 .nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
@@ -106,6 +120,54 @@ footer a{color:var(--coffee-light)}
       "position": 3,
       "name": "咖啡酸質的完整科學：為什麼有人愛，有人怕，以及如何找到你的「對的酸」",
       "item": "https://bnotescoffee.com/articles/coffee-acidity-complete-science.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "咖啡的酸是什麼？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "咖啡的酸質主要來自多種有機酸，包括蘋果酸、檸檬酸、醋酸與奎寧酸。它不是單一味道，而是一組會影響清爽感、明亮度、刺激感與收斂感的風味訊號。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "為什麼淺焙比深焙酸？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "淺焙通常保留較多蘋果酸與檸檬酸，因此酸質更明亮。深焙時這些酸會逐漸分解，同時奎寧酸與苦澀收斂感增加，所以深焙不是完全不酸，而是酸的型態不同。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "咖啡太酸要怎麼調整？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以先判斷酸感是清脆、尖銳還是澀。若是萃取不足造成的酸尖，可略微提高水溫、讓研磨細一點或延長接觸時間；若是不喜歡處理法帶來的發酵酸，可改選水洗或中烘焙豆。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "咖啡酸質和胃酸有關係嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "咖啡本身的 pH 值通常約在 4.9 至 5.5，遠高於胃酸。胃部刺激感不一定只來自咖啡的酸度，也可能與咖啡因、綠原酸、空腹飲用或個人體質有關。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "新手應該怎麼找到自己喜歡的酸？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以從水洗中烘焙或酸甜平衡的哥倫比亞、衣索比亞開始，記錄自己喜歡的是青蘋果般清脆、柑橘般明亮，還是熟果般圓潤。先描述酸的類型，比單純說太酸更有幫助。"
+      }
     }
   ]
 }
@@ -261,14 +323,66 @@ footer a{color:var(--coffee-light)}
 }
 .article-body tr:nth-child(even) td { background: oklch(97% .006 30) }
 
-/* 4. Key Takeaway 卡片 */
-.key-takeaway, .takeaway-box, [class*="key-take"] {
+/* 4. Article Shell Modules */
+.article-module-title{
+  display:block;
+  margin-bottom:.55em;
+  color:var(--coffee-dark,#1a0a00);
+  font-weight:700;
+}
+.module-conclusion,
+.module-you-know,
+.module-quick{
+  border-radius:.75rem;
+  padding:1.2em 1.4em;
+  margin:1.8em 0;
+  color:var(--fg,oklch(20% .02 30));
+}
+.module-conclusion{
   background: linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));
   border: 1px solid oklch(88% .05 45);
   border-left: 4px solid var(--gold,#c8922a);
-  border-radius: .75rem; padding: 1.2em 1.4em;
-  margin: 1.8em 0;
 }
+.module-you-know{
+  background:oklch(98% .015 50);
+  border:1px solid oklch(90% .025 50);
+  border-left:4px solid oklch(72% .08 55);
+}
+.module-quick{
+  background:oklch(97% .012 165);
+  border:1px solid oklch(88% .03 165);
+  border-left:4px solid oklch(58% .09 165);
+}
+.module-conclusion p,
+.module-you-know p,
+.module-quick p{margin-bottom:.75rem}
+.module-conclusion p:last-child,
+.module-you-know p:last-child,
+.module-quick p:last-child{margin-bottom:0}
+.module-conclusion ul,
+.module-you-know ul,
+.module-quick ul{margin:.55rem 0 0 1.2rem}
+.module-conclusion li,
+.module-you-know li,
+.module-quick li{margin-bottom:.45rem;line-height:1.75}
+.faq-section{margin:2.5rem 0;padding-top:1.25rem;border-top:1px solid oklch(90% .01 30)}
+.faq-section h2{margin-top:0}
+.faq-item{border:1px solid oklch(90% .012 45);border-radius:.75rem;background:oklch(99% .006 45);margin:0 0 .75rem;overflow:hidden}
+.faq-item summary{cursor:pointer;padding:1rem 1.15rem;font-weight:700;color:var(--coffee-dark,#1a0a00);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-weight:700;color:var(--gold,#c8922a);font-size:1.1rem;line-height:1}
+.faq-item[open] summary::after{content:"-"}
+.faq-item p{padding:0 1.15rem 1rem;margin:0;color:var(--muted-fg,oklch(45% .02 30));line-height:1.8}
+.chart-block,
+.highlight-box,
+.pull-quote{
+  border-radius:.75rem;
+  padding:1.1em 1.25em;
+  margin:1.8em 0;
+}
+.chart-block{background:oklch(98% .01 240);border:1px solid oklch(90% .02 240);border-left:4px solid oklch(58% .08 240)}
+.highlight-box{background:oklch(98% .015 50);border:1px solid oklch(90% .025 50);border-left:4px solid var(--gold,#c8922a)}
+.pull-quote{background:oklch(97% .015 45);border-left:4px solid var(--gold,#c8922a);font-family:var(--font-serif);font-weight:700;color:var(--coffee-warm,#5c2d00)}
 
 /* 5. TOC 面板 */
 #bnotes-toc-panel {
@@ -318,20 +432,43 @@ footer a{color:var(--coffee-light)}
   border-top: 1px solid oklch(90% .01 30);
   display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
 }
+.references{font-size:.82rem;line-height:1.55;color:oklch(45% .02 30);margin-top:2.5em;padding-top:1em;border-top:1px dashed oklch(85% .01 30)}
+.references h3{font-size:.9rem;color:oklch(40% .02 30);margin-bottom:.6em}
+.references ol,.references ul{padding-left:1.2em;margin:0}
+.references li{margin-bottom:.35em}
+.references em{color:oklch(35% .02 30)}
+.share-section{max-width:740px;margin:2.5em auto 0;padding:1.5em 24px 0;border-top:1px solid oklch(90% .01 30);display:flex;align-items:center;gap:.75em;flex-wrap:wrap}
+.share-label{font-size:.85rem;color:oklch(45% .02 30);font-weight:600;margin-right:.5em}
+.share-btns{display:flex;gap:.5em;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;text-decoration:none}
+.share-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.share-btn svg{width:18px;height:18px}
+.share-btn-line{background:#00C300}
+.share-btn-fb{background:#1877F2}
+.share-btn-threads{background:#000}
+.share-btn-x{background:#000}
+.share-btn-copy{background:#8b4513}
 
 /* 8. 相關文章 */
 .related-articles, .related-posts {
   max-width: 740px; margin: 40px auto 0;
   padding: 0 24px;
 }
-.related-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 12px }
+.related-title {
+  font-size: 1.05rem; font-weight: 700; color: var(--coffee-dark,#1a0a00);
+  margin-bottom: .9rem; border-left: 4px solid var(--gold,#c8922a); padding-left: .75rem;
+}
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: .7rem }
 .related-card {
+  display: flex; flex-direction: column; gap: .35rem; text-decoration: none;
   border: 1px solid oklch(89% .01 30); border-radius: .6rem;
   padding: 14px; font-size: .85rem;
   background: var(--card,#fff);
   transition: box-shadow .15s;
 }
 .related-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.09) }
+.related-kicker{font-size:.72rem;color:var(--gold,#c8922a);font-weight:700}
+.related-card-title{color:var(--coffee-dark,#1a0a00);font-weight:600;line-height:1.5}
 
 /* 9. 麵包屑保留 */
 .breadcrumb, nav[aria-label="breadcrumb"] {
@@ -354,54 +491,6 @@ footer a{color:var(--coffee-light)}
   .breadcrumb { padding: 0 16px }
 }
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "咖啡的酸味和酸質是一樣的東西嗎？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "不同。「酸味」是主觀的感受——令人不舒服的刺激感；「酸質」（Acidity）是精品咖啡的品質指標，指的是讓咖啡風味有活力、有層次的有機酸。好的酸質如蘋果酸帶來清爽果感，檸檬酸帶來明亮柑橘感；壞的酸如醋酸（多來自過度發酵）才是令人不愉快的刺激感。酸質是精品咖啡的加分項，不是缺陷。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "咖啡裡主要有哪些酸？各自帶來什麼風味？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "咖啡含有 30 多種有機酸。最主要的包括：蘋果酸（Malic Acid）帶青蘋果般清爽感；檸檬酸（Citric Acid）帶柑橘柚子感；奎寧酸（Quinic Acid）是苦澀感的主因，深焙時增加；磷酸（Phosphoric Acid）在肯亞咖啡中常見，帶來高明亮感；醋酸（Acetic Acid）少量時增加複雜度，過多則發酸刺激。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "為什麼有些人喝咖啡會胃酸不舒服？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "咖啡的 pH 值約為 4.5–5.5，屬於弱酸性，但它同時會刺激胃壁分泌更多胃酸，這才是不舒服的主因。深焙咖啡的有機酸較少，但刺激胃酸分泌的效果差異不大。對胃敏感的人可嘗試：冷萃（低溫萃取的有機酸較少）、中深焙豆、餐後飲用，或選擇低酸處理的咖啡（如 Swiss Water Process 低因豆）。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "如何降低手沖咖啡的酸感？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "有幾個有效方法：1. 提高水溫（從 90°C 提高至 95°C），高溫能萃取更多甜感來平衡酸質；2. 研磨調細，增加萃取率；3. 選擇中焙或中深焙豆，烘焙過程中有機酸會分解；4. 使用硬度較高的水（鈣離子能降低感知酸度）；5. 延長萃取時間。注意：「降低酸」的目標是達到甜酸平衡，完全無酸的咖啡通常也缺乏生命力。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "為什麼衣索比亞咖啡的酸感特別明顯？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "衣索比亞是咖啡的發源地，Arabica 品種多樣性最高，野生品種保存了大量天然風味化合物。其高海拔（1,800–2,200 公尺）生長環境使咖啡果實成熟緩慢，積累更多糖分和有機酸（特別是檸檬酸和蘋果酸）。日曬耶加雪菲的莓果花香、水洗 Guji 的茶感酸質，都是地理與品種條件的直接體現，非人工添加。"
-      }
-    }
-  ]
-}
-</script>
 </head>
 <body>
 
@@ -439,22 +528,30 @@ footer a{color:var(--coffee-light)}
 <main class="article-wrap">
 
 <article class="article-body">
-
+    
 <p>「這杯咖啡太酸了，我不喜歡。」這是台灣精品咖啡館最常聽到的客訴。但下一桌的顧客，拿起同一杯咖啡說：「哇，這個酸質好棒，像咬了一口青蘋果！」同樣一杯咖啡，兩種截然相反的評價——這不只是個人喜好的差異，更是對「酸」這個複雜感官體驗的理解程度不同所造成的分歧。</p>
 
 <p>咖啡中含有超過 30 種有機酸 (Organic Acids)，每一種都有其獨特的風味特徵、pH 值範圍和感官強度。當你說「太酸了」，你可能說的是蘋果酸的清爽，也可能是醋酸的刺激，或者奎寧酸的澀感——它們的感官體驗天差地遠，但語言上我們都用「酸」來描述。這篇文章的目標，是幫你建立一個分辨「好酸」與「壞酸」的完整認知框架。</p>
 
-<p><strong>咖啡酸質的科學基礎：</strong>咖啡的 pH 值約落在 4.9–5.5，比橙汁（pH 3.5–4.0）溫和、比牛奶（pH 6.5）偏酸。精品咖啡追求的酸質以蘋果酸（Malic Acid，清脆如青蘋果）和檸檬酸（Citric Acid，明亮柑橘感）為主；令人不舒服的「壞酸」主要是醋酸（Acetic Acid，刺激感，源自過度發酵）或奎寧酸（Quinic Acid，苦澀收斂感，是深焙與過萃的副產物）。感知酸度與 pH 值並非線性關係，溫度、稠度與有機酸種類共同影響你實際嘗到的「酸」。</p>
+<div class="module-conclusion">
+  <strong class="article-module-title">先講結論</strong>
+  <ul>
+    <li>咖啡的酸不是單一味道，而是蘋果酸、檸檬酸、醋酸、奎寧酸等多種有機酸共同形成的感官結果。</li>
+    <li>好的酸通常是清脆、明亮、帶水果感的；不舒服的酸常是尖銳、刺激、澀或帶過度發酵感。</li>
+    <li>淺焙常保留較多蘋果酸與檸檬酸，深焙則容易出現奎寧酸帶來的苦澀收斂。</li>
+    <li>覺得咖啡太酸時，不要只問「為什麼酸」，先問「它是哪一種酸」。</li>
+    <li>找到對的酸，會讓你更容易理解處理法、產地、烘焙與沖煮之間的關係。</li>
+  </ul>
+</div>
 
-<div class="key-box" style="background:linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));border:1px solid oklch(88% .05 45);border-left:4px solid #c8922a;border-radius:.75rem;padding:1.2em 1.4em;margin:1.8em 0;">
-  <strong style="display:block;margin-bottom:.7em;color:#1a0a00;">關鍵重點</strong>
-  <ul style="margin:0;padding-left:1.4em;color:oklch(28% .03 30);">
-    <li>咖啡含有超過 30 種有機酸，pH 值約落在 4.9–5.5，比橙汁（pH 3.5–4.0）溫和得多</li>
-    <li>感知酸度與 pH 值不是線性關係——有機酸種類、溫度、稠度都會改變你嘗到的「酸」</li>
-    <li>蘋果酸（Malic Acid）是精品咖啡追求的「好酸」，清脆如青蘋果；醋酸（Acetic Acid）是令人皺眉的「壞酸」，主要來自過度發酵或過萃</li>
-    <li>淺烘焙保留最多蘋果酸與檸檬酸；深烘焙奎寧酸大量累積，帶來乾澀苦感</li>
-    <li>水溫每調高 2–3°C，感知酸度會明顯下降；台灣自來水的高碳酸鹽硬度會緩衝酸感</li>
-    <li>分辨「哪種酸」比說「太酸了」更有用——這是找到你的對的酸的第一步</li>
+<div class="module-you-know">
+  <strong class="article-module-title">讀完這篇，你會知道</strong>
+  <ul>
+    <li>咖啡酸質和 pH 值為什麼不是同一件事。</li>
+    <li>五種常見有機酸各自帶來什麼味覺感受。</li>
+    <li>烘焙度、水溫與水質如何改變你感受到的酸。</li>
+    <li>如何判斷自己不喜歡的是清脆酸、刺激酸，還是苦澀酸。</li>
+    <li>如何從豆子選擇與沖煮調整，找到自己的「對的酸」。</li>
   </ul>
 </div>
 
@@ -565,7 +662,7 @@ footer a{color:var(--coffee-light)}
 
 <h2>六、如何找到「你的對的酸」</h2>
 
-<p>了解了酸質的科學後，最終問題是：如何找到最適合自己的酸質輪廓？以下是我們的實用建議：</p>
+<p>了解了酸質的科學後，最終問題是：如何找到最適合自己的酸質輪廓？以下是 BNotes 的實用建議：</p>
 
 <h3>步驟一：確認你抗拒的是哪種酸</h3>
 <p>下次喝到「太酸」的咖啡時，試著描述一下：是像咬青蘋果的清脆感（蘋果酸，通常可接受）？是像柑橘皮的白色部分帶點苦（檸檬酸過量）？還是像醋的刺激感（醋酸，處理法問題）？還是喝完嘴巴很乾的澀感（奎寧酸，烘焙或萃取問題）？</p>
@@ -577,6 +674,16 @@ footer a{color:var(--coffee-light)}
   <li>抗拒奎寧酸苦澀 → 縮短萃取時間，降低水溫</li>
   <li>喜歡明亮酸感 → 選擇高海拔衣索比亞或肯亞輕烘焙豆</li>
 </ul>
+
+<div class="module-quick">
+  <strong class="article-module-title">快速判斷：你喝到的是哪一種酸？</strong>
+  <ul>
+    <li><strong>像青蘋果、葡萄、莓果：</strong>多半是舒服的有機酸，可以往水洗、淺焙、高海拔豆探索。</li>
+    <li><strong>像檸檬皮、尖銳、刮舌：</strong>可能是萃取不足或酸甜不平衡，先調整研磨、水溫與萃取時間。</li>
+    <li><strong>像醋、酒味過重、發酵刺激：</strong>可能與處理法或發酵控制有關，可先改選乾淨水洗豆。</li>
+    <li><strong>喝完嘴巴乾、苦澀、收斂：</strong>常與深烘焙、過萃或奎寧酸感受有關。</li>
+  </ul>
+</div>
 
 <div class="chart-block">
   <div class="chart-icon">📊</div>
@@ -601,76 +708,42 @@ footer a{color:var(--coffee-light)}
 
 <p>台灣的飲食文化對「酸」其實並不陌生——我們吃醃漬泡菜、喝洛神花茶、愛上百香果的複雜酸感。咖啡的酸質之美，與這些文化經驗並無本質差異。當你下次遇到一杯有酸感的精品咖啡，不妨試著先問：「這是哪種酸？」而不是「為什麼這麼酸？」——答案往往會讓你感到驚喜。</p>
 
-<div class="article-tags">
-  <strong style="font-size:.85rem;color:var(--text-muted);">標籤：</strong>
-  <span>#咖啡酸質</span><span>#Acidity</span><span>#有機酸</span><span>#咖啡pH值</span><span>#蘋果酸</span><span>#烘焙科學</span><span>#精品咖啡</span>
-</div>
+<section class="faq-section" aria-labelledby="coffee-acidity-faq">
+  <h2 id="coffee-acidity-faq">常見問題</h2>
+  <details class="faq-item"><summary>咖啡的酸是什麼？</summary><p>咖啡的酸質主要來自多種有機酸，包括蘋果酸、檸檬酸、醋酸與奎寧酸。它不是單一味道，而是一組會影響清爽感、明亮度、刺激感與收斂感的風味訊號。</p></details>
+  <details class="faq-item"><summary>為什麼淺焙比深焙酸？</summary><p>淺焙通常保留較多蘋果酸與檸檬酸，因此酸質更明亮。深焙時這些酸會逐漸分解，同時奎寧酸與苦澀收斂感增加，所以深焙不是完全不酸，而是酸的型態不同。</p></details>
+  <details class="faq-item"><summary>咖啡太酸要怎麼調整？</summary><p>可以先判斷酸感是清脆、尖銳還是澀。若是萃取不足造成的酸尖，可略微提高水溫、讓研磨細一點或延長接觸時間；若是不喜歡處理法帶來的發酵酸，可改選水洗或中烘焙豆。</p></details>
+  <details class="faq-item"><summary>咖啡酸質和胃酸有關係嗎？</summary><p>咖啡本身的 pH 值通常約在 4.9 至 5.5，遠高於胃酸。胃部刺激感不一定只來自咖啡的酸度，也可能與咖啡因、綠原酸、空腹飲用或個人體質有關。</p></details>
+  <details class="faq-item"><summary>新手應該怎麼找到自己喜歡的酸？</summary><p>可以從水洗中烘焙或酸甜平衡的哥倫比亞、衣索比亞開始，記錄自己喜歡的是青蘋果般清脆、柑橘般明亮，還是熟果般圓潤。先描述酸的類型，比單純說太酸更有幫助。</p></details>
+</section>
 
-<div class="newsletter-cta">
-  <h3>☕ 訂閱 BNotes 週報，每週一杯知識濃縮</h3>
-  <p>每週五發送，精選全球精品咖啡趨勢、產地新知與沖煮實驗，直送你的信箱。台灣最具深度的咖啡電子報，目前已有 12,000+ 訂閱者。</p>
-  <div class="newsletter-form">
-    <input type="email" placeholder="your@email.com" aria-label="Email 地址" />
-    <button type="button">免費訂閱</button>
-  </div>
-</div>
-
-  <div class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
-    <h2>常見問題</h2>
-    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <h3 itemprop="name">咖啡裡的酸是什麼？和胃酸有關嗎？</h3>
-      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p itemprop="text">咖啡中含有超過 30 種有機酸，pH 值約落在 4.9–5.5，遠比胃酸（pH 1.5–3.5）溫和。精品咖啡的酸質主要來自蘋果酸（清脆青蘋果感）、檸檬酸（明亮柑橘感）和磷酸（乾淨的甜酸感）。真正刺激胃部的是咖啡因和綠原酸促進胃酸分泌，而非咖啡本身的 pH 值——胃酸敏感者選深焙或冷萃通常更舒服，因為有機酸含量較低。</p>
-      </div>
-    </div>
-    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <h3 itemprop="name">為什麼淺焙比深焙酸？深焙就沒有酸嗎？</h3>
-      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p itemprop="text">淺焙保留了大量蘋果酸與檸檬酸，這些有機酸在高溫烘焙中會逐漸熱解。深焙時蘋果酸和檸檬酸幾乎消失，取而代之的是奎寧酸（Quinic Acid）大量累積——奎寧酸帶來的不是明亮酸感，而是苦澀收斂感。所以深焙不是「不酸」，而是酸的種類從讓人舒服的果酸，轉變成讓人皺眉的苦澀酸。</p>
-      </div>
-    </div>
-    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-      <h3 itemprop="name">如何降低一杯咖啡的酸感？</h3>
-      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-        <p itemprop="text">幾個實用方法：1）調高水溫 2–3°C，有機酸在高溫下萃取率降低；2）選中深焙豆，蘋果酸在 205°C 以上大量分解；3）使用含碳酸鹽硬度稍高的水，HCO₃⁻ 能緩衝酸感；4）延長悶蒸時間確保粉層均勻飽水，減少萃取不均帶來的刺激酸感。需要注意：「降低酸感」和「降低酸質品質」是兩回事，調整前先確認你不喜歡的是哪種酸。</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="references-block" style="max-width:740px;margin:2em auto;padding:1.2em 1.5em;background:oklch(97% .01 30);border-radius:.75rem;font-size:.85rem;">
-    <strong style="display:block;margin-bottom:.8em;color:#1a0a00;">參考來源</strong>
-    <ol style="margin:0;padding-left:1.4em;color:oklch(35% .02 30);">
+  <div class="references">
+    <h3>參考資料</h3>
+    <ol>
       <li>Illy, A. &amp; Viani, R. (2005). <em>Espresso Coffee: The Science of Quality</em>. Elsevier Academic Press.</li>
-      <li>SCA. (2020). <em>Water Quality for Coffee Brewing</em>. <a href="https://sca.coffee/research" style="color:#c8922a" target="_blank" rel="noopener">sca.coffee</a></li>
-      <li>Buffo, R. &amp; Cardelli-Freire, C. (2004). Coffee flavour: An overview. <em>Flavour and Fragrance Journal</em>, 19(2), 99–104.</li>
-      <li>Parenti, A. et al. (2014). A comparison of espresso coffee brewing techniques. <em>Journal of Food Engineering</em>, 121, 112–117. <a href="https://www.sciencedirect.com/science/article/pii/S0260877413003197" style="color:#c8922a" target="_blank" rel="noopener">sciencedirect.com</a></li>
-      <li>Specialty Coffee Association. (2023). <em>The Coffee Taster's Flavor Wheel</em>. <a href="https://sca.coffee/research/coffee-tasters-flavor-wheel" style="color:#c8922a" target="_blank" rel="noopener">sca.coffee</a></li>
+      <li>SCA. (2020). <em>Water Quality for Coffee Brewing</em>. <a href="https://sca.coffee/research" target="_blank" rel="noopener">sca.coffee</a></li>
+      <li>Buffo, R. &amp; Cardelli-Freire, C. (2004). Coffee flavour: An overview. <em>Flavour and Fragrance Journal</em>, 19(2), 99-104.</li>
+      <li>Parenti, A. et al. (2014). A comparison of espresso coffee brewing techniques. <em>Journal of Food Engineering</em>, 121, 112-117. <a href="https://www.sciencedirect.com/science/article/pii/S0260877413003197" target="_blank" rel="noopener">sciencedirect.com</a></li>
+      <li>Specialty Coffee Association. (2023). <em>The Coffee Taster's Flavor Wheel</em>. <a href="https://sca.coffee/research/coffee-tasters-flavor-wheel" target="_blank" rel="noopener">sca.coffee</a></li>
     </ol>
   </div>
 
   <div class="share-section">
-    <span class="share-label">📤 分享這篇文章</span>
+    <span class="share-label">分享這篇</span>
     <div class="share-btns">
-      <a class="share-btn share-btn-line" href="#" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+' '+location.href));return false;" target="_blank" rel="noopener">LINE</a>
-      <a class="share-btn share-btn-fb" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false;">Facebook</a>
-      <button class="share-btn share-btn-copy" onclick="(function(b){navigator.clipboard.writeText(location.href).then(function(){b.textContent='✅ 已複製';setTimeout(function(){b.textContent='🔗 複製連結'},2000)})})(this)">🔗 複製連結</button>
+      <a class="share-btn share-btn-line" href="#" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+' '+location.href));return false;" target="_blank" rel="noopener" aria-label="分享至 LINE" title="LINE"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
+      <a class="share-btn share-btn-fb" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false;" aria-label="分享至 Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a class="share-btn share-btn-threads" href="#" onclick="window.open('https://threads.net/intent/post?text='+encodeURIComponent(document.title+' '+location.href),'_blank');return false;" aria-label="分享至 Threads" title="Threads"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.78 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.143 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></a>
+      <a class="share-btn share-btn-x" href="#" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false;" aria-label="分享至 X" title="X (Twitter)"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <button class="share-btn share-btn-copy" onclick="navigator.clipboard.writeText(location.href)" aria-label="複製連結" title="複製連結"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-3.1-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></button>
     </div>
   </div>
-  <div class="related-articles" style="margin:2rem auto 0;max-width:740px;padding:0 24px">
-    <h3 style="font-size:1.05rem;font-weight:700;color:#1a0a00;margin-bottom:.9rem;border-left:4px solid #c8922a;padding-left:.75rem">📚 延伸閱讀</h3>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem">
-      <a href="/articles/arabica-vs-robusta-complete-guide.html" style="display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white">
-        <span style="font-size:.72rem;color:#c8922a;font-weight:600">📖 咖啡知識</span>
-        <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">Arabica vs. Robusta 完整攻略</span>
-      </a>
-      <a href="/articles/single-origin-terroir-science.html" style="display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white">
-        <span style="font-size:.72rem;color:#c8922a;font-weight:600">🌱 產地風土</span>
-        <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">單一產地的秘密：風土科學</span>
-      </a>
-      <a href="/articles/processing-methods.html" style="display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white">
-        <span style="font-size:.72rem;color:#c8922a;font-weight:600">🌱 產地風土</span>
-        <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">咖啡處理法全解析</span>
-      </a>
+  <div class="related-articles">
+    <h3 class="related-title">延伸閱讀</h3>
+    <div class="related-grid">
+      <a class="related-card" href="/articles/processing-methods.html"><span class="related-kicker">回到風味來源</span><span class="related-card-title">咖啡處理法全解析：日曬、水洗、蜜處理的風味差異</span></a>
+      <a class="related-card" href="/articles/water-quality.html"><span class="related-kicker">在家試試看</span><span class="related-card-title">手沖咖啡的水質科學：如何選擇最適合的沖煮用水</span></a>
+      <a class="related-card" href="/articles/kenya-aa-flavor-profile-deep.html"><span class="related-kicker">繼續深入世界咖啡</span><span class="related-card-title">肯亞 AA 風味深度解析：黑醋栗、番茄與明亮酸質</span></a>
     </div>
   </div>
 </article>
@@ -706,44 +779,66 @@ footer a{color:var(--coffee-light)}
 
   /* ── 2. 統一 Header 注入 ── */
   (function injectHeader(){
+    /* 從現有 DOM 抓 meta 資訊 */
     var titleEl=document.querySelector('h1,.article-title,.typo-hero-title');
     if(!titleEl)return;
+
+    /* 不重複注入 */
     if(document.getElementById('bnotes-unified-header'))return;
+
     var title=titleEl.textContent.trim();
+
+    /* category / eyebrow */
     var eyebrow='';
     var catEl=document.querySelector('.article-cat,.article-category,.typo-hero-eyebrow,.article-tag-badge');
     if(catEl) eyebrow=catEl.textContent.trim();
+
+    /* date */
     var dateEl=document.querySelector('[datetime],[data-date]');
     var dateStr='';
     if(dateEl) dateStr=dateEl.getAttribute('datetime')||dateEl.getAttribute('data-date')||'';
     if(!dateStr){
+      /* 從 meta og:article:published_time 抓 */
       var ogDate=document.querySelector('meta[property="article:published_time"]');
       if(ogDate) dateStr=ogDate.content.slice(0,10);
     }
     if(!dateStr){
+      /* 從 ld+json 抓 */
       var ldJson=document.querySelector('script[type="application/ld+json"]');
       if(ldJson){try{var d=JSON.parse(ldJson.textContent);dateStr=(d.datePublished||'').slice(0,10);}catch(e){}}
     }
+
+    /* reading time */
     var rtEl=document.querySelector('.reading-time,[data-reading-time]');
     var rt=rtEl?rtEl.textContent.trim():'';
     if(!rt){
+      /* 從頁面文字估算 */
       var bodyEl=document.querySelector('.article-body,.article-content,article');
       if(bodyEl){
         var words=(bodyEl.textContent||'').replace(/\s+/g,' ').trim().length;
         rt=Math.ceil(words/350)+' 分鐘閱讀';
       }
     }
+
+    /* 組合 header */
     var headerHtml='<header id="bnotes-unified-header" class="bnotes-header">';
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
     headerHtml+='<h2 class="bnotes-title">'+title+'</h2>';
     headerHtml+='<div class="bnotes-meta">';
     if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
     headerHtml+='<span>✍️ BNotes 編輯部</span>';
-    if(rt) headerHtml+='<span>⏱ '+rt+'</span>';
+    if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
     headerHtml+='</div><div class="bnotes-divider"></div></header>';
-    var oldHeroes=document.querySelectorAll('.article-hero,.typo-hero,.article-meta-bar,.article-meta,.article-header');
+
+    /* 隱藏舊 hero / title 區塊 */
+    var oldHeroes=document.querySelectorAll(
+      '.article-hero,.typo-hero,.article-meta-bar,.article-meta,.article-header'
+    );
     oldHeroes.forEach(function(el){el.style.display='none';});
+    /* 隱藏舊 H1（避免重複顯示） */
     titleEl.style.display='none';
+
+    /* 插入在 <body> 最前，導覽列之後 */
     var nav=document.querySelector('nav,.nav,header:not(#bnotes-unified-header)');
     var ref=nav?nav.nextSibling:document.body.firstChild;
     var tmp=document.createElement('div');
@@ -751,67 +846,82 @@ footer a{color:var(--coffee-light)}
     document.body.insertBefore(tmp.firstElementChild,ref&&ref.parentNode===document.body?ref:null);
   })();
 
-  /* ── 3. TOC 目錄 ── */
-  (function buildTOC(){
-    if(window.innerWidth<1300)return;
-    var body=document.querySelector('.article-body,.article-content,article');
-    if(!body)return;
-    var headings=body.querySelectorAll('h2,h3');
-    if(headings.length<3)return;
-    headings.forEach(function(h,i){if(!h.id)h.id='bnotes-s'+i;});
-    var panel=document.createElement('div');
-    panel.id='bnotes-toc-panel';
-    panel.innerHTML='<h4>目　錄</h4>';
-    var list=document.createElement('div');
-    headings.forEach(function(h){
-      var a=document.createElement('a');
-      a.href='#'+h.id;
-      a.setAttribute('data-level',h.tagName==='H2'?'2':'3');
-      a.textContent=h.textContent.trim().replace(/^[#\s]+/,'');
-      list.appendChild(a);
-    });
-    panel.appendChild(list);
-    document.body.appendChild(panel);
-    function positionTOC(){
-      var art=document.querySelector('main,.article-wrap,.container');
-      if(!art)return;
-      var rect=art.getBoundingClientRect();
-      var rightEdge=rect.right+document.documentElement.scrollLeft;
-      var left=rightEdge+24;
-      if(left+240>window.innerWidth){panel.style.display='none';return;}
-      panel.style.display='block';
-      panel.style.left=left+'px';
-      panel.style.top='80px';
-    }
-    positionTOC();
-    window.addEventListener('resize',positionTOC);
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        var link=panel.querySelector('a[href="#'+e.target.id+'"]');
-        if(link)link.classList.toggle('active',e.isIntersecting);
-      });
-    },{rootMargin:'-10% 0px -80% 0px'});
-    headings.forEach(function(h){io.observe(h);});
-  })();
+    /* ── 3. TOC 目錄 ── */
+    (function buildTOC(){
+      if(window.innerWidth<1300)return;
 
-  /* ── 4. 聯盟行銷利益揭露自動注入 ── */
-  (function injectAffiliateDisclosure() {
-    const article = document.querySelector('.article-body');
-    if (!article) return;
-    const patterns = [/amazon\./i, /amzn\.to/i, /shopee\.tw/i, /shope\.ee/i, /rstyle\.me/i, /shopstyle\.com/i];
-    const links = article.querySelectorAll('a[href]');
-    let hasAffiliate = false;
-    for (const link of links) {
-      if (patterns.some(p => p.test(link.href))) { hasAffiliate = true; break; }
-    }
-    if (hasAffiliate && !article.querySelector('.affiliate-disclosure')) {
-      const div = document.createElement('div');
-      div.className = 'affiliate-disclosure';
-      div.style.cssText = 'font-size:.82rem;color:var(--muted-fg);background:oklch(97% .01 45);padding:1rem;border-radius:.5rem;margin-bottom:2rem;border-left:4px solid var(--gold);line-height:1.6;';
-      div.innerHTML = '<strong>☕ 利益揭露：</strong>本篇文章包含聯盟行銷連結。若您透過連結購買，我們可能會獲得小額佣金，這有助於維持 BNotes 的優質內容營運，且不會增加您的購買成本。感謝您的支持！';
-      article.prepend(div);
-    }
-  })();
+      var body=document.querySelector('.article-body,.article-content,article');
+      if(!body)return;
+      var headings=body.querySelectorAll('h2,h3');
+      if(headings.length<3)return;
+
+      /* 給每個標題加 id */
+      headings.forEach(function(h,i){
+        if(!h.id)h.id='bnotes-s'+i;
+      });
+
+      /* 建立面板 */
+      var panel=document.createElement('div');
+      panel.id='bnotes-toc-panel';
+      panel.innerHTML='<h4>目　錄</h4>';
+      var list=document.createElement('div');
+      headings.forEach(function(h){
+        var a=document.createElement('a');
+        a.href='#'+h.id;
+        a.setAttribute('data-level',h.tagName==='H2'?'2':'3');
+        a.textContent=h.textContent.trim().replace(/^[#\s]+/,'');
+        list.appendChild(a);
+      });
+      panel.appendChild(list);
+      document.body.appendChild(panel);
+
+      /* 定位 */
+      function positionTOC(){
+        var art=document.querySelector('main,.article-wrap,.container');
+        if(!art)return;
+        var rect=art.getBoundingClientRect();
+        var rightEdge=rect.right+document.documentElement.scrollLeft;
+        var left=rightEdge+24;
+        if(left+240>window.innerWidth){panel.style.display='none';return;}
+        panel.style.display='block';
+        panel.style.left=left+'px';
+        panel.style.top='80px';
+      }
+      positionTOC();
+      window.addEventListener('resize',positionTOC);
+
+      /* scroll 高亮 */
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          var link=panel.querySelector('a[href="#'+e.target.id+'"]');
+          if(link)link.classList.toggle('active',e.isIntersecting);
+        });
+      },{rootMargin:'-10% 0px -80% 0px'});
+      headings.forEach(function(h){io.observe(h);});
+    })();
+
+    /* ── 4. 聯盟行銷利益揭露自動注入 ── */
+    (function injectAffiliateDisclosure() {
+      const article = document.querySelector('.article-body');
+      if (!article) return;
+      const patterns = [/amazon\./i, /amzn\.to/i, /shopee\.tw/i, /shope\.ee/i, /rstyle\.me/i, /shopstyle\.com/i];
+      const links = article.querySelectorAll('a[href]');
+      let hasAffiliate = false;
+      for (const link of links) {
+        if (patterns.some(p => p.test(link.href))) {
+          hasAffiliate = true;
+          break;
+        }
+      }
+      if (hasAffiliate && !article.querySelector('.affiliate-disclosure')) {
+        const div = document.createElement('div');
+        div.className = 'affiliate-disclosure';
+        div.style.cssText = 'font-size:.82rem;color:var(--muted-fg);background:oklch(97% .01 45);padding:1rem;border-radius:.5rem;margin-bottom:2rem;border-left:4px solid var(--gold);line-height:1.6;';
+        div.innerHTML = '<strong>☕ 利益揭露：</strong>本篇文章包含聯盟行銷連結。若您透過連結購買，我們可能會獲得小額佣金，這有助於維持 BNotes 的優質內容營運，且不會增加您的購買成本。感謝您的支持！';
+        article.prepend(div);
+      }
+    })();
+
 })();
 </script>
 <script>
@@ -823,7 +933,12 @@ footer a{color:var(--coffee-light)}
     if(!el)return;
     var href=el.getAttribute('href')||'';
     if(href.startsWith('/re/')){
-      gtag('event','affiliate_click',{'event_category':'monetization','affiliate_product':href.replace('/re/',''),'link_text':(el.textContent||'').trim().substring(0,100),'page_title':document.title});
+      gtag('event','affiliate_click',{
+        'event_category':'monetization',
+        'affiliate_product':href.replace('/re/',''),
+        'link_text':(el.textContent||'').trim().substring(0,100),
+        'page_title':document.title
+      });
     }
   });
 })();
@@ -832,18 +947,28 @@ footer a{color:var(--coffee-light)}
 /* bnotes-ga4-faq */
 (function(){
   if(typeof gtag!=='function')return;
+  // 原生 <details> 展開
   document.querySelectorAll('details').forEach(function(el){
     el.addEventListener('toggle',function(){
       if(el.open){
         var q=(el.querySelector('summary')||el).textContent.trim().substring(0,100);
-        gtag('event','faq_expand',{'event_category':'content_interaction','faq_question':q,'page_title':document.title});
+        gtag('event','faq_expand',{
+          'event_category':'content_interaction',
+          'faq_question':q,
+          'page_title':document.title
+        });
       }
     });
   });
+  // .faq-item 按鈕點擊（自訂 accordion 元件）
   document.querySelectorAll('.faq-question, .faq-item > h3, .faq-item > h4').forEach(function(el){
     el.addEventListener('click',function(){
       var q=el.textContent.trim().substring(0,100);
-      gtag('event','faq_expand',{'event_category':'content_interaction','faq_question':q,'page_title':document.title});
+      gtag('event','faq_expand',{
+        'event_category':'content_interaction',
+        'faq_question':q,
+        'page_title':document.title
+      });
     });
   });
 })();
