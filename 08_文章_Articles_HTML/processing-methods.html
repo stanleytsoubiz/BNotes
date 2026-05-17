@@ -367,6 +367,10 @@ footer a{color:var(--coffee-light)}
 .module-quick li{margin-bottom:.45rem;line-height:1.75}
 .faq-section{margin:2.5rem 0;padding-top:1.25rem;border-top:1px solid oklch(90% .01 30)}
 .faq-section h2{margin-top:0}
+.faq-item{border:1px solid oklch(89% .01 30);border-radius:.65rem;margin-bottom:.65rem;background:white;overflow:hidden}
+.faq-question{width:100%;border:0;background:white;padding:.9rem 1rem;text-align:left;font:inherit;font-weight:700;color:var(--coffee-dark,#1a0a00);cursor:pointer}
+.faq-answer{display:none;padding:0 1rem 1rem;color:oklch(30% .02 30)}
+.faq-item.open .faq-answer{display:block}
 .faq-item{border:1px solid oklch(90% .012 45);border-radius:.75rem;background:oklch(99% .006 45);margin:0 0 .75rem;overflow:hidden}
 .faq-item summary{cursor:pointer;padding:1rem 1.15rem;font-weight:700;color:var(--coffee-dark,#1a0a00);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .faq-item summary::-webkit-details-marker{display:none}
@@ -608,11 +612,26 @@ footer a{color:var(--coffee-light)}
 
 <section class="faq-section" aria-labelledby="processing-methods-faq">
   <h2 id="processing-methods-faq">常見問題</h2>
-  <details class="faq-item"><summary>日曬豆一定比水洗豆好嗎？</summary><p>不一定。日曬、水洗與蜜處理不是品質等級，而是不同風味路線。日曬常有更明顯的果香與發酵感，水洗通常更乾淨明亮，蜜處理則常在甜感與乾淨度之間取得平衡。</p></details>
-  <details class="faq-item"><summary>蜜處理咖啡真的有蜂蜜味嗎？</summary><p>蜜處理的蜜不是添加蜂蜜，而是指咖啡果去皮後保留在種子外層的黏膜。黏膜含有糖分與果膠，乾燥與發酵控制得好時，杯中可能呈現蜂蜜、熟果或焦糖般的甜感。</p></details>
-  <details class="faq-item"><summary>新手買豆應該先選哪一種處理法？</summary><p>如果想先建立清楚的味覺基準，可以從水洗豆開始；如果喜歡水果香與甜感，可以試日曬；如果想要甜感但不希望發酵味太強，可以從黃蜜或紅蜜處理開始。</p></details>
-  <details class="faq-item"><summary>厭氧發酵和日曬、水洗是同一層概念嗎？</summary><p>不是完全同一層概念。日曬、水洗、蜜處理主要描述去果肉與乾燥方式；厭氧發酵則描述發酵環境。實務上，厭氧可以搭配日曬、水洗或蜜處理一起使用。</p></details>
-  <details class="faq-item"><summary>處理法會比產地或品種更重要嗎？</summary><p>處理法、產地、品種與烘焙都會共同影響風味。處理法很容易被喝出差異，但它不是唯一答案；理解處理法，是幫助讀者更快讀懂豆袋標示與杯中風味。</p></details>
+  <div class="faq-item">
+      <button class="faq-question" type="button">日曬豆一定比水洗豆好嗎？</button>
+      <div class="faq-answer"><p>不一定。日曬、水洗與蜜處理不是品質等級，而是不同風味路線。日曬常有更明顯的果香與發酵感，水洗通常更乾淨明亮，蜜處理則常在甜感與乾淨度之間取得平衡。</p></div>
+    </div>
+  <div class="faq-item">
+      <button class="faq-question" type="button">蜜處理咖啡真的有蜂蜜味嗎？</button>
+      <div class="faq-answer"><p>蜜處理的蜜不是添加蜂蜜，而是指咖啡果去皮後保留在種子外層的黏膜。黏膜含有糖分與果膠，乾燥與發酵控制得好時，杯中可能呈現蜂蜜、熟果或焦糖般的甜感。</p></div>
+    </div>
+  <div class="faq-item">
+      <button class="faq-question" type="button">新手買豆應該先選哪一種處理法？</button>
+      <div class="faq-answer"><p>如果想先建立清楚的味覺基準，可以從水洗豆開始；如果喜歡水果香與甜感，可以試日曬；如果想要甜感但不希望發酵味太強，可以從黃蜜或紅蜜處理開始。</p></div>
+    </div>
+  <div class="faq-item">
+      <button class="faq-question" type="button">厭氧發酵和日曬、水洗是同一層概念嗎？</button>
+      <div class="faq-answer"><p>不是完全同一層概念。日曬、水洗、蜜處理主要描述去果肉與乾燥方式；厭氧發酵則描述發酵環境。實務上，厭氧可以搭配日曬、水洗或蜜處理一起使用。</p></div>
+    </div>
+  <div class="faq-item">
+      <button class="faq-question" type="button">處理法會比產地或品種更重要嗎？</button>
+      <div class="faq-answer"><p>處理法、產地、品種與烘焙都會共同影響風味。處理法很容易被喝出差異，但它不是唯一答案；理解處理法，是幫助讀者更快讀懂豆袋標示與杯中風味。</p></div>
+    </div>
 </section>
 
 <div class="references">
@@ -797,6 +816,18 @@ footer a{color:var(--coffee-light)}
     },{rootMargin:'-10% 0px -80% 0px'});
     headings.forEach(function(h){io.observe(h);});
   })();
+})();
+</script>
+<script>
+/* bnotes-faq-accordion */
+(function(){
+  document.querySelectorAll('.faq-question').forEach(function(button){
+    button.addEventListener('click',function(){
+      var item=button.closest('.faq-item');
+      if(!item)return;
+      item.classList.toggle('open');
+    });
+  });
 })();
 </script>
 <script>

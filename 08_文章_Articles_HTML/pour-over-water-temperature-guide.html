@@ -94,6 +94,10 @@ footer a{color:var(--coffee-light)}
 .module-conclusion li:last-child,.module-quick li:last-child{margin-bottom:0}
 .faq-section{margin:2.5rem 0;padding-top:1.25rem;border-top:1px solid oklch(90% .01 30)}
 .faq-section h2{margin-top:0}
+.faq-item{border:1px solid oklch(89% .01 30);border-radius:.65rem;margin-bottom:.65rem;background:white;overflow:hidden}
+.faq-question{width:100%;border:0;background:white;padding:.9rem 1rem;text-align:left;font:inherit;font-weight:700;color:var(--coffee-dark,#1a0a00);cursor:pointer}
+.faq-answer{display:none;padding:0 1rem 1rem;color:oklch(30% .02 30)}
+.faq-item.open .faq-answer{display:block}
 .faq-item{border:1px solid oklch(90% .012 45);border-radius:.75rem;background:oklch(99% .006 45);margin:0 0 .75rem;overflow:hidden}
 .faq-item summary{cursor:pointer;padding:1rem 1.15rem;font-weight:700;color:var(--coffee-dark,#1a0a00);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .faq-item summary::-webkit-details-marker{display:none}
@@ -124,7 +128,7 @@ footer a{color:var(--coffee-light)}
 .related-kicker{font-size:.72rem;color:var(--gold,#c8922a);font-weight:600}
 .related-card-title{font-size:.87rem;font-weight:700;color:var(--coffee-dark,#1a0a00);line-height:1.4}
 .article-wrap{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem}
-.article-body,.article-content,main.article-wrap article,.article-wrap .article-body{padding:0;font-size:1.05rem;line-height:1.85}
+.article-body,.article-content,main.article-wrap article,.article-wrap .article-body{max-width:740px!important;margin:0 auto!important;padding:0 24px 80px!important;font-size:1.05rem;line-height:1.85}
 .article-body p,.article-body li{margin-bottom:1.3em}
 .article-body .module-conclusion li,.article-body .module-quick li{margin-bottom:.38rem;line-height:1.65}
 .article-body .module-conclusion li:last-child,.article-body .module-quick li:last-child{margin-bottom:0}
@@ -140,11 +144,10 @@ footer a{color:var(--coffee-light)}
 #bnotes-unified-header.bnotes-header{display:block}
 @media(max-width:767px){
   .bnotes-title{font-size:1.5rem}
-  .article-body{padding:0 16px 60px}
+  .article-body{padding:0 16px 60px!important}
   .article-body h2{font-size:1.2rem}
   .share-section{padding:1.5rem 16px 0}
-  .further-reading{margin:1.5rem 16px}
-}
+  }
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"手沖水溫完整指南：為什麼 93°C 不是萬能答案","description":"用 93°C 沖淺焙豆，你喝到的是酸水而不是莓果。6°C 的差距，決定你喝到的是哪杯咖啡。","url":"https://bnotescoffee.com/articles/pour-over-water-temperature-guide","image":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/ai/pour-over-water-temperature-guide-hero.jpg","width":1200,"height":630},"datePublished":"2026-05-04T08:00:00+08:00","dateModified":"2026-05-17T12:30:00+08:00","author":{"@type":"Organization","name":"BNotes 編輯部","url":"https://bnotescoffee.com"},"publisher":{"@type":"Organization","name":"BNotes 焙學·原豆誌","url":"https://bnotescoffee.com","logo":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/bnotes-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bnotescoffee.com/articles/pour-over-water-temperature-guide"},"keywords":"手沖,水溫,萃取,烘焙度,手沖技法,咖啡科學,93度,淺焙"}
@@ -281,26 +284,26 @@ footer a{color:var(--coffee-light)}
 
   <section class="faq-section">
     <h2>常見問題</h2>
-    <details class="faq-item">
-      <summary>Q：手沖水溫幾度最好？</summary>
-      <p>沒有一個對所有咖啡都適用的最佳水溫。淺焙可以先從 92–96°C，中焙從 90–94°C，深焙從 85–90°C 開始，再依杯中的酸甜苦感微調。</p>
-    </details>
-    <details class="faq-item">
-      <summary>Q：為什麼 93°C 不是萬能答案？</summary>
-      <p>93°C 對許多中焙咖啡是好起點，但淺焙可能需要更高熱能，深焙則可能因高溫而苦澀。水溫要跟烘焙度、研磨度與風味目標一起判斷。</p>
-    </details>
-    <details class="faq-item">
-      <summary>Q：水溫太低會發生什麼事？</summary>
-      <p>水溫太低時，萃取容易停在酸質前段，杯中可能出現尖酸、空洞、薄弱或草味。這不一定是豆子不好，可能只是熱能不足。</p>
-    </details>
-    <details class="faq-item">
-      <summary>Q：水溫太高一定會過萃嗎？</summary>
-      <p>不一定。高溫會加快萃取，但是否過萃還要看研磨細度、注水時間與粉水比。高溫加細研磨才是特別容易苦澀的組合。</p>
-    </details>
-    <details class="faq-item">
-      <summary>Q：水溫和研磨度可以同時調整嗎？</summary>
-      <p>不建議。兩者都會改變萃取速度，同時調整會讓你無法判斷是哪個變數造成杯中變化。一次只調一件事，才比較容易學會。</p>
-    </details>
+    <div class="faq-item">
+      <button class="faq-question" type="button">Q：手沖水溫幾度最好？</button>
+      <div class="faq-answer"><p>沒有一個對所有咖啡都適用的最佳水溫。淺焙可以先從 92–96°C，中焙從 90–94°C，深焙從 85–90°C 開始，再依杯中的酸甜苦感微調。</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button">Q：為什麼 93°C 不是萬能答案？</button>
+      <div class="faq-answer"><p>93°C 對許多中焙咖啡是好起點，但淺焙可能需要更高熱能，深焙則可能因高溫而苦澀。水溫要跟烘焙度、研磨度與風味目標一起判斷。</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button">Q：水溫太低會發生什麼事？</button>
+      <div class="faq-answer"><p>水溫太低時，萃取容易停在酸質前段，杯中可能出現尖酸、空洞、薄弱或草味。這不一定是豆子不好，可能只是熱能不足。</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button">Q：水溫太高一定會過萃嗎？</button>
+      <div class="faq-answer"><p>不一定。高溫會加快萃取，但是否過萃還要看研磨細度、注水時間與粉水比。高溫加細研磨才是特別容易苦澀的組合。</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button">Q：水溫和研磨度可以同時調整嗎？</button>
+      <div class="faq-answer"><p>不建議。兩者都會改變萃取速度，同時調整會讓你無法判斷是哪個變數造成杯中變化。一次只調一件事，才比較容易學會。</p></div>
+    </div>
   </section>
 
   <div class="references">
@@ -406,7 +409,26 @@ footer a{color:var(--coffee-light)}
       panel.style.display='block';panel.style.left=left+'px';
     }
     positionTOC();window.addEventListener('resize',positionTOC);
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var link=panel.querySelector('a[href="#'+e.target.id+'"]');
+        if(link)link.classList.toggle('active',e.isIntersecting);
+      });
+    },{rootMargin:'-10% 0px -80% 0px'});
+    headings.forEach(function(h){io.observe(h);});
   })();
+})();
+</script>
+<script>
+/* bnotes-faq-accordion */
+(function(){
+  document.querySelectorAll('.faq-question').forEach(function(button){
+    button.addEventListener('click',function(){
+      var item=button.closest('.faq-item');
+      if(!item)return;
+      item.classList.toggle('open');
+    });
+  });
 })();
 </script>
 <script>

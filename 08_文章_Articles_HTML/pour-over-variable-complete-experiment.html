@@ -365,6 +365,10 @@ footer a{color:var(--coffee-light)}
 .module-quick li{margin-bottom:.45rem;line-height:1.75}
 .faq-section{margin:2.5rem 0;padding-top:1.25rem;border-top:1px solid oklch(90% .01 30)}
 .faq-section h2{margin-top:0}
+.faq-item{border:1px solid oklch(89% .01 30);border-radius:.65rem;margin-bottom:.65rem;background:white;overflow:hidden}
+.faq-question{width:100%;border:0;background:white;padding:.9rem 1rem;text-align:left;font:inherit;font-weight:700;color:var(--coffee-dark,#1a0a00);cursor:pointer}
+.faq-answer{display:none;padding:0 1rem 1rem;color:oklch(30% .02 30)}
+.faq-item.open .faq-answer{display:block}
 .faq-item{border:1px solid oklch(90% .012 45);border-radius:.75rem;background:oklch(99% .006 45);margin:0 0 .75rem;overflow:hidden}
 .faq-item summary{cursor:pointer;padding:1rem 1.15rem;font-weight:700;color:var(--coffee-dark,#1a0a00);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .faq-item summary::-webkit-details-marker{display:none}
@@ -601,11 +605,26 @@ footer a{color:var(--coffee-light)}
 
 <section class="faq-section" aria-labelledby="pour-over-experiment-faq">
   <h2 id="pour-over-experiment-faq">常見問題</h2>
-  <details class="faq-item"><summary>手沖咖啡哪個變因最重要？</summary><p>研磨度影響最大，其次是水溫。研磨不均或細粉比例過高時，即便其他參數看起來正確，也容易造成萃取不均。</p></details>
-  <details class="faq-item"><summary>手沖水溫幾度最好？</summary><p>多數手沖可以先從 88 至 94°C 之間測試。本篇實驗條件下，92°C 附近的平衡感最穩，但仍需依豆子、研磨與水質調整。</p></details>
-  <details class="faq-item"><summary>手沖研磨度怎麼設定？</summary><p>先以中細研磨作為起點，再依杯中表現微調。比起追求單一刻度，更重要的是控制研磨均勻度與細粉比例。</p></details>
-  <details class="faq-item"><summary>注水方式會影響手沖味道嗎？</summary><p>會。注水方式主要影響粉床受水與受熱的均勻性。穩定螺旋注水與點注都能做出好咖啡，關鍵是水流穩定、避免局部沖刷。</p></details>
-  <details class="faq-item"><summary>手沖咖啡萃取不足怎麼辦？</summary><p>先觀察杯中是否酸尖、水感薄或尾韻短。修正順序建議從研磨更細、提高水溫、延長接觸時間開始，且一次只改一個變因。</p></details>
+  <div class="faq-item">
+      <button class="faq-question" type="button">手沖咖啡哪個變因最重要？</button>
+      <div class="faq-answer"><p>研磨度影響最大，其次是水溫。研磨不均或細粉比例過高時，即便其他參數看起來正確，也容易造成萃取不均。</p></div>
+    </div>
+  <div class="faq-item">
+      <button class="faq-question" type="button">手沖水溫幾度最好？</button>
+      <div class="faq-answer"><p>多數手沖可以先從 88 至 94°C 之間測試。本篇實驗條件下，92°C 附近的平衡感最穩，但仍需依豆子、研磨與水質調整。</p></div>
+    </div>
+  <div class="faq-item">
+      <button class="faq-question" type="button">手沖研磨度怎麼設定？</button>
+      <div class="faq-answer"><p>先以中細研磨作為起點，再依杯中表現微調。比起追求單一刻度，更重要的是控制研磨均勻度與細粉比例。</p></div>
+    </div>
+  <div class="faq-item">
+      <button class="faq-question" type="button">注水方式會影響手沖味道嗎？</button>
+      <div class="faq-answer"><p>會。注水方式主要影響粉床受水與受熱的均勻性。穩定螺旋注水與點注都能做出好咖啡，關鍵是水流穩定、避免局部沖刷。</p></div>
+    </div>
+  <div class="faq-item">
+      <button class="faq-question" type="button">手沖咖啡萃取不足怎麼辦？</button>
+      <div class="faq-answer"><p>先觀察杯中是否酸尖、水感薄或尾韻短。修正順序建議從研磨更細、提高水溫、延長接觸時間開始，且一次只改一個變因。</p></div>
+    </div>
 </section>
 
 <div class="references">
@@ -789,6 +808,18 @@ footer a{color:var(--coffee-light)}
     },{rootMargin:'-10% 0px -80% 0px'});
     headings.forEach(function(h){io.observe(h);});
   })();
+})();
+</script>
+<script>
+/* bnotes-faq-accordion */
+(function(){
+  document.querySelectorAll('.faq-question').forEach(function(button){
+    button.addEventListener('click',function(){
+      var item=button.closest('.faq-item');
+      if(!item)return;
+      item.classList.toggle('open');
+    });
+  });
 })();
 </script>
 <script>
