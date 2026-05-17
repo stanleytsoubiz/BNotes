@@ -1,11 +1,11 @@
 ---
 title: 在家烘豆完全入門指南：從生豆到第一爐的科學與實作
 slug: home-roasting-beginners-guide-2026
-category: brewing-science
+category: roasting
 tags: [home-roasting, 生豆, 梅納反應, 一爆二爆, 烘焙曲線]
 status: published
-b1_reviewed_at: 2026-05-05T08:45:00Z
-gm_approved_at: 2026-05-05T09:30:00Z
+b1_reviewed_at: 2026-05-17T17:17:00+08:00
+gm_approved_at: 2026-05-17T17:47:00+08:00
 publish_date: 2026-05-05
 ---
 <!DOCTYPE html>
@@ -138,6 +138,10 @@ footer{background:var(--coffee-dark);color:oklch(65% .02 30);padding:2rem 1.5rem
 footer a{color:var(--coffee-light)}
 </style>
 <style id="bnotes-v3">
+.nav-logo{font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:var(--coffee-dark);letter-spacing:.02em;text-decoration:none}
+.nav-logo b{color:var(--gold)}
+.nav-sub{font-family:var(--font-sans);font-size:.65rem;color:var(--muted-fg);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+
 /* ===== BNotes Unified Article Style v3.1 ===== */
 
 /* 1. 強制隱藏所有舊 hero 結構 */
@@ -241,15 +245,12 @@ footer a{color:var(--coffee-light)}
 .article-body tr:nth-child(even) td { background: oklch(97% .006 30) }
 
 /* 4. Key Box 卡片 */
-.key-box {
   background: linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));
   border: 1px solid oklch(88% .05 45);
   border-left: 4px solid var(--gold,#c8922a);
   border-radius: .75rem; padding: 1.2em 1.4em;
   margin: 1.8em 0;
 }
-.key-box strong { display: block; margin-bottom: .6em; color: var(--coffee-dark,#1a0a00); font-size: 1rem; }
-.key-box p { margin-bottom: .4em; }
 
 /* 5. TOC 面板 */
 #bnotes-toc-panel {
@@ -300,15 +301,12 @@ footer a{color:var(--coffee-light)}
 }
 
 /* 8. Geo Box */
-.geo-box {
   background: oklch(97% .01 30);
   border: 1px solid oklch(88% .02 30);
   border-radius: .75rem;
   padding: 1.4em 1.6em;
   margin: 2em 0;
 }
-.geo-box p { margin-bottom: 1em; }
-.geo-box p:last-child { margin-bottom: 0; }
 
 /* 9. References */
 .references {
@@ -359,7 +357,6 @@ footer a{color:var(--coffee-light)}
   .article-body, .article-content, main.article-wrap article,
   .article-wrap .article-body { padding: 0 16px 60px !important }
   .article-body h2 { font-size: 1.2rem }
-  .share-section, .references, .further-reading, .geo-box { padding: 16px }
 }
 </style>
 </head>
@@ -382,6 +379,17 @@ footer a{color:var(--coffee-light)}
 
 <article class="article-body">
 
+<div class="module-conclusion module-guide">
+  <strong class="article-module-title">先把在家烘豆讀成小批次實驗</strong>
+  <p>自家烘焙不是一開始就追求專業烘焙曲線，而是用小批次建立熱量、時間、顏色、香氣與一爆聲音之間的關係。</p>
+  <p>如果你剛開始在家烘豆，我會建議先把每一爐當成實驗：記錄生豆、重量、時間、一爆點、下豆點與隔天風味，而不是只追求一次成功。</p>
+  <ul>
+    <li>第一階段目標是穩定與記錄，不是複製商業烘焙。</li>
+    <li>一爆、顏色、香氣與冷卻速度，是新手最需要掌握的線索。</li>
+    <li>安全、通風與小批次控制，比高價設備更重要。</li>
+  </ul>
+</div>
+
 <h1 style="display:none">在家烘豆完全入門指南：從生豆到第一爐的科學與實作</h1>
 <div class="article-cat" style="display:none">🔥 烘焙科學</div>
 
@@ -390,15 +398,6 @@ footer a{color:var(--coffee-light)}
 <p>大約五分鐘後，豆子的顏色從灰綠轉黃，青草味開始散去，一種更深、更甜的氣息慢慢滲出來——像餅乾快烤好時的奶油香。然後，第一聲爆裂。清脆、乾淨，像玉米爆開的聲音，但密集得多。那是咖啡豆第一次告訴你：它準備好了。</p>
 
 <p>在家烘豆，入門門檻比大多數人想像的低得多。你不需要一台幾萬塊的滾筒烘焙機。一台五百元的爆米花機，加上幾百克的生豆，已經足夠完成人生第一爐。但要烘得有意識——知道為什麼在那個時間點停火，知道那聲爆裂意味著什麼——你需要先懂一件事：豆子在高溫下發生了什麼。</p>
-
-<div class="key-box">
-<strong>讀完這篇，你會知道：</strong>
-<p>· 梅納反應是什麼，為什麼它決定了咖啡的風味骨架</p>
-<p>· 一爆與二爆的聲音、溫度差異，以及停火時機的判斷方法</p>
-<p>· 烘焙發展時間（DTR）如何影響你最終杯中的酸甜苦</p>
-<p>· 爆米花機、鐵鍋、熱風烘豆機的實際差異與新手建議</p>
-<p>· 為什麼冷卻和靜置時間比多數人以為的更重要</p>
-</div>
 
 <h2>生豆裡裝著什麼：烘焙前你需要知道的化學底層</h2>
 
@@ -536,46 +535,19 @@ footer a{color:var(--coffee-light)}
 <p>想一想那個農場海拔的早晨溫度，和那把豆子在你廚房爆米花機裡轉動的聲音——</p>
 <p>你會開始明白，這杯咖啡為什麼值得這麼在意。</p>
 
+
+<section class="faq-section"><h2>常見問題</h2><div class="faq-item"><button class="faq-question" type="button">在家烘豆適合新手嗎？</button><div class="faq-answer"><p>適合，但要從小批次、安全通風與完整記錄開始，不建議一開始就追求大量或深度改機。</p></div></div><div class="faq-item"><button class="faq-question" type="button">爆米花機可以烘咖啡嗎？</button><div class="faq-answer"><p>可以作為入門實驗工具，但控溫與容量有限。適合學習一爆、顏色與香氣變化，不適合長期穩定生產。</p></div></div><div class="faq-item"><button class="faq-question" type="button">烘完豆子可以立刻喝嗎？</button><div class="faq-answer"><p>可以試喝，但多數豆子需要排氣。通常 2 到 7 天後風味更穩定，實際取決於烘焙度與豆子。</p></div></div><div class="faq-item"><button class="faq-question" type="button">新手最常犯什麼錯？</button><div class="faq-answer"><p>常見錯誤是火力過猛、冷卻太慢、沒有記錄，以及用太多變因同時測試。</p></div></div><div class="faq-item"><button class="faq-question" type="button">自家烘焙一定比較省錢嗎？</button><div class="faq-answer"><p>不一定。生豆成本較低，但時間、失敗率、設備與學習成本也要計入。它更像學習與風味控制的興趣。</p></div></div></section><div class="references"><h3>參考資料</h3><ol><li>Specialty Coffee Association. <em>Roasting Foundations and Standards</em>.</li><li>Rao, S. <em>The Coffee Roaster’s Companion</em>.</li><li>Hoffmann, J. <em>The World Atlas of Coffee</em>.</li><li>Coffee Science Foundation. <em>Roasting and Sensory Research</em>.</li></ol></div>
 <div class="share-section">
-<p>這篇對你有幫助嗎？把它分享給同樣想在家嘗試烘豆的朋友。</p>
-</div>
-
-<div class="geo-box">
-<p><strong>Q: 在家烘豆需要什麼設備？</strong><br>
-A: 入門門檻極低——一台熱風爆米花機（約 500–1,500 元）加上少量精品生豆（每 100 克約 150–400 元不等），即可完成第一爐。鐵鍋或手網烘焙成本幾乎為零但需要更多練習。專用家用烘豆機（3,000 元起）適合確定長期烘豆後再投資。</p>
-
-<p><strong>Q: 家用烘豆的生豆哪裡買？</strong><br>
-A: 台灣可尋找提供個人少量購買的精品生豆供應商（500 克起），或洽詢有烘焙設備的精品咖啡館是否出售生豆。海外可參考 Sweet Maria's（sweetmarias.com），提供詳細杯測資訊，適合新手選豆。</p>
-
-<p><strong>Q: 一爆和二爆是什麼意思，什麼時候該停止烘焙？</strong><br>
-A: 一爆（First Crack）約在豆溫 195–205°C 時出現，聲音清脆，標誌豆子開始成熟。二爆（Second Crack）約在 220–230°C 出現，聲音細碎，代表進入中深烘到深烘範圍。新手建議在一爆後 90 秒至 2 分鐘出豆，對應輕至中淺焙，保留最多產地風味。</p>
-
-<p><strong>Q: 烘好的豆子可以馬上喝嗎？</strong><br>
-A: 不建議。剛烘好的豆子含有大量 CO₂，會干擾萃取均勻性。輕焙豆建議靜置 24–48 小時排氣，中深焙豆靜置 12–24 小時，才開始第一次萃取。</p>
-</div>
-
-<div class="references">
-  <h3>參考資料</h3>
-  <ul>
-    <li>Rao, S. (2014). <em>The Coffee Roaster's Companion</em>. Scott Rao. — Development Time Ratio（DTR）大規模杯測觀察數據來源。</li>
-    <li>Schenker, S. et al. (2002). "Pore Structure of Coffee Beans Affected by Roasting Conditions." <em>Journal of Food Science</em>, 67(1), 60–66.</li>
-    <li>Specialty Coffee Association (2023). <em>The Coffee Roaster's Companion: Updated Reference</em>. SCA Publications.</li>
-    <li>Illy, A. & Viani, R. (Eds.) (2005). <em>Espresso Coffee: The Science of Quality</em> (2nd ed.). Academic Press.</li>
-    <li>Sweet Maria's (2024). "Home Roasting Introduction." <em>Sweet Maria's Coffee Library</em>. sweetmarias.com.</li>
-    <li>Hoffmann, J. (2018). <em>The World Atlas of Coffee</em> (2nd ed.). Mitchell Beazley. — Chapter: Roasting</li>
-    <li>Perfect Daily Grind (2022). "What Is Development Time & DTR in Coffee Roasting?" <em>Perfect Daily Grind</em>.</li>
-  </ul>
-</div>
-
-<div class="further-reading">
-  <h3>延伸閱讀</h3>
-  <ul>
-    <li><a href="/articles/specialty-coffee-third-wave-history.html">精品咖啡第三波浪潮的完整歷史：從西雅圖的一家小店到台北的百家精品館</a></li>
-    <li><a href="/articles/light-roast-beginners-guide.html">淺焙咖啡入門：為什麼淺焙更難喝懂，卻值得花時間</a></li>
-    <li><a href="/articles/coffee-acidity-complete-science.html">咖啡酸質的完整科學：為什麼有些酸讓你皺眉，有些酸讓你回味</a></li>
-  </ul>
-</div>
-
+    <span class="share-label">分享這篇</span>
+    <div class="share-btns">
+      <a class="share-btn share-btn-line" href="#" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+' '+location.href));return false;" target="_blank" rel="noopener" aria-label="分享至 LINE" title="LINE"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
+      <a class="share-btn share-btn-fb" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false;" aria-label="分享至 Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a class="share-btn share-btn-threads" href="#" onclick="window.open('https://threads.net/intent/post?text='+encodeURIComponent(document.title+' '+location.href),'_blank');return false;" aria-label="分享至 Threads" title="Threads"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.78 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.143 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></a>
+      <a class="share-btn share-btn-x" href="#" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false;" aria-label="分享至 X" title="X (Twitter)"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <button class="share-btn share-btn-copy" onclick="navigator.clipboard.writeText(location.href)" aria-label="複製連結" title="複製連結"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-3.1-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></button>
+    </div>
+  </div>
+<div class="related-articles"><h3 class="related-title">延伸閱讀</h3><div class="related-grid"><a class="related-card" href="/articles/green-bean-sourcing-complete-guide.html"><span class="related-kicker">生豆選購</span><span class="related-card-title">生豆選購完全指南：從產地認證到杯測分數</span></a><a class="related-card" href="/articles/roast-level-guide.html"><span class="related-kicker">烘焙度基礎</span><span class="related-card-title">咖啡烘焙度完全指南</span></a><a class="related-card" href="/articles/coffee-acidity-complete-science.html"><span class="related-kicker">風味理解</span><span class="related-card-title">咖啡酸質的完整科學：如何找到你的對的酸</span></a></div></div>
 </article>
 
   <div class="cta-box" style="margin-top:3rem">
