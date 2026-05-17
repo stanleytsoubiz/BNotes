@@ -1,13 +1,25 @@
+---
+title: "義式咖啡比例科學：Espresso 粉液比 1:2 的根據與調整方法"
+date: "2026-04-20"
+status: published
+published_at: 2026-05-07
+category: brew-methods
+description: "從 TDS、萃取率、粉液比到 Ristretto 與 Lungo，建立 Espresso 1:2 比例的科學判斷，讓你用更穩定的方法調整每一杯義式咖啡。"
+cover_image: "https://bnotescoffee.com/images/ai/espresso-ratio-science-hero.jpg"
+reading_time: 7
+b1_reviewed_at: 2026-05-17T17:30:00+08:00
+gm_approved_at: 2026-05-17T18:00:00+08:00
+---
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>義式咖啡比例科學：Espresso 粉液比 1:2 的根據與何時該打破它 | BNotes 焙學·原豆誌</title>
-<meta name="description" content="義式咖啡的1:2粉液比（18g粉萃出36g液）被奉為黃金標準，但世界頂尖咖啡師正在挑戰這個數字。了解背後的科學，�...。深度探索精品咖啡知識，從科學原理到實踐技巧，完整呈現咖啡世界。">
-<meta name="keywords" content="精品咖啡,咖啡知識,台灣咖啡">
-<meta property="og:title" content="義式咖啡比例科學：Espresso 粉液比 1:2 的根據與何時該打破它">
-    <meta property="og:description" content="義式咖啡的 1:2 粉液比（18g 粉萃出 36g 液）被奉為黃金標準，但世界頂尖咖啡師正在挑戰這個數字。了解背後的科學，找�" />
+<title>義式咖啡比例科學：Espresso 粉液比 1:2 的根據與調整方法 | BNotes 焙學·原豆誌</title>
+<meta name="description" content="從 TDS、萃取率、粉液比到 Ristretto 與 Lungo，建立 Espresso 1:2 比例的科學判斷，讓你用更穩定的方法調整每一杯義式咖啡。">
+<meta name="keywords" content="Espresso 粉液比,義式咖啡比例,1:2 比例,TDS,萃取率,Ristretto,Lungo,義式萃取,咖啡萃取科學">
+<meta property="og:title" content="義式咖啡比例科學：Espresso 粉液比 1:2 的根據與調整方法">
+    <meta property="og:description" content="從 TDS、萃取率、粉液比到 Ristretto 與 Lungo，建立 Espresso 1:2 比例的科學判斷，讓你用更穩定的方法調整每一杯義式咖啡。" />
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://bnotescoffee.com/images/ai/espresso-ratio-science-hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +44,9 @@ img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
 .nav-brand{display:flex;align-items:center;gap:.75rem}
-.nav-logo{font-size:1.5rem}
+.nav-logo{font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:var(--coffee-dark);letter-spacing:.02em;text-decoration:none}
+.nav-logo b{color:var(--gold)}
+.nav-sub{font-family:var(--font-sans);font-size:.65rem;color:var(--muted-fg);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
 .nav-name{font-family:var(--font-serif);font-weight:700;font-size:1rem;color:var(--coffee-dark);line-height:1.2}
 .nav-en{font-size:.6rem;letter-spacing:.3em;color:var(--coffee-mid)}
 .nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
@@ -74,8 +88,8 @@ footer a{color:var(--coffee-light)}
 <meta property="og:site_name" content="BNotes 焙學·原豆誌">
 <meta property="og:locale" content="zh_TW">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="義式咖啡比例科學：Espresso 粉液比 1:2 的根據與何時該打破它 | BNotes 焙學·原豆誌">
-<meta name="twitter:description" content="義式咖啡的 1:2 粉液比（18g 粉萃出 36g 液）被奉為黃金標準，但世界頂尖咖啡師正在挑戰這個數字。了解背後的科學，找到你的最佳比例。">
+<meta name="twitter:title" content="義式咖啡比例科學：Espresso 粉液比 1:2 的根據與調整方法 | BNotes 焙學·原豆誌">
+<meta name="twitter:description" content="從 TDS、萃取率、粉液比到 Ristretto 與 Lungo，建立 Espresso 1:2 比例的科學判斷，讓你用更穩定的方法調整每一杯義式咖啡。">
 <meta name="twitter:image" content="https://bnotescoffee.com/images/ai/espresso-ratio-science-hero.jpg">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -83,7 +97,7 @@ footer a{color:var(--coffee-light)}
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#1a0a00">
 <link rel="preconnect" href="https://images.unsplash.com">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Espresso 粉液比完全解析：1:2 黃金比例的科學根據", "description": "義式咖啡的 1:2 粉液比（18g 粉萃出 36g 液）被奉為黃金標準，但世界頂尖咖啡師正在挑戰這個數字。了解背後的科學，找到你的最佳比例。", "url": "https://bnotescoffee.com/articles/espresso-ratio-science.html", "datePublished": "2026-04-08T00:00:00+08:00", "dateModified": "2026-04-08T00:00:00+08:00", "inLanguage": "zh-TW", "author": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com"}, "publisher": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com", "logo": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/bnotes-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bnotescoffee.com/articles/espresso-ratio-science.html"}, "keywords": "精品咖啡,咖啡知識,台灣咖啡", "image": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/ai/espresso-ratio-science-hero.jpg", "width": 1200, "height": 630}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","headline":"義式咖啡比例科學：Espresso 粉液比 1:2 的根據與調整方法","description":"從 TDS、萃取率、粉液比到 Ristretto 與 Lungo，建立 Espresso 1:2 比例的科學判斷，讓你用更穩定的方法調整每一杯義式咖啡。","url":"https://bnotescoffee.com/articles/espresso-ratio-science.html","datePublished":"2026-04-20T00:00:00+08:00","dateModified":"2026-05-17T18:00:00+08:00","inLanguage":"zh-TW","author":{"@type":"Organization","name":"BNotes 焙學·原豆誌","url":"https://bnotescoffee.com"},"publisher":{"@type":"Organization","name":"BNotes 焙學·原豆誌","url":"https://bnotescoffee.com","logo":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/bnotes-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bnotescoffee.com/articles/espresso-ratio-science.html"},"keywords":"Espresso 粉液比,義式咖啡比例,1:2 比例,TDS,萃取率,Ristretto,Lungo,義式萃取,咖啡萃取科學","image":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/ai/espresso-ratio-science-hero.jpg","width":1200,"height":630}}</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -98,13 +112,13 @@ footer a{color:var(--coffee-light)}
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "義式咖啡 · Q2-03",
+      "name": "義式萃取科學",
       "item": "https://bnotescoffee.com/#categories"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Espresso 粉液比完全解析：1:2 黃金比例的科學根據",
+      "name": "義式咖啡比例科學：Espresso 粉液比 1:2 的根據與調整方法",
       "item": "https://bnotescoffee.com/articles/espresso-ratio-science.html"
     }
   ]
@@ -149,15 +163,15 @@ footer a{color:var(--coffee-light)}
     }
   });
 </script>
-  <meta property="article:published_time" content="2026-04-08T00:00:00+08:00" />
-  <meta property="article:modified_time" content="2026-04-08T00:00:00+08:00" />
+  <meta property="article:published_time" content="2026-04-20T00:00:00+08:00" />
+  <meta property="article:modified_time" content="2026-05-17T18:00:00+08:00" />
   <meta property="article:author" content="https://bnotescoffee.com" />
-  <meta property="article:section" content="義式咖啡 · Q2-03" />
+  <meta property="article:section" content="義式萃取科學" />
   <meta property="article:tag" content="精品咖啡" />
   <meta name="twitter:label1" content="閱讀時間" />
-  <meta name="twitter:data1" content="11 分鐘閱讀" />
+  <meta name="twitter:data1" content="7 分鐘閱讀" />
   <meta name="twitter:label2" content="分類" />
-  <meta name="twitter:data2" content="義式咖啡 · Q2-03" />
+  <meta name="twitter:data2" content="義式萃取科學" />
 <style id="bnotes-v3">
 /* ===== BNotes Unified Article Style v3.1 ===== */
 
@@ -261,53 +275,47 @@ footer a{color:var(--coffee-light)}
 }
 .article-body tr:nth-child(even) td { background: oklch(97% .006 30) }
 
-/* 4. Key Takeaway 卡片 */
-.key-takeaway, .takeaway-box, [class*="key-take"] {
-  background: linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));
-  border: 1px solid oklch(88% .05 45);
-  border-left: 4px solid var(--gold,#c8922a);
-  border-radius: .75rem; padding: 1.2em 1.4em;
-  margin: 1.8em 0;
-}
-
-/* 4b. key-box (v1.8) */
-.key-box {
-  background: linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));
-  border: 1px solid oklch(88% .05 45);
-  border-left: 4px solid var(--gold,#c8922a);
-  border-radius: .75rem; padding: 1.2em 1.4em;
-  margin: 1.8em 0;
-}
-.key-box h3 { font-size: 1rem; font-weight: 700; color: var(--coffee-dark,#1a0a00); margin: 0 0 .7em; }
-.key-box ul { margin: 0; padding-left: 1.4em; color: oklch(28% .03 30); }
-.key-box li { margin-bottom: .45em; }
-
-/* 4c. geo-box (v1.8) */
-.geo-box {
-  max-width: 740px; margin: 2em auto;
-  padding: 1.4em 1.5em;
-  background: oklch(97% .012 45);
-  border-radius: .75rem;
-  border: 1px solid oklch(88% .05 45);
-}
-.geo-box h3 { font-size: 1.05rem; font-weight: 700; color: var(--coffee-dark,#1a0a00); margin: 0 0 .6em; }
-.geo-box p { margin-bottom: .8em; color: oklch(28% .03 30); font-size: .95rem; }
-.geo-box ul { margin: 0 0 1.2em 1.4em; color: oklch(28% .03 30); font-size: .92rem; line-height: 1.75; }
-.geo-box details { margin-bottom: .8em; border-bottom: 1px solid oklch(90% .03 45); padding-bottom: .8em; }
-.geo-box summary { cursor: pointer; font-weight: 600; color: var(--coffee-warm,#5c2d00); font-size: .95rem; }
-.geo-box details p { margin-top: .6em; font-size: .92rem; line-height: 1.75; }
-
-/* 4d. references (v1.8) */
-.references {
-  max-width: 740px; margin: 2em auto;
-  padding: 1.2em 1.5em;
-  background: oklch(97% .01 30);
-  border-radius: .75rem; font-size: .85rem;
-}
-.references h4 { font-size: .9rem; font-weight: 700; color: var(--coffee-dark,#1a0a00); margin: 0 0 .8em; }
-.references ol { margin: 0; padding-left: 1.4em; color: oklch(35% .02 30); }
-.references li { margin-bottom: .4em; }
-.references a { color: var(--gold,#c8922a); }
+/* 4. Article Shell Modules */
+.article-module-title{display:block;font-family:var(--font-serif,'Noto Serif TC',serif);font-size:1.05rem;font-weight:900;color:var(--coffee-dark,#1a0a00);margin-bottom:.7rem}
+.module-conclusion,.module-quick{border-radius:.75rem;padding:1.15em 1.35em;margin:1.8em 0}
+.module-conclusion{background:linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));border:1px solid oklch(88% .05 45);border-left:4px solid var(--gold,#c8922a)}
+.module-quick{background:oklch(97% .01 200);border:1px solid oklch(88% .03 200);border-left:4px solid oklch(60% .12 200)}
+.module-conclusion p,.module-quick p{margin-bottom:.75rem}
+.module-conclusion p:last-child,.module-quick p:last-child{margin-bottom:0}
+.module-conclusion ul,.module-quick ul{margin:.55rem 0 0 1.2rem}
+.module-conclusion li,.module-quick li{margin-bottom:.38rem;line-height:1.65}
+.module-conclusion li:last-child,.module-quick li:last-child{margin-bottom:0}
+.article-body .module-conclusion li,.article-body .module-quick li{margin-bottom:.38rem;line-height:1.65}
+.article-body .module-conclusion li:last-child,.article-body .module-quick li:last-child{margin-bottom:0}
+.faq-section{border-top:1px solid oklch(90% .01 30);margin-top:2.4rem;padding-top:1.4rem}
+.faq-section h2,.references h3,.share-section h3,.related-articles h3{font-family:var(--font-serif,'Noto Serif TC',serif);color:var(--coffee-dark,#1a0a00)}
+.faq-item{border:1px solid oklch(89% .01 30);border-radius:.65rem;margin-bottom:.65rem;background:white;overflow:hidden}
+.faq-question{width:100%;border:0;background:white;padding:.9rem 1rem;text-align:left;font:inherit;font-weight:700;color:var(--coffee-dark,#1a0a00);cursor:pointer}
+.faq-answer{display:none;padding:0 1rem 1rem;color:oklch(30% .02 30)}
+.faq-item.open .faq-answer{display:block}
+.references{font-size:.82rem;line-height:1.55;color:oklch(45% .02 30);margin-top:2.5em;padding-top:1em;border-top:1px dashed oklch(85% .01 30)}
+.references h3{font-size:.9rem;color:oklch(40% .02 30);margin-bottom:.6em}
+.references ol,.references ul{padding-left:1.2em;margin:0}
+.references li{margin-bottom:.35em}
+.references em{color:oklch(35% .02 30)}
+.share-section{max-width:740px;margin:2.5em auto 0;padding:1.5em 24px 0;border-top:1px solid oklch(90% .01 30);display:flex;align-items:center;gap:.75em;flex-wrap:wrap}
+.share-label{font-size:.85rem;color:oklch(45% .02 30);font-weight:600;margin-right:.5em}
+.share-btns{display:flex;gap:.5em;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;text-decoration:none}
+.share-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.share-btn svg{width:18px;height:18px}
+.share-btn-line{background:#00C300}
+.share-btn-fb{background:#1877F2}
+.share-btn-threads{background:#000}
+.share-btn-x{background:#000}
+.share-btn-copy{background:#8b4513}
+.related-articles{border-top:1px solid oklch(90% .01 30);padding-top:1.4rem;margin-top:2.5em}
+.related-title{font-size:1.05rem;margin-bottom:.9rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem}
+.related-card{display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white}
+.related-card:hover{transform:translateY(-2px);box-shadow:0 3px 12px rgba(0,0,0,.09);border-color:var(--gold,#c8922a)}
+.related-kicker{font-size:.72rem;color:var(--gold,#c8922a);font-weight:800}
+.related-card-title{font-size:.9rem;font-weight:800;color:var(--coffee-dark,#1a0a00);line-height:1.45}
 
 /* 5. TOC 面板 */
 #bnotes-toc-panel {
@@ -405,11 +413,11 @@ footer a{color:var(--coffee-light)}
 </nav>
 
 <div class="article-hero">
-  <img class="article-hero-img" src="https://bnotescoffee.com/images/ai/espresso-ratio-science-hero.jpg" alt="Espresso 粉液比完全解析：1:2 黃金比例的科學根據" fetchpriority="high" loading="eager" decoding="async">
+  <img class="article-hero-img" src="https://bnotescoffee.com/images/ai/espresso-ratio-science-hero.jpg" alt="義式咖啡比例科學：Espresso 粉液比 1:2 的根據與調整方法" fetchpriority="high" loading="eager" decoding="async">
   <div class="article-hero-overlay"></div>
   <div class="article-hero-content" style="max-width:900px;width:100%;left:50%;transform:translateX(-50%)">
-    <div class="article-cat">義式咖啡 · Q2-03</div>
-    <h1 class="article-h1">義式咖啡比例科學：Espresso 粉液比 1:2 的根據與何時該打破它</h1>
+    <div class="article-cat">義式萃取科學</div>
+    <h1 class="article-h1">義式咖啡比例科學：Espresso 粉液比 1:2 的根據與調整方法</h1>
   </div>
 </div>
 
@@ -423,178 +431,150 @@ footer a{color:var(--coffee-light)}
 
 <nav aria-label="breadcrumb" style="max-width:900px;margin:.75rem auto;padding:0 1.5rem;font-size:.8rem;color:var(--muted-fg)">
   <a href="/">首頁</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
-  <a href="/#categories">義式咖啡 · Q2-03</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
-  <span style="color:var(--coffee-mid)">Espresso 粉液比完全解析：1:2 黃金比例的科學根據</span>
+  <a href="/#categories">義式萃取科學</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
+  <span style="color:var(--coffee-mid)">義式咖啡比例科學：Espresso 粉液比 1:2 的根據與調整方法</span>
 </nav>
 
 <main class="article-wrap">
 
 <article class="article-body">
-    
-<div class="article-header">
-    <h2>義式咖啡比例科學：Espresso 粉液比 1:2 的根據，以及何時應該打破它</h2>
-    <div class="article-meta"><span>✍ BNotes 編輯部</span><span>⏱ 閱讀約13分鐘</span></div>
+  <div class="article-header">
+    <h1>義式咖啡比例科學：Espresso 粉液比 1:2 的根據與調整方法</h1>
+    <div class="article-meta"><span>✍ BNotes 編輯部</span><span>⏱ 閱讀約 7 分鐘</span></div>
   </div>
 
-  <div class="lead">
-    「18g 粉，萃出 36g 液，27—32 秒。」這個公式曾幾何時是義式咖啡的神聖戒律，任何偏離都是異端。但2026年的頂尖咖啡師正在系統性地質疑這個數字：有人用 1:1.5 的 Ristretto 萃出更濃縮的甜感，有人用 1:3.5 的 Lungo 探索更清爽的果香層次。<span class="term">粉液比 (Brew Ratio)</span> 的科學根據究竟是什麼？什麼時候該遵守黃金比例，什麼時候該打破它？這篇文章從 <span class="term">TDS（Total Dissolved Solids，總溶解固體）</span>與<span class="term">萃取率 (Extraction Yield)</span> 的科學關係出發，帶你建立自己的 Espresso 方程式。
-  </div>
+  <p>如果你正在學 Espresso，最容易被一句話卡住：「18g 粉，36g 液，約 30 秒。」它聽起來像標準答案，但真正好喝的義式咖啡，往往不是死守數字，而是理解這個比例背後的萃取邏輯。</p>
+  <p>我會把 <strong>1:2 粉液比</strong>當成一張地圖：它能幫你快速找到穩定起點，也能提醒你什麼時候該往更濃、更甜，或更清爽的方向微調。這篇會用咖啡師現場能操作的方式，帶你把 TDS、萃取率、Ristretto、Lungo 這些看似艱深的詞，轉成你下一杯 Espresso 可以直接使用的判斷。</p>
 
-  <div class="key-box">
-    <h3>重點速覽</h3>
+  <div class="module-conclusion">
+    <span class="article-module-title">先把 1:2 讀懂</span>
+    <p>1:2 不是義式咖啡的唯一答案，而是大多數豆子在 9 bar 左右壓力、25 到 35 秒萃取窗口中，最容易取得平衡的起點。</p>
     <ul>
-      <li>義式咖啡標準粉液比 1:2（18g 粉萃 36g 液）是數十年實驗驗證的「最大共識起點」，不是不可動搖的規則</li>
-      <li>TDS（Total Dissolved Solids）衡量濃度，SCA 建議 Espresso 的 TDS 為 8–12%</li>
-      <li>萃取率（Extraction Yield）衡量效率，理想範圍 18–22%；低於 18% 酸澀，高於 22% 苦澀空洞</li>
-      <li>Ristretto（1:1–1:1.5）甜感集中；Lungo（1:3–1:4+）清爽果香但醇厚度流失</li>
-      <li>調整粉液比不能孤立操作——改比例同時必須微調研磨度，才能維持目標萃取時間</li>
-      <li>淺烘焙豆建議 1:2.2–1:2.8；深烘焙豆在 1:2 左右即可，過長容易過萃</li>
+      <li><strong>想要穩定：</strong>先用 18g 粉、36g 液建立基準，再調研磨與時間。</li>
+      <li><strong>想要更濃縮甜感：</strong>可往 1:1.5 到 1:1.8 嘗試，但要注意酸味是否變短、苦味是否變乾。</li>
+      <li><strong>想要更清楚果香：</strong>可往 1:2.3 到 1:2.8 延伸，尤其是淺焙與水洗豆，但要避免杯感變薄。</li>
     </ul>
   </div>
 
-  <h2>一、理解粉液比的核心：TDS 與萃取率</h2>
-  <p>要真正理解粉液比，必須先掌握兩個關鍵概念，它們是評估義式咖啡品質的「座標系統」。</p>
-
-  <h3>TDS（Total Dissolved Solids）：濃度指標</h3>
-  <p><span class="term">TDS</span> 是指咖啡液體中溶解固體物（咖啡可溶性化合物）佔總液體重量的百分比。用折射儀（Refractometer）可以直接測量。SCA 的標準義式咖啡 TDS 範圍為 <strong>8—12%</strong>，通常接受的「理想 Espresso」約在 9—10%。</p>
-
-  <h3>萃取率（Extraction Yield）：效率指標</h3>
-  <p><span class="term">萃取率</span> 是指實際從咖啡粉中萃出的可溶性物質量，佔咖啡粉總重的百分比。計算公式：</p>
-  <div class="formula-box">
-    <div class="formula">萃取率 (%) = TDS (%) × 液體重量 (g) ÷ 咖啡粉重量 (g) × 100</div>
-    <small>例：TDS 9%，液體 36g，粉 18g → 萃取率 = 9% × 36 ÷ 18 × 100 = 18%</small>
+  <div class="module-quick">
+    <span class="article-module-title">讀完這篇，你會知道</span>
+    <ul>
+      <li>為什麼 1:2 是很多咖啡師的起點，而不是固定答案。</li>
+      <li>如何用 TDS 與萃取率理解「濃」和「萃得夠不夠」的差別。</li>
+      <li>Ristretto、標準 Espresso、Lungo 在風味上各自想解決什麼問題。</li>
+      <li>如何依照烘焙度、豆子風格與喝法，設定自己的第一組比例。</li>
+    </ul>
   </div>
-  <p>SCA 建議的義式咖啡萃取率理想範圍為 <strong>18—22%</strong>。低於18%為萃取不足（Under-extraction），通常帶來銳利的酸感和青草味；高於22%為過度萃取（Over-extraction），通常帶來乾澀苦感和空洞感。</p>
 
-  <div class="chart-suggestion">TDS vs 萃取率座標圖（SCA 金杯標準）：X軸為萃取率（14—26%），Y軸為TDS（6—14%），標示義式咖啡的「金杯區域」（萃取率18—22% × TDS 8—12%），以及不同粉液比（1:1.5 / 1:2 / 1:2.5 / 1:3）對應的典型落點區域，直觀顯示比例變化如何影響TDS和萃取率的關係。</div>
+  <h2>粉液比其實在回答一件事：你想把多少東西帶進杯子裡？</h2>
+  <p>粉液比（Brew Ratio）說的是「咖啡粉重量」與「萃出液重量」之間的關係。18g 粉萃出 36g 液，就是 1:2。這個比例不只影響濃淡，也會影響酸甜苦的排列順序。</p>
+  <p>如果液量太少，前段的酸質、甜感與濃縮感會很集中，但中後段的平衡可能還沒完全展開；如果液量太多，更多可溶物被帶出來，果香與明亮感可能變清楚，但後段苦澀與稀薄感也可能一起出現。</p>
+  <p>所以我會建議新手先不要把 1:2 當成分數，而把它當成比較基準。你要先知道「我的 1:2 喝起來如何」，再去判斷要縮短或拉長比例。</p>
 
-  <h2>二、1:2 黃金比例的科學根據</h2>
-  <p>1:2 之所以成為義式咖啡的行業標準，並非偶然，而是在幾十年義式咖啡文化積累中，被大量實驗驗證的一個「最大共識區間」：</p>
-  <ul>
-    <li><strong>物理層面：</strong>在標準 9 巴（bar）萃取壓力下，18g 粉在 25—32 秒內萃出 36g 液，這個時間窗口能讓水有足夠時間溶解最理想比例的可溶性物質——以精品豆為例，通常能達到 18—20% 的萃取率和 9—10.5% 的 TDS。</li>
-    <li><strong>風味層面：</strong>在這個比例下，甜感、酸質、苦感三者通常處於相對平衡的狀態。過短（如 1:1.5）萃取液過濃，苦感上升；過長（如 1:3+）液體稀薄，甜感和醇厚度流失。</li>
-    <li><strong>克里瑪層面：</strong>1:2 比例下，克里瑪（Crema）的量通常佔 Espresso 杯的 10—20%，在視覺和風味平衡上表現最好。</li>
-  </ul>
-
-  <h2>三、不同比例的風味變化：從 Ristretto 到 Lungo</h2>
+  <h2>TDS 與萃取率：一個看濃度，一個看萃取完整度</h2>
+  <p><strong>TDS（Total Dissolved Solids）</strong>可以理解成咖啡液裡有多少溶解物。TDS 越高，喝起來通常越濃、口感越厚；TDS 越低，喝起來越輕、越接近黑咖啡或長萃的輪廓。</p>
+  <p><strong>萃取率（Extraction Yield）</strong>則是在問：原本咖啡粉裡可被水帶出的物質，有多少真的進到杯子裡？常見的理想區間會落在約 18% 到 22%，但實際仍要看豆子、烘焙與風味目標。</p>
   <table>
-    <thead><tr><th>比例</th><th>名稱</th><th>典型TDS</th><th>風味特徵</th><th>適合場景</th></tr></thead>
+    <thead><tr><th>指標</th><th>它在看什麼</th><th>喝起來的意義</th><th>使用方式</th></tr></thead>
     <tbody>
-      <tr><td>1:1—1:1.5</td><td><span class="term">Ristretto 短萃</span></td><td>12—15%</td><td>高濃縮、甜感集中、酸質柔和、醇厚感強、無明顯苦感</td><td>中深烘、風味表達直接的豆款</td></tr>
-      <tr><td>1:2—1:2.5</td><td><span class="term">Espresso 標準</span></td><td>9—11%</td><td>酸甜苦平衡、克里瑪豐富、風味複雜</td><td>大多數義式應用的通用比例</td></tr>
-      <tr><td>1:2.5—1:3</td><td><span class="term">Normale 延伸</span></td><td>7—9%</td><td>酸質明亮提升、甜感稍降、苦感低、果香更突出</td><td>淺烘精品豆、想突出酸質特色</td></tr>
-      <tr><td>1:3—1:4+</td><td><span class="term">Lungo 長萃</span></td><td>5—7%</td><td>清爽、淡雅、果香層次可見，但缺乏醇厚度和克里瑪</td><td>特定豆種風格表達或黑咖啡愛好者</td></tr>
+      <tr><td>TDS</td><td>杯中濃度</td><td>厚實、濃縮、稀薄或清爽</td><td>用來判斷口感重量</td></tr>
+      <tr><td>萃取率</td><td>咖啡粉被萃出的比例</td><td>酸尖、甜感、苦澀與空洞感</td><td>用來判斷萃取是否充分</td></tr>
+      <tr><td>粉液比</td><td>粉量與液量關係</td><td>改變濃度與萃取範圍</td><td>用來設計配方起點</td></tr>
+    </tbody>
+  </table>
+  <p>進階一點看，1:2 的價值不在於它永遠最好，而在於它讓濃度與萃取率比較容易同時落在可飲用、可調整、可重複的範圍。這也是它能成為世界各地咖啡師共同語言的原因。</p>
+
+  <h2>為什麼 1:2 會成為常見起點？</h2>
+  <p>在多數義式機、商用磨豆機與精品咖啡館的操作環境中，1:2 能兼顧三件事：足夠的濃度、可接受的萃取完整度，以及容易教學與複製的流程。</p>
+  <p>對剛開始做 Espresso 的人來說，這很重要。你如果一開始就從 1:1.3 或 1:3.2 開始，會很難判斷問題到底出在比例、研磨、粉餅、壓力、水溫，還是豆子本身。</p>
+  <p>從世界華人讀者的角度看，無論你在台北、香港、新加坡、上海、溫哥華或墨爾本，只要能用重量記錄，1:2 都是一種很好的共同語言。不同城市的豆子、機器與水質會不同，但起點一致，討論才會有效。</p>
+
+  <h2>Ristretto、標準 Espresso、Lungo：比例改變後，風味怎麼走？</h2>
+  <table>
+    <thead><tr><th>比例範圍</th><th>常見名稱</th><th>風味傾向</th><th>適合情境</th></tr></thead>
+    <tbody>
+      <tr><td>1:1 到 1:1.5</td><td>Ristretto</td><td>濃縮、甜感集中、酸質較短、body 厚</td><td>中深焙、奶咖基底、想要厚實感</td></tr>
+      <tr><td>1:1.8 到 1:2.2</td><td>標準 Espresso</td><td>酸甜苦較平衡，克里瑪與口感穩定</td><td>多數豆子的第一組測試</td></tr>
+      <tr><td>1:2.3 到 1:2.8</td><td>延伸比例</td><td>果香更開、酸質更明亮、口感較輕</td><td>淺焙、水洗豆、想喝清楚層次</td></tr>
+      <tr><td>1:3 以上</td><td>Lungo</td><td>更清爽、尾韻拉長，但容易變薄或澀</td><td>特定風味表達，或偏好淡雅黑咖啡</td></tr>
+    </tbody>
+  </table>
+  <p>這裡的底層邏輯是：越短的比例越強調前段濃縮感，越長的比例越容易帶出後段物質。前段通常有酸、甜與香氣衝擊；後段可能補上甜感與層次，也可能帶出乾澀與苦味。你不是在追求數字漂亮，而是在決定要讓哪一段風味被放大。</p>
+
+  <h2>調比例時，不能只改液量</h2>
+  <p>很多人第一次調 Espresso 會犯一個錯：把 18g / 36g 改成 18g / 45g，卻完全不動研磨。結果看似拉長比例，實際上可能變成流速過快、濃度下降、酸甜被稀釋。</p>
+  <p>我會建議你用「一次只改一個主要變因」的方式練習。先固定粉量與水溫，選一組比例，再用研磨度把萃取時間拉回合理範圍。等味道穩定後，再比較下一組比例。</p>
+  <table>
+    <thead><tr><th>喝起來的狀態</th><th>可能原因</th><th>優先調整</th></tr></thead>
+    <tbody>
+      <tr><td>酸尖、薄、甜感短</td><td>萃取不足或流速太快</td><td>磨細一點，或稍微拉長比例</td></tr>
+      <tr><td>苦、乾、喉嚨緊</td><td>過度萃取或尾段太長</td><td>磨粗一點，或縮短比例</td></tr>
+      <tr><td>濃但悶，香氣不開</td><td>比例太短或萃取不均</td><td>檢查布粉，再嘗試 1:2 左右</td></tr>
+      <tr><td>香氣有，但口感太水</td><td>比例太長或 TDS 太低</td><td>縮短比例，或增加粉量基準</td></tr>
     </tbody>
   </table>
 
-  <p>一個重要但常被忽視的觀念：<strong>調整粉液比不能脫離其他變數獨立操作。</strong>如果你從 1:2 改成 1:2.5，但保持相同的研磨度和萃取時間不變，水在相同時間流過更多液體，等效於萃取率下降——風味可能變得更淡薄而非更有果香。正確做法是在調整比例的同時，微調研磨度（更細或更粗）來維持目標萃取時間區間。</p>
-
-  <h2>四、影響最佳比例的三大因素</h2>
-
-  <h3>因素一：豆種與烘焙度</h3>
-  <p>淺烘豆的<span class="term">可溶性物質 (Solubles)</span>比中深烘更難萃取（細胞結構更緊密），通常需要更高水溫（93—96°C）、更細研磨或更大比例（1:2.2—1:2.8）才能達到目標萃取率。深烘豆的可溶性物質更易溶解，過長比例容易過度萃取，通常在 1:2 左右即可。</p>
-
-  <h3>因素二：處理法</h3>
-  <p>蜜處理和日曬豆通常含有更多糖分殘留，在相同萃取條件下甜感更突出，有時可以嘗試稍大的比例（1:2.2—1:2.5）來平衡過重的甜感。水洗豆的酸質更明顯，通常在 1:2—1:2.2 的緊湊比例下表現最佳。</p>
-
-  <h3>因素三：咖啡機器特性</h3>
-  <p>不同品牌、不同型號的義式機器，其壓力曲線（<span class="term">Pressure Profile</span>）差異顯著。高壓機（9 bar 固定壓力）和具有壓力曲線控制的頂級機器，相同粉液比下的風味表現可能差異巨大。這也是為什麼同一個「配方」在不同機器上需要調整的根本原因。</p>
-
-  <div class="chart-suggestion">豆種/烘焙度 × 最佳粉液比對應矩陣：X軸為烘焙度（淺→深），Y軸為豆種（Arabica精品→Robusta商業），不同格子顯示推薦的粉液比範圍，幫助讀者快速查找自己使用豆款的參考起點。</div>
-
-  <h2>五、如何用手機 App 記錄你的實驗數據</h2>
-  <p>Espresso 最迷人也最令人沮喪的地方，在於它的變數太多。系統性地記錄每一次萃取數據，是突破「瞎試」瓶頸的唯一方法。2026年推薦的工具流程：</p>
+  <h2>依烘焙度設定你的第一組比例</h2>
+  <p>如果你剛開始，我會先用烘焙度決定起點，再用味道決定方向。這比盲目追某位咖啡師的配方更可靠，因為不同豆子的密度、可溶性與烘焙發展都不一樣。</p>
   <ul>
-    <li><strong>Espresso Tracker App（如 Shots、Beanconqueror 等）</strong>：記錄每次的粉量、液量、萃取時間、水溫，以及主觀風味評分（酸/甜/苦的強度）。</li>
-    <li><strong>折射儀（選配）</strong>：如果你想進行嚴格的 TDS 測量，入門級折射儀（約 1,500—3,000 元）能讓你的實驗從「感官判斷」升級為「數據驗證」。</li>
-    <li><strong>每次改一個變數的紀律</strong>：每次只改粉液比（保持粉量、研磨度、水溫不變），或只改研磨度——同時改多個變數，你永遠不知道是哪個改變造成的差異。</li>
+    <li><strong>淺焙：</strong>可以從 1:2.2 到 1:2.6 開始，讓更多水通過咖啡粉，幫助花香、柑橘、莓果或茶感展開。</li>
+    <li><strong>中焙：</strong>可以先從 1:2 開始，再依酸甜平衡微調到 1:1.8 或 1:2.3。</li>
+    <li><strong>中深焙與深焙：</strong>可以從 1:1.7 到 1:2 開始，避免拉太長後出現焦苦、煙燻或乾澀尾韻。</li>
   </ul>
+  <p>如果你做的是奶咖，比例也會影響牛奶中的表現。較短比例常帶來更明顯的巧克力、焦糖、堅果感；較長比例在牛奶裡可能更容易被稀釋，但若豆子本身有漂亮果香，也可能做出很細緻的拿鐵。</p>
 
-  <div class="tip-box">
-    <h4>💡 台灣在地視角：台灣咖啡館的粉液比文化</h4>
-    <p>台灣許多精品咖啡館已開始在菜單或黑板上標注當日使用的粉液比，這是向消費者透明化「這杯咖啡是如何設計的」的重要姿態。如果你看到「配方：18g / 36g / 28秒」，現在你知道這意味著什麼了——這不是冷冰冰的數字，而是一位咖啡師對這支豆子最誠實的詮釋。</p>
-  </div>
+  <h2>一個可重複的家用測試法</h2>
+  <p>你不一定需要折射儀才可以學會比例。折射儀能讓研究更精準，但一般讀者更需要先建立穩定記錄習慣。</p>
+  <ol>
+    <li><strong>先建立基準：</strong>18g 粉、36g 液、約 28 到 32 秒，喝下來記錄酸、甜、苦、厚度與尾韻。</li>
+    <li><strong>縮短一次：</strong>改成 18g 粉、32g 液，觀察甜感是否更集中，或是否變得太悶。</li>
+    <li><strong>拉長一次：</strong>改成 18g 粉、42g 液，觀察果香是否更清楚，或是否開始變薄、變澀。</li>
+    <li><strong>只選一個方向微調：</strong>如果 42g 更好喝，再嘗試 40g 或 44g；如果 32g 更好喝，再嘗試 30g 或 34g。</li>
+  </ol>
+  <p>這個方法的好處是公平。你不是憑感覺亂猜，而是在同一支豆子、同一台機器、同一個水質條件下，建立自己的判斷標準。</p>
 
-  <h2>六、實用行動建議：今天就能做到</h2>
-  <div class="action-box">
-    <h3>✅ 掌握粉液比的5個行動</h3>
-    <ol>
-      <li><strong>先準確量測：</strong>在嘗試任何實驗之前，先確保你每次的粉量（用精準電子秤，0.1g精度）和液量（稱重而非用體積量測）都是準確且一致的。</li>
-      <li><strong>建立你的基準線：</strong>先用 1:2（18g / 36g）找到一個你覺得「還不錯」的萃取參數（時間 27—32 秒），這是你所有實驗的基準點。</li>
-      <li><strong>向兩個方向各移動一步：</strong>保持粉量和研磨度不變，分別嘗試 1:1.8（32g）和 1:2.4（43g），品飲並記錄三者差異。</li>
-      <li><strong>下載一個記錄 App：</strong>從今天開始，每次萃取後花30秒記錄數據。一個月後的數據積累，會讓你的調整有明確方向感。</li>
-      <li><strong>詢問你的烘豆師推薦比例：</strong>大多數精品咖啡烘豆師對自家豆子都有建議的粉液比。這是最快找到「起點」的方法，而不是永遠在黑暗中摸索。</li>
-    </ol>
-  </div>
+  <h2>最後，比例是語言，不是信仰</h2>
+  <p>1:2 的真正價值，是讓你和咖啡師、烘豆師、不同城市的咖啡朋友可以用同一套語言討論味道。它不是要限制創作，而是讓調整有根據。</p>
+  <p>如果你剛開始，先守住 1:2，練習穩定；如果你已經能穩定做出一杯乾淨的 Espresso，就開始用比例探索豆子的個性。當你能說出「我把這支淺焙拉到 1:2.5，是為了讓柑橘酸與花香更開」，你就不只是照配方做咖啡，而是在設計一杯咖啡。</p>
 
-  <h2>結語：1:2 是起點，不是終點</h2>
-  <p>1:2 的黃金比例，是數十年義式咖啡文化的集體智慧結晶，值得尊重。但它更應該被理解為一個<strong>有科學根據的起點</strong>，而非不可質疑的終點。當你理解了 TDS、萃取率和不同比例的風味邏輯，你就擁有了「改動有據、調整有方向」的能力——這才是從「按配方操作」晉升到「設計一杯咖啡」的真正分水嶺。</p>
-
-  <div class="geo-box">
-    <h3>AI 快速解答</h3>
-    <p><strong>義式咖啡比例</strong>：標準粉液比為 1:2（18g 粉萃出 36g 液），是最多豆款在 9 bar 壓力下表現最穩定的起點，而非不可打破的規則。</p>
-    <ul>
-      <li>淺焙豆建議拉大至 1:2.2–1:2.8，讓萃取率達到 18–20% 的理想範圍</li>
-      <li>深焙豆維持 1:2 左右即可，過長比例容易超過 22% 萃取率而過萃</li>
-      <li>調整比例必須同步微調研磨度，單獨改比例不動研磨，風味會偏差</li>
-    </ul>
-    <h3>常見問題</h3>
-    <details>
-      <summary>Q：義式咖啡的標準粉液比是多少？</summary>
-      <p>行業通用標準是 1:2，即 18g 咖啡粉萃出 36g 咖啡液，萃取時間 27–32 秒。這是數十年實驗驗證的起點，並非規則。精品咖啡師依豆種和風味目標，常在 1:1.8–1:2.8 之間調整。</p>
-    </details>
-    <details>
-      <summary>Q：什麼是義式咖啡的 TDS？</summary>
-      <p>TDS（Total Dissolved Solids，總溶解固體）是指咖啡液中溶解物質佔總液體重量的百分比，用折射儀（Refractometer）測量。SCA 建議義式咖啡的 TDS 為 8–12%，是衡量咖啡「濃度」的客觀指標。</p>
-    </details>
-    <details>
-      <summary>Q：為什麼義式咖啡要用 1:2 的比例？</summary>
-      <p>在標準 9 bar 萃取壓力下，1:2 比例（27–32 秒）能讓水有足夠時間溶解理想比例的可溶性物質，通常達到 18–20% 萃取率和 9–10.5% TDS。這個窗口讓甜感、酸質、苦感三者趨於平衡，是最多豆款表現最穩定的起點。</p>
-    </details>
-    <details>
-      <summary>Q：粉液比如何影響義式咖啡的味道？</summary>
-      <p>比例越小（如 1:1.5 Ristretto）濃度越高、甜感集中、醇厚感強；比例越大（如 1:3 Lungo）液體稀薄、酸質更明亮，但醇厚度和克里瑪流失。調整比例必須同步微調研磨度，單獨改比例而不動研磨度，效果會偏差。</p>
-    </details>
-    <details>
-      <summary>Q：濃縮咖啡和美式咖啡的差別？</summary>
-      <p>濃縮咖啡（Espresso）是用 9 bar 高壓在 30 秒內萃取約 36ml 的高濃度咖啡液，TDS 約 9–12%；美式咖啡（Americano）是在濃縮咖啡中加入熱水稀釋（通常比例 1:2 至 1:3），TDS 降至 1–2%，保留了 Espresso 風味但口感更像手沖。</p>
-    </details>
-  </div>
+  <section class="faq-section">
+    <h2>常見問題</h2>
+    <div class="faq-item"><button class="faq-question" type="button">Espresso 一定要用 1:2 嗎？</button><div class="faq-answer"><p>不一定。1:2 是非常實用的起點，因為它容易取得濃度與萃取的平衡，但不同烘焙度、豆子密度、處理法與喝法都可能需要調整。</p></div></div>
+    <div class="faq-item"><button class="faq-question" type="button">1:2 和 1:2.5 喝起來差在哪裡？</button><div class="faq-answer"><p>1:2 通常更濃、更平衡，1:2.5 可能讓果香與酸質更展開，但也更容易變薄。差異是否好喝，要看豆子與研磨是否同步調整。</p></div></div>
+    <div class="faq-item"><button class="faq-question" type="button">TDS 越高就代表越好喝嗎？</button><div class="faq-answer"><p>不是。TDS 只說明濃度，不直接代表品質。高 TDS 可能厚實甜美，也可能悶苦；低 TDS 可能清爽細緻，也可能稀薄。</p></div></div>
+    <div class="faq-item"><button class="faq-question" type="button">沒有折射儀可以練粉液比嗎？</button><div class="faq-answer"><p>可以。先用電子秤、計時與風味記錄建立穩定基準，再比較不同液量的酸、甜、苦、口感與尾韻。折射儀是進階驗證工具，不是入門門檻。</p></div></div>
+    <div class="faq-item"><button class="faq-question" type="button">淺焙 Espresso 為什麼常需要拉長比例？</button><div class="faq-answer"><p>淺焙豆結構通常更緊、可溶性較低，適度拉長比例能幫助萃取更多甜感與香氣。不過比例拉長後仍要控制研磨與流速，避免杯感變薄。</p></div></div>
+  </section>
 
   <div class="references">
-    <h4>參考來源</h4>
+    <h3>參考資料</h3>
     <ol>
-      <li>Illy, A. &amp; Viani, R. (2005). <em>Espresso Coffee: The Science of Quality</em>. Elsevier Academic Press.</li>
-      <li>SCA. (2020). <em>Brewing Control Chart and Methodology</em>. Specialty Coffee Association. <a href="https://sca.coffee/research" target="_blank" rel="noopener">sca.coffee</a></li>
-      <li>Perger, M. (2015). <em>Coffee Brewing Control</em>. Barista Hustle Publications. <a href="https://www.baristahustle.com" target="_blank" rel="noopener">baristahustle.com</a></li>
-      <li>Parenti, A. et al. (2014). A comparison of espresso coffee brewing techniques. <em>Journal of Food Engineering</em>, 121, 112–117. <a href="https://www.sciencedirect.com/science/article/pii/S0260877413003197" target="_blank" rel="noopener">sciencedirect.com</a></li>
-      <li>Strausfeld, C. (2023). <em>The Espresso Quest</em>. WBC Study Guide.</li>
+      <li>Illy, A. &amp; Viani, R. <em>Espresso Coffee: The Science of Quality</em>. Elsevier Academic Press.</li>
+      <li>Specialty Coffee Association. <em>Brewing Control Chart and Coffee Brewing Standards</em>.</li>
+      <li>Barista Hustle. <em>Espresso Recipes, Brew Ratio, TDS and Extraction Yield</em>.</li>
+      <li>Parenti, A. et al. <em>A comparison of espresso coffee brewing techniques</em>. <em>Journal of Food Engineering</em>.</li>
+      <li>Rao, S. <em>The Professional Barista's Handbook</em>.</li>
     </ol>
   </div>
 
   <div class="share-section">
-    <span class="share-label">📤 分享這篇文章</span>
+    <span class="share-label">分享這篇</span>
     <div class="share-btns">
-      <a class="share-btn share-btn-line" href="#" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+' '+location.href));return false;" target="_blank" rel="noopener">LINE</a>
-      <a class="share-btn share-btn-fb" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false;">Facebook</a>
-      <button class="share-btn share-btn-copy" onclick="(function(b){navigator.clipboard.writeText(location.href).then(function(){b.textContent='✅ 已複製';setTimeout(function(){b.textContent='🔗 複製連結'},2000)})})(this)">🔗 複製連結</button>
+      <a class="share-btn share-btn-line" href="#" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+' '+location.href));return false;" target="_blank" rel="noopener" aria-label="分享至 LINE" title="LINE"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a>
+      <a class="share-btn share-btn-fb" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false;" aria-label="分享至 Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a class="share-btn share-btn-threads" href="#" onclick="window.open('https://threads.net/intent/post?text='+encodeURIComponent(document.title+' '+location.href),'_blank');return false;" aria-label="分享至 Threads" title="Threads"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.78 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.143 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg></a>
+      <a class="share-btn share-btn-x" href="#" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false;" aria-label="分享至 X" title="X (Twitter)"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <button class="share-btn share-btn-copy" onclick="navigator.clipboard.writeText(location.href)" aria-label="複製連結" title="複製連結"><svg viewBox="0 0 24 24" fill="white" role="img" aria-hidden="true" focusable="false"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg></button>
     </div>
   </div>
-  <div class="related-articles" style="margin:2rem auto 0;max-width:740px;padding:0 24px">
-    <h3 style="font-size:1.05rem;font-weight:700;color:#1a0a00;margin-bottom:.9rem;border-left:4px solid #c8922a;padding-left:.75rem">📚 延伸閱讀</h3>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem">
-      <a href="/articles/espresso-parameters.html" style="display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white">
-        <span style="font-size:.72rem;color:#c8922a;font-weight:600">⚡ 義式咖啡</span>
-        <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">義式咖啡萃取參數調整指南：壓力、溫度、時間</span>
-      </a>
-      <a href="/articles/latte-art.html" style="display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white">
-        <span style="font-size:.72rem;color:#c8922a;font-weight:600">⚡ 義式咖啡</span>
-        <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">拿鐵拉花完全指南：從奶泡到心形葉形</span>
-      </a>
-      <a href="/articles/grinder-guide-2026.html" style="display:flex;flex-direction:column;gap:.35rem;text-decoration:none;padding:.9rem;border:1px solid #e8d5b0;border-radius:.6rem;background:white">
-        <span style="font-size:.72rem;color:#c8922a;font-weight:600">🔧 器材評測</span>
-        <span style="font-size:.87rem;font-weight:700;color:#1a0a00;line-height:1.4">2026 年度咖啡磨豆機完整評測</span>
-      </a>
+
+
+  <div class="related-articles">
+    <h3 class="related-title">延伸閱讀</h3>
+    <div class="related-grid">
+      <a class="related-card" href="/articles/espresso-parameters.html"><span class="related-kicker">下一步調參數</span><span class="related-card-title">義式咖啡萃取參數調整指南：壓力、溫度、時間</span></a>
+      <a class="related-card" href="/articles/milk-steaming-science.html"><span class="related-kicker">奶咖表現</span><span class="related-card-title">奶泡科學：為什麼蒸奶會影響拿鐵甜感與口感</span></a>
+      <a class="related-card" href="/articles/grinder-guide-2026.html"><span class="related-kicker">研磨基礎</span><span class="related-card-title">2026 年度咖啡磨豆機完整評測與選購指南</span></a>
     </div>
   </div>
 </article>
@@ -753,6 +733,20 @@ footer a{color:var(--coffee-light)}
 })();
 </script>
 <script>
+/* bnotes-faq-accordion */
+(function(){
+  document.querySelectorAll('.faq-question').forEach(function(button){
+    button.setAttribute('aria-expanded','false');
+    button.addEventListener('click',function(){
+      var item=button.closest('.faq-item');
+      if(!item)return;
+      item.classList.toggle('open');
+      button.setAttribute('aria-expanded',item.classList.contains('open')?'true':'false');
+    });
+  });
+})();
+</script>
+<script>
 /* bnotes-ga4-affiliate */
 (function(){
   if(typeof gtag!=='function')return;
@@ -800,39 +794,6 @@ footer a{color:var(--coffee-light)}
     });
   });
 })();
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "義式咖啡粉液比1:2是什麼意思？為什麼是黃金標準？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "粉液比1:2意指18g咖啡粉萃取出36g液體。這個比例源自SCA（精品咖啡協會）對TDS（總溶解固體，即濃度）與萃取率的雙重最適化——在此比例下，濃度約落在8至12%TDS，萃取率在18至22%之間，對應最廣泛的風味平衡帶。這不是自然法則，而是多數豆款、多數機器的「最安全起點」，高品質豆款或特殊工藝往往值得挑戰。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ristretto（短萃）和Lungo（長萃）的粉液比各是多少？風味有何不同？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ristretto的粉液比約為1:1至1:1.5，萃取液量少，濃度高、甜感強、酸質突出，質地黏稠；Lungo的粉液比約1:3至1:4，液量多，咖啡因萃出更多，但後段易帶出苦澀與木質感。標準Espresso（1:2）處於兩者之間，兼顧濃度與風味完整性。選哪一個不是優劣問題，而是豆款特性與個人口感偏好的匹配。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "日曬處理豆和水洗豆的最佳Espresso粉液比一樣嗎？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "不一樣。日曬豆殘留更多可溶性糖分與酯類物質，萃取速度快，1:2比例往往已足夠甚至偏多，部分咖啡師會下調至1:1.7左右以避免過甜失衡；水洗豆結構較乾淨，酸質明亮，1:2至1:2.2是常見區間。烘焙度也影響比例判斷——淺焙豆密度高，建議從標準1:2出發後微調，深焙豆萃取快，可縮短至1:1.8。"
-      }
-    }
-  ]
-}
 </script>
 </body>
 </html>
