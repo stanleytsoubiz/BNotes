@@ -14,6 +14,14 @@
 
 # 前台 SPA fallback (for everything EXCEPT /admin and /api)
 # This is critical: the order matters - more specific rules above, general rules below
+# Retired duplicate/future articles
+/articles/taipei-specialty-cafes          /articles/taipei-coffee-map-2026        301
+/articles/taipei-specialty-cafes.html     /articles/taipei-coffee-map-2026.html   301
+/articles/wbc-2026-champion-technique-breakdown       /articles/wbc-2026-champion-philosophy        301
+/articles/wbc-2026-champion-technique-breakdown.html  /articles/wbc-2026-champion-philosophy.html   301
+/articles/taipei-coffee-expo-2026-annual-report       /articles/taipei-coffee-expo-2026-complete-guide        301
+/articles/taipei-coffee-expo-2026-annual-report.html  /articles/taipei-coffee-expo-2026-complete-guide.html   301
+
 /articles/*  /index.html  200
 /category/*  /index.html  200
 /search/*    /index.html  200

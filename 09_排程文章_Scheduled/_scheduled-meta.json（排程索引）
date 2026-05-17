@@ -180,15 +180,7 @@
     "description": "氣候變遷正在威脅全球 50% 的咖啡產區。我們作為消費者能做什麼？從選購認證豆到咖啡渣再利用，這份永續咖啡完全指南告訴你，每一個微小選擇如何積累成改變。",
     "category": "lifestyle",
     "cover_image": "https://bnotescoffee.com/images/ai/sustainable-coffee-complete-guide-hero.jpg"
-  },
-  "taipei-coffee-expo-2026-annual-report": {
-    "date": "2026-11-12",
-    "title": "台北國際咖啡展 2026 年度現場報告：BNotes 完整觀察紀錄",
-    "description": "BNotes 四天全程參與 2026 台北國際咖啡展，這份報告整合了展場觀察、品牌訪談、趨勢分析與讀者最關心的問題解答。",
-    "category": "lifestyle",
-    "cover_image": "https://bnotescoffee.com/images/ai/taipei-coffee-expo-2026-annual-report-hero.jpg"
-  },
-  "taipei-coffee-expo-2026-complete-guide": {
+  },"taipei-coffee-expo-2026-complete-guide": {
     "date": "2026-10-28",
     "title": "台北國際咖啡展 2026（南港）完全攻略：必看品牌、必買豆單、展場動線規劃",
     "description": "台北國際咖啡展是亞洲最重要的咖啡展覽之一，每年吸引超過 10 萬人次參觀。2026 年的展覽有哪些亮點品牌？這份終極攻略幫你用最少時間看到最多精華。",
@@ -236,15 +228,7 @@
     "description": "同樣的豆子、同樣的水溫、同樣的粉水比，V60 和 Kalita Wave 沖出來的味道為什麼完全不同？答案在流體力學，而不是玄學。",
     "category": "lifestyle",
     "cover_image": "https://bnotescoffee.com/images/ai/v60-vs-kalita-filter-geometry-hero.jpg"
-  },
-  "wbc-2026-champion-technique-breakdown": {
-    "date": "2026-10-08",
-    "title": "WBC 世界咖啡師大賽 2026（巴拿馬）：冠軍的 15 分鐘完整拆解",
-    "description": "WBC 2026 在巴拿馬落幕，這屆冠軍的 15 分鐘演示引入了發酵科學新視角，我們為你完整解析每一個技術決策背後的邏輯。",
-    "category": "lifestyle",
-    "cover_image": "https://bnotescoffee.com/images/ai/wbc-2026-champion-technique-breakdown-hero.jpg"
-  },
-  "winter-brewing-w04": {
+  },"winter-brewing-w04": {
     "date": "2026-03-15",
     "title": "冬季手沖節奏：慢下來的早晨儀式與感官覺醒",
     "description": "低溫下嗅覺感知（Olfactory Perception）的科學，三段注水法節奏調整，讓冬日每一杯都成為感官儀式。",

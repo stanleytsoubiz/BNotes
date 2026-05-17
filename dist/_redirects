@@ -23,6 +23,14 @@
 # Frontend SPA fallback - rewrite ONLY front-end routes to index.html
 # This preserves /admin and /api for Functions processing
 
+# Retired duplicate/future articles
+/articles/taipei-specialty-cafes          /articles/taipei-coffee-map-2026        301
+/articles/taipei-specialty-cafes.html     /articles/taipei-coffee-map-2026.html   301
+/articles/wbc-2026-champion-technique-breakdown       /articles/wbc-2026-champion-philosophy        301
+/articles/wbc-2026-champion-technique-breakdown.html  /articles/wbc-2026-champion-philosophy.html   301
+/articles/taipei-coffee-expo-2026-annual-report       /articles/taipei-coffee-expo-2026-complete-guide        301
+/articles/taipei-coffee-expo-2026-annual-report.html  /articles/taipei-coffee-expo-2026-complete-guide.html   301
+
 /articles/*  /index.html  200
 # /category/* now served as real static HTML files in dist/category/ — DO NOT add SPA fallback here
 /tag/*       /index.html  200
