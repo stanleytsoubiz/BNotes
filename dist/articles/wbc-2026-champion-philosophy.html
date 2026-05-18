@@ -16,17 +16,32 @@ gm_approved_at: 2026-05-17T19:30:00+08:00
   <title>WBC 冠軍真正比的是什麼：從技術、風味到溝通哲學 | BNotes 焙學·原豆誌</title>
   <meta name="description" content="2026 WBC 尚未舉行；這篇以 2024、2025 已發生冠軍案例為基礎，帶你看懂世界咖啡師大賽真正比的是技術、風味、服務與溝通哲學。">
   <link rel="canonical" href="https://bnotescoffee.com/articles/wbc-2026-champion-philosophy.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"></noscript>
   <style id="bnotes-v3">
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:oklch(98% .005 30);--fg:oklch(20% .02 30);--primary:oklch(45% .1 30);
+      --accent:oklch(88% .05 45);--muted:oklch(95% .008 30);--muted-fg:oklch(50% .02 30);
+      --border:oklch(88% .01 30);--card:oklch(99% .003 30);
+      --gold:#c8922a;--coffee-dark:#1a0a00;--coffee-warm:#5c2d00;--coffee-mid:#8b4513;
+      --coffee-light:#d4a96a;--cream:#f5f0e8;
+      --font-serif:'Noto Serif TC',Georgia,serif;
+      --font-sans:'Noto Sans TC',-apple-system,sans-serif;
+      --radius:.75rem;
+    }
     body {
-      font-family: "Noto Serif TC", "Georgia", serif;
-      background-color: #faf8f4;
-      color: #2c2c2c;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
-      line-height: 1.85;
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--fg);
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      line-height: 1.8;
       font-size: 1.05rem;
     }
+    a{color:inherit;text-decoration:none}
     h1 {
       font-size: 1.75rem;
       line-height: 1.4;
@@ -121,10 +136,58 @@ gm_approved_at: 2026-05-17T19:30:00+08:00
 .nav-logo{font-family:var(--font-serif,'Noto Serif TC',Georgia,serif);font-size:1.15rem;font-weight:900;color:var(--coffee-dark,#1a0a00);letter-spacing:.02em;text-decoration:none}
 .nav-logo b{color:var(--gold,#c8922a)}
 .nav-sub{font-family:var(--font-sans,'Noto Sans TC',-apple-system,sans-serif);font-size:.65rem;color:var(--muted-fg,oklch(50% .02 30));letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+
+/* ===== BNotes Unified Article Shell v3.1 ===== */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
+.nav-back:hover{color:var(--coffee-dark)}
+.bnotes-header{max-width:740px;margin:0 auto;padding:48px 24px 0;text-align:center}
+.bnotes-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--coffee-mid);background:oklch(93% .04 45 / .4);padding:4px 14px;border-radius:99px;margin-bottom:20px}
+.bnotes-title{font-family:var(--font-serif);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;line-height:1.35;color:var(--coffee-dark);margin-bottom:20px;letter-spacing:0}
+.bnotes-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;font-size:.83rem;color:oklch(45% .02 30);margin-bottom:32px}
+.bnotes-meta span{display:flex;align-items:center;gap:4px}
+.bnotes-divider{width:56px;height:3px;background:linear-gradient(90deg,var(--gold),transparent);border-radius:2px;margin:0 auto 40px}
+.article-wrap{max-width:900px;margin:0 auto;padding:0 1.5rem 2.5rem}
+.article-body{max-width:740px!important;margin:0 auto!important;padding:0 24px 80px!important;font-family:var(--font-sans);font-size:1.05rem;line-height:1.85;color:oklch(22% .02 30)}
+.article-body p,.article-body li{margin-bottom:1.3em}
+.article-body h2{font-family:var(--font-serif);font-size:1.45rem;font-weight:700;color:var(--coffee-dark);margin:2.4em 0 .8em;padding:0 0 .4em;border-left:0;border-bottom:2px solid oklch(90% .04 45)}
+.article-body h3{font-family:var(--font-sans);font-size:1.18rem;font-weight:600;color:oklch(30% .06 35);margin:1.8em 0 .6em}
+.article-body p{color:var(--fg);line-height:1.9}
+.article-body ul,.article-body ol{margin:0 0 1.25rem 1.5rem;color:var(--fg)}
+.article-body strong{color:var(--coffee-warm);font-weight:700}
+.article-body a{color:var(--coffee-mid);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.article-body blockquote{border-left:4px solid var(--gold);padding:.8em 1.2em;margin:1.6em 0;background:oklch(97% .015 45);border-radius:0 .5rem .5rem 0;font-style:italic;color:oklch(35% .04 35)}
+.module-conclusion{background:linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));border:1px solid oklch(88% .05 45);border-left:4px solid var(--gold);border-radius:.75rem;padding:1.2em 1.4em;margin:1.8em 0;color:var(--fg)}
+.article-module-title{display:block;margin-bottom:.55em;color:var(--coffee-dark);font-weight:700}
+.module-conclusion p{margin-bottom:.75rem}
+.module-conclusion p:last-child{margin-bottom:0}
+.module-conclusion ul{margin:.55rem 0 0 1.1rem}
+.module-conclusion li{margin-bottom:.32rem;line-height:1.65}
+.module-conclusion li:last-child{margin-bottom:0}
+.faq-section{margin:2.5rem 0;padding-top:1.25rem;border-top:1px solid oklch(90% .01 30)}
+.faq-section h2{margin-top:0;border-left:0;padding-left:0}
+.references{font-size:.82rem;line-height:1.55;color:oklch(45% .02 30);margin-top:2.5em;padding-top:1em;border-top:1px dashed oklch(85% .01 30)}
+.references h3{font-family:var(--font-serif);font-size:.9rem;color:oklch(40% .02 30);margin-bottom:.6em}
+.references ul{padding-left:1.2em;margin:0}
+.references li{margin-bottom:.35em}
+footer{background:var(--coffee-dark);color:oklch(65% .02 30);padding:2rem 1.5rem;text-align:center;font-size:.85rem}
+footer a{color:var(--coffee-light)}
+#bnotes-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--gold),var(--coffee-mid));z-index:100;transition:width .1s linear}
+@media(max-width:767px){
+  .nav{padding:.7rem 1rem}
+  .bnotes-header{padding:28px 16px 0}
+  .bnotes-title{font-size:1.45rem}
+  .article-wrap{padding:0 0 2rem}
+  .article-body{padding:0 16px 60px!important}
+  .article-body h2{font-size:1.2rem}
+  .share-section,.related-articles,.related-posts{padding-left:16px;padding-right:16px}
+  .related-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-<nav class="nav"><div class="nav-inner"><a class="nav-logo" href="../"><b>B</b>Notes<span class="nav-sub">焙學·原豆誌</span></a><a href="../" class="nav-back">← 回首頁</a></div></nav>
+<nav class="nav"><div class="nav-inner"><a class="nav-logo" href="/"><b>B</b>Notes<span class="nav-sub">焙學·原豆誌</span></a><a href="../" class="nav-back">← 回首頁</a></div></nav>
 <header class="bnotes-header">
   <div class="bnotes-eyebrow">賽事觀察</div>
   <h1 class="bnotes-title">WBC 冠軍真正比的是什麼：從技術、風味到溝通哲學</h1>
@@ -133,7 +196,8 @@ gm_approved_at: 2026-05-17T19:30:00+08:00
 </header>
 
 
-  <article>
+<main class="article-wrap">
+  <article class="article-body">
 <p>看一場頂級咖啡比賽，最迷人的瞬間不是選手按下萃取鍵，而是他讓你相信杯中的香氣、甜感與餘韻為什麼會這樣出現。</p>
 <p>截至 2026 年 5 月，2026 World Barista Championship 尚未舉行，官方時程為 2026 年 10 月 22–25 日於巴拿馬城舉辦。因此，這篇不預測 2026 冠軍，而是用已可驗證的 2024、2025 冠軍案例，建立一套看懂 WBC 的方法。</p>
 
@@ -203,6 +267,27 @@ gm_approved_at: 2026-05-17T19:30:00+08:00
   </div>
 <div class="related-articles"><h3 class="related-title">延伸閱讀</h3><div class="related-grid"><a class="related-card" href="/articles/espresso-ratio-science.html"><span class="related-kicker">義式比例</span><span class="related-card-title">Espresso 粉液比 1:2 的根據與調整方法</span></a><a class="related-card" href="/articles/espresso-parameters.html"><span class="related-kicker">參數調整</span><span class="related-card-title">義式咖啡萃取參數調整指南</span></a><a class="related-card" href="/articles/sca-tasting-vocabulary-guide.html"><span class="related-kicker">感官語言</span><span class="related-card-title">SCA 風味詞彙指南：把味道說清楚</span></a></div></div>
 </article>
+</main>
+
+<footer>
+  <p>© 2026 BNotes 焙學·原豆誌 · <a href="https://bnotescoffee.com">bnotescoffee.com</a></p>
+</footer>
+
+<script id="bnotes-progress-js">
+(function(){
+  var pb=document.createElement('div');
+  pb.id='bnotes-progress';
+  document.body.prepend(pb);
+  function updateProgress(){
+    var doc=document.documentElement;
+    var total=doc.scrollHeight-doc.clientHeight;
+    var pct=total>0?doc.scrollTop/total*100:0;
+    pb.style.width=pct+'%';
+  }
+  window.addEventListener('scroll',updateProgress,{passive:true});
+  updateProgress();
+})();
+</script>
 
 <script>
 /* bnotes-ga4-affiliate */
