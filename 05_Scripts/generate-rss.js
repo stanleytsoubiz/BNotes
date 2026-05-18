@@ -16,6 +16,7 @@ const DIST_ART  = path.join(ROOT, 'dist', 'articles');
 const FEED_PATH = path.join(ROOT, 'dist', 'feed.xml');
 const BASE_URL  = 'https://bnotescoffee.com';
 const MAX_ITEMS = 20;
+const TODAY = process.env.RSS_TODAY || new Date().toISOString().substring(0, 10);
 
 // ── HTML 解析工具 ─────────────────────────────────────────────────────────────
 
@@ -77,10 +78,13 @@ for (const file of files) {
   const slug = file.replace('.html', '');
   const html = fs.readFileSync(path.join(DIST_ART, file), 'utf8');
 
+  const date = extractDate(html);
+  if (date > TODAY) continue;
+
   articles.push({
     slug,
     title: extractTitle(html),
-    date:  extractDate(html),
+    date,
     desc:  extractDesc(html),
     img:   `${BASE_URL}/images/ai/${slug}-hero.jpg`,
   });
@@ -126,3 +130,4 @@ ${itemsXml}
 fs.writeFileSync(FEED_PATH, rss, 'utf8');
 console.log(`✅  RSS feed 已更新 — ${recent.length} 篇文章 → dist/feed.xml`);
 console.log(`    最新：${recent[0]?.title?.substring(0, 50)} (${recent[0]?.date})`);
+console.log(`    已排除未來日期文章（>${TODAY}）`);

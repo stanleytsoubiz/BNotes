@@ -198,18 +198,15 @@ const updatedDraft = content
 fs.writeFileSync(draftPath, updatedDraft, 'utf8');
 console.log(`✅  草稿 status 更新為 published`);
 
-// ── 7. 更新 sitemap.xml ────────────────────────────────────
-const sitemapPath = path.join(ROOT, 'dist', 'sitemap.xml');
-if (fs.existsSync(sitemapPath)) {
-  let sitemap = fs.readFileSync(sitemapPath, 'utf8');
-  if (!sitemap.includes(`/articles/${slug}`)) {
-    const newEntry = `  <url>\n    <loc>https://bnotescoffee.com/articles/${slug}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
-    sitemap = sitemap.replace('</urlset>', newEntry + '</urlset>');
-    fs.writeFileSync(sitemapPath, sitemap, 'utf8');
-    console.log(`✅  sitemap.xml 已加入 ${slug}`);
-  } else {
-    console.log(`ℹ️   sitemap.xml 已含此 slug，跳過`);
+// ── 7. 重建 sitemap.xml ────────────────────────────────────
+try {
+  const sitemapScript = path.join(__dirname, 'generate-sitemap.js');
+  if (fs.existsSync(sitemapScript)) {
+    execSync(`node "${sitemapScript}"`, { stdio: 'pipe' });
+    console.log(`✅  sitemap.xml 已重建 → dist/sitemap.xml`);
   }
+} catch(e) {
+  console.warn(`⚠️   sitemap.xml 重建失敗（請發布後手動執行 generate-sitemap.js）：${e.message}`);
 }
 
 // ── 8. IndexNow ping ──────────────────────────────────────

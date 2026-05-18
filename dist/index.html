@@ -24,6 +24,37 @@
 <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap"></noscript>
 <link rel="alternate" type="application/rss+xml" title="BNotes RSS" href="/feed.xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://bnotescoffee.com/#organization",
+      "name": "BNotes 焙學·原豆誌",
+      "url": "https://bnotescoffee.com/",
+      "logo": "https://bnotescoffee.com/images/bnotes-logo.png",
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://bnotescoffee.com/#website",
+      "url": "https://bnotescoffee.com/",
+      "name": "BNotes 焙學·原豆誌",
+      "description": "讓喜好咖啡的人免費享受與世界沒有落差的專業咖啡知識庫",
+      "inLanguage": "zh-TW",
+      "publisher": {
+        "@id": "https://bnotescoffee.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://bnotescoffee.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
 <style>
 /* ── Reset & Tokens ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
