@@ -111,6 +111,8 @@ footer{background:var(--coffee-dark);color:oklch(65% .02 30);padding:2rem 1.5rem
 footer a{color:var(--coffee-light)}
 #bnotes-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--gold),var(--coffee-mid));z-index:100;transition:width .1s linear}
 </style>
+
+<meta property="og:description" content="從奶泡質地、注入高度、流速控制與圖案穩定性，理解世界級拉花作品背後的技術邏輯。">
 </head>
 <body>
 
@@ -284,6 +286,10 @@ footer a{color:var(--coffee-light)}
   }
   window.addEventListener('scroll',updateProgress,{passive:true});
 })();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){var tracked=false;window.addEventListener('scroll',function(){if(!tracked&&((window.scrollY+window.innerHeight)/Math.max(document.body.scrollHeight,1))>.8){tracked=true;if(window.gtag){gtag('event','article_read_complete',{'event_category':'content','event_label':document.title,'value':1});}}},{passive:true});});
 </script>
 </body>
 </html>

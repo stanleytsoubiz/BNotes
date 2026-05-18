@@ -57,11 +57,12 @@ let content = fs.readFileSync(draftPath, 'utf8');
 
 // ── 2. 抽取 frontmatter 欄位 ───────────────────────────────
 const fm = {};
-const fmMatch = content.match(/<!--\s*\n([\s\S]*?)\n\s*-->/);
+const fmMatch = content.match(/<!--\s*\n([\s\S]*?)\n\s*-->/)
+  || content.match(/^---\s*\n([\s\S]*?)\n---\s*/);
 if (fmMatch) {
   fmMatch[1].split('\n').forEach(line => {
     const m = line.match(/^\s*(\w+)\s*:\s*(.+)/);
-    if (m) fm[m[1].trim()] = m[2].trim();
+    if (m) fm[m[1].trim()] = m[2].trim().replace(/^["']|["']$/g, '');
   });
 }
 
@@ -73,11 +74,11 @@ function metaContent(html, prop) {
 }
 const title = fm.title || metaContent(content, 'og:title') || metaContent(content, 'title') || slug;
 const date  = fm.date  || metaContent(content, 'article:published_time').substring(0,10) || new Date().toISOString().substring(0,10);
-const cat   = fm.cat   || (() => {
+const cat   = fm.cat || fm.category || (() => {
   const m = content.match(/class="article-cat[^"]*">([^<]+)</);
   return m ? m[1].replace(/^[^\w]+\s*/,'').trim() : '沖泡科學';
 })();
-const desc  = fm.desc  || metaContent(content, 'og:description') || metaContent(content, 'description') || '';
+const desc  = fm.desc || fm.description || metaContent(content, 'og:description') || metaContent(content, 'description') || '';
 const heroImg = `/images/ai/${slug}-hero.jpg`;
 
 console.log(`\n📄  文章資訊`);
@@ -88,7 +89,9 @@ console.log(`    cat  : ${cat}`);
 console.log(`    desc : ${desc.substring(0,60)}`);
 
 // ── 4. 剝離 frontmatter，寫入 dist/ ───────────────────────
-const published = content.replace(/<!--\s*\n[\s\S]*?\n\s*-->\n?/, '');
+const published = content
+  .replace(/<!--\s*\n[\s\S]*?\n\s*-->\n?/, '')
+  .replace(/^---\s*\n[\s\S]*?\n---\s*/, '');
 fs.writeFileSync(distPath, published, 'utf8');
 console.log(`\n✅  已寫入：dist/articles/${slug}.html`);
 
