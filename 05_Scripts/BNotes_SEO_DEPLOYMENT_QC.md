@@ -1,7 +1,7 @@
 # BNotes SEO / Deployment QC
 
-掃描日期：2026-05-18T06:07:46.463Z
-檢查基準日：2026-05-18
+掃描日期：2026-05-19T01:52:28.350Z
+檢查基準日：2026-05-19
 
 ## 摘要
 
@@ -10,7 +10,7 @@
 - 未來稿：7
 - P0 部署阻擋：0
 - P1 應優先修正：0
-- P2 內容成熟度項目：90
+- P2 內容成熟度項目：80
 
 ## P0 部署阻擋
 
@@ -22,11 +22,9 @@
 
 ## P2 內容成熟度項目
 
-- aeropress-complete-guide: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
 - alishan-new-crop-w02: 導讀卡尚未完全標準化
 - alishan-terroir: 導讀卡尚未完全標準化
 - alishan-terroir: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
-- arabica-vs-robusta-complete-guide: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
 - bala-2026-world-latte-art-champion-taiwan: FAQ 尚未使用折疊式呈現
 - bala-2026-world-latte-art-champion-taiwan: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
 - brewing-diagnosis-w01: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
@@ -46,7 +44,6 @@
 - competition-recipe-homebrew-guide: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
 - cup-tasters-palate-training-guide: 導讀卡尚未完全標準化
 - cup-tasters-palate-training-guide: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
-- espresso-parameters: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
 - espresso-ratio-science: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
 - ethiopia-natural-process-deep-dive: 導讀卡尚未完全標準化
 - ethiopia-natural-process-deep-dive: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
@@ -73,10 +70,7 @@
 - morning-coffee-ritual-science: 導讀卡尚未完全標準化
 - nitro-cold-brew-home-guide: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
 - plant-milk-barista-complete-guide: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
-- pour-over-guide: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
 - pour-over-variable-complete-experiment: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
-- processing-methods: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
-- roast-level-guide: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
 - sca-tasting-vocabulary-guide: 導讀卡尚未完全標準化
 - sca-tasting-vocabulary-guide: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
 - single-origin-terroir-science: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
@@ -84,8 +78,6 @@
 - solo-brewing-valentines: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
 - specialty-coffee-third-wave-history: 導讀卡尚未完全標準化
 - specialty-coffee-third-wave-history: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
-- specialty-coffee-vs-commercial-coffee: FAQ 尚未使用折疊式呈現
-- specialty-coffee-vs-commercial-coffee: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
 - summer-iced-coffee-three-recipes: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
 - sustainable-coffee-complete-guide: 導讀卡尚未完全標準化
 - sustainable-coffee-complete-guide: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
@@ -102,8 +94,6 @@
 - turkish-coffee-ibrik: 導讀卡尚未完全標準化
 - v60-vs-kalita-filter-geometry: 導讀卡尚未完全標準化
 - v60-vs-kalita-filter-geometry: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
-- water-quality: 導讀卡尚未完全標準化
-- water-quality: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
 - wla-champion-2026-tech-breakdown: 導讀卡尚未完全標準化
 - wlac-2026-champion-technique: 長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting
 - world-coffee-weekly-vol1: 導讀卡尚未完全標準化
