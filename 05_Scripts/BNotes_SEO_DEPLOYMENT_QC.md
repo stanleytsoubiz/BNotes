@@ -1,6 +1,6 @@
 # BNotes SEO / Deployment QC
 
-掃描日期：2026-05-19T02:06:27.933Z
+掃描日期：2026-05-19T02:10:26.456Z
 檢查基準日：2026-05-19
 
 ## 摘要
@@ -9,7 +9,7 @@
 - 已發布文章：64
 - 未來稿：7
 - P0 部署阻擋：0
-- P1 應優先修正：0
+- P1 應優先修正：36
 - P2 內容成熟度項目：80
 
 ## P0 部署阻擋
@@ -18,7 +18,42 @@
 
 ## P1 應優先修正
 
-- 通過
+- alishan-new-crop-w02: 參考資料列表需使用 ol，避免與標準文章不一致
+- arabica-vs-robusta-complete-guide: 參考資料列表需使用 ol，避免與標準文章不一致
+- bala-2026-world-latte-art-champion-taiwan: 可見主標 h1 數量異常：2
+- bala-2026-world-latte-art-champion-taiwan: 參考資料列表需使用 ol，避免與標準文章不一致
+- chiayi-coffee-festival-2026-guide: 參考資料列表需使用 ol，避免與標準文章不一致
+- coffee-dessert-pairing-science: 參考資料列表需使用 ol，避免與標準文章不一致
+- coffee-reading-afternoon-ritual: 參考資料列表需使用 ol，避免與標準文章不一致
+- colombia-mitaca-second-harvest: 參考資料列表需使用 ol，避免與標準文章不一致
+- competition-recipe-homebrew-guide: 參考資料列表需使用 ol，避免與標準文章不一致
+- cup-tasters-palate-training-guide: 可見主標 h1 數量異常：2
+- espresso-ratio-science: 可見主標 h1 數量異常：2
+- ethiopia-natural-process-deep-dive: 可見主標 h1 數量異常：2
+- flavor-pairing-w03: 參考資料列表需使用 ol，避免與標準文章不一致
+- grinder-6models-comparison-2026: 參考資料列表需使用 ol，避免與標準文章不一致
+- grinder-guide-2026: 參考資料列表需使用 ol，避免與標準文章不一致
+- kenya-aa-flavor-profile-deep: 可見主標 h1 數量異常：2
+- latte-art: 參考資料列表需使用 ol，避免與標準文章不一致
+- milk-steaming-science: 可見主標 h1 數量異常：2
+- morning-coffee-ritual-science: 參考資料列表需使用 ol，避免與標準文章不一致
+- nitro-cold-brew-home-guide: 參考資料列表需使用 ol，避免與標準文章不一致
+- sca-tasting-vocabulary-guide: 可見主標 h1 數量異常：2
+- single-origin-terroir-science: 可見主標 h1 數量異常：2
+- specialty-coffee-third-wave-history: 可見主標 h1 數量異常：2
+- summer-iced-coffee-three-recipes: 參考資料列表需使用 ol，避免與標準文章不一致
+- taipei-coffee-expo-2026-complete-guide: 參考資料列表需使用 ol，避免與標準文章不一致
+- taipei-coffee-map-2026: 參考資料列表需使用 ol，避免與標準文章不一致
+- taiwan-barista-2026-annual-review: 參考資料列表需使用 ol，避免與標準文章不一致
+- taiwan-coffee-equipment-midyear-2026: 參考資料列表需使用 ol，避免與標準文章不一致
+- taiwan-coffee-farmer-summer-story: 參考資料列表需使用 ol，避免與標準文章不一致
+- taiwan-coffee-subscription-guide-2026: 參考資料列表需使用 ol，避免與標準文章不一致
+- taiwan-specialty-coffee-whitepaper-2026: 參考資料列表需使用 ol，避免與標準文章不一致
+- turkish-coffee-ibrik: 參考資料列表需使用 ol，避免與標準文章不一致
+- v60-vs-kalita-filter-geometry: 可見主標 h1 數量異常：2
+- wbc-2026-champion-philosophy: 參考資料列表需使用 ol，避免與標準文章不一致
+- wbrc-2026-roasting-analysis: 參考資料列表需使用 ol，避免與標準文章不一致
+- wlac-2026-champion-technique: 參考資料列表需使用 ol，避免與標準文章不一致
 
 ## P2 內容成熟度項目
 

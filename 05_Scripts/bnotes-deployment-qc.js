@@ -50,6 +50,24 @@ function visibleTitle(html) {
   return (html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i) || [])[1]?.replace(/<[^>]+>/g, '').trim() || '';
 }
 
+function staticHtml(html) {
+  return html.replace(/<script[\s\S]*?<\/script>/gi, '');
+}
+
+function h1Titles(html) {
+  return [...staticHtml(html).matchAll(/<h1[^>]*>([\s\S]*?)<\/h1>/gi)]
+    .map(match => match[1].replace(/<[^>]+>/g, '').trim())
+    .filter(Boolean);
+}
+
+function hasHiddenHeroH1(html) {
+  return /<[^>]+class=["'][^"']*article-hero[^"']*["'][^>]*style=["'][^"']*display\s*:\s*none[\s\S]*?<h1/i.test(staticHtml(html));
+}
+
+function referencesBlock(html) {
+  return (html.match(/<div class=["']references["'][\s\S]*?(?=<div class=["']share-section["']|<div class=["']related|<\/article>|<\/body>)/i) || [])[0] || '';
+}
+
 function hasArticleSchema(html) {
   return /"@type"\s*:\s*"Article"/.test(html)
     || /"@type"\s*:\s*"BlogPosting"/.test(html)
@@ -75,6 +93,8 @@ for (const file of listArticles()) {
   const date = datePublished(html);
   const url = canonical(html, file);
   const isFuture = date && date > TODAY;
+  const titles = h1Titles(html);
+  const refs = referencesBlock(html);
   if (isFuture) future.push(slug);
   else published.push(slug);
 
@@ -101,6 +121,9 @@ for (const file of listArticles()) {
   if (!html.includes('article_read_complete')) pushIssue(p1, slug, '缺少閱讀完成事件');
   if (!/分享這篇|share-section/.test(html)) pushIssue(p1, slug, '缺少分享區');
   if (!/延伸閱讀|related-articles|related-posts/.test(html)) pushIssue(p1, slug, '缺少延伸閱讀');
+  if (titles.length !== 1) pushIssue(p1, slug, `可見主標 h1 數量異常：${titles.length}`);
+  if (hasHiddenHeroH1(html)) pushIssue(p1, slug, '主標不可只存在於隱藏 hero，需有標準可見文章標題');
+  if (refs && /<ul[\s>]/i.test(refs)) pushIssue(p1, slug, '參考資料列表需使用 ol，避免與標準文章不一致');
 
   if (!/先把|讀懂|導讀卡/.test(html)) pushIssue(p2, slug, '導讀卡尚未完全標準化');
   if (!/參考資料|參考文獻|references/.test(html)) pushIssue(p2, slug, '參考資料區尚未完全標準化');
