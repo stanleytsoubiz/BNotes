@@ -65,7 +65,7 @@ function hasHiddenHeroH1(html) {
 }
 
 function referencesBlock(html) {
-  return (html.match(/<div class=["']references["'][\s\S]*?(?=<div class=["']share-section["']|<div class=["']related|<\/article>|<\/body>)/i) || [])[0] || '';
+  return (html.match(/<div class=["']references["'][\s\S]*?<\/div>/i) || [])[0] || '';
 }
 
 function hasArticleSchema(html) {
