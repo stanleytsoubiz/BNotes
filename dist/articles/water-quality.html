@@ -355,7 +355,7 @@ footer a{color:var(--coffee-light)}
 .faq-item{border:1px solid oklch(89% .01 30);border-radius:.65rem;margin-bottom:.65rem;background:white;overflow:hidden}
 .faq-question{width:100%;border:0;background:white;padding:.9rem 1rem;text-align:left;font:inherit;font-weight:700;color:var(--coffee-dark,#1a0a00);cursor:pointer}
 .faq-answer{display:none;padding:0 1rem 1rem;color:oklch(30% .02 30)}
-.faq-item.open .faq-answer{display:block}
+.faq-item.open .faq-answer{display:block}.faq-item[open] .faq-answer{display:block}
 .faq-item{border:1px solid oklch(90% .012 45);border-radius:.75rem;background:oklch(99% .006 45);margin:0 0 .75rem;overflow:hidden}
 .faq-item summary{cursor:pointer;padding:1rem 1.15rem;font-weight:700;color:var(--coffee-dark,#1a0a00);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .faq-item summary::-webkit-details-marker{display:none}
@@ -581,26 +581,11 @@ footer a{color:var(--coffee-light)}
 
 <section class="faq-section" aria-labelledby="water-quality-faq">
   <h2 id="water-quality-faq">常見問題</h2>
-  <div class="faq-item">
-      <button class="faq-question" type="button">手沖咖啡可以直接用自來水嗎？</button>
-      <div class="faq-answer"><p>可以先從過濾後的自來水開始測試，但台灣各地水質差異很大。如果有氯味、口感偏薄或香氣不清楚，建議再比較濾水、礦泉水或再礦化水。</p></div>
-    </div>
-  <div class="faq-item">
-      <button class="faq-question" type="button">TDS 是什麼，為什麼會影響咖啡？</button>
-      <div class="faq-answer"><p>TDS 是水中總溶解固體量，可粗略反映礦物質含量。礦物質太少時，咖啡可能偏薄；太多時，風味可能變鈍或厚重。</p></div>
-    </div>
-  <div class="faq-item">
-      <button class="faq-question" type="button">RO 逆滲透水適合沖咖啡嗎？</button>
-      <div class="faq-answer"><p>RO 水本身礦物質很低，單獨使用時常讓風味偏薄。若想使用 RO 水，較適合搭配再礦化方式。</p></div>
-    </div>
-  <div class="faq-item">
-      <button class="faq-question" type="button">礦泉水一定比濾水好嗎？</button>
-      <div class="faq-answer"><p>不一定。礦泉水的優點是數值較穩定，但若 TDS 或硬度太高，也可能讓咖啡口感沉重。濾水、礦泉水與配方水都需要回到風味測試。</p></div>
-    </div>
-  <div class="faq-item">
-      <button class="faq-question" type="button">台灣家用手沖最簡單的水質改善方式是什麼？</button>
-      <div class="faq-answer"><p>先確認水中沒有明顯氯味，再用同一支豆子比較濾水與一款中低 TDS 礦泉水。若差異明顯，再考慮 TDS 筆或配方水。</p></div>
-    </div>
+  <details class="faq-item"><summary class="faq-question">手沖咖啡可以直接用自來水嗎？</summary><div class="faq-answer"><p>可以先從過濾後的自來水開始測試，但台灣各地水質差異很大。如果有氯味、口感偏薄或香氣不清楚，建議再比較濾水、礦泉水或再礦化水。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">TDS 是什麼，為什麼會影響咖啡？</summary><div class="faq-answer"><p>TDS 是水中總溶解固體量，可粗略反映礦物質含量。礦物質太少時，咖啡可能偏薄；太多時，風味可能變鈍或厚重。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">RO 逆滲透水適合沖咖啡嗎？</summary><div class="faq-answer"><p>RO 水本身礦物質很低，單獨使用時常讓風味偏薄。若想使用 RO 水，較適合搭配再礦化方式。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">礦泉水一定比濾水好嗎？</summary><div class="faq-answer"><p>不一定。礦泉水的優點是數值較穩定，但若 TDS 或硬度太高，也可能讓咖啡口感沉重。濾水、礦泉水與配方水都需要回到風味測試。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">台灣家用手沖最簡單的水質改善方式是什麼？</summary><div class="faq-answer"><p>先確認水中沒有明顯氯味，再用同一支豆子比較濾水與一款中低 TDS 礦泉水。若差異明顯，再考慮 TDS 筆或配方水。</p></div></details>
 </section>
 
 <div class="references">

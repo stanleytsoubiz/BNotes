@@ -95,7 +95,7 @@ footer a{color:var(--coffee-light)}
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#1a0a00">
 <link rel="preconnect" href="https://images.unsplash.com">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "手沖變數實驗完整紀錄：我們測試了 20 種配方後，告訴你什麼真正影響你的那杯咖啡", "description": "網路上有無數版本的最佳手沖配方，它們給出了看似精確的數字，但從未解釋為什麼。這篇文章記錄了一個月、20 種配方、60 杯咖啡的系統性實驗，告訴你什麼變數真正重要。", "url": "https://bnotescoffee.com/articles/pour-over-variable-complete-experiment.html", "datePublished": "2026-09-22T00:00:00+08:00", "dateModified": "2026-09-22T00:00:00+08:00", "inLanguage": "zh-TW", "author": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com"}, "publisher": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com", "logo": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/bnotes-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bnotescoffee.com/articles/pour-over-variable-complete-experiment.html"}, "keywords": "精品咖啡,咖啡知識,台灣咖啡", "image": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/ai/pour-over-variable-complete-experiment-hero.jpg", "width": 1200, "height": 630}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "手沖變數實驗完整紀錄：我們測試了 20 種配方後，告訴你什麼真正影響你的那杯咖啡", "description": "網路上有無數版本的最佳手沖配方，它們給出了看似精確的數字，但從未解釋為什麼。這篇文章記錄了一個月、20 種配方、60 杯咖啡的系統性實驗，告訴你什麼變數真正重要。", "url": "https://bnotescoffee.com/articles/pour-over-variable-complete-experiment.html", "datePublished": "2026-09-22T00:00:00+08:00", "dateModified": "2026-09-22T00:00:00+08:00", "inLanguage": "zh-TW", "author": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com"}, "publisher": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com", "logo": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/bnotes-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bnotescoffee.com/articles/pour-over-variable-complete-experiment.html"}, "keywords": "精品咖啡,咖啡知識,台灣咖啡", "image": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/ai/pour-over-variable-complete-experiment-hero.jpg", "width": 1200, "height": 630}}</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -362,7 +362,7 @@ footer a{color:var(--coffee-light)}
 .faq-item{border:1px solid oklch(89% .01 30);border-radius:.65rem;margin-bottom:.65rem;background:white;overflow:hidden}
 .faq-question{width:100%;border:0;background:white;padding:.9rem 1rem;text-align:left;font:inherit;font-weight:700;color:var(--coffee-dark,#1a0a00);cursor:pointer}
 .faq-answer{display:none;padding:0 1rem 1rem;color:oklch(30% .02 30)}
-.faq-item.open .faq-answer{display:block}
+.faq-item.open .faq-answer{display:block}.faq-item[open] .faq-answer{display:block}
 .faq-item{border:1px solid oklch(90% .012 45);border-radius:.75rem;background:oklch(99% .006 45);margin:0 0 .75rem;overflow:hidden}
 .faq-item summary{cursor:pointer;padding:1rem 1.15rem;font-weight:700;color:var(--coffee-dark,#1a0a00);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .faq-item summary::-webkit-details-marker{display:none}
@@ -599,26 +599,11 @@ footer a{color:var(--coffee-light)}
 
 <section class="faq-section" aria-labelledby="pour-over-experiment-faq">
   <h2 id="pour-over-experiment-faq">常見問題</h2>
-  <div class="faq-item">
-      <button class="faq-question" type="button">手沖咖啡哪個變因最重要？</button>
-      <div class="faq-answer"><p>研磨度影響最大，其次是水溫。研磨不均或細粉比例過高時，即便其他參數看起來正確，也容易造成萃取不均。</p></div>
-    </div>
-  <div class="faq-item">
-      <button class="faq-question" type="button">手沖水溫幾度最好？</button>
-      <div class="faq-answer"><p>多數手沖可以先從 88 至 94°C 之間測試。本篇實驗條件下，92°C 附近的平衡感最穩，但仍需依豆子、研磨與水質調整。</p></div>
-    </div>
-  <div class="faq-item">
-      <button class="faq-question" type="button">手沖研磨度怎麼設定？</button>
-      <div class="faq-answer"><p>先以中細研磨作為起點，再依杯中表現微調。比起追求單一刻度，更重要的是控制研磨均勻度與細粉比例。</p></div>
-    </div>
-  <div class="faq-item">
-      <button class="faq-question" type="button">注水方式會影響手沖味道嗎？</button>
-      <div class="faq-answer"><p>會。注水方式主要影響粉床受水與受熱的均勻性。穩定螺旋注水與點注都能做出好咖啡，關鍵是水流穩定、避免局部沖刷。</p></div>
-    </div>
-  <div class="faq-item">
-      <button class="faq-question" type="button">手沖咖啡萃取不足怎麼辦？</button>
-      <div class="faq-answer"><p>先觀察杯中是否酸尖、水感薄或尾韻短。修正順序建議從研磨更細、提高水溫、延長接觸時間開始，且一次只改一個變因。</p></div>
-    </div>
+  <details class="faq-item"><summary class="faq-question">手沖咖啡哪個變因最重要？</summary><div class="faq-answer"><p>研磨度影響最大，其次是水溫。研磨不均或細粉比例過高時，即便其他參數看起來正確，也容易造成萃取不均。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">手沖水溫幾度最好？</summary><div class="faq-answer"><p>多數手沖可以先從 88 至 94°C 之間測試。本篇實驗條件下，92°C 附近的平衡感最穩，但仍需依豆子、研磨與水質調整。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">手沖研磨度怎麼設定？</summary><div class="faq-answer"><p>先以中細研磨作為起點，再依杯中表現微調。比起追求單一刻度，更重要的是控制研磨均勻度與細粉比例。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">注水方式會影響手沖味道嗎？</summary><div class="faq-answer"><p>會。注水方式主要影響粉床受水與受熱的均勻性。穩定螺旋注水與點注都能做出好咖啡，關鍵是水流穩定、避免局部沖刷。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">手沖咖啡萃取不足怎麼辦？</summary><div class="faq-answer"><p>先觀察杯中是否酸尖、水感薄或尾韻短。修正順序建議從研磨更細、提高水溫、延長接觸時間開始，且一次只改一個變因。</p></div></details>
 </section>
 
 <div class="references">

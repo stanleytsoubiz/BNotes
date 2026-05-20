@@ -99,7 +99,7 @@ footer a{color:var(--coffee-light)}
 .faq-item{border:1px solid oklch(89% .01 30);border-radius:.65rem;margin-bottom:.65rem;background:white;overflow:hidden}
 .faq-question{width:100%;border:0;background:white;padding:.9rem 1rem;text-align:left;font:inherit;font-weight:700;color:var(--coffee-dark,#1a0a00);cursor:pointer}
 .faq-answer{display:none;padding:0 1rem 1rem;color:oklch(30% .02 30)}
-.faq-item.open .faq-answer{display:block}
+.faq-item.open .faq-answer{display:block}.faq-item[open] .faq-answer{display:block}
 .references{font-size:.82rem;line-height:1.55;color:oklch(45% .02 30);margin-top:2.5em;padding-top:1em;border-top:1px dashed oklch(85% .01 30)}
 .references h3{font-size:.9rem;color:oklch(40% .02 30);margin-bottom:.6em}
 .references ol,.references ul{padding-left:1.2em;margin:0}
@@ -273,26 +273,11 @@ footer a{color:var(--coffee-light)}
 
   <section class="faq-section">
     <h2>常見問題</h2>
-    <div class="faq-item">
-      <button class="faq-question" type="button">咖啡豆開袋後多久要喝完？</button>
-      <div class="faq-answer"><p>開袋後兩週內通常是香氣與甜感最完整的窗口。若你每天只喝少量，建議開袋後先分出一週份量，其餘做單次分裝冷凍。</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" type="button">咖啡豆可以冷凍保存嗎？</button>
-      <div class="faq-answer"><p>可以，但前提是分裝成單次份量、密封、避免反覆進出冷凍庫。使用前先讓整包回溫，再開封研磨，能減少結露風險。</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" type="button">為什麼不建議放冰箱冷藏？</button>
-      <div class="faq-answer"><p>冷藏區濕度高、氣味複雜，咖啡豆容易吸附其他食物氣味，也容易因水氣影響風味。若要低溫保存，冷凍比冷藏更適合。</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" type="button">單向排氣閥可以取代密封罐嗎？</button>
-      <div class="faq-answer"><p>單向排氣閥適合未開封或剛烘焙後的排氣管理，但開袋後仍會增加氧氣接觸。若短期喝不完，移到不透光密封罐或分裝冷凍會更穩定。</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question" type="button">怎麼判斷咖啡豆已經保存不佳？</button>
-      <div class="faq-answer"><p>先聞乾香是否變悶、變油耗，再喝甜感是否下降、尾韻是否變短。若香氣不再清楚，沖煮參數再怎麼調也很難完全救回來。</p></div>
-    </div>
+    <details class="faq-item"><summary class="faq-question">咖啡豆開袋後多久要喝完？</summary><div class="faq-answer"><p>開袋後兩週內通常是香氣與甜感最完整的窗口。若你每天只喝少量，建議開袋後先分出一週份量，其餘做單次分裝冷凍。</p></div></details>
+    <details class="faq-item"><summary class="faq-question">咖啡豆可以冷凍保存嗎？</summary><div class="faq-answer"><p>可以，但前提是分裝成單次份量、密封、避免反覆進出冷凍庫。使用前先讓整包回溫，再開封研磨，能減少結露風險。</p></div></details>
+    <details class="faq-item"><summary class="faq-question">為什麼不建議放冰箱冷藏？</summary><div class="faq-answer"><p>冷藏區濕度高、氣味複雜，咖啡豆容易吸附其他食物氣味，也容易因水氣影響風味。若要低溫保存，冷凍比冷藏更適合。</p></div></details>
+    <details class="faq-item"><summary class="faq-question">單向排氣閥可以取代密封罐嗎？</summary><div class="faq-answer"><p>單向排氣閥適合未開封或剛烘焙後的排氣管理，但開袋後仍會增加氧氣接觸。若短期喝不完，移到不透光密封罐或分裝冷凍會更穩定。</p></div></details>
+    <details class="faq-item"><summary class="faq-question">怎麼判斷咖啡豆已經保存不佳？</summary><div class="faq-answer"><p>先聞乾香是否變悶、變油耗，再喝甜感是否下降、尾韻是否變短。若香氣不再清楚，沖煮參數再怎麼調也很難完全救回來。</p></div></details>
   </section>
 
   <div class="references">

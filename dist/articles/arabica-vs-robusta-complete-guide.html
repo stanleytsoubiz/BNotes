@@ -362,9 +362,9 @@ footer a{color:var(--coffee-light)}
 .faq-item{border:1px solid oklch(90% .012 45);border-radius:.75rem;background:oklch(99% .006 45);margin:0 0 .75rem;overflow:hidden}
 .faq-question{width:100%;border:0;background:white;padding:.9rem 1rem;text-align:left;font:inherit;font-weight:700;color:var(--coffee-dark,#1a0a00);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .faq-question::after{content:"+";font-weight:700;color:var(--gold,#c8922a);font-size:1.1rem;line-height:1}
-.faq-item.open .faq-question::after{content:"-"}
+.faq-item.open .faq-question::after{content:"-"}.faq-item[open] .faq-question::after{content:"-"}
 .faq-answer{display:none;padding:0 1rem 1rem;color:oklch(30% .02 30)}
-.faq-item.open .faq-answer{display:block}
+.faq-item.open .faq-answer{display:block}.faq-item[open] .faq-answer{display:block}
 .faq-answer p{margin:0;line-height:1.8}
 .article-body .share-section,
 .article-body .related-articles {
@@ -682,26 +682,11 @@ footer a{color:var(--coffee-light)}
 
 <section class="faq-section" aria-labelledby="arabica-robusta-faq">
   <h2 id="arabica-robusta-faq">常見問題</h2>
-  <div class="faq-item">
-    <button class="faq-question" type="button">Arabica 一定比 Robusta 好嗎？</button>
-    <div class="faq-answer"><p>不一定。Arabica 常有更細緻的花果香與酸甜平衡，Robusta 則常帶來更高咖啡因、厚實口感與義式克麗瑪。真正品質仍取決於產地、栽培、處理法、烘焙與沖煮。</p></div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question" type="button">Robusta 為什麼常被誤會成低級咖啡？</button>
-    <div class="faq-answer"><p>因為過去大量 Robusta 用於即溶咖啡與低價商業配方，品質控管不佳。但 Fine Robusta 若採收與處理得當，也能有乾淨苦甜、堅果、可可與香料感。</p></div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question" type="button">義式配方為什麼會加入 Robusta？</button>
-    <div class="faq-answer"><p>少量優質 Robusta 可以增加 crema、口感厚度與苦甜骨架，尤其在牛奶咖啡裡更容易保留存在感。關鍵是比例、品質與烘焙設計，而不是只看有沒有 Robusta。</p></div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question" type="button">新手買豆應該怎麼選 Arabica 或 Robusta？</button>
-    <div class="faq-answer"><p>若想探索花香、果酸與產地差異，可先從 Arabica 單品開始；若常喝奶咖或喜歡厚實苦甜，可以嘗試含少量 Fine Robusta 的義式配方。先看你想喝的是清晰香氣，還是厚實結構。</p></div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question" type="button">氣候變遷會讓 Robusta 變得更重要嗎？</button>
-    <div class="faq-answer"><p>會。Robusta 對高溫與部分病害的耐受性較強，因此在氣候壓力增加下更受重視。但這不代表它會取代 Arabica，而是讓咖啡產業重新思考品種多樣性與未來供應穩定性。</p></div>
-  </div>
+  <details class="faq-item"><summary class="faq-question">Arabica 一定比 Robusta 好嗎？</summary><div class="faq-answer"><p>不一定。Arabica 常有更細緻的花果香與酸甜平衡，Robusta 則常帶來更高咖啡因、厚實口感與義式克麗瑪。真正品質仍取決於產地、栽培、處理法、烘焙與沖煮。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">Robusta 為什麼常被誤會成低級咖啡？</summary><div class="faq-answer"><p>因為過去大量 Robusta 用於即溶咖啡與低價商業配方，品質控管不佳。但 Fine Robusta 若採收與處理得當，也能有乾淨苦甜、堅果、可可與香料感。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">義式配方為什麼會加入 Robusta？</summary><div class="faq-answer"><p>少量優質 Robusta 可以增加 crema、口感厚度與苦甜骨架，尤其在牛奶咖啡裡更容易保留存在感。關鍵是比例、品質與烘焙設計，而不是只看有沒有 Robusta。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">新手買豆應該怎麼選 Arabica 或 Robusta？</summary><div class="faq-answer"><p>若想探索花香、果酸與產地差異，可先從 Arabica 單品開始；若常喝奶咖或喜歡厚實苦甜，可以嘗試含少量 Fine Robusta 的義式配方。先看你想喝的是清晰香氣，還是厚實結構。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">氣候變遷會讓 Robusta 變得更重要嗎？</summary><div class="faq-answer"><p>會。Robusta 對高溫與部分病害的耐受性較強，因此在氣候壓力增加下更受重視。但這不代表它會取代 Arabica，而是讓咖啡產業重新思考品種多樣性與未來供應穩定性。</p></div></details>
 </section>
 <div class="references">
     <h3>參考資料</h3>

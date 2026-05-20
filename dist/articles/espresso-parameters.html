@@ -351,9 +351,9 @@ footer a{color:var(--coffee-light)}
 .faq-item{border:1px solid oklch(88% .02 45);border-radius:.65rem;margin:.65rem 0;background:#fff;overflow:hidden}
 .faq-question{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;text-align:left;border:0;background:oklch(98% .01 45);color:var(--coffee-dark,#1a0a00);padding:.85rem 1rem;font:600 .98rem/1.5 var(--font-sans,'Noto Sans TC',sans-serif);cursor:pointer}
 .faq-question::after{content:"+";font-weight:700;color:var(--gold,#c8922a);flex:0 0 auto}
-.faq-item.open .faq-question::after{content:"-"}
+.faq-item.open .faq-question::after{content:"-"}.faq-item[open] .faq-question::after{content:"-"}
 .faq-answer{display:none;padding:.9rem 1rem 1rem;color:oklch(28% .02 30);border-top:1px solid oklch(91% .01 45)}
-.faq-item.open .faq-answer{display:block}
+.faq-item.open .faq-answer{display:block}.faq-item[open] .faq-answer{display:block}
 .faq-answer p{margin:0;line-height:1.8}
 
 /* 5. TOC 面板 */
@@ -597,26 +597,11 @@ footer a{color:var(--coffee-light)}
 
 <section class="faq-section" aria-labelledby="espresso-parameters-faq">
   <h2 id="espresso-parameters-faq">常見問題</h2>
-  <div class="faq-item">
-    <button class="faq-question" type="button">Espresso 一定要 9 Bar、30 秒才標準嗎？</button>
-    <div class="faq-answer"><p>不是。9 Bar 與 25 到 30 秒是常見起點，但真正判斷要看液流、粉液比、風味、粉餅狀態與豆子烘焙度。</p></div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question" type="button">萃取太快應該先調什麼？</button>
-    <div class="faq-answer"><p>通常先調細研磨，並確認佈粉與填壓是否穩定。不要同時改粉量、水溫與比例，否則很難判斷是哪個變數造成改變。</p></div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question" type="button">Crema 厚就代表 Espresso 好喝嗎？</button>
-    <div class="faq-answer"><p>不一定。Crema 是新鮮度、烘焙度、壓力與咖啡油脂的線索，但不能單獨代表風味品質。深焙豆可能 Crema 厚卻苦澀。</p></div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question" type="button">預浸有必要嗎？</button>
-    <div class="faq-answer"><p>預浸可以讓粉床先吸水、排氣並建立較均勻阻力，對新鮮豆、淺焙豆或容易產生水道效應的粉餅特別有幫助。</p></div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question" type="button">家用玩家應該先升級機器還是磨豆機？</button>
-    <div class="faq-answer"><p>多數情況下，先穩定磨豆、秤重、佈粉與填壓，比直接升級機器更有感。穩定的研磨與流程，是理解 Espresso 的第一步。</p></div>
-  </div>
+  <details class="faq-item"><summary class="faq-question">Espresso 一定要 9 Bar、30 秒才標準嗎？</summary><div class="faq-answer"><p>不是。9 Bar 與 25 到 30 秒是常見起點，但真正判斷要看液流、粉液比、風味、粉餅狀態與豆子烘焙度。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">萃取太快應該先調什麼？</summary><div class="faq-answer"><p>通常先調細研磨，並確認佈粉與填壓是否穩定。不要同時改粉量、水溫與比例，否則很難判斷是哪個變數造成改變。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">Crema 厚就代表 Espresso 好喝嗎？</summary><div class="faq-answer"><p>不一定。Crema 是新鮮度、烘焙度、壓力與咖啡油脂的線索，但不能單獨代表風味品質。深焙豆可能 Crema 厚卻苦澀。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">預浸有必要嗎？</summary><div class="faq-answer"><p>預浸可以讓粉床先吸水、排氣並建立較均勻阻力，對新鮮豆、淺焙豆或容易產生水道效應的粉餅特別有幫助。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">家用玩家應該先升級機器還是磨豆機？</summary><div class="faq-answer"><p>多數情況下，先穩定磨豆、秤重、佈粉與填壓，比直接升級機器更有感。穩定的研磨與流程，是理解 Espresso 的第一步。</p></div></details>
 </section>
 <div class="references">
   <h3>參考資料</h3>

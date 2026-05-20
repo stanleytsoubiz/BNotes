@@ -292,7 +292,7 @@ footer a{color:var(--coffee-light)}
 .faq-item{border:1px solid oklch(89% .01 30);border-radius:.65rem;margin-bottom:.65rem;background:white;overflow:hidden}
 .faq-question{width:100%;border:0;background:white;padding:.9rem 1rem;text-align:left;font:inherit;font-weight:700;color:var(--coffee-dark,#1a0a00);cursor:pointer}
 .faq-answer{display:none;padding:0 1rem 1rem;color:oklch(30% .02 30)}
-.faq-item.open .faq-answer{display:block}
+.faq-item.open .faq-answer{display:block}.faq-item[open] .faq-answer{display:block}
 .references{font-size:.82rem;line-height:1.55;color:oklch(45% .02 30);margin-top:2.5em;padding-top:1em;border-top:1px dashed oklch(85% .01 30)}
 .references h3{font-size:.9rem;color:oklch(40% .02 30);margin-bottom:.6em}
 .references ol,.references ul{padding-left:1.2em;margin:0}
@@ -497,11 +497,11 @@ footer a{color:var(--coffee-light)}
 
   <section class="faq-section" aria-labelledby="roast-level-guide-faq">
     <h2 id="roast-level-guide-faq">常見問題</h2>
-    <div class="faq-item"><button class="faq-question" type="button">淺焙咖啡一定比較高級嗎？</button><div class="faq-answer"><p>不一定。淺焙比較容易保留產地花果香，但不代表一定比中焙或深焙高級。真正重要的是生豆品質、烘焙是否乾淨，以及是否符合你的喝法。</p></div></div>
-    <div class="faq-item"><button class="faq-question" type="button">為什麼淺焙咖啡常被覺得酸？</button><div class="faq-answer"><p>淺焙通常保留較多有機酸與產地特徵，因此酸質更明亮。如果萃取不足，酸會變尖、薄、短；如果萃取得好，酸會像水果一樣清楚且有甜感。</p></div></div>
-    <div class="faq-item"><button class="faq-question" type="button">深焙咖啡是不是咖啡因比較高？</button><div class="faq-answer"><p>以重量計算時，淺焙與深焙咖啡因差異通常沒有想像中大。杯中咖啡因更多取決於粉量、萃取比例與沖煮方式。</p></div></div>
-    <div class="faq-item"><button class="faq-question" type="button">中焙適合新手嗎？</button><div class="faq-answer"><p>很適合。中焙通常有較好的甜感、平衡感與容錯率，對剛開始手沖或想建立味覺基準的人來說，是很好的起點。</p></div></div>
-    <div class="faq-item"><button class="faq-question" type="button">同一烘焙度為什麼不同店喝起來差很多？</button><div class="faq-answer"><p>因為烘焙度只是結果之一。豆子密度、處理法、烘焙曲線、發展時間與烘焙師目標都會影響風味，所以同樣寫中焙，也可能呈現完全不同的杯感。</p></div></div>
+    <details class="faq-item"><summary class="faq-question">淺焙咖啡一定比較高級嗎？</summary><div class="faq-answer"><p>不一定。淺焙比較容易保留產地花果香，但不代表一定比中焙或深焙高級。真正重要的是生豆品質、烘焙是否乾淨，以及是否符合你的喝法。</p></div></details>
+    <details class="faq-item"><summary class="faq-question">為什麼淺焙咖啡常被覺得酸？</summary><div class="faq-answer"><p>淺焙通常保留較多有機酸與產地特徵，因此酸質更明亮。如果萃取不足，酸會變尖、薄、短；如果萃取得好，酸會像水果一樣清楚且有甜感。</p></div></details>
+    <details class="faq-item"><summary class="faq-question">深焙咖啡是不是咖啡因比較高？</summary><div class="faq-answer"><p>以重量計算時，淺焙與深焙咖啡因差異通常沒有想像中大。杯中咖啡因更多取決於粉量、萃取比例與沖煮方式。</p></div></details>
+    <details class="faq-item"><summary class="faq-question">中焙適合新手嗎？</summary><div class="faq-answer"><p>很適合。中焙通常有較好的甜感、平衡感與容錯率，對剛開始手沖或想建立味覺基準的人來說，是很好的起點。</p></div></details>
+    <details class="faq-item"><summary class="faq-question">同一烘焙度為什麼不同店喝起來差很多？</summary><div class="faq-answer"><p>因為烘焙度只是結果之一。豆子密度、處理法、烘焙曲線、發展時間與烘焙師目標都會影響風味，所以同樣寫中焙，也可能呈現完全不同的杯感。</p></div></details>
   </section>
 
   <div class="references">

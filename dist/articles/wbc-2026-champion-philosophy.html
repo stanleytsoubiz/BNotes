@@ -112,8 +112,8 @@
 .faq-section h2,.references h3,.share-section h3,.related-articles h3{font-family:var(--font-serif,'Noto Serif TC',serif);color:var(--coffee-dark,#1a0a00)}
 .faq-item{border:1px solid oklch(88% .02 45);border-radius:.65rem;margin:.65rem 0;background:#fff;overflow:hidden}
 .faq-question{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;text-align:left;border:0;background:oklch(98% .01 45);color:var(--coffee-dark,#1a0a00);padding:.85rem 1rem;font:600 .98rem/1.5 var(--font-sans,'Noto Sans TC',sans-serif);cursor:pointer}
-.faq-question::after{content:"+";font-weight:700;color:var(--gold,#c8922a);flex:0 0 auto}.faq-item.open .faq-question::after{content:"-"}
-.faq-answer{display:none;padding:.9rem 1rem 1rem;color:oklch(28% .02 30);border-top:1px solid oklch(91% .01 45)}.faq-item.open .faq-answer{display:block}.faq-answer p{margin:0;line-height:1.8}
+.faq-question::after{content:"+";font-weight:700;color:var(--gold,#c8922a);flex:0 0 auto}.faq-item.open .faq-question::after{content:"-"}.faq-item[open] .faq-question::after{content:"-"}
+.faq-answer{display:none;padding:.9rem 1rem 1rem;color:oklch(28% .02 30);border-top:1px solid oklch(91% .01 45)}.faq-item.open .faq-answer{display:block}.faq-item[open] .faq-answer{display:block}.faq-answer p{margin:0;line-height:1.8}
 .references{font-size:.82rem;line-height:1.55;color:oklch(45% .02 30);margin-top:2.5em;padding-top:1em;border-top:1px dashed oklch(85% .01 30)}
 .references h3{font-size:.9rem;color:oklch(40% .02 30);margin-bottom:.6em}.references ol,.references ul{padding-left:1.2em;margin:0}.references li{margin-bottom:.35em}.references em{color:oklch(35% .02 30)}
 .share-section{max-width:740px;margin:2.5em auto 0;padding:1.5em 24px 0;border-top:1px solid oklch(90% .01 30);display:flex;align-items:center;gap:.75em;flex-wrap:wrap}
@@ -315,11 +315,11 @@ footer a{color:var(--coffee-light)}
 
 <section class="faq-section">
   <h2>常見問題</h2>
-  <div class="faq-item"><button class="faq-question" type="button">2026 WBC 已經有冠軍了嗎？</button><div class="faq-answer"><p>還沒有。官方時程顯示 2026 World Barista Championship 將於 2026 年 10 月 22–25 日在巴拿馬城舉行，因此本篇不預測冠軍，只建立觀賽框架。</p></div></div>
-  <div class="faq-item"><button class="faq-question" type="button">WBC 和 WLAC 差在哪裡？</button><div class="faq-answer"><p>WBC 是咖啡師綜合競賽，重點包含濃縮、牛奶飲品、自選飲品、服務與溝通；WLAC 則聚焦拉花藝術、視覺對比、圖案一致性與現場穩定度。</p></div></div>
-  <div class="faq-item"><button class="faq-question" type="button">一般咖啡愛好者為什麼要看 WBC？</button><div class="faq-answer"><p>因為 WBC 會提前呈現咖啡館未來幾年的風味語言、處理法、服務方式與專業趨勢。</p></div></div>
-  <div class="faq-item"><button class="faq-question" type="button">冠軍配方適合在家複製嗎？</button><div class="faq-answer"><p>不一定。比起複製豆子和設備，更值得學的是選手如何建立變因、描述風味、驗證杯中結果。</p></div></div>
-  <div class="faq-item"><button class="faq-question" type="button">BNotes 讀者應該從比賽學什麼？</button><div class="faq-answer"><p>學會問「為什麼」：為什麼選這支豆、為什麼用這個比例、為什麼這樣描述風味。這會讓你的日常咖啡學習更有方向。</p></div></div>
+  <details class="faq-item"><summary class="faq-question">2026 WBC 已經有冠軍了嗎？</summary><div class="faq-answer"><p>還沒有。官方時程顯示 2026 World Barista Championship 將於 2026 年 10 月 22–25 日在巴拿馬城舉行，因此本篇不預測冠軍，只建立觀賽框架。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">WBC 和 WLAC 差在哪裡？</summary><div class="faq-answer"><p>WBC 是咖啡師綜合競賽，重點包含濃縮、牛奶飲品、自選飲品、服務與溝通；WLAC 則聚焦拉花藝術、視覺對比、圖案一致性與現場穩定度。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">一般咖啡愛好者為什麼要看 WBC？</summary><div class="faq-answer"><p>因為 WBC 會提前呈現咖啡館未來幾年的風味語言、處理法、服務方式與專業趨勢。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">冠軍配方適合在家複製嗎？</summary><div class="faq-answer"><p>不一定。比起複製豆子和設備，更值得學的是選手如何建立變因、描述風味、驗證杯中結果。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">BNotes 讀者應該從比賽學什麼？</summary><div class="faq-answer"><p>學會問「為什麼」：為什麼選這支豆、為什麼用這個比例、為什麼這樣描述風味。這會讓你的日常咖啡學習更有方向。</p></div></details>
 </section>
 <div class="references">
   <h3>參考資料</h3>

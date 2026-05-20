@@ -302,7 +302,7 @@ footer a{color:var(--coffee-light)}
 .faq-item{border:1px solid oklch(89% .01 30);border-radius:.65rem;margin-bottom:.65rem;background:white;overflow:hidden}
 .faq-question{width:100%;border:0;background:white;padding:.9rem 1rem;text-align:left;font:inherit;font-weight:700;color:var(--coffee-dark,#1a0a00);cursor:pointer}
 .faq-answer{display:none;padding:0 1rem 1rem;color:oklch(30% .02 30)}
-.faq-item.open .faq-answer{display:block}
+.faq-item.open .faq-answer{display:block}.faq-item[open] .faq-answer{display:block}
 .faq-item{border:1px solid oklch(90% .012 45);border-radius:.75rem;background:oklch(99% .006 45);margin:0 0 .75rem;overflow:hidden}
 .faq-item summary{cursor:pointer;padding:1rem 1.15rem;font-weight:700;color:var(--coffee-dark,#1a0a00);list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .faq-item summary::-webkit-details-marker{display:none}
@@ -546,26 +546,11 @@ footer a{color:var(--coffee-light)}
 
 <section class="faq-section">
   <h2>常見問題</h2>
-  <div class="faq-item">
-      <button class="faq-question" type="button">Q：手沖咖啡怎麼沖？</button>
-      <div class="faq-answer"><p>基本流程是：預熱濾杯和濾紙、稱量咖啡粉、倒入約兩倍粉量的熱水悶蒸 30–45 秒，再分段注水到目標水量。第一次練習可以用 15g 咖啡粉、225ml 水、約 2.5–3.5 分鐘作為起點。</p></div>
-    </div>
-  <div class="faq-item">
-      <button class="faq-question" type="button">Q：手沖咖啡的粉水比是多少？</button>
-      <div class="faq-answer"><p>常見起點是 1:15 到 1:17。以 15g 粉為例，1:15 對應 225ml 水，1:16 對應 240ml 水。新手建議先固定比例，再調整研磨與水溫。</p></div>
-    </div>
-  <div class="faq-item">
-      <button class="faq-question" type="button">Q：手沖要用幾度的水？</button>
-      <div class="faq-answer"><p>淺焙可先從 93–96°C 開始，中焙可抓 90–93°C，深焙可略降到 88–92°C。水溫不是越高越好，真正目標是讓酸質、甜感與苦感取得平衡。</p></div>
-    </div>
-  <div class="faq-item">
-      <button class="faq-question" type="button">Q：手沖和法壓壺有什麼不同？</button>
-      <div class="faq-answer"><p>手沖使用濾紙，杯感通常更乾淨、明亮、層次清楚；法壓壺使用金屬濾網，油脂與細粉保留較多，口感較厚重。喜歡乾淨花果香可先選手沖，喜歡厚實口感可試法壓。</p></div>
-    </div>
-  <div class="faq-item">
-      <button class="faq-question" type="button">Q：第一次手沖需要哪些器具？</button>
-      <div class="faq-answer"><p>最小配置是濾杯、對應濾紙、細嘴壺、電子秤與磨豆機。溫度計是加分工具，但電子秤很值得保留，因為它能讓每次粉量、水量與時間都可重複。</p></div>
-    </div>
+  <details class="faq-item"><summary class="faq-question">Q：手沖咖啡怎麼沖？</summary><div class="faq-answer"><p>基本流程是：預熱濾杯和濾紙、稱量咖啡粉、倒入約兩倍粉量的熱水悶蒸 30–45 秒，再分段注水到目標水量。第一次練習可以用 15g 咖啡粉、225ml 水、約 2.5–3.5 分鐘作為起點。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">Q：手沖咖啡的粉水比是多少？</summary><div class="faq-answer"><p>常見起點是 1:15 到 1:17。以 15g 粉為例，1:15 對應 225ml 水，1:16 對應 240ml 水。新手建議先固定比例，再調整研磨與水溫。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">Q：手沖要用幾度的水？</summary><div class="faq-answer"><p>淺焙可先從 93–96°C 開始，中焙可抓 90–93°C，深焙可略降到 88–92°C。水溫不是越高越好，真正目標是讓酸質、甜感與苦感取得平衡。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">Q：手沖和法壓壺有什麼不同？</summary><div class="faq-answer"><p>手沖使用濾紙，杯感通常更乾淨、明亮、層次清楚；法壓壺使用金屬濾網，油脂與細粉保留較多，口感較厚重。喜歡乾淨花果香可先選手沖，喜歡厚實口感可試法壓。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">Q：第一次手沖需要哪些器具？</summary><div class="faq-answer"><p>最小配置是濾杯、對應濾紙、細嘴壺、電子秤與磨豆機。溫度計是加分工具，但電子秤很值得保留，因為它能讓每次粉量、水量與時間都可重複。</p></div></details>
 </section>
 
   <div class="references">

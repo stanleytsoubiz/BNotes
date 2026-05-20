@@ -288,9 +288,9 @@ footer a{color:var(--coffee-light)}
 .faq-item{border:1px solid oklch(88% .02 45);border-radius:.65rem;margin:.65rem 0;background:#fff;overflow:hidden}
 .faq-question{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;text-align:left;border:0;background:oklch(98% .01 45);color:var(--coffee-dark,#1a0a00);padding:.85rem 1rem;font:600 .98rem/1.5 var(--font-sans,'Noto Sans TC',sans-serif);cursor:pointer}
 .faq-question::after{content:"+";font-weight:700;color:var(--gold,#c8922a);flex:0 0 auto}
-.faq-item.open .faq-question::after{content:"-"}
+.faq-item.open .faq-question::after{content:"-"}.faq-item[open] .faq-question::after{content:"-"}
 .faq-answer{display:none;padding:.9rem 1rem 1rem;color:oklch(28% .02 30);border-top:1px solid oklch(91% .01 45)}
-.faq-item.open .faq-answer{display:block}
+.faq-item.open .faq-answer{display:block}.faq-item[open] .faq-answer{display:block}
 .faq-answer p{margin:0;line-height:1.8}
 
 /* 5. TOC 面板 */
@@ -628,11 +628,11 @@ footer a{color:var(--coffee-light)}
 
 <section class="faq-section" aria-labelledby="coffee-equipment-cleaning-faq">
   <h2 id="coffee-equipment-cleaning-faq">常見問題</h2>
-  <div class="faq-item"><button class="faq-question" type="button">磨豆機多久要清潔一次？</button><div class="faq-answer"><p>家用磨豆機建議每次使用後刷掉殘粉，每週做一次較完整清潔，每月視使用量拆刀盤深度清潔。金屬刀盤不要用水洗。</p></div></div>
-  <div class="faq-item"><button class="faq-question" type="button">手沖壺的水垢怎麼去除？</button><div class="faq-answer"><p>可用白醋與水稀釋後短時間浸泡，再以清水充分沖洗。白醋適合處理水垢，不適合拿來去除咖啡油脂。</p></div></div>
-  <div class="faq-item"><button class="faq-question" type="button">義式機回沖清潔適合所有機器嗎？</button><div class="faq-answer"><p>不是。只有具備三路電磁閥的義式機適合回沖。沒有電磁閥的機器應依說明書清潔濾杯、濾碗與沖煮頭。</p></div></div>
-  <div class="faq-item"><button class="faq-question" type="button">Cafiza 和小蘇打差在哪裡？</button><div class="faq-answer"><p>Cafiza 是專門針對咖啡油脂的強效清潔粉，適合義式機與濾碗；小蘇打較溫和，適合濾杯與法壓壺等日常清潔。</p></div></div>
-  <div class="faq-item"><button class="faq-question" type="button">高溫潮濕季節需要更頻繁清潔嗎？</button><div class="faq-answer"><p>需要。高溫與濕度會加速油脂氧化與異味累積，夏季或潮濕地區建議縮短磨豆機、濾杯與水壺的清潔週期。</p></div></div>
+  <details class="faq-item"><summary class="faq-question">磨豆機多久要清潔一次？</summary><div class="faq-answer"><p>家用磨豆機建議每次使用後刷掉殘粉，每週做一次較完整清潔，每月視使用量拆刀盤深度清潔。金屬刀盤不要用水洗。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">手沖壺的水垢怎麼去除？</summary><div class="faq-answer"><p>可用白醋與水稀釋後短時間浸泡，再以清水充分沖洗。白醋適合處理水垢，不適合拿來去除咖啡油脂。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">義式機回沖清潔適合所有機器嗎？</summary><div class="faq-answer"><p>不是。只有具備三路電磁閥的義式機適合回沖。沒有電磁閥的機器應依說明書清潔濾杯、濾碗與沖煮頭。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">Cafiza 和小蘇打差在哪裡？</summary><div class="faq-answer"><p>Cafiza 是專門針對咖啡油脂的強效清潔粉，適合義式機與濾碗；小蘇打較溫和，適合濾杯與法壓壺等日常清潔。</p></div></details>
+  <details class="faq-item"><summary class="faq-question">高溫潮濕季節需要更頻繁清潔嗎？</summary><div class="faq-answer"><p>需要。高溫與濕度會加速油脂氧化與異味累積，夏季或潮濕地區建議縮短磨豆機、濾杯與水壺的清潔週期。</p></div></details>
 </section>
 <div class="references">
   <h3>參考資料</h3>
