@@ -30,7 +30,7 @@ a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-size:1.5rem}
+.nav-logo{font-family:var(--font-serif,'Noto Serif TC',Georgia,serif);font-size:1.15rem;font-weight:900;color:var(--coffee-dark,#1a0a00);letter-spacing:.02em;text-decoration:none}
 .nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
 .nav-back:hover{color:var(--coffee-dark)}
 .article-hero{position:relative;height:min(480px,55vw);overflow:hidden;background:var(--coffee-dark)}
@@ -126,9 +126,9 @@ footer a{color:var(--coffee-light)}
 <meta name="twitter:label2" content="分類" />
 <meta name="twitter:data2" content="咖啡科學" />
 <style id="bnotes-v3">
-.nav-logo{font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:var(--coffee-dark);letter-spacing:.02em;text-decoration:none}
-.nav-logo b{color:var(--gold)}
-.nav-sub{font-family:var(--font-sans);font-size:.65rem;color:var(--muted-fg);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+.nav-logo{font-family:var(--font-serif,'Noto Serif TC',Georgia,serif);font-size:1.15rem;font-weight:900;color:var(--coffee-dark,#1a0a00);letter-spacing:.02em;text-decoration:none}
+.nav-logo b{color:var(--gold,#c8922a)}
+.nav-sub{font-family:var(--font-sans,'Noto Sans TC',-apple-system,sans-serif);font-size:.65rem;color:oklch(50% .02 30);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
 
 /* ===== BNotes Unified Article Style v3.1 ===== */
 .article-hero,.article-hero-overlay,.article-hero-content,.article-hero-img,.bnotes-hero-image,.typo-hero,.typo-hero-bg,.typo-hero-content,.hero-image,.post-hero,.entry-hero,.feature-image,[class*="hero-img"],.bnotes-thumb{display:none !important}

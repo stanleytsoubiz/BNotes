@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>台灣咖啡師的 2026：從世界賽場到街角咖啡館，這一年我們看見了什麼？ | BNotes 焙學·原豆誌</title>
-<meta name="description" content="2026 年台灣咖啡師年度觀察：WBrC 前八強的賽事成績、多元背景新世代的崛起、微型烘焙空間的興起…">
+<meta name="description" content="2026 年，台灣咖啡師在國際賽事中創下歷史成績。從 WBrC 前八強到在地咖啡師文化的多元崛起，這份年度觀察記錄台灣咖啡師生態的完整樣貌。">
 <meta name="keywords" content="精品咖啡,咖啡知識,台灣咖啡">
 <meta property="og:title" content="台灣咖啡師的 2026：從世界賽場到街角咖啡館，這一年我們看見了什麼？">
 <meta property="og:type" content="article">
@@ -30,9 +30,9 @@ a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:'Noto Serif TC',Georgia,serif;font-size:1.15rem;font-weight:900;color:#1a0a00;letter-spacing:.02em;text-decoration:none}
-.nav-logo b{color:#c8922a}
-.nav-sub{font-family:'Noto Sans TC',-apple-system,sans-serif;font-size:.65rem;color:#7a6050;letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+.nav-logo{font-family:var(--font-serif,'Noto Serif TC',Georgia,serif);font-size:1.15rem;font-weight:900;color:var(--coffee-dark,#1a0a00);letter-spacing:.02em;text-decoration:none}
+.nav-logo b{color:var(--gold,#c8922a)}
+.nav-sub{font-family:var(--font-sans,'Noto Sans TC',-apple-system,sans-serif);font-size:.65rem;color:oklch(50% .02 30);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
 .nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
 .nav-back:hover{color:var(--coffee-dark)}
 .article-hero{position:relative;height:min(480px,55vw);overflow:hidden;background:var(--coffee-dark)}
@@ -573,7 +573,7 @@ footer a{color:var(--coffee-light)}
     var ogImg=document.querySelector('meta[property="og:image"]');var heroSrc=ogImg?ogImg.getAttribute('content'):'';
     var headerHtml='<header id="bnotes-unified-header" class="bnotes-header">';
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
-    headerHtml+='<!-- removed duplicate template H1 -->';
+    headerHtml+='<h1 class="bnotes-title">'+title+'</h1>';
     headerHtml+='<div class="bnotes-meta">';
     if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
     headerHtml+='<span>✍️ BNotes 編輯部</span>';

@@ -31,9 +31,9 @@ img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
 .nav-brand{display:flex;align-items:center;gap:.75rem}
-.nav-logo{font-family:var(--font-serif);font-size:1.15rem;font-weight:900;color:var(--coffee-dark);letter-spacing:.02em;text-decoration:none}
-.nav-logo b{color:var(--gold)}
-.nav-sub{font-family:var(--font-sans);font-size:.65rem;color:var(--muted-fg);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+.nav-logo{font-family:var(--font-serif,'Noto Serif TC',Georgia,serif);font-size:1.15rem;font-weight:900;color:var(--coffee-dark,#1a0a00);letter-spacing:.02em;text-decoration:none}
+.nav-logo b{color:var(--gold,#c8922a)}
+.nav-sub{font-family:var(--font-sans,'Noto Sans TC',-apple-system,sans-serif);font-size:.65rem;color:oklch(50% .02 30);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
 .nav-name{font-family:var(--font-serif);font-weight:700;font-size:1rem;color:var(--coffee-dark);line-height:1.2}
 .nav-en{font-size:.6rem;letter-spacing:.3em;color:var(--coffee-mid)}
 .nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
@@ -405,7 +405,7 @@ footer a{color:var(--coffee-light)}
   <div class="article-hero-overlay"></div>
   <div class="article-hero-content" style="max-width:900px;width:100%;left:50%;transform:translateX(-50%)">
     <div class="article-cat">手沖器材科學</div>
-    <div class="article-h1" role="heading" aria-level="1">V60 vs Kalita Wave：濾杯幾何如何改變手沖風味</div>
+    <div class="article-h1"    role="heading" aria-level="1">V60 vs Kalita Wave：濾杯幾何如何改變手沖風味</div>
   </div>
 </div>
 
@@ -426,7 +426,7 @@ footer a{color:var(--coffee-light)}
 <main class="article-wrap">
 
 <article class="article-body">
-  <div class="article-header"><h1>V60 vs Kalita Wave：濾杯幾何如何改變手沖風味</h1><div class="article-meta"><span>✍ BNotes 編輯部</span><span>⏱ 閱讀約 7 分鐘</span></div></div>
+  <div class="article-header"><h1 class="bnotes-title">V60 vs Kalita Wave：濾杯幾何如何改變手沖風味</h1><div class="article-meta"><span>✍ BNotes 編輯部</span><span>⏱ 閱讀約 7 分鐘</span></div></div>
   <p>如果你用同一支豆子、同樣的粉水比與水溫，分別用 V60 和 Kalita Wave 沖，通常會得到兩杯很不一樣的咖啡。V60 可能更明亮、香氣更往上；Kalita Wave 可能更圓潤、甜感更穩。</p>
   <p>我會建議把濾杯想成「水流設計工具」，而不是單純的器材品牌。濾杯的角度、底部形狀、出水孔與濾紙，都會改變水如何通過咖啡粉，也就改變你喝到的酸味、甜感、口感與尾韻。</p>
   <div class="module-conclusion module-guide"><span class="article-module-title">先講結論：V60 給你控制，Kalita 給你穩定</span><p>V60 是圓錐單孔，水流集中、變化大，能放大注水技術；Kalita Wave 是平底三孔，水流較平均，容錯率高。</p><ul><li><strong>想要明亮果香：</strong>V60 更容易表現花香、柑橘、莓果與清亮酸質。</li><li><strong>想要穩定甜感：</strong>Kalita Wave 更容易沖出圓潤、平衡、厚度較穩的杯感。</li><li><strong>入門練習：</strong>Kalita 較不容易因注水失誤大幅崩壞；V60 則適合進階練控制。</li></ul><p>接下來，我們會把這件事拆成幾個可判斷的問題，讓你不只是記住答案，也知道下一杯咖啡該怎麼觀察。</p><ul><li>圓錐和平底濾杯如何影響水流與萃取。</li><li>V60 與 Kalita Wave 各自適合什麼豆子和風味目標。</li><li>如何依照自己的技術與喜好選濾杯。</li><li>如何把器材比較轉成可重複的沖煮判斷。</li></ul></div>
@@ -528,7 +528,7 @@ footer a{color:var(--coffee-light)}
     /* 組合 header */
     var headerHtml='<header id="bnotes-unified-header" class="bnotes-header">';
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
-    headerHtml+='<!-- removed duplicate template H1 -->';
+    headerHtml+='<h1 class="bnotes-title">'+title+'</h1>';
     headerHtml+='<div class="bnotes-meta">';
     if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
     headerHtml+='<span>✍️ BNotes 編輯部</span>';

@@ -13,7 +13,7 @@ reading_time: 3
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>跨年守夜咖啡指南：讓你從 10 PM 撐到 00:00 的最佳飲用策略 | BNotes 焙學·原豆誌</title>
-<meta name="description" content="12月31日，你需要一個科學的咖啡因策略才能優雅地從日落撐到新年倒數。…">
+<meta name="description" content="12月31日，你需要一個科學的咖啡因策略才能優雅地從日落撐到新年倒數。這篇指南從咖啡因代謝時間計算，為你規劃從晚餐後到00:00的完整飲用時間表。。深度探索精品咖啡知識，從科學原理到實踐技巧，完整呈現咖啡世界。">
 <meta name="keywords" content="精品咖啡,咖啡知識,台灣咖啡">
 <meta property="og:title" content="跨年守夜咖啡指南：讓你從 10 PM 撐到 00:00 的最佳飲用策略">
 <meta property="og:type" content="article">
@@ -23,6 +23,10 @@ reading_time: 3
 <noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"></noscript></noscript>
 <style>
+.nav-logo b{color:var(--gold,#c8922a)}
+
+.nav-sub{font-family:var(--font-sans,'Noto Sans TC',-apple-system,sans-serif);font-size:.65rem;color:oklch(50% .02 30);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:oklch(98% .005 30);--fg:oklch(20% .02 30);--primary:oklch(45% .1 30);
@@ -40,7 +44,7 @@ img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
 .nav-brand{display:flex;align-items:center;gap:.75rem}
-.nav-logo{font-size:1.5rem}
+.nav-logo{font-family:var(--font-serif,'Noto Serif TC',Georgia,serif);font-size:1.15rem;font-weight:900;color:var(--coffee-dark,#1a0a00);letter-spacing:.02em;text-decoration:none}
 .nav-name{font-family:var(--font-serif);font-weight:700;font-size:1rem;color:var(--coffee-dark);line-height:1.2}
 .nav-en{font-size:.6rem;letter-spacing:.3em;color:var(--coffee-mid)}
 .nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
@@ -512,7 +516,7 @@ footer a{color:var(--coffee-light)}
     /* 組合 header */
     var headerHtml='<header id="bnotes-unified-header" class="bnotes-header">';
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
-    headerHtml+='<!-- removed duplicate template H1 -->';
+    headerHtml+='<h1 class="bnotes-title">'+title+'</h1>';
     headerHtml+='<div class="bnotes-meta">';
     if(dateStr) headerHtml+='<span>📅 '+dateStr+'</span>';
     headerHtml+='<span>✍️ BNotes 編輯部</span>';

@@ -16,7 +16,7 @@ gm_approved_at: 2026-05-17T11:30:00Z
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>咖啡酸質的完整科學：為什麼有人愛，有人怕，以及如何找到你的「對的酸」 | BNotes 焙學·原豆誌</title>
-<meta name="description" content="「這杯咖啡太酸了」——但你說的「酸」是蘋果酸的清爽，還是醋酸的刺激？…">
+<meta name="description" content="「這杯咖啡太酸了」——但你說的「酸」是蘋果酸的清爽，還是醋酸的刺激？理解咖啡中30多種有機酸的差異，讓你從此不再盲目抗拒或追求酸質。">
 <meta name="keywords" content="咖啡酸質, Acidity, 有機酸, 咖啡pH值, 酸質感知, 蘋果酸, 檸檬酸, 醋酸">
 <meta property="og:title" content="咖啡酸質的完整科學：為什麼有人愛，有人怕，以及如何找到你的「對的酸」">
     <meta property="og:description" content="「這杯咖啡太酸了」——但你說的「酸」是蘋果酸的清爽，還是醋酸的刺激？理解咖啡中30多種有機酸的差異，讓你從此不再盲目抗拒或追求酸質。" />
@@ -44,9 +44,9 @@ img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
 .nav-brand{display:flex;align-items:center;gap:.75rem}
-.nav-logo{font-family:var(--serif,var(--font-serif));font-size:1.15rem;font-weight:900;color:var(--dark,var(--coffee-dark));letter-spacing:.02em;text-decoration:none}
-.nav-logo b{color:var(--gold)}
-.nav-sub{font-family:var(--sans,var(--font-sans));font-size:.65rem;color:var(--muted-fg);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+.nav-logo{font-family:var(--font-serif,'Noto Serif TC',Georgia,serif);font-size:1.15rem;font-weight:900;color:var(--coffee-dark,#1a0a00);letter-spacing:.02em;text-decoration:none}
+.nav-logo b{color:var(--gold,#c8922a)}
+.nav-sub{font-family:var(--font-sans,'Noto Sans TC',-apple-system,sans-serif);font-size:.65rem;color:oklch(50% .02 30);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
 .nav-name{font-family:var(--font-serif);font-weight:700;font-size:1rem;color:var(--coffee-dark);line-height:1.2}
 .nav-en{font-size:.6rem;letter-spacing:.3em;color:var(--coffee-mid)}
 .nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
@@ -903,29 +903,6 @@ footer a{color:var(--coffee-light)}
       },{rootMargin:'-10% 0px -80% 0px'});
       headings.forEach(function(h){io.observe(h);});
     })();
-
-    /* ── 4. 聯盟行銷利益揭露自動注入 ── */
-    (function injectAffiliateDisclosure() {
-      const article = document.querySelector('.article-body');
-      if (!article) return;
-      const patterns = [/amazon\./i, /amzn\.to/i, /shopee\.tw/i, /shope\.ee/i, /rstyle\.me/i, /shopstyle\.com/i];
-      const links = article.querySelectorAll('a[href]');
-      let hasAffiliate = false;
-      for (const link of links) {
-        if (patterns.some(p => p.test(link.href))) {
-          hasAffiliate = true;
-          break;
-        }
-      }
-      if (hasAffiliate && !article.querySelector('.affiliate-disclosure')) {
-        const div = document.createElement('div');
-        div.className = 'affiliate-disclosure';
-        div.style.cssText = 'font-size:.82rem;color:var(--muted-fg);background:oklch(97% .01 45);padding:1rem;border-radius:.5rem;margin-bottom:2rem;border-left:4px solid var(--gold);line-height:1.6;';
-        div.innerHTML = '<strong>☕ 利益揭露：</strong>本篇文章包含聯盟行銷連結。若您透過連結購買，我們可能會獲得小額佣金，這有助於維持 BNotes 的優質內容營運，且不會增加您的購買成本。感謝您的支持！';
-        article.prepend(div);
-      }
-    })();
-
 })();
 </script>
 <script>
