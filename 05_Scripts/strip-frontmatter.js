@@ -24,6 +24,18 @@ function parseFM(raw) {
   return fm;
 }
 
+function metaContent(html, prop) {
+  const m = html.match(new RegExp(`(?:name|property)="${prop}"[^>]*content="([^"]+)"`))
+         || html.match(new RegExp(`content="([^"]+)"[^>]*(?:name|property)="${prop}"`));
+  return m ? m[1] : '';
+}
+
+function articleSection(html) {
+  const m = html.match(/<meta\s+property="article:section"\s+content="([^"]+)"/)
+         || html.match(/<div\s+class="article-cat"[^>]*>([^<]+)</);
+  return m ? m[1].replace(/^[^\p{L}\p{N}]+/u, '').trim() : '';
+}
+
 // ── Step 1: strip frontmatter from dist/articles/ ───────────────────────────
 let count = 0;
 const articlesMeta = [];  // for index rebuild
@@ -43,10 +55,16 @@ for (const fname of (fs.existsSync(articlesDir) ? fs.readdirSync(articlesDir) : 
     count++;
   }
   const slug = fname.replace('.html', '');
+  const title = fm.title || metaContent(content, 'og:title') || (content.match(/<title>(.*?)\s*\|/) || [])[1] || slug;
+  const date = fm.date || metaContent(content, 'article:published_time').slice(0, 10) || '';
+  const category = fm.category || fm.cat || articleSection(content) || 'lifestyle';
+  const description = fm.description || fm.desc || metaContent(content, 'og:description') || metaContent(content, 'description') || '';
+  const coverImage = fm.cover_image || metaContent(content, 'og:image') || '';
+  const readingTime = fm.reading_time || (content.match(/<meta\s+name="twitter:data1"\s+content="([^"]+)"/) || [])[1] || '';
   articlesMeta.push({
-    slug, title: fm.title || slug, date: fm.date || '',
-    category: fm.category || 'lifestyle', description: fm.description || '',
-    cover_image: fm.cover_image || '', reading_time: fm.reading_time || '',
+    slug, title, date,
+    category, description,
+    cover_image: coverImage, reading_time: readingTime,
   });
 }
 console.log(`✅ strip-frontmatter [articles]: stripped ${count} files`);
@@ -72,6 +90,9 @@ console.log(`✅ strip-frontmatter [_scheduled]: stripped ${countSched} files`);
 const CAT_LABELS = {
   'pour-over':'手沖技法','espresso':'義式咖啡','equipment':'器材評測',
   'terroir':'產地風土','science':'冲泡科學','lifestyle':'咖啡生活',
+  'beans':'咖啡豆知識','brew-methods':'手沖技法','culture':'咖啡文化',
+  'gear':'器材評測','brewing-science':'沖煮科學','origin':'產地風土',
+  'roasting':'烘焙知識',
 };
 
 function makeCard(a) {

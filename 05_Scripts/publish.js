@@ -74,12 +74,28 @@ function metaContent(html, prop) {
 }
 const title = fm.title || metaContent(content, 'og:title') || metaContent(content, 'title') || slug;
 const date  = fm.date  || metaContent(content, 'article:published_time').substring(0,10) || new Date().toISOString().substring(0,10);
-const cat   = fm.cat || fm.category || (() => {
+const rawCat = fm.cat || fm.category || (() => {
   const m = content.match(/class="article-cat[^"]*">([^<]+)</);
   return m ? m[1].replace(/^[^\w]+\s*/,'').trim() : '沖泡科學';
 })();
 const desc  = fm.desc || fm.description || metaContent(content, 'og:description') || metaContent(content, 'description') || '';
 const heroImg = `/images/ai/${slug}-hero.jpg`;
+const CAT_LABELS = {
+  'beans': '咖啡豆知識',
+  'brew-methods': '手沖技法',
+  'science': '咖啡科學',
+  'culture': '咖啡文化',
+  'gear': '器材評測',
+  'brewing-science': '沖煮科學',
+  'origin': '產地風土',
+  'roasting': '烘焙知識',
+  'pour-over': '手沖技法',
+  'espresso': '義式咖啡',
+  'equipment': '器材評測',
+  'terroir': '產地風土',
+  'lifestyle': '咖啡生活',
+};
+const cat = CAT_LABELS[rawCat] || rawCat;
 
 console.log(`\n📄  文章資訊`);
 console.log(`    slug : ${slug}`);
