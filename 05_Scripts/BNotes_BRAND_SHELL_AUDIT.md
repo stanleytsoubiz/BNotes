@@ -1,6 +1,6 @@
 # BNotes Brand Shell Audit
 
-掃描日期：2026-05-23T10:23:01.260Z
+掃描日期：2026-05-23T10:52:31.039Z
 掃描來源：https://bnotescoffee.com/sitemap.xml 對應 dist/articles
 
 ## MD 圓桌會議判斷
@@ -10,15 +10,14 @@
 ## 摘要
 
 - sitemap 文章數：64
-- 完全通過本次品牌版型總檢：16
-- 需要修正文章：48
+- 完全通過本次品牌版型總檢：17
+- 需要修正文章：47
 - P0 品牌/信任阻擋：0
-- P1 版型一致性優先修正：169
+- P1 版型一致性優先修正：168
 - P2 白金化精修項目：88
 
 ## 逐篇缺口總覽
 
-- arabica-vs-robusta-complete-guide: P1｜導讀卡
 - brazil-natural-process-guide: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀
 - canephora-flavor-wheel-guide: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀、區塊順序
 - coffee-acidity-complete-science: P1/P2｜導讀卡、符號語氣
@@ -73,7 +72,6 @@
 
 ## P1 版型一致性優先修正
 
-- arabica-vs-robusta-complete-guide: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 10 字、判斷段 116 字、線索 3 個
 - brazil-natural-process-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
 - canephora-flavor-wheel-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
 - coffee-acidity-complete-science: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 5 字、判斷段 79 字、線索 3 個
