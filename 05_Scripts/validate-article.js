@@ -40,6 +40,15 @@ function check(label, level, condition, detail = '') {
   }
 }
 
+function stripTags(fragment) {
+  return String(fragment || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+}
+
+function extractGuideCard(source) {
+  const m = source.match(/<div[^>]+class=["'][^"']*(?:module-conclusion|module-guide|guide-card)[^"']*["'][^>]*>([\s\S]*?)<\/div>/i);
+  return m ? m[0] : '';
+}
+
 console.log(`\n🔍 BNotes Article Validator — ${slug}\n${'─'.repeat(50)}`);
 
 // ── BLOCK 項（未過則阻擋發布）──────────────────────────
@@ -184,6 +193,23 @@ check(
   'WARN',
   html.includes('class="share-section"'),
   '缺少 .share-section 區塊'
+);
+
+const guideCard = extractGuideCard(html);
+const guideTitle = stripTags((guideCard.match(/<strong[^>]*class=["'][^"']*article-module-title[^"']*["'][^>]*>([\s\S]*?)<\/strong>/i) || [])[1]);
+const guideParagraph = stripTags((guideCard.match(/<p[^>]*>([\s\S]*?)<\/p>/i) || [])[1]);
+const guideItems = [...guideCard.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)].map((m) => stripTags(m[1]));
+check(
+  '導讀卡：主旨判斷 + 三個閱讀線索',
+  'BLOCK',
+  Boolean(guideCard) && guideTitle.length >= 12 && guideParagraph.length >= 28 && guideItems.length === 3,
+  `需有單一導讀卡、明確主旨判斷段，並剛好 3 個閱讀線索；目前標題 ${guideTitle.length} 字、判斷段 ${guideParagraph.length} 字、線索 ${guideItems.length} 個`
+);
+check(
+  '導讀卡避免模板字樣',
+  'WARN',
+  !/先講結論/.test(guideTitle),
+  '導讀卡可有先下判斷的邏輯，但不建議直接寫出「先講結論」字樣'
 );
 
 // ── WARN 項（內容層 — 編輯五律）────────────────────────

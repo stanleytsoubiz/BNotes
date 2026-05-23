@@ -125,7 +125,15 @@ for (const file of listArticles()) {
   if (hasHiddenHeroH1(html)) pushIssue(p1, slug, '主標不可只存在於隱藏 hero，需有標準可見文章標題');
   if (refs && /<ul[\s>]/i.test(refs)) pushIssue(p1, slug, '參考資料列表需使用 ol，避免與標準文章不一致');
 
-  if (!/先把|讀懂|導讀卡/.test(html)) pushIssue(p2, slug, '導讀卡尚未完全標準化');
+  const guideMatch = html.match(/<div[^>]+class=["'][^"']*(?:module-conclusion|module-guide|guide-card)[^"']*["'][^>]*>([\s\S]*?)<\/div>/i);
+  const guideHtml = guideMatch ? guideMatch[0] : '';
+  const guideTitle = (guideHtml.match(/<strong[^>]*class=["'][^"']*article-module-title[^"']*["'][^>]*>([\s\S]*?)<\/strong>/i) || [,''])[1].replace(/<[^>]+>/g, '').trim();
+  const guideParagraph = (guideHtml.match(/<p[^>]*>([\s\S]*?)<\/p>/i) || [,''])[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  const guideItems = (guideHtml.match(/<li[\s>]/gi) || []).length;
+  if (!guideHtml || guideTitle.length < 12 || guideParagraph.length < 28 || guideItems !== 3) {
+    pushIssue(p2, slug, '導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索');
+  }
+  if (/先講結論/.test(guideTitle)) pushIssue(p2, slug, '導讀卡不建議直接露出「先講結論」模板字樣');
   if (!/參考資料|參考文獻|references/.test(html)) pushIssue(p2, slug, '參考資料區尚未完全標準化');
   if (!/<details[\s>]/i.test(html)) pushIssue(p2, slug, 'FAQ 尚未使用折疊式呈現');
   if (/"@type"\s*:\s*"NewsArticle"/.test(html)) pushIssue(p2, slug, '長青文章仍使用 NewsArticle，建議改 Article 或 BlogPosting');

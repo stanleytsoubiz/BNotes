@@ -119,8 +119,16 @@ function checkArticle(slug) {
     push(issues, 'P2', slug, '正文寬度', '正文寬度未明確接近 740px 閱讀標準');
   }
 
-  if (!/module-conclusion|module-guide|guide-card|先把/.test(html)) {
-    push(issues, 'P1', slug, '導讀卡', '缺少單一導讀卡或「先把...讀懂」標準');
+  const guideMatch = html.match(/<div[^>]+class=["'][^"']*(?:module-conclusion|module-guide|guide-card)[^"']*["'][^>]*>([\s\S]*?)<\/div>/i);
+  const guideHtml = guideMatch ? guideMatch[0] : '';
+  const guideTitle = (guideHtml.match(/<strong[^>]*class=["'][^"']*article-module-title[^"']*["'][^>]*>([\s\S]*?)<\/strong>/i) || [,''])[1].replace(/<[^>]+>/g, '').trim();
+  const guideParagraph = (guideHtml.match(/<p[^>]*>([\s\S]*?)<\/p>/i) || [,''])[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  const guideItemCount = (guideHtml.match(/<li[\s>]/gi) || []).length;
+  if (!guideHtml || guideTitle.length < 12 || guideParagraph.length < 28 || guideItemCount !== 3) {
+    push(issues, 'P1', slug, '導讀卡', `需有主旨判斷段與剛好 3 個閱讀線索：目前標題 ${guideTitle.length} 字、判斷段 ${guideParagraph.length} 字、線索 ${guideItemCount} 個`);
+  }
+  if (/先講結論/.test(guideTitle)) {
+    push(issues, 'P2', slug, '導讀卡', '導讀卡不建議直接露出「先講結論」模板字樣，應改成自然的 BNotes 帶讀語氣');
   }
   if (!/\.module-conclusion\s+li|\.module-conclusion li/i.test(html)) {
     push(issues, 'P2', slug, '導讀卡', '導讀卡列表間距樣式未明確設定，容易重現間距過大問題');
