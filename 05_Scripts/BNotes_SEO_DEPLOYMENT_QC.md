@@ -1,6 +1,6 @@
 # BNotes SEO / Deployment QC
 
-掃描日期：2026-05-23T04:22:36.114Z
+掃描日期：2026-05-23T04:39:36.375Z
 檢查基準日：2026-05-23
 
 ## 摘要
@@ -10,7 +10,7 @@
 - 未來稿：7
 - P0 部署阻擋：0
 - P1 應優先修正：0
-- P2 內容成熟度項目：30
+- P2 內容成熟度項目：29
 
 ## P0 部署阻擋
 
@@ -45,7 +45,6 @@
 - taiwan-coffee-2026-new-season-terroir-guide: FAQ 尚未使用折疊式呈現
 - taiwan-coffee-subscription-guide-2026: 導讀卡尚未完全標準化
 - taiwan-specialty-coffee-whitepaper-2026: 導讀卡尚未完全標準化
-- turkish-coffee-ibrik: 導讀卡尚未完全標準化
 - v60-vs-kalita-filter-geometry: 導讀卡尚未完全標準化
 - wla-champion-2026-tech-breakdown: 導讀卡尚未完全標準化
 - world-coffee-weekly-vol1: 導讀卡尚未完全標準化
