@@ -1,6 +1,6 @@
 # BNotes Brand Shell Audit
 
-掃描日期：2026-05-21T01:53:22.413Z
+掃描日期：2026-05-23T03:19:05.163Z
 掃描來源：https://bnotescoffee.com/sitemap.xml 對應 dist/articles
 
 ## MD 圓桌會議判斷
@@ -10,11 +10,11 @@
 ## 摘要
 
 - sitemap 文章數：64
-- 完全通過本次品牌版型總檢：23
-- 需要修正文章：41
+- 完全通過本次品牌版型總檢：24
+- 需要修正文章：40
 - P0 品牌/信任阻擋：0
-- P1 版型一致性優先修正：205
-- P2 白金化精修項目：103
+- P1 版型一致性優先修正：194
+- P2 白金化精修項目：100
 
 ## 逐篇缺口總覽
 
@@ -46,7 +46,6 @@
 - taiwan-coffee-farmer-summer-story: P2/P1｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、區塊順序、符號語氣
 - taiwan-specialty-coffee-whitepaper-2026: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、符號語氣
 - turkish-coffee-ibrik: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、符號語氣
-- wbrc-2026-roasting-analysis: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、符號語氣
 - wla-champion-2026-tech-breakdown: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀
 - world-coffee-weekly-vol1: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀
 - brewing-diagnosis-w01: P2｜符號語氣
@@ -94,7 +93,6 @@
 - taiwan-coffee-farmer-summer-story: 常見問題: 折疊式 FAQ 少於 5 題：目前 1；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失；區塊順序: 導讀卡應放在第一個 H2 之前
 - taiwan-specialty-coffee-whitepaper-2026: 導讀卡: 缺少單一導讀卡或「先把...讀懂」標準；常見問題: 折疊式 FAQ 少於 5 題：目前 1；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失
 - turkish-coffee-ibrik: 導讀卡: 缺少單一導讀卡或「先把...讀懂」標準；常見問題: 折疊式 FAQ 少於 5 題：目前 1；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失
-- wbrc-2026-roasting-analysis: 導讀卡: 缺少單一導讀卡或「先把...讀懂」標準；常見問題: 折疊式 FAQ 少於 5 題：目前 1；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失
 - wla-champion-2026-tech-breakdown: 導讀卡: 缺少單一導讀卡或「先把...讀懂」標準；常見問題: 折疊式 FAQ 少於 5 題：目前 4；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: 缺少 share-section；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-grid 樣式/元素缺失；延伸閱讀: related-card 樣式/元素缺失；延伸閱讀: related-card:hover 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失
 - world-coffee-weekly-vol1: 導讀卡: 缺少單一導讀卡或「先把...讀懂」標準；常見問題: 折疊式 FAQ 少於 5 題：目前 0；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；參考資料: 缺少 references 區塊；分享這篇: 缺少 share-section；延伸閱讀: 缺少 related-articles
 
@@ -137,7 +135,6 @@
 - taiwan-specialty-coffee-whitepaper-2026: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - turkish-coffee-ibrik: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - water-quality: 符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
-- wbrc-2026-roasting-analysis: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - wla-champion-2026-tech-breakdown: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準
 - world-coffee-weekly-vol1: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準
 
