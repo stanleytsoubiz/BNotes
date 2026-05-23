@@ -1,6 +1,6 @@
 # BNotes SEO / Deployment QC
 
-掃描日期：2026-05-23T03:19:05.163Z
+掃描日期：2026-05-23T04:22:36.114Z
 檢查基準日：2026-05-23
 
 ## 摘要
@@ -10,7 +10,7 @@
 - 未來稿：7
 - P0 部署阻擋：0
 - P1 應優先修正：0
-- P2 內容成熟度項目：31
+- P2 內容成熟度項目：30
 
 ## P0 部署阻擋
 
@@ -24,7 +24,6 @@
 
 - alishan-new-crop-w02: 導讀卡尚未完全標準化
 - alishan-terroir: 導讀卡尚未完全標準化
-- chiayi-coffee-festival-2026-guide: 導讀卡尚未完全標準化
 - coffee-dessert-pairing-science: 導讀卡尚未完全標準化
 - coffee-reading-afternoon-ritual: 導讀卡尚未完全標準化
 - colombia-main-harvest-selection: 導讀卡尚未完全標準化
