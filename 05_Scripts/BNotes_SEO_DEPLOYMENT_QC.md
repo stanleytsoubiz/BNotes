@@ -1,6 +1,6 @@
 # BNotes SEO / Deployment QC
 
-掃描日期：2026-05-23T10:52:31.101Z
+掃描日期：2026-05-23T11:05:57.978Z
 檢查基準日：2026-05-23
 
 ## 摘要
@@ -10,7 +10,7 @@
 - 未來稿：7
 - P0 部署阻擋：0
 - P1 應優先修正：0
-- P2 內容成熟度項目：38
+- P2 內容成熟度項目：37
 
 ## P0 部署阻擋
 
@@ -28,7 +28,6 @@
 - cold-brew-vs-ice-drip-vs-iced-americano: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - colombia-main-harvest-selection: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - colombia-mitaca-second-harvest: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
-- cup-tasters-palate-training-guide: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - espresso-ratio-science: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - ethiopia-natural-process-deep-dive: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - ethiopia-vs-colombia-natural-showdown: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
