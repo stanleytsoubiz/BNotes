@@ -7,7 +7,7 @@
     <link>https://bnotescoffee.com</link>
     <description>讓喜好咖啡的人免費享受與世界沒有落差的專業咖啡知識庫</description>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 31 May 2026 16:41:12 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2026 17:03:47 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://bnotescoffee.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
@@ -23,6 +23,15 @@
     <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
     <description>咖啡粉水比不是萬能配方，而是濃度基準。從 1:15、1:16 到 1:17，理解太濃、太淡、酸薄與苦澀時該先調比例、研磨、水溫還是萃取時間。</description>
     <enclosure url="https://bnotescoffee.com/images/ai/coffee-brew-ratio-guide-hero.jpg" type="image/jpeg" length="0"/>
+  </item>
+
+  <item>
+    <title>研磨度怎麼調？從太酸、太苦到甜感出來的手沖判斷表</title>
+    <link>https://bnotescoffee.com/articles/coffee-grind-size-adjustment-guide.html</link>
+    <guid isPermaLink="true">https://bnotescoffee.com/articles/coffee-grind-size-adjustment-guide.html</guid>
+    <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    <description>手沖咖啡太酸、太苦、太淡或太澀時，研磨度該怎麼調？用一張判斷表理解研磨粗細、流速、萃取完整度與甜感之間的關係。</description>
+    <enclosure url="https://bnotescoffee.com/images/ai/coffee-grind-size-adjustment-guide-hero.jpg" type="image/jpeg" length="0"/>
   </item>
 
   <item>
@@ -185,15 +194,6 @@
     <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
     <description>2026 WBC 尚未舉行；這篇以 2024、2025 已發生冠軍案例為基礎，帶你看懂世界咖啡師大賽真正比的是技術、風味、服務與溝通哲學。</description>
     <enclosure url="https://bnotescoffee.com/images/ai/wbc-2026-champion-philosophy-hero.jpg" type="image/jpeg" length="0"/>
-  </item>
-
-  <item>
-    <title>拉花藝術的物理學：頂級選手如何用科學掌控奶泡與流體</title>
-    <link>https://bnotescoffee.com/articles/wla-champion-2026-tech-breakdown.html</link>
-    <guid isPermaLink="true">https://bnotescoffee.com/articles/wla-champion-2026-tech-breakdown.html</guid>
-    <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
-    <description>為什麼頂尖拉花選手能畫出誤差不到 0.5mm 的對稱圖案？從鋼杯擺幅頻率、牛奶蛋白變性溫度到流體動力學，這篇文章把拉花藝術的「看不見的科學」說清楚。</description>
-    <enclosure url="https://bnotescoffee.com/images/ai/wla-champion-2026-tech-breakdown-hero.jpg" type="image/jpeg" length="0"/>
   </item>
   </channel>
 </rss>
