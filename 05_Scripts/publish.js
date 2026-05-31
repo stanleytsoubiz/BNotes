@@ -80,6 +80,7 @@ const rawCat = fm.cat || fm.category || (() => {
 })();
 const desc  = fm.desc || fm.description || metaContent(content, 'og:description') || metaContent(content, 'description') || '';
 const heroImg = `/images/ai/${slug}-hero.jpg`;
+const PUBLISHED_ROBOTS = 'index, follow, max-snippet:-1, max-image-preview:large';
 const CAT_LABELS = {
   'beans': '咖啡豆知識',
   'brew-methods': '手沖技法',
@@ -104,10 +105,22 @@ console.log(`    date : ${date}`);
 console.log(`    cat  : ${cat}`);
 console.log(`    desc : ${desc.substring(0,60)}`);
 
+function stripFrontmatter(html) {
+  return html
+    .replace(/<!--\s*\n[\s\S]*?\n\s*-->\n?/, '')
+    .replace(/^---\s*\n[\s\S]*?\n---\s*/, '');
+}
+
+function setRobotsIndexable(html) {
+  const robotsTag = `<meta name="robots" content="${PUBLISHED_ROBOTS}">`;
+  if (/<meta[^>]+name=["']robots["'][^>]*>/i.test(html)) {
+    return html.replace(/<meta[^>]+name=["']robots["'][^>]*>/i, robotsTag);
+  }
+  return html.replace(/<meta charset=["']UTF-8["']>/i, (match) => `${match}\n${robotsTag}`);
+}
+
 // ── 4. 剝離 frontmatter，寫入 dist/ ───────────────────────
-const published = content
-  .replace(/<!--\s*\n[\s\S]*?\n\s*-->\n?/, '')
-  .replace(/^---\s*\n[\s\S]*?\n---\s*/, '');
+const published = setRobotsIndexable(stripFrontmatter(content));
 fs.writeFileSync(distPath, published, 'utf8');
 console.log(`\n✅  已寫入：dist/articles/${slug}.html`);
 
@@ -211,11 +224,11 @@ if (idx.includes(`/articles/${slug}.html`)) {
 }
 
 // ── 6. 更新草稿 frontmatter status ────────────────────────
-const updatedDraft = content
+const updatedDraft = setRobotsIndexable(content)
   .replace(/(\bstatus\s*:\s*)(draft|review|ready)/, '$1published')
   .replace(/(\bstatus\s*:\s*)(?!published)(\w+)/, '$1published');
 fs.writeFileSync(draftPath, updatedDraft, 'utf8');
-console.log(`✅  草稿 status 更新為 published`);
+console.log(`✅  草稿 status 更新為 published，robots 更新為 indexable`);
 
 // ── 7. 重建 sitemap.xml ────────────────────────────────────
 try {

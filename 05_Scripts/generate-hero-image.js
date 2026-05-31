@@ -46,6 +46,7 @@ const SLUG_SEARCH_TERMS = {
   // 手沖技法
   'pour-over-guide':                         'gooseneck kettle pouring thin precise stream over white Hario V60 dripper on wooden stand, fresh dark drip collecting in clear glass server below, soft window light from left, vapor rising from bloom, specialty coffee pour-over technique editorial',
   'pour-over-variable-complete-experiment':  'multiple V60 drippers in a row each at different bloom stages on lab bench, Acaia Pearl scale displaying grams, glass beakers measuring water temperatures, scientific systematic approach to specialty coffee brewing variables, editorial flat-lay',
+  'pour-over-under-extraction-guide':        'close-up of a V60 pour-over brew being diagnosed for under-extraction, pale uneven coffee bed inside white paper filter, tasting notebook with notes reading sour thin short finish, gooseneck kettle, digital scale, warm natural window light, specialty coffee troubleshooting science editorial',
   'v60-vs-kalita-filter-geometry':           'Hario V60 02 and Kalita Wave 155 placed side by side on wooden surface, spiral ribbing and flat-bottom geometry clearly visible in warm studio light, two ceramic drippers comparison, specialty coffee filter geometry editorial product photography',
   'water-quality':                           'close-up sparkling mineral water poured into laboratory glass beaker beside specialty coffee, TDS meter and pH strips on white marble surface, water science coffee brewing concept, clean editorial photography mineral analysis',
   'brewing-diagnosis-w01':                   'close-up V60 filter showing uneven extraction pattern, some grounds pale and underdeveloped, some areas dark over-extracted, diagnostic detail of espresso puck after shot, barista analyzing coffee extraction results, troubleshooting specialty coffee brewing science editorial',
@@ -417,10 +418,12 @@ function detectCategory(slug) {
 // ── Core: generate image for one slug ────────────────────────────────────────
 async function generateHeroImage(slug, forceRegenerate = false) {
   const imgPath  = path.join(IMAGES_DIR, `${slug}-hero.jpg`);
-  const htmlPath = path.join(ARTICLES,   `${slug}.html`);
+  const distHtmlPath = path.join(ARTICLES, `${slug}.html`);
+  const sourceHtmlPath = path.join(ROOT, '08_文章_Articles_HTML', `${slug}.html`);
+  const htmlPath = fs.existsSync(distHtmlPath) ? distHtmlPath : sourceHtmlPath;
 
   if (!fs.existsSync(htmlPath)) {
-    console.error(`  ✗ Article not found: ${slug}`);
+    console.error(`  ✗ Article not found in dist/articles or 08_文章_Articles_HTML: ${slug}`);
     return false;
   }
 

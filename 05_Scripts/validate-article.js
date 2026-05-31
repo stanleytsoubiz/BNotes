@@ -11,6 +11,7 @@ const path = require('path');
 
 const VALID_CATS = ['beans', 'brew-methods', 'science', 'culture', 'gear', 'brewing-science', 'origin', 'roasting'];
 const ARTICLES_DIR = path.join(__dirname, '../08_文章_Articles_HTML');
+const DIST_DIR = path.join(__dirname, '../dist');
 
 const slug = process.argv[2];
 if (!slug) {
@@ -47,6 +48,62 @@ function stripTags(fragment) {
 function extractGuideCard(source) {
   const m = source.match(/<div[^>]+class=["'][^"']*(?:module-conclusion|module-guide|guide-card)[^"']*["'][^>]*>([\s\S]*?)<\/div>/i);
   return m ? m[0] : '';
+}
+
+function firstMatch(source, patterns) {
+  for (const pattern of patterns) {
+    const match = source.match(pattern);
+    if (match && match[1]) return match[1].trim().replace(/^["']|["']$/g, '');
+  }
+  return '';
+}
+
+function localImagePath(imageUrl) {
+  if (!imageUrl) return '';
+  let normalized = imageUrl.trim();
+  if (normalized.startsWith('https://bnotescoffee.com/')) {
+    normalized = normalized.replace('https://bnotescoffee.com', '');
+  }
+  if (!normalized.startsWith('/')) return '';
+  return path.join(DIST_DIR, normalized.replace(/^\/+/, ''));
+}
+
+function imageDimensions(file) {
+  if (!file || !fs.existsSync(file)) return null;
+  const buffer = fs.readFileSync(file);
+  if (buffer.length < 32) return null;
+
+  // PNG: bytes 16-23 store width/height.
+  if (buffer.toString('ascii', 1, 4) === 'PNG') {
+    return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20), type: 'png' };
+  }
+
+  // JPEG: walk segments until a Start Of Frame marker with dimensions.
+  if (buffer[0] === 0xff && buffer[1] === 0xd8) {
+    let offset = 2;
+    while (offset < buffer.length) {
+      if (buffer[offset] !== 0xff) return null;
+      const marker = buffer[offset + 1];
+      const length = buffer.readUInt16BE(offset + 2);
+      if (length < 2) return null;
+      if (
+        marker === 0xc0 || marker === 0xc1 || marker === 0xc2 ||
+        marker === 0xc3 || marker === 0xc5 || marker === 0xc6 ||
+        marker === 0xc7 || marker === 0xc9 || marker === 0xca ||
+        marker === 0xcb || marker === 0xcd || marker === 0xce ||
+        marker === 0xcf
+      ) {
+        return {
+          width: buffer.readUInt16BE(offset + 7),
+          height: buffer.readUInt16BE(offset + 5),
+          type: 'jpg'
+        };
+      }
+      offset += 2 + length;
+    }
+  }
+
+  return null;
 }
 
 console.log(`\n🔍 BNotes Article Validator — ${slug}\n${'─'.repeat(50)}`);
@@ -103,6 +160,36 @@ check(
   'BLOCK',
   html.includes('class="bnotes-title"') || html.includes('class="bnotes-unified-title"'),
   '不可只依賴 meta title 或隱藏 H1；讀者進入文章後必須看得到標準主標'
+);
+
+const heroImage = firstMatch(html, [
+  /^cover_image:\s*([^\r\n]+)/m,
+  /<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i,
+  /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i,
+  /<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i,
+  /<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i
+]);
+const heroPath = localImagePath(heroImage);
+const heroExists = Boolean(heroPath) && fs.existsSync(heroPath) && fs.statSync(heroPath).size > 5000;
+const heroDimensions = heroExists ? imageDimensions(heroPath) : null;
+const heroRatio = heroDimensions ? heroDimensions.width / heroDimensions.height : 0;
+const heroHasPublishSize = Boolean(heroDimensions) &&
+  heroDimensions.width >= 1200 &&
+  heroDimensions.height >= 630 &&
+  Math.abs(heroRatio - (16 / 9)) <= 0.08;
+check(
+  `Hero 圖片存在且可發布（目前：${heroImage || '未指定'}）`,
+  'BLOCK',
+  heroExists,
+  heroPath
+    ? `找不到或檔案過小：${heroPath}。文章圖卡、og:image 與社群分享圖不可缺漏`
+    : 'Hero 圖片需使用 BNotes 本站 /images/... 路徑，並存在於 dist/images'
+);
+check(
+  `Hero 圖片尺寸與比例合規（目前：${heroDimensions ? `${heroDimensions.width}x${heroDimensions.height}` : '無法讀取'}）`,
+  'BLOCK',
+  heroHasPublishSize,
+  'Hero 圖需至少 1200x630，且接近 16:9；BNotes 既有標竿規格為 1408x768'
 );
 
 const jsonLdMatches = [...html.matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)];
