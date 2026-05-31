@@ -7,7 +7,7 @@
     <link>https://bnotescoffee.com</link>
     <description>讓喜好咖啡的人免費享受與世界沒有落差的專業咖啡知識庫</description>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 31 May 2026 16:00:11 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2026 16:41:12 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://bnotescoffee.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
@@ -15,6 +15,15 @@
       <title>BNotes 焙學·原豆誌</title>
       <link>https://bnotescoffee.com</link>
     </image>
+
+  <item>
+    <title>咖啡粉水比怎麼抓？從 1:15 到 1:17 的風味差異與調整表</title>
+    <link>https://bnotescoffee.com/articles/coffee-brew-ratio-guide.html</link>
+    <guid isPermaLink="true">https://bnotescoffee.com/articles/coffee-brew-ratio-guide.html</guid>
+    <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    <description>咖啡粉水比不是萬能配方，而是濃度基準。從 1:15、1:16 到 1:17，理解太濃、太淡、酸薄與苦澀時該先調比例、研磨、水溫還是萃取時間。</description>
+    <enclosure url="https://bnotescoffee.com/images/ai/coffee-brew-ratio-guide-hero.jpg" type="image/jpeg" length="0"/>
+  </item>
 
   <item>
     <title>手沖咖啡萃取不足怎麼判斷？酸、薄、短尾韻的三步調整法</title>
@@ -185,15 +194,6 @@
     <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
     <description>為什麼頂尖拉花選手能畫出誤差不到 0.5mm 的對稱圖案？從鋼杯擺幅頻率、牛奶蛋白變性溫度到流體動力學，這篇文章把拉花藝術的「看不見的科學」說清楚。</description>
     <enclosure url="https://bnotescoffee.com/images/ai/wla-champion-2026-tech-breakdown-hero.jpg" type="image/jpeg" length="0"/>
-  </item>
-
-  <item>
-    <title>2026 台灣咖啡新產季全解析：六大產區風土密碼、AI 科技升級與品飲指南 | BNotes 焙學·原豆誌</title>
-    <link>https://bnotescoffee.com/articles/taiwan-coffee-2026-new-season-terroir-guide.html</link>
-    <guid isPermaLink="true">https://bnotescoffee.com/articles/taiwan-coffee-2026-new-season-terroir-guide.html</guid>
-    <pubDate>Fri, 24 Apr 2026 00:00:00 GMT</pubDate>
-    <description>從六大產區、後製趨勢、AI 挑豆與品飲判斷，理解台灣咖啡新產季如何展現風土與精品咖啡潛力。</description>
-    <enclosure url="https://bnotescoffee.com/images/ai/taiwan-coffee-2026-new-season-terroir-guide-hero.jpg" type="image/jpeg" length="0"/>
   </item>
   </channel>
 </rss>

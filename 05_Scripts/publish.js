@@ -2,7 +2,7 @@
 /**
  * BNotes publish.js — B9 文章發布腳本 v1.0
  *
- * 用法：node publish.js <slug>
+ * 用法：node publish.js <slug> [--skip-indexnow]
  *
  * 流程：
  *   1. 讀取 08_文章_Articles_HTML/<slug>.html（草稿）
@@ -25,10 +25,12 @@ const DIST_ART  = path.join(ROOT, 'dist', 'articles');
 const INDEX     = path.join(ROOT, 'dist', 'index.html');
 
 // ── 主程式 ─────────────────────────────────────────────────
-const slug = process.argv[2];
+const args = process.argv.slice(2);
+const skipIndexNow = args.includes('--skip-indexnow') || process.env.SKIP_INDEXNOW === '1';
+const slug = args.find(arg => !arg.startsWith('--'));
 if (!slug) {
-  console.error('❌  用法：node publish.js <slug>');
-  console.error('    範例：node publish.js wbc-2026-champion-philosophy');
+  console.error('❌  用法：node publish.js <slug> [--skip-indexnow]');
+  console.error('    範例：node publish.js wbc-2026-champion-philosophy --skip-indexnow');
   process.exit(1);
 }
 
@@ -81,6 +83,7 @@ const rawCat = fm.cat || fm.category || (() => {
 const desc  = fm.desc || fm.description || metaContent(content, 'og:description') || metaContent(content, 'description') || '';
 const heroImg = `/images/ai/${slug}-hero.jpg`;
 const PUBLISHED_ROBOTS = 'index, follow, max-snippet:-1, max-image-preview:large';
+const GA4_ID = 'G-2WXMBSHDSB';
 const CAT_LABELS = {
   'beans': '咖啡豆知識',
   'brew-methods': '手沖技法',
@@ -119,7 +122,42 @@ function setRobotsIndexable(html) {
   return html.replace(/<meta charset=["']UTF-8["']>/i, (match) => `${match}\n${robotsTag}`);
 }
 
+function jsonEscape(value) {
+  return String(value || '').replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+}
+
+function ensurePublishEnhancements(html) {
+  let out = html;
+
+  if (!out.includes('"@type":"BreadcrumbList"') && !out.includes('"@type": "BreadcrumbList"')) {
+    const breadcrumb = `<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"BNotes","item":"https://bnotescoffee.com/"},{"@type":"ListItem","position":2,"name":"文章","item":"https://bnotescoffee.com/articles/"},{"@type":"ListItem","position":3,"name":"${jsonEscape(title)}","item":"https://bnotescoffee.com/articles/${slug}.html"}]}</script>`;
+    out = out.replace('</head>', `${breadcrumb}\n</head>`);
+  }
+
+  if (!out.includes(GA4_ID)) {
+    const ga4 = `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA4_ID}"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','${GA4_ID}',{'page_title':document.title,'page_location':window.location.href,'send_page_view':true});
+</script>`;
+    out = out.replace('</head>', `${ga4}\n</head>`);
+  }
+
+  if (!out.includes('article_read_complete')) {
+    const readComplete = `<script>
+document.addEventListener('DOMContentLoaded',function(){var tracked=false;window.addEventListener('scroll',function(){if(!tracked&&((window.scrollY+window.innerHeight)/Math.max(document.body.scrollHeight,1))>.8){tracked=true;if(window.gtag){gtag('event','article_read_complete',{'event_category':'content','event_label':document.title,'value':1});}}},{passive:true});});
+</script>`;
+    out = out.replace('</body>', `${readComplete}\n</body>`);
+  }
+
+  return out;
+}
+
 // ── 4. 剝離 frontmatter，寫入 dist/ ───────────────────────
+content = ensurePublishEnhancements(content);
+
 const published = setRobotsIndexable(stripFrontmatter(content));
 fs.writeFileSync(distPath, published, 'utf8');
 console.log(`\n✅  已寫入：dist/articles/${slug}.html`);
@@ -243,17 +281,21 @@ try {
 
 // ── 8. IndexNow ping ──────────────────────────────────────
 const INDEXNOW_KEY = '4c5bbd8accc0d62f986790f5eb4818e5';
-try {
-  const body = JSON.stringify({
-    host: 'bnotescoffee.com',
-    key: INDEXNOW_KEY,
-    keyLocation: `https://bnotescoffee.com/${INDEXNOW_KEY}.txt`,
-    urlList: [`https://bnotescoffee.com/articles/${slug}.html`]
-  });
-  execSync(`curl -s -o /dev/null -w "%{http_code}" -X POST "https://api.indexnow.org/IndexNow" -H "Content-Type: application/json" -d '${body}'`);
-  console.log(`✅  IndexNow ping 送出 → https://bnotescoffee.com/articles/${slug}.html`);
-} catch(e) {
-  console.warn(`⚠️   IndexNow ping 失敗（可於 git push 後手動補送）`);
+if (skipIndexNow) {
+  console.log(`⏭️   IndexNow ping 已跳過（本地發布包模式）`);
+} else {
+  try {
+    const body = JSON.stringify({
+      host: 'bnotescoffee.com',
+      key: INDEXNOW_KEY,
+      keyLocation: `https://bnotescoffee.com/${INDEXNOW_KEY}.txt`,
+      urlList: [`https://bnotescoffee.com/articles/${slug}.html`]
+    });
+    execSync(`curl -s -o /dev/null -w "%{http_code}" -X POST "https://api.indexnow.org/IndexNow" -H "Content-Type: application/json" -d '${body}'`);
+    console.log(`✅  IndexNow ping 送出 → https://bnotescoffee.com/articles/${slug}.html`);
+  } catch(e) {
+    console.warn(`⚠️   IndexNow ping 失敗（可於 git push 後手動補送）`);
+  }
 }
 
 // ── 9. 更新 RSS feed ──────────────────────────────────────
@@ -269,7 +311,7 @@ try {
 
 // ── 10. 建議的 git commit ──────────────────────────────────
 console.log(`\n🚀  建議執行：`);
-console.log(`    git add -f dist/articles/${slug}.html dist/index.html dist/sitemap.xml dist/feed.xml 08_文章_Articles_HTML/${slug}.html`);
+console.log(`    git add -f dist/articles/${slug}.html dist/images/ai/${slug}-hero.jpg dist/index.html dist/sitemap.xml dist/feed.xml 08_文章_Articles_HTML/${slug}.html`);
 console.log(`    git commit -m "feat(article): 發布《${title.substring(0,30)}》"`);
 console.log(`    git push origin main`);
 console.log(`\n📌  文章上線後網址：https://bnotescoffee.com/articles/${slug}.html\n`);

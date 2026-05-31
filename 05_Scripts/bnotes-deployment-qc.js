@@ -13,7 +13,14 @@ const ROOT = path.resolve(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 const ARTICLES = path.join(DIST, 'articles');
 const REPORT = path.join(__dirname, 'BNotes_SEO_DEPLOYMENT_QC.md');
-const TODAY = process.env.BNOTES_QC_TODAY || new Date().toISOString().slice(0, 10);
+function localDateString(date = new Date()) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+const TODAY = process.env.BNOTES_QC_TODAY || localDateString();
 const GA4_ID = 'G-2WXMBSHDSB';
 const BASE = 'https://bnotescoffee.com';
 

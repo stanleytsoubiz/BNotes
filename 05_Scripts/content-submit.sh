@@ -6,11 +6,12 @@
 # 自動處理：
 #   1. git add 08_文章_Articles_HTML/<slug>.html
 #   2. git add -f dist/articles/<slug>.html  (dist 在 .gitignore，必須 -f)
-#   3. git commit with Co-Author
+#   3. git add -f dist/images/ai/<slug>-hero.jpg  (文章圖卡必須同步部署)
+#   4. git commit with Co-Author
 
 SLUG=$1
 MSG=$2
-ROOT="/Users/stanleytsou/Library/Mobile Documents/com~apple~CloudDocs/Skywork AI/BNotes_完整知識庫_2026_b70125664b1e40e3a606b89bbd238f5c"
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
 if [ -z "$SLUG" ] || [ -z "$MSG" ]; then
   echo "用法：bash 05_Scripts/content-submit.sh <slug> \"commit message\""
@@ -22,6 +23,7 @@ cd "$ROOT"
 
 SRC="08_文章_Articles_HTML/${SLUG}.html"
 DIST="dist/articles/${SLUG}.html"
+HERO="dist/images/ai/${SLUG}-hero.jpg"
 
 if [ ! -f "$SRC" ]; then
   echo "❌ 找不到來源檔案：$SRC"
@@ -36,6 +38,13 @@ if [ -f "$DIST" ]; then
   echo "✅ staged dist: $DIST"
 else
   echo "⚠️  dist 不存在，跳過：$DIST"
+fi
+
+if [ -f "$HERO" ]; then
+  git add -f "$HERO"
+  echo "✅ staged hero: $HERO"
+else
+  echo "⚠️  hero 圖不存在，請確認圖卡 Gate：$HERO"
 fi
 
 git commit -m "${MSG}

@@ -1,16 +1,16 @@
 # BNotes SEO / Deployment QC
 
-掃描日期：2026-05-23T15:05:27.358Z
-檢查基準日：2026-05-23
+掃描日期：2026-05-31T16:43:40.723Z
+檢查基準日：2026-06-01
 
 ## 摘要
 
-- 文章總數：71
-- 已發布文章：64
+- 文章總數：73
+- 已發布文章：66
 - 未來稿：7
 - P0 部署阻擋：0
 - P1 應優先修正：0
-- P2 內容成熟度項目：37
+- P2 內容成熟度項目：34
 
 ## P0 部署阻擋
 
@@ -22,7 +22,6 @@
 
 ## P2 內容成熟度項目
 
-- coffee-acidity-complete-science: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - coffee-dessert-pairing-science: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - coffee-reading-afternoon-ritual: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - cold-brew-vs-ice-drip-vs-iced-americano: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
@@ -39,7 +38,6 @@
 - morning-coffee-ritual-science: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - pour-over-guide: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - processing-methods: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
-- sca-tasting-vocabulary-guide: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - single-origin-terroir-science: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - solo-brewing-valentines: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - specialty-coffee-third-wave-history: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
@@ -53,7 +51,6 @@
 - taiwan-specialty-coffee-whitepaper-2026: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - turkish-coffee-ibrik: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - v60-vs-kalita-filter-geometry: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
-- water-quality: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - wla-champion-2026-tech-breakdown: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - world-coffee-weekly-vol1: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - world-coffee-weekly-vol1: 參考資料區尚未完全標準化

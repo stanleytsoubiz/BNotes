@@ -16,7 +16,14 @@ const DIST_ART  = path.join(ROOT, 'dist', 'articles');
 const FEED_PATH = path.join(ROOT, 'dist', 'feed.xml');
 const BASE_URL  = 'https://bnotescoffee.com';
 const MAX_ITEMS = 20;
-const TODAY = process.env.RSS_TODAY || new Date().toISOString().substring(0, 10);
+function localDateString(date = new Date()) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+const TODAY = process.env.RSS_TODAY || localDateString();
 
 // ── HTML 解析工具 ─────────────────────────────────────────────────────────────
 

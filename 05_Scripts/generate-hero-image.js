@@ -47,6 +47,7 @@ const SLUG_SEARCH_TERMS = {
   'pour-over-guide':                         'gooseneck kettle pouring thin precise stream over white Hario V60 dripper on wooden stand, fresh dark drip collecting in clear glass server below, soft window light from left, vapor rising from bloom, specialty coffee pour-over technique editorial',
   'pour-over-variable-complete-experiment':  'multiple V60 drippers in a row each at different bloom stages on lab bench, Acaia Pearl scale displaying grams, glass beakers measuring water temperatures, scientific systematic approach to specialty coffee brewing variables, editorial flat-lay',
   'pour-over-under-extraction-guide':        'close-up of a V60 pour-over brew being diagnosed for under-extraction, pale uneven coffee bed inside white paper filter, tasting notebook with notes reading sour thin short finish, gooseneck kettle, digital scale, warm natural window light, specialty coffee troubleshooting science editorial',
+  'coffee-brew-ratio-guide':                 'specialty coffee brew ratio science editorial, digital scale showing 15g coffee and 240g water, V60 dripper, gooseneck kettle, glass server, small recipe notebook with ratio marks 1:15 1:16 1:17, warm natural window light, precise home brewing measurement concept',
   'v60-vs-kalita-filter-geometry':           'Hario V60 02 and Kalita Wave 155 placed side by side on wooden surface, spiral ribbing and flat-bottom geometry clearly visible in warm studio light, two ceramic drippers comparison, specialty coffee filter geometry editorial product photography',
   'water-quality':                           'close-up sparkling mineral water poured into laboratory glass beaker beside specialty coffee, TDS meter and pH strips on white marble surface, water science coffee brewing concept, clean editorial photography mineral analysis',
   'brewing-diagnosis-w01':                   'close-up V60 filter showing uneven extraction pattern, some grounds pale and underdeveloped, some areas dark over-extracted, diagnostic detail of espresso puck after shot, barista analyzing coffee extraction results, troubleshooting specialty coffee brewing science editorial',
@@ -144,6 +145,7 @@ const SLUG_MAP = {
   // 手沖技法
   'pour-over-guide':                         'photo-1495474472287-4d71bcdd2085', // gooseneck pour over ✓
   'pour-over-variable-complete-experiment':  'photo-1610632380989-680fe40816c6', // scale + kettle ✓
+  'coffee-brew-ratio-guide':                 'photo-1610632380989-680fe40816c6', // scale + kettle ratio guide ✓
   'v60-vs-kalita-filter-geometry':           'photo-1524350876685-274059332603', // filter dripper
   'water-quality':                           'photo-1548686304-89d188a80029', // water ✓
   'brewing-diagnosis-w01':                   'photo-1610632380989-680fe40816c6', // brewing + scale ✓
