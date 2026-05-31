@@ -7,7 +7,7 @@
     <link>https://bnotescoffee.com</link>
     <description>讓喜好咖啡的人免費享受與世界沒有落差的專業咖啡知識庫</description>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 31 May 2026 17:31:40 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2026 17:56:32 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://bnotescoffee.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
@@ -41,6 +41,15 @@
     <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
     <description>手沖咖啡太苦、太澀、喝完口腔乾澀一定是過萃嗎？用三步排除法分辨烘焙、細粉、研磨、水溫與接觸時間，找到真正該調整的方向。</description>
     <enclosure url="https://bnotescoffee.com/images/ai/pour-over-over-extraction-guide-hero.jpg" type="image/jpeg" length="0"/>
+  </item>
+
+  <item>
+    <title>手沖注水怎麼練？水流、粉床與流速的三步穩定法</title>
+    <link>https://bnotescoffee.com/articles/pour-over-pouring-control-guide.html</link>
+    <guid isPermaLink="true">https://bnotescoffee.com/articles/pour-over-pouring-control-guide.html</guid>
+    <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+    <description>手沖咖啡流速太快、太慢或酸苦同時出現，問題不一定只在研磨。用水流、粉床、悶蒸與分段注水，建立更穩定的手沖判斷。</description>
+    <enclosure url="https://bnotescoffee.com/images/ai/pour-over-pouring-control-guide-hero.jpg" type="image/jpeg" length="0"/>
   </item>
 
   <item>
@@ -185,15 +194,6 @@
     <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
     <description>台北咖啡師願意跟你聊豆子產地、談比賽配方，這在亞洲城市裡並不普遍。精選 Simple Kaffa、Fika Fika、Rufous 等六間各有哲學的精品咖啡館，找到你今天需要的那種深度。</description>
     <enclosure url="https://bnotescoffee.com/images/ai/taipei-coffee-map-2026-hero.jpg" type="image/jpeg" length="0"/>
-  </item>
-
-  <item>
-    <title>巴西日曬處理完全指南：當全球最大產國遇見最複雜的發酵科學</title>
-    <link>https://bnotescoffee.com/articles/brazil-natural-process-guide.html</link>
-    <guid isPermaLink="true">https://bnotescoffee.com/articles/brazil-natural-process-guide.html</guid>
-    <pubDate>Sun, 03 May 2026 00:00:00 GMT</pubDate>
-    <description>巴西日曬豆的甜感和醇厚，是二十天陽光與微生物共同完成的作品。從果皮發酵科學到慢日曬革命，讀懂這篇才算真正認識巴西咖啡。</description>
-    <enclosure url="https://bnotescoffee.com/images/ai/brazil-natural-process-guide-hero.jpg" type="image/jpeg" length="0"/>
   </item>
   </channel>
 </rss>
