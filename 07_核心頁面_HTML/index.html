@@ -537,6 +537,19 @@ img { aspect-ratio: attr(width) / attr(height); }
     return el;
   }
 
+  function fillInitialRows() {
+    var visibleCount = grid.querySelectorAll('article.card:not([data-load-hidden="true"])').length;
+    var frag = document.createDocumentFragment();
+    while (visibleCount < INITIAL_VISIBLE && cursor < loadQueue.length) {
+      frag.appendChild(buildCard(loadQueue[cursor]));
+      cursor++;
+      visibleCount++;
+    }
+    if (frag.childNodes.length) grid.appendChild(frag);
+  }
+
+  fillInitialRows();
+
   function loadMore() {
     const batch = loadQueue.slice(cursor, cursor + PER);
     if (!batch.length) {
@@ -774,13 +787,37 @@ img { aspect-ratio: attr(width) / attr(height); }
   var wrap = document.getElementById('load-more-wrap');
   if (!grid || !btn) return;
 
-  // 1. 取得目前頁面上已存在的文章 slug
-  var existingSlugs = Array.from(grid.querySelectorAll('a[href^="/articles/"]'))
-    .map(function(a) { 
-      var m = a.getAttribute('href').match(/\/articles\/([^\.]+)\.html/);
-      return m ? m[1] : null;
-    })
-    .filter(Boolean);
+  var PER = 6;
+  var INITIAL_VISIBLE = 30;
+
+  function getSlugFromHref(href) {
+    var m = (href || '').match(/\/articles\/([^?#]+?)(?:\.html)?(?:[?#].*)?$/);
+    return m ? m[1].replace(/\/$/, '') : '';
+  }
+
+  // 1. 取得目前頁面上已存在的文章 slug，並自動移除重複靜態卡片
+  var seenStatic = {};
+  var staticCards = Array.from(grid.querySelectorAll('article.card'));
+  var uniqueCards = [];
+  staticCards.forEach(function(card) {
+    var link = card.querySelector('a[href^="/articles/"]');
+    var slug = link ? getSlugFromHref(link.getAttribute('href')) : '';
+    if (slug && seenStatic[slug]) {
+      card.remove();
+      return;
+    }
+    if (slug) seenStatic[slug] = true;
+    uniqueCards.push(card);
+  });
+
+  // 2. 初始顯示固定完整列，多出的卡片交給「載入更多」補位
+  var hiddenStatic = uniqueCards.slice(INITIAL_VISIBLE);
+  hiddenStatic.forEach(function(card) {
+    card.style.display = 'none';
+    card.setAttribute('data-load-hidden', 'true');
+  });
+
+  var existingSlugs = Object.keys(seenStatic);
 
   // 2. 從 SEARCH_DATA 過濾出待載入的文章列表
   var allArticles = (typeof SEARCH_DATA !== 'undefined') ? SEARCH_DATA : [];
@@ -788,7 +825,6 @@ img { aspect-ratio: attr(width) / attr(height); }
     return existingSlugs.indexOf(a.slug) === -1;
   });
 
-  var PER  = 6;
   var cursor = 0;
 
   function buildCard(item) {
@@ -824,8 +860,16 @@ img { aspect-ratio: attr(width) / attr(height); }
   }
 
   function loadMore() {
-    var batch = loadQueue.slice(cursor, cursor + PER);
-    if (!batch.length) {
+    var shown = 0;
+    while (hiddenStatic.length && shown < PER) {
+      var card = hiddenStatic.shift();
+      card.style.display = '';
+      card.removeAttribute('data-load-hidden');
+      shown++;
+    }
+
+    var batch = loadQueue.slice(cursor, cursor + (PER - shown));
+    if (!shown && !batch.length) {
       if (wrap) wrap.style.display = 'none';
       return;
     }
@@ -837,13 +881,13 @@ img { aspect-ratio: attr(width) / attr(height); }
     grid.appendChild(frag);
     
     cursor += PER;
-    if (cursor >= loadQueue.length && wrap) {
+    if (!hiddenStatic.length && cursor >= loadQueue.length && wrap) {
       wrap.style.display = 'none';
     }
   }
 
   // 初次檢查是否還有更多可載入
-  if (loadQueue.length === 0 && wrap) {
+  if (loadQueue.length === 0 && hiddenStatic.length === 0 && wrap) {
     wrap.style.display = 'none';
   }
 
