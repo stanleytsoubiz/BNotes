@@ -3,13 +3,26 @@
 // Fixed: avoid returning already-consumed Response body (Error 1101)
 export async function onRequestGet(context) {
   try {
-    const response = await context.next();
+    const { request, params, env } = context;
+    const slug = String(params.slug || '').replace(/\.html$/, '');
+    const assetUrl = new URL(request.url);
+    assetUrl.pathname = `/articles/${slug}.html`;
+    assetUrl.search = '';
+
+    let response = env.ASSETS
+      ? await env.ASSETS.fetch(new Request(assetUrl.toString(), request))
+      : await context.next();
+
+    if (response.status === 404) {
+      response = await context.next();
+    }
+
     const ct = response.headers.get('Content-Type') || '';
     if (!ct.includes('text/html')) return response;
 
     const text = await response.text();
 
-        // Strip YAML frontmatter if present
+    // Strip YAML frontmatter if present
     let cleaned = text.replace(/^---[\r\n][\s\S]*?[\r\n]---[\r\n]/, '');
 
     // Always reconstruct Response
