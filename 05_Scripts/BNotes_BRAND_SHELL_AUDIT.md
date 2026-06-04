@@ -1,6 +1,6 @@
 # BNotes Brand Shell Audit
 
-掃描日期：2026-06-04T12:58:13.418Z
+掃描日期：2026-06-04T13:07:25.154Z
 掃描來源：https://bnotescoffee.com/sitemap.xml 對應 dist/articles
 
 ## MD 圓桌會議判斷
@@ -10,11 +10,11 @@
 ## 摘要
 
 - sitemap 文章數：69
-- 完全通過本次品牌版型總檢：21
-- 需要修正文章：48
+- 完全通過本次品牌版型總檢：22
+- 需要修正文章：47
 - P0 品牌/信任阻擋：0
-- P1 版型一致性優先修正：152
-- P2 白金化精修項目：90
+- P1 版型一致性優先修正：141
+- P2 白金化精修項目：87
 
 ## 逐篇缺口總覽
 
@@ -41,7 +41,6 @@
 - light-roast-beginners-guide: P2/P1｜導讀卡、常見問題、參考資料、區塊順序、符號語氣
 - milk-alternatives-science-2026: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀、區塊順序、符號語氣
 - milk-steaming-science: P1｜導讀卡
-- morning-coffee-ritual-science: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、符號語氣
 - plant-milk-barista-complete-guide: P2/P1｜導讀卡、常見問題、參考資料、區塊順序、符號語氣
 - pour-over-guide: P1/P2｜導讀卡、符號語氣
 - pour-over-over-extraction-guide: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀
@@ -96,7 +95,6 @@
 - light-roast-beginners-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗
 - milk-alternatives-science-2026: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
 - milk-steaming-science: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 63 字、線索 7 個
-- morning-coffee-ritual-science: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 0 字、線索 0 個；常見問題: 折疊式 FAQ 少於 5 題：目前 1；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失
 - plant-milk-barista-complete-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗
 - pour-over-guide: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 10 字、判斷段 77 字、線索 3 個
 - pour-over-over-extraction-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
@@ -139,7 +137,6 @@
 - latte-art: 符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - light-roast-beginners-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - milk-alternatives-science-2026: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
-- morning-coffee-ritual-science: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - plant-milk-barista-complete-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - pour-over-guide: 符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - pour-over-over-extraction-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準

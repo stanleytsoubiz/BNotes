@@ -15,6 +15,10 @@
 <noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"></noscript></noscript>
 <style>
+.nav-logo b{color:var(--gold,#c8922a)}
+
+.nav-sub{font-family:var(--font-sans,'Noto Sans TC',-apple-system,sans-serif);font-size:.65rem;color:oklch(50% .02 30);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:oklch(98% .005 30);--fg:oklch(20% .02 30);--primary:oklch(45% .1 30);
@@ -31,9 +35,10 @@ a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:.75rem}
 .nav-logo{font-family:var(--font-serif,'Noto Serif TC',Georgia,serif);font-size:1.15rem;font-weight:900;color:var(--coffee-dark,#1a0a00);letter-spacing:.02em;text-decoration:none}
-.nav-logo b{color:var(--gold,#c8922a)}
-.nav-sub{font-family:var(--font-sans,'Noto Sans TC',-apple-system,sans-serif);font-size:.65rem;color:oklch(50% .02 30);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+.nav-name{font-family:var(--font-serif);font-weight:700;font-size:1rem;color:var(--coffee-dark);line-height:1.2}
+.nav-en{font-size:.6rem;letter-spacing:.3em;color:var(--coffee-mid)}
 .nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
 .nav-back:hover{color:var(--coffee-dark)}
 .article-hero{position:relative;height:min(480px,55vw);overflow:hidden;background:var(--coffee-dark)}
@@ -76,13 +81,13 @@ footer a{color:var(--coffee-light)}
 <meta name="twitter:title" content="建立屬於你的晨間咖啡儀式：神經科學與禪意的交匯點 | BNotes 焙學·原豆誌">
 <meta name="twitter:description" content="早晨的咖啡不只是提神——從神經科學角度，一個正確的晨間咖啡儀式能重新校準你的大腦節律，讓整天的專注力顯著提升。了解皮質醇與咖啡因的最佳攝取時間，建立屬於自己的儀式感。">
 <meta name="twitter:image" content="https://bnotescoffee.com/images/ai/morning-coffee-ritual-science-hero.jpg">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="icon" type="image/x-icon" href="../favicon.ico">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="manifest" href="../manifest.json">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#1a0a00">
 <link rel="preconnect" href="https://images.unsplash.com">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "建立屬於你的晨間咖啡儀式：神經科學與禪意的交匯點", "description": "早晨的咖啡不只是提神——從神經科學角度，一個正確的晨間咖啡儀式能重新校準你的大腦節律，讓整天的專注力顯著提升。了解皮質醇與咖啡因的最佳攝取時間，建立屬於自己的儀式感。", "url": "https://bnotescoffee.com/articles/morning-coffee-ritual-science", "datePublished": "2026-01-20T00:00:00+08:00", "dateModified": "2026-05-02T00:00:00+08:00", "inLanguage": "zh-TW", "author": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com"}, "publisher": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com", "logo": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/bnotes-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bnotescoffee.com/articles/morning-coffee-ritual-science"}, "keywords": "精品咖啡,咖啡知識,台灣咖啡", "image": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/ai/morning-coffee-ritual-science-hero.jpg", "width": 1200, "height": 630}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "建立屬於你的晨間咖啡儀式：神經科學與禪意的交匯點", "description": "早晨的咖啡不只是提神——從神經科學角度，一個正確的晨間咖啡儀式能重新校準你的大腦節律，讓整天的專注力顯著提升。了解皮質醇與咖啡因的最佳攝取時間，建立屬於自己的儀式感。", "url": "https://bnotescoffee.com/articles/morning-coffee-ritual-science", "datePublished": "2026-01-20T00:00:00+08:00", "dateModified": "2026-06-04T20:58:00+08:00", "inLanguage": "zh-TW", "author": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com"}, "publisher": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com", "logo": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/bnotes-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bnotescoffee.com/articles/morning-coffee-ritual-science"}, "keywords": "精品咖啡,咖啡知識,台灣咖啡", "image": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/ai/morning-coffee-ritual-science-hero.jpg", "width": 1200, "height": 630}}</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -97,7 +102,7 @@ footer a{color:var(--coffee-light)}
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "沖泡科學",
+      "name": "咖啡知識",
       "item": "https://bnotescoffee.com/#categories"
     },
     {
@@ -149,17 +154,14 @@ footer a{color:var(--coffee-light)}
   });
 </script>
   <meta property="article:published_time" content="2026-01-20T00:00:00+08:00" />
-  <meta property="article:modified_time" content="2026-01-20T00:00:00+08:00" />
+  <meta property="article:modified_time" content="2026-06-04T20:58:00+08:00" />
   <meta property="article:author" content="https://bnotescoffee.com" />
-  <meta property="article:section" content="沖泡科學" />
+  <meta property="article:section" content="咖啡知識" />
   <meta property="article:tag" content="精品咖啡" />
   <meta name="twitter:label1" content="閱讀時間" />
   <meta name="twitter:data1" content="6 分鐘閱讀" />
   <meta name="twitter:label2" content="分類" />
-  <meta name="twitter:data2" content="沖泡科學" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"起床後多久喝咖啡最好？","acceptedAnswer":{"@type":"Answer","text":"研究建議等待 90–120 分鐘。剛起床時皮質醇（壓力荷爾蒙）自然達到高峰，提供天然的清醒效果；這時喝咖啡等於「浪費」咖啡因，且容易增加咖啡因耐受性。等皮質醇開始下降（約 9–11 點），再補充咖啡因效果更顯著。當然，這只是最佳化建議，不適應日常生活時無需強求。"}},{"@type":"Question","name":"咖啡喝多少算「適量」？","acceptedAnswer":{"@type":"Answer","text":"FDA 建議健康成年人每天咖啡因攝取不超過 400mg（約 3–4 杯標準美式咖啡）。但個體差異很大——CYP1A2 基因決定代謝速度，快代謝者可能喝 5 杯都沒問題，慢代謝者 2 杯就影響睡眠。如果下午 2 點後喝咖啡會失眠，你很可能是慢代謝型。"}}]}
-</script>
+  <meta name="twitter:data2" content="咖啡知識" />
 <style id="bnotes-v3">
 /* ===== BNotes Unified Article Style v3.1 ===== */
 
@@ -334,6 +336,127 @@ footer a{color:var(--coffee-light)}
   transition: box-shadow .15s;
 }
 .related-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.09) }
+.module-conclusion {
+  margin: 2rem 0;
+  padding: 1.35rem 1.45rem;
+  border: 1px solid oklch(88% .035 48);
+  border-left: 4px solid var(--gold,#c8922a);
+  border-radius: .75rem;
+  background: linear-gradient(135deg,oklch(98% .018 48),oklch(96% .025 58));
+}
+.article-module-title {
+  display: block;
+  margin-bottom: .7rem;
+  color: var(--coffee-dark,#1a0a00);
+  font-family: var(--font-serif,'Noto Serif TC',serif);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+.module-conclusion p {
+  margin-bottom: .75rem;
+  line-height: 1.85;
+}
+.module-conclusion ul {
+  margin: .75rem 0 0 1.25rem;
+}
+.module-conclusion li {
+  margin-bottom: .35rem;
+  line-height: 1.7;
+}
+.faq-section {
+  margin: 2.4rem 0 2rem;
+  border-top: 1px solid oklch(90% .01 30);
+}
+.faq-section h2 {
+  border-bottom: none;
+  margin-bottom: 1rem;
+}
+.faq-item {
+  border-bottom: 1px solid oklch(90% .01 30);
+}
+.faq-question {
+  cursor: pointer;
+  padding: 1rem 0;
+  font-weight: 700;
+  color: var(--coffee-dark,#1a0a00);
+}
+.faq-answer {
+  display: none;
+  padding: 0 0 1rem;
+  color: oklch(31% .025 30);
+}
+.faq-item[open] .faq-answer {
+  display: block;
+}
+.references {
+  margin: 2.4rem 0 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid oklch(90% .01 30);
+  font-size: .82rem;
+  color: oklch(38% .02 30);
+}
+.references h3 {
+  font-size: 1.05rem;
+  margin-top: 0;
+}
+.references li {
+  line-height: 1.75;
+}
+.share-section {
+  margin: 2.4rem 0 0;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid oklch(90% .01 30);
+}
+.share-label {
+  display: block;
+  margin-bottom: .8rem;
+  font-weight: 700;
+  color: var(--coffee-dark,#1a0a00);
+}
+.share-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: .55rem .85rem;
+  border: 1px solid oklch(86% .015 30);
+  border-radius: 999px;
+  background: white;
+  color: var(--coffee-warm,#5c2d00);
+  font-size: .85rem;
+  font-weight: 700;
+}
+.share-btn-copy {
+  cursor: pointer;
+  font-family: var(--font-sans,'Noto Sans TC',sans-serif);
+}
+.related-articles h2 {
+  font-family: var(--font-serif,'Noto Serif TC',serif);
+  font-size: 1.2rem;
+  margin-bottom: .35rem;
+  color: var(--coffee-dark,#1a0a00);
+}
+.related-kicker {
+  margin-bottom: 1rem;
+  color: oklch(45% .02 30);
+  font-size: .9rem;
+}
+.related-card-title {
+  display: block;
+  margin-bottom: .35rem;
+  font-weight: 700;
+  color: var(--coffee-dark,#1a0a00);
+}
+.related-card p {
+  color: oklch(42% .02 30);
+  line-height: 1.65;
+  margin: 0;
+}
 
 /* 9. 麵包屑保留 */
 .breadcrumb, nav[aria-label="breadcrumb"] {
@@ -355,17 +478,6 @@ footer a{color:var(--coffee-light)}
   .related-grid { grid-template-columns: 1fr }
   .breadcrumb { padding: 0 16px }
 }
-
-.bnotes-cover{width:100%;max-height:420px;object-fit:cover;border-radius:.9rem;margin:2rem auto;display:block;box-shadow:0 4px 16px rgba(0,0,0,.12)}
-.key-box{background:linear-gradient(135deg,oklch(98% .025 50),oklch(96% .03 45));border:1px solid oklch(88% .06 45);border-left:4px solid var(--gold,#c8922a);border-radius:.75rem;padding:1.2em 1.5em;margin:1.5rem 0 2rem;line-height:2}
-.geo-box{background:oklch(97% .01 200);border:1px solid oklch(88% .03 200);border-left:4px solid oklch(60% .12 200);border-radius:.75rem;padding:1.2em 1.5em;margin:2rem 0}
-.geo-box p{margin-bottom:.75rem}
-.geo-box p:last-child{margin-bottom:0}
-.further-reading{background:var(--muted,oklch(95% .008 30));border-radius:.75rem;padding:1.2em 1.5em;margin:1.5rem 0}
-.further-reading strong{display:block;margin-bottom:.75rem;color:var(--coffee-dark,#1a0a00)}
-.further-reading ul{margin:0;padding-left:1.25rem}
-.further-reading li{margin-bottom:.4rem}
-.further-reading a{color:var(--coffee-mid,#8b4513);text-decoration:underline}
 </style>
 </head>
 <body>
@@ -382,7 +494,7 @@ footer a{color:var(--coffee-light)}
   <img class="article-hero-img" src="https://bnotescoffee.com/images/ai/morning-coffee-ritual-science-hero.jpg" alt="建立屬於你的晨間咖啡儀式：神經科學與禪意的交匯點" fetchpriority="high" loading="eager" decoding="async">
   <div class="article-hero-overlay"></div>
   <div class="article-hero-content" style="max-width:900px;width:100%;left:50%;transform:translateX(-50%)">
-    <div class="article-cat">🔬 沖泡科學</div>
+    <div class="article-cat">咖啡科學</div>
     <h1 class="article-h1">建立屬於你的晨間咖啡儀式：神經科學與禪意的交匯點</h1>
   </div>
 </div>
@@ -396,8 +508,8 @@ footer a{color:var(--coffee-light)}
 </div>
 
 <nav aria-label="breadcrumb" style="max-width:900px;margin:.75rem auto;padding:0 1.5rem;font-size:.8rem;color:var(--muted-fg)">
-  <a href="../">首頁</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
-  <a href="../#categories">沖泡科學</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
+  <a href="/">首頁</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
+  <a href="/#categories">咖啡知識</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
   <span style="color:var(--coffee-mid)">建立屬於你的晨間咖啡儀式：神經科學與禪意的交匯點</span>
 </nav>
 
@@ -409,14 +521,15 @@ footer a{color:var(--coffee-light)}
     你每天早上幾點喝第一杯咖啡？如果答案是「起床後立刻」，這篇文章可能會改變你多年的習慣。神經科學與睡眠醫學的研究共同指向一個結論：一杯咖啡喝對了時機，對認知效能的提升是最大化的；喝錯了，不但浪費了一杯好豆，還可能讓你整天更容易疲憊。而真正的晨間咖啡儀式，從來不只是「喝下去」，它是一套重新校準感官、設定大腦工作模式的晨間協定。
   </p>
 
-  <div class="key-box">
-  <strong>☕ 讀完這篇，你會知道：</strong><br>
-  · 早晨喝咖啡的最佳時機：皮質醇週期與咖啡因的相互作用<br>
-  · 為什麼起床後 90 分鐘再喝咖啡效果更好<br>
-  · 咖啡因代謝速度的個體差異（CYP1A2 基因型）<br>
-  · 空腹喝咖啡 vs. 飯後喝咖啡對腸胃的影響<br>
-  · 建立有意識的晨間咖啡儀式的心理效益
-</div>
+  <div class="module-conclusion">
+    <strong class="article-module-title">先把晨間咖啡想成喚醒身體與注意力的節奏</strong>
+    <p>如果你剛開始調整晨間咖啡，我會建議先不要追求完美儀式，而是先抓起床後 90 分鐘、光線、水分、磨豆與第一口咖啡這幾個可控制節點。</p>
+    <ul>
+      <li>你會知道為什麼起床立刻喝咖啡不一定最有效。</li>
+      <li>你會看懂皮質醇、咖啡因與感官儀式如何影響清晨專注。</li>
+      <li>你會得到入門到進階都能使用的晨間咖啡流程，並能依通勤與生活節奏調整。</li>
+    </ul>
+  </div>
 
   <h2>一、皮質醇（Cortisol）與咖啡因的生理競賽</h2>
 
@@ -431,11 +544,14 @@ footer a{color:var(--coffee-light)}
   </p>
 
   <div class="science-box">
-    <div class="sci-title">🔬 關鍵研究：何時喝咖啡才有效？</div>
+    <div class="sci-title">關鍵研究：何時喝咖啡才有效？</div>
     <p>神經科學家 Andrew Huberman（史丹佛大學神經生物學教授）在其廣受引用的播客系列與學術研究中指出，<strong>最佳的第一杯咖啡時機應為起床後 90–120 分鐘</strong>。這個時間點正好是皮質醇的清醒反應已下降，但人體自然喚醒機制仍在作用中的時窗——此時引入咖啡因，才能發揮最大化的腺苷阻斷效果，讓你的專注力維持更長的時間，且下午 2–3 點的疲憊感（午後低谷）也會相對較輕。</p>
   </div>
 
-<!-- 圖表待製：晨間皮質醇濃度與咖啡因最佳攝取時窗 雙Y軸折線圖 | B9 待排 -->
+  <div class="chart-placeholder">
+    <h4>晨間皮質醇濃度與咖啡因最佳攝取時窗</h4>
+    <p>可以把清晨想成兩條曲線：皮質醇在起床後快速上升，約 45 分鐘附近到高點；咖啡因的實際效益，則通常在皮質醇清醒反應開始回落後更明顯。對多數固定作息的人來說，起床後約 90–120 分鐘，是比較值得測試的第一杯咖啡時窗。</p>
+  </div>
 
   <h3>等待 90 分鐘的實際時間表</h3>
 
@@ -483,7 +599,10 @@ footer a{color:var(--coffee-light)}
     從實用角度來說，這意味著：<strong>晨間手沖的最大價值，不只在杯中的咖啡，而在過程本身對大腦狀態的重置</strong>。這也是為什麼許多台灣的都會工作者，即使辦公室提供了全自動咖啡機，仍然選擇每天早上花 5 分鐘手沖——他們直覺地感受到了這個儀式帶來的認知切換效果。
   </p>
 
-<!-- 圖表待製：晨間咖啡儀式多感官神經激活路徑圖 | B9 待排 -->
+  <div class="chart-placeholder">
+    <h4>晨間咖啡儀式的多感官路徑</h4>
+    <p>晨間咖啡的影響不是單一路徑：香氣連到嗅覺與記憶，磨豆聲提供注意力切換，熱水壺與杯子的觸感帶來身體安定感。當這些線索每天重複，大腦會更容易把「沖咖啡」辨識成進入清醒、專注與工作狀態的開關。</p>
+  </div>
 
   <h2>三、打造晨間咖啡角的 5 個核心要素</h2>
 
@@ -563,7 +682,10 @@ footer a{color:var(--coffee-light)}
     </tbody>
   </table>
 
-<!-- 圖表待製：完整晨間咖啡儀式時間規劃圖 90分鐘時間軸 | B9 待排 -->
+  <div class="chart-placeholder">
+    <h4>完整晨間咖啡儀式時間規劃</h4>
+    <p>你可以把 90 分鐘拆成幾個節點：起床後先補水與接觸光線，接著用輕度活動讓身體醒來；接近第一杯咖啡前，再進入磨豆、注水、悶蒸與品飲。這樣的順序，比單純把咖啡當成提神工具，更容易形成穩定的晨間節奏。</p>
+  </div>
 
   <h2>五、台灣都會情境：當晨間咖啡儀式遇上台灣生活節奏</h2>
 
@@ -576,7 +698,7 @@ footer a{color:var(--coffee-light)}
   </p>
 
   <div class="info-box">
-    <div class="info-title">🏙️ 都會版晨間儀式（總計 10–15 分鐘）</div>
+    <div class="info-title">都會版晨間儀式（總計 10–15 分鐘）</div>
     <ul>
       <li><strong>Hario Switch 浸泡手沖</strong>：前置浸泡 3 分鐘後開閥放流，幾乎不需要持續注意力，適合同時準備早餐的忙碌晨間</li>
       <li><strong>聰明濾杯（Clever Dripper）方案</strong>：投入粉水後可暫時離開，省去手沖的持續注水關注</li>
@@ -588,7 +710,7 @@ footer a{color:var(--coffee-light)}
   <h2>六、今天就能做的 5 個行動建議</h2>
 
   <div class="info-box">
-    <div class="info-title">✅ 從明天早晨開始</div>
+    <div class="info-title">從明天早晨開始</div>
     <ol>
       <li><strong>推遲第一杯咖啡 30 分鐘</strong>：如果你現在習慣起床立刻喝咖啡，先嘗試推遲 30 分鐘，觀察一週後下午的疲憊感是否有所改變</li>
       <li><strong>起床後先喝水、照光</strong>：在廚房放一杯前夜備好的常溫水，起床後先喝水再開窗（或開燈），建立「喚醒前驅儀式」</li>
@@ -598,6 +720,8 @@ footer a{color:var(--coffee-light)}
     </ol>
   </div>
 
+  <h2>結語</h2>
+
   <p>
     晨間咖啡儀式最美的地方，在於它是一個每天都有機會「重新開始」的小小儀式。無論昨天發生了什麼，當你今天早晨再次打開那罐豆子，聽見磨豆機的低鳴，聞見第一縷升起的煙霧般香氣，你都有機會讓這一天的開始，比昨天更有意識、更有品質。
   </p>
@@ -606,14 +730,28 @@ footer a{color:var(--coffee-light)}
     神經科學給了我們最佳的時機框架，手沖的藝術給了我們感官的媒介，而最終讓儀式成為習慣的，是你每天早晨對自己的那一份溫柔選擇。
   </p>
 
-  <p>
-    值得帶走的一個數字：<strong>90 分鐘</strong>。起床後先喝水、照光、讓皮質醇自然完成它的工作，再沖那杯咖啡——不只更提神，下午 2–3 點的疲憊感也會明顯減輕。這件事說出來，朋友幾乎都不相信，但試過的人幾乎都回不去了。
-  </p>
-
-  <div class="newsletter-cta">
-    <h3>☕ 訂閱 BNotes 電子報</h3>
-    <p>每週一篇精品咖啡深度解析直送信箱<br>從神經科學到台灣在地生活應用，與最認真的咖啡社群同行</p>
-    <a href="https://bnotescoffee.com/newsletter" class="cta-btn">立即訂閱，免費加入</a>
+  <div class="faq-section">
+    <h2>常見問題</h2>
+    <details class="faq-item">
+      <summary class="faq-question">起床後一定要等 90 分鐘才能喝咖啡嗎？</summary>
+      <div class="faq-answer">不一定。90–120 分鐘是一個值得測試的起點，不是絕對規定。如果你有固定通勤、低血糖感、運動安排或醫療建議，仍然要依自己的身體反應調整。</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">如果早上通勤很趕，晨間咖啡儀式還有用嗎？</summary>
+      <div class="faq-answer">有。儀式不一定要很長，重點是穩定、可重複、能讓注意力切換。即使只有 5–10 分鐘，補水、磨豆、聞香、第一口咖啡前不滑手機，仍然能建立清楚的晨間節奏。</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">晨間適合喝淺焙還是深焙？</summary>
+      <div class="faq-answer">如果你想要明亮感與清醒感，可以從水洗淺中焙開始；如果早晨需要安定、圓潤與飽足感，中焙到中深焙會更容易入口。真正的標準不是焙度，而是這杯咖啡是否符合你當天的狀態。</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">為什麼磨豆和注水會讓人比較專注？</summary>
+      <div class="faq-answer">磨豆聲、香氣、熱水壺重量與注水節奏，會同時提供聽覺、嗅覺、觸覺與視覺線索。當這些動作每天重複，大腦比較容易把它辨識成從休息轉向專注的切換信號。</div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-question">晚起或輪班的人也適用嗎？</summary>
+      <div class="faq-answer">適用，但要把「起床時間」當成基準，而不是看時鐘上的早上幾點。輪班者更需要留意咖啡因半衰期與睡眠時間，避免把第一杯咖啡的儀式感，變成影響下一段睡眠的負擔。</div>
+    </details>
   </div>
 
   <div class="references">
@@ -628,40 +766,36 @@ footer a{color:var(--coffee-light)}
     </ol>
   </div>
 
-  <div class="geo-box">
-  <p><strong>Q：起床後多久喝咖啡最好？</strong><br>
-  A：研究建議等待 90–120 分鐘。剛起床時皮質醇（壓力荷爾蒙）自然達到高峰，提供天然的清醒效果；這時喝咖啡等於「浪費」咖啡因，且容易增加咖啡因耐受性。等皮質醇開始下降（約 9–11 點），再補充咖啡因效果更顯著。當然，這只是最佳化建議，不適應日常生活時無需強求。</p>
-
-  <p><strong>Q：咖啡喝多少算「適量」？</strong><br>
-  A：FDA 建議健康成年人每天咖啡因攝取不超過 400mg（約 3–4 杯標準美式咖啡）。但個體差異很大——CYP1A2 基因決定代謝速度，快代謝者可能喝 5 杯都沒問題，慢代謝者 2 杯就影響睡眠。如果下午 2 點後喝咖啡會失眠，你很可能是慢代謝型。</p>
-</div>
-
-  <div class="further-reading">
-  <strong>📚 延伸閱讀</strong>
-  <ul>
-    <li><a href="/articles/coffee-reading-afternoon-ritual">下午閱讀咖啡儀式：不同時段的飲用情境設計</a></li>
-    <li><a href="/articles/cold-brew-complete-101">冷萃入門：晨間低咖啡因選擇的製作指南</a></li>
-    <li><a href="/articles/pour-over-guide">手沖完全指南：把晨間沖煮變成正念儀式</a></li>
-  </ul>
-</div>
 
   <div class="share-section">
-    <span class="share-label">📤 分享這篇文章</span>
+    <span class="share-label">分享這篇文章</span>
     <div class="share-btns">
       <a class="share-btn share-btn-line" href="#" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(document.title+' '+location.href));return false;" target="_blank" rel="noopener">LINE</a>
       <a class="share-btn share-btn-fb" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),'_blank','width=600,height=400');return false;">Facebook</a>
-      <button class="share-btn share-btn-copy" onclick="(function(b){navigator.clipboard.writeText(location.href).then(function(){b.textContent='✅ 已複製';setTimeout(function(){b.textContent='🔗 複製連結'},2000)})})(this)">🔗 複製連結</button>
+      <a class="share-btn share-btn-x" href="#" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=420');return false;">X</a>
+      <a class="share-btn share-btn-threads" href="#" onclick="window.open('https://www.threads.net/intent/post?text='+encodeURIComponent(document.title+' '+location.href),'_blank','width=600,height=420');return false;">Threads</a>
+      <button class="share-btn share-btn-copy" onclick="(function(b){navigator.clipboard.writeText(location.href).then(function(){b.textContent='已複製';setTimeout(function(){b.textContent='複製連結'},2000)})})(this)">複製連結</button>
     </div>
   </div>
-
 </article>
-<div class="cta-box" style="margin-top:3rem">
-    <h3>📬 喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
-    <p>每週日收到精選咖啡知識，與 2,400+ 咖啡愛好者一起深入咖啡世界。</p>
-    <form class="cta-form" onsubmit="return false">
-      <input class="cta-input" type="email" placeholder="your@email.com" required>
-      <button class="cta-btn">免費訂閱</button>
-    </form>
+
+  <div class="related-articles">
+    <h2 class="related-title">延伸閱讀</h2>
+    <p class="related-kicker">如果你想把晨間咖啡變成更完整的學習路徑，可以接著讀這三篇。</p>
+    <div class="related-grid">
+      <a class="related-card" href="/articles/home-coffee-corner">
+        <span class="related-card-title">如何打造自己的居家咖啡角</span>
+        <p>從空間、器具與動線建立每天都能持續的咖啡練習場。</p>
+      </a>
+      <a class="related-card" href="/articles/coffee-brew-ratio-guide">
+        <span class="related-card-title">粉水比怎麼抓</span>
+        <p>把晨間沖煮變成可重複調整的基礎公式。</p>
+      </a>
+      <a class="related-card" href="/articles/coffee-acidity-complete-science">
+        <span class="related-card-title">咖啡酸質完整科學</span>
+        <p>理解早晨常見的明亮、果酸與清爽感從哪裡來。</p>
+      </a>
+    </div>
   </div>
 </main>
 
@@ -728,7 +862,6 @@ footer a{color:var(--coffee-light)}
     }
 
     /* 組合 header */
-    var ogImg=document.querySelector('meta[property="og:image"]');var heroSrc=ogImg?ogImg.getAttribute('content'):'';
     var headerHtml='<header id="bnotes-unified-header" class="bnotes-header">';
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
     headerHtml+='<h2 class="bnotes-title">'+title+'</h2>';
@@ -737,7 +870,6 @@ footer a{color:var(--coffee-light)}
     headerHtml+='<span>✍️ BNotes 編輯部</span>';
     if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
     headerHtml+='</div><div class="bnotes-divider"></div></header>';
-    if(heroSrc){headerHtml+='<img class="bnotes-cover" src="'+heroSrc+'" alt="'+title+'" loading="eager" decoding="async">';}
 
     /* 隱藏舊 hero / title 區塊 */
     var oldHeroes=document.querySelectorAll(
@@ -810,51 +942,6 @@ footer a{color:var(--coffee-light)}
   })();
 })();
 </script>
-
-  <!-- GA4 Article Events -->
-  <script>
-  (function(){
-    // 1. Article scroll depth
-    var scrollFired = {};
-    window.addEventListener('scroll', function(){
-      var pct = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
-      [25,50,75,90,100].forEach(function(t){
-        if(pct >= t && !scrollFired[t]){
-          scrollFired[t] = true;
-          if(typeof gtag !== 'undefined'){
-            gtag('event','scroll_depth',{
-              'event_category':'article_engagement',
-              'event_label': t + '%',
-              'value': t
-            });
-          }
-        }
-      });
-    }, {passive:true});
-
-    // 2. Outbound / affiliate link tracking
-    document.querySelectorAll('a[href^="http"]').forEach(function(el){
-      el.addEventListener('click', function(){
-        if(typeof gtag !== 'undefined'){
-          gtag('event','outbound_click',{
-            'event_category':'affiliate',
-            'event_label': el.href
-          });
-        }
-      });
-    });
-
-    // 3. Time on page (meaningful read = 60s+)
-    var readTimer = setTimeout(function(){
-      if(typeof gtag !== 'undefined'){
-        gtag('event','meaningful_read',{
-          'event_category':'article_engagement',
-          'event_label': document.title
-        });
-      }
-    }, 60000);
-  })();
-  </script>
 <script>
 /* bnotes-ga4-affiliate */
 (function(){
