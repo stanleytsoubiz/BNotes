@@ -1,6 +1,6 @@
 # BNotes Brand Shell Audit
 
-掃描日期：2026-06-04T13:14:12.636Z
+掃描日期：2026-06-04T13:16:11.282Z
 掃描來源：https://bnotescoffee.com/sitemap.xml 對應 dist/articles
 
 ## MD 圓桌會議判斷

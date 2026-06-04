@@ -145,15 +145,6 @@ gm_approved_at: 2026-06-04T21:35:00+08:00
     'send_page_view': true
   });
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.newsletter-form, .cta-form').forEach(function(form) {
-      form.addEventListener('submit', function(e) {
-        gtag('event', 'newsletter_signup', {
-          'event_category': 'engagement',
-          'event_label': 'newsletter_subscribe',
-          'value': 1
-        });
-      });
-    });
     if (document.querySelector('.article-body')) {
       var tracked = false;
       window.addEventListener('scroll', function() {
@@ -295,13 +286,6 @@ footer a{color:var(--coffee-light)}
 .related-card:hover{box-shadow:0 3px 12px rgba(0,0,0,.09)}
 .related-card-cat{font-size:.72rem;color:var(--coffee-mid);font-weight:600;letter-spacing:.05em;margin-bottom:.4rem}
 .related-card-title{font-weight:600;color:var(--coffee-dark);line-height:1.4}
-
-.cta-box{background:linear-gradient(135deg,var(--coffee-dark),var(--coffee-warm));color:white;border-radius:var(--radius);padding:2rem;text-align:center;margin:2rem 0}
-.cta-box h3{font-family:var(--font-serif);font-size:1.25rem;margin-bottom:.75rem}
-.cta-box p{color:var(--coffee-light);font-size:.9rem;margin-bottom:1.25rem}
-.cta-form{display:flex;gap:.5rem;max-width:380px;margin:0 auto}
-.cta-input{flex:1;padding:.75rem 1rem;border-radius:9999px;border:none;font-size:.875rem}
-.cta-btn{padding:.75rem 1.25rem;background:var(--gold);color:white;border:none;border-radius:9999px;font-weight:700;cursor:pointer;font-size:.875rem;white-space:nowrap}
 
 .breadcrumb,nav[aria-label="breadcrumb"]{max-width:740px;margin:12px auto 0;padding:0 24px;font-size:.8rem;color:oklch(55% .02 30)}
 
