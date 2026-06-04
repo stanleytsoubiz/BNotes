@@ -1,6 +1,6 @@
 # BNotes Brand Shell Audit
 
-掃描日期：2026-06-04T13:59:09.800Z
+掃描日期：2026-06-04T14:11:15.631Z
 掃描來源：https://bnotescoffee.com/sitemap.xml 對應 dist/articles
 
 ## MD 圓桌會議判斷
@@ -10,10 +10,10 @@
 ## 摘要
 
 - sitemap 文章數：69
-- 完全通過本次品牌版型總檢：29
-- 需要修正文章：40
+- 完全通過本次品牌版型總檢：30
+- 需要修正文章：39
 - P0 品牌/信任阻擋：0
-- P1 版型一致性優先修正：121
+- P1 版型一致性優先修正：120
 - P2 白金化精修項目：73
 
 ## 逐篇缺口總覽
@@ -24,7 +24,6 @@
 - cold-brew-complete-101: P1｜延伸閱讀
 - colombia-mitaca-second-harvest: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、符號語氣
 - competition-recipe-homebrew-guide: P1｜區塊順序
-- espresso-ratio-science: P1｜導讀卡
 - ethiopia-natural-process-deep-dive: P1｜導讀卡
 - ethiopia-vs-colombia-natural-showdown: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、符號語氣
 - geisha-coffee-science-2026: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀、區塊順序
@@ -71,7 +70,6 @@
 - cold-brew-complete-101: 延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 4 篇
 - colombia-mitaca-second-harvest: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 0 字、線索 0 個；常見問題: 折疊式 FAQ 少於 5 題：目前 1；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失
 - competition-recipe-homebrew-guide: 區塊順序: 導讀卡應放在第一個 H2 之前
-- espresso-ratio-science: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 62 字、線索 7 個
 - ethiopia-natural-process-deep-dive: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 69 字、線索 7 個
 - ethiopia-vs-colombia-natural-showdown: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 0 字、線索 0 個；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: related-card:hover 樣式/元素缺失
 - geisha-coffee-science-2026: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失；區塊順序: 參考資料應放在 FAQ 之後

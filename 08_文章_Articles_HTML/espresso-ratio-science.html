@@ -73,18 +73,12 @@ img{max-width:100%;display:block}
 .toc-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
 .toc-list a{font-size:.825rem;color:var(--coffee-mid);transition:color .2s;padding:.25rem 0;border-left:2px solid transparent;padding-left:.75rem}
 .toc-list a:hover{color:var(--coffee-dark);border-left-color:var(--gold)}
-.cta-box{background:linear-gradient(135deg,var(--coffee-dark),var(--coffee-warm));color:white;border-radius:var(--radius);padding:2rem;text-align:center;margin-top:2rem}
-.cta-box h3{font-family:var(--font-serif);font-size:1.25rem;margin-bottom:.75rem}
-.cta-box p{color:var(--coffee-light);font-size:.9rem;margin-bottom:1.25rem}
-.cta-form{display:flex;gap:.5rem;max-width:380px;margin:0 auto}
-.cta-input{flex:1;padding:.75rem 1rem;border-radius:9999px;border:none;font-size:.875rem}
-.cta-btn{padding:.75rem 1.25rem;background:var(--gold);color:white;border:none;border-radius:9999px;font-weight:700;cursor:pointer;font-size:.875rem}
 footer{background:var(--coffee-dark);color:oklch(65% .02 30);padding:2rem 1.5rem;text-align:center;font-size:.85rem}
 footer a{color:var(--coffee-light)}
 </style>
-<link rel="canonical" href="https://bnotescoffee.com/articles/espresso-ratio-science.html">
+<link rel="canonical" href="https://bnotescoffee.com/articles/espresso-ratio-science">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta property="og:url" content="https://bnotescoffee.com/articles/espresso-ratio-science.html">
+<meta property="og:url" content="https://bnotescoffee.com/articles/espresso-ratio-science">
 <meta property="og:site_name" content="BNotes 焙學·原豆誌">
 <meta property="og:locale" content="zh_TW">
 <meta name="twitter:card" content="summary_large_image">
@@ -97,7 +91,7 @@ footer a{color:var(--coffee-light)}
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#1a0a00">
 <link rel="preconnect" href="https://images.unsplash.com">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"義式咖啡比例科學：Espresso 粉液比 1:2 的根據與調整方法","description":"從 TDS、萃取率、粉液比到 Ristretto 與 Lungo，建立 Espresso 1:2 比例的科學判斷，讓你用更穩定的方法調整每一杯義式咖啡。","url":"https://bnotescoffee.com/articles/espresso-ratio-science.html","datePublished":"2026-04-20T00:00:00+08:00","dateModified":"2026-05-17T18:00:00+08:00","inLanguage":"zh-TW","author":{"@type":"Organization","name":"BNotes 焙學·原豆誌","url":"https://bnotescoffee.com"},"publisher":{"@type":"Organization","name":"BNotes 焙學·原豆誌","url":"https://bnotescoffee.com","logo":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/bnotes-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bnotescoffee.com/articles/espresso-ratio-science.html"},"keywords":"Espresso 粉液比,義式咖啡比例,1:2 比例,TDS,萃取率,Ristretto,Lungo,義式萃取,咖啡萃取科學","image":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/ai/espresso-ratio-science-hero.jpg","width":1200,"height":630}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"義式咖啡比例科學：Espresso 粉液比 1:2 的根據與調整方法","description":"從 TDS、萃取率、粉液比到 Ristretto 與 Lungo，建立 Espresso 1:2 比例的科學判斷，讓你用更穩定的方法調整每一杯義式咖啡。","url":"https://bnotescoffee.com/articles/espresso-ratio-science","datePublished":"2026-04-20T00:00:00+08:00","dateModified":"2026-06-05T00:10:00+08:00","inLanguage":"zh-TW","author":{"@type":"Organization","name":"BNotes 焙學·原豆誌","url":"https://bnotescoffee.com"},"publisher":{"@type":"Organization","name":"BNotes 焙學·原豆誌","url":"https://bnotescoffee.com","logo":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/bnotes-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bnotescoffee.com/articles/espresso-ratio-science"},"keywords":"Espresso 粉液比,義式咖啡比例,1:2 比例,TDS,萃取率,Ristretto,Lungo,義式萃取,咖啡萃取科學","image":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/ai/espresso-ratio-science-hero.jpg","width":1200,"height":630}}</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -119,7 +113,7 @@ footer a{color:var(--coffee-light)}
       "@type": "ListItem",
       "position": 3,
       "name": "義式咖啡比例科學：Espresso 粉液比 1:2 的根據與調整方法",
-      "item": "https://bnotescoffee.com/articles/espresso-ratio-science.html"
+      "item": "https://bnotescoffee.com/articles/espresso-ratio-science"
     }
   ]
 }
@@ -136,15 +130,6 @@ footer a{color:var(--coffee-light)}
     'send_page_view': true
   });
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.newsletter-form, .cta-form').forEach(function(form) {
-      form.addEventListener('submit', function(e) {
-        gtag('event', 'newsletter_signup', {
-          'event_category': 'engagement',
-          'event_label': 'newsletter_subscribe',
-          'value': 1
-        });
-      });
-    });
     if (document.querySelector('.article-body')) {
       var tracked = false;
       window.addEventListener('scroll', function() {
@@ -164,7 +149,7 @@ footer a{color:var(--coffee-light)}
   });
 </script>
   <meta property="article:published_time" content="2026-04-20T00:00:00+08:00" />
-  <meta property="article:modified_time" content="2026-05-17T18:00:00+08:00" />
+  <meta property="article:modified_time" content="2026-06-05T00:10:00+08:00" />
   <meta property="article:author" content="https://bnotescoffee.com" />
   <meta property="article:section" content="義式萃取科學" />
   <meta property="article:tag" content="精品咖啡" />
@@ -446,19 +431,12 @@ footer a{color:var(--coffee-light)}
   <p>我會把 <strong>1:2 粉液比</strong>當成一張地圖：它能幫你快速找到穩定起點，也能提醒你什麼時候該往更濃、更甜，或更清爽的方向微調。這篇會用咖啡師現場能操作的方式，帶你把 TDS、萃取率、Ristretto、Lungo 這些看似艱深的詞，轉成你下一杯 Espresso 可以直接使用的判斷。</p>
 
   <div class="module-conclusion module-guide">
-    <span class="article-module-title">先把 1:2 讀懂</span>
-    <p>1:2 不是義式咖啡的唯一答案，而是大多數豆子在 9 bar 左右壓力、25 到 35 秒萃取窗口中，最容易取得平衡的起點。</p>
+    <strong class="article-module-title">先用三個問題讀懂義式粉液比</strong>
+    <p>1:2 不是義式咖啡的唯一答案，而是大多數豆子在 9 bar 左右壓力、25 到 35 秒萃取窗口中，最容易取得平衡的起點。我會建議你先把它當成基準線：先知道標準比例喝起來如何，再決定要往更濃縮、更甜，或更清爽的方向移動。</p>
     <ul>
-      <li><strong>想要穩定：</strong>先用 18g 粉、36g 液建立基準，再調研磨與時間。</li>
-      <li><strong>想要更濃縮甜感：</strong>可往 1:1.5 到 1:1.8 嘗試，但要注意酸味是否變短、苦味是否變乾。</li>
-      <li><strong>想要更清楚果香：</strong>可往 1:2.3 到 1:2.8 延伸，尤其是淺焙與水洗豆，但要避免杯感變薄。</li>
-    </ul>
-  <p>接下來，我們會把這件事拆成幾個可判斷的問題，讓你不只是記住答案，也知道下一杯咖啡該怎麼觀察。</p>
-    <ul>
-      <li>為什麼 1:2 是很多咖啡師的起點，而不是固定答案。</li>
-      <li>如何用 TDS 與萃取率理解「濃」和「萃得夠不夠」的差別。</li>
-      <li>Ristretto、標準 Espresso、Lungo 在風味上各自想解決什麼問題。</li>
-      <li>如何依照烘焙度、豆子風格與喝法，設定自己的第一組比例。</li>
+      <li>你會知道為什麼 1:2 是很多咖啡師的起點，而不是固定答案。</li>
+      <li>你會分清楚 TDS 的「濃度」與萃取率的「萃取完整度」。</li>
+      <li>你會學會依照烘焙度、豆子風格與喝法，設定自己的第一組比例。</li>
     </ul>
   </div>
 
@@ -568,21 +546,13 @@ footer a{color:var(--coffee-light)}
   <div class="related-articles">
     <h3 class="related-title">延伸閱讀</h3>
     <div class="related-grid">
-      <a class="related-card" href="/articles/espresso-parameters.html"><span class="related-kicker">下一步調參數</span><span class="related-card-title">義式咖啡萃取參數調整指南：壓力、溫度、時間</span></a>
-      <a class="related-card" href="/articles/milk-steaming-science.html"><span class="related-kicker">奶咖表現</span><span class="related-card-title">奶泡科學：為什麼蒸奶會影響拿鐵甜感與口感</span></a>
-      <a class="related-card" href="/articles/grinder-guide-2026.html"><span class="related-kicker">研磨基礎</span><span class="related-card-title">2026 年度咖啡磨豆機完整評測與選購指南</span></a>
+      <a class="related-card" href="/articles/espresso-parameters"><span class="related-kicker">下一步調參數</span><span class="related-card-title">義式咖啡萃取參數調整指南：壓力、溫度、時間</span></a>
+      <a class="related-card" href="/articles/milk-steaming-science"><span class="related-kicker">奶咖表現</span><span class="related-card-title">奶泡科學：為什麼蒸奶會影響拿鐵甜感與口感</span></a>
+      <a class="related-card" href="/articles/grinder-guide-2026"><span class="related-kicker">研磨基礎</span><span class="related-card-title">2026 年度咖啡磨豆機完整評測與選購指南</span></a>
     </div>
   </div>
 </article>
 
-  <div class="cta-box" style="margin-top:3rem">
-    <h3>📬 喜歡這篇文章？訂閱 BNotes 週日電子報</h3>
-    <p>每週日收到精選咖啡知識，與 2,400+ 咖啡愛好者一起深入咖啡世界。</p>
-    <form class="cta-form" onsubmit="return false">
-      <input class="cta-input" type="email" placeholder="your@email.com" required>
-      <button class="cta-btn">免費訂閱</button>
-    </form>
-  </div>
 </main>
 
 <footer>
@@ -739,25 +709,6 @@ footer a{color:var(--coffee-light)}
       item.classList.toggle('open');
       button.setAttribute('aria-expanded',item.classList.contains('open')?'true':'false');
     });
-  });
-})();
-</script>
-<script>
-/* bnotes-ga4-affiliate */
-(function(){
-  if(typeof gtag!=='function')return;
-  document.addEventListener('click',function(e){
-    var el=e.target.closest('a');
-    if(!el)return;
-    var href=el.getAttribute('href')||'';
-    if(href.startsWith('/re/')){
-      gtag('event','affiliate_click',{
-        'event_category':'monetization',
-        'affiliate_product':href.replace('/re/',''),
-        'link_text':(el.textContent||'').trim().substring(0,100),
-        'page_title':document.title
-      });
-    }
   });
 })();
 </script>
