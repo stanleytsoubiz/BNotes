@@ -15,6 +15,10 @@
 <noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"></noscript></noscript>
 <style>
+.nav-logo b{color:var(--gold,#c8922a)}
+
+.nav-sub{font-family:var(--font-sans,'Noto Sans TC',-apple-system,sans-serif);font-size:.65rem;color:oklch(50% .02 30);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:oklch(98% .005 30);--fg:oklch(20% .02 30);--primary:oklch(45% .1 30);
@@ -31,9 +35,10 @@ a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 1.5rem}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:.75rem}
 .nav-logo{font-family:var(--font-serif,'Noto Serif TC',Georgia,serif);font-size:1.15rem;font-weight:900;color:var(--coffee-dark,#1a0a00);letter-spacing:.02em;text-decoration:none}
-.nav-logo b{color:var(--gold,#c8922a)}
-.nav-sub{font-family:var(--font-sans,'Noto Sans TC',-apple-system,sans-serif);font-size:.65rem;color:oklch(50% .02 30);letter-spacing:.12em;text-transform:uppercase;display:block;margin-top:.1rem}
+.nav-name{font-family:var(--font-serif);font-weight:700;font-size:1rem;color:var(--coffee-dark);line-height:1.2}
+.nav-en{font-size:.6rem;letter-spacing:.3em;color:var(--coffee-mid)}
 .nav-back{font-size:.875rem;color:var(--coffee-mid);font-weight:500;display:flex;align-items:center;gap:.375rem}
 .nav-back:hover{color:var(--coffee-dark)}
 .article-hero{position:relative;height:min(480px,55vw);overflow:hidden;background:var(--coffee-dark)}
@@ -67,22 +72,22 @@ img{max-width:100%;display:block}
 footer{background:var(--coffee-dark);color:oklch(65% .02 30);padding:2rem 1.5rem;text-align:center;font-size:.85rem}
 footer a{color:var(--coffee-light)}
 </style>
-<link rel="canonical" href="https://bnotescoffee.com/articles/wbrc-2026-roasting-analysis">
+<link rel="canonical" href="https://bnotescoffee.com/articles/wbrc-2026-roasting-analysis.html">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta property="og:url" content="https://bnotescoffee.com/articles/wbrc-2026-roasting-analysis">
+<meta property="og:url" content="https://bnotescoffee.com/articles/wbrc-2026-roasting-analysis.html">
 <meta property="og:site_name" content="BNotes 焙學·原豆誌">
 <meta property="og:locale" content="zh_TW">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="WBrC 2026 布魯塞爾賽前觀察：如何讀懂世界級烘焙曲線與 RoR 邏輯 | BNotes 焙學·原豆誌">
 <meta name="twitter:description" content="WBrC 2026 將於 6 月在比利時布魯塞爾登場。這篇從賽制、烘焙曲線、RoR 與家用判斷框架，帶你讀懂世界級烘豆思維。">
 <meta name="twitter:image" content="https://bnotescoffee.com/images/ai/wbrc-2026-roasting-analysis-hero.jpg">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="icon" type="image/x-icon" href="../favicon.ico">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="manifest" href="../manifest.json">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#1a0a00">
 <link rel="preconnect" href="https://images.unsplash.com">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "WBrC 2026 布魯塞爾賽前觀察：如何讀懂世界級烘焙曲線與 RoR 邏輯", "description": "WBrC 2026 將於 6 月在比利時布魯塞爾登場。這篇從賽制、烘焙曲線、RoR 與家用判斷框架，帶你讀懂世界級烘豆思維。", "url": "https://bnotescoffee.com/articles/wbrc-2026-roasting-analysis", "datePublished": "2026-04-09T00:00:00+08:00", "dateModified": "2026-04-09T00:00:00+08:00", "inLanguage": "zh-TW", "author": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com"}, "publisher": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com", "logo": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/bnotes-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bnotescoffee.com/articles/wbrc-2026-roasting-analysis"}, "keywords": "精品咖啡,咖啡知識,台灣咖啡", "image": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/ai/wbrc-2026-roasting-analysis-hero.jpg", "width": 1200, "height": 630}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "WBrC 2026 布魯塞爾賽前觀察：如何讀懂世界級烘焙曲線與 RoR 邏輯", "description": "WBrC 2026 將於 6 月在比利時布魯塞爾登場。這篇從賽制、烘焙曲線、RoR 與家用判斷框架，帶你讀懂世界級烘豆思維。", "url": "https://bnotescoffee.com/articles/wbrc-2026-roasting-analysis.html", "datePublished": "2026-04-09T00:00:00+08:00", "dateModified": "2026-06-04T20:55:00+08:00", "inLanguage": "zh-TW", "author": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com"}, "publisher": {"@type": "Organization", "name": "BNotes 焙學·原豆誌", "url": "https://bnotescoffee.com", "logo": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/bnotes-logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bnotescoffee.com/articles/wbrc-2026-roasting-analysis.html"}, "keywords": "精品咖啡,咖啡知識,台灣咖啡", "image": {"@type": "ImageObject", "url": "https://bnotescoffee.com/images/ai/wbrc-2026-roasting-analysis-hero.jpg", "width": 1200, "height": 630}}</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -104,7 +109,7 @@ footer a{color:var(--coffee-light)}
       "@type": "ListItem",
       "position": 3,
       "name": "WBrC 2026 布魯塞爾賽前觀察：如何讀懂世界級烘焙曲線與 RoR 邏輯",
-      "item": "https://bnotescoffee.com/articles/wbrc-2026-roasting-analysis"
+      "item": "https://bnotescoffee.com/articles/wbrc-2026-roasting-analysis.html"
     }
   ]
 }
@@ -149,7 +154,7 @@ footer a{color:var(--coffee-light)}
   });
 </script>
   <meta property="article:published_time" content="2026-04-09T00:00:00+08:00" />
-  <meta property="article:modified_time" content="2026-04-09T00:00:00+08:00" />
+  <meta property="article:modified_time" content="2026-06-04T20:55:00+08:00" />
   <meta property="article:author" content="https://bnotescoffee.com" />
   <meta property="article:section" content="烘焙科學" />
   <meta property="article:tag" content="精品咖啡" />
@@ -352,17 +357,6 @@ footer a{color:var(--coffee-light)}
   .related-grid { grid-template-columns: 1fr }
   .breadcrumb { padding: 0 16px }
 }
-
-.bnotes-cover{width:100%;max-height:420px;object-fit:cover;border-radius:.9rem;margin:2rem auto;display:block;box-shadow:0 4px 16px rgba(0,0,0,.12)}
-.key-box{background:linear-gradient(135deg,oklch(98% .025 50),oklch(96% .03 45));border:1px solid oklch(88% .06 45);border-left:4px solid var(--gold,#c8922a);border-radius:.75rem;padding:1.2em 1.5em;margin:1.5rem 0 2rem;line-height:2}
-.geo-box{background:oklch(97% .01 200);border:1px solid oklch(88% .03 200);border-left:4px solid oklch(60% .12 200);border-radius:.75rem;padding:1.2em 1.5em;margin:2rem 0}
-.geo-box p{margin-bottom:.75rem}
-.geo-box p:last-child{margin-bottom:0}
-.further-reading{background:var(--muted,oklch(95% .008 30));border-radius:.75rem;padding:1.2em 1.5em;margin:1.5rem 0}
-.further-reading strong{display:block;margin-bottom:.75rem;color:var(--coffee-dark,#1a0a00)}
-.further-reading ul{margin:0;padding-left:1.25rem}
-.further-reading li{margin-bottom:.4rem}
-.further-reading a{color:var(--coffee-mid,#8b4513);text-decoration:underline}
 .article-module-title{display:block;margin-bottom:.55em;color:var(--coffee-dark,#1a0a00);font-weight:700}
 .module-conclusion,.module-quick{border-radius:.75rem;padding:1.2em 1.4em;margin:1.8em 0;color:var(--fg,oklch(20% .02 30))}
 .module-conclusion{background:linear-gradient(135deg,oklch(97% .02 45),oklch(95% .03 50));border:1px solid oklch(88% .05 45);border-left:4px solid var(--gold,#c8922a)}
@@ -436,14 +430,16 @@ footer a{color:var(--coffee-light)}
 </div>
 
 <nav aria-label="breadcrumb" style="max-width:900px;margin:.75rem auto;padding:0 1.5rem;font-size:.8rem;color:var(--muted-fg)">
-  <a href="../">首頁</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
-  <a href="../#categories">烘焙科學</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
+  <a href="/">首頁</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
+  <a href="/#categories">烘焙科學</a> <span style="margin:0 .5rem;color:var(--border)">›</span>
   <span style="color:var(--coffee-mid)">WBrC 2026 布魯塞爾賽前觀察：如何讀懂世界級烘焙曲線與 RoR 邏輯</span>
 </nav>
 
 <main class="article-wrap">
 
 <article class="article-body">
+    
+<p><strong>快速答案：</strong>如果你搜尋的是「WBrC 烘豆」或「世界烘豆賽」，我會建議先釐清名詞：WBrC 通常指 World Brewers Cup，烘豆賽官方名稱是 WCRC。世界賽烘焙曲線不適合直接照抄，因為設備、生豆、批量與杯測目標都不同；更值得學的是判斷邏輯：RoR 是否穩定、梅納反應時間是否支撐甜感、排豆點是否和風味目標一致，最後一定要用杯測結果驗證。</p>
 
 <p>2026 年的 Brussels World Coffee Championships 將於 6 月 25–27 日在比利時布魯塞爾舉行，現場包含 World Brewers Cup、World Coffee Roasting Championship 與 World Coffee in Good Spirits Championship。嚴格來說，WBrC 通常指 World Brewers Cup，烘豆賽事則是 WCRC；但因為許多讀者會用「世界烘豆賽 / WBrC 烘豆」搜尋，這篇會先把名詞釐清，再帶你讀懂世界級烘焙曲線。</p>
 
@@ -514,7 +510,7 @@ footer a{color:var(--coffee-light)}
 <div class="chart-block">
   <div class="chart-icon"></div>
   <div class="chart-label">概念圖一：標準烘焙曲線與關鍵節點</div>
-  <p>建議製作時間–溫度折線圖，X 軸為烘焙時間（0–12 分鐘），Y 軸為豆心溫度（°C，100–230°C）。在曲線上標記五個關鍵節點：投豆（0'）、回溫點（1'30"）、黃化開始（4'30"）、第一爆（8'30"）、排豆點（10'30"）。同時用虛線標示升溫速率（RoR，右軸），呈現 RoR 從投豆後高峰（約 15°C/min）逐漸下降至排豆前（約 3–4°C/min）的趨勢。</p>
+  <p>讀圖時可以把 X 軸想成烘焙時間、Y 軸想成豆溫；真正重要的不是曲線漂不漂亮，而是投豆、回溫、黃化、一爆與排豆是否彼此連貫。RoR 則像右側的診斷線，幫助你觀察熱量是否穩定地往風味目標前進。</p>
 </div>
 
 <h2>三、世界級曲線的核心特點：漸進降速哲學</h2>
@@ -646,7 +642,6 @@ footer a{color:var(--coffee-light)}
     <a class="related-card" href="/authority/"><span class="related-kicker">咖啡知識地圖</span><span class="related-card-title">回到 BNotes 咖啡權威入口：從賽事、烘焙到居家沖煮的學習路徑</span></a>
   </div>
 </div>
-
 </article>
 </main>
 
@@ -713,7 +708,6 @@ footer a{color:var(--coffee-light)}
     }
 
     /* 組合 header */
-    var ogImg=document.querySelector('meta[property="og:image"]');var heroSrc=ogImg?ogImg.getAttribute('content'):'';
     var headerHtml='<header id="bnotes-unified-header" class="bnotes-header">';
     if(eyebrow) headerHtml+='<div class="bnotes-eyebrow">'+eyebrow+'</div>';
     headerHtml+='<h2 class="bnotes-title">'+title+'</h2>';
@@ -722,7 +716,6 @@ footer a{color:var(--coffee-light)}
     headerHtml+='<span>✍️ BNotes 編輯部</span>';
     if(rt)      headerHtml+='<span>⏱ '+rt+'</span>';
     headerHtml+='</div><div class="bnotes-divider"></div></header>';
-    if(heroSrc){headerHtml+='<img class="bnotes-cover" src="'+heroSrc+'" alt="'+title+'" loading="eager" decoding="async">';}
 
     /* 隱藏舊 hero / title 區塊 */
     var oldHeroes=document.querySelectorAll(
@@ -795,51 +788,6 @@ footer a{color:var(--coffee-light)}
   })();
 })();
 </script>
-
-  <!-- GA4 Article Events -->
-  <script>
-  (function(){
-    // 1. Article scroll depth
-    var scrollFired = {};
-    window.addEventListener('scroll', function(){
-      var pct = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
-      [25,50,75,90,100].forEach(function(t){
-        if(pct >= t && !scrollFired[t]){
-          scrollFired[t] = true;
-          if(typeof gtag !== 'undefined'){
-            gtag('event','scroll_depth',{
-              'event_category':'article_engagement',
-              'event_label': t + '%',
-              'value': t
-            });
-          }
-        }
-      });
-    }, {passive:true});
-
-    // 2. Outbound / affiliate link tracking
-    document.querySelectorAll('a[href^="http"]').forEach(function(el){
-      el.addEventListener('click', function(){
-        if(typeof gtag !== 'undefined'){
-          gtag('event','outbound_click',{
-            'event_category':'affiliate',
-            'event_label': el.href
-          });
-        }
-      });
-    });
-
-    // 3. Time on page (meaningful read = 60s+)
-    var readTimer = setTimeout(function(){
-      if(typeof gtag !== 'undefined'){
-        gtag('event','meaningful_read',{
-          'event_category':'article_engagement',
-          'event_label': document.title
-        });
-      }
-    }, 60000);
-  })();
-  </script>
 <script>
 /* bnotes-ga4-affiliate */
 (function(){
