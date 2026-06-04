@@ -1,5 +1,6 @@
 /favicon.ico  /favicon.svg  301
 /assets/*     /assets/:splat  200
+/authority/   /authority/index.html  200
 
 # Affiliate Redirects
 # ── Hand-Drip ──────────────────────────────────────────────────────────────
