@@ -1,6 +1,6 @@
 # BNotes Brand Shell Audit
 
-掃描日期：2026-06-04T13:52:44.060Z
+掃描日期：2026-06-04T13:59:09.800Z
 掃描來源：https://bnotescoffee.com/sitemap.xml 對應 dist/articles
 
 ## MD 圓桌會議判斷
@@ -10,11 +10,11 @@
 ## 摘要
 
 - sitemap 文章數：69
-- 完全通過本次品牌版型總檢：28
-- 需要修正文章：41
+- 完全通過本次品牌版型總檢：29
+- 需要修正文章：40
 - P0 品牌/信任阻擋：0
-- P1 版型一致性優先修正：122
-- P2 白金化精修項目：74
+- P1 版型一致性優先修正：121
+- P2 白金化精修項目：73
 
 ## 逐篇缺口總覽
 
@@ -38,7 +38,6 @@
 - milk-alternatives-science-2026: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀、區塊順序、符號語氣
 - milk-steaming-science: P1｜導讀卡
 - plant-milk-barista-complete-guide: P2/P1｜導讀卡、常見問題、參考資料、區塊順序、符號語氣
-- pour-over-guide: P1/P2｜導讀卡、符號語氣
 - pour-over-over-extraction-guide: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀
 - pour-over-pouring-control-guide: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀
 - pour-over-under-extraction-guide: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀
@@ -86,7 +85,6 @@
 - milk-alternatives-science-2026: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
 - milk-steaming-science: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 63 字、線索 7 個
 - plant-milk-barista-complete-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗
-- pour-over-guide: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 10 字、判斷段 77 字、線索 3 個
 - pour-over-over-extraction-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
 - pour-over-pouring-control-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
 - pour-over-under-extraction-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
@@ -122,7 +120,6 @@
 - light-roast-beginners-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - milk-alternatives-science-2026: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - plant-milk-barista-complete-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
-- pour-over-guide: 符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - pour-over-over-extraction-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準
 - pour-over-pouring-control-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準
 - pour-over-under-extraction-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準
