@@ -3,6 +3,7 @@ Allow: /
 
 # Sitemap 宣告（讓所有搜尋引擎自動發現）
 Sitemap: https://bnotescoffee.com/sitemap.xml
+LLM-Content: https://bnotescoffee.com/llms.txt
 
 # 保護草稿與設定目錄（如有）
 Disallow: /drafts/

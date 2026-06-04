@@ -6,3 +6,4 @@ Disallow: /admin/
 Disallow: /api/
 
 Sitemap: https://bnotescoffee.com/sitemap.xml
+LLM-Content: https://bnotescoffee.com/llms.txt
