@@ -10,9 +10,9 @@
 <meta property="og:description" content="咖啡粉水比不是萬能配方，而是濃度基準。從 1:15、1:16 到 1:17，理解太濃、太淡、酸薄與苦澀時該先調比例、研磨、水溫還是萃取時間。">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://bnotescoffee.com/images/ai/coffee-brew-ratio-guide-hero.jpg">
-<link rel="canonical" href="https://bnotescoffee.com/articles/coffee-brew-ratio-guide.html">
+<link rel="canonical" href="https://bnotescoffee.com/articles/coffee-brew-ratio-guide">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta property="og:url" content="https://bnotescoffee.com/articles/coffee-brew-ratio-guide.html">
+<meta property="og:url" content="https://bnotescoffee.com/articles/coffee-brew-ratio-guide">
 <meta property="og:site_name" content="BNotes 焙學·原豆誌">
 <meta property="og:locale" content="zh_TW">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,7 +20,7 @@
 <meta name="twitter:description" content="咖啡粉水比不是萬能配方，而是濃度基準。從 1:15、1:16 到 1:17，理解太濃、太淡、酸薄與苦澀時該先調比例、研磨、水溫還是萃取時間。">
 <meta name="twitter:image" content="https://bnotescoffee.com/images/ai/coffee-brew-ratio-guide-hero.jpg">
 <meta property="article:published_time" content="2026-06-01T00:10:00+08:00">
-<meta property="article:modified_time" content="2026-06-01T00:25:00+08:00">
+<meta property="article:modified_time" content="2026-06-04T22:45:00+08:00">
 <meta property="article:author" content="https://bnotescoffee.com">
 <meta property="article:section" content="沖煮科學">
 <meta property="article:tag" content="咖啡粉水比">
@@ -46,13 +46,18 @@ main{max-width:740px;margin:0 auto;padding:44px 24px 80px}
 .article-body table{display:block;width:100%;max-width:100%;overflow-x:auto;border-collapse:collapse;margin:1.5rem 0;font-size:.92rem;box-shadow:0 1px 4px rgba(0,0,0,.07)}
 .article-body th{background:var(--coffee-warm);color:#fff;text-align:left;padding:.7rem}
 .article-body td{border-bottom:1px solid var(--border);padding:.7rem;vertical-align:top}
-.module-conclusion{border-left:4px solid var(--gold);background:oklch(97% .02 45);border-radius:.75rem;padding:1.1rem 1.25rem;margin:1.7rem 0}
+.module-conclusion{border-left:4px solid var(--gold);background:oklch(97% .02 45);border-radius:.75rem;padding:1.2rem 1.4rem;margin:1.8rem 0}
 .article-module-title{display:block;font-family:var(--font-serif);font-size:1.05rem;font-weight:900;color:var(--coffee-dark);margin-bottom:.65rem}
+.module-conclusion p{margin-bottom:.75rem;line-height:1.85}
+.module-conclusion ul{margin:.75rem 0 0 1.25rem}
+.module-conclusion li{margin-bottom:.35rem;line-height:1.7}
 .faq-section{border-top:1px solid var(--border);margin-top:2.3rem;padding-top:1.25rem}
+.faq-section h2{border-bottom:none;margin-bottom:1rem}
 .faq-item{border:1px solid var(--border);border-radius:.65rem;margin-bottom:.7rem;background:white;overflow:hidden}
 .faq-question{padding:.9rem 1rem;font-weight:800;color:var(--coffee-dark);cursor:pointer}
-.faq-answer{padding:0 1rem 1rem;color:oklch(30% .02 30)}
-.references{font-size:.86rem;line-height:1.6;color:oklch(43% .02 30);border-top:1px dashed var(--border);margin-top:2.5rem;padding-top:1rem}
+.faq-answer{display:none;padding:0 1rem 1rem;color:oklch(30% .02 30)}
+.faq-item[open] .faq-answer{display:block}
+.references{font-size:.82rem;line-height:1.6;color:oklch(43% .02 30);border-top:1px dashed var(--border);margin-top:2.5rem;padding-top:1rem}
 .references li{overflow-wrap:anywhere}
 .references h3,.share-section h3,.related-articles h3{font-family:var(--font-serif);color:var(--coffee-dark)}
 .share-section{border-top:1px solid var(--border);margin-top:2.4rem;padding-top:1.2rem;display:flex;gap:.75rem;align-items:center;flex-wrap:wrap}
@@ -68,7 +73,8 @@ main{max-width:740px;margin:0 auto;padding:44px 24px 80px}
 .share-btn-copy{background:#8b4513}
 .related-articles{border-top:1px solid var(--border);padding-top:1.3rem;margin-top:2.3rem}
 .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.75rem}
-.related-card{display:block;border:1px solid #e8d5b0;border-radius:.65rem;background:#fff;padding:.9rem}
+.related-card{display:block;border:1px solid #e8d5b0;border-radius:.65rem;background:#fff;padding:.9rem;transition:box-shadow .15s,transform .15s,border-color .15s}
+.related-card:hover{transform:translateY(-2px);box-shadow:0 3px 12px rgba(0,0,0,.09);border-color:var(--gold)}
 .related-kicker{display:block;font-size:.72rem;font-weight:900;color:var(--gold);margin-bottom:.35rem}
 .related-card-title{font-size:.92rem;font-weight:800;color:var(--coffee-dark);line-height:1.45}
 #bnotes-v3{display:block}
@@ -76,9 +82,9 @@ main{max-width:740px;margin:0 auto;padding:44px 24px 80px}
 <style id="bnotes-v3">
 .article-body,.article-content{max-width:740px;margin:0 auto;font-family:var(--font-sans,'Noto Sans TC',sans-serif);font-size:1.05rem;line-height:1.85;color:oklch(22% .02 30)}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"咖啡粉水比怎麼抓？從 1:15 到 1:17 的風味差異與調整表","description":"咖啡粉水比不是萬能配方，而是濃度基準。從 1:15、1:16 到 1:17，理解太濃、太淡、酸薄與苦澀時該先調比例、研磨、水溫還是萃取時間。","url":"https://bnotescoffee.com/articles/coffee-brew-ratio-guide.html","datePublished":"2026-06-01T00:10:00+08:00","dateModified":"2026-06-01T00:25:00+08:00","inLanguage":"zh-TW","author":{"@type":"Organization","name":"BNotes 焙學·原豆誌","url":"https://bnotescoffee.com"},"publisher":{"@type":"Organization","name":"BNotes 焙學·原豆誌","url":"https://bnotescoffee.com","logo":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/bnotes-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bnotescoffee.com/articles/coffee-brew-ratio-guide.html"},"keywords":"咖啡粉水比,手沖粉水比,1:15,1:16,1:17,TDS,咖啡萃取率","citation":["Specialty Coffee Association. Certified Home Brewer Program.","Specialty Coffee Association. Certified Home Brewer Program Requirements.","Specialty Coffee Association. Towards a New Brewing Chart.","UC Davis Coffee Center. UC Davis Coffee Center Contributes Research to New Brewing Control Chart.","UC Davis Coffee Center. Publications."]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"咖啡粉水比怎麼抓？從 1:15 到 1:17 的風味差異與調整表","description":"咖啡粉水比不是萬能配方，而是濃度基準。從 1:15、1:16 到 1:17，理解太濃、太淡、酸薄與苦澀時該先調比例、研磨、水溫還是萃取時間。","url":"https://bnotescoffee.com/articles/coffee-brew-ratio-guide","datePublished":"2026-06-01T00:10:00+08:00","dateModified":"2026-06-04T22:45:00+08:00","inLanguage":"zh-TW","author":{"@type":"Organization","name":"BNotes 焙學·原豆誌","url":"https://bnotescoffee.com"},"publisher":{"@type":"Organization","name":"BNotes 焙學·原豆誌","url":"https://bnotescoffee.com","logo":{"@type":"ImageObject","url":"https://bnotescoffee.com/images/bnotes-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bnotescoffee.com/articles/coffee-brew-ratio-guide"},"keywords":"咖啡粉水比,手沖粉水比,1:15,1:16,1:17,TDS,咖啡萃取率","citation":["Specialty Coffee Association. Certified Home Brewer Program.","Specialty Coffee Association. Certified Home Brewer Program Requirements.","Specialty Coffee Association. Towards a New Brewing Chart.","UC Davis Coffee Center. UC Davis Coffee Center Contributes Research to New Brewing Control Chart.","UC Davis Coffee Center. Publications."]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"咖啡粉水比 1:15、1:16、1:17 哪個最好？","acceptedAnswer":{"@type":"Answer","text":"沒有固定最好。1:15 通常較濃，1:16 常見且平衡，1:17 較清爽；真正要看豆子、烘焙度、研磨、水溫和你想要的杯感。"}},{"@type":"Question","name":"咖啡太酸可以直接把粉水比調濃嗎？","acceptedAnswer":{"@type":"Answer","text":"不一定。如果只是太淡，可以調濃；但如果酸尖、口感薄、尾韻短，通常要先檢查萃取不足。"}},{"@type":"Question","name":"粉水比是看注入的水，還是最後萃出的咖啡液？","acceptedAnswer":{"@type":"Answer","text":"手沖通常以投入的咖啡粉重量和注入的總水量計算。義式咖啡則常以粉量和萃出液重討論，兩者語境不同。"}},{"@type":"Question","name":"兩人份可以直接把粉和水都乘以二嗎？","acceptedAnswer":{"@type":"Answer","text":"可以作為起點，但不一定完全等比例複製風味。粉床變厚、流速變慢時，研磨或注水方式可能需要微調。"}},{"@type":"Question","name":"新手需要買折射計量 TDS 嗎？","acceptedAnswer":{"@type":"Answer","text":"不需要一開始就買。TDS 和萃取率很適合進階校正，但入門階段先建立穩定比例、固定變數與感官紀錄更重要。"}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"BNotes","item":"https://bnotescoffee.com/"},{"@type":"ListItem","position":2,"name":"文章","item":"https://bnotescoffee.com/articles/"},{"@type":"ListItem","position":3,"name":"咖啡粉水比怎麼抓？從 1:15 到 1:17 的風味差異與調整表","item":"https://bnotescoffee.com/articles/coffee-brew-ratio-guide.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"BNotes","item":"https://bnotescoffee.com/"},{"@type":"ListItem","position":2,"name":"文章","item":"https://bnotescoffee.com/articles/"},{"@type":"ListItem","position":3,"name":"咖啡粉水比怎麼抓？從 1:15 到 1:17 的風味差異與調整表","item":"https://bnotescoffee.com/articles/coffee-brew-ratio-guide"}]}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2WXMBSHDSB"></script>
 <script>
 window.dataLayer=window.dataLayer||[];
@@ -237,9 +243,9 @@ gtag('config','G-2WXMBSHDSB',{'page_title':document.title,'page_location':window
 <section class="related-articles">
   <h3 class="related-title">延伸閱讀</h3>
   <div class="related-grid">
-    <a class="related-card" href="/articles/pour-over-under-extraction-guide.html"><span class="related-kicker">萃取診斷</span><span class="related-card-title">手沖咖啡萃取不足怎麼判斷？酸、薄、短尾韻的三步調整法</span></a>
-    <a class="related-card" href="/articles/water-quality.html"><span class="related-kicker">水質科學</span><span class="related-card-title">手沖咖啡的水質科學：如何選擇最適合的沖煮用水</span></a>
-    <a class="related-card" href="/articles/coffee-acidity-complete-science.html"><span class="related-kicker">酸質理解</span><span class="related-card-title">咖啡酸質的完整科學：為什麼有人愛，有人怕</span></a>
+    <a class="related-card" href="/articles/pour-over-under-extraction-guide"><span class="related-kicker">萃取診斷</span><span class="related-card-title">手沖咖啡萃取不足怎麼判斷？酸、薄、短尾韻的三步調整法</span></a>
+    <a class="related-card" href="/articles/water-quality"><span class="related-kicker">水質科學</span><span class="related-card-title">手沖咖啡的水質科學：如何選擇最適合的沖煮用水</span></a>
+    <a class="related-card" href="/articles/coffee-acidity-complete-science"><span class="related-kicker">酸質理解</span><span class="related-card-title">咖啡酸質的完整科學：為什麼有人愛，有人怕</span></a>
   </div>
 </section>
 
