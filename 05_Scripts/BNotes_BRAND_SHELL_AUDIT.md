@@ -1,6 +1,6 @@
 # BNotes Brand Shell Audit
 
-掃描日期：2026-05-23T15:05:27.373Z
+掃描日期：2026-06-04T11:52:34.319Z
 掃描來源：https://bnotescoffee.com/sitemap.xml 對應 dist/articles
 
 ## MD 圓桌會議判斷
@@ -9,20 +9,22 @@
 
 ## 摘要
 
-- sitemap 文章數：64
-- 完全通過本次品牌版型總檢：18
-- 需要修正文章：46
+- sitemap 文章數：69
+- 完全通過本次品牌版型總檢：19
+- 需要修正文章：50
 - P0 品牌/信任阻擋：0
-- P1 版型一致性優先修正：167
-- P2 白金化精修項目：88
+- P1 版型一致性優先修正：174
+- P2 白金化精修項目：96
 
 ## 逐篇缺口總覽
 
 - brazil-natural-process-guide: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀
 - canephora-flavor-wheel-guide: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀、區塊順序
-- coffee-acidity-complete-science: P1/P2｜導讀卡、符號語氣
+- coffee-brew-ratio-guide: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀
 - coffee-dessert-pairing-science: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、符號語氣
+- coffee-grind-size-adjustment-guide: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀
 - cold-brew-advanced-science: P2/P1｜導讀卡、常見問題、參考資料、區塊順序、符號語氣
+- cold-brew-complete-101: P1｜延伸閱讀
 - cold-brew-vs-ice-drip-vs-iced-americano: P1/P2｜導讀卡、常見問題、參考資料、區塊順序
 - colombia-mitaca-second-harvest: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、符號語氣
 - competition-recipe-homebrew-guide: P1｜區塊順序
@@ -34,7 +36,7 @@
 - geisha-molecular-biology-2026: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀、區塊順序
 - green-bean-sourcing-complete-guide: P2/P1｜導讀卡、常見問題、參考資料、區塊順序、符號語氣
 - grinder-guide-2026: P1/P2｜導讀卡、符號語氣
-- home-coffee-corner: P2/P1｜導讀卡、常見問題、參考資料、區塊順序、符號語氣
+- home-coffee-corner: P2/P1｜導讀卡、常見問題、參考資料
 - home-roasting-beginners-complete: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、區塊順序、符號語氣
 - home-roasting-beginners-guide-2026: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀、區塊順序、符號語氣
 - kenya-aa-flavor-profile-deep: P1｜導讀卡
@@ -44,8 +46,9 @@
 - morning-coffee-ritual-science: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、符號語氣
 - plant-milk-barista-complete-guide: P2/P1｜導讀卡、常見問題、參考資料、區塊順序、符號語氣
 - pour-over-guide: P1/P2｜導讀卡、符號語氣
-- processing-methods: P1｜導讀卡
-- sca-tasting-vocabulary-guide: P1｜導讀卡
+- pour-over-over-extraction-guide: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀
+- pour-over-pouring-control-guide: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀
+- pour-over-under-extraction-guide: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀
 - single-origin-terroir-science: P1｜導讀卡
 - solo-brewing-valentines: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、符號語氣
 - specialty-coffee-third-wave-history: P1｜導讀卡
@@ -55,15 +58,16 @@
 - taiwan-specialty-coffee-whitepaper-2026: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、符號語氣
 - turkish-coffee-ibrik: P1｜導讀卡
 - v60-vs-kalita-filter-geometry: P1｜導讀卡
-- water-quality: P1/P2｜導讀卡、符號語氣
 - wla-champion-2026-tech-breakdown: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀
 - world-coffee-weekly-vol1: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀
 - brewing-diagnosis-w01: P2｜符號語氣
+- coffee-acidity-complete-science: P2｜符號語氣
 - coffee-bean-storage-guide: P2｜符號語氣
 - coffee-equipment-cleaning-bible: P2｜參考資料
 - grinder-6models-comparison-2026: P2｜符號語氣
 - latte-art: P2｜符號語氣
 - pour-over-water-temperature-guide: P2｜符號語氣
+- water-quality: P2｜符號語氣
 
 ## P0 品牌/信任阻擋
 
@@ -73,9 +77,11 @@
 
 - brazil-natural-process-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
 - canephora-flavor-wheel-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
-- coffee-acidity-complete-science: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 5 字、判斷段 79 字、線索 3 個
+- coffee-brew-ratio-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
 - coffee-dessert-pairing-science: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 0 字、線索 0 個；常見問題: 折疊式 FAQ 少於 5 題：目前 1；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失
+- coffee-grind-size-adjustment-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
 - cold-brew-advanced-science: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗
+- cold-brew-complete-101: 延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 4 篇
 - cold-brew-vs-ice-drip-vs-iced-americano: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 10 字、判斷段 58 字、線索 3 個；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗
 - colombia-mitaca-second-harvest: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 0 字、線索 0 個；常見問題: 折疊式 FAQ 少於 5 題：目前 1；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失
 - competition-recipe-homebrew-guide: 區塊順序: 導讀卡應放在第一個 H2 之前
@@ -97,8 +103,9 @@
 - morning-coffee-ritual-science: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 0 字、線索 0 個；常見問題: 折疊式 FAQ 少於 5 題：目前 1；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失
 - plant-milk-barista-complete-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗
 - pour-over-guide: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 10 字、判斷段 77 字、線索 3 個
-- processing-methods: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 10 字、判斷段 75 字、線索 3 個
-- sca-tasting-vocabulary-guide: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 63 字、線索 7 個
+- pour-over-over-extraction-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
+- pour-over-pouring-control-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
+- pour-over-under-extraction-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
 - single-origin-terroir-science: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 58 字、線索 7 個
 - solo-brewing-valentines: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 0 字、線索 0 個；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失
 - specialty-coffee-third-wave-history: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 42 字、線索 7 個
@@ -108,7 +115,6 @@
 - taiwan-specialty-coffee-whitepaper-2026: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 0 字、線索 0 個；常見問題: 折疊式 FAQ 少於 5 題：目前 1；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失
 - turkish-coffee-ibrik: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 13 字、判斷段 0 字、線索 3 個
 - v60-vs-kalita-filter-geometry: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 56 字、線索 7 個
-- water-quality: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 10 字、判斷段 63 字、線索 3 個
 - wla-champion-2026-tech-breakdown: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 0 字、線索 0 個；常見問題: 折疊式 FAQ 少於 5 題：目前 4；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: 缺少 share-section；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-grid 樣式/元素缺失；延伸閱讀: related-card 樣式/元素缺失；延伸閱讀: related-card:hover 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失
 - world-coffee-weekly-vol1: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 0 字、線索 0 個；常見問題: 折疊式 FAQ 少於 5 題：目前 0；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；參考資料: 缺少 references 區塊；分享這篇: 缺少 share-section；延伸閱讀: 缺少 related-articles
 
@@ -119,8 +125,10 @@
 - canephora-flavor-wheel-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷
 - coffee-acidity-complete-science: 符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - coffee-bean-storage-guide: 符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
+- coffee-brew-ratio-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準
 - coffee-dessert-pairing-science: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - coffee-equipment-cleaning-bible: 參考資料: 參考資料字級未明確對齊 .82rem 標準
+- coffee-grind-size-adjustment-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準
 - cold-brew-advanced-science: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - cold-brew-vs-ice-drip-vs-iced-americano: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷
 - colombia-mitaca-second-harvest: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
@@ -131,7 +139,7 @@
 - green-bean-sourcing-complete-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - grinder-6models-comparison-2026: 符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - grinder-guide-2026: 符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
-- home-coffee-corner: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
+- home-coffee-corner: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準
 - home-roasting-beginners-complete: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - home-roasting-beginners-guide-2026: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - latte-art: 符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
@@ -140,6 +148,9 @@
 - morning-coffee-ritual-science: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - plant-milk-barista-complete-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - pour-over-guide: 符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
+- pour-over-over-extraction-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準
+- pour-over-pouring-control-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準
+- pour-over-under-extraction-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準
 - pour-over-water-temperature-guide: 符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - solo-brewing-valentines: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - specialty-coffee-vs-commercial-coffee: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷
