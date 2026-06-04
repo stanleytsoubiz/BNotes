@@ -1,6 +1,6 @@
 # BNotes SEO / Deployment QC
 
-掃描日期：2026-06-04T13:16:11.246Z
+掃描日期：2026-06-04T13:22:35.830Z
 檢查基準日：2026-06-04
 
 ## 摘要
@@ -10,7 +10,7 @@
 - 未來稿：7
 - P0 部署阻擋：0
 - P1 應優先修正：0
-- P2 內容成熟度項目：29
+- P2 內容成熟度項目：28
 
 ## P0 部署阻擋
 
@@ -28,7 +28,6 @@
 - espresso-ratio-science: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - ethiopia-natural-process-deep-dive: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - ethiopia-vs-colombia-natural-showdown: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
-- flavor-pairing-w03: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - grinder-guide-2026: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - kenya-aa-flavor-profile-deep: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - milk-steaming-science: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
