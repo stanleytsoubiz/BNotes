@@ -1,6 +1,6 @@
 # BNotes SEO / Deployment QC
 
-掃描日期：2026-06-04T12:50:49.970Z
+掃描日期：2026-06-04T12:58:13.353Z
 檢查基準日：2026-06-04
 
 ## 摘要
@@ -10,7 +10,7 @@
 - 未來稿：7
 - P0 部署阻擋：0
 - P1 應優先修正：0
-- P2 內容成熟度項目：32
+- P2 內容成熟度項目：31
 
 ## P0 部署阻擋
 
@@ -22,7 +22,6 @@
 
 ## P2 內容成熟度項目
 
-- coffee-dessert-pairing-science: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - coffee-reading-afternoon-ritual: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - cold-brew-vs-ice-drip-vs-iced-americano: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - colombia-main-harvest-selection: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
