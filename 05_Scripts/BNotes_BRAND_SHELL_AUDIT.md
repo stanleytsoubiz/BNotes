@@ -1,6 +1,6 @@
 # BNotes Brand Shell Audit
 
-掃描日期：2026-06-04T11:52:34.319Z
+掃描日期：2026-06-04T12:50:50.033Z
 掃描來源：https://bnotescoffee.com/sitemap.xml 對應 dist/articles
 
 ## MD 圓桌會議判斷
@@ -10,11 +10,11 @@
 ## 摘要
 
 - sitemap 文章數：69
-- 完全通過本次品牌版型總檢：19
-- 需要修正文章：50
+- 完全通過本次品牌版型總檢：20
+- 需要修正文章：49
 - P0 品牌/信任阻擋：0
-- P1 版型一致性優先修正：174
-- P2 白金化精修項目：96
+- P1 版型一致性優先修正：163
+- P2 白金化精修項目：93
 
 ## 逐篇缺口總覽
 
@@ -37,7 +37,6 @@
 - green-bean-sourcing-complete-guide: P2/P1｜導讀卡、常見問題、參考資料、區塊順序、符號語氣
 - grinder-guide-2026: P1/P2｜導讀卡、符號語氣
 - home-coffee-corner: P2/P1｜導讀卡、常見問題、參考資料
-- home-roasting-beginners-complete: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、區塊順序、符號語氣
 - home-roasting-beginners-guide-2026: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀、區塊順序、符號語氣
 - kenya-aa-flavor-profile-deep: P1｜導讀卡
 - light-roast-beginners-guide: P2/P1｜導讀卡、常見問題、參考資料、區塊順序、符號語氣
@@ -94,7 +93,6 @@
 - green-bean-sourcing-complete-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗
 - grinder-guide-2026: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 11 字、判斷段 55 字、線索 3 個
 - home-coffee-corner: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗
-- home-roasting-beginners-complete: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 0 字、線索 0 個；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失；區塊順序: 分享這篇應放在參考資料之後
 - home-roasting-beginners-guide-2026: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
 - kenya-aa-flavor-profile-deep: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 75 字、線索 7 個
 - light-roast-beginners-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗
@@ -140,7 +138,6 @@
 - grinder-6models-comparison-2026: 符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - grinder-guide-2026: 符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - home-coffee-corner: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準
-- home-roasting-beginners-complete: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - home-roasting-beginners-guide-2026: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - latte-art: 符號語氣: 內文仍有不必要符號，需改為專業標題或純文字
 - light-roast-beginners-guide: 導讀卡: 導讀卡列表間距樣式未明確設定，容易重現間距過大問題；參考資料: 參考資料字級未明確對齊 .82rem 標準；區塊順序: 導讀卡出現在自然開場之前，閱讀節奏可能被打斷；符號語氣: 內文仍有不必要符號，需改為專業標題或純文字

@@ -1,6 +1,6 @@
 # BNotes SEO / Deployment QC
 
-掃描日期：2026-06-04T11:52:34.261Z
+掃描日期：2026-06-04T12:50:49.970Z
 檢查基準日：2026-06-04
 
 ## 摘要
@@ -10,7 +10,7 @@
 - 未來稿：7
 - P0 部署阻擋：0
 - P1 應優先修正：0
-- P2 內容成熟度項目：33
+- P2 內容成熟度項目：32
 
 ## P0 部署阻擋
 
@@ -32,7 +32,6 @@
 - ethiopia-vs-colombia-natural-showdown: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - flavor-pairing-w03: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - grinder-guide-2026: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
-- home-roasting-beginners-complete: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - kenya-aa-flavor-profile-deep: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - milk-steaming-science: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
 - morning-coffee-ritual-science: 導讀卡需讓讀者快速理解全文主旨，並提供剛好 3 個閱讀線索
