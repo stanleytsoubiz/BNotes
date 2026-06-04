@@ -10,7 +10,10 @@ export async function onRequestGet(context) {
     assetUrl.search = '';
 
     let response = env.ASSETS
-      ? await env.ASSETS.fetch(new Request(assetUrl.toString(), request))
+      ? await env.ASSETS.fetch(new Request(assetUrl.toString(), {
+          method: 'GET',
+          headers: { Accept: 'text/html,*/*' },
+        }))
       : await context.next();
 
     if (response.status === 404) {
@@ -20,7 +23,20 @@ export async function onRequestGet(context) {
     const ct = response.headers.get('Content-Type') || '';
     if (!ct.includes('text/html')) return response;
 
-    const text = await response.text();
+    let text = await response.text();
+    if (!text && env.ASSETS) {
+      const retry = await env.ASSETS.fetch(assetUrl.toString());
+      const retryCt = retry.headers.get('Content-Type') || '';
+      if (retry.ok && retryCt.includes('text/html')) {
+        response = retry;
+        text = await retry.text();
+      }
+    }
+
+    if (!text) {
+      response = await context.next();
+      text = await response.text();
+    }
 
     // Strip YAML frontmatter if present
     let cleaned = text.replace(/^---[\r\n][\s\S]*?[\r\n]---[\r\n]/, '');
