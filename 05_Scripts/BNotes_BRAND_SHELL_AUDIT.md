@@ -1,6 +1,6 @@
 # BNotes Brand Shell Audit
 
-掃描日期：2026-06-04T13:37:09.059Z
+掃描日期：2026-06-04T13:44:39.854Z
 掃描來源：https://bnotescoffee.com/sitemap.xml 對應 dist/articles
 
 ## MD 圓桌會議判斷
@@ -10,10 +10,10 @@
 ## 摘要
 
 - sitemap 文章數：69
-- 完全通過本次品牌版型總檢：26
-- 需要修正文章：43
+- 完全通過本次品牌版型總檢：27
+- 需要修正文章：42
 - P0 品牌/信任阻擋：0
-- P1 版型一致性優先修正：125
+- P1 版型一致性優先修正：124
 - P2 白金化精修項目：76
 
 ## 逐篇缺口總覽
@@ -45,7 +45,6 @@
 - pour-over-under-extraction-guide: P2/P1｜導讀卡、常見問題、參考資料、延伸閱讀
 - single-origin-terroir-science: P1｜導讀卡
 - solo-brewing-valentines: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、符號語氣
-- specialty-coffee-third-wave-history: P1｜導讀卡
 - taiwan-coffee-2026-new-season-terroir-guide: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、區塊順序
 - taiwan-coffee-farmer-summer-story: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、區塊順序、符號語氣
 - taiwan-specialty-coffee-whitepaper-2026: P1/P2｜導讀卡、常見問題、參考資料、分享這篇、延伸閱讀、符號語氣
@@ -95,7 +94,6 @@
 - pour-over-under-extraction-guide: 常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；延伸閱讀: related-card:hover 樣式/元素缺失
 - single-origin-terroir-science: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 58 字、線索 7 個
 - solo-brewing-valentines: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 0 字、線索 0 個；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失
-- specialty-coffee-third-wave-history: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 42 字、線索 7 個
 - taiwan-coffee-2026-new-season-terroir-guide: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 0 字、線索 0 個；常見問題: 折疊式 FAQ 少於 5 題：目前 0；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；參考資料: 缺少 references 區塊；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-line 樣式/元素缺失；分享這篇: share-btn-fb 樣式/元素缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；分享這篇: share-btn-copy 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-grid 樣式/元素缺失；延伸閱讀: related-card 樣式/元素缺失；延伸閱讀: related-card:hover 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失；區塊順序: 延伸閱讀應放在分享這篇之後
 - taiwan-coffee-farmer-summer-story: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 0 字、線索 0 個；常見問題: 折疊式 FAQ 少於 5 題：目前 1；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失；區塊順序: 導讀卡應放在第一個 H2 之前
 - taiwan-specialty-coffee-whitepaper-2026: 導讀卡: 需有主旨判斷段與剛好 3 個閱讀線索：目前標題 0 字、判斷段 0 字、線索 0 個；常見問題: 折疊式 FAQ 少於 5 題：目前 1；常見問題: FAQ 折疊樣式不完整，可能無法符合 OliveWisdom 式展開體驗；分享這篇: Threads 分享功能缺失；分享這篇: X 分享功能缺失；分享這篇: share-btn-threads 樣式/元素缺失；分享這篇: share-btn-x 樣式/元素缺失；延伸閱讀: 延伸閱讀應聚焦 3 篇，目前偵測 0 篇；延伸閱讀: related-title 樣式/元素缺失；延伸閱讀: related-kicker 樣式/元素缺失；延伸閱讀: related-card-title 樣式/元素缺失
