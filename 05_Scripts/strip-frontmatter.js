@@ -87,13 +87,7 @@ if (fs.existsSync(scheduledDir)) {
 console.log(`✅ strip-frontmatter [_scheduled]: stripped ${countSched} files`);
 
 // ── Step 3: rebuild dist/index.html featured grid + SEARCH_DATA ─────────────
-const CAT_LABELS = {
-  'pour-over':'手沖技法','espresso':'義式咖啡','equipment':'器材評測',
-  'terroir':'產地風土','science':'冲泡科學','lifestyle':'咖啡生活',
-  'beans':'咖啡豆知識','brew-methods':'手沖技法','culture':'咖啡文化',
-  'gear':'器材評測','brewing-science':'沖煮科學','origin':'產地風土',
-  'roasting':'烘焙知識',
-};
+const CAT_LABELS = { beans: '豆種與生豆', origin: '產地與風土', roasting: '烘焙科學', 'brewing-science': '沖煮科學', 'brew-methods': '沖煮技法', sensory: '感官與品飲', gear: '器材素養', culture: '咖啡文化與產業' };
 
 function makeCard(a) {
   const cat = CAT_LABELS[a.category] || a.category;
@@ -124,11 +118,11 @@ const gridHTML = featured.map(makeCard).join('\n');
 
 // Build SEARCH_DATA
 const escJS = s => s.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'\\"').replace(/\n/g,'\\n');
-const searchEntries = articlesMeta.map(a => {
+const searchEntries = articlesMeta.filter(a => a.slug !== 'index').map(a => {
   const cat = CAT_LABELS[a.category] || a.category;
   return `{'slug':'${a.slug}','title':'${escJS(a.title)}','cat':'${cat}','desc':'${escJS((a.description||'').slice(0,120))}'}`;
 });
-const searchDataJS = `const SEARCH_DATA = [${searchEntries.join(',')}];`;
+const searchDataJS = `window.SEARCH_DATA = [${searchEntries.filter(a => a.slug !== 'index').join(',')}];`;
 
 const idxPath = path.join(DIST, 'index.html');
 let idx = fs.readFileSync(idxPath, 'utf-8');
@@ -138,7 +132,7 @@ idx = idx.replace(/<div class="grid"[^>]*>[\s\S]*?<\/div>\s*(<\/div>\s*<\/sectio
   `<div class="grid" id="latest-grid">\n${gridHTML}\n    </div>\n    $1`);
 
 // Replace SEARCH_DATA line
-idx = idx.replace(/const SEARCH_DATA = \[[\s\S]*?\];/, searchDataJS);
+idx = idx.replace(/(?:const\s+|window\.)SEARCH_DATA\s*=\s*\[[\s\S]*?\];/, searchDataJS);
 
 fs.writeFileSync(idxPath, idx, 'utf-8');
 console.log(`✅ index.html: injected ${featured.length} featured cards, ${articlesMeta.length} search entries`);

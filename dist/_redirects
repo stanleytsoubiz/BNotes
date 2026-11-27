@@ -32,6 +32,28 @@
 /articles/taipei-coffee-expo-2026-annual-report       /articles/taipei-coffee-expo-2026-complete-guide        301
 /articles/taipei-coffee-expo-2026-annual-report.html  /articles/taipei-coffee-expo-2026-complete-guide.html   301
 
+
+# Category consolidation 2026-11-26: six legacy categories -> eight pillars
+/category/pour-over  /category/brew-methods  301
+/category/pour-over.html  /category/brew-methods  301
+/category/espresso  /category/brew-methods  301
+/category/espresso.html  /category/brew-methods  301
+/category/equipment  /category/gear  301
+/category/equipment.html  /category/gear  301
+/category/terroir  /category/origin  301
+/category/terroir.html  /category/origin  301
+/category/science  /category/brewing-science  301
+/category/science.html  /category/brewing-science  301
+/category/lifestyle  /category/culture  301
+/category/lifestyle.html  /category/culture  301
+
+
+# Merged articles 2026-11-26 (content consolidated into the surviving guides)
+/articles/home-roasting-beginners-guide-2026  /articles/home-roasting-beginners-complete  301
+/articles/home-roasting-beginners-guide-2026.html  /articles/home-roasting-beginners-complete  301
+/articles/milk-alternatives-science-2026  /articles/plant-milk-barista-complete-guide  301
+/articles/milk-alternatives-science-2026.html  /articles/plant-milk-barista-complete-guide  301
+
 /articles/*  /index.html  200
 # /category/* now served as real static HTML files in dist/category/ — DO NOT add SPA fallback here
 /tag/*       /index.html  200
