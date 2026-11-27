@@ -7,7 +7,7 @@
     <link>https://bnotescoffee.com</link>
     <description>讓喜好咖啡的人免費享受與世界沒有落差的專業咖啡知識庫</description>
     <language>zh-TW</language>
-    <lastBuildDate>Thu, 04 Jun 2026 14:10:36 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 02:24:22 GMT</lastBuildDate>
     <ttl>1440</ttl>
     <atom:link href="https://bnotescoffee.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
@@ -15,6 +15,69 @@
       <title>BNotes 焙學·原豆誌</title>
       <link>https://bnotescoffee.com</link>
     </image>
+
+  <item>
+    <title>咖啡因完整科學：一杯咖啡到底有多少咖啡因，你的身體又怎麼處理它</title>
+    <link>https://bnotescoffee.com/articles/caffeine-complete-science.html</link>
+    <guid isPermaLink="true">https://bnotescoffee.com/articles/caffeine-complete-science.html</guid>
+    <pubDate>Thu, 26 Nov 2026 00:00:00 GMT</pubDate>
+    <description>一杯咖啡有多少咖啡因？EFSA 每日 400mg 安全線怎麼來？半衰期約 5 小時代表什麼？用 USDA、EFSA 與 Drake 等人（2013）的實測數據，把咖啡因一次算清楚。</description>
+    <enclosure url="https://bnotescoffee.com/images/ai/caffeine-complete-science-hero.jpg" type="image/jpeg" length="0"/>
+  </item>
+
+  <item>
+    <title>咖啡訂閱制完全指南：2026 最值得訂的 5 個台灣精品咖啡訂閱服務</title>
+    <link>https://bnotescoffee.com/articles/taiwan-coffee-subscription-guide-2026.html</link>
+    <guid isPermaLink="true">https://bnotescoffee.com/articles/taiwan-coffee-subscription-guide-2026.html</guid>
+    <pubDate>Wed, 25 Nov 2026 00:00:00 GMT</pubDate>
+    <description>每個月收到一包精心挑選的新鮮烘焙豆，還附上沖煮建議卡——咖啡訂閱制已成為台灣咖啡愛好者的新選擇。這篇文章深度評測 2026 年台灣最值得訂閱的 5 個服務。</description>
+    <enclosure url="https://bnotescoffee.com/images/ai/taiwan-coffee-subscription-guide-2026-hero.jpg" type="image/jpeg" length="0"/>
+  </item>
+
+  <item>
+    <title>雲林古坑咖啡農的一天：從採收到杯中，一個百年咖啡鄉的堅持與轉型</title>
+    <link>https://bnotescoffee.com/articles/yunlin-gukeng-coffee-farmer-story.html</link>
+    <guid isPermaLink="true">https://bnotescoffee.com/articles/yunlin-gukeng-coffee-farmer-story.html</guid>
+    <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+    <description>古坑，這個台灣最早種植咖啡的鄉鎮，已有超過百年的咖啡種植歷史。這篇深度報導帶你走進一個古坑咖啡農家庭的一天，了解他們如何在氣候變遷與市場競爭中堅守這片土地。。深度探索精品咖啡知識，從科學原理到實踐技巧，完整呈現咖啡世界。</description>
+    <enclosure url="https://bnotescoffee.com/images/ai/yunlin-gukeng-coffee-farmer-story-hero.jpg" type="image/jpeg" length="0"/>
+  </item>
+
+  <item>
+    <title>台灣咖啡師的 2026：從世界賽場到街角咖啡館，這一年我們看見了什麼？</title>
+    <link>https://bnotescoffee.com/articles/taiwan-barista-2026-annual-review.html</link>
+    <guid isPermaLink="true">https://bnotescoffee.com/articles/taiwan-barista-2026-annual-review.html</guid>
+    <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+    <description>2026 年，台灣咖啡師在國際賽事中創下歷史成績。從 WBrC 前八強到在地咖啡師文化的多元崛起，這份年度觀察記錄台灣咖啡師生態的完整樣貌。</description>
+    <enclosure url="https://bnotescoffee.com/images/ai/taiwan-barista-2026-annual-review-hero.jpg" type="image/jpeg" length="0"/>
+  </item>
+
+  <item>
+    <title>手沖變數實驗完整紀錄：我們測試了 20 種配方後，告訴你什麼真正影響你的那杯咖啡</title>
+    <link>https://bnotescoffee.com/articles/pour-over-variable-complete-experiment.html</link>
+    <guid isPermaLink="true">https://bnotescoffee.com/articles/pour-over-variable-complete-experiment.html</guid>
+    <pubDate>Tue, 22 Sep 2026 00:00:00 GMT</pubDate>
+    <description>網路上有無數版本的最佳手沖配方，它們給出了看似精確的數字，但從未解釋為什麼。這篇文章記錄了一個月、20 種配方、60 杯咖啡的系統性實驗，告訴你什麼變數真正重要。</description>
+    <enclosure url="https://bnotescoffee.com/images/ai/pour-over-variable-complete-experiment-hero.jpg" type="image/jpeg" length="0"/>
+  </item>
+
+  <item>
+    <title>咖啡與閱讀的科學：為什麼一杯手沖讓你讀書讀得更好</title>
+    <link>https://bnotescoffee.com/articles/coffee-reading-afternoon-ritual.html</link>
+    <guid isPermaLink="true">https://bnotescoffee.com/articles/coffee-reading-afternoon-ritual.html</guid>
+    <pubDate>Tue, 15 Sep 2026 00:00:00 GMT</pubDate>
+    <description>咖啡因不只讓你不瞌睡，它透過抑制腺苷受體提升神經可塑性，讓學習效率在攝取後 30–45 分鐘達到高峰。如何將這個黃金時間與閱讀完美結合？</description>
+    <enclosure url="https://bnotescoffee.com/images/ai/coffee-reading-afternoon-ritual-hero.jpg" type="image/jpeg" length="0"/>
+  </item>
+
+  <item>
+    <title>哥倫比亞主產季到了：選豆前你必須知道的8件事</title>
+    <link>https://bnotescoffee.com/articles/colombia-main-harvest-selection.html</link>
+    <guid isPermaLink="true">https://bnotescoffee.com/articles/colombia-main-harvest-selection.html</guid>
+    <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+    <description>每年9月，哥倫比亞主產季的新豆開始大量進入台灣市場。如何從眾多選擇中找到真正的精彩？從 Huila 到 Nariño，這份完整選豆指南告訴你。</description>
+    <enclosure url="https://bnotescoffee.com/images/ai/colombia-main-harvest-selection-hero.jpg" type="image/jpeg" length="0"/>
+  </item>
 
   <item>
     <title>咖啡粉水比怎麼抓？從 1:15 到 1:17 的風味差異與調整表</title>
@@ -125,75 +188,12 @@
   </item>
 
   <item>
-    <title>在家烘豆完全入門指南：從生豆到第一爐的科學與實作</title>
-    <link>https://bnotescoffee.com/articles/home-roasting-beginners-guide-2026.html</link>
-    <guid isPermaLink="true">https://bnotescoffee.com/articles/home-roasting-beginners-guide-2026.html</guid>
-    <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
-    <description>第一次在家烘豆，你會聞到生豆的青草氣、聽見一爆的爆裂聲、嗅到焦糖轉化的瞬間。這篇指南從梅納反應到發展時間，帶你用爆米花機或鐵鍋完成人生第一爐，不只理解科學，更能真正動手烘出自己的咖啡豆。</description>
-    <enclosure url="https://bnotescoffee.com/images/ai/home-roasting-beginners-guide-2026-hero.jpg" type="image/jpeg" length="0"/>
-  </item>
-
-  <item>
     <title>世界咖啡週報 Vol.1（2026/4月底）：本週精品咖啡世界三大新知</title>
     <link>https://bnotescoffee.com/articles/world-coffee-weekly-vol1.html</link>
     <guid isPermaLink="true">https://bnotescoffee.com/articles/world-coffee-weekly-vol1.html</guid>
     <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
     <description>台灣選手Bala奪下2026世界拉花藝術冠軍、SCA永續獎揭曉、全球咖啡產量即將創下史上新高——本週精品咖啡世界三則最值得你知道的消息。</description>
     <enclosure url="https://bnotescoffee.com/images/ai/world-coffee-weekly-vol1-hero.jpg" type="image/jpeg" length="0"/>
-  </item>
-
-  <item>
-    <title>AeroPress 完整指南：從入門到進階的沖煮邏輯</title>
-    <link>https://bnotescoffee.com/articles/aeropress-complete-guide.html</link>
-    <guid isPermaLink="true">https://bnotescoffee.com/articles/aeropress-complete-guide.html</guid>
-    <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
-    <description>用正置、倒置、研磨、水溫與浸泡時間理解 AeroPress，建立一套從穩定入門到進階實驗都能使用的沖煮方法。</description>
-    <enclosure url="https://bnotescoffee.com/images/ai/aeropress-complete-guide-hero.jpg" type="image/jpeg" length="0"/>
-  </item>
-
-  <item>
-    <title>咖啡豆開袋之後，你可能每天都在犯的錯</title>
-    <link>https://bnotescoffee.com/articles/coffee-bean-storage-guide.html</link>
-    <guid isPermaLink="true">https://bnotescoffee.com/articles/coffee-bean-storage-guide.html</guid>
-    <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
-    <description>咖啡豆保存不只是「放陰涼處」那麼簡單。從烘焙後排氣期、開袋後氧化速度、到冷凍保存的正確做法，這篇文章給你一套真正有效的保存邏輯。</description>
-    <enclosure url="https://bnotescoffee.com/images/ai/coffee-bean-storage-guide-hero.jpg" type="image/jpeg" length="0"/>
-  </item>
-
-  <item>
-    <title>你的磨豆機，上次清潔是什麼時候？</title>
-    <link>https://bnotescoffee.com/articles/coffee-equipment-cleaning-bible.html</link>
-    <guid isPermaLink="true">https://bnotescoffee.com/articles/coffee-equipment-cleaning-bible.html</guid>
-    <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
-    <description>拆開磨豆機，用紙巾擦一下刀盤下方的殘粉槽——如果紙巾變成黃褐色，那就是你每天喝進去的東西。手沖器具清潔指南：頻率、方法、與最常被忽略的死角。</description>
-    <enclosure url="https://bnotescoffee.com/images/ai/coffee-equipment-cleaning-bible-hero.jpg" type="image/jpeg" length="0"/>
-  </item>
-
-  <item>
-    <title>2026 植物奶化學：發泡科學、蛋白質穩定度與感官平衡</title>
-    <link>https://bnotescoffee.com/articles/milk-alternatives-science-2026.html</link>
-    <guid isPermaLink="true">https://bnotescoffee.com/articles/milk-alternatives-science-2026.html</guid>
-    <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
-    <description>燕麥奶起泡失敗，往往不是品牌問題，而是蛋白質結構的問題。深入植物奶的發泡科學、脂質乳化機制，找到與義式咖啡最精準的感官平衡點。</description>
-    <enclosure url="https://bnotescoffee.com/images/ai/milk-alternatives-science-2026-hero.jpg" type="image/jpeg" length="0"/>
-  </item>
-
-  <item>
-    <title>手沖水溫完整指南：為什麼 93°C 不是萬能答案</title>
-    <link>https://bnotescoffee.com/articles/pour-over-water-temperature-guide.html</link>
-    <guid isPermaLink="true">https://bnotescoffee.com/articles/pour-over-water-temperature-guide.html</guid>
-    <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
-    <description>水溫不只影響萃取速度，更決定了你杯中的是花香還是苦澀。從烘焙度到研磨度，拆解手沖水溫的完整邏輯，給你一個真正能用的判斷框架。</description>
-    <enclosure url="https://bnotescoffee.com/images/ai/pour-over-water-temperature-guide-hero.jpg" type="image/jpeg" length="0"/>
-  </item>
-
-  <item>
-    <title>2026 台北精品咖啡地圖：從 Simple Kaffa 到 Fika Fika 的極致感官之旅</title>
-    <link>https://bnotescoffee.com/articles/taipei-coffee-map-2026.html</link>
-    <guid isPermaLink="true">https://bnotescoffee.com/articles/taipei-coffee-map-2026.html</guid>
-    <pubDate>Mon, 04 May 2026 00:00:00 GMT</pubDate>
-    <description>台北咖啡師願意跟你聊豆子產地、談比賽配方，這在亞洲城市裡並不普遍。精選 Simple Kaffa、Fika Fika、Rufous 等六間各有哲學的精品咖啡館，找到你今天需要的那種深度。</description>
-    <enclosure url="https://bnotescoffee.com/images/ai/taipei-coffee-map-2026-hero.jpg" type="image/jpeg" length="0"/>
   </item>
   </channel>
 </rss>

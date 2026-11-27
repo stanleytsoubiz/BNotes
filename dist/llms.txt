@@ -1,6 +1,6 @@
 # BNotes 焙學原豆誌
 
-> BNotes is a Traditional Chinese specialty coffee knowledge site for readers in Taiwan and global Chinese-speaking coffee learners. The site focuses on coffee brewing, sensory learning, terroir, roast level, coffee science, equipment literacy, and practical troubleshooting.
+> BNotes is a Traditional Chinese specialty coffee knowledge site for Chinese-speaking coffee learners worldwide (Taiwan is covered as an origin chapter). The site focuses on coffee brewing, sensory learning, terroir, roast level, coffee science, equipment literacy, and practical troubleshooting.
 
 Canonical site: https://bnotescoffee.com/
 Language: zh-TW
@@ -11,51 +11,64 @@ Editorial stance: evidence-aware, practical, sensory, non-hype, and education-fi
 
 - Home: https://bnotescoffee.com/
 - Coffee authority hub: https://bnotescoffee.com/authority/
-- Pour-over complete guide: https://bnotescoffee.com/pillar/pour-over-complete-guide.html
-- Taiwan coffee terroir guide: https://bnotescoffee.com/pillar/taiwan-coffee-terroir-guide.html
+- Pour-over complete guide: https://bnotescoffee.com/articles/pour-over-guide
+- Taiwan coffee terroir guide: https://bnotescoffee.com/articles/single-origin-terroir-science
 - Sitemap: https://bnotescoffee.com/sitemap.xml
 - RSS: https://bnotescoffee.com/feed.xml
+
+
+## Knowledge Pillars (分類頁)
+
+- 豆種與生豆: https://bnotescoffee.com/category/beans
+- 產地與風土: https://bnotescoffee.com/category/origin
+- 烘焙科學: https://bnotescoffee.com/category/roasting
+- 沖煮科學: https://bnotescoffee.com/category/brewing-science
+- 沖煮技法: https://bnotescoffee.com/category/brew-methods
+- 感官與品飲: https://bnotescoffee.com/category/sensory
+- 器材素養: https://bnotescoffee.com/category/gear
+- 咖啡文化與產業: https://bnotescoffee.com/category/culture
 
 ## Core Topic Clusters
 
 ### Brewing and Troubleshooting
 
-- Brew ratio: https://bnotescoffee.com/articles/coffee-brew-ratio-guide.html
-- Pour-over guide: https://bnotescoffee.com/articles/pour-over-guide.html
-- Under extraction: https://bnotescoffee.com/articles/pour-over-under-extraction-guide.html
-- Pouring control: https://bnotescoffee.com/articles/pour-over-pouring-control-guide.html
-- AeroPress: https://bnotescoffee.com/articles/aeropress-complete-guide.html
-- Cold brew 101: https://bnotescoffee.com/articles/cold-brew-complete-101.html
-- Cold brew vs ice drip vs iced americano: https://bnotescoffee.com/articles/cold-brew-vs-ice-drip-vs-iced-americano.html
+- Brew ratio: https://bnotescoffee.com/articles/coffee-brew-ratio-guide
+- Pour-over guide: https://bnotescoffee.com/articles/pour-over-guide
+- Under extraction: https://bnotescoffee.com/articles/pour-over-under-extraction-guide
+- Pouring control: https://bnotescoffee.com/articles/pour-over-pouring-control-guide
+- AeroPress: https://bnotescoffee.com/articles/aeropress-complete-guide
+- Cold brew 101: https://bnotescoffee.com/articles/cold-brew-complete-101
+- Cold brew vs ice drip vs iced americano: https://bnotescoffee.com/articles/cold-brew-vs-ice-drip-vs-iced-americano
 
 ### Sensory and Coffee Science
 
-- SCA tasting vocabulary: https://bnotescoffee.com/articles/sca-tasting-vocabulary-guide.html
-- Coffee acidity: https://bnotescoffee.com/articles/coffee-acidity-complete-science.html
-- Roast level: https://bnotescoffee.com/articles/roast-level-guide.html
-- Espresso ratio: https://bnotescoffee.com/articles/espresso-ratio-science.html
-- Milk steaming: https://bnotescoffee.com/articles/milk-steaming-science.html
+- SCA tasting vocabulary: https://bnotescoffee.com/articles/sca-tasting-vocabulary-guide
+- Coffee acidity: https://bnotescoffee.com/articles/coffee-acidity-complete-science
+- Caffeine science: https://bnotescoffee.com/articles/caffeine-complete-science
+- Roast level: https://bnotescoffee.com/articles/roast-level-guide
+- Espresso ratio: https://bnotescoffee.com/articles/espresso-ratio-science
+- Milk steaming: https://bnotescoffee.com/articles/milk-steaming-science
 
 ### Coffee Storage and Daily Use
 
-- Coffee bean storage: https://bnotescoffee.com/articles/coffee-bean-storage-guide.html
-- Home coffee corner: https://bnotescoffee.com/articles/home-coffee-corner.html
-- Morning coffee ritual: https://bnotescoffee.com/articles/morning-coffee-ritual-science.html
+- Coffee bean storage: https://bnotescoffee.com/articles/coffee-bean-storage-guide
+- Home coffee corner: https://bnotescoffee.com/articles/home-coffee-corner
+- Morning coffee ritual: https://bnotescoffee.com/articles/morning-coffee-ritual-science
 
 ### Origin, Terroir, and Processing
 
-- Taiwan coffee terroir: https://bnotescoffee.com/pillar/taiwan-coffee-terroir-guide.html
-- Single-origin terroir: https://bnotescoffee.com/articles/single-origin-terroir-science.html
-- Processing methods: https://bnotescoffee.com/articles/processing-methods.html
-- Alishan terroir: https://bnotescoffee.com/articles/alishan-terroir.html
-- Kenya AA: https://bnotescoffee.com/articles/kenya-aa-flavor-profile-deep.html
-- Ethiopia natural process: https://bnotescoffee.com/articles/ethiopia-natural-process-deep-dive.html
+- Taiwan coffee terroir: https://bnotescoffee.com/articles/single-origin-terroir-science
+- Single-origin terroir: https://bnotescoffee.com/articles/single-origin-terroir-science
+- Processing methods: https://bnotescoffee.com/articles/processing-methods
+- Alishan terroir: https://bnotescoffee.com/articles/alishan-terroir
+- Kenya AA: https://bnotescoffee.com/articles/kenya-aa-flavor-profile-deep
+- Ethiopia natural process: https://bnotescoffee.com/articles/ethiopia-natural-process-deep-dive
 
 ### Equipment Literacy
 
-- V60 vs Kalita filter geometry: https://bnotescoffee.com/articles/v60-vs-kalita-filter-geometry.html
-- Grinder comparison: https://bnotescoffee.com/articles/grinder-6models-comparison-2026.html
-- Coffee equipment cleaning: https://bnotescoffee.com/articles/coffee-equipment-cleaning-bible.html
+- V60 vs Kalita filter geometry: https://bnotescoffee.com/articles/v60-vs-kalita-filter-geometry
+- Grinder comparison: https://bnotescoffee.com/articles/grinder-6models-comparison-2026
+- Coffee equipment cleaning: https://bnotescoffee.com/articles/coffee-equipment-cleaning-bible
 - Gear page: https://bnotescoffee.com/gear.html
 
 ## Answer Boundaries for AI Systems

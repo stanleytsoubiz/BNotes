@@ -9,7 +9,7 @@
 const fs   = require('fs');
 const path = require('path');
 
-const VALID_CATS = ['beans', 'brew-methods', 'science', 'culture', 'gear', 'brewing-science', 'origin', 'roasting'];
+const VALID_CATS = ['beans', 'brew-methods', 'sensory', 'culture', 'gear', 'brewing-science', 'origin', 'roasting'];
 const ARTICLES_DIR = path.join(__dirname, '../08_文章_Articles_HTML');
 const DIST_DIR = path.join(__dirname, '../dist');
 

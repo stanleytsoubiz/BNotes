@@ -2,78 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bnotescoffee.com/</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://bnotescoffee.com/about</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/aeropress-complete-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/aeropress-complete-guide</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/alishan-new-crop-w02.html</loc>
+    <loc>https://bnotescoffee.com/articles/alishan-new-crop-w02</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/alishan-terroir.html</loc>
+    <loc>https://bnotescoffee.com/articles/alishan-terroir</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/arabica-vs-robusta-complete-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/arabica-vs-robusta-complete-guide</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/bala-2026-world-latte-art-champion-taiwan.html</loc>
+    <loc>https://bnotescoffee.com/articles/bala-2026-world-latte-art-champion-taiwan</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/brazil-natural-process-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/brazil-natural-process-guide</loc>
     <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/brewing-diagnosis-w01.html</loc>
+    <loc>https://bnotescoffee.com/articles/brewing-diagnosis-w01</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/canephora-flavor-wheel-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/caffeine-complete-science</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bnotescoffee.com/articles/canephora-flavor-wheel-guide</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/chiayi-coffee-festival-2026-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/chiayi-coffee-festival-2026-guide</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/coffee-acidity-complete-science.html</loc>
+    <loc>https://bnotescoffee.com/articles/coffee-acidity-complete-science</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/coffee-bean-storage-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/coffee-bean-storage-guide</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -103,13 +109,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/cold-brew-advanced-science.html</loc>
+    <loc>https://bnotescoffee.com/articles/coffee-reading-afternoon-ritual</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bnotescoffee.com/articles/cold-brew-advanced-science</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/cold-brew-complete-101.html</loc>
+    <loc>https://bnotescoffee.com/articles/cold-brew-complete-101</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -121,25 +133,31 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bnotescoffee.com/articles/colombia-main-harvest-selection</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bnotescoffee.com/articles/colombia-mitaca-second-harvest</loc>
     <lastmod>2026-02-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/competition-recipe-homebrew-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/competition-recipe-homebrew-guide</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/cup-tasters-palate-training-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/cup-tasters-palate-training-guide</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/espresso-parameters.html</loc>
+    <loc>https://bnotescoffee.com/articles/espresso-parameters</loc>
     <lastmod>2026-02-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -151,13 +169,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/ethiopia-natural-process-deep-dive.html</loc>
+    <loc>https://bnotescoffee.com/articles/ethiopia-natural-process-deep-dive</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/ethiopia-vs-colombia-natural-showdown.html</loc>
+    <loc>https://bnotescoffee.com/articles/ethiopia-vs-colombia-natural-showdown</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -169,31 +187,31 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/geisha-coffee-science-2026.html</loc>
+    <loc>https://bnotescoffee.com/articles/geisha-coffee-science-2026</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/geisha-molecular-biology-2026.html</loc>
+    <loc>https://bnotescoffee.com/articles/geisha-molecular-biology-2026</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/green-bean-sourcing-complete-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/green-bean-sourcing-complete-guide</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/grinder-6models-comparison-2026.html</loc>
+    <loc>https://bnotescoffee.com/articles/grinder-6models-comparison-2026</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/grinder-guide-2026.html</loc>
+    <loc>https://bnotescoffee.com/articles/grinder-guide-2026</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -211,37 +229,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/home-roasting-beginners-guide-2026.html</loc>
-    <lastmod>2026-05-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bnotescoffee.com/articles/kenya-aa-flavor-profile-deep.html</loc>
+    <loc>https://bnotescoffee.com/articles/kenya-aa-flavor-profile-deep</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/latte-art.html</loc>
+    <loc>https://bnotescoffee.com/articles/latte-art</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/light-roast-beginners-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/light-roast-beginners-guide</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/milk-alternatives-science-2026.html</loc>
-    <lastmod>2026-05-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bnotescoffee.com/articles/milk-steaming-science.html</loc>
+    <loc>https://bnotescoffee.com/articles/milk-steaming-science</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -253,13 +259,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/nitro-cold-brew-home-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/nitro-cold-brew-home-guide</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/plant-milk-barista-complete-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/plant-milk-barista-complete-guide</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -271,20 +277,26 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/pour-over-over-extraction-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/pour-over-over-extraction-guide</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/pour-over-pouring-control-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/pour-over-pouring-control-guide</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/pour-over-under-extraction-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/pour-over-under-extraction-guide</loc>
     <lastmod>2026-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bnotescoffee.com/articles/pour-over-variable-complete-experiment</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -301,25 +313,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/roast-level-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/roast-level-guide</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/sca-tasting-vocabulary-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/sca-tasting-vocabulary-guide</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/single-origin-terroir-science.html</loc>
+    <loc>https://bnotescoffee.com/articles/single-origin-terroir-science</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/solo-brewing-valentines.html</loc>
+    <loc>https://bnotescoffee.com/articles/solo-brewing-valentines</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -337,31 +349,43 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/summer-iced-coffee-three-recipes.html</loc>
+    <loc>https://bnotescoffee.com/articles/summer-iced-coffee-three-recipes</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/taipei-coffee-expo-2026-complete-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/sustainable-coffee-complete-guide</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bnotescoffee.com/articles/taipei-coffee-expo-2026-complete-guide</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/taipei-coffee-map-2026.html</loc>
+    <loc>https://bnotescoffee.com/articles/taipei-coffee-map-2026</loc>
     <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/taiwan-coffee-2026-new-season-terroir-guide.html</loc>
+    <loc>https://bnotescoffee.com/articles/taiwan-barista-2026-annual-review</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bnotescoffee.com/articles/taiwan-coffee-2026-new-season-terroir-guide</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/taiwan-coffee-equipment-midyear-2026.html</loc>
+    <loc>https://bnotescoffee.com/articles/taiwan-coffee-equipment-midyear-2026</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -373,31 +397,37 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bnotescoffee.com/articles/taiwan-coffee-subscription-guide-2026</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bnotescoffee.com/articles/taiwan-specialty-coffee-whitepaper-2026</loc>
     <lastmod>2026-03-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/turkish-coffee-ibrik.html</loc>
+    <loc>https://bnotescoffee.com/articles/turkish-coffee-ibrik</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/v60-vs-kalita-filter-geometry.html</loc>
+    <loc>https://bnotescoffee.com/articles/v60-vs-kalita-filter-geometry</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/water-quality.html</loc>
+    <loc>https://bnotescoffee.com/articles/water-quality</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/wbc-2026-champion-philosophy.html</loc>
+    <loc>https://bnotescoffee.com/articles/wbc-2026-champion-philosophy</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -409,13 +439,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/wla-champion-2026-tech-breakdown.html</loc>
+    <loc>https://bnotescoffee.com/articles/wla-champion-2026-tech-breakdown</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/articles/wlac-2026-champion-technique.html</loc>
+    <loc>https://bnotescoffee.com/articles/wlac-2026-champion-technique</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -427,56 +457,86 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bnotescoffee.com/articles/yunlin-gukeng-coffee-farmer-story</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bnotescoffee.com/authority/</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/category/equipment</loc>
-    <lastmod>2026-05-04</lastmod>
+    <loc>https://bnotescoffee.com/category/beans</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/category/espresso</loc>
-    <lastmod>2026-05-04</lastmod>
+    <loc>https://bnotescoffee.com/category/brew-methods</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/category/lifestyle</loc>
-    <lastmod>2026-05-17</lastmod>
+    <loc>https://bnotescoffee.com/category/brewing-science</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/category/pour-over</loc>
-    <lastmod>2026-05-04</lastmod>
+    <loc>https://bnotescoffee.com/category/culture</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/category/science</loc>
-    <lastmod>2026-05-04</lastmod>
+    <loc>https://bnotescoffee.com/category/gear</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/category/terroir</loc>
-    <lastmod>2026-05-04</lastmod>
+    <loc>https://bnotescoffee.com/category/origin</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bnotescoffee.com/category/roasting</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bnotescoffee.com/category/sensory</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bnotescoffee.com/disclosure</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://bnotescoffee.com/gear</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bnotescoffee.com/googled3720c0809337c6a.html</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://bnotescoffee.com/methodology</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bnotescoffee.com/sponsorship</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
